@@ -10,17 +10,244 @@
                                 owl:versionIRI <http://www.toronto.ca/twonto/0.1> .
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.toronto.ca/twonto#hasOperator
+:hasOperator rdf:type owl:ObjectProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty .
+
+
+###  http://www.toronto.ca/twonto#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ,
+                   owl:AsymmetricProperty ,
+                   owl:TransitiveProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:comment "is physical proper part of" .
+
+
+###  http://www.toronto.ca/twonto#recordOnboardedIn
+:recordOnboardedIn rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ,
+                            owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :assetDataSystem .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:domain :asset ;
+                      rdfs:range :organization .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.toronto.ca/twonto#isActuatedValve
+:isActuatedValve rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :valveProperty ;
+                 rdf:type owl:FunctionalProperty .
+
+
+###  http://www.toronto.ca/twonto#isControlledValve
+:isControlledValve rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :valveProperty ;
+                   rdf:type owl:FunctionalProperty .
+
+
+###  http://www.toronto.ca/twonto#valveProperty
+:valveProperty rdf:type owl:DatatypeProperty .
+
+
+#################################################################
 #    Classes
 #################################################################
 
-###  http://www.toronto.ca/twonto#OWLClass_00000000000000000000
-:OWLClass_00000000000000000000 rdf:type owl:Class ;
-                               rdfs:label "system"@en .
+###  http://www.toronto.ca/twonto#GIS
+:GIS rdf:type owl:Class ;
+     rdfs:subClassOf :assetDataSystem .
 
 
-###  http://www.toronto.ca/twonto#OWLClass_00000000000000000001
-:OWLClass_00000000000000000001 rdf:type owl:Class ;
-                               rdfs:label "discrete asset"@en .
+###  http://www.toronto.ca/twonto#TW_sewerControlValve
+:TW_sewerControlValve rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :valve
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :recordOnboardedIn ;
+                                                                   owl:someValuesFrom :GIS
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :isPartOf ;
+                                                                   owl:hasValue :TW_wasteAndStormWaterNetwork
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:comment "Notice that isRepresentedIn relation is a functional. Coupled with the some qualitifier equivalent of max cardinality of 1." ;
+                      rdfs:isDefinedBy "is a valve that is that is 1) a part of of the drinking water system and 2) represented on the GIS." .
+
+
+###  http://www.toronto.ca/twonto#TW_waterSystemValve
+:TW_waterSystemValve rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :valve
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :recordOnboardedIn ;
+                                                                  owl:someValuesFrom :GIS
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :isPartOf ;
+                                                                  owl:hasValue :TW_drinkingWaterSupplyNetwork
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:comment "Notice that isRepresentedIn relation is a functional. Coupled with the some qualitifier equivalent of max cardinality of 1." ;
+                     rdfs:isDefinedBy "is a valve that is that is 1) a part of of the drinking water system and 2) represented on the GIS." .
+
+
+###  http://www.toronto.ca/twonto#WMS
+:WMS rdf:type owl:Class ;
+     rdfs:subClassOf :assetDataSystem .
+
+
+###  http://www.toronto.ca/twonto#asset
+:asset rdf:type owl:Class .
+
+
+###  http://www.toronto.ca/twonto#assetDataSystem
+:assetDataSystem rdf:type owl:Class .
+
+
+###  http://www.toronto.ca/twonto#ballValve
+:ballValve rdf:type owl:Class ;
+           rdfs:subClassOf :valve ;
+           rdfs:label "ball valve"@en .
+
+
+###  http://www.toronto.ca/twonto#collectionOfDiscreteAssets
+:collectionOfDiscreteAssets rdf:type owl:Class ;
+                            rdfs:subClassOf :asset .
+
+
+###  http://www.toronto.ca/twonto#coneValve
+:coneValve rdf:type owl:Class ;
+           rdfs:subClassOf :valve ;
+           rdfs:label "cone valve"@en .
+
+
+###  http://www.toronto.ca/twonto#corporation
+:corporation rdf:type owl:Class ;
+             rdfs:subClassOf :organization .
+
+
+###  http://www.toronto.ca/twonto#definedCollection
+:definedCollection rdf:type owl:Class ;
+                   rdfs:subClassOf :collectionOfDiscreteAssets .
+
+
+###  http://www.toronto.ca/twonto#discreteAsset
+:discreteAsset rdf:type owl:Class ;
+               rdfs:subClassOf :asset ;
+               rdfs:label "discrete asset"@en .
+
+
+###  http://www.toronto.ca/twonto#distributedSystem
+:distributedSystem rdf:type owl:Class ;
+                   rdfs:subClassOf :system .
+
+
+###  http://www.toronto.ca/twonto#distributionNetwork
+:distributionNetwork rdf:type owl:Class ;
+                     rdfs:subClassOf :distributedSystem .
+
+
+###  http://www.toronto.ca/twonto#division
+:division rdf:type owl:Class ;
+          rdfs:subClassOf :organization .
+
+
+###  http://www.toronto.ca/twonto#hydrant
+:hydrant rdf:type owl:Class ;
+         rdfs:subClassOf :discreteAsset ;
+         rdfs:label "hydrant"@en .
+
+
+###  http://www.toronto.ca/twonto#hydrantSystem
+:hydrantSystem rdf:type owl:Class ;
+               rdfs:subClassOf :localizedSystem ;
+               rdfs:label "hydrant system"@en .
+
+
+###  http://www.toronto.ca/twonto#localizedSystem
+:localizedSystem rdf:type owl:Class ;
+                 rdfs:subClassOf :system .
+
+
+###  http://www.toronto.ca/twonto#organization
+:organization rdf:type owl:Class .
+
+
+###  http://www.toronto.ca/twonto#plugValve
+:plugValve rdf:type owl:Class ;
+           rdfs:subClassOf :valve .
+
+
+###  http://www.toronto.ca/twonto#role
+:role rdf:type owl:Class ;
+      rdfs:label "role"@en .
+
+
+###  http://www.toronto.ca/twonto#sewerServiceConnection
+:sewerServiceConnection rdf:type owl:Class ;
+                        rdfs:subClassOf :localizedSystem .
+
+
+###  http://www.toronto.ca/twonto#system
+:system rdf:type owl:Class ;
+        rdfs:subClassOf :collectionOfDiscreteAssets ;
+        rdfs:isDefinedBy "A collection of interrelated assets collectively capable of some system level function." ;
+        rdfs:label "system"@en .
+
+
+###  http://www.toronto.ca/twonto#unit
+:unit rdf:type owl:Class ;
+      rdfs:subClassOf :organization .
+
+
+###  http://www.toronto.ca/twonto#valve
+:valve rdf:type owl:Class ;
+       rdfs:subClassOf :discreteAsset ;
+       rdfs:label "valve"@en .
+
+
+###  http://www.toronto.ca/twonto#valveRole
+:valveRole rdf:type owl:Class ;
+           rdfs:subClassOf :role ;
+           rdfs:label "valve role"@en .
+
+
+###  http://www.toronto.ca/twonto#waterServiceConnection
+:waterServiceConnection rdf:type owl:Class ;
+                        rdfs:subClassOf :localizedSystem .
+
+
+###  http://www.toronto.ca/twonto#workArea
+:workArea rdf:type owl:Class ;
+          rdfs:subClassOf :organization .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.toronto.ca/twonto#TW_drinkingWaterSupplyNetwork
+:TW_drinkingWaterSupplyNetwork rdf:type owl:NamedIndividual ,
+                                        :distributedSystem .
+
+
+###  http://www.toronto.ca/twonto#TW_wasteAndStormWaterNetwork
+:TW_wasteAndStormWaterNetwork rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
