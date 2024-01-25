@@ -4,7 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.toronto.ca/twonto> .
+@base <http://www.toronto.ca/twonto#> .
 
 <http://www.toronto.ca/twonto> rdf:type owl:Ontology ;
                                 owl:versionIRI <http://www.toronto.ca/twonto/0.1> .
@@ -777,7 +777,6 @@ owl:topObjectProperty rdfs:domain :asset ;
 ###  http://www.toronto.ca/twonto#discreteAsset
 :discreteAsset rdf:type owl:Class ;
                rdfs:subClassOf :asset ;
-               owl:disjointWith :system ;
                rdfs:label "Discrete Asset"@en .
 
 
@@ -804,7 +803,6 @@ owl:topObjectProperty rdfs:domain :asset ;
 ###  http://www.toronto.ca/twonto#distributedSystem
 :distributedSystem rdf:type owl:Class ;
                    rdfs:subClassOf :system ;
-                   owl:disjointWith :localizedSystem ;
                    rdfs:label "distributed system" .
 
 
@@ -2473,6 +2471,16 @@ You may notice that some properties do not need to be temporalized. I.e., they s
 <http://www.twonto.ca/compliance#unitOfMeasure> rdf:type owl:Class ;
                                                 rdfs:subClassOf :informationEntity ;
                                                 rdfs:label "unit of measure"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.toronto.ca/twonto#00041
+<http://www.toronto.ca/twonto#00041> rdf:type owl:NamedIndividual ,
+                                              :distributedSystem ;
+                                     rdfs:label "Toronto Water Drinking Water Supply Network"@en .
 
 
 #################################################################
