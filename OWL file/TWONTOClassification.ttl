@@ -25,118 +25,103 @@
 :avantisClass rdf:type owl:AnnotationProperty .
 
 
-###  http://www.toronto.ca/twonto#userClassParent
-:userClassParent rdf:type owl:AnnotationProperty .
-
-
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://www.toronto.ca/twonto#00001
-<http://www.toronto.ca/twonto#00001> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00005> ;
-                                     rdfs:label "occupies"@en .
+###  http://www.toronto.ca/twonto#bearsProperty
+:bearsProperty rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasPresentProperty .
 
 
-###  http://www.toronto.ca/twonto#00004
-<http://www.toronto.ca/twonto#00004> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00005> ;
-                                     rdfs:label "is occupied by"@en .
+###  http://www.toronto.ca/twonto#bearsPropertyState
+:bearsPropertyState rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasPropertyState .
 
 
-###  http://www.toronto.ca/twonto#00005
-<http://www.toronto.ca/twonto#00005> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00105> ;
-                                     rdfs:label "is related to"@en .
+###  http://www.toronto.ca/twonto#contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isRelatedTo .
 
 
-###  http://www.toronto.ca/twonto#00043
-<http://www.toronto.ca/twonto#00043> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00005> ;
-                                     rdf:type owl:TransitiveProperty ;
-                                     rdfs:comment "is physical proper part of" ;
-                                     rdfs:label "is part of" .
+###  http://www.toronto.ca/twonto#hasInformation
+:hasInformation rdf:type owl:ObjectProperty .
 
 
-###  http://www.toronto.ca/twonto#00044
-<http://www.toronto.ca/twonto#00044> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00005> ;
-                                     rdfs:label "sits within"@en .
+###  http://www.toronto.ca/twonto#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :isRelatedTo ;
+         rdf:type owl:TransitiveProperty .
 
 
-###  http://www.toronto.ca/twonto#00045
-<http://www.toronto.ca/twonto#00045> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00005> ;
-                                     rdfs:label "contains"@en .
+###  http://www.toronto.ca/twonto#hasPerformanceMeasurement
+:hasPerformanceMeasurement rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :hasInformation .
 
 
-###  http://www.toronto.ca/twonto#00076
-<http://www.toronto.ca/twonto#00076> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00107> ;
-                                     rdfs:label "bears property state"@en .
+###  http://www.toronto.ca/twonto#hasPresentProperty
+:hasPresentProperty rdf:type owl:ObjectProperty ;
+                    rdfs:comment """TH Dec/2023: 
+The following properties are represented without reification.
+1. The binary relations represented by classes \"Relation>Binary Relation To\" 
+2. Unary relations pointing to a (complex) state, represented by a string or boolean value (This is represented as a DataProperty)""" .
 
 
-###  http://www.toronto.ca/twonto#00078
-<http://www.toronto.ca/twonto#00078> rdf:type owl:ObjectProperty ;
-                                     rdfs:label "has information"@en .
+###  http://www.toronto.ca/twonto#hasPropertyState
+:hasPropertyState rdf:type owl:ObjectProperty ;
+                  rdfs:comment """Jan'24: Examples of usage
+- assetA isInAStateOf retired
+- Tony isInAStateOf beingAFriendOf theObjectEntity Tom
+- rocketShipX bearsPropertyState mass""" .
 
 
-###  http://www.toronto.ca/twonto#00080
-<http://www.toronto.ca/twonto#00080> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00078> ;
-                                     rdfs:label "has performance measurement"@en .
+###  http://www.toronto.ca/twonto#hasSpecifiedPerformance
+:hasSpecifiedPerformance rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :hasInformation .
 
 
-###  http://www.toronto.ca/twonto#00084
-<http://www.toronto.ca/twonto#00084> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00078> ;
-                                     rdfs:label "has specified performance"@en .
+###  http://www.toronto.ca/twonto#isInAStateOf
+:isInAStateOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasPropertyState ;
+              rdfs:comment "" .
 
 
-###  http://www.toronto.ca/twonto#00093
-<http://www.toronto.ca/twonto#00093> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00107> ;
-                                     rdfs:label "is in a state of"@en .
+###  http://www.toronto.ca/twonto#isOccupiedBy
+:isOccupiedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :isRelatedTo .
 
 
-###  http://www.toronto.ca/twonto#00095
-<http://www.toronto.ca/twonto#00095> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00107> ;
-                                     rdfs:label "the object entity"@en .
+###  http://www.toronto.ca/twonto#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isRelatedTo ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:comment "is physical proper part of" .
 
 
-###  http://www.toronto.ca/twonto#00101
-<http://www.toronto.ca/twonto#00101> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00005> ;
-                                     rdf:type owl:TransitiveProperty ;
-                                     rdfs:label "has part"@en .
+###  http://www.toronto.ca/twonto#isRelatedTo
+:isRelatedTo rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasPresentProperty .
+
+
+###  http://www.toronto.ca/twonto#occupies
+:occupies rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isRelatedTo .
+
+
+###  http://www.toronto.ca/twonto#sitsWithin
+:sitsWithin rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isRelatedTo .
+
+
+###  http://www.toronto.ca/twonto#theObjectEntity
+:theObjectEntity rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasPropertyState .
 
 
 ###  http://www.toronto.ca/twonto#00102
 <http://www.toronto.ca/twonto#00102> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00108> ;
+                                     rdfs:subPropertyOf :bearsProperty ;
                                      rdfs:label "bears function"@en .
-
-
-###  http://www.toronto.ca/twonto#00105
-<http://www.toronto.ca/twonto#00105> rdf:type owl:ObjectProperty ;
-                                     rdfs:comment """TH Dec/2023: 
-The following properties are represented without reification.
-1. The binary relations represented by classes \"Relation>Binary Relation To\" 
-2. Unary relations pointing to a (complex) state, represented by a string or boolean value (This is represented as a DataProperty)""" ;
-                                     rdfs:label "has present property"@en .
-
-
-###  http://www.toronto.ca/twonto#00107
-<http://www.toronto.ca/twonto#00107> rdf:type owl:ObjectProperty ;
-                                     rdfs:label "has property state"@en .
-
-
-###  http://www.toronto.ca/twonto#00108
-<http://www.toronto.ca/twonto#00108> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00105> ;
-                                     rdfs:label "bears property"@en .
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
@@ -148,65 +133,66 @@ owl:topObjectProperty rdfs:domain :asset ;
 #    Data properties
 #################################################################
 
+###  http://www.toronto.ca/twonto#hasAssetStatus
+:hasAssetStatus rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :hasPresentPropertyValue ;
+                rdfs:label "asset status"@en .
+
+
+###  http://www.toronto.ca/twonto#hasOperationalState
+:hasOperationalState rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :hasPresentPropertyValue ;
+                     rdfs:label "operational state"@en .
+
+
+###  http://www.toronto.ca/twonto#hasPresentPropertyValue
+:hasPresentPropertyValue rdf:type owl:DatatypeProperty ;
+                         rdfs:comment "TH Dec/2023: For the subset of properties whose value could change over the lifetime of the asset (or independent continuent), you should be able to find the reified equivalence, as a subclass of Class:Property." ,
+                                      "TH Jan'24: This is mean to be used with non-numeric values. All numerical values are reified in order to accomedate a UOM" .
+
+
+###  http://www.toronto.ca/twonto#hasSealedOrShieldedBearing
+:hasSealedOrShieldedBearing rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf :hasPresentPropertyValue ;
+                            rdfs:range xsd:boolean ;
+                            rdfs:label "sealed or shielded bearing?"@en .
+
+
+###  http://www.toronto.ca/twonto#hasValue
+:hasValue rdf:type owl:DatatypeProperty .
+
+
 ###  http://www.toronto.ca/twonto#isActuatedValve
 :isActuatedValve rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf <http://www.toronto.ca/twonto#00067> ;
-                 rdfs:label "is actuated valve" .
+                 rdfs:subPropertyOf :hasPresentPropertyValue ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:label "actuated valve?" .
 
 
 ###  http://www.toronto.ca/twonto#isControlledValve
 :isControlledValve rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf <http://www.toronto.ca/twonto#00067> ;
+                   rdfs:subPropertyOf :hasPresentPropertyValue ;
                    rdfs:range xsd:boolean ;
-                   rdfs:label "is controlled valve" .
+                   rdfs:label "controlled valve?" .
 
 
-###  http://www.toronto.ca/twonto#00046
-<http://www.toronto.ca/twonto#00046> rdf:type owl:DatatypeProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00067> ;
-                                     rdfs:label "has asset status"@en .
+###  http://www.toronto.ca/twonto#usesBearingLubricantType
+:usesBearingLubricantType rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf :hasPresentPropertyValue ;
+                          rdfs:label "type of bearing lubricant"@en .
 
 
-###  http://www.toronto.ca/twonto#00051
-<http://www.toronto.ca/twonto#00051> rdf:type owl:DatatypeProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00067> ;
-                                     rdfs:label "has operational state"@en .
+###  http://www.twonto.ca/compliance#has_NEMA_enclosureType
+<http://www.twonto.ca/compliance#has_NEMA_enclosureType> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf :hasPresentPropertyValue ;
+                                                         rdfs:range xsd:string ;
+                                                         rdfs:label "NEMA enclosure type"@en .
 
 
-###  http://www.toronto.ca/twonto#00067
-<http://www.toronto.ca/twonto#00067> rdf:type owl:DatatypeProperty ;
-                                     rdfs:comment "TH Dec/2023: For the subset of properties whose value could change over the lifetime of the asset (or independent continuent), you should be able to find the reified equivalent relation, as a subclass of Property." ;
-                                     rdfs:label "has specific and present property value"@en .
-
-
-###  http://www.toronto.ca/twonto#00068
-<http://www.toronto.ca/twonto#00068> rdf:type owl:DatatypeProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00067> ;
-                                     rdfs:label "has sealed or shielded bearing"@en .
-
-
-###  http://www.toronto.ca/twonto#00069
-<http://www.toronto.ca/twonto#00069> rdf:type owl:DatatypeProperty ;
-                                     rdfs:subPropertyOf <http://www.toronto.ca/twonto#00067> ;
-                                     rdfs:label "uses bearing lubrication type"@en .
-
-
-###  http://www.toronto.ca/twonto#00072
-<http://www.toronto.ca/twonto#00072> rdf:type owl:DatatypeProperty ;
-                                     rdfs:label "has value"@en .
-
-
-###  http://www.twonto.ca/compliance#00012
-<http://www.twonto.ca/compliance#00012> rdf:type owl:DatatypeProperty ;
-                                        rdfs:subPropertyOf <http://www.toronto.ca/twonto#00067> ;
-                                        rdfs:range xsd:string ;
-                                        rdfs:label "has NEMA enclosure type"@en .
-
-
-###  http://www.twonto.ca/compliance#00013
-<http://www.twonto.ca/compliance#00013> rdf:type owl:DatatypeProperty ;
-                                        rdfs:subPropertyOf <http://www.toronto.ca/twonto#00067> ;
-                                        rdfs:label "has NEMA frame type"@en .
+###  http://www.twonto.ca/compliance#has_NEMA_frameRating
+<http://www.twonto.ca/compliance#has_NEMA_frameRating> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:subPropertyOf :hasPresentPropertyValue ;
+                                                       rdfs:label "NEMA frame type"@en .
 
 
 #################################################################
@@ -227,11 +213,6 @@ owl:topObjectProperty rdfs:domain :asset ;
 ###  http://www.toronto.ca/twonto#AC_system
 :AC_system rdf:type owl:Class ;
            rdfs:subClassOf :localizedSystem .
-
-
-###  http://www.toronto.ca/twonto#DefinedAssetCollection
-:DefinedAssetCollection rdf:type owl:Class ;
-                        rdfs:subClassOf :asset .
 
 
 ###  http://www.toronto.ca/twonto#HVAC_buildingOrGroundsServiceAsset
@@ -262,7 +243,7 @@ owl:topObjectProperty rdfs:domain :asset ;
 
 ###  http://www.toronto.ca/twonto#TorontoWaterAsset
 :TorontoWaterAsset rdf:type owl:Class ;
-                   rdfs:subClassOf :DefinedAssetCollection ;
+                   rdfs:subClassOf :definedAssetCollection ;
                    rdfs:label "Toronto Water Asset Class" .
 
 
@@ -416,7 +397,7 @@ owl:topObjectProperty rdfs:domain :asset ;
 :barScreen rdf:type owl:Class ;
            rdfs:subClassOf :discreteAsset ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty <http://www.toronto.ca/twonto#00101> ;
+                             owl:onProperty :hasPart ;
                              owl:someValuesFrom :structuralTankPartOfAssembly
                            ] .
 
@@ -615,7 +596,8 @@ owl:topObjectProperty rdfs:domain :asset ;
 ###  http://www.toronto.ca/twonto#complexProperty
 :complexProperty rdf:type owl:Class ;
                  rdfs:subClassOf :property ;
-                 rdfs:comment "TH Dec/2023: a property that denote a composite of values in multiple qualities, functional capabiliy, and other possible property that inhere in the asset itself (not listed in this ontology)." ;
+                 rdfs:comment "Jan'24 TH: This class is create because we considered the status of a particular asset to be an instance of this class" ,
+                              "TH Dec/2023: a property that denote a composite of values in multiple qualities, functional capabiliy, and other possible property that inhere in the asset itself (not listed in this ontology)." ;
                  rdfs:label "complex property"@en .
 
 
@@ -719,6 +701,11 @@ owl:topObjectProperty rdfs:domain :asset ;
                   rdfs:subClassOf :separator .
 
 
+###  http://www.toronto.ca/twonto#definedAssetCollection
+:definedAssetCollection rdf:type owl:Class ;
+                        rdfs:subClassOf :asset .
+
+
 ###  http://www.toronto.ca/twonto#dehumidifier
 :dehumidifier rdf:type owl:Class ;
               rdfs:subClassOf :discreteAsset .
@@ -757,7 +744,7 @@ owl:topObjectProperty rdfs:domain :asset ;
 :digesterReactorTank rdf:type owl:Class ;
                      rdfs:subClassOf :discreteAsset ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty <http://www.toronto.ca/twonto#00101> ;
+                                       owl:onProperty :hasPart ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass :structuralTankPartOfAssembly
                                      ] .
@@ -880,13 +867,6 @@ owl:topObjectProperty rdfs:domain :asset ;
 ###  http://www.toronto.ca/twonto#electricalAssetOrComponent
 :electricalAssetOrComponent rdf:type owl:Class ;
                             rdfs:subClassOf :TorontoWaterAsset ;
-                            :PCS_code "BUS" ,
-                                      "CAP" ,
-                                      "CB" ,
-                                      "ELS" ,
-                                      "SWG" ,
-                                      "TB" ,
-                                      "TR" ;
                             rdfs:label "Electrical Asset or Component" .
 
 
@@ -1799,9 +1779,9 @@ owl:topObjectProperty rdfs:domain :asset ;
 
 ###  http://www.toronto.ca/twonto#property
 :property rdf:type owl:Class ;
-          rdfs:comment """TH Dec/2023: roughly eqvivalent to BFO:Specifically Depdendent Continuent. The majority of the properties are reified (and temporalized) data properties under \"has specific property values\", to allow us to specify, among other metadata, the unit of measure and the time period in the life of the asset during which a property is valid.
+          rdfs:comment """TH Dec/2023: roughly eqvivalent to BFO:Specifically Depdendent Continuent. The majority of the properties are reified (and temporalized) data properties under \"hasPresentPropertyValue\", to allow us to specify, among other metadata, the unit of measure and the time period in the life of the asset during which a property is valid.
 
-You may notice that some properties do not need to be temporalized. I.e., they stay the same over the lifetime of the asset. For example, NEMA Frame Rating property of motors. But there is still a good case to reify them, as they may be the subjects of review and correction in a reconciliation project.""" ;
+You may notice that some properties do not need to be temporalized (I.e., they stay the same over the lifetime of the asset) and do not require qualification by an unit of measure. For example, NEMA Frame Rating property of motors. But there is still a good case to reify them, as they may be the subjects of review and correction in a reconciliation project.""" ;
           rdfs:label "property"@en .
 
 
@@ -1809,7 +1789,7 @@ You may notice that some properties do not need to be temporalized. I.e., they s
 :propertyState rdf:type owl:Class ;
                owl:equivalentClass [ owl:intersectionOf ( :property
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty [ owl:inverseOf <http://www.toronto.ca/twonto#00107>
+                                                            owl:onProperty [ owl:inverseOf :hasPropertyState
                                                                            ] ;
                                                             owl:someValuesFrom owl:Thing
                                                           ]
@@ -2034,7 +2014,6 @@ You may notice that some properties do not need to be temporalized. I.e., they s
 ###  http://www.toronto.ca/twonto#sewerMain
 :sewerMain rdf:type owl:Class ;
            rdfs:subClassOf :pipeSegment ;
-           :userClassParent "water and wastewater network" ;
            rdfs:label "sewer main" .
 
 
@@ -2490,4 +2469,4 @@ You may notice that some properties do not need to be temporalized. I.e., they s
 ] .
 
 
-###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
