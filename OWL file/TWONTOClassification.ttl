@@ -29,6 +29,11 @@
 #    Object Properties
 #################################################################
 
+###  http://www.toronto.ca/twonto#bearsFunction
+:bearsFunction rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasPresentProperty .
+
+
 ###  http://www.toronto.ca/twonto#bearsProperty
 :bearsProperty rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :hasPresentProperty .
@@ -46,6 +51,18 @@
 
 ###  http://www.toronto.ca/twonto#hasInformation
 :hasInformation rdf:type owl:ObjectProperty .
+
+
+###  http://www.toronto.ca/twonto#hasMaxAllowableWorkingPressure
+:hasMaxAllowableWorkingPressure rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :hasSpecifiedProperty ;
+                                rdfs:label "maximum allowable working pressure" .
+
+
+###  http://www.toronto.ca/twonto#hasMaxAllowableWorkingTemperature
+:hasMaxAllowableWorkingTemperature rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf :hasSpecifiedProperty ;
+                                   rdfs:label "maximum allowable working temperature" .
 
 
 ###  http://www.toronto.ca/twonto#hasPart
@@ -75,9 +92,30 @@ The following properties are represented without reification.
 - rocketShipX bearsPropertyState mass""" .
 
 
+###  http://www.toronto.ca/twonto#hasSpecifedRelation
+:hasSpecifedRelation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasInformation .
+
+
 ###  http://www.toronto.ca/twonto#hasSpecifiedPerformance
 :hasSpecifiedPerformance rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf :hasInformation .
+
+
+###  http://www.toronto.ca/twonto#hasSpecifiedProperty
+:hasSpecifiedProperty rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasInformation .
+
+
+###  http://www.toronto.ca/twonto#hasUnitOfMeasure
+:hasUnitOfMeasure rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasInformation .
+
+
+###  http://www.toronto.ca/twonto#isDesignedToHold
+:isDesignedToHold rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasSpecifedRelation ;
+                  rdfs:domain :vesselOrTank .
 
 
 ###  http://www.toronto.ca/twonto#isInAStateOf
@@ -118,12 +156,6 @@ The following properties are represented without reification.
                  rdfs:subPropertyOf :hasPropertyState .
 
 
-###  http://www.toronto.ca/twonto#00102
-<http://www.toronto.ca/twonto#00102> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf :bearsProperty ;
-                                     rdfs:label "bears function"@en .
-
-
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
 owl:topObjectProperty rdfs:domain :asset ;
                       rdfs:range :organization .
@@ -137,6 +169,25 @@ owl:topObjectProperty rdfs:domain :asset ;
 :hasAssetStatus rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf :hasPresentPropertyValue ;
                 rdfs:label "asset status"@en .
+
+
+###  http://www.toronto.ca/twonto#hasBoilerServiceType
+:hasBoilerServiceType rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf :hasPresentPropertyValue ;
+                      rdfs:comment "either \"hot water\" or \"steam\"" ;
+                      rdfs:label "service type" .
+
+
+###  http://www.toronto.ca/twonto#hasDeaerator
+:hasDeaerator rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :hasPresentPropertyValue ;
+              rdfs:range xsd:boolean ;
+              rdfs:label "equiped with deaerator?" .
+
+
+###  http://www.toronto.ca/twonto#hasNumericValue
+:hasNumericValue rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:float .
 
 
 ###  http://www.toronto.ca/twonto#hasOperationalState
@@ -158,10 +209,6 @@ owl:topObjectProperty rdfs:domain :asset ;
                             rdfs:label "sealed or shielded bearing?"@en .
 
 
-###  http://www.toronto.ca/twonto#hasValue
-:hasValue rdf:type owl:DatatypeProperty .
-
-
 ###  http://www.toronto.ca/twonto#isActuatedValve
 :isActuatedValve rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :hasPresentPropertyValue ;
@@ -174,6 +221,12 @@ owl:topObjectProperty rdfs:domain :asset ;
                    rdfs:subPropertyOf :hasPresentPropertyValue ;
                    rdfs:range xsd:boolean ;
                    rdfs:label "controlled valve?" .
+
+
+###  http://www.toronto.ca/twonto#isInstalledUnderground
+:isInstalledUnderground rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf :hasPresentPropertyValue ;
+                        rdfs:label "underground?" .
 
 
 ###  http://www.toronto.ca/twonto#usesBearingLubricantType
@@ -234,6 +287,43 @@ owl:topObjectProperty rdfs:domain :asset ;
 :MTD rdf:type owl:Class ;
      rdfs:subClassOf :discreteAsset ;
      rdfs:label "manufacturered treatment device" .
+
+
+###  http://www.toronto.ca/twonto#OReg220PressureVessel
+:OReg220PressureVessel rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :vesselOrTank
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasMaxAllowableWorkingPressure ;
+                                                                    owl:someValuesFrom [ owl:intersectionOf ( :pressure
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty :hasUnitOfMeasure ;
+                                                                                                                owl:hasValue :psi
+                                                                                                              ]
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty :hasNumericValue ;
+                                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                     owl:onDatatype xsd:float ;
+                                                                                                                                     owl:withRestrictions ( [ xsd:minExclusive "15.0"^^xsd:float
+                                                                                                                                                            ]
+                                                                                                                                                          )
+                                                                                                                                   ]
+                                                                                                              ]
+                                                                                                            ) ;
+                                                                                         rdf:type owl:Class
+                                                                                       ]
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :isDesignedToHold ;
+                                                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                        owl:unionOf ( :gaseousMaterial
+                                                                                                      :liquid
+                                                                                                      :vapour
+                                                                                                    )
+                                                                                      ]
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] .
 
 
 ###  http://www.toronto.ca/twonto#PA_systemSpeaker
@@ -733,9 +823,16 @@ owl:topObjectProperty rdfs:domain :asset ;
                       rdfs:subClassOf :discreteAsset .
 
 
+###  http://www.toronto.ca/twonto#diesel
+:diesel rdf:type owl:Class ;
+        rdfs:subClassOf :fuelOil ,
+                        :liquid .
+
+
 ###  http://www.toronto.ca/twonto#digesterGas
 :digesterGas rdf:type owl:Class ;
-             rdfs:subClassOf :processMedium ;
+             rdfs:subClassOf :fuel ,
+                             :gaseousMaterial ;
              rdfs:comment "TH Dec/2023: intended to quantify instances of Functional Capability or Quality entity" ;
              rdfs:label "digester gas"@en .
 
@@ -917,12 +1014,6 @@ owl:topObjectProperty rdfs:domain :asset ;
            rdfs:label "Enclosure" .
 
 
-###  http://www.toronto.ca/twonto#energyMedium
-:energyMedium rdf:type owl:Class ;
-              rdfs:subClassOf :processMedium ;
-              rdfs:label "energy medium"@en .
-
-
 ###  http://www.toronto.ca/twonto#energyRecoveryVentilator
 :energyRecoveryVentilator rdf:type owl:Class ;
                           rdfs:subClassOf :discreteAsset .
@@ -1077,6 +1168,17 @@ owl:topObjectProperty rdfs:domain :asset ;
           rdfs:subClassOf :mobileLift .
 
 
+###  http://www.toronto.ca/twonto#fuel
+:fuel rdf:type owl:Class ;
+      rdfs:subClassOf :material .
+
+
+###  http://www.toronto.ca/twonto#fuelOil
+:fuelOil rdf:type owl:Class ;
+         rdfs:subClassOf :fuel ,
+                         :liquid .
+
+
 ###  http://www.toronto.ca/twonto#fuelStorageTank
 :fuelStorageTank rdf:type owl:Class ;
                  rdfs:subClassOf :discreteAsset .
@@ -1118,6 +1220,17 @@ owl:topObjectProperty rdfs:domain :asset ;
                     rdfs:subClassOf :discreteAsset .
 
 
+###  http://www.toronto.ca/twonto#gaseousMaterial
+:gaseousMaterial rdf:type owl:Class ;
+                 rdfs:subClassOf :material .
+
+
+###  http://www.toronto.ca/twonto#gasoline
+:gasoline rdf:type owl:Class ;
+          rdfs:subClassOf :fuel ,
+                          :liquid .
+
+
 ###  http://www.toronto.ca/twonto#gate
 :gate rdf:type owl:Class ;
       rdfs:subClassOf :discreteAsset .
@@ -1155,6 +1268,11 @@ owl:topObjectProperty rdfs:domain :asset ;
 ###  http://www.toronto.ca/twonto#golfCart
 :golfCart rdf:type owl:Class ;
           rdfs:subClassOf :discreteAsset .
+
+
+###  http://www.toronto.ca/twonto#granule
+:granule rdf:type owl:Class ;
+         rdfs:subClassOf :material .
 
 
 ###  http://www.toronto.ca/twonto#greenInfrastructureAsset
@@ -1300,6 +1418,11 @@ owl:topObjectProperty rdfs:domain :asset ;
               rdfs:subClassOf :discreteAsset .
 
 
+###  http://www.toronto.ca/twonto#kerosene
+:kerosene rdf:type owl:Class ;
+          rdfs:subClassOf :fuelOil .
+
+
 ###  http://www.toronto.ca/twonto#length
 :length rdf:type owl:Class ;
         rdfs:subClassOf :dimension ;
@@ -1356,6 +1479,11 @@ owl:topObjectProperty rdfs:domain :asset ;
                                 rdfs:label "Linear Function Asset (Path of Flow)" .
 
 
+###  http://www.toronto.ca/twonto#liquid
+:liquid rdf:type owl:Class ;
+        rdfs:subClassOf :material .
+
+
 ###  http://www.toronto.ca/twonto#loadBreakSwitch
 :loadBreakSwitch rdf:type owl:Class ;
                  rdfs:subClassOf :disconnectSwitch .
@@ -1388,6 +1516,11 @@ owl:topObjectProperty rdfs:domain :asset ;
       rdfs:label "mass"@en .
 
 
+###  http://www.toronto.ca/twonto#material
+:material rdf:type owl:Class ;
+          rdfs:label "process medium"@en .
+
+
 ###  http://www.toronto.ca/twonto#materialAdditionOrDosing
 :materialAdditionOrDosing rdf:type owl:Class ;
                           rdfs:subClassOf :waterOrWastewaterTreatment ;
@@ -1415,6 +1548,11 @@ owl:topObjectProperty rdfs:domain :asset ;
 :measureOfMass rdf:type owl:Class ;
                rdfs:subClassOf <http://www.twonto.ca/compliance#unitOfMeasure> ;
                rdfs:label "measure of mass"@en .
+
+
+###  http://www.toronto.ca/twonto#measureOfPressure
+:measureOfPressure rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.twonto.ca/compliance#unitOfMeasure> .
 
 
 ###  http://www.toronto.ca/twonto#measurement
@@ -1493,6 +1631,12 @@ owl:topObjectProperty rdfs:domain :asset ;
                                               "PRS" ,
                                               "ZMC" ;
                                     rdfs:label "Named Biological or Chemical Treatment" .
+
+
+###  http://www.toronto.ca/twonto#naturalGas
+:naturalGas rdf:type owl:Class ;
+            rdfs:subClassOf :fuel ,
+                            :gaseousMaterial .
 
 
 ###  http://www.toronto.ca/twonto#nemaFrameType
@@ -1728,6 +1872,11 @@ owl:topObjectProperty rdfs:domain :asset ;
        rdfs:subClassOf :discreteAsset .
 
 
+###  http://www.toronto.ca/twonto#pressure
+:pressure rdf:type owl:Class ;
+          rdfs:subClassOf :measurement .
+
+
 ###  http://www.toronto.ca/twonto#pressureInstrumentation
 :pressureInstrumentation rdf:type owl:Class ;
                          rdfs:subClassOf :discreteAsset .
@@ -1743,20 +1892,9 @@ owl:topObjectProperty rdfs:domain :asset ;
                      rdfs:subClassOf :discreteAsset .
 
 
-###  http://www.toronto.ca/twonto#primarySludge
-:primarySludge rdf:type owl:Class ;
-               rdfs:subClassOf :processMedium ;
-               rdfs:label "primary sludge"@en .
-
-
 ###  http://www.toronto.ca/twonto#processControlPanel
 :processControlPanel rdf:type owl:Class ;
                      rdfs:subClassOf :discreteAsset .
-
-
-###  http://www.toronto.ca/twonto#processMedium
-:processMedium rdf:type owl:Class ;
-               rdfs:label "process medium"@en .
 
 
 ###  http://www.toronto.ca/twonto#processing
@@ -1775,6 +1913,12 @@ owl:topObjectProperty rdfs:domain :asset ;
 ###  http://www.toronto.ca/twonto#progammableLogicController
 :progammableLogicController rdf:type owl:Class ;
                             rdfs:subClassOf :controller .
+
+
+###  http://www.toronto.ca/twonto#propane
+:propane rdf:type owl:Class ;
+         rdfs:subClassOf :fuel ,
+                         :gaseousMaterial .
 
 
 ###  http://www.toronto.ca/twonto#property
@@ -2039,6 +2183,11 @@ You may notice that some properties do not need to be temporalized (I.e., they s
                rdfs:label "sitting within"@en .
 
 
+###  http://www.toronto.ca/twonto#sludge
+:sludge rdf:type owl:Class ;
+        rdfs:subClassOf :material .
+
+
 ###  http://www.toronto.ca/twonto#sludgeIncineratorAssembly
 :sludgeIncineratorAssembly rdf:type owl:Class ;
                            rdfs:subClassOf :discreteAsset .
@@ -2047,6 +2196,11 @@ You may notice that some properties do not need to be temporalized (I.e., they s
 ###  http://www.toronto.ca/twonto#soilCell
 :soilCell rdf:type owl:Class ;
           rdfs:subClassOf :discreteAsset .
+
+
+###  http://www.toronto.ca/twonto#solid
+:solid rdf:type owl:Class ;
+       rdfs:subClassOf :material .
 
 
 ###  http://www.toronto.ca/twonto#solidsSeparation
@@ -2104,11 +2258,6 @@ You may notice that some properties do not need to be temporalized (I.e., they s
                             rdfs:label "Storage and Surge Suppression" .
 
 
-###  http://www.toronto.ca/twonto#storageTank
-:storageTank rdf:type owl:Class ;
-             rdfs:subClassOf :discreteAsset .
-
-
 ###  http://www.toronto.ca/twonto#stormServiceConnection
 :stormServiceConnection rdf:type owl:Class ;
                         rdfs:subClassOf :localizedSystem .
@@ -2116,7 +2265,7 @@ You may notice that some properties do not need to be temporalized (I.e., they s
 
 ###  http://www.toronto.ca/twonto#stormwaterOrCSO_storageTank
 :stormwaterOrCSO_storageTank rdf:type owl:Class ;
-                             rdfs:subClassOf :discreteAsset ;
+                             rdfs:subClassOf :vesselOrTank ;
                              rdfs:label "stormwater or CSO storage tank"@en .
 
 
@@ -2321,6 +2470,11 @@ You may notice that some properties do not need to be temporalized (I.e., they s
            rdfs:label "valve role"@en .
 
 
+###  http://www.toronto.ca/twonto#vapour
+:vapour rdf:type owl:Class ;
+        rdfs:subClassOf :material .
+
+
 ###  http://www.toronto.ca/twonto#variableAirVolumeUnit
 :variableAirVolumeUnit rdf:type owl:Class ;
                        rdfs:subClassOf :discreteAsset .
@@ -2329,6 +2483,12 @@ You may notice that some properties do not need to be temporalized (I.e., they s
 ###  http://www.toronto.ca/twonto#verticalLifeline
 :verticalLifeline rdf:type owl:Class ;
                   rdfs:subClassOf :discreteAsset .
+
+
+###  http://www.toronto.ca/twonto#vesselOrTank
+:vesselOrTank rdf:type owl:Class ;
+              rdfs:subClassOf :discreteAsset ;
+              rdfs:comment "Jan'24: since vessel and tank are words often used interchangeably, they are combined here into a single term" .
 
 
 ###  http://www.toronto.ca/twonto#vibrationAnalyzer
@@ -2354,6 +2514,11 @@ You may notice that some properties do not need to be temporalized (I.e., they s
 ###  http://www.toronto.ca/twonto#wastewaterStoragePipe
 :wastewaterStoragePipe rdf:type owl:Class ;
                        rdfs:subClassOf :wetWeatherFlowStorage .
+
+
+###  http://www.toronto.ca/twonto#water
+:water rdf:type owl:Class ;
+       rdfs:subClassOf :liquid .
 
 
 ###  http://www.toronto.ca/twonto#waterMain
@@ -2455,6 +2620,15 @@ You may notice that some properties do not need to be temporalized (I.e., they s
 
 
 #################################################################
+#    Individuals
+#################################################################
+
+###  http://www.toronto.ca/twonto#psi
+:psi rdf:type owl:NamedIndividual ,
+              :measureOfPressure .
+
+
+#################################################################
 #    General axioms
 #################################################################
 
@@ -2462,8 +2636,8 @@ You may notice that some properties do not need to be temporalized (I.e., they s
   owl:members ( :asset
                 :assetRole
                 :informationEntity
+                :material
                 :organization
-                :processMedium
                 :property
               )
 ] .
