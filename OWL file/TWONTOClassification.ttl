@@ -368,6 +368,10 @@ owl:topObjectProperty rdfs:domain :asset ;
                      rdfs:subClassOf :discreteAsset .
 
 
+###  http://www.toronto.ca/twonto#agent
+:agent rdf:type owl:Class .
+
+
 ###  http://www.toronto.ca/twonto#airConditioning
 :airConditioning rdf:type owl:Class ;
                  rdfs:subClassOf :HVAC_systemAsset ;
@@ -1352,8 +1356,7 @@ owl:topObjectProperty rdfs:domain :asset ;
 
 ###  http://www.toronto.ca/twonto#genericCrossDomainAsset
 :genericCrossDomainAsset rdf:type owl:Class ;
-                         rdfs:subClassOf :TorontoWaterAsset ,
-                                         :mechanicalEnergyAndMotion ;
+                         rdfs:subClassOf :TorontoWaterAsset ;
                          rdfs:label "Generic Cross-Domain Asset" .
 
 
@@ -1689,8 +1692,6 @@ owl:topObjectProperty rdfs:domain :asset ;
 ###  http://www.toronto.ca/twonto#mechanicalEnergyAndMotion
 :mechanicalEnergyAndMotion rdf:type owl:Class ;
                            rdfs:subClassOf :genericCrossDomainAsset ;
-                           :PCS_code "M" ;
-                           :avantisClass "Motor" ;
                            rdfs:label "Mechanical Energy and Motion" .
 
 
@@ -1880,6 +1881,11 @@ owl:topObjectProperty rdfs:domain :asset ;
 ###  http://www.toronto.ca/twonto#pelletizerAssembly
 :pelletizerAssembly rdf:type owl:Class ;
                     rdfs:subClassOf :discreteAsset .
+
+
+###  http://www.toronto.ca/twonto#person
+:person rdf:type owl:Class ;
+        rdfs:subClassOf :agent .
 
 
 ###  http://www.toronto.ca/twonto#personalGasMeter
