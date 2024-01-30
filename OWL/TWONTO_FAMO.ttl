@@ -1110,6 +1110,10 @@ owl:topObjectProperty rdfs:domain :asset ;
                                             :enclosure .
 
 
+###  http://www.toronto.ca/twonto#event
+:event rdf:type owl:Class .
+
+
 ###  http://www.toronto.ca/twonto#expansionJoint
 :expansionJoint rdf:type owl:Class ;
                 rdfs:subClassOf :discreteAsset ,
