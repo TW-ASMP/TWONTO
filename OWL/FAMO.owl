@@ -1,0 +1,697 @@
+@base <http://www.toronto.ca/FAMO#> .
+@prefix : <http://www.toronto.ca/FAMO#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.toronto.ca/FAMO#PCS_code
+# 
+# http://www.toronto.ca/FAMO#UNSPSC_code
+# 
+# http://www.toronto.ca/FAMO#avantisClass
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.toronto.ca/FAMO#contains
+# 
+# http://www.toronto.ca/FAMO#created
+# 
+# http://www.toronto.ca/FAMO#hasAStateOf
+# 
+# http://www.toronto.ca/FAMO#hasInformation
+# 
+# http://www.toronto.ca/FAMO#hasPart
+# 
+# http://www.toronto.ca/FAMO#hasPerformanceMeasurement
+# 
+# http://www.toronto.ca/FAMO#hasPresentProperty
+# 
+# http://www.toronto.ca/FAMO#hasPropertyState
+# 
+# http://www.toronto.ca/FAMO#hasSpecifedRelation
+# 
+# http://www.toronto.ca/FAMO#hasSpecifiedPerformance
+# 
+# http://www.toronto.ca/FAMO#hasSpecifiedProperty
+# 
+# http://www.toronto.ca/FAMO#hasUnitOfMeasure
+# 
+# http://www.toronto.ca/FAMO#isCreatedBy
+# 
+# http://www.toronto.ca/FAMO#isInAStateOf
+# 
+# http://www.toronto.ca/FAMO#isOccupiedBy
+# 
+# http://www.toronto.ca/FAMO#isPartOf
+# 
+# http://www.toronto.ca/FAMO#isRelatedTo
+# 
+# http://www.toronto.ca/FAMO#occupies
+# 
+# http://www.toronto.ca/FAMO#possessesFunction
+# 
+# http://www.toronto.ca/FAMO#sitsWithin
+# 
+# http://www.toronto.ca/FAMO#theIndividual
+# 
+# http://www.w3.org/2002/07/owl#topObjectProperty
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.toronto.ca/FAMO#hasAssetStatus
+# 
+# http://www.toronto.ca/FAMO#hasMeasurementValue
+# 
+# http://www.toronto.ca/FAMO#hasOperationalState
+# 
+# http://www.toronto.ca/FAMO#hasPresentValue
+# 
+# http://www.toronto.ca/FAMO#hasValue
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.toronto.ca/FAMO#ALWS
+# 
+# http://www.toronto.ca/FAMO#area
+# 
+# http://www.toronto.ca/FAMO#assembly
+# 
+# http://www.toronto.ca/FAMO#asset
+# 
+# http://www.toronto.ca/FAMO#assetManufacturer
+# 
+# http://www.toronto.ca/FAMO#assetOwner
+# 
+# http://www.toronto.ca/FAMO#assetRole
+# 
+# http://www.toronto.ca/FAMO#assetStatus
+# 
+# http://www.toronto.ca/FAMO#bulkStorage
+# 
+# http://www.toronto.ca/FAMO#component
+# 
+# http://www.toronto.ca/FAMO#containing
+# 
+# http://www.toronto.ca/FAMO#containment
+# 
+# http://www.toronto.ca/FAMO#currentOutput
+# 
+# http://www.toronto.ca/FAMO#definedAssetCollection
+# 
+# http://www.toronto.ca/FAMO#dimension
+# 
+# http://www.toronto.ca/FAMO#discreteAsset
+# 
+# http://www.toronto.ca/FAMO#distributedSystem
+# 
+# http://www.toronto.ca/FAMO#distributionNetwork
+# 
+# http://www.toronto.ca/FAMO#environmentalHazard
+# 
+# http://www.toronto.ca/FAMO#event
+# 
+# http://www.toronto.ca/FAMO#function
+# 
+# http://www.toronto.ca/FAMO#gaseousMaterial
+# 
+# http://www.toronto.ca/FAMO#granule
+# 
+# http://www.toronto.ca/FAMO#havingAPart
+# 
+# http://www.toronto.ca/FAMO#havingAPartOf
+# 
+# http://www.toronto.ca/FAMO#hazard
+# 
+# http://www.toronto.ca/FAMO#healthAndSafetyHazard
+# 
+# http://www.toronto.ca/FAMO#informationContentEntity
+# 
+# http://www.toronto.ca/FAMO#length
+# 
+# http://www.toronto.ca/FAMO#liftingCapacity
+# 
+# http://www.toronto.ca/FAMO#liquid
+# 
+# http://www.toronto.ca/FAMO#localizedSystem
+# 
+# http://www.toronto.ca/FAMO#mass
+# 
+# http://www.toronto.ca/FAMO#material
+# 
+# http://www.toronto.ca/FAMO#materialOutput
+# 
+# http://www.toronto.ca/FAMO#measureOfCurrentFlow
+# 
+# http://www.toronto.ca/FAMO#measureOfMass
+# 
+# http://www.toronto.ca/FAMO#measureOfPressure
+# 
+# http://www.toronto.ca/FAMO#measurement
+# 
+# http://www.toronto.ca/FAMO#mechanicalDrive
+# 
+# http://www.toronto.ca/FAMO#occupying
+# 
+# http://www.toronto.ca/FAMO#opperationState
+# 
+# http://www.toronto.ca/FAMO#organization
+# 
+# http://www.toronto.ca/FAMO#outputVoltage
+# 
+# http://www.toronto.ca/FAMO#powerOutput
+# 
+# http://www.toronto.ca/FAMO#pressure
+# 
+# http://www.toronto.ca/FAMO#processing
+# 
+# http://www.toronto.ca/FAMO#property
+# 
+# http://www.toronto.ca/FAMO#qualification
+# 
+# http://www.toronto.ca/FAMO#quality
+# 
+# http://www.toronto.ca/FAMO#relationalState
+# 
+# http://www.toronto.ca/FAMO#requirement
+# 
+# http://www.toronto.ca/FAMO#rotationalSpeed
+# 
+# http://www.toronto.ca/FAMO#sittingWithin
+# 
+# http://www.toronto.ca/FAMO#sludge
+# 
+# http://www.toronto.ca/FAMO#solid
+# 
+# http://www.toronto.ca/FAMO#specification
+# 
+# http://www.toronto.ca/FAMO#speed
+# 
+# http://www.toronto.ca/FAMO#speedOfTravel
+# 
+# http://www.toronto.ca/FAMO#state
+# 
+# http://www.toronto.ca/FAMO#storage
+# 
+# http://www.toronto.ca/FAMO#supply
+# 
+# http://www.toronto.ca/FAMO#surgeSuppression
+# 
+# http://www.toronto.ca/FAMO#system
+# 
+# http://www.toronto.ca/FAMO#systemTrain
+# 
+# http://www.toronto.ca/FAMO#unitOfMeasure
+# 
+# http://www.toronto.ca/FAMO#vapour
+# 
+# http://www.toronto.ca/FAMO#water
+# 
+# http://www.toronto.ca/FAMO#workOrderSpecification
+# 
+# http://www.toronto.ca/FAMO#workSpecification
+# 
+# http://www.toronto.ca/TWONTO#diesel
+# 
+# http://www.toronto.ca/TWONTO#digesterGas
+# 
+# http://www.toronto.ca/TWONTO#fuelOil
+# 
+# http://www.toronto.ca/TWONTO#gasoline
+# 
+# http://www.toronto.ca/TWONTO#naturalGas
+# 
+# http://www.toronto.ca/TWONTO#propane
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.toronto.ca/FAMO#psi
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+# 
+# Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+
+<FAMO> a owl:Ontology;
+  owl:versionIRI <FAMO/0.1> .
+
+:PCS_code a owl:AnnotationProperty .
+
+:UNSPSC_code a owl:AnnotationProperty .
+
+:avantisClass a owl:AnnotationProperty .
+
+:contains a owl:ObjectProperty;
+  rdfs:subPropertyOf :isRelatedTo .
+
+:created a owl:ObjectProperty;
+  rdfs:subPropertyOf :isRelatedTo .
+
+:hasAStateOf a owl:ObjectProperty;
+  rdfs:subPropertyOf :hasPropertyState;
+  rdfs:comment """Specialized for states related to the physical quality of the entity
+Usage Examples:
+AssetX hasAStateOf assetMass
+AssetX hasAStateOf assetHealth""" .
+
+:hasInformation a owl:ObjectProperty;
+  rdfs:subPropertyOf :hasPresentProperty .
+
+:hasPart a owl:ObjectProperty, owl:TransitiveProperty;
+  rdfs:subPropertyOf :isRelatedTo .
+
+:hasPerformanceMeasurement a owl:ObjectProperty;
+  rdfs:subPropertyOf :hasInformation .
+
+:hasPresentProperty a owl:ObjectProperty;
+  rdfs:comment """TH Dec/2023: 
+The following properties are represented without reification.
+1. The binary relations represented by classes \"Relation>Binary Relation To\" 
+2. Unary relations pointing to a (complex) state, represented by a string or boolean value (This is represented as a DataProperty)""" .
+
+:hasPropertyState a owl:ObjectProperty;
+  rdfs:comment "Jan'24 TH: Existence is useful for querying all relational and quality states" .
+
+:hasSpecifedRelation a owl:ObjectProperty;
+  rdfs:subPropertyOf :hasInformation .
+
+:hasSpecifiedPerformance a owl:ObjectProperty;
+  rdfs:subPropertyOf :hasInformation .
+
+:hasSpecifiedProperty a owl:ObjectProperty;
+  rdfs:subPropertyOf :hasInformation .
+
+:hasUnitOfMeasure a owl:ObjectProperty;
+  rdfs:subPropertyOf :hasInformation .
+
+:isCreatedBy a owl:ObjectProperty;
+  rdfs:subPropertyOf :isRelatedTo .
+
+:isInAStateOf a owl:ObjectProperty;
+  rdfs:subPropertyOf :hasPropertyState;
+  rdfs:comment """Specialized for states associated with one or more relations to other entities in the world.
+Usage Examples:
+as a part of binary relation: 
+- AssetX isInAStateOf SittingInside theIndividual RoomY
+- AssetX isInAStateOf possessing theIndividual FunctionAC
+as a part of unary relation: AssetX isInAStateOf  assetOperationalState""" .
+
+:isOccupiedBy a owl:ObjectProperty;
+  rdfs:subPropertyOf :isRelatedTo .
+
+:isPartOf a owl:ObjectProperty, owl:TransitiveProperty;
+  rdfs:subPropertyOf :isRelatedTo;
+  rdfs:comment "is physical proper part of" .
+
+:isRelatedTo a owl:ObjectProperty;
+  rdfs:subPropertyOf :hasPresentProperty .
+
+:occupies a owl:ObjectProperty;
+  rdfs:subPropertyOf :isRelatedTo .
+
+:possessesFunction a owl:ObjectProperty;
+  rdfs:subPropertyOf :isRelatedTo .
+
+:sitsWithin a owl:ObjectProperty;
+  rdfs:subPropertyOf :isRelatedTo .
+
+:theIndividual a owl:ObjectProperty;
+  rdfs:comment """Usage Examples:
+AssetX isInAStateOf SittingInside theIndividual RoomY""" .
+
+owl:topObjectProperty rdfs:domain :asset;
+  rdfs:range :organization .
+
+:hasAssetStatus a owl:DatatypeProperty;
+  rdfs:subPropertyOf :hasPresentValue;
+  rdfs:label "asset status"@en .
+
+:hasMeasurementValue a owl:DatatypeProperty;
+  rdfs:range xsd:float .
+
+:hasOperationalState a owl:DatatypeProperty;
+  rdfs:subPropertyOf :hasPresentValue;
+  rdfs:label "operational state"@en .
+
+:hasPresentValue a owl:DatatypeProperty;
+  rdfs:comment "TH Dec/2023: For the subset of properties whose value could change over the lifetime of the asset (or independent continuent), you should be able to find the reified equivalence, as a subclass of Class:Property.",
+    "TH Jan'24: This is mean to be used with non-numeric values. All numerical values are reified in order to accomedate a UOM" .
+
+:hasValue a owl:DatatypeProperty .
+
+:ALWS a owl:Class;
+  rdfs:subClassOf :workSpecification;
+  rdfs:label "atomic level work specification" .
+
+:area a owl:Class;
+  rdfs:subClassOf :dimension;
+  rdfs:label "area"@en .
+
+:assembly a owl:Class;
+  rdfs:subClassOf :asset .
+
+:asset a owl:Class;
+  rdfs:label "asset" .
+
+:assetManufacturer a owl:Class;
+  rdfs:subClassOf :organization;
+  rdfs:label "asset manufacturer"@en .
+
+:assetOwner a owl:Class;
+  rdfs:subClassOf :organization .
+
+:assetRole a owl:Class;
+  rdfs:label "asset role"@en .
+
+:assetStatus a owl:Class;
+  rdfs:subClassOf :state;
+  rdfs:label "asset status"@en .
+
+:bulkStorage a owl:Class;
+  rdfs:subClassOf :storage;
+  rdfs:label "bulk storage"@en, "storage and longer term retention of a substance for later use" .
+
+:component a owl:Class;
+  rdfs:subClassOf :asset .
+
+:containing a owl:Class;
+  rdfs:subClassOf :relationalState;
+  rdfs:label "containing"@en .
+
+:containment a owl:Class;
+  rdfs:subClassOf :function;
+  rdfs:label "containment" .
+
+:currentOutput a owl:Class;
+  rdfs:subClassOf :measurement;
+  rdfs:label "current output"@en .
+
+:definedAssetCollection a owl:Class;
+  rdfs:subClassOf :asset .
+
+:dimension a owl:Class;
+  rdfs:subClassOf :quality;
+  rdfs:label "dimension"@en .
+
+:discreteAsset a owl:Class;
+  rdfs:subClassOf :asset;
+  owl:disjointWith :system;
+  rdfs:label "Discrete Asset"@en .
+
+:distributedSystem a owl:Class;
+  rdfs:subClassOf :system;
+  owl:disjointWith :localizedSystem;
+  rdfs:label "distributed system" .
+
+:distributionNetwork a owl:Class;
+  rdfs:subClassOf :distributedSystem;
+  rdfs:label "distribution network" .
+
+:environmentalHazard a owl:Class;
+  rdfs:subClassOf :hazard .
+
+:event a owl:Class .
+
+:function a owl:Class;
+  rdfs:subClassOf :property;
+  rdfs:label "function" .
+
+:gaseousMaterial a owl:Class;
+  rdfs:subClassOf :material .
+
+:granule a owl:Class;
+  rdfs:subClassOf :material .
+
+:havingAPart a owl:Class;
+  rdfs:subClassOf :relationalState;
+  rdfs:label "having a part"@en .
+
+:havingAPartOf a owl:Class;
+  rdfs:subClassOf :relationalState;
+  rdfs:label "being a part of"@en .
+
+:hazard a owl:Class .
+
+:healthAndSafetyHazard a owl:Class;
+  rdfs:subClassOf :hazard .
+
+:informationContentEntity a owl:Class;
+  rdfs:label "information entity"@en .
+
+:length a owl:Class;
+  rdfs:subClassOf :dimension;
+  rdfs:label "length"@en .
+
+:liftingCapacity a owl:Class;
+  rdfs:subClassOf :measurement;
+  rdfs:label "lifting capacity"@en .
+
+:liquid a owl:Class;
+  rdfs:subClassOf :material .
+
+:localizedSystem a owl:Class;
+  rdfs:subClassOf :system;
+  rdfs:label "localized system" .
+
+:mass a owl:Class;
+  rdfs:subClassOf :quality;
+  rdfs:label "mass"@en .
+
+:material a owl:Class;
+  rdfs:label "process medium"@en .
+
+:materialOutput a owl:Class;
+  rdfs:subClassOf :measurement;
+  rdfs:label "material output"@en .
+
+:measureOfCurrentFlow a owl:Class;
+  rdfs:subClassOf :unitOfMeasure;
+  rdfs:label "measure of current flow"@en .
+
+:measureOfMass a owl:Class;
+  rdfs:subClassOf :unitOfMeasure;
+  rdfs:label "measure of mass"@en .
+
+:measureOfPressure a owl:Class;
+  rdfs:subClassOf :unitOfMeasure .
+
+:measurement a owl:Class;
+  rdfs:subClassOf :informationContentEntity;
+  rdfs:comment "TH Dec/2023: a level of function that is realized at a certain type t";
+  rdfs:label "measurement"@en .
+
+:mechanicalDrive a owl:Class;
+  rdfs:subClassOf :function;
+  rdfs:label "mechanical drive"@en .
+
+:occupying a owl:Class;
+  rdfs:subClassOf :relationalState;
+  rdfs:label "occupying"@en .
+
+:opperationState a owl:Class;
+  rdfs:subClassOf :state;
+  rdfs:label "operational state"@en .
+
+:organization a owl:Class;
+  rdfs:label "organization" .
+
+:outputVoltage a owl:Class;
+  rdfs:subClassOf :measurement;
+  rdfs:label "output voltage"@en .
+
+:powerOutput a owl:Class;
+  rdfs:subClassOf :measurement;
+  rdfs:label "power output"@en .
+
+:pressure a owl:Class;
+  rdfs:subClassOf :measurement .
+
+:processing a owl:Class;
+  rdfs:subClassOf :function;
+  rdfs:isDefinedBy "a function that is realized when a physical or chemical property of the thing being processed is changed by the bearer of the function.";
+  rdfs:label "processing" .
+
+:property a owl:Class;
+  rdfs:comment """TH Dec/2023: roughly eqvivalent to BFO:Specifically Depdendent Continuent. The majority of the properties are reified (and temporalized) data properties under \"hasPresentPropertyValue\", to allow us to specify, among other metadata, the unit of measure and the time period in the life of the asset during which a property is valid.
+
+You may notice that some properties do not need to be temporalized (I.e., they stay the same over the lifetime of the asset) and do not require qualification by an unit of measure. For example, NEMA Frame Rating property of motors. But there is still a good case to reify them, as they may be the subjects of review and correction in a reconciliation project.""";
+  rdfs:label "property"@en .
+
+:qualification a owl:Class .
+
+:quality a owl:Class;
+  rdfs:subClassOf :property;
+  rdfs:label "quality"@en .
+
+:relationalState a owl:Class;
+  rdfs:subClassOf :property;
+  rdfs:label "relational property"@en .
+
+:requirement a owl:Class;
+  rdfs:subClassOf :informationContentEntity;
+  rdfs:comment "Jan'24: this term is to be develope further, likely as a defined term.";
+  rdfs:isDefinedBy "a specification or work of a future state of the world made by an authority that as the power to enforce the performance of the work or the realization of the state." .
+
+:rotationalSpeed a owl:Class;
+  rdfs:subClassOf :speed;
+  rdfs:label "rotational speed"@en .
+
+:sittingWithin a owl:Class;
+  rdfs:subClassOf :relationalState;
+  rdfs:label "sitting within"@en .
+
+:sludge a owl:Class;
+  rdfs:subClassOf :material .
+
+:solid a owl:Class;
+  rdfs:subClassOf :material .
+
+:specification a owl:Class;
+  rdfs:subClassOf :informationContentEntity .
+
+:speed a owl:Class;
+  rdfs:subClassOf :measurement;
+  rdfs:label "speed"@en .
+
+:speedOfTravel a owl:Class;
+  rdfs:subClassOf :speed;
+  rdfs:label "speed of travel"@en .
+
+:state a owl:Class;
+  rdfs:subClassOf :property;
+  rdfs:comment "Jan'24 TH: This class is create because we considered the status of a particular asset to be an instance of this class",
+    "TH Dec/2023: a property that denote a composite of values in multiple qualities, functional capabiliy, and other possible property that inhere in the asset itself (not listed in this ontology).";
+  rdfs:label ""@en .
+
+:storage a owl:Class;
+  rdfs:subClassOf :function;
+  rdfs:comment "store function implies the existance of containment function.";
+  rdfs:isDefinedBy "a function that is realized when the input flow in to the bearer of the function is greater than the output flow and the difference between the input and the output is held within the bearer.";
+  rdfs:label "storage" .
+
+:supply a owl:Class;
+  rdfs:subClassOf :function;
+  rdfs:comment "a function that is realized when the input flow of a substance or energy in to the bearer of the function is greater than the output flow.";
+  rdfs:label "supply" .
+
+:surgeSuppression a owl:Class;
+  rdfs:subClassOf :storage;
+  rdfs:isDefinedBy "a momentary storage function realized to achieve relative stability in one or more qualities of the output (i.e. flow or pressure) dispite a large and sudden increase of input.";
+  rdfs:label "surge suppression" .
+
+:system a owl:Class;
+  rdfs:subClassOf :asset;
+  rdfs:isDefinedBy "A collection of interrelated assets collectively capable of some system level function.";
+  rdfs:label "System"@en .
+
+:systemTrain a owl:Class;
+  rdfs:subClassOf :asset .
+
+:unitOfMeasure a owl:Class;
+  rdfs:subClassOf :informationContentEntity;
+  rdfs:label "unit of measure"@en .
+
+:vapour a owl:Class;
+  rdfs:subClassOf :material .
+
+:water a owl:Class;
+  rdfs:subClassOf :liquid .
+
+:workOrderSpecification a owl:Class;
+  rdfs:subClassOf :workSpecification .
+
+:workSpecification a owl:Class;
+  rdfs:subClassOf :specification .
+
+<TWONTO#diesel> a owl:Class;
+  rdfs:subClassOf :liquid .
+
+<TWONTO#digesterGas> a owl:Class;
+  rdfs:subClassOf :gaseousMaterial;
+  rdfs:comment "TH Dec/2023: intended to quantify instances of Functional Capability or Quality entity";
+  rdfs:label "digester gas"@en .
+
+<TWONTO#fuelOil> a owl:Class;
+  rdfs:subClassOf :liquid .
+
+<TWONTO#gasoline> a owl:Class;
+  rdfs:subClassOf :liquid .
+
+<TWONTO#naturalGas> a owl:Class;
+  rdfs:subClassOf :gaseousMaterial .
+
+<TWONTO#propane> a owl:Class;
+  rdfs:subClassOf :gaseousMaterial .
+
+:psi a owl:NamedIndividual, :measureOfPressure .
+
+_:genid1 a owl:AllDisjointClasses;
+  owl:members _:genid7 .
+
+_:genid7 a rdf:List;
+  rdf:first :asset;
+  rdf:rest _:genid6 .
+
+_:genid6 a rdf:List;
+  rdf:first :assetRole;
+  rdf:rest _:genid5 .
+
+_:genid5 a rdf:List;
+  rdf:first :informationContentEntity;
+  rdf:rest _:genid4 .
+
+_:genid4 a rdf:List;
+  rdf:first :material;
+  rdf:rest _:genid3 .
+
+_:genid3 a rdf:List;
+  rdf:first :organization;
+  rdf:rest _:genid2 .
+
+_:genid2 a rdf:List;
+  rdf:first :property;
+  rdf:rest rdf:nil .
