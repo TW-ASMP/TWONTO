@@ -450,8 +450,6 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#HVAC_buildingOrGroundsServiceAsset
 :HVAC_buildingOrGroundsServiceAsset rdf:type owl:Class ;
                                     rdfs:subClassOf :TorontoWaterAsset ;
-                                    :PCS_code "GQ" ,
-                                              "PRTY" ;
                                     rdfs:label "HVAC, Building, or Grounds Service Asset" .
 
 
@@ -471,7 +469,39 @@ I created this property to point to a piece of text describing the intent of the
 
 ###  http://www.toronto.ca/TWONTO#OReg220PressureVessel
 :OReg220PressureVessel rdf:type owl:Class ;
-                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+                       owl:equivalentClass [ owl:intersectionOf ( :vesselOrTank
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasMaxAllowableWorkingPressure ;
+                                                                    owl:someValuesFrom [ owl:intersectionOf ( <http://www.toronto.ca/FAMO#pressureMeasurement>
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty <http://www.toronto.ca/FAMO#hasUnitOfMeasure> ;
+                                                                                                                owl:hasValue <http://www.toronto.ca/FAMO#psi>
+                                                                                                              ]
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty <http://www.toronto.ca/FAMO#hasMeasurementValue> ;
+                                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                     owl:onDatatype xsd:float ;
+                                                                                                                                     owl:withRestrictions ( [ xsd:minExclusive "15.0"^^xsd:float
+                                                                                                                                                            ]
+                                                                                                                                                          )
+                                                                                                                                   ]
+                                                                                                              ]
+                                                                                                            ) ;
+                                                                                         rdf:type owl:Class
+                                                                                       ]
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :isDesignedToHold ;
+                                                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                        owl:unionOf ( <http://www.toronto.ca/FAMO#gaseousMaterial>
+                                                                                                      <http://www.toronto.ca/FAMO#liquid>
+                                                                                                      <http://www.toronto.ca/FAMO#vapour>
+                                                                                                    )
+                                                                                      ]
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] .
 
 
 ###  http://www.toronto.ca/TWONTO#PA_systemSpeaker
@@ -678,19 +708,27 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#bridge
 :bridge rdf:type owl:Class ;
         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
-                        :buildingArchitecturalOrStructure .
+                        :buildingArchitecturalOrStructural .
 
 
 ###  http://www.toronto.ca/TWONTO#building
 :building rdf:type owl:Class ;
           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
-                          :buildingArchitecturalOrStructure .
+                          :buildingArchitecturalOrStructural ;
+          rdfs:comment "This definition allows for portable buildings to be classified as building" ;
+          rdfs:isDefinedBy "A structure with a roof and some walls that partition its interior space from the outdoor space and stands in one place when it is used." .
 
 
-###  http://www.toronto.ca/TWONTO#buildingArchitecturalOrStructure
-:buildingArchitecturalOrStructure rdf:type owl:Class ;
-                                  rdfs:subClassOf :TorontoWaterAsset ;
-                                  rdfs:label "Building, Architecture, or Structure" .
+###  http://www.toronto.ca/TWONTO#buildingArchitecturalOrStructural
+:buildingArchitecturalOrStructural rdf:type owl:Class ;
+                                   rdfs:subClassOf :TorontoWaterAsset ;
+                                   rdfs:comment """Examples of structural asset include large processing tanks, roads, stacks, tunnels, and bridges.
+Note that under this definition, a diesel generator bolted to a foundation is not a built structure, while a wind turbine generator is. This is because the ability to withstand a load was not a primary consideration in the generator's design.""" ;
+                                   rdfs:isDefinedBy """Partial Definition: Structure - an asset that
+* is permanently affixed to the earth (or to another structure affixed to the earth)
+* is designed to withstand a static load and environmental stress
+and its ability to withstand load and stress was a primary consideration in its design process""" ;
+                                   rdfs:label "Building, Architectural, or Structural Asset" .
 
 
 ###  http://www.toronto.ca/TWONTO#buildingAutomationSystemController
@@ -872,7 +910,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#contentSummary
 :contentSummary rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.toronto.ca/FAMO#informationContentEntity> ;
-                rdfs:label "conent summary"@en .
+                rdfs:label "content summary"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#controlledAccessBarrier
@@ -915,6 +953,12 @@ I created this property to point to a piece of text describing the intent of the
                  rdfs:label "corporate policy"@en .
 
 
+###  http://www.toronto.ca/TWONTO#correctiveWork
+:correctiveWork rdf:type owl:Class ;
+                rdfs:subClassOf :workOrderLevelWork ;
+                rdfs:label "corrective work" .
+
+
 ###  http://www.toronto.ca/TWONTO#counter
 :counter rdf:type owl:Class ;
          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
@@ -929,7 +973,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#culvert
 :culvert rdf:type owl:Class ;
          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
-                         :buildingArchitecturalOrStructure ,
+                         :buildingArchitecturalOrStructural ,
                          :distributionAndCollectionNetoworkAsset .
 
 
@@ -1128,6 +1172,12 @@ I created this property to point to a piece of text describing the intent of the
                                           :safetyOrEnvironmentalHarmPreventionAsset .
 
 
+###  http://www.toronto.ca/TWONTO#emergencyWork
+:emergencyWork rdf:type owl:Class ;
+               rdfs:subClassOf :workOrderLevelWork ;
+               rdfs:label "emergency work" .
+
+
 ###  http://www.toronto.ca/TWONTO#enclosure
 :enclosure rdf:type owl:Class ;
            rdfs:subClassOf :genericCrossDomainAsset ;
@@ -1168,6 +1218,16 @@ I created this property to point to a piece of text describing the intent of the
 :explosionPreventionEquipment rdf:type owl:Class ;
                               rdfs:subClassOf :safetyOrEnvironmentalHarmPreventionAsset ;
                               rdfs:label "Explosion Prevention Equipment" .
+
+
+###  http://www.toronto.ca/TWONTO#facility
+:facility rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.toronto.ca/FAMO#hierarchicalSystem> .
+
+
+###  http://www.toronto.ca/TWONTO#facilityProcess
+:facilityProcess rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#hierarchicalSystem> .
 
 
 ###  http://www.toronto.ca/TWONTO#fallArrestDavitArm
@@ -1214,7 +1274,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#fenceSection
 :fenceSection rdf:type owl:Class ;
               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
-                              :buildingArchitecturalOrStructure .
+                              :buildingArchitecturalOrStructural .
 
 
 ###  http://www.toronto.ca/TWONTO#figureContent
@@ -1389,7 +1449,6 @@ I created this property to point to a piece of text describing the intent of the
 :generalNetworkingAsset rdf:type owl:Class ;
                         rdfs:subClassOf :TorontoWaterAsset ,
                                         :grinderOrComminutor ;
-                        :avantisClass "Network" ;
                         rdfs:label "General Networking Asset" .
 
 
@@ -1420,7 +1479,6 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#greenInfrastructureAsset
 :greenInfrastructureAsset rdf:type owl:Class ;
                           rdfs:subClassOf :TorontoWaterAsset ;
-                          :avantisClass "Scrubber" ;
                           rdfs:label "Green Infrastructure Asset" .
 
 
@@ -1555,8 +1613,14 @@ I created this property to point to a piece of text describing the intent of the
 
 ###  http://www.toronto.ca/TWONTO#interpretation
 :interpretation rdf:type owl:Class ;
-                rdfs:subClassOf :process ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#atomicLevelWork> ;
                 rdfs:comment "Jan2024 TH: consider moving to FAMO" .
+
+
+###  http://www.toronto.ca/TWONTO#investigativeWork
+:investigativeWork rdf:type owl:Class ;
+                   rdfs:subClassOf :workOrderLevelWork ;
+                   rdfs:label "investigative work" .
 
 
 ###  http://www.toronto.ca/TWONTO#kerosene
@@ -1628,6 +1692,12 @@ I created this property to point to a piece of text describing the intent of the
 :loadingDock rdf:type owl:Class ;
              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
                              :partOfBuildingOrStructure .
+
+
+###  http://www.toronto.ca/TWONTO#mainPathLine
+:mainPathLine rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#line> ;
+              rdfs:isDefinedBy "A line that has one or more junction along its length, linking it to minor branches, but only has one main path that carries a bulk flow from one point to another." .
 
 
 ###  http://www.toronto.ca/TWONTO#manhole
@@ -1760,7 +1830,7 @@ I created this property to point to a piece of text describing the intent of the
 
 ###  http://www.toronto.ca/TWONTO#noteTaking
 :noteTaking rdf:type owl:Class ;
-            rdfs:subClassOf :process .
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#process> .
 
 
 ###  http://www.toronto.ca/TWONTO#oilGreaseSeparator_MTD
@@ -1816,9 +1886,10 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#partOfBuildingOrStructure
 :partOfBuildingOrStructure rdf:type owl:Class ;
                            rdfs:subClassOf :TorontoWaterAsset ;
-                           :avantisClass "Building" ,
-                                         "Roof" ,
-                                         "Structure" ;
+                           rdfs:comment "Examples include interior walls, doors, windows, roofing, eaves troughs, and the City logo sign." ;
+                           rdfs:isDefinedBy """Any part of a built structure that
+* bears physical integrity for it to bear load and stress or
+* is any part permanently connected to one of the parts above while not being a part of a facility spatial support system.""" ;
                            rdfs:label "Part of Building or Structure" .
 
 
@@ -1991,8 +2062,10 @@ I created this property to point to a piece of text describing the intent of the
                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
 
 
-###  http://www.toronto.ca/TWONTO#process
-:process rdf:type owl:Class .
+###  http://www.toronto.ca/TWONTO#preventiveWork
+:preventiveWork rdf:type owl:Class ;
+                rdfs:subClassOf :workOrderLevelWork ;
+                rdfs:label "preventive work" .
 
 
 ###  http://www.toronto.ca/TWONTO#processControlPanel
@@ -2010,6 +2083,12 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#progammableLogicController
 :progammableLogicController rdf:type owl:Class ;
                             rdfs:subClassOf :controller .
+
+
+###  http://www.toronto.ca/TWONTO#projectWork
+:projectWork rdf:type owl:Class ;
+             rdfs:subClassOf :workOrderLevelWork ;
+             rdfs:label "project work" .
 
 
 ###  http://www.toronto.ca/TWONTO#propane
@@ -2045,6 +2124,11 @@ I created this property to point to a piece of text describing the intent of the
 :pumpWetWell rdf:type owl:Class ;
              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
                              :distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#pumpingStation
+:pumpingStation rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#hierarchicalSystem> .
 
 
 ###  http://www.toronto.ca/TWONTO#quencher
@@ -2152,8 +2236,6 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#safetyOrEnvironmentalHarmPreventionAsset
 :safetyOrEnvironmentalHarmPreventionAsset rdf:type owl:Class ;
                                           rdfs:subClassOf :TorontoWaterAsset ;
-                                          :avantisClass "Fire Equipment" ,
-                                                        "Safety Equipment" ;
                                           rdfs:label "Safety or Environmental Harm Prevention Asset" .
 
 
@@ -2274,6 +2356,12 @@ I created this property to point to a piece of text describing the intent of the
                           rdfs:label "sewer system inline storage"@en .
 
 
+###  http://www.toronto.ca/TWONTO#simpleLine
+:simpleLine rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#line> ;
+            rdfs:isDefinedBy "An line that has no junction across its span." .
+
+
 ###  http://www.toronto.ca/TWONTO#singleParameterInstrumentation
 :singleParameterInstrumentation rdf:type owl:Class ;
                                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
@@ -2308,7 +2396,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#stack
 :stack rdf:type owl:Class ;
        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
-                       :buildingArchitecturalOrStructure .
+                       :buildingArchitecturalOrStructural .
 
 
 ###  http://www.toronto.ca/TWONTO#stationaryMachineTool
@@ -2335,10 +2423,10 @@ I created this property to point to a piece of text describing the intent of the
                         rdfs:subClassOf :distributionAndCollectionNetoworkAsset .
 
 
-###  http://www.toronto.ca/TWONTO#stormwaterOrCSO_storageTank
-:stormwaterOrCSO_storageTank rdf:type owl:Class ;
-                             rdfs:subClassOf :vesselOrTank ;
-                             rdfs:label "stormwater or CSO storage tank"@en .
+###  http://www.toronto.ca/TWONTO#stormwaterOr_CSO_Tank
+:stormwaterOr_CSO_Tank rdf:type owl:Class ;
+                       rdfs:subClassOf :vesselOrTank ;
+                       rdfs:label "stormwater or CSO storage tank"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#strainer
@@ -2350,7 +2438,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#structuralTankPartOfAssembly
 :structuralTankPartOfAssembly rdf:type owl:Class ;
                               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
-                                              :buildingArchitecturalOrStructure .
+                                              :buildingArchitecturalOrStructural .
 
 
 ###  http://www.toronto.ca/TWONTO#structuralWall
@@ -2460,7 +2548,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#tower
 :tower rdf:type owl:Class ;
        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
-                       :buildingArchitecturalOrStructure .
+                       :buildingArchitecturalOrStructural .
 
 
 ###  http://www.toronto.ca/TWONTO#transferSwitch
@@ -2507,7 +2595,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#tunnel
 :tunnel rdf:type owl:Class ;
         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
-                        :buildingArchitecturalOrStructure .
+                        :buildingArchitecturalOrStructural .
 
 
 ###  http://www.toronto.ca/TWONTO#turbidityAnalyzer
@@ -2654,7 +2742,7 @@ I created this property to point to a piece of text describing the intent of the
                                              owl:unionOf ( :ashLagoon
                                                            :detentionPond
                                                            :sewerSystemInlineStorage
-                                                           :stormwaterOrCSO_storageTank
+                                                           :stormwaterOr_CSO_Tank
                                                          )
                                            ] ;
                        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
@@ -2666,6 +2754,11 @@ I created this property to point to a piece of text describing the intent of the
 :wirelessAccessPoint rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
                                      :generalNetworkingAsset .
+
+
+###  http://www.toronto.ca/TWONTO#workOrderLevelWork
+:workOrderLevelWork rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#work> .
 
 
 ###  http://www.toronto.ca/TWONTO#wrench
@@ -2685,6 +2778,17 @@ I created this property to point to a piece of text describing the intent of the
 
 ###  http://www.toronto.ca/TWONTO#actuator
 :actuator rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.toronto.ca/FAMO#systemTrain> rdfs:comment """A system train has the characteristic of being set of connected assets that 
+* is a part of a system
+* exists among multiple similar sets of connected assets, functionally equivalent to itself, in the same system
+is capable of realizing a unit of the system primary functions.""" ;
+                                         rdfs:isDefinedBy "a part of a facility system consisting of a set of connected discrete assets that provides one unit, among multiple redundant units, of the primary functions of the facility system." .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
