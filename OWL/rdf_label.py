@@ -28,7 +28,7 @@ def rdf_label(input_filename, output_filename):
             label = " ".join(lit)
             k = (*i, rdflib.term.Literal(label))
             print(k)
-            if len(k) < 3:
+            if len(k) <= 3:
                 g2.add(k)
             else:
                 g2.add(i)
