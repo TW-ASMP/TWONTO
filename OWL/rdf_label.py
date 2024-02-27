@@ -30,6 +30,8 @@ def rdf_label(input_filename, output_filename):
             print(k)
             if len(k) < 3:
                 g2.add(k)
+            else:
+                g2.add(i)
         else:
             g2.add(i)
 
