@@ -1,0 +1,162 @@
+@prefix tw: <http://www.toronto.ca/twonto#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+##################################################################################
+# Notes 4Dev  
+##################################################################################
+# I will be using 
+# sh:maxCount 1 ; to say that a property is singular and optional
+# sh:minCount 1 ; sh:maxCount1 ; to say that the property is singular and required
+# sh:minCount 1 ; to say that a property is required and expect an array
+# sh:minCount 0 ; to say that a property is option and expect an array
+#
+# Please take note of other in-line 4Dev comment 
+##################################################################################
+
+
+##################################################################################
+# NodeShape Definitions
+##################################################################################
+
+# MOTOR SHAPE
+
+tw:Motor_defaultShape
+	a sh:NodeShape ;
+	sh:targetClass tw:motor ;    
+  
+    sh:property [
+		sh:name "NEMA enclosure type" ;
+		sh:maxCount 1 ; sh:minCount 1 ;
+		sh:path tw:has_NEMA_enclosureType ;
+		sh:datatype xsd:string ;
+		sh:in ( "ODP" "TEFC" "TENV" "TEAO" "TEWD" "EXPL" "HAZ" ) ;
+		
+		tw:allowAlternative true ;  
+		#4Dev: a true value means that the user can type in a value not in the sh:in line
+		
+		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    	sh:severity sh:Warning ;
+	];
+
+
+    sh:property [
+		sh:name "NEMA frame type" ;
+		sh:maxCount 1 ; sh:minCount 1 ;
+		sh:path tw:has_NEMA_frameType ;
+		sh:datatype xsd:string ;
+		sh:in ( "42" "48" "48H" "56" "56H" "56HZ" "66" "143T" "145T" "146AT" "148AT" "149AT" "1412AT" "182" "184" "182T" "184T" "182AT" "L182ACY" "186ACY" "186AT" "L186AT" "189AT" "203#" "204#" "213" "215" "213T" "215T" "219AT" "2110AT" "224#" "225#" "254#" "254U" "256U" "254T" "256T" "284#" "284U" "286U" "284T" "286T" "284TS" "286TS" "324#" "326#" "324U" "326U" "324T" "326T" "324TS" "326TS" "364#" "364S#" "365#" "364U" "365U" "364T" "365T" "364TS" "365TS" "404T" "405T" "404TS" "405TS" "404U" "405U" "444T" "445T" "447T&&" "444TS" "447TS&&" "445TS" "444U" "445U" "449T" "449TS" "#Other" ) ;
+		
+		tw:allowAlternative true ;  
+		#4Dev: a true value means that the user can type in a value not in the sh:in line
+		
+		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    	sh:severity sh:Warning ;
+	];
+
+	
+	sh:property tw:maxInputVoltageProperty_defaultShape;
+
+
+	sh:property tw:minInputVoltageProperty_defaultShape;
+
+
+	sh:or (  
+		[  
+			sh:and (
+				tw:hasSealedOrShieldedBearing_defaultShape
+				[
+					sh:path tw:hasSealedOrShieldedBearing ;
+					sh:minCount 1 ;
+					sh:hasValue true ;
+				]
+			)
+		]
+		[   
+			sh:and (
+				tw:hasSealedOrShieldedBearing_defaultShape
+				[
+					sh:path tw:hasSealedOrShieldedBearing ;
+					sh:minCount 1 ;
+					sh:hasValue false ;
+				]
+				tw:usesBearingLubricantType_defaultShape
+			)
+		] 
+	) . 
+##################################################################################
+# Re-usable PropertyShape Definitions
+##################################################################################
+
+tw:theMaxInputVoltageDesc_defaultShape				
+	sh:name "maximum input voltage" ;
+	sh:maxCount 1 ;
+	sh:path tw:isDescribedBy ;
+	sh:class tw:theMaxInputVoltageDesc ;
+	sh:node [				#_:b
+		sh:property [
+			sh:path tw:hasVoltageValue ;
+			# 4Dev:
+			# The tw:hasVoltageValue will not be used, but instead a sub-property of it will be used
+			# Please look into the sub-properties of tw:hasVoltageValue to find the different units of meausure.
+			# The UoM are embedded in as rdfs:labels
+			sh:datatype xsd:decimal ;
+		] .
+
+tw:theMinInputVoltageDesc_defaultShape					
+	sh:name "minimum input voltage" ;
+	sh:maxCount 1 ;
+	sh:path tw:isDescribedBy ;
+	sh:class tw:theMinInputVoltageDesc ;
+	sh:node [				#_:b
+		sh:property [
+			sh:path tw:hasVoltageValue ;
+			# 4Dev:
+			# The tw:hasVoltageValue will not be used, but instead a sub-property of it will be used
+			# Please look into the sub-properties of tw:hasVoltageValue to find the different units of meausure.
+			# The UoM are embedded in as rdfs:labels
+			sh:datatype xsd:decimal ;
+		] .
+
+tw:hasSealedOrShieldedBearing_defaultShape
+	sh:name "uses sealed or shielded bearing?"
+	sh:maxCount 1 ;
+	sh:path tw:hasSealedOrShieldedBearing ;
+	a sh:propertyShape ;
+	
+tw:usesBearingLubricantType_defaultShape
+	sh:name "type of bearing lubrication used"
+	sh:path tw:usesBearingLubricantType ;
+	sh:maxCount 1 ;
+	sh:datatype xsd:string ;
+	sh:in ( "oil" "grease" ) ;
+
+
+	# COMMENT: removed while experimenting with another way to represent units.  
+    # 
+	# sh:property [				
+	# 	sh:path tw:isDescribedBy ;
+	# 	sh:name "minimum input voltage" ;
+	# 	sh:class tw:MinInputVoltageDesc ;
+    #     sh:node [				#_:b
+    #         a sh:NodeShape ;
+    #         sh:property [
+	# 			sh:path tw:isExpressedAs ;
+	# 			sh:class: tw:ExpressionOfVoltageLevel ;
+	# 			sh:node [
+	# 				a sh:NodeShape ;
+	# 				sh:property [
+	# 					sh:path tw:hasNumericValue ;
+	# 					sh:datatype xsd:decimal ;
+	# 				];
+	# 				sh:property [
+	# 					sh:path tw:hasUnitOfMeasure ;
+	# 					sh:class tw:measureOfVoltage ; #find the instances in the ontology for the UoM dropdown
+	# 				];
+
+	# 			];
+	# 		];
+	# 	];
+	# ] ;
+
+
