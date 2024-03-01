@@ -109,7 +109,8 @@ tw:theMaxInputVoltageDesc_defaultShape
 			# Please look into the sub-properties of tw:hasVoltageValue to find the different units of meausure.
 			# The UoM are embedded in as rdfs:labels
 			sh:datatype xsd:decimal ;
-		] .
+		] 
+	].
 
 tw:theMinInputVoltageDesc_defaultShape					
 	sh:name "minimum input voltage" ;
