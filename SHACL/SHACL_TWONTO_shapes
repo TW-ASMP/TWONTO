@@ -59,8 +59,11 @@ tw:Motor_defaultShape
 
 
 	sh:property tw:minInputVoltageProperty_defaultShape;
+	
 
-
+	#4Dev: these nested logical conditions state:
+	#if hasSealedOrShieldedBearing value is true, then the user does not need to provide a value for usesBearingLubricantType (i.e. it is optional)
+	#but if hasSealedOrShieldedBearing value is false, then the user must also provide a value for usesBearingLubricantType
 	sh:or (  
 		[  
 			sh:and (
@@ -70,7 +73,7 @@ tw:Motor_defaultShape
 					sh:minCount 1 ;
 					sh:hasValue true ;
 				]
-			)
+			) 
 		]
 		[   
 			sh:and (
@@ -81,9 +84,14 @@ tw:Motor_defaultShape
 					sh:hasValue false ;
 				]
 				tw:usesBearingLubricantType_defaultShape
-			)
+				[
+					sh:path tw:usesBearingLubricantType ;
+					sh:minCount 1 ;
+				]
+			) 
 		] 
 	) . 
+
 ##################################################################################
 # Re-usable PropertyShape Definitions
 ##################################################################################
@@ -116,47 +124,18 @@ tw:theMinInputVoltageDesc_defaultShape
 			# Please look into the sub-properties of tw:hasVoltageValue to find the different units of meausure.
 			# The UoM are embedded in as rdfs:labels
 			sh:datatype xsd:decimal ;
-		] .
+		] ;
+	].
 
 tw:hasSealedOrShieldedBearing_defaultShape
-	sh:name "uses sealed or shielded bearing?"
+	sh:name "uses sealed or shielded bearing?" ;
 	sh:maxCount 1 ;
 	sh:path tw:hasSealedOrShieldedBearing ;
-	a sh:propertyShape ;
+	a sh:propertyShape .
 	
 tw:usesBearingLubricantType_defaultShape
-	sh:name "type of bearing lubrication used"
+	sh:name "type of bearing lubrication used" ;
 	sh:path tw:usesBearingLubricantType ;
 	sh:maxCount 1 ;
 	sh:datatype xsd:string ;
-	sh:in ( "oil" "grease" ) ;
-
-
-	# COMMENT: removed while experimenting with another way to represent units.  
-    # 
-	# sh:property [				
-	# 	sh:path tw:isDescribedBy ;
-	# 	sh:name "minimum input voltage" ;
-	# 	sh:class tw:MinInputVoltageDesc ;
-    #     sh:node [				#_:b
-    #         a sh:NodeShape ;
-    #         sh:property [
-	# 			sh:path tw:isExpressedAs ;
-	# 			sh:class: tw:ExpressionOfVoltageLevel ;
-	# 			sh:node [
-	# 				a sh:NodeShape ;
-	# 				sh:property [
-	# 					sh:path tw:hasNumericValue ;
-	# 					sh:datatype xsd:decimal ;
-	# 				];
-	# 				sh:property [
-	# 					sh:path tw:hasUnitOfMeasure ;
-	# 					sh:class tw:measureOfVoltage ; #find the instances in the ontology for the UoM dropdown
-	# 				];
-
-	# 			];
-	# 		];
-	# 	];
-	# ] ;
-
-
+	sh:in ( "oil" "grease" ) .
