@@ -6,7 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix FAMO: <http://www.toronto.ca/FAMO#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.toronto.ca/TWONTO#> .
+@base <http://www.toronto.ca/TWONTO> .
 
 <http://www.toronto.ca/TWONTO> rdf:type owl:Ontology ;
                                 owl:versionIRI <http://www.toronto.ca/TWONTO/0.1> .
@@ -15,16 +15,28 @@
 #    Annotation properties
 #################################################################
 
+###  http://www.toronto.ca/TWONTO#AvClassChild
+tw:AvClassChild rdf:type owl:AnnotationProperty .
+
+
+###  http://www.toronto.ca/TWONTO#AvClassEquivalent
+tw:AvClassEquivalent rdf:type owl:AnnotationProperty .
+
+
+###  http://www.toronto.ca/TWONTO#AvClassOverlap
+tw:AvClassOverlap rdf:type owl:AnnotationProperty .
+
+
+###  http://www.toronto.ca/TWONTO#AvClassParent
+tw:AvClassParent rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.toronto.ca/TWONTO#PCS_code
 tw:PCS_code rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.toronto.ca/TWONTO#SHACL_note
 tw:SHACL_note rdf:type owl:AnnotationProperty .
-
-
-###  http://www.toronto.ca/TWONTO#avantisClass
-tw:avantisClass rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.toronto.ca/TWONTO#notionMappingID
@@ -729,12 +741,6 @@ tw:UV_disinfectionLampUnit rdf:type owl:Class ;
                                            tw:discreteAsset .
 
 
-###  http://www.toronto.ca/TWONTO#aPortionOfGranularFilterMedium
-tw:aPortionOfGranularFilterMedium rdf:type owl:Class ;
-                                  rdfs:subClassOf tw:discreteAsset ,
-                                                  tw:filtration .
-
-
 ###  http://www.toronto.ca/TWONTO#aPowerDesc
 tw:aPowerDesc rdf:type owl:Class ;
               rdfs:subClassOf tw:assetDescription .
@@ -820,7 +826,7 @@ tw:airDuctSegment rdf:type owl:Class ;
 ###  http://www.toronto.ca/TWONTO#airExchangerUnit
 tw:airExchangerUnit rdf:type owl:Class ;
                     rdfs:subClassOf tw:discreteAsset ;
-                    tw:avantisClass "Air Exchanger Unit" .
+                    tw:AvClassEquivalent "Air Exchanger Unit" .
 
 
 ###  http://www.toronto.ca/TWONTO#airFilterUnit
@@ -845,7 +851,7 @@ tw:airFiltrationUnit rdf:type owl:Class ;
 tw:airHandlingUnit rdf:type owl:Class ;
                    rdfs:subClassOf tw:HVAC_systemAsset ,
                                    tw:discreteAsset ;
-                   tw:avantisClass "Air Handling Unit" .
+                   tw:AvClassEquivalent "Air Handling Unit" .
 
 
 ###  http://www.toronto.ca/TWONTO#airScrubber
@@ -859,13 +865,13 @@ tw:airScrubber rdf:type owl:Class ;
 tw:alarm rdf:type owl:Class ;
          rdfs:subClassOf tw:discreteAsset ,
                          tw:informationOutput ;
-         tw:avantisClass "Alarm" .
+         tw:AvClassEquivalent "Alarm" .
 
 
 ###  http://www.toronto.ca/TWONTO#analyzer
 tw:analyzer rdf:type owl:Class ;
             rdfs:subClassOf tw:discreteAsset ;
-            tw:avantisClass "Analyzer" .
+            tw:AvClassEquivalent "Analyzer" .
 
 
 ###  http://www.toronto.ca/TWONTO#annunciator
@@ -956,7 +962,7 @@ tw:backflowPreventer rdf:type owl:Class ;
                      rdfs:subClassOf tw:discreteAsset ,
                                      tw:distributionAndCollectionNetoworkAsset ,
                                      tw:flowOrPressureControl ;
-                     tw:avantisClass "Back Flow Preventer" ;
+                     tw:AvClassEquivalent "Back Flow Preventer" ;
                      tw:notionMappingID "820677d0c7e44520a83d328e2e371d97" .
 
 
@@ -969,7 +975,7 @@ tw:barScreen rdf:type owl:Class ;
 tw:batteryBank rdf:type owl:Class ;
                rdfs:subClassOf tw:discreteAsset ,
                                tw:electricalAssetOrComponent ;
-               tw:avantisClass "Battery" .
+               tw:AvClassEquivalent "Battery" .
 
 
 ###  http://www.toronto.ca/TWONTO#batteryCharger
@@ -981,7 +987,7 @@ tw:batteryCharger rdf:type owl:Class ;
 ###  http://www.toronto.ca/TWONTO#batteryUnit
 tw:batteryUnit rdf:type owl:Class ;
                rdfs:subClassOf tw:discreteAsset ;
-               tw:avantisClass "Battery" .
+               tw:AvClassEquivalent "Battery" .
 
 
 ###  http://www.toronto.ca/TWONTO#bearing
@@ -1012,14 +1018,14 @@ tw:biologicalOrChemicalTreatmentAsset rdf:type owl:Class ;
 tw:blowerOrFan rdf:type owl:Class ;
                rdfs:subClassOf tw:discreteAsset ,
                                tw:flowOrPressureControl ;
-               tw:avantisClass "Blower" .
+               tw:AvClassEquivalent "Blower" .
 
 
 ###  http://www.toronto.ca/TWONTO#boat
 tw:boat rdf:type owl:Class ;
         rdfs:subClassOf tw:discreteAsset ,
                         tw:roadVehicleOrTransportationTool ;
-        tw:avantisClass "Boat" .
+        tw:AvClassEquivalent "Boat" .
 
 
 ###  http://www.toronto.ca/TWONTO#boiler
@@ -1027,7 +1033,7 @@ tw:boiler rdf:type owl:Class ;
           rdfs:subClassOf tw:HVAC_systemAsset ,
                           tw:discreteAsset ,
                           tw:processingOfMaterial ;
-          tw:avantisClass "Boiler" ;
+          tw:AvClassEquivalent "Boiler" ;
           tw:notionMappingID "3d186d6bc9cb4c70987f7e85f2ff1871" .
 
 
@@ -1042,7 +1048,7 @@ tw:boilerFitting rdf:type owl:Class ;
 ###  http://www.toronto.ca/TWONTO#breaker
 tw:breaker rdf:type owl:Class ;
            rdfs:subClassOf tw:discreteAsset ;
-           tw:avantisClass "Circuit Breaker" .
+           tw:AvClassEquivalent "Circuit Breaker" .
 
 
 ###  http://www.toronto.ca/TWONTO#bridge
@@ -1055,7 +1061,7 @@ tw:bridge rdf:type owl:Class ;
 tw:building rdf:type owl:Class ;
             rdfs:subClassOf tw:buildingArchitecturalOrStructural ,
                             tw:discreteAsset ;
-            tw:avantisClass "Building" ;
+            tw:AvClassEquivalent "Building" ;
             rdfs:comment "This definition allows for portable buildings to be classified as building" ;
             rdfs:isDefinedBy "A structure with a roof and some walls that partition its interior space from the outdoor space and stands in one place when it is used." .
 
@@ -1099,11 +1105,6 @@ tw:cableSection rdf:type owl:Class ;
 ###  http://www.toronto.ca/TWONTO#cableSegment
 tw:cableSegment rdf:type owl:Class ;
                 rdfs:subClassOf tw:discreteAsset .
-
-
-###  http://www.toronto.ca/TWONTO#camera
-tw:camera rdf:type owl:Class ;
-          rdfs:subClassOf tw:discreteAsset .
 
 
 ###  http://www.toronto.ca/TWONTO#capacitor
@@ -1605,8 +1606,8 @@ tw:electricalCurrentInstrumentation rdf:type owl:Class ;
 tw:electricalDistributionOrMotorControlPanel rdf:type owl:Class ;
                                              rdfs:subClassOf tw:discreteAsset ,
                                                              tw:enclosure ;
-                                             tw:avantisClass "BUS bar greater than 750 volts" ,
-                                                             "Control Panel,MCC" .
+                                             tw:AvClassEquivalent "BUS bar greater than 750 volts" ,
+                                                                  "Control Panel,MCC" .
 
 
 ###  http://www.toronto.ca/TWONTO#electricalDuctBankSection
@@ -1883,7 +1884,7 @@ tw:federalRegulation rdf:type owl:Class ;
 ###  http://www.toronto.ca/TWONTO#feederOrHopper
 tw:feederOrHopper rdf:type owl:Class ;
                   rdfs:subClassOf tw:discreteAsset ;
-                  tw:avantisClass "Chemical Feeder" .
+                  tw:AvClassEquivalent "Chemical Feeder" .
 
 
 ###  http://www.toronto.ca/TWONTO#fenceSection
@@ -2373,7 +2374,8 @@ tw:informativeResource rdf:type owl:Class ;
 
 ###  http://www.toronto.ca/TWONTO#infraredCamera
 tw:infraredCamera rdf:type owl:Class ;
-                  rdfs:subClassOf tw:camera .
+                  rdfs:subClassOf tw:discreteAsset ;
+                  rdfs:comment "Mar'24 TH: the parent class of camera was removed because there is no imaginable use for it in queries or other contexts." .
 
 
 ###  http://www.toronto.ca/TWONTO#injector
@@ -2607,7 +2609,7 @@ tw:mechanicalFitting rdf:type owl:Class ;
 tw:mixerOrAgitator rdf:type owl:Class ;
                    rdfs:subClassOf tw:discreteAsset ,
                                    tw:processingOfMaterial ;
-                   tw:avantisClass "Agitator" .
+                   tw:AvClassEquivalent "Agitator" .
 
 
 ###  http://www.toronto.ca/TWONTO#mobileLift
@@ -2754,10 +2756,10 @@ tw:pH_instrumentation rdf:type owl:Class ;
                       rdfs:subClassOf tw:discreteAsset .
 
 
-###  http://www.toronto.ca/TWONTO#packagedAcUnit
-tw:packagedAcUnit rdf:type owl:Class ;
-                  rdfs:subClassOf tw:airConditioning ,
-                                  tw:discreteAsset .
+###  http://www.toronto.ca/TWONTO#packaged_AC_Unit
+tw:packaged_AC_Unit rdf:type owl:Class ;
+                    rdfs:subClassOf tw:airConditioning ,
+                                    tw:discreteAsset .
 
 
 ###  http://www.toronto.ca/TWONTO#paragraphContent
@@ -2907,6 +2909,12 @@ tw:portableLadder rdf:type owl:Class ;
 tw:portableScaffolding rdf:type owl:Class ;
                        rdfs:subClassOf tw:commonTool ,
                                        tw:discreteAsset .
+
+
+###  http://www.toronto.ca/TWONTO#portionOfGranularFilterMedium
+tw:portionOfGranularFilterMedium rdf:type owl:Class ;
+                                 rdfs:subClassOf tw:discreteAsset ,
+                                                 tw:filtration .
 
 
 ###  http://www.toronto.ca/TWONTO#positionInstrumentation
@@ -3263,8 +3271,8 @@ tw:sectionContent rdf:type owl:Class ;
 
 ###  http://www.toronto.ca/TWONTO#securityCamera
 tw:securityCamera rdf:type owl:Class ;
-                  rdfs:subClassOf tw:camera ,
-                                  tw:securityOrAccessControlAsset .
+                  rdfs:subClassOf tw:securityOrAccessControlAsset ;
+                  rdfs:comment "Mar'24 TH: the parent class of camera was removed because there is no imaginable use for it in queries or other contexts." .
 
 
 ###  http://www.toronto.ca/TWONTO#securityOrAccessControlAsset
@@ -3453,8 +3461,8 @@ tw:steamTrap rdf:type owl:Class ;
 
 ###  http://www.toronto.ca/TWONTO#stillOrVideoMobileCamera
 tw:stillOrVideoMobileCamera rdf:type owl:Class ;
-                            rdfs:subClassOf tw:camera ,
-                                            tw:commonTool .
+                            rdfs:subClassOf tw:commonTool ;
+                            rdfs:comment "Mar'24 TH: the parent class of camera was removed because there is no imaginable use for it in queries or other contexts." .
 
 
 ###  http://www.toronto.ca/TWONTO#storage
@@ -3680,10 +3688,10 @@ tw:transformer rdf:type owl:Class ;
                                tw:electricalAssetOrComponent .
 
 
-###  http://www.toronto.ca/TWONTO#trapPrimingDevice
-tw:trapPrimingDevice rdf:type owl:Class ;
-                     rdfs:subClassOf tw:discreteAsset ,
-                                     tw:partOfProcessPiping .
+###  http://www.toronto.ca/TWONTO#trapPrimer
+tw:trapPrimer rdf:type owl:Class ;
+              rdfs:subClassOf tw:discreteAsset ,
+                              tw:partOfProcessPiping .
 
 
 ###  http://www.toronto.ca/TWONTO#travelingScreen
@@ -4039,4 +4047,4 @@ tw:psi rdf:type owl:NamedIndividual ,
 ] .
 
 
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
