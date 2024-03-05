@@ -1,0 +1,3945 @@
+Prefix(:=<http://www.toronto.ca/TWONTO#>)
+Prefix(tw:=<http://www.toronto.ca/TWONTO#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(FAMO:=<http://www.toronto.ca/FAMO#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.toronto.ca/TWONTO>
+<http://www.toronto.ca/TWONTO/0.1>
+
+Declaration(Class(tw:AC_Assembly))
+Declaration(Class(tw:AC_condenserUnit))
+Declaration(Class(tw:AC_evaporatorUnit))
+Declaration(Class(tw:ALWS))
+Declaration(Class(tw:COCOA))
+Declaration(Class(tw:CSA-B149-6_membraneGasholder))
+Declaration(Class(tw:HVAC_buildingOrGroundsServiceAsset))
+Declaration(Class(tw:HVAC_systemAsset))
+Declaration(Class(tw:MTD))
+Declaration(Class(tw:OReg220PressureVessel))
+Declaration(Class(tw:PA_systemSpeaker))
+Declaration(Class(tw:TorontoWaterAsset))
+Declaration(Class(tw:UV_disinfectionAssembly))
+Declaration(Class(tw:UV_disinfectionLampUnit))
+Declaration(Class(tw:aPowerDesc))
+Declaration(Class(tw:aPressureDesc))
+Declaration(Class(tw:aTemperatureDesc))
+Declaration(Class(tw:aVoltageDesc))
+Declaration(Class(tw:aVolumetricCapacityDesc))
+Declaration(Class(tw:abovegroundFuelOilTank_TEMP))
+Declaration(Class(tw:abovegroundFuelTank_TEMP))
+Declaration(Class(tw:actuator))
+Declaration(Class(tw:aerationReactorTank))
+Declaration(Class(tw:airConditioning))
+Declaration(Class(tw:airDamper))
+Declaration(Class(tw:airDryer))
+Declaration(Class(tw:airDuctSegment))
+Declaration(Class(tw:airExchangerUnit))
+Declaration(Class(tw:airFilterUnit))
+Declaration(Class(tw:airFiltration))
+Declaration(Class(tw:airFiltrationUnit))
+Declaration(Class(tw:airHandlingUnit))
+Declaration(Class(tw:airScrubber))
+Declaration(Class(tw:alarm))
+Declaration(Class(tw:analyzer))
+Declaration(Class(tw:annunciator))
+Declaration(Class(tw:applicationServerAppliance))
+Declaration(Class(tw:area))
+Declaration(Class(tw:ashLagoon))
+Declaration(Class(tw:assembly))
+Declaration(Class(tw:asset))
+Declaration(Class(tw:assetDescription))
+Declaration(Class(tw:assetManufacturer))
+Declaration(Class(tw:assetOwner))
+Declaration(Class(tw:assetRole))
+Declaration(Class(tw:assetStatus))
+Declaration(Class(tw:atomicLevelWork))
+Declaration(Class(tw:automaticExternalDefibrillator))
+Declaration(Class(tw:backflowPreventer))
+Declaration(Class(tw:barScreen))
+Declaration(Class(tw:batteryBank))
+Declaration(Class(tw:batteryCharger))
+Declaration(Class(tw:batteryUnit))
+Declaration(Class(tw:bearing))
+Declaration(Class(tw:belt))
+Declaration(Class(tw:biogas))
+Declaration(Class(tw:biologicalOrChemicalTreatmentAsset))
+Declaration(Class(tw:blowerOrFan))
+Declaration(Class(tw:boat))
+Declaration(Class(tw:boiler))
+Declaration(Class(tw:boilerFitting))
+Declaration(Class(tw:breaker))
+Declaration(Class(tw:bridge))
+Declaration(Class(tw:building))
+Declaration(Class(tw:buildingArchitecturalOrStructural))
+Declaration(Class(tw:buildingAutomationSystemController))
+Declaration(Class(tw:bulkStorage))
+Declaration(Class(tw:burner))
+Declaration(Class(tw:cableSection))
+Declaration(Class(tw:cableSegment))
+Declaration(Class(tw:capacitor))
+Declaration(Class(tw:cardReader))
+Declaration(Class(tw:catchBasin))
+Declaration(Class(tw:category_G_boilerFitting))
+Declaration(Class(tw:centrifuge))
+Declaration(Class(tw:chamber))
+Declaration(Class(tw:chemicalProtection))
+Declaration(Class(tw:chemicalSuit))
+Declaration(Class(tw:chiller))
+Declaration(Class(tw:chillerCondenser))
+Declaration(Class(tw:chillerEvaporator))
+Declaration(Class(tw:chlorinator))
+Declaration(Class(tw:chlorineAnalyzer))
+Declaration(Class(tw:cityByLaw))
+Declaration(Class(tw:clarificationTank))
+Declaration(Class(tw:classifier))
+Declaration(Class(tw:coagulationOrFlocculationTank))
+Declaration(Class(tw:combustableMaterial))
+Declaration(Class(tw:combustionTurbine))
+Declaration(Class(tw:commonInstrumentation))
+Declaration(Class(tw:commonTool))
+Declaration(Class(tw:compactor))
+Declaration(Class(tw:compressedGasCylinder))
+Declaration(Class(tw:compressor))
+Declaration(Class(tw:computer))
+Declaration(Class(tw:condensateTrap))
+Declaration(Class(tw:conductivityAnalyzer))
+Declaration(Class(tw:containing))
+Declaration(Class(tw:containment))
+Declaration(Class(tw:contentCompilation))
+Declaration(Class(tw:contentSubject))
+Declaration(Class(tw:contentSummary))
+Declaration(Class(tw:controlledAccessBarrier))
+Declaration(Class(tw:controlledDoorAccess))
+Declaration(Class(tw:controller))
+Declaration(Class(tw:conveyanceOfFlow))
+Declaration(Class(tw:conveyor))
+Declaration(Class(tw:coolingTower))
+Declaration(Class(tw:corporatePolicy))
+Declaration(Class(tw:correctiveWork))
+Declaration(Class(tw:counter))
+Declaration(Class(tw:crane))
+Declaration(Class(tw:culvert))
+Declaration(Class(tw:cycloneSeparator))
+Declaration(Class(tw:definedCollection))
+Declaration(Class(tw:dehumidifier))
+Declaration(Class(tw:descendingDevice))
+Declaration(Class(tw:description))
+Declaration(Class(tw:detentionPond))
+Declaration(Class(tw:detentionTank))
+Declaration(Class(tw:dewatering))
+Declaration(Class(tw:dewateringCentrifuge))
+Declaration(Class(tw:diesel))
+Declaration(Class(tw:digesterGas))
+Declaration(Class(tw:digesterReactor))
+Declaration(Class(tw:dimension))
+Declaration(Class(tw:disconnectSwitch))
+Declaration(Class(tw:discreteAsset))
+Declaration(Class(tw:disinfectionTank))
+Declaration(Class(tw:display))
+Declaration(Class(tw:dissolvedChemicalAnalyzer))
+Declaration(Class(tw:dissolvedOxygenInstrumentation))
+Declaration(Class(tw:distributedSystem))
+Declaration(Class(tw:distributionAndCollectionNetoworkAsset))
+Declaration(Class(tw:distributionSystem))
+Declaration(Class(tw:documentContent))
+Declaration(Class(tw:dosingEductor))
+Declaration(Class(tw:dosingInjector))
+Declaration(Class(tw:dosingOrMeteringPump))
+Declaration(Class(tw:dosingPump))
+Declaration(Class(tw:dosingSystemAssembly))
+Declaration(Class(tw:dosingSystemUnit))
+Declaration(Class(tw:dryPond))
+Declaration(Class(tw:dryer))
+Declaration(Class(tw:dustCollecter))
+Declaration(Class(tw:easement))
+Declaration(Class(tw:electricalAssetOrComponent))
+Declaration(Class(tw:electricalConduitSection))
+Declaration(Class(tw:electricalCurrentInstrumentation))
+Declaration(Class(tw:electricalDistributionOrMotorControlPanel))
+Declaration(Class(tw:electricalDuctBankSection))
+Declaration(Class(tw:electricalSafety))
+Declaration(Class(tw:electrostaticPrecipitator))
+Declaration(Class(tw:elevator))
+Declaration(Class(tw:emergencyEyewashOrShower))
+Declaration(Class(tw:emergencyGenerator))
+Declaration(Class(tw:emergencyPowerSystem))
+Declaration(Class(tw:emergencyWork))
+Declaration(Class(tw:enclosure))
+Declaration(Class(tw:endTruck))
+Declaration(Class(tw:energyRecoveryVentilator))
+Declaration(Class(tw:engine))
+Declaration(Class(tw:entryAccessControlUnit))
+Declaration(Class(tw:environmentalHazard))
+Declaration(Class(tw:equipmentLocalControlPanel))
+Declaration(Class(tw:event))
+Declaration(Class(tw:expansionJoint))
+Declaration(Class(tw:explosionPreventionEquipment))
+Declaration(Class(tw:expressionOfCurrentFlow))
+Declaration(Class(tw:expressionOfMassFlow))
+Declaration(Class(tw:expressionOfPowerLevel))
+Declaration(Class(tw:expressionOfPressure))
+Declaration(Class(tw:expressionOfQuantity))
+Declaration(Class(tw:expressionOfSpeed))
+Declaration(Class(tw:expressionOfVoltageLevel))
+Declaration(Class(tw:expressionOfWeight))
+Declaration(Class(tw:facility))
+Declaration(Class(tw:facilityProcessSystem))
+Declaration(Class(tw:facilitySystem))
+Declaration(Class(tw:fallArrestDavitArm))
+Declaration(Class(tw:fallArrestHarness))
+Declaration(Class(tw:fallArrestRopeGrab))
+Declaration(Class(tw:fallArrestSystem))
+Declaration(Class(tw:fallProtectionDescendingDevice))
+Declaration(Class(tw:fallProtectionEnergyAbsorber))
+Declaration(Class(tw:fallProtectionEquipment))
+Declaration(Class(tw:fallRestraintSystem))
+Declaration(Class(tw:fallRestrictingSystem))
+Declaration(Class(tw:federalRegulation))
+Declaration(Class(tw:feederOrHopper))
+Declaration(Class(tw:fenceSection))
+Declaration(Class(tw:figureContent))
+Declaration(Class(tw:filter_MTD))
+Declaration(Class(tw:filtration))
+Declaration(Class(tw:filtrationTank))
+Declaration(Class(tw:fireRatedDoor))
+Declaration(Class(tw:firstAidEquipment))
+Declaration(Class(tw:firstAidKit))
+Declaration(Class(tw:firstAidRoomEquipment))
+Declaration(Class(tw:firstAidStationEquipment))
+Declaration(Class(tw:fixedGasDetector))
+Declaration(Class(tw:fixedLadder))
+Declaration(Class(tw:flameArrestor))
+Declaration(Class(tw:flameOrCombustionInstrumentation))
+Declaration(Class(tw:floatationEquipment))
+Declaration(Class(tw:flowIntegratedSystem))
+Declaration(Class(tw:flowOrPressureControl))
+Declaration(Class(tw:flowmeter))
+Declaration(Class(tw:forklift))
+Declaration(Class(tw:fuel))
+Declaration(Class(tw:fuelAppliance))
+Declaration(Class(tw:fuelOil))
+Declaration(Class(tw:fuelOilAppliance))
+Declaration(Class(tw:fuelOilTank))
+Declaration(Class(tw:fuelPipingSystem))
+Declaration(Class(tw:fuelTank))
+Declaration(Class(tw:function))
+Declaration(Class(tw:furnace))
+Declaration(Class(tw:fuse))
+Declaration(Class(tw:gasAppliance))
+Declaration(Class(tw:gasDiffuser))
+Declaration(Class(tw:gasDiffuserGridAssembly))
+Declaration(Class(tw:gasHolder))
+Declaration(Class(tw:gasInstrumentation))
+Declaration(Class(tw:gaseousMaterial))
+Declaration(Class(tw:gasoline))
+Declaration(Class(tw:gasolineTank))
+Declaration(Class(tw:gasometer))
+Declaration(Class(tw:gate))
+Declaration(Class(tw:gauge))
+Declaration(Class(tw:generalMechanicalComponent))
+Declaration(Class(tw:generalNetworkingAsset))
+Declaration(Class(tw:generator))
+Declaration(Class(tw:genericCrossDomainAsset))
+Declaration(Class(tw:golfCart))
+Declaration(Class(tw:governmentRegulation))
+Declaration(Class(tw:granularMaterial))
+Declaration(Class(tw:greenInfrastructureAsset))
+Declaration(Class(tw:grinder))
+Declaration(Class(tw:grinderOrComminutor))
+Declaration(Class(tw:gritClassifier))
+Declaration(Class(tw:groundingEquipment))
+Declaration(Class(tw:guideline))
+Declaration(Class(tw:havingAPart))
+Declaration(Class(tw:havingAPartOf))
+Declaration(Class(tw:hazard))
+Declaration(Class(tw:hazardousGasMonitoringDevice))
+Declaration(Class(tw:healthAndSafetyHazard))
+Declaration(Class(tw:heatExchanger))
+Declaration(Class(tw:heatPumpUnit))
+Declaration(Class(tw:heater))
+Declaration(Class(tw:heatingBoiler))
+Declaration(Class(tw:heatingOrCooling))
+Declaration(Class(tw:heavyMetalAnalyzer))
+Declaration(Class(tw:hierarchicalSystem))
+Declaration(Class(tw:highVoltageStick))
+Declaration(Class(tw:highVoltageTester))
+Declaration(Class(tw:hoist))
+Declaration(Class(tw:horizontalLifeline))
+Declaration(Class(tw:hotWorkEquipment))
+Declaration(Class(tw:hydrant))
+Declaration(Class(tw:hydrantSystem))
+Declaration(Class(tw:infiltrationTrench))
+Declaration(Class(tw:informationContentEntity))
+Declaration(Class(tw:informationOutput))
+Declaration(Class(tw:informationRecordingOrStorage))
+Declaration(Class(tw:informativeResource))
+Declaration(Class(tw:infraredCamera))
+Declaration(Class(tw:injector))
+Declaration(Class(tw:instrumentAirOrPneumaticControlPanel))
+Declaration(Class(tw:intercomUnit))
+Declaration(Class(tw:interpretation))
+Declaration(Class(tw:investigativeWork))
+Declaration(Class(tw:kerosene))
+Declaration(Class(tw:laboratory))
+Declaration(Class(tw:ladder))
+Declaration(Class(tw:landfillGas))
+Declaration(Class(tw:legislation))
+Declaration(Class(tw:length))
+Declaration(Class(tw:levelInstrumentation))
+Declaration(Class(tw:lifeJacket))
+Declaration(Class(tw:lifeRing))
+Declaration(Class(tw:liftingOrTransport))
+Declaration(Class(tw:lightingPanel))
+Declaration(Class(tw:lightingUnit))
+Declaration(Class(tw:line))
+Declaration(Class(tw:linearElement))
+Declaration(Class(tw:linearFunctionAsset_pathOfFlow))
+Declaration(Class(tw:liquid))
+Declaration(Class(tw:loadBreakSwitch))
+Declaration(Class(tw:loadingDock))
+Declaration(Class(tw:mainPathLine))
+Declaration(Class(tw:manhole))
+Declaration(Class(tw:manlift))
+Declaration(Class(tw:mass))
+Declaration(Class(tw:material))
+Declaration(Class(tw:materialAdditionOrDosing))
+Declaration(Class(tw:materialDistributionPanel))
+Declaration(Class(tw:measureOfElectricalCurrent))
+Declaration(Class(tw:measureOfMass))
+Declaration(Class(tw:measureOfPower))
+Declaration(Class(tw:measureOfPressure))
+Declaration(Class(tw:measureOfVoltage))
+Declaration(Class(tw:mechanicalAssembly))
+Declaration(Class(tw:mechanicalDrive))
+Declaration(Class(tw:mechanicalEnergyAndMotion))
+Declaration(Class(tw:mechanicalFitting))
+Declaration(Class(tw:mixerOrAgitator))
+Declaration(Class(tw:mobileLift))
+Declaration(Class(tw:modularDiscreteAssembly))
+Declaration(Class(tw:motionSensor))
+Declaration(Class(tw:motor))
+Declaration(Class(tw:motorDriveOr_VFD))
+Declaration(Class(tw:motorStarter))
+Declaration(Class(tw:multiParametertrumentation))
+Declaration(Class(tw:naturalGas))
+Declaration(Class(tw:networkPanelOraccessCloset))
+Declaration(Class(tw:networkRouter))
+Declaration(Class(tw:networkStorageAppliance))
+Declaration(Class(tw:networkSwitch))
+Declaration(Class(tw:nitrateOrNitriteAnalyzer))
+Declaration(Class(tw:noteTaking))
+Declaration(Class(tw:observation))
+Declaration(Class(tw:occupying))
+Declaration(Class(tw:oilGreaseSeparator_MTD))
+Declaration(Class(tw:oilGritSeperator))
+Declaration(Class(tw:ontarioRegulation))
+Declaration(Class(tw:opperationState))
+Declaration(Class(tw:organization))
+Declaration(Class(tw:outfallOrDischargePoint))
+Declaration(Class(tw:ozoneGenerator))
+Declaration(Class(tw:pH_analyzer))
+Declaration(Class(tw:pH_instrumentation))
+Declaration(Class(tw:packaged_AC_Unit))
+Declaration(Class(tw:paragraphContent))
+Declaration(Class(tw:partOfBuildingOrStructure))
+Declaration(Class(tw:partOfProcessPiping))
+Declaration(Class(tw:passengerVehicles))
+Declaration(Class(tw:pelletizer))
+Declaration(Class(tw:personalGasMeter))
+Declaration(Class(tw:personnalFloatationDevice))
+Declaration(Class(tw:phosphateAnalyzer))
+Declaration(Class(tw:pickupTruck))
+Declaration(Class(tw:pieceOfContent))
+Declaration(Class(tw:pieceOfLawn))
+Declaration(Class(tw:pipeFitting))
+Declaration(Class(tw:pipeManifold))
+Declaration(Class(tw:pipeSection))
+Declaration(Class(tw:pipeSegment))
+Declaration(Class(tw:pipette))
+Declaration(Class(tw:pipingSystem))
+Declaration(Class(tw:plantingSpace))
+Declaration(Class(tw:polymerDosingAssembly))
+Declaration(Class(tw:polymerMixingTank))
+Declaration(Class(tw:pond))
+Declaration(Class(tw:portableGasDetector))
+Declaration(Class(tw:portableLadder))
+Declaration(Class(tw:portableScaffolding))
+Declaration(Class(tw:portionOfGranularFilterMedium))
+Declaration(Class(tw:positionInstrumentation))
+Declaration(Class(tw:powerBoiler))
+Declaration(Class(tw:powerHarmonicFilter))
+Declaration(Class(tw:powerWasher))
+Declaration(Class(tw:poweredAirRespirator))
+Declaration(Class(tw:press))
+Declaration(Class(tw:pressureInstrumentation))
+Declaration(Class(tw:pressureSwitch))
+Declaration(Class(tw:pressureTransmitter))
+Declaration(Class(tw:pressurizedPipingSystem))
+Declaration(Class(tw:preventiveWork))
+Declaration(Class(tw:process))
+Declaration(Class(tw:processControlPanel))
+Declaration(Class(tw:processing))
+Declaration(Class(tw:processingOfMaterial))
+Declaration(Class(tw:productLine))
+Declaration(Class(tw:progammableLogicController))
+Declaration(Class(tw:projectWork))
+Declaration(Class(tw:propane))
+Declaration(Class(tw:property))
+Declaration(Class(tw:protectionRelay))
+Declaration(Class(tw:publisher))
+Declaration(Class(tw:pulsationDampener))
+Declaration(Class(tw:pump))
+Declaration(Class(tw:pumpSurgeSuppressionTank))
+Declaration(Class(tw:pumpWetWell))
+Declaration(Class(tw:pumpingStationSystem))
+Declaration(Class(tw:qualification))
+Declaration(Class(tw:quality))
+Declaration(Class(tw:quencher))
+Declaration(Class(tw:reactorOfUnnamedTypes))
+Declaration(Class(tw:regionalizedSystem))
+Declaration(Class(tw:relationalState))
+Declaration(Class(tw:remoteTerminalUnit))
+Declaration(Class(tw:replaceableFilterCartridge))
+Declaration(Class(tw:requirement))
+Declaration(Class(tw:reservoir))
+Declaration(Class(tw:residualChloringInstrumentation))
+Declaration(Class(tw:respiratorMask))
+Declaration(Class(tw:respiratoryHazardProtection))
+Declaration(Class(tw:revision))
+Declaration(Class(tw:roadSegement))
+Declaration(Class(tw:roadVehicleOrTransportationTool))
+Declaration(Class(tw:role))
+Declaration(Class(tw:roleOfAPerson))
+Declaration(Class(tw:rollUpDoor))
+Declaration(Class(tw:roof))
+Declaration(Class(tw:rotaryDrumThickener))
+Declaration(Class(tw:rotationalSpeed))
+Declaration(Class(tw:rubberInsulatingGloves))
+Declaration(Class(tw:rubberInsulatingSleeves))
+Declaration(Class(tw:ruptureDisk))
+Declaration(Class(tw:safetyOrEnvironmentalHarmPreventionAsset))
+Declaration(Class(tw:samplingPoint))
+Declaration(Class(tw:scaffolding))
+Declaration(Class(tw:scissorsLift))
+Declaration(Class(tw:screwPress))
+Declaration(Class(tw:scrubber))
+Declaration(Class(tw:sealOrGasket))
+Declaration(Class(tw:sectionContent))
+Declaration(Class(tw:securityCamera))
+Declaration(Class(tw:securityOrAccessControlAsset))
+Declaration(Class(tw:sedimentationTank))
+Declaration(Class(tw:selfContainedBreathingApparatus))
+Declaration(Class(tw:selfRetractingLifeline))
+Declaration(Class(tw:semi-solid))
+Declaration(Class(tw:sensing_informationCapture))
+Declaration(Class(tw:separator))
+Declaration(Class(tw:serverAppliance))
+Declaration(Class(tw:sewer))
+Declaration(Class(tw:sewerForceMain))
+Declaration(Class(tw:sewerGravityMain))
+Declaration(Class(tw:sewerMain))
+Declaration(Class(tw:sewerServiceConnection))
+Declaration(Class(tw:simpleLine))
+Declaration(Class(tw:singleParameterInstrumentation))
+Declaration(Class(tw:sittingWithin))
+Declaration(Class(tw:sling))
+Declaration(Class(tw:sludge))
+Declaration(Class(tw:sludgeIncineratorAssembly))
+Declaration(Class(tw:soilCell))
+Declaration(Class(tw:solid))
+Declaration(Class(tw:solidsSeparation))
+Declaration(Class(tw:space))
+Declaration(Class(tw:specification))
+Declaration(Class(tw:speedOfTravel))
+Declaration(Class(tw:spillKit))
+Declaration(Class(tw:stack))
+Declaration(Class(tw:state))
+Declaration(Class(tw:stationaryMachineTool))
+Declaration(Class(tw:steamTrap))
+Declaration(Class(tw:stillOrVideoMobileCamera))
+Declaration(Class(tw:storage))
+Declaration(Class(tw:storageOrSurgeSuppression))
+Declaration(Class(tw:storageTank))
+Declaration(Class(tw:stormServiceConnection))
+Declaration(Class(tw:strainer))
+Declaration(Class(tw:structuralTank))
+Declaration(Class(tw:structuralTankComponent))
+Declaration(Class(tw:structuralWall))
+Declaration(Class(tw:sulphinatorAssembly))
+Declaration(Class(tw:suppliedAirRespirator))
+Declaration(Class(tw:supply))
+Declaration(Class(tw:supplyOfMaterial))
+Declaration(Class(tw:surgeSuppression))
+Declaration(Class(tw:switchgearDistributionBus))
+Declaration(Class(tw:switchgearGroundingDevice))
+Declaration(Class(tw:system))
+Declaration(Class(tw:systemTrain))
+Declaration(Class(tw:tableContent))
+Declaration(Class(tw:tankOrVessel))
+Declaration(Class(tw:technicalStandard))
+Declaration(Class(tw:temperatureInstrumentation))
+Declaration(Class(tw:temperatureSwitch))
+Declaration(Class(tw:temperatureTransmitter))
+Declaration(Class(tw:theMaxAllowableWorkingPressure))
+Declaration(Class(tw:theMaxAllowableWorkingTemp))
+Declaration(Class(tw:theMaxInputVoltageDesc))
+Declaration(Class(tw:theMinInputVoltageDesc))
+Declaration(Class(tw:theNominalOutputPower))
+Declaration(Class(tw:theSubstanceInContainment))
+Declaration(Class(tw:theVolumetricCapacityDesc))
+Declaration(Class(tw:thermostatOrZoneControllerUnit))
+Declaration(Class(tw:tool))
+Declaration(Class(tw:totalDissolvedSolidsInstrumentation))
+Declaration(Class(tw:totalSuspendedSolidsInstrumentation))
+Declaration(Class(tw:tower))
+Declaration(Class(tw:transferSwitch))
+Declaration(Class(tw:transformer))
+Declaration(Class(tw:trapPrimer))
+Declaration(Class(tw:travelingScreen))
+Declaration(Class(tw:travelingScreenUnit))
+Declaration(Class(tw:treatmentFilterBank))
+Declaration(Class(tw:treatmentFilterUnit))
+Declaration(Class(tw:tunnel))
+Declaration(Class(tw:turbidityAnalyzer))
+Declaration(Class(tw:turbidityMeter))
+Declaration(Class(tw:undergroundFuelOilTank_TEMP))
+Declaration(Class(tw:undergroundFuelTank_TEMP))
+Declaration(Class(tw:uninterruptedPowerSupply))
+Declaration(Class(tw:unitOfMeasure))
+Declaration(Class(tw:vaccumCleaner))
+Declaration(Class(tw:valve))
+Declaration(Class(tw:valveRole))
+Declaration(Class(tw:vapour))
+Declaration(Class(tw:variableAirVolumeUnit))
+Declaration(Class(tw:ventilationSystem))
+Declaration(Class(tw:verticalLifeline))
+Declaration(Class(tw:vibrationAnalyzer))
+Declaration(Class(tw:vibrationInstrumentation))
+Declaration(Class(tw:voltageInstrumentation))
+Declaration(Class(tw:voltageSurgeSuppression))
+Declaration(Class(tw:wastewaterStoragePipe))
+Declaration(Class(tw:water))
+Declaration(Class(tw:waterMain))
+Declaration(Class(tw:waterOrWastewaterTreatment))
+Declaration(Class(tw:waterServiceConnection))
+Declaration(Class(tw:waterTower))
+Declaration(Class(tw:waterTrailer))
+Declaration(Class(tw:watermain))
+Declaration(Class(tw:weightScale))
+Declaration(Class(tw:weirStructure))
+Declaration(Class(tw:weldingReceptacle))
+Declaration(Class(tw:well))
+Declaration(Class(tw:wetPond))
+Declaration(Class(tw:wetWeatherFlowStorage))
+Declaration(Class(tw:wirelessAccessPoint))
+Declaration(Class(tw:work))
+Declaration(Class(tw:workOrderLevelWork))
+Declaration(Class(tw:workOrderSpecification))
+Declaration(Class(tw:workSpecification))
+Declaration(Class(tw:wrench))
+Declaration(ObjectProperty(tw:contains))
+Declaration(ObjectProperty(tw:created))
+Declaration(ObjectProperty(tw:describes))
+Declaration(ObjectProperty(tw:descriptionProperty))
+Declaration(ObjectProperty(tw:fullyGrounds))
+Declaration(ObjectProperty(tw:grounds))
+Declaration(ObjectProperty(tw:hasAStateOf))
+Declaration(ObjectProperty(tw:hasContentPart))
+Declaration(ObjectProperty(tw:hasEarlierVersion))
+Declaration(ObjectProperty(tw:hasInputVoltageSpec))
+Declaration(ObjectProperty(tw:hasLaterVersion))
+Declaration(ObjectProperty(tw:hasMaxAllowableWorkingPressure))
+Declaration(ObjectProperty(tw:hasMaxAllowableWorkingTemperature))
+Declaration(ObjectProperty(tw:hasMeasurement))
+Declaration(ObjectProperty(tw:hasNextVersion))
+Declaration(ObjectProperty(tw:hasNumericSpec))
+Declaration(ObjectProperty(tw:hasOutputPowerSpec))
+Declaration(ObjectProperty(tw:hasPart))
+Declaration(ObjectProperty(tw:hasPerformanceMeasurement))
+Declaration(ObjectProperty(tw:hasPerformanceRequirement))
+Declaration(ObjectProperty(tw:hasPhysicalPart))
+Declaration(ObjectProperty(tw:hasPresentProperty))
+Declaration(ObjectProperty(tw:hasPreviousVersion))
+Declaration(ObjectProperty(tw:hasPropertyState))
+Declaration(ObjectProperty(tw:hasPublisher))
+Declaration(ObjectProperty(tw:hasSpecifedRelation))
+Declaration(ObjectProperty(tw:hasSpecification))
+Declaration(ObjectProperty(tw:hasSubjectType))
+Declaration(ObjectProperty(tw:hasSubsystem))
+Declaration(ObjectProperty(tw:hasSummary))
+Declaration(ObjectProperty(tw:hasUnitOfMeasure))
+Declaration(ObjectProperty(tw:includesContent))
+Declaration(ObjectProperty(tw:includesContentAbout))
+Declaration(ObjectProperty(tw:includesWorkInstructionContent))
+Declaration(ObjectProperty(tw:includesWorkerQualificationContent))
+Declaration(ObjectProperty(tw:isADevelopmentOf))
+Declaration(ObjectProperty(tw:isCreatedBy))
+Declaration(ObjectProperty(tw:isDescribedAsObjectOf))
+Declaration(ObjectProperty(tw:isDescribedAsSubjectOf))
+Declaration(ObjectProperty(tw:isDescribedBy))
+Declaration(ObjectProperty(tw:isDesignedToHold))
+Declaration(ObjectProperty(tw:isDevelopedInto))
+Declaration(ObjectProperty(tw:isInAStateOf))
+Declaration(ObjectProperty(tw:isOccupiedBy))
+Declaration(ObjectProperty(tw:isPartOf))
+Declaration(ObjectProperty(tw:isPartOfContent))
+Declaration(ObjectProperty(tw:isPhysicalPartOf))
+Declaration(ObjectProperty(tw:isSubsystemOf))
+Declaration(ObjectProperty(tw:occupies))
+Declaration(ObjectProperty(tw:partiallyGrounds))
+Declaration(ObjectProperty(tw:possessesFunction))
+Declaration(ObjectProperty(tw:references))
+Declaration(ObjectProperty(tw:referencesForAdoption))
+Declaration(ObjectProperty(tw:relativeToOnsetOf))
+Declaration(ObjectProperty(tw:relativeToTerminationOf))
+Declaration(ObjectProperty(tw:sitsWithin))
+Declaration(ObjectProperty(tw:specifiedAsHavingPart))
+Declaration(ObjectProperty(tw:specifiesTriggerEvent))
+Declaration(ObjectProperty(tw:theIndividual))
+Declaration(DataProperty(tw:hasAssetStatus))
+Declaration(DataProperty(tw:hasBoilerServiceType))
+Declaration(DataProperty(tw:hasContentText))
+Declaration(DataProperty(tw:hasCreationTime))
+Declaration(DataProperty(tw:hasDeaerator))
+Declaration(DataProperty(tw:hasDocumentURL))
+Declaration(DataProperty(tw:hasHorsepowerValue))
+Declaration(DataProperty(tw:hasIntentDescription))
+Declaration(DataProperty(tw:hasInterpretationText))
+Declaration(DataProperty(tw:hasMeasurementValue))
+Declaration(DataProperty(tw:hasName))
+Declaration(DataProperty(tw:hasOperationalState))
+Declaration(DataProperty(tw:hasPowerValue))
+Declaration(DataProperty(tw:hasPresentValue))
+Declaration(DataProperty(tw:hasPublicationDate))
+Declaration(DataProperty(tw:hasRevisionDate))
+Declaration(DataProperty(tw:hasScopeDescription))
+Declaration(DataProperty(tw:hasSealedOrShieldedBearing))
+Declaration(DataProperty(tw:hasVoltageValue))
+Declaration(DataProperty(tw:hasVolumnValue))
+Declaration(DataProperty(tw:has_L_value))
+Declaration(DataProperty(tw:has_MVA_value))
+Declaration(DataProperty(tw:has_NEMA_enclosureType))
+Declaration(DataProperty(tw:has_NEMA_frameType))
+Declaration(DataProperty(tw:has_PF_value))
+Declaration(DataProperty(tw:has_V_value))
+Declaration(DataProperty(tw:has_kVA_value))
+Declaration(DataProperty(tw:has_kV_value))
+Declaration(DataProperty(tw:has_liquidGallon_value))
+Declaration(DataProperty(tw:includesWorkInstructionText))
+Declaration(DataProperty(tw:isAboveGround))
+Declaration(DataProperty(tw:isActuatedValve))
+Declaration(DataProperty(tw:isControlledValve))
+Declaration(DataProperty(tw:isDesignatedBy))
+Declaration(DataProperty(tw:isInstalledUnderground))
+Declaration(DataProperty(tw:isLatestVersion))
+Declaration(DataProperty(tw:isSubjectOfNote))
+Declaration(DataProperty(tw:isUnderGround))
+Declaration(DataProperty(tw:usesBearingLubricantType))
+Declaration(NamedIndividual(tw:MV))
+Declaration(NamedIndividual(tw:MVA))
+Declaration(NamedIndividual(tw:V))
+Declaration(NamedIndividual(tw:VA))
+Declaration(NamedIndividual(tw:W))
+Declaration(NamedIndividual(tw:hp))
+Declaration(NamedIndividual(tw:kPa))
+Declaration(NamedIndividual(tw:kV))
+Declaration(NamedIndividual(tw:kVA))
+Declaration(NamedIndividual(tw:kW))
+Declaration(NamedIndividual(tw:psi))
+Declaration(AnnotationProperty(tw:AvClassChild))
+Declaration(AnnotationProperty(tw:AvClassEquivalent))
+Declaration(AnnotationProperty(tw:AvClassOverlap))
+Declaration(AnnotationProperty(tw:AvClassParent))
+Declaration(AnnotationProperty(tw:PCS_code))
+Declaration(AnnotationProperty(tw:SHACL_note))
+Declaration(AnnotationProperty(tw:notionMappingID))
+Declaration(AnnotationProperty(<http://www.w3.org/2004/02/skos/core#altLabel>))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: tw:notionMappingID (tw:notionMappingID)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:notionMappingID "CSA C282: A generator providing emergency power to one of the following:
+a) fire alarm and emergency voice communications systems;
+b) firefighter’s elevators and elevators serving storeys above the first storey in a high building;
+c) fire protection water supply pumps that depend on electrical power supplied to the building;
+d) smoke control and smoke venting systems;
+e) emergency lighting; and
+f) exit signs that depend on electrical power supplied to the building.")
+
+
+############################
+#   Object Properties
+############################
+
+# Object Property: tw:contains (tw:contains)
+
+SubObjectPropertyOf(tw:contains tw:hasPresentProperty)
+
+# Object Property: tw:created (tw:created)
+
+SubObjectPropertyOf(tw:created tw:hasPresentProperty)
+
+# Object Property: tw:describes (tw:describes)
+
+SubObjectPropertyOf(tw:describes tw:descriptionProperty)
+InverseObjectProperties(tw:describes tw:isDescribedBy)
+
+# Object Property: tw:descriptionProperty (tw:descriptionProperty)
+
+AnnotationAssertion(rdfs:comment tw:descriptionProperty "Feb'24: Proposed as completing properties under hasPropertyState")
+AnnotationAssertion(rdfs:comment tw:descriptionProperty "Feb'24: competing for existence agains hasPropertyState")
+
+# Object Property: tw:fullyGrounds (tw:fullyGrounds)
+
+SubObjectPropertyOf(tw:fullyGrounds tw:grounds)
+
+# Object Property: tw:grounds (grounds)
+
+AnnotationAssertion(rdfs:label tw:grounds "grounds"@en)
+SubObjectPropertyOf(tw:grounds tw:hasPresentProperty)
+TransitiveObjectProperty(tw:grounds)
+
+# Object Property: tw:hasAStateOf (tw:hasAStateOf)
+
+AnnotationAssertion(rdfs:comment tw:hasAStateOf "Specialized for states related to the physical quality of the entity
+Usage Examples:
+AssetX hasAStateOf assetMass
+AssetX hasAStateOf assetHealth")
+SubObjectPropertyOf(tw:hasAStateOf tw:hasPropertyState)
+
+# Object Property: tw:hasContentPart (tw:hasContentPart)
+
+SubObjectPropertyOf(tw:hasContentPart tw:hasPart)
+InverseObjectProperties(tw:hasContentPart tw:isPartOfContent)
+
+# Object Property: tw:hasEarlierVersion (has earlier version)
+
+AnnotationAssertion(rdfs:label tw:hasEarlierVersion "has earlier version"@en)
+SubObjectPropertyOf(tw:hasEarlierVersion tw:hasPresentProperty)
+TransitiveObjectProperty(tw:hasEarlierVersion)
+
+# Object Property: tw:hasInputVoltageSpec (tw:hasInputVoltageSpec)
+
+SubObjectPropertyOf(tw:hasInputVoltageSpec tw:hasNumericSpec)
+
+# Object Property: tw:hasLaterVersion (has later version)
+
+AnnotationAssertion(rdfs:label tw:hasLaterVersion "has later version"@en)
+SubObjectPropertyOf(tw:hasLaterVersion tw:hasPresentProperty)
+TransitiveObjectProperty(tw:hasLaterVersion)
+
+# Object Property: tw:hasMaxAllowableWorkingPressure (maximum allowable working pressure)
+
+AnnotationAssertion(rdfs:label tw:hasMaxAllowableWorkingPressure "maximum allowable working pressure")
+SubObjectPropertyOf(tw:hasMaxAllowableWorkingPressure tw:hasNumericSpec)
+
+# Object Property: tw:hasMaxAllowableWorkingTemperature (maximum allowable working temperature)
+
+AnnotationAssertion(rdfs:label tw:hasMaxAllowableWorkingTemperature "maximum allowable working temperature")
+SubObjectPropertyOf(tw:hasMaxAllowableWorkingTemperature tw:hasNumericSpec)
+
+# Object Property: tw:hasMeasurement (tw:hasMeasurement)
+
+SubObjectPropertyOf(tw:hasMeasurement tw:hasPresentProperty)
+
+# Object Property: tw:hasNextVersion (has next version)
+
+AnnotationAssertion(rdfs:label tw:hasNextVersion "has next version"@en)
+SubObjectPropertyOf(tw:hasNextVersion tw:hasLaterVersion)
+
+# Object Property: tw:hasNumericSpec (tw:hasNumericSpec)
+
+SubObjectPropertyOf(tw:hasNumericSpec tw:hasSpecification)
+
+# Object Property: tw:hasOutputPowerSpec (tw:hasOutputPowerSpec)
+
+SubObjectPropertyOf(tw:hasOutputPowerSpec tw:hasNumericSpec)
+
+# Object Property: tw:hasPart (tw:hasPart)
+
+SubObjectPropertyOf(tw:hasPart tw:hasPresentProperty)
+InverseObjectProperties(tw:hasPart tw:isPartOf)
+TransitiveObjectProperty(tw:hasPart)
+
+# Object Property: tw:hasPerformanceMeasurement (tw:hasPerformanceMeasurement)
+
+SubObjectPropertyOf(tw:hasPerformanceMeasurement tw:hasMeasurement)
+
+# Object Property: tw:hasPerformanceRequirement (tw:hasPerformanceRequirement)
+
+SubObjectPropertyOf(tw:hasPerformanceRequirement tw:hasSpecification)
+
+# Object Property: tw:hasPhysicalPart (tw:hasPhysicalPart)
+
+SubObjectPropertyOf(tw:hasPhysicalPart tw:hasPart)
+InverseObjectProperties(tw:hasPhysicalPart tw:isPhysicalPartOf)
+
+# Object Property: tw:hasPresentProperty (tw:hasPresentProperty)
+
+AnnotationAssertion(rdfs:comment tw:hasPresentProperty "TH Dec/2023: 
+The following properties are represented without reification.
+1. The binary relations represented by classes \"Relation>Binary Relation To\" 
+2. Unary relations pointing to a (complex) state, represented by a string or boolean value (This is represented as a DataProperty)")
+
+# Object Property: tw:hasPreviousVersion (has previous version)
+
+AnnotationAssertion(rdfs:label tw:hasPreviousVersion "has previous version"@en)
+SubObjectPropertyOf(tw:hasPreviousVersion tw:hasEarlierVersion)
+
+# Object Property: tw:hasPropertyState (tw:hasPropertyState)
+
+AnnotationAssertion(rdfs:comment tw:hasPropertyState "Feb'24: Competing for existence against the description property")
+AnnotationAssertion(rdfs:comment tw:hasPropertyState "Jan'24 TH: Existence is useful for querying all relational and quality states")
+
+# Object Property: tw:hasPublisher (has publisher)
+
+AnnotationAssertion(tw:SHACL_note tw:hasPublisher "range tw:publisher")
+AnnotationAssertion(rdfs:label tw:hasPublisher "has publisher"@en)
+SubObjectPropertyOf(tw:hasPublisher tw:hasPresentProperty)
+ObjectPropertyDomain(tw:hasPublisher tw:pieceOfContent)
+
+# Object Property: tw:hasSpecifedRelation (tw:hasSpecifedRelation)
+
+SubObjectPropertyOf(tw:hasSpecifedRelation tw:hasSpecification)
+
+# Object Property: tw:hasSpecification (tw:hasSpecification)
+
+SubObjectPropertyOf(tw:hasSpecification tw:hasPresentProperty)
+
+# Object Property: tw:hasSubjectType (tw:hasSubjectType)
+
+SubObjectPropertyOf(tw:hasSubjectType tw:hasPresentProperty)
+ObjectPropertyRange(tw:hasSubjectType tw:contentSubject)
+
+# Object Property: tw:hasSubsystem (tw:hasSubsystem)
+
+SubObjectPropertyOf(tw:hasSubsystem tw:hasPresentProperty)
+InverseObjectProperties(tw:hasSubsystem tw:isSubsystemOf)
+
+# Object Property: tw:hasSummary (has summary)
+
+AnnotationAssertion(rdfs:label tw:hasSummary "has summary"@en)
+SubObjectPropertyOf(tw:hasSummary tw:hasPresentProperty)
+
+# Object Property: tw:hasUnitOfMeasure (tw:hasUnitOfMeasure)
+
+SubObjectPropertyOf(tw:hasUnitOfMeasure tw:hasPresentProperty)
+
+# Object Property: tw:includesContent (includes content)
+
+AnnotationAssertion(rdfs:comment tw:includesContent "TH Dec2023: range: information content entity")
+AnnotationAssertion(rdfs:label tw:includesContent "includes content"@en)
+SubObjectPropertyOf(tw:includesContent tw:hasPresentProperty)
+ObjectPropertyRange(tw:includesContent tw:pieceOfContent)
+
+# Object Property: tw:includesContentAbout (includes content about)
+
+AnnotationAssertion(rdfs:comment tw:includesContentAbout "TH Dec2023: range:OWL thing")
+AnnotationAssertion(rdfs:label tw:includesContentAbout "includes content about"@en)
+SubObjectPropertyOf(tw:includesContentAbout tw:hasPresentProperty)
+
+# Object Property: tw:includesWorkInstructionContent (includes work instruction content)
+
+AnnotationAssertion(rdfs:label tw:includesWorkInstructionContent "includes work instruction content"@en)
+SubObjectPropertyOf(tw:includesWorkInstructionContent tw:includesContent)
+ObjectPropertyRange(tw:includesWorkInstructionContent tw:pieceOfContent)
+
+# Object Property: tw:includesWorkerQualificationContent (includes worker qualification content)
+
+AnnotationAssertion(rdfs:label tw:includesWorkerQualificationContent "includes worker qualification content"@en)
+SubObjectPropertyOf(tw:includesWorkerQualificationContent tw:includesContent)
+ObjectPropertyRange(tw:includesWorkerQualificationContent tw:pieceOfContent)
+
+# Object Property: tw:isADevelopmentOf (tw:isADevelopmentOf)
+
+SubObjectPropertyOf(tw:isADevelopmentOf tw:hasPresentProperty)
+InverseObjectProperties(tw:isADevelopmentOf tw:isDevelopedInto)
+
+# Object Property: tw:isCreatedBy (tw:isCreatedBy)
+
+SubObjectPropertyOf(tw:isCreatedBy tw:hasPresentProperty)
+
+# Object Property: tw:isDescribedAsObjectOf (is described as the object of)
+
+AnnotationAssertion(rdfs:label tw:isDescribedAsObjectOf "is described as the object of")
+SubObjectPropertyOf(tw:isDescribedAsObjectOf tw:descriptionProperty)
+
+# Object Property: tw:isDescribedAsSubjectOf (tw:isDescribedAsSubjectOf)
+
+SubObjectPropertyOf(tw:isDescribedAsSubjectOf tw:descriptionProperty)
+
+# Object Property: tw:isDescribedBy (tw:isDescribedBy)
+
+SubObjectPropertyOf(tw:isDescribedBy tw:descriptionProperty)
+
+# Object Property: tw:isDesignedToHold (tw:isDesignedToHold)
+
+AnnotationAssertion(rdfs:comment tw:isDesignedToHold "Initially meant to describe the function of vessel or piping.")
+SubObjectPropertyOf(tw:isDesignedToHold tw:hasSpecifedRelation)
+
+# Object Property: tw:isDevelopedInto (has developed manifestation)
+
+AnnotationAssertion(rdfs:label tw:isDevelopedInto "has developed manifestation"@en)
+SubObjectPropertyOf(tw:isDevelopedInto tw:hasPresentProperty)
+ObjectPropertyDomain(tw:isDevelopedInto tw:informationContentEntity)
+
+# Object Property: tw:isInAStateOf (tw:isInAStateOf)
+
+AnnotationAssertion(rdfs:comment tw:isInAStateOf "Specialized for states associated with one or more relations to other entities in the world.
+Usage Examples:
+as a part of binary relation: 
+- AssetX isInAStateOf SittingInside theIndividual RoomY
+- AssetX isInAStateOf possessing theIndividual FunctionAC
+as a part of unary relation: AssetX isInAStateOf  assetOperationalState")
+SubObjectPropertyOf(tw:isInAStateOf tw:hasPropertyState)
+
+# Object Property: tw:isOccupiedBy (tw:isOccupiedBy)
+
+SubObjectPropertyOf(tw:isOccupiedBy tw:hasPresentProperty)
+InverseObjectProperties(tw:isOccupiedBy tw:occupies)
+
+# Object Property: tw:isPartOf (tw:isPartOf)
+
+AnnotationAssertion(rdfs:comment tw:isPartOf "is physical proper part of")
+SubObjectPropertyOf(tw:isPartOf tw:hasPresentProperty)
+TransitiveObjectProperty(tw:isPartOf)
+
+# Object Property: tw:isPartOfContent (tw:isPartOfContent)
+
+SubObjectPropertyOf(tw:isPartOfContent tw:isPartOf)
+
+# Object Property: tw:isPhysicalPartOf (tw:isPhysicalPartOf)
+
+SubObjectPropertyOf(tw:isPhysicalPartOf tw:isPartOf)
+
+# Object Property: tw:isSubsystemOf (tw:isSubsystemOf)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:isSubsystemOf "A relation that refers to any system in relation to a larger system to which it is a part of.")
+SubObjectPropertyOf(tw:isSubsystemOf tw:hasPresentProperty)
+
+# Object Property: tw:occupies (tw:occupies)
+
+SubObjectPropertyOf(tw:occupies tw:hasPresentProperty)
+
+# Object Property: tw:partiallyGrounds (partially grounds)
+
+AnnotationAssertion(rdfs:label tw:partiallyGrounds "partially grounds"@en)
+SubObjectPropertyOf(tw:partiallyGrounds tw:grounds)
+
+# Object Property: tw:possessesFunction (tw:possessesFunction)
+
+SubObjectPropertyOf(tw:possessesFunction tw:hasPresentProperty)
+
+# Object Property: tw:references (references)
+
+AnnotationAssertion(rdfs:comment tw:references "TH 12.5.2023: Create to indicate that one document makes an explicit reference of another body of content.")
+AnnotationAssertion(rdfs:label tw:references "references"@en)
+SubObjectPropertyOf(tw:references tw:hasPresentProperty)
+
+# Object Property: tw:referencesForAdoption (references for adoption)
+
+AnnotationAssertion(rdfs:comment tw:referencesForAdoption "TH 12/5/2023: created to indicate that a body of content does not only contain a reference to another body of content, but also adopts the referred content to be enforceable, under the authority of an origanization such as the government legislature, or the employer.")
+AnnotationAssertion(rdfs:label tw:referencesForAdoption "references for adoption"@en)
+SubObjectPropertyOf(tw:referencesForAdoption tw:references)
+
+# Object Property: tw:relativeToOnsetOf (tw:relativeToOnsetOf)
+
+SubObjectPropertyOf(tw:relativeToOnsetOf tw:hasPresentProperty)
+ObjectPropertyRange(tw:relativeToOnsetOf tw:process)
+
+# Object Property: tw:relativeToTerminationOf (tw:relativeToTerminationOf)
+
+SubObjectPropertyOf(tw:relativeToTerminationOf tw:hasPresentProperty)
+ObjectPropertyRange(tw:relativeToTerminationOf tw:process)
+
+# Object Property: tw:sitsWithin (tw:sitsWithin)
+
+SubObjectPropertyOf(tw:sitsWithin tw:hasPresentProperty)
+
+# Object Property: tw:specifiedAsHavingPart (tw:specifiedAsHavingPart)
+
+SubObjectPropertyOf(tw:specifiedAsHavingPart tw:hasSpecifedRelation)
+
+# Object Property: tw:specifiesTriggerEvent (specifies trigger event)
+
+AnnotationAssertion(rdfs:label tw:specifiesTriggerEvent "specifies trigger event"@en)
+SubObjectPropertyOf(tw:specifiesTriggerEvent tw:hasSpecifedRelation)
+
+# Object Property: tw:theIndividual (tw:theIndividual)
+
+AnnotationAssertion(rdfs:comment tw:theIndividual "Usage Examples:
+AssetX isInAStateOf SittingInside theIndividual RoomY")
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: tw:hasAssetStatus (asset status)
+
+AnnotationAssertion(rdfs:label tw:hasAssetStatus "asset status"@en)
+SubDataPropertyOf(tw:hasAssetStatus tw:hasPresentValue)
+
+# Data Property: tw:hasBoilerServiceType (service type)
+
+AnnotationAssertion(rdfs:comment tw:hasBoilerServiceType "either \"hot water\" or \"steam\"")
+AnnotationAssertion(rdfs:label tw:hasBoilerServiceType "service type")
+SubDataPropertyOf(tw:hasBoilerServiceType tw:hasPresentValue)
+
+# Data Property: tw:hasContentText (has content text)
+
+AnnotationAssertion(rdfs:label tw:hasContentText "has content text"@en)
+SubDataPropertyOf(tw:hasContentText tw:hasPresentValue)
+
+# Data Property: tw:hasCreationTime (has creation time)
+
+AnnotationAssertion(rdfs:label tw:hasCreationTime "has creation time"@en)
+SubDataPropertyOf(tw:hasCreationTime tw:hasPresentValue)
+
+# Data Property: tw:hasDeaerator (equiped with deaerator?)
+
+AnnotationAssertion(rdfs:label tw:hasDeaerator "equiped with deaerator?")
+SubDataPropertyOf(tw:hasDeaerator tw:hasPresentValue)
+DataPropertyRange(tw:hasDeaerator xsd:boolean)
+
+# Data Property: tw:hasDocumentURL (has document URL)
+
+AnnotationAssertion(rdfs:label tw:hasDocumentURL "has document URL"@en)
+SubDataPropertyOf(tw:hasDocumentURL tw:hasPresentValue)
+
+# Data Property: tw:hasHorsepowerValue (horsepower)
+
+AnnotationAssertion(rdfs:label tw:hasHorsepowerValue "horsepower")
+SubDataPropertyOf(tw:hasHorsepowerValue tw:hasPowerValue)
+
+# Data Property: tw:hasIntentDescription (has intent description)
+
+AnnotationAssertion(rdfs:comment tw:hasIntentDescription "TH 12/02/23:
+I created this property to point to a piece of text describing the intent of the person(s) who raise the a certain Specific Content Subject.  For example the intent of the legislators who raise the subject of a new legislation.")
+AnnotationAssertion(rdfs:label tw:hasIntentDescription "has intent description"@en)
+SubDataPropertyOf(tw:hasIntentDescription tw:hasPresentValue)
+
+# Data Property: tw:hasInterpretationText (tw:hasInterpretationText)
+
+SubDataPropertyOf(tw:hasInterpretationText tw:hasPresentValue)
+DataPropertyRange(tw:hasInterpretationText xsd:string)
+
+# Data Property: tw:hasMeasurementValue (tw:hasMeasurementValue)
+
+DataPropertyRange(tw:hasMeasurementValue xsd:float)
+
+# Data Property: tw:hasName (tw:hasName)
+
+SubDataPropertyOf(tw:hasName tw:hasPresentValue)
+DataPropertyRange(tw:hasName xsd:string)
+
+# Data Property: tw:hasOperationalState (operational state)
+
+AnnotationAssertion(rdfs:label tw:hasOperationalState "operational state"@en)
+SubDataPropertyOf(tw:hasOperationalState tw:hasPresentValue)
+
+# Data Property: tw:hasPowerValue (tw:hasPowerValue)
+
+SubDataPropertyOf(tw:hasPowerValue tw:hasMeasurementValue)
+
+# Data Property: tw:hasPresentValue (tw:hasPresentValue)
+
+AnnotationAssertion(rdfs:comment tw:hasPresentValue "TH Dec/2023: For the subset of properties whose value could change over the lifetime of the asset (or independent continuent), you should be able to find the reified equivalence, as a subclass of Class:Property.")
+AnnotationAssertion(rdfs:comment tw:hasPresentValue "TH Jan'24: This is mean to be used with non-numeric values. All numerical values are reified in order to accomedate a UOM")
+SubDataPropertyOf(tw:hasPresentValue tw:hasPresentValue)
+
+# Data Property: tw:hasPublicationDate (has publication date)
+
+AnnotationAssertion(rdfs:label tw:hasPublicationDate "has publication date"@en)
+SubDataPropertyOf(tw:hasPublicationDate tw:hasPresentValue)
+
+# Data Property: tw:hasRevisionDate (has revision date)
+
+AnnotationAssertion(rdfs:label tw:hasRevisionDate "has revision date"@en)
+SubDataPropertyOf(tw:hasRevisionDate tw:hasPresentValue)
+
+# Data Property: tw:hasScopeDescription (has scope description)
+
+AnnotationAssertion(rdfs:label tw:hasScopeDescription "has scope description"@en)
+SubDataPropertyOf(tw:hasScopeDescription tw:hasPresentValue)
+DataPropertyRange(tw:hasScopeDescription xsd:string)
+
+# Data Property: tw:hasSealedOrShieldedBearing (sealed or shielded bearing?)
+
+AnnotationAssertion(rdfs:label tw:hasSealedOrShieldedBearing "sealed or shielded bearing?"@en)
+SubDataPropertyOf(tw:hasSealedOrShieldedBearing tw:hasPresentValue)
+
+# Data Property: tw:hasVoltageValue (tw:hasVoltageValue)
+
+SubDataPropertyOf(tw:hasVoltageValue tw:hasMeasurementValue)
+
+# Data Property: tw:hasVolumnValue (tw:hasVolumnValue)
+
+SubDataPropertyOf(tw:hasVolumnValue tw:hasMeasurementValue)
+
+# Data Property: tw:has_L_value (tw:has_L_value)
+
+SubDataPropertyOf(tw:has_L_value tw:hasVolumnValue)
+
+# Data Property: tw:has_MVA_value (MVA)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:has_MVA_value "megavolt-ampere")
+AnnotationAssertion(rdfs:label tw:has_MVA_value "MVA")
+SubDataPropertyOf(tw:has_MVA_value tw:hasPowerValue)
+
+# Data Property: tw:has_NEMA_enclosureType (NEMA enclosure type)
+
+AnnotationAssertion(rdfs:label tw:has_NEMA_enclosureType "NEMA enclosure type"@en)
+SubDataPropertyOf(tw:has_NEMA_enclosureType tw:hasPresentValue)
+
+# Data Property: tw:has_NEMA_frameType (NEMA frame type)
+
+AnnotationAssertion(rdfs:label tw:has_NEMA_frameType "NEMA frame type"@en)
+SubDataPropertyOf(tw:has_NEMA_frameType tw:hasPresentValue)
+
+# Data Property: tw:has_PF_value (percent power factor)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:has_PF_value "percent power factor")
+AnnotationAssertion(rdfs:label tw:has_PF_value "percent power factor")
+SubDataPropertyOf(tw:has_PF_value tw:hasMeasurementValue)
+
+# Data Property: tw:has_V_value (V)
+
+AnnotationAssertion(rdfs:label tw:has_V_value "V")
+SubDataPropertyOf(tw:has_V_value tw:hasVoltageValue)
+
+# Data Property: tw:has_kVA_value (kVA)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:has_kVA_value "kilovolt-ampere")
+AnnotationAssertion(rdfs:label tw:has_kVA_value "kVA")
+SubDataPropertyOf(tw:has_kVA_value tw:hasPowerValue)
+
+# Data Property: tw:has_kV_value (kV)
+
+AnnotationAssertion(rdfs:label tw:has_kV_value "kV")
+SubDataPropertyOf(tw:has_kV_value tw:hasVoltageValue)
+
+# Data Property: tw:has_liquidGallon_value (tw:has_liquidGallon_value)
+
+SubDataPropertyOf(tw:has_liquidGallon_value tw:hasVolumnValue)
+
+# Data Property: tw:includesWorkInstructionText (tw:includesWorkInstructionText)
+
+AnnotationAssertion(rdfs:comment tw:includesWorkInstructionText "TH: used in compliance app")
+SubDataPropertyOf(tw:includesWorkInstructionText tw:hasContentText)
+
+# Data Property: tw:isAboveGround (tw:isAboveGround)
+
+SubDataPropertyOf(tw:isAboveGround tw:hasPresentValue)
+
+# Data Property: tw:isActuatedValve (actuated valve?)
+
+AnnotationAssertion(rdfs:label tw:isActuatedValve "actuated valve?")
+SubDataPropertyOf(tw:isActuatedValve tw:hasPresentValue)
+DataPropertyRange(tw:isActuatedValve xsd:boolean)
+
+# Data Property: tw:isControlledValve (controlled valve?)
+
+AnnotationAssertion(rdfs:label tw:isControlledValve "controlled valve?")
+SubDataPropertyOf(tw:isControlledValve tw:hasPresentValue)
+DataPropertyRange(tw:isControlledValve xsd:boolean)
+
+# Data Property: tw:isDesignatedBy (tw:isDesignatedBy)
+
+SubDataPropertyOf(tw:isDesignatedBy tw:hasPresentValue)
+
+# Data Property: tw:isInstalledUnderground (underground?)
+
+AnnotationAssertion(rdfs:label tw:isInstalledUnderground "underground?")
+SubDataPropertyOf(tw:isInstalledUnderground tw:hasPresentValue)
+
+# Data Property: tw:isLatestVersion (is latest version)
+
+AnnotationAssertion(rdfs:label tw:isLatestVersion "is latest version"@en)
+SubDataPropertyOf(tw:isLatestVersion tw:hasPresentValue)
+DataPropertyRange(tw:isLatestVersion xsd:boolean)
+
+# Data Property: tw:isSubjectOfNote (tw:isSubjectOfNote)
+
+SubDataPropertyOf(tw:isSubjectOfNote tw:hasPresentValue)
+DataPropertyRange(tw:isSubjectOfNote xsd:string)
+
+# Data Property: tw:isUnderGround (tw:isUnderGround)
+
+SubDataPropertyOf(tw:isUnderGround tw:hasPresentValue)
+
+# Data Property: tw:usesBearingLubricantType (type of bearing lubricant)
+
+AnnotationAssertion(rdfs:label tw:usesBearingLubricantType "type of bearing lubricant"@en)
+SubDataPropertyOf(tw:usesBearingLubricantType tw:hasPresentValue)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: tw:AC_Assembly (tw:AC_Assembly)
+
+SubClassOf(tw:AC_Assembly tw:airConditioning)
+
+# Class: tw:AC_condenserUnit (tw:AC_condenserUnit)
+
+SubClassOf(tw:AC_condenserUnit tw:airConditioning)
+SubClassOf(tw:AC_condenserUnit tw:discreteAsset)
+SubClassOf(tw:AC_condenserUnit ObjectSomeValuesFrom(tw:isPhysicalPartOf tw:AC_Assembly))
+
+# Class: tw:AC_evaporatorUnit (tw:AC_evaporatorUnit)
+
+SubClassOf(tw:AC_evaporatorUnit tw:airConditioning)
+SubClassOf(tw:AC_evaporatorUnit tw:discreteAsset)
+SubClassOf(tw:AC_evaporatorUnit ObjectSomeValuesFrom(tw:isPhysicalPartOf tw:AC_Assembly))
+
+# Class: tw:ALWS (atomic level work specification)
+
+AnnotationAssertion(rdfs:label tw:ALWS "atomic level work specification")
+SubClassOf(tw:ALWS tw:workSpecification)
+
+# Class: tw:COCOA (compilation of content on activity specification)
+
+AnnotationAssertion(rdfs:label tw:COCOA "compilation of content on activity specification"@en)
+SubClassOf(tw:COCOA tw:contentCompilation)
+
+# Class: tw:CSA-B149-6_membraneGasholder (tw:CSA-B149-6_membraneGasholder)
+
+AnnotationAssertion(tw:notionMappingID tw:CSA-B149-6_membraneGasholder "c9c243803090466e87183f25bbcf7ff4")
+SubClassOf(tw:CSA-B149-6_membraneGasholder tw:gasometer)
+SubClassOf(tw:CSA-B149-6_membraneGasholder ObjectSomeValuesFrom(tw:isDesignedToHold tw:biogas))
+
+# Class: tw:HVAC_buildingOrGroundsServiceAsset (HVAC, Building, or Grounds Service Asset)
+
+AnnotationAssertion(rdfs:label tw:HVAC_buildingOrGroundsServiceAsset "HVAC, Building, or Grounds Service Asset")
+SubClassOf(tw:HVAC_buildingOrGroundsServiceAsset tw:TorontoWaterAsset)
+
+# Class: tw:HVAC_systemAsset (HVAC System Asset)
+
+AnnotationAssertion(rdfs:label tw:HVAC_systemAsset "HVAC System Asset")
+SubClassOf(tw:HVAC_systemAsset tw:HVAC_buildingOrGroundsServiceAsset)
+
+# Class: tw:MTD (manufacturered treatment device)
+
+AnnotationAssertion(rdfs:label tw:MTD "manufacturered treatment device")
+SubClassOf(tw:MTD tw:discreteAsset)
+SubClassOf(tw:MTD tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:OReg220PressureVessel (tw:OReg220PressureVessel)
+
+AnnotationAssertion(tw:notionMappingID tw:OReg220PressureVessel "4b7cb9e58d89436c9bea55d7f978b997")
+
+# Class: tw:PA_systemSpeaker (tw:PA_systemSpeaker)
+
+SubClassOf(tw:PA_systemSpeaker tw:discreteAsset)
+SubClassOf(tw:PA_systemSpeaker tw:informationOutput)
+
+# Class: tw:TorontoWaterAsset (Toronto Water Asset Class)
+
+AnnotationAssertion(rdfs:label tw:TorontoWaterAsset "Toronto Water Asset Class")
+SubClassOf(tw:TorontoWaterAsset tw:asset)
+
+# Class: tw:UV_disinfectionAssembly (tw:UV_disinfectionAssembly)
+
+SubClassOf(tw:UV_disinfectionAssembly tw:biologicalOrChemicalTreatmentAsset)
+SubClassOf(tw:UV_disinfectionAssembly tw:discreteAsset)
+
+# Class: tw:UV_disinfectionLampUnit (tw:UV_disinfectionLampUnit)
+
+SubClassOf(tw:UV_disinfectionLampUnit tw:biologicalOrChemicalTreatmentAsset)
+SubClassOf(tw:UV_disinfectionLampUnit tw:discreteAsset)
+
+# Class: tw:aPowerDesc (tw:aPowerDesc)
+
+SubClassOf(tw:aPowerDesc tw:assetDescription)
+
+# Class: tw:aPressureDesc (tw:aPressureDesc)
+
+SubClassOf(tw:aPressureDesc tw:assetDescription)
+
+# Class: tw:aTemperatureDesc (tw:aTemperatureDesc)
+
+SubClassOf(tw:aTemperatureDesc tw:assetDescription)
+
+# Class: tw:aVoltageDesc (tw:aVoltageDesc)
+
+SubClassOf(tw:aVoltageDesc tw:assetDescription)
+
+# Class: tw:aVolumetricCapacityDesc (tw:aVolumetricCapacityDesc)
+
+SubClassOf(tw:aVolumetricCapacityDesc tw:assetDescription)
+
+# Class: tw:abovegroundFuelOilTank_TEMP (tw:abovegroundFuelOilTank_TEMP)
+
+AnnotationAssertion(tw:notionMappingID tw:abovegroundFuelOilTank_TEMP "420e434923b848fabad3492f3a2fc981")
+EquivalentClasses(tw:abovegroundFuelOilTank_TEMP ObjectIntersectionOf(tw:fuelOilTank DataHasValue(tw:isAboveGround "true"^^xsd:boolean)))
+
+# Class: tw:abovegroundFuelTank_TEMP (tw:abovegroundFuelTank_TEMP)
+
+AnnotationAssertion(tw:notionMappingID tw:abovegroundFuelTank_TEMP "f6a5a26efef34b9d967e390024b800c4")
+EquivalentClasses(tw:abovegroundFuelTank_TEMP ObjectIntersectionOf(tw:fuelTank DataHasValue(tw:isAboveGround "true"^^xsd:boolean)))
+
+# Class: tw:actuator (tw:actuator)
+
+SubClassOf(tw:actuator tw:HVAC_systemAsset)
+SubClassOf(tw:actuator tw:discreteAsset)
+
+# Class: tw:aerationReactorTank (aeration reactor tank)
+
+AnnotationAssertion(rdfs:label tw:aerationReactorTank "aeration reactor tank")
+SubClassOf(tw:aerationReactorTank tw:discreteAsset)
+
+# Class: tw:airConditioning (Air Conditioning)
+
+AnnotationAssertion(rdfs:label tw:airConditioning "Air Conditioning")
+SubClassOf(tw:airConditioning tw:HVAC_systemAsset)
+
+# Class: tw:airDamper (tw:airDamper)
+
+SubClassOf(tw:airDamper tw:HVAC_systemAsset)
+SubClassOf(tw:airDamper tw:discreteAsset)
+SubClassOf(tw:airDamper tw:flowOrPressureControl)
+
+# Class: tw:airDryer (tw:airDryer)
+
+SubClassOf(tw:airDryer tw:discreteAsset)
+
+# Class: tw:airDuctSegment (tw:airDuctSegment)
+
+SubClassOf(tw:airDuctSegment tw:discreteAsset)
+SubClassOf(tw:airDuctSegment tw:linearFunctionAsset_pathOfFlow)
+
+# Class: tw:airExchangerUnit (tw:airExchangerUnit)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:airExchangerUnit "Air Exchanger Unit")
+SubClassOf(tw:airExchangerUnit tw:discreteAsset)
+
+# Class: tw:airFilterUnit (tw:airFilterUnit)
+
+SubClassOf(tw:airFilterUnit tw:discreteAsset)
+SubClassOf(tw:airFilterUnit tw:processingOfMaterial)
+
+# Class: tw:airFiltration (Air Filtration)
+
+AnnotationAssertion(rdfs:label tw:airFiltration "Air Filtration")
+SubClassOf(tw:airFiltration tw:HVAC_systemAsset)
+
+# Class: tw:airFiltrationUnit (tw:airFiltrationUnit)
+
+SubClassOf(tw:airFiltrationUnit tw:airFiltration)
+SubClassOf(tw:airFiltrationUnit tw:discreteAsset)
+
+# Class: tw:airHandlingUnit (tw:airHandlingUnit)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:airHandlingUnit "Air Handling Unit")
+SubClassOf(tw:airHandlingUnit tw:HVAC_systemAsset)
+SubClassOf(tw:airHandlingUnit tw:discreteAsset)
+
+# Class: tw:airScrubber (tw:airScrubber)
+
+SubClassOf(tw:airScrubber tw:discreteAsset)
+SubClassOf(tw:airScrubber tw:processingOfMaterial)
+SubClassOf(tw:airScrubber tw:respiratoryHazardProtection)
+
+# Class: tw:alarm (tw:alarm)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:alarm "Alarm")
+SubClassOf(tw:alarm tw:discreteAsset)
+SubClassOf(tw:alarm tw:informationOutput)
+
+# Class: tw:analyzer (tw:analyzer)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:analyzer "Analyzer")
+SubClassOf(tw:analyzer tw:discreteAsset)
+
+# Class: tw:annunciator (tw:annunciator)
+
+SubClassOf(tw:annunciator tw:discreteAsset)
+SubClassOf(tw:annunciator tw:informationOutput)
+
+# Class: tw:applicationServerAppliance (tw:applicationServerAppliance)
+
+SubClassOf(tw:applicationServerAppliance tw:computer)
+
+# Class: tw:area (area)
+
+AnnotationAssertion(rdfs:label tw:area "area"@en)
+SubClassOf(tw:area tw:dimension)
+
+# Class: tw:ashLagoon (ash lagoon)
+
+AnnotationAssertion(rdfs:label tw:ashLagoon "ash lagoon"@en)
+SubClassOf(tw:ashLagoon tw:discreteAsset)
+
+# Class: tw:assembly (tw:assembly)
+
+AnnotationAssertion(rdfs:comment tw:assembly "This is to say that the assembly's parts (and all of its parts) are not sufficiently physically unified to allow it to be moved around as a unit. Also, they are not unified by provenance (i.e. constitute a unit of the same manufactured product line).")
+AnnotationAssertion(rdfs:isDefinedBy tw:assembly "A system comprising physically integrated discrete parts that is not itself a discrete asset.")
+SubClassOf(tw:assembly tw:system)
+DisjointClasses(tw:assembly tw:flowIntegratedSystem)
+
+# Class: tw:asset (asset)
+
+AnnotationAssertion(rdfs:comment tw:asset "The function of an asset is to be realized continuously or repeatedly, which differs from consumables materials. The function of consumable materials is realized only once.
+An asset is not always associated with a market value – some assets’ market value may have depreciated to nothing.  However, the assets may continue to provide capabilities useful to Toronto Water. The capability, if lost, is associated with a cost to replace.")
+AnnotationAssertion(rdfs:isDefinedBy tw:asset "a material entity owned by a person or organization that possesses
+* functions useful for its owner's goal
+* and/or monetary value")
+AnnotationAssertion(rdfs:label tw:asset "asset")
+
+# Class: tw:assetDescription (asset specification)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:assetDescription "a description of the capability of an asset or a product-line of assets.")
+AnnotationAssertion(rdfs:label tw:assetDescription "asset specification")
+SubClassOf(tw:assetDescription tw:description)
+
+# Class: tw:assetManufacturer (asset manufacturer)
+
+AnnotationAssertion(rdfs:label tw:assetManufacturer "asset manufacturer"@en)
+SubClassOf(tw:assetManufacturer tw:organization)
+
+# Class: tw:assetOwner (asset owner)
+
+AnnotationAssertion(rdfs:label tw:assetOwner "asset owner")
+SubClassOf(tw:assetOwner tw:organization)
+
+# Class: tw:assetRole (asset role)
+
+AnnotationAssertion(rdfs:label tw:assetRole "asset role"@en)
+SubClassOf(tw:assetRole tw:role)
+
+# Class: tw:assetStatus (asset status)
+
+AnnotationAssertion(rdfs:label tw:assetStatus "asset status"@en)
+SubClassOf(tw:assetStatus tw:state)
+
+# Class: tw:atomicLevelWork (tw:atomicLevelWork)
+
+SubClassOf(tw:atomicLevelWork tw:work)
+
+# Class: tw:automaticExternalDefibrillator (tw:automaticExternalDefibrillator)
+
+SubClassOf(tw:automaticExternalDefibrillator tw:discreteAsset)
+SubClassOf(tw:automaticExternalDefibrillator tw:firstAidEquipment)
+
+# Class: tw:backflowPreventer (tw:backflowPreventer)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:backflowPreventer "Back Flow Preventer")
+AnnotationAssertion(tw:notionMappingID tw:backflowPreventer "820677d0c7e44520a83d328e2e371d97")
+SubClassOf(tw:backflowPreventer tw:discreteAsset)
+SubClassOf(tw:backflowPreventer tw:distributionAndCollectionNetoworkAsset)
+SubClassOf(tw:backflowPreventer tw:flowOrPressureControl)
+
+# Class: tw:barScreen (tw:barScreen)
+
+SubClassOf(tw:barScreen tw:discreteAsset)
+
+# Class: tw:batteryBank (tw:batteryBank)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:batteryBank "Battery")
+SubClassOf(tw:batteryBank tw:discreteAsset)
+SubClassOf(tw:batteryBank tw:electricalAssetOrComponent)
+
+# Class: tw:batteryCharger (tw:batteryCharger)
+
+SubClassOf(tw:batteryCharger tw:discreteAsset)
+SubClassOf(tw:batteryCharger tw:electricalAssetOrComponent)
+
+# Class: tw:batteryUnit (tw:batteryUnit)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:batteryUnit "Battery")
+SubClassOf(tw:batteryUnit tw:discreteAsset)
+
+# Class: tw:bearing (tw:bearing)
+
+SubClassOf(tw:bearing tw:discreteAsset)
+SubClassOf(tw:bearing tw:generalMechanicalComponent)
+
+# Class: tw:belt (tw:belt)
+
+SubClassOf(tw:belt tw:discreteAsset)
+SubClassOf(tw:belt tw:generalMechanicalComponent)
+
+# Class: tw:biogas (tw:biogas)
+
+SubClassOf(tw:biogas tw:combustableMaterial)
+SubClassOf(tw:biogas tw:gaseousMaterial)
+
+# Class: tw:biologicalOrChemicalTreatmentAsset (Biological or Chemical Treatment)
+
+AnnotationAssertion(rdfs:label tw:biologicalOrChemicalTreatmentAsset "Biological or Chemical Treatment")
+SubClassOf(tw:biologicalOrChemicalTreatmentAsset tw:waterOrWastewaterTreatment)
+
+# Class: tw:blowerOrFan (tw:blowerOrFan)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:blowerOrFan "Blower")
+SubClassOf(tw:blowerOrFan tw:discreteAsset)
+SubClassOf(tw:blowerOrFan tw:flowOrPressureControl)
+
+# Class: tw:boat (tw:boat)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:boat "Boat")
+SubClassOf(tw:boat tw:discreteAsset)
+SubClassOf(tw:boat tw:roadVehicleOrTransportationTool)
+
+# Class: tw:boiler (tw:boiler)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:boiler "Boiler")
+AnnotationAssertion(tw:notionMappingID tw:boiler "3d186d6bc9cb4c70987f7e85f2ff1871")
+SubClassOf(tw:boiler tw:HVAC_systemAsset)
+SubClassOf(tw:boiler tw:discreteAsset)
+SubClassOf(tw:boiler tw:processingOfMaterial)
+
+# Class: tw:boilerFitting (tw:boilerFitting)
+
+AnnotationAssertion(tw:notionMappingID tw:boilerFitting "5fa540fcf96d46719f000b7ef9d14c9d")
+AnnotationAssertion(rdfs:isDefinedBy tw:boilerFitting "a valve, gauge, regulating or controlling device, flange, pipe fitting, nozzle, or thing that is attached to or forms part of a boiler, pressure vessel, or pressure piping system.")
+SubClassOf(tw:boilerFitting tw:discreteAsset)
+SubClassOf(tw:boilerFitting tw:generalMechanicalComponent)
+
+# Class: tw:breaker (tw:breaker)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:breaker "Circuit Breaker")
+SubClassOf(tw:breaker tw:discreteAsset)
+
+# Class: tw:bridge (tw:bridge)
+
+SubClassOf(tw:bridge tw:buildingArchitecturalOrStructural)
+SubClassOf(tw:bridge tw:discreteAsset)
+
+# Class: tw:building (tw:building)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:building "Building")
+AnnotationAssertion(rdfs:comment tw:building "This definition allows for portable buildings to be classified as building")
+AnnotationAssertion(rdfs:isDefinedBy tw:building "A structure with a roof and some walls that partition its interior space from the outdoor space and stands in one place when it is used.")
+SubClassOf(tw:building tw:buildingArchitecturalOrStructural)
+SubClassOf(tw:building tw:discreteAsset)
+
+# Class: tw:buildingArchitecturalOrStructural (Building, Architectural, or Structural Asset)
+
+AnnotationAssertion(rdfs:comment tw:buildingArchitecturalOrStructural "Examples of structural asset include large processing tanks, roads, stacks, tunnels, and bridges.
+Note that under this definition, a diesel generator bolted to a foundation is not a built structure, while a wind turbine generator is. This is because the ability to withstand a load was not a primary consideration in the generator's design.")
+AnnotationAssertion(rdfs:isDefinedBy tw:buildingArchitecturalOrStructural "Partial Definition: Structure - an asset that
+* is permanently affixed to the earth (or to another structure affixed to the earth)
+* is designed to withstand a static load and environmental stress
+and its ability to withstand load and stress was a primary consideration in its design process")
+AnnotationAssertion(rdfs:label tw:buildingArchitecturalOrStructural "Building, Architectural, or Structural Asset")
+SubClassOf(tw:buildingArchitecturalOrStructural tw:TorontoWaterAsset)
+
+# Class: tw:buildingAutomationSystemController (tw:buildingAutomationSystemController)
+
+SubClassOf(tw:buildingAutomationSystemController tw:HVAC_buildingOrGroundsServiceAsset)
+SubClassOf(tw:buildingAutomationSystemController tw:discreteAsset)
+
+# Class: tw:bulkStorage (storage and longer term retention of a substance for later use)
+
+AnnotationAssertion(rdfs:label tw:bulkStorage "bulk storage"@en)
+AnnotationAssertion(rdfs:label tw:bulkStorage "storage and longer term retention of a substance for later use")
+SubClassOf(tw:bulkStorage tw:storage)
+
+# Class: tw:burner (tw:burner)
+
+SubClassOf(tw:burner tw:discreteAsset)
+
+# Class: tw:cableSection (tw:cableSection)
+
+SubClassOf(tw:cableSection tw:discreteAsset)
+SubClassOf(tw:cableSection tw:electricalAssetOrComponent)
+
+# Class: tw:cableSegment (tw:cableSegment)
+
+SubClassOf(tw:cableSegment tw:discreteAsset)
+
+# Class: tw:capacitor (tw:capacitor)
+
+SubClassOf(tw:capacitor tw:discreteAsset)
+SubClassOf(tw:capacitor tw:electricalAssetOrComponent)
+
+# Class: tw:cardReader (tw:cardReader)
+
+SubClassOf(tw:cardReader tw:entryAccessControlUnit)
+
+# Class: tw:catchBasin (tw:catchBasin)
+
+SubClassOf(tw:catchBasin tw:discreteAsset)
+SubClassOf(tw:catchBasin tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:category_G_boilerFitting (tw:category_G_boilerFitting)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:category_G_boilerFitting "CSA B51-19, Table 1: Certified capacity-rated pressure relief devices acceptable as primary overpressure protection on boilers, pressure vessels and pressure piping, and fusible plugs")
+SubClassOf(tw:category_G_boilerFitting tw:boilerFitting)
+
+# Class: tw:centrifuge (tw:centrifuge)
+
+SubClassOf(tw:centrifuge tw:discreteAsset)
+SubClassOf(tw:centrifuge tw:processingOfMaterial)
+
+# Class: tw:chamber (tw:chamber)
+
+SubClassOf(tw:chamber tw:discreteAsset)
+SubClassOf(tw:chamber tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:chemicalProtection (Chemical Protection)
+
+AnnotationAssertion(rdfs:label tw:chemicalProtection "Chemical Protection")
+SubClassOf(tw:chemicalProtection tw:safetyOrEnvironmentalHarmPreventionAsset)
+
+# Class: tw:chemicalSuit (tw:chemicalSuit)
+
+SubClassOf(tw:chemicalSuit tw:chemicalProtection)
+SubClassOf(tw:chemicalSuit tw:discreteAsset)
+
+# Class: tw:chiller (tw:chiller)
+
+SubClassOf(tw:chiller tw:discreteAsset)
+SubClassOf(tw:chiller tw:processingOfMaterial)
+
+# Class: tw:chillerCondenser (tw:chillerCondenser)
+
+SubClassOf(tw:chillerCondenser tw:discreteAsset)
+SubClassOf(tw:chillerCondenser tw:processingOfMaterial)
+SubClassOf(tw:chillerCondenser ObjectSomeValuesFrom(tw:isPhysicalPartOf tw:chiller))
+
+# Class: tw:chillerEvaporator (tw:chillerEvaporator)
+
+SubClassOf(tw:chillerEvaporator tw:discreteAsset)
+SubClassOf(tw:chillerEvaporator tw:processingOfMaterial)
+SubClassOf(tw:chillerEvaporator ObjectSomeValuesFrom(tw:isPhysicalPartOf tw:chiller))
+
+# Class: tw:chlorinator (tw:chlorinator)
+
+AnnotationAssertion(tw:SHACL_note tw:chlorinator "DiscreteModular? System?")
+SubClassOf(tw:chlorinator tw:dosingSystemAssembly)
+
+# Class: tw:chlorineAnalyzer (tw:chlorineAnalyzer)
+
+SubClassOf(tw:chlorineAnalyzer tw:dissolvedChemicalAnalyzer)
+
+# Class: tw:cityByLaw (tw:cityByLaw)
+
+SubClassOf(tw:cityByLaw tw:informationContentEntity)
+
+# Class: tw:clarificationTank (tw:clarificationTank)
+
+SubClassOf(tw:clarificationTank tw:discreteAsset)
+SubClassOf(tw:clarificationTank tw:solidsSeparation)
+SubClassOf(tw:clarificationTank ObjectSomeValuesFrom(tw:hasPhysicalPart tw:structuralTank))
+
+# Class: tw:classifier (tw:classifier)
+
+SubClassOf(tw:classifier tw:separator)
+SubClassOf(tw:classifier tw:solidsSeparation)
+
+# Class: tw:coagulationOrFlocculationTank (tw:coagulationOrFlocculationTank)
+
+SubClassOf(tw:coagulationOrFlocculationTank tw:discreteAsset)
+
+# Class: tw:combustableMaterial (tw:combustableMaterial)
+
+SubClassOf(tw:combustableMaterial tw:material)
+
+# Class: tw:combustionTurbine (tw:combustionTurbine)
+
+SubClassOf(tw:combustionTurbine tw:discreteAsset)
+SubClassOf(tw:combustionTurbine tw:mechanicalEnergyAndMotion)
+
+# Class: tw:commonInstrumentation (tw:commonInstrumentation)
+
+SubClassOf(tw:commonInstrumentation tw:discreteAsset)
+
+# Class: tw:commonTool (Common Tool)
+
+AnnotationAssertion(rdfs:label tw:commonTool "Common Tool")
+SubClassOf(tw:commonTool tw:TorontoWaterAsset)
+
+# Class: tw:compactor (tw:compactor)
+
+SubClassOf(tw:compactor tw:discreteAsset)
+SubClassOf(tw:compactor tw:processingOfMaterial)
+
+# Class: tw:compressedGasCylinder (tw:compressedGasCylinder)
+
+SubClassOf(tw:compressedGasCylinder tw:discreteAsset)
+SubClassOf(tw:compressedGasCylinder tw:storageOrSurgeSuppression)
+
+# Class: tw:compressor (tw:compressor)
+
+SubClassOf(tw:compressor tw:discreteAsset)
+SubClassOf(tw:compressor tw:flowOrPressureControl)
+
+# Class: tw:computer (tw:computer)
+
+SubClassOf(tw:computer tw:discreteAsset)
+
+# Class: tw:condensateTrap (tw:condensateTrap)
+
+SubClassOf(tw:condensateTrap tw:HVAC_systemAsset)
+SubClassOf(tw:condensateTrap tw:discreteAsset)
+SubClassOf(tw:condensateTrap tw:partOfProcessPiping)
+
+# Class: tw:conductivityAnalyzer (tw:conductivityAnalyzer)
+
+SubClassOf(tw:conductivityAnalyzer tw:discreteAsset)
+
+# Class: tw:containing (containing)
+
+AnnotationAssertion(rdfs:label tw:containing "containing"@en)
+SubClassOf(tw:containing tw:relationalState)
+
+# Class: tw:containment (containment)
+
+AnnotationAssertion(rdfs:label tw:containment "containment")
+SubClassOf(tw:containment tw:function)
+
+# Class: tw:contentCompilation (content compilation)
+
+AnnotationAssertion(rdfs:label tw:contentCompilation "content compilation"@en)
+SubClassOf(tw:contentCompilation tw:informationContentEntity)
+
+# Class: tw:contentSubject (content subject)
+
+AnnotationAssertion(rdfs:label tw:contentSubject "content subject"@en)
+SubClassOf(tw:contentSubject tw:informationContentEntity)
+
+# Class: tw:contentSummary (content summary)
+
+AnnotationAssertion(rdfs:label tw:contentSummary "content summary"@en)
+SubClassOf(tw:contentSummary tw:informationContentEntity)
+
+# Class: tw:controlledAccessBarrier (tw:controlledAccessBarrier)
+
+SubClassOf(tw:controlledAccessBarrier tw:discreteAsset)
+SubClassOf(tw:controlledAccessBarrier tw:securityOrAccessControlAsset)
+
+# Class: tw:controlledDoorAccess (tw:controlledDoorAccess)
+
+SubClassOf(tw:controlledDoorAccess tw:discreteAsset)
+
+# Class: tw:controller (tw:controller)
+
+SubClassOf(tw:controller tw:discreteAsset)
+
+# Class: tw:conveyanceOfFlow (Conveyance of Flow)
+
+AnnotationAssertion(rdfs:label tw:conveyanceOfFlow "Conveyance of Flow")
+SubClassOf(tw:conveyanceOfFlow tw:genericCrossDomainAsset)
+
+# Class: tw:conveyor (tw:conveyor)
+
+SubClassOf(tw:conveyor tw:discreteAsset)
+SubClassOf(tw:conveyor tw:liftingOrTransport)
+
+# Class: tw:coolingTower (tw:coolingTower)
+
+SubClassOf(tw:coolingTower tw:discreteAsset)
+SubClassOf(tw:coolingTower tw:processingOfMaterial)
+
+# Class: tw:corporatePolicy (corporate policy)
+
+AnnotationAssertion(rdfs:label tw:corporatePolicy "corporate policy"@en)
+SubClassOf(tw:corporatePolicy tw:contentSubject)
+
+# Class: tw:correctiveWork (corrective work)
+
+AnnotationAssertion(rdfs:label tw:correctiveWork "corrective work")
+SubClassOf(tw:correctiveWork tw:workOrderLevelWork)
+
+# Class: tw:counter (tw:counter)
+
+SubClassOf(tw:counter tw:discreteAsset)
+
+# Class: tw:crane (tw:crane)
+
+AnnotationAssertion(tw:notionMappingID tw:crane "7215f0de0aaa42a7a9cb0d9b00e9a205")
+AnnotationAssertion(rdfs:isDefinedBy tw:crane "CSA B167-16(R2021): a machine consisting of a brdge/girder, end trucks, and a hoisting mechanism for lifting a load vertically and moving it horizontally. where the hoisting mechanism is typically an integral part of the machine")
+SubClassOf(tw:crane tw:discreteAsset)
+SubClassOf(tw:crane tw:liftingOrTransport)
+
+# Class: tw:culvert (tw:culvert)
+
+SubClassOf(tw:culvert tw:buildingArchitecturalOrStructural)
+SubClassOf(tw:culvert tw:discreteAsset)
+SubClassOf(tw:culvert tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:cycloneSeparator (tw:cycloneSeparator)
+
+SubClassOf(tw:cycloneSeparator tw:separator)
+
+# Class: tw:definedCollection (defined asset collection)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:definedCollection "A set of entities unified by a written definition, which specifies the necessary conditions for each individual entity qualify as a member of the collection")
+AnnotationAssertion(rdfs:label tw:definedCollection "defined asset collection")
+
+# Class: tw:dehumidifier (tw:dehumidifier)
+
+SubClassOf(tw:dehumidifier tw:HVAC_systemAsset)
+SubClassOf(tw:dehumidifier tw:discreteAsset)
+
+# Class: tw:descendingDevice (tw:descendingDevice)
+
+AnnotationAssertion(tw:notionMappingID tw:descendingDevice "c60fe085f5634da29f57fbb69741b4ef")
+AnnotationAssertion(rdfs:isDefinedBy tw:descendingDevice "CSA Z259.2.3:16: automatic or manual operated device used in conjunction with an appropriate descent line, which allows the user, either individually or assisted by another person, to achieve a descent with controllable velocity.")
+SubClassOf(tw:descendingDevice tw:discreteAsset)
+
+# Class: tw:description (tw:description)
+
+AnnotationAssertion(rdfs:comment tw:description "Feb'24 TH: possibly in competition for existence against state")
+AnnotationAssertion(rdfs:comment tw:description "REASON WHY SPECIFICATIONS SHOULD BE REIFIED:
+1. PARTIALLY VALIDATED: This allows us to add more metadata. For example, who made the specification - i.e., Is it the consultant or the manufacturer? When was it made? Does it indicate required performance or specsheet performance?  If we cannot attach this information, we would have to specialize in many different types of relations. VALIDATION: Provenance metadata is only needed for some usecases. However, reification offers a way to distinguish between specification and observation, which is very helpful to avoid defining similar relations repetitively, for example instead of using isHolding and isSpecifiedToHold, use theSubstanceInContainment description instance either as a requirement or observation. 
+2. REFUTED: This allows us to find all specifications for a given entity easily. (Instead of querying for object specifications and data specification separately) REFUTATION: one can list all properties of the entity using SPARQL
+3. VALID:For numerical measurement specifications, having a reified entity allows us to attach the equivalent values in other units, such as specification in kg and lbs.
+4. VALID: Allows the database to be operated like an append-only-ledger and in good accord with the datahub architecture. Boolean data value specifications like hasActuactor are simple, but if someone had made the wrong specification, we would have to retract them, removing this historical representation. 
+
+DECISION:
+1) Definitely use the class of description entities to record numeric properties (with UOM) or evolving properties (from capital projects and from the field). 
+2) For some often used relations, like parthood, infer the value from the most current description and map to a hasPresentProperty relation (i.e. hasPart)
+3) For non-numeric properties that are inherent to the entity and would virtually never change, such as NEMA frame type data property or isCreatedBy object property, it is highly optional to record them using an description instance.  Doing so has the advantage of traking data entry mistakes (and their consequences before they were correctly), however this is an obscure use-case for most organizations.")
+AnnotationAssertion(rdfs:comment tw:description "The more generic term \"description\" is chosen over \"specification\" or \"observation\" so these can be used as both")
+SubClassOf(tw:description tw:informationContentEntity)
+
+# Class: tw:detentionPond (detention pond)
+
+AnnotationAssertion(rdfs:label tw:detentionPond "detention pond"@en)
+SubClassOf(tw:detentionPond tw:discreteAsset)
+
+# Class: tw:detentionTank (tw:detentionTank)
+
+SubClassOf(tw:detentionTank tw:wetWeatherFlowStorage)
+
+# Class: tw:dewatering (Dewatering)
+
+AnnotationAssertion(rdfs:label tw:dewatering "Dewatering")
+SubClassOf(tw:dewatering tw:waterOrWastewaterTreatment)
+
+# Class: tw:dewateringCentrifuge (tw:dewateringCentrifuge)
+
+SubClassOf(tw:dewateringCentrifuge tw:dewatering)
+SubClassOf(tw:dewateringCentrifuge tw:discreteAsset)
+
+# Class: tw:diesel (tw:diesel)
+
+SubClassOf(tw:diesel tw:fuelOil)
+SubClassOf(tw:diesel tw:liquid)
+
+# Class: tw:digesterGas (digester gas)
+
+AnnotationAssertion(rdfs:comment tw:digesterGas "TH Dec/2023: intended to quantify instances of Functional Capability or Quality entity")
+AnnotationAssertion(rdfs:label tw:digesterGas "digester gas"@en)
+SubClassOf(tw:digesterGas tw:biogas)
+
+# Class: tw:digesterReactor (digester reactor)
+
+AnnotationAssertion(tw:notionMappingID tw:digesterReactor "6b05951a956d4b0288df8f8b4211e78a")
+AnnotationAssertion(rdfs:label tw:digesterReactor "digester reactor")
+SubClassOf(tw:digesterReactor tw:discreteAsset)
+
+# Class: tw:dimension (dimension)
+
+AnnotationAssertion(rdfs:label tw:dimension "dimension"@en)
+SubClassOf(tw:dimension tw:quality)
+
+# Class: tw:disconnectSwitch (tw:disconnectSwitch)
+
+SubClassOf(tw:disconnectSwitch tw:discreteAsset)
+SubClassOf(tw:disconnectSwitch tw:electricalAssetOrComponent)
+
+# Class: tw:discreteAsset (discrete asset)
+
+AnnotationAssertion(rdfs:comment tw:discreteAsset "An asset may have smaller discrete assets in its set of parts.
+A manufactured asset product is a set of assets made under the same specification, which is usually related to a certain product-line identification (i.e. manufacturer, model, catalogue number, etc.)
+The asset that consists of a television and its remote control is an example of a discrete asset that is unified by a manufactured asset product, though it does not exist as a single physical unit.")
+AnnotationAssertion(rdfs:isDefinedBy tw:discreteAsset "An asset whose parts are 
+* unified, through physical integration, into a single object, or
+* unified under their common membership in a collection of objects that constitutes a manufactured product")
+AnnotationAssertion(rdfs:label tw:discreteAsset "discrete asset"@en)
+SubClassOf(tw:discreteAsset tw:asset)
+DisjointClasses(tw:discreteAsset tw:system)
+
+# Class: tw:disinfectionTank (tw:disinfectionTank)
+
+SubClassOf(tw:disinfectionTank tw:discreteAsset)
+
+# Class: tw:display (tw:display)
+
+SubClassOf(tw:display tw:discreteAsset)
+SubClassOf(tw:display tw:informationOutput)
+
+# Class: tw:dissolvedChemicalAnalyzer (tw:dissolvedChemicalAnalyzer)
+
+SubClassOf(tw:dissolvedChemicalAnalyzer tw:discreteAsset)
+
+# Class: tw:dissolvedOxygenInstrumentation (tw:dissolvedOxygenInstrumentation)
+
+SubClassOf(tw:dissolvedOxygenInstrumentation tw:discreteAsset)
+
+# Class: tw:distributedSystem (distributed system)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:distributedSystem "a system in a primary function is performed by assets occupying distinct positions that are distributed across different positions in its system topology.")
+AnnotationAssertion(rdfs:label tw:distributedSystem "distributed system")
+SubClassOf(tw:distributedSystem tw:flowIntegratedSystem)
+DisjointClasses(tw:distributedSystem tw:regionalizedSystem)
+
+# Class: tw:distributionAndCollectionNetoworkAsset (Distribution and Collection Network Asset)
+
+AnnotationAssertion(rdfs:label tw:distributionAndCollectionNetoworkAsset "Distribution and Collection Network Asset")
+SubClassOf(tw:distributionAndCollectionNetoworkAsset tw:TorontoWaterAsset)
+
+# Class: tw:distributionSystem (distribution system)
+
+AnnotationAssertion(rdfs:comment tw:distributionSystem "a distribution system would be mainly comprised of linear elements, which carries the resource over a distance, and conveyance assets, such as pumps, blowers, or conveyors.")
+AnnotationAssertion(rdfs:isDefinedBy tw:distributionSystem "DRAFT: a system whose function is to distribute a resource from one or more sources to sites where they are needed.")
+AnnotationAssertion(rdfs:label tw:distributionSystem "distribution system")
+SubClassOf(tw:distributionSystem tw:flowIntegratedSystem)
+
+# Class: tw:documentContent (document content)
+
+AnnotationAssertion(rdfs:label tw:documentContent "document content"@en)
+SubClassOf(tw:documentContent tw:pieceOfContent)
+
+# Class: tw:dosingEductor (tw:dosingEductor)
+
+SubClassOf(tw:dosingEductor tw:discreteAsset)
+SubClassOf(tw:dosingEductor tw:materialAdditionOrDosing)
+
+# Class: tw:dosingInjector (tw:dosingInjector)
+
+SubClassOf(tw:dosingInjector tw:discreteAsset)
+SubClassOf(tw:dosingInjector tw:materialAdditionOrDosing)
+
+# Class: tw:dosingOrMeteringPump (tw:dosingOrMeteringPump)
+
+SubClassOf(tw:dosingOrMeteringPump tw:discreteAsset)
+SubClassOf(tw:dosingOrMeteringPump tw:materialAdditionOrDosing)
+
+# Class: tw:dosingPump (tw:dosingPump)
+
+SubClassOf(tw:dosingPump tw:discreteAsset)
+
+# Class: tw:dosingSystemAssembly (tw:dosingSystemAssembly)
+
+SubClassOf(tw:dosingSystemAssembly tw:discreteAsset)
+SubClassOf(tw:dosingSystemAssembly tw:materialAdditionOrDosing)
+
+# Class: tw:dosingSystemUnit (tw:dosingSystemUnit)
+
+SubClassOf(tw:dosingSystemUnit tw:discreteAsset)
+SubClassOf(tw:dosingSystemUnit tw:materialAdditionOrDosing)
+
+# Class: tw:dryPond (tw:dryPond)
+
+SubClassOf(tw:dryPond tw:pond)
+
+# Class: tw:dryer (tw:dryer)
+
+SubClassOf(tw:dryer tw:discreteAsset)
+
+# Class: tw:dustCollecter (tw:dustCollecter)
+
+SubClassOf(tw:dustCollecter tw:discreteAsset)
+SubClassOf(tw:dustCollecter tw:processingOfMaterial)
+
+# Class: tw:easement (tw:easement)
+
+SubClassOf(tw:easement tw:discreteAsset)
+SubClassOf(tw:easement tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:electricalAssetOrComponent (Electrical Asset or Component)
+
+AnnotationAssertion(rdfs:label tw:electricalAssetOrComponent "Electrical Asset or Component")
+SubClassOf(tw:electricalAssetOrComponent tw:TorontoWaterAsset)
+
+# Class: tw:electricalConduitSection (tw:electricalConduitSection)
+
+SubClassOf(tw:electricalConduitSection tw:discreteAsset)
+SubClassOf(tw:electricalConduitSection tw:electricalAssetOrComponent)
+
+# Class: tw:electricalCurrentInstrumentation (tw:electricalCurrentInstrumentation)
+
+SubClassOf(tw:electricalCurrentInstrumentation tw:discreteAsset)
+
+# Class: tw:electricalDistributionOrMotorControlPanel (tw:electricalDistributionOrMotorControlPanel)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:electricalDistributionOrMotorControlPanel "BUS bar greater than 750 volts")
+AnnotationAssertion(tw:AvClassEquivalent tw:electricalDistributionOrMotorControlPanel "Control Panel,MCC")
+SubClassOf(tw:electricalDistributionOrMotorControlPanel tw:discreteAsset)
+SubClassOf(tw:electricalDistributionOrMotorControlPanel tw:enclosure)
+
+# Class: tw:electricalDuctBankSection (tw:electricalDuctBankSection)
+
+SubClassOf(tw:electricalDuctBankSection tw:discreteAsset)
+SubClassOf(tw:electricalDuctBankSection tw:electricalAssetOrComponent)
+
+# Class: tw:electricalSafety (Electrical Safety)
+
+AnnotationAssertion(rdfs:label tw:electricalSafety "Electrical Safety")
+SubClassOf(tw:electricalSafety tw:safetyOrEnvironmentalHarmPreventionAsset)
+
+# Class: tw:electrostaticPrecipitator (tw:electrostaticPrecipitator)
+
+SubClassOf(tw:electrostaticPrecipitator tw:discreteAsset)
+
+# Class: tw:elevator (tw:elevator)
+
+SubClassOf(tw:elevator tw:discreteAsset)
+SubClassOf(tw:elevator tw:partOfBuildingOrStructure)
+
+# Class: tw:emergencyEyewashOrShower (tw:emergencyEyewashOrShower)
+
+SubClassOf(tw:emergencyEyewashOrShower tw:discreteAsset)
+SubClassOf(tw:emergencyEyewashOrShower tw:safetyOrEnvironmentalHarmPreventionAsset)
+
+# Class: tw:emergencyGenerator (tw:emergencyGenerator)
+
+AnnotationAssertion(tw:notionMappingID tw:emergencyGenerator "6b6e8293a41842208aa0d2fdcf23e2fe")
+AnnotationAssertion(rdfs:isDefinedBy tw:emergencyGenerator "CSA C282: A generator providing emergency power to one of the following:
+a) fire alarm and emergency voice communications systems;
+b) firefighter’s elevators and elevators serving storeys above the first storey in a high building;
+c) fire protection water supply pumps that depend on electrical power supplied to the building;
+d) smoke control and smoke venting systems;
+e) emergency lighting; and
+f) exit signs that depend on electrical power supplied to the building.")
+SubClassOf(tw:emergencyGenerator tw:generator)
+
+# Class: tw:emergencyPowerSystem (tw:emergencyPowerSystem)
+
+AnnotationAssertion(tw:notionMappingID tw:emergencyPowerSystem "f4731a88fff54178bb8c4f1073657749")
+AnnotationAssertion(rdfs:isDefinedBy tw:emergencyPowerSystem "The system to provide emergency power including: emergency generator, ventilation and fuel supply.
+
+Ontario Building Code:
+... power supply capable of operating under a full load for not less than 2 h shall be
+provided by an emergency generator for,
+(a) every elevator serving storeys above the first storeyin a building that is more than 36 m high
+measured between grade and the floor level of the top storey and every elevator for firefighters in
+conformance with Sentence (2),
+(b) water supply for firefighting in conformance with Article 3.2.5.7., if the supply is dependent on
+electrical power supplied to the building, and the building is within the scope of Subsection 3.2.6.,
+(c) fans and other electrical equipment that are installed to maintain the air quality specified in Article
+3.2.6.2., and
+(d) fans required for venting by Article 3.2.6.6.")
+SubClassOf(tw:emergencyPowerSystem tw:system)
+
+# Class: tw:emergencyWork (emergency work)
+
+AnnotationAssertion(rdfs:label tw:emergencyWork "emergency work")
+SubClassOf(tw:emergencyWork tw:workOrderLevelWork)
+
+# Class: tw:enclosure (Enclosure)
+
+AnnotationAssertion(rdfs:label tw:enclosure "Enclosure")
+SubClassOf(tw:enclosure tw:genericCrossDomainAsset)
+
+# Class: tw:endTruck (tw:endTruck)
+
+AnnotationAssertion(tw:notionMappingID tw:endTruck "6249a4184d4445d59ed191877babc8d8")
+AnnotationAssertion(rdfs:isDefinedBy tw:endTruck "End truck — a crane component that supgorts and carries the bridge girders or end ties of an overhead travelling crane, or the sill of a gantry crane.
+Note: An end truck is usually constructed as a frame that houses wheels, bearings, and axles.")
+SubClassOf(tw:endTruck tw:discreteAsset)
+SubClassOf(tw:endTruck tw:liftingOrTransport)
+
+# Class: tw:energyRecoveryVentilator (tw:energyRecoveryVentilator)
+
+SubClassOf(tw:energyRecoveryVentilator tw:HVAC_systemAsset)
+SubClassOf(tw:energyRecoveryVentilator tw:discreteAsset)
+
+# Class: tw:engine (tw:engine)
+
+SubClassOf(tw:engine tw:discreteAsset)
+SubClassOf(tw:engine tw:mechanicalEnergyAndMotion)
+
+# Class: tw:entryAccessControlUnit (tw:entryAccessControlUnit)
+
+SubClassOf(tw:entryAccessControlUnit tw:discreteAsset)
+SubClassOf(tw:entryAccessControlUnit tw:securityOrAccessControlAsset)
+
+# Class: tw:environmentalHazard (environmenta hazard)
+
+AnnotationAssertion(rdfs:label tw:environmentalHazard "environmenta hazard")
+SubClassOf(tw:environmentalHazard tw:hazard)
+
+# Class: tw:equipmentLocalControlPanel (tw:equipmentLocalControlPanel)
+
+SubClassOf(tw:equipmentLocalControlPanel tw:discreteAsset)
+SubClassOf(tw:equipmentLocalControlPanel tw:enclosure)
+
+# Class: tw:expansionJoint (tw:expansionJoint)
+
+SubClassOf(tw:expansionJoint tw:discreteAsset)
+SubClassOf(tw:expansionJoint tw:partOfProcessPiping)
+
+# Class: tw:explosionPreventionEquipment (Explosion Prevention Equipment)
+
+AnnotationAssertion(rdfs:label tw:explosionPreventionEquipment "Explosion Prevention Equipment")
+SubClassOf(tw:explosionPreventionEquipment tw:safetyOrEnvironmentalHarmPreventionAsset)
+
+# Class: tw:expressionOfCurrentFlow (current output)
+
+AnnotationAssertion(rdfs:label tw:expressionOfCurrentFlow "current output"@en)
+SubClassOf(tw:expressionOfCurrentFlow tw:expressionOfQuantity)
+
+# Class: tw:expressionOfMassFlow (material output)
+
+AnnotationAssertion(rdfs:label tw:expressionOfMassFlow "material output"@en)
+SubClassOf(tw:expressionOfMassFlow tw:expressionOfQuantity)
+
+# Class: tw:expressionOfPowerLevel (tw:expressionOfPowerLevel)
+
+SubClassOf(tw:expressionOfPowerLevel tw:expressionOfQuantity)
+
+# Class: tw:expressionOfPressure (pressure measurement)
+
+AnnotationAssertion(rdfs:label tw:expressionOfPressure "pressure measurement")
+SubClassOf(tw:expressionOfPressure tw:expressionOfQuantity)
+
+# Class: tw:expressionOfQuantity (measurement)
+
+AnnotationAssertion(rdfs:comment tw:expressionOfQuantity "Feb'24: considered for DEPRECATION, after we have the more specialized properties of hasMeasurementValue")
+AnnotationAssertion(rdfs:comment tw:expressionOfQuantity "TH Dec/2023: a level of function that is realized at a certain type t")
+AnnotationAssertion(rdfs:label tw:expressionOfQuantity "measurement"@en)
+SubClassOf(tw:expressionOfQuantity tw:informationContentEntity)
+
+# Class: tw:expressionOfSpeed (speed)
+
+AnnotationAssertion(rdfs:label tw:expressionOfSpeed "speed"@en)
+SubClassOf(tw:expressionOfSpeed tw:expressionOfQuantity)
+
+# Class: tw:expressionOfVoltageLevel (output voltage)
+
+AnnotationAssertion(rdfs:label tw:expressionOfVoltageLevel "output voltage"@en)
+SubClassOf(tw:expressionOfVoltageLevel tw:expressionOfQuantity)
+
+# Class: tw:expressionOfWeight (lifting capacity)
+
+AnnotationAssertion(rdfs:label tw:expressionOfWeight "lifting capacity"@en)
+SubClassOf(tw:expressionOfWeight tw:expressionOfQuantity)
+
+# Class: tw:facility (tw:facility)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:facility "The collection of all assets (e.g., process systems and their components, facility support systems, buildings, spaces, an real-estate) located inside a discrete property boundary and whose use or operation comes under the purvey of the facility's management.")
+SubClassOf(tw:facility tw:definedCollection)
+
+# Class: tw:facilityProcessSystem (tw:facilityProcessSystem)
+
+SubClassOf(tw:facilityProcessSystem tw:hierarchicalSystem)
+
+# Class: tw:facilitySystem (tw:facilitySystem)
+
+SubClassOf(tw:facilitySystem tw:hierarchicalSystem)
+
+# Class: tw:fallArrestDavitArm (tw:fallArrestDavitArm)
+
+SubClassOf(tw:fallArrestDavitArm tw:discreteAsset)
+SubClassOf(tw:fallArrestDavitArm tw:fallProtectionEquipment)
+
+# Class: tw:fallArrestHarness (tw:fallArrestHarness)
+
+AnnotationAssertion(tw:notionMappingID tw:fallArrestHarness "e9ecea6e400843ba9e874bff9378b22f")
+SubClassOf(tw:fallArrestHarness tw:discreteAsset)
+SubClassOf(tw:fallArrestHarness tw:fallProtectionEquipment)
+
+# Class: tw:fallArrestRopeGrab (tw:fallArrestRopeGrab)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:fallArrestRopeGrab "CSA Z259.2.5-17: a component that
+a) engages a vertical lifeline or rigid rail in the vertical or sloped plane;
+b) accepts a connecting linkage;
+c) can be moved along the lifeline or rail in accordance with the position of the worker;
+d) automatically engages on the lifeline or rail in the event of a fall in order to arrest the fall; and
+e) has a integral connecting means.")
+SubClassOf(tw:fallArrestRopeGrab tw:discreteAsset)
+
+# Class: tw:fallArrestSystem (tw:fallArrestSystem)
+
+AnnotationAssertion(tw:notionMappingID tw:fallArrestSystem "d419b16212f340e797aa00e8ae3d50c8")
+AnnotationAssertion(rdfs:isDefinedBy tw:fallArrestSystem "O.Reg 213/91: an assembly of components joined together so that when the assembly is connected to a fixed support, it is capable of arresting a worker’s fall
+26.6 (1) modified: A fall arrest system shall consist of a full body harness with adequate attachment points and a lanyard equipped with a shock absorber or similar device, unless the shock absorber if wearing one could cause a worker to hit the ground or an object or level below the work")
+SubClassOf(tw:fallArrestSystem tw:assembly)
+SubClassOf(tw:fallArrestSystem tw:fallProtectionEquipment)
+
+# Class: tw:fallProtectionDescendingDevice (tw:fallProtectionDescendingDevice)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:fallProtectionDescendingDevice "CSA Z259.2.3:16: automatic or manual operated device used in conjunction with an appropriate descent line, which allows the user, either individually or assisted by another person, to achieve a descent with controllable velocity.")
+SubClassOf(tw:fallProtectionDescendingDevice tw:discreteAsset)
+
+# Class: tw:fallProtectionEnergyAbsorber (tw:fallProtectionEnergyAbsorber)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:fallProtectionEnergyAbsorber "CSA Z259.11-17: any device that dissipates kinetic energy, limits deceleration force during fall arrest, and does not return kinetic energy to the system or into the human body.")
+SubClassOf(tw:fallProtectionEnergyAbsorber tw:discreteAsset)
+
+# Class: tw:fallProtectionEquipment (Fall Protection Equipment)
+
+AnnotationAssertion(rdfs:label tw:fallProtectionEquipment "Fall Protection Equipment")
+SubClassOf(tw:fallProtectionEquipment tw:safetyOrEnvironmentalHarmPreventionAsset)
+
+# Class: tw:fallRestraintSystem (tw:fallRestraintSystem)
+
+AnnotationAssertion(tw:notionMappingID tw:fallRestraintSystem "4e219f01e83d4268ad9a31818332e09a")
+AnnotationAssertion(rdfs:isDefinedBy tw:fallRestraintSystem "O.Reg 213/91: means an assembly of components capable of restricting a worker’s movement on a work surface and preventing the worker from reaching a location from which he or she could fall.
+26.4(1) A travel restraint system shall consist of a full body harness with adequate attachment points or a safety belt.
+CSA Z259.1-05: an assembly of components that, when property assembled and used together and when connected to a suitable anchorage, prevents a worker from reaching an unprotected edge or opening where a fall could occur. A TRS is not intended for use as a work positioning system or Fall Arrest System.")
+SubClassOf(tw:fallRestraintSystem tw:assembly)
+SubClassOf(tw:fallRestraintSystem tw:fallProtectionEquipment)
+
+# Class: tw:fallRestrictingSystem (tw:fallRestrictingSystem)
+
+AnnotationAssertion(tw:notionMappingID tw:fallRestrictingSystem "b6b38579ad7a4d10ad0653bccd57ce16")
+AnnotationAssertion(rdfs:isDefinedBy tw:fallRestrictingSystem "O.Reg 213/91:  a type of fall arrest system that has been designed to limit a worker’s fall to a specified distance.
+25.6(1) A fall restricting system that is not designed for use in wood pole climbing shall consist of an assembly of components that is,
+(a) attached to an independent fixed support that meets the requirements of section 26.7; and
+(b) designed and arranged in accordance with the manufacturer’s instructions and so that a worker’s free fall distance does not exceed 0.6 metres.")
+SubClassOf(tw:fallRestrictingSystem tw:fallArrestSystem)
+SubClassOf(tw:fallRestrictingSystem tw:fallProtectionEquipment)
+
+# Class: tw:federalRegulation (Canadian federal regulation)
+
+AnnotationAssertion(rdfs:label tw:federalRegulation "Canadian federal regulation"@en)
+SubClassOf(tw:federalRegulation tw:governmentRegulation)
+
+# Class: tw:feederOrHopper (tw:feederOrHopper)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:feederOrHopper "Chemical Feeder")
+SubClassOf(tw:feederOrHopper tw:discreteAsset)
+
+# Class: tw:fenceSection (tw:fenceSection)
+
+SubClassOf(tw:fenceSection tw:buildingArchitecturalOrStructural)
+SubClassOf(tw:fenceSection tw:discreteAsset)
+
+# Class: tw:figureContent (figure content)
+
+AnnotationAssertion(rdfs:label tw:figureContent "figure content"@en)
+SubClassOf(tw:figureContent tw:pieceOfContent)
+
+# Class: tw:filter_MTD (tw:filter_MTD)
+
+SubClassOf(tw:filter_MTD tw:MTD)
+
+# Class: tw:filtration (Filtration)
+
+AnnotationAssertion(rdfs:label tw:filtration "Filtration")
+SubClassOf(tw:filtration tw:waterOrWastewaterTreatment)
+
+# Class: tw:filtrationTank (tw:filtrationTank)
+
+SubClassOf(tw:filtrationTank tw:discreteAsset)
+SubClassOf(tw:filtrationTank ObjectSomeValuesFrom(tw:hasPhysicalPart tw:tankOrVessel))
+
+# Class: tw:fireRatedDoor (tw:fireRatedDoor)
+
+SubClassOf(tw:fireRatedDoor tw:discreteAsset)
+SubClassOf(tw:fireRatedDoor tw:partOfBuildingOrStructure)
+
+# Class: tw:firstAidEquipment (First-Aid Equipment)
+
+AnnotationAssertion(rdfs:label tw:firstAidEquipment "First-Aid Equipment")
+SubClassOf(tw:firstAidEquipment tw:safetyOrEnvironmentalHarmPreventionAsset)
+
+# Class: tw:firstAidKit (tw:firstAidKit)
+
+SubClassOf(tw:firstAidKit tw:discreteAsset)
+SubClassOf(tw:firstAidKit tw:firstAidEquipment)
+
+# Class: tw:firstAidRoomEquipment (tw:firstAidRoomEquipment)
+
+SubClassOf(tw:firstAidRoomEquipment tw:discreteAsset)
+
+# Class: tw:firstAidStationEquipment (tw:firstAidStationEquipment)
+
+SubClassOf(tw:firstAidStationEquipment tw:discreteAsset)
+SubClassOf(tw:firstAidStationEquipment tw:firstAidEquipment)
+
+# Class: tw:fixedGasDetector (tw:fixedGasDetector)
+
+SubClassOf(tw:fixedGasDetector tw:discreteAsset)
+
+# Class: tw:fixedLadder (tw:fixedLadder)
+
+AnnotationAssertion(tw:notionMappingID tw:fixedLadder "20fd58dbecb7487ba70b8c577d3be64a")
+SubClassOf(tw:fixedLadder tw:ladder)
+SubClassOf(tw:fixedLadder tw:partOfBuildingOrStructure)
+
+# Class: tw:flameArrestor (tw:flameArrestor)
+
+SubClassOf(tw:flameArrestor tw:discreteAsset)
+SubClassOf(tw:flameArrestor tw:explosionPreventionEquipment)
+
+# Class: tw:flameOrCombustionInstrumentation (tw:flameOrCombustionInstrumentation)
+
+SubClassOf(tw:flameOrCombustionInstrumentation tw:discreteAsset)
+
+# Class: tw:floatationEquipment (Floatation Equipment)
+
+AnnotationAssertion(rdfs:label tw:floatationEquipment "Floatation Equipment")
+SubClassOf(tw:floatationEquipment tw:safetyOrEnvironmentalHarmPreventionAsset)
+
+# Class: tw:flowIntegratedSystem (flow integrated system)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:flowIntegratedSystem "a system that is integrated by lines or wireless links, carrying flows of substance, energy, or signal.")
+AnnotationAssertion(rdfs:label tw:flowIntegratedSystem "flow integrated system")
+SubClassOf(tw:flowIntegratedSystem tw:system)
+
+# Class: tw:flowOrPressureControl (Flow or Pressure Control)
+
+AnnotationAssertion(rdfs:label tw:flowOrPressureControl "Flow or Pressure Control")
+SubClassOf(tw:flowOrPressureControl tw:genericCrossDomainAsset)
+
+# Class: tw:flowmeter (tw:flowmeter)
+
+SubClassOf(tw:flowmeter tw:discreteAsset)
+
+# Class: tw:forklift (tw:forklift)
+
+SubClassOf(tw:forklift tw:mobileLift)
+
+# Class: tw:fuel (tw:fuel)
+
+SubClassOf(tw:fuel tw:combustableMaterial)
+
+# Class: tw:fuelAppliance (tw:fuelAppliance)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:fuelAppliance "a device used to convert fuel into energy.")
+SubClassOf(tw:fuelAppliance tw:discreteAsset)
+
+# Class: tw:fuelOil (tw:fuelOil)
+
+SubClassOf(tw:fuelOil tw:fuel)
+SubClassOf(tw:fuelOil tw:liquid)
+
+# Class: tw:fuelOilAppliance (tw:fuelOilAppliance)
+
+AnnotationAssertion(tw:notionMappingID tw:fuelOilAppliance "82537133b8f24fe1870c2457c6212b4f")
+AnnotationAssertion(rdfs:isDefinedBy tw:fuelOilAppliance "O. Reg 212/01: “appliance” means a device that consumes or is intended to consume a gas and includes all valves, fittings, controls and components attached or to be attached to it.
+CSA 149.2: a device to convert gas into energy or compress gas for the purpose of fuelling; the term includes any component, control, wiring, piping, or tubing required to be part of the device.")
+SubClassOf(tw:fuelOilAppliance tw:fuelAppliance)
+
+# Class: tw:fuelOilTank (tw:fuelOilTank)
+
+AnnotationAssertion(tw:notionMappingID tw:fuelOilTank "346427579fb94e93a6f40ac6620ed2b0")
+EquivalentClasses(tw:fuelOilTank ObjectIntersectionOf(tw:fuelTank ObjectSomeValuesFrom(tw:isDesignedToHold tw:fuelOil)))
+
+# Class: tw:fuelPipingSystem (tw:fuelPipingSystem)
+
+AnnotationAssertion(tw:notionMappingID tw:fuelPipingSystem "2176ff53fd794671b03ffae50c930345")
+SubClassOf(tw:fuelPipingSystem tw:pipingSystem)
+
+# Class: tw:fuelTank (fuel tank)
+
+AnnotationAssertion(tw:notionMappingID tw:fuelTank "7260475a6c0a49ca85670e37ae82dfdc")
+AnnotationAssertion(rdfs:label tw:fuelTank "fuel tank")
+EquivalentClasses(tw:fuelTank ObjectIntersectionOf(tw:storageTank ObjectSomeValuesFrom(tw:isDesignedToHold tw:fuel)))
+
+# Class: tw:function (function)
+
+AnnotationAssertion(rdfs:label tw:function "function")
+SubClassOf(tw:function tw:property)
+
+# Class: tw:furnace (tw:furnace)
+
+SubClassOf(tw:furnace tw:discreteAsset)
+
+# Class: tw:fuse (tw:fuse)
+
+SubClassOf(tw:fuse tw:discreteAsset)
+SubClassOf(tw:fuse tw:electricalAssetOrComponent)
+
+# Class: tw:gasAppliance (tw:gasAppliance)
+
+AnnotationAssertion(tw:notionMappingID tw:gasAppliance "6fb4bd445ab8441d8557e738d70edafe")
+AnnotationAssertion(rdfs:isDefinedBy tw:gasAppliance "CSA B139: a device used to convert fuel into energy. Note: This term includes all components, controls, wiring, and piping required as part of the device by the applicable standard")
+SubClassOf(tw:gasAppliance tw:fuelAppliance)
+
+# Class: tw:gasDiffuser (tw:gasDiffuser)
+
+SubClassOf(tw:gasDiffuser tw:discreteAsset)
+SubClassOf(tw:gasDiffuser tw:materialAdditionOrDosing)
+
+# Class: tw:gasDiffuserGridAssembly (tw:gasDiffuserGridAssembly)
+
+SubClassOf(tw:gasDiffuserGridAssembly tw:discreteAsset)
+
+# Class: tw:gasHolder (tw:gasHolder)
+
+SubClassOf(tw:gasHolder tw:tankOrVessel)
+
+# Class: tw:gasInstrumentation (tw:gasInstrumentation)
+
+SubClassOf(tw:gasInstrumentation tw:discreteAsset)
+
+# Class: tw:gaseousMaterial (gaseous material)
+
+AnnotationAssertion(rdfs:label tw:gaseousMaterial "gaseous material")
+SubClassOf(tw:gaseousMaterial tw:material)
+
+# Class: tw:gasoline (tw:gasoline)
+
+SubClassOf(tw:gasoline tw:fuel)
+SubClassOf(tw:gasoline tw:liquid)
+
+# Class: tw:gasolineTank (tw:gasolineTank)
+
+SubClassOf(tw:gasolineTank tw:fuelTank)
+SubClassOf(tw:gasolineTank ObjectSomeValuesFrom(tw:isDesignedToHold tw:gasoline))
+
+# Class: tw:gasometer (tw:gasometer)
+
+SubClassOf(tw:gasometer tw:storageTank)
+SubClassOf(tw:gasometer ObjectSomeValuesFrom(tw:isDesignedToHold ObjectIntersectionOf(tw:combustableMaterial tw:gaseousMaterial)))
+
+# Class: tw:gate (tw:gate)
+
+SubClassOf(tw:gate tw:discreteAsset)
+SubClassOf(tw:gate tw:flowOrPressureControl)
+
+# Class: tw:gauge (tw:gauge)
+
+SubClassOf(tw:gauge tw:discreteAsset)
+SubClassOf(tw:gauge tw:informationOutput)
+
+# Class: tw:generalMechanicalComponent (General Mechanical Component)
+
+AnnotationAssertion(rdfs:label tw:generalMechanicalComponent "General Mechanical Component")
+SubClassOf(tw:generalMechanicalComponent tw:TorontoWaterAsset)
+
+# Class: tw:generalNetworkingAsset (General Networking Asset)
+
+AnnotationAssertion(rdfs:label tw:generalNetworkingAsset "General Networking Asset")
+SubClassOf(tw:generalNetworkingAsset tw:TorontoWaterAsset)
+
+# Class: tw:generator (tw:generator)
+
+SubClassOf(tw:generator tw:discreteAsset)
+SubClassOf(tw:generator tw:electricalAssetOrComponent)
+
+# Class: tw:genericCrossDomainAsset (GENERIC CROSS-DOMAIN ASSET)
+
+AnnotationAssertion(rdfs:label tw:genericCrossDomainAsset "GENERIC CROSS-DOMAIN ASSET")
+SubClassOf(tw:genericCrossDomainAsset tw:TorontoWaterAsset)
+
+# Class: tw:golfCart (tw:golfCart)
+
+SubClassOf(tw:golfCart tw:discreteAsset)
+SubClassOf(tw:golfCart tw:roadVehicleOrTransportationTool)
+
+# Class: tw:governmentRegulation (government regulation)
+
+AnnotationAssertion(rdfs:label tw:governmentRegulation "government regulation"@en)
+SubClassOf(tw:governmentRegulation tw:contentSubject)
+
+# Class: tw:granularMaterial (tw:granularMaterial)
+
+SubClassOf(tw:granularMaterial tw:material)
+
+# Class: tw:greenInfrastructureAsset (Green Infrastructure Asset)
+
+AnnotationAssertion(rdfs:label tw:greenInfrastructureAsset "Green Infrastructure Asset")
+SubClassOf(tw:greenInfrastructureAsset tw:TorontoWaterAsset)
+
+# Class: tw:grinder (tw:grinder)
+
+SubClassOf(tw:grinder tw:discreteAsset)
+SubClassOf(tw:grinder tw:processingOfMaterial)
+
+# Class: tw:grinderOrComminutor (tw:grinderOrComminutor)
+
+SubClassOf(tw:grinderOrComminutor tw:discreteAsset)
+SubClassOf(tw:grinderOrComminutor tw:waterOrWastewaterTreatment)
+
+# Class: tw:gritClassifier (tw:gritClassifier)
+
+SubClassOf(tw:gritClassifier tw:discreteAsset)
+
+# Class: tw:groundingEquipment (tw:groundingEquipment)
+
+SubClassOf(tw:groundingEquipment tw:discreteAsset)
+SubClassOf(tw:groundingEquipment tw:electricalSafety)
+
+# Class: tw:guideline (tw:guideline)
+
+SubClassOf(tw:guideline tw:informationContentEntity)
+
+# Class: tw:havingAPart (having a part)
+
+AnnotationAssertion(rdfs:label tw:havingAPart "having a part"@en)
+SubClassOf(tw:havingAPart tw:relationalState)
+
+# Class: tw:havingAPartOf (being a part of)
+
+AnnotationAssertion(rdfs:label tw:havingAPartOf "being a part of"@en)
+SubClassOf(tw:havingAPartOf tw:relationalState)
+
+# Class: tw:hazardousGasMonitoringDevice (Hazardous Gas Monitoring Device)
+
+AnnotationAssertion(rdfs:label tw:hazardousGasMonitoringDevice "Hazardous Gas Monitoring Device")
+SubClassOf(tw:hazardousGasMonitoringDevice tw:safetyOrEnvironmentalHarmPreventionAsset)
+
+# Class: tw:healthAndSafetyHazard (health and safety hazard)
+
+AnnotationAssertion(rdfs:label tw:healthAndSafetyHazard "health and safety hazard")
+SubClassOf(tw:healthAndSafetyHazard tw:hazard)
+
+# Class: tw:heatExchanger (tw:heatExchanger)
+
+SubClassOf(tw:heatExchanger tw:discreteAsset)
+SubClassOf(tw:heatExchanger tw:processingOfMaterial)
+
+# Class: tw:heatPumpUnit (tw:heatPumpUnit)
+
+SubClassOf(tw:heatPumpUnit tw:HVAC_systemAsset)
+SubClassOf(tw:heatPumpUnit tw:discreteAsset)
+
+# Class: tw:heater (tw:heater)
+
+SubClassOf(tw:heater tw:discreteAsset)
+SubClassOf(tw:heater tw:processingOfMaterial)
+
+# Class: tw:heatingBoiler (heating boiler)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:heatingBoiler "O.Reg 220: “low pressure boiler” means,
+(a) a boiler that is intended to generate steam or other vapour at a pressure of 15 psi (103 kPa) or less, or
+(b) a boiler that is intended to be operated at a pressure of 160 psi (1,100 kPa) or less where the water temperature at any boiler outlet is 250°F (121°C) or less; (“chaudière à basse pression”)")
+AnnotationAssertion(rdfs:label tw:heatingBoiler "heating boiler")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> tw:heatingBoiler "low-pressure boiler")
+SubClassOf(tw:heatingBoiler tw:boiler)
+
+# Class: tw:heatingOrCooling (Heating or Cooling)
+
+AnnotationAssertion(rdfs:label tw:heatingOrCooling "Heating or Cooling")
+SubClassOf(tw:heatingOrCooling tw:genericCrossDomainAsset)
+
+# Class: tw:heavyMetalAnalyzer (tw:heavyMetalAnalyzer)
+
+SubClassOf(tw:heavyMetalAnalyzer tw:dissolvedChemicalAnalyzer)
+
+# Class: tw:hierarchicalSystem (hierarchical system)
+
+AnnotationAssertion(rdfs:label tw:hierarchicalSystem "hierarchical system")
+SubClassOf(tw:hierarchicalSystem tw:regionalizedSystem)
+
+# Class: tw:highVoltageStick (tw:highVoltageStick)
+
+SubClassOf(tw:highVoltageStick tw:discreteAsset)
+SubClassOf(tw:highVoltageStick tw:electricalSafety)
+
+# Class: tw:highVoltageTester (tw:highVoltageTester)
+
+SubClassOf(tw:highVoltageTester tw:discreteAsset)
+SubClassOf(tw:highVoltageTester tw:electricalSafety)
+
+# Class: tw:hoist (tw:hoist)
+
+AnnotationAssertion(tw:notionMappingID tw:hoist "704b49f311e4431a8f4cf701e42fe024")
+AnnotationAssertion(rdfs:isDefinedBy tw:hoist "CSA B167-16(R2021): a machinery unit that is used for vertical lifting or lowering a freely suspended (unguided) load.")
+SubClassOf(tw:hoist tw:discreteAsset)
+SubClassOf(tw:hoist tw:liftingOrTransport)
+
+# Class: tw:horizontalLifeline (tw:horizontalLifeline)
+
+AnnotationAssertion(tw:notionMappingID tw:horizontalLifeline "7b621b38a6f54aff9c0afc513b442438")
+SubClassOf(tw:horizontalLifeline tw:discreteAsset)
+SubClassOf(tw:horizontalLifeline tw:fallProtectionEquipment)
+
+# Class: tw:hotWorkEquipment (tw:hotWorkEquipment)
+
+AnnotationAssertion(tw:notionMappingID tw:hotWorkEquipment "5f674b2aae0e4f43b19d6e669ce82610")
+AnnotationAssertion(rdfs:isDefinedBy tw:hotWorkEquipment "Modified from the description of hot work in Ontario Fire Code O.Reg 213/07: equipment involved in work that uses open flames or produce heat or sparks, including cutting, welding, soldering, brazing, grinding, adhesive bonding, thermal spraying and thawing pipes.")
+SubClassOf(tw:hotWorkEquipment tw:discreteAsset)
+
+# Class: tw:hydrant (hydrant)
+
+AnnotationAssertion(rdfs:label tw:hydrant "hydrant"@en)
+SubClassOf(tw:hydrant tw:discreteAsset)
+SubClassOf(tw:hydrant tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:hydrantSystem (tw:hydrantSystem)
+
+SubClassOf(tw:hydrantSystem tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:infiltrationTrench (tw:infiltrationTrench)
+
+SubClassOf(tw:infiltrationTrench tw:discreteAsset)
+SubClassOf(tw:infiltrationTrench tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:informationContentEntity (information content entity)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:informationContentEntity "an non-phyislcal entity that is about something")
+AnnotationAssertion(rdfs:label tw:informationContentEntity "information content entity"@en)
+
+# Class: tw:informationOutput (Information Output)
+
+AnnotationAssertion(rdfs:label tw:informationOutput "Information Output")
+SubClassOf(tw:informationOutput tw:genericCrossDomainAsset)
+
+# Class: tw:informationRecordingOrStorage (Information Recording or Storage)
+
+AnnotationAssertion(rdfs:label tw:informationRecordingOrStorage "Information Recording or Storage")
+SubClassOf(tw:informationRecordingOrStorage tw:genericCrossDomainAsset)
+
+# Class: tw:informativeResource (tw:informativeResource)
+
+SubClassOf(tw:informativeResource tw:informationContentEntity)
+
+# Class: tw:infraredCamera (tw:infraredCamera)
+
+AnnotationAssertion(rdfs:comment tw:infraredCamera "Mar'24 TH: the parent class of camera was removed because there is no imaginable use for it in queries or other contexts.")
+SubClassOf(tw:infraredCamera tw:discreteAsset)
+
+# Class: tw:injector (tw:injector)
+
+SubClassOf(tw:injector tw:discreteAsset)
+
+# Class: tw:instrumentAirOrPneumaticControlPanel (tw:instrumentAirOrPneumaticControlPanel)
+
+SubClassOf(tw:instrumentAirOrPneumaticControlPanel tw:processControlPanel)
+
+# Class: tw:intercomUnit (tw:intercomUnit)
+
+SubClassOf(tw:intercomUnit tw:discreteAsset)
+SubClassOf(tw:intercomUnit tw:informationOutput)
+
+# Class: tw:interpretation (tw:interpretation)
+
+AnnotationAssertion(rdfs:comment tw:interpretation "Jan2024 TH: consider moving to FAMO")
+SubClassOf(tw:interpretation tw:atomicLevelWork)
+
+# Class: tw:investigativeWork (investigative work)
+
+AnnotationAssertion(rdfs:label tw:investigativeWork "investigative work")
+SubClassOf(tw:investigativeWork tw:workOrderLevelWork)
+
+# Class: tw:kerosene (tw:kerosene)
+
+SubClassOf(tw:kerosene tw:fuelOil)
+SubClassOf(tw:kerosene tw:liquid)
+
+# Class: tw:laboratory (tw:laboratory)
+
+SubClassOf(tw:laboratory tw:facility)
+
+# Class: tw:ladder (tw:ladder)
+
+AnnotationAssertion(tw:notionMappingID tw:ladder "4f7f8bace8744d0f88601eed4b91b777")
+SubClassOf(tw:ladder tw:discreteAsset)
+
+# Class: tw:landfillGas (tw:landfillGas)
+
+SubClassOf(tw:landfillGas tw:gaseousMaterial)
+
+# Class: tw:legislation (legislation)
+
+AnnotationAssertion(rdfs:label tw:legislation "legislation"@en)
+SubClassOf(tw:legislation tw:contentSubject)
+
+# Class: tw:length (length)
+
+AnnotationAssertion(rdfs:label tw:length "length"@en)
+SubClassOf(tw:length tw:dimension)
+
+# Class: tw:levelInstrumentation (tw:levelInstrumentation)
+
+SubClassOf(tw:levelInstrumentation tw:discreteAsset)
+
+# Class: tw:lifeJacket (tw:lifeJacket)
+
+SubClassOf(tw:lifeJacket tw:discreteAsset)
+SubClassOf(tw:lifeJacket tw:floatationEquipment)
+
+# Class: tw:lifeRing (tw:lifeRing)
+
+SubClassOf(tw:lifeRing tw:discreteAsset)
+SubClassOf(tw:lifeRing tw:floatationEquipment)
+
+# Class: tw:liftingOrTransport (Lifting or Transport)
+
+AnnotationAssertion(rdfs:label tw:liftingOrTransport "Lifting or Transport")
+SubClassOf(tw:liftingOrTransport tw:genericCrossDomainAsset)
+
+# Class: tw:lightingPanel (tw:lightingPanel)
+
+SubClassOf(tw:lightingPanel tw:discreteAsset)
+SubClassOf(tw:lightingPanel tw:electricalAssetOrComponent)
+
+# Class: tw:lightingUnit (tw:lightingUnit)
+
+SubClassOf(tw:lightingUnit tw:HVAC_buildingOrGroundsServiceAsset)
+SubClassOf(tw:lightingUnit tw:discreteAsset)
+
+# Class: tw:line (tw:line)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:line "A linear structure that carries a stream of material substance, energy, or information from one point to another.")
+SubClassOf(tw:line tw:asset)
+
+# Class: tw:linearElement (linear element)
+
+AnnotationAssertion(rdfs:comment tw:linearElement "Examples of linear elements include pipe, cable, duct, cable, and road. 
+An asset is structurally continuous when its physical and geometric attributes are the same at any two points along its length.  This means there are no junctions.
+Many linear assets, such as cables, also provide containment, but this is not a necessary attribute.  A section of road, for example, cannot necessarily contain vehicles")
+AnnotationAssertion(rdfs:isDefinedBy tw:linearElement "An elongated asset that 
+* is structurally continuous and 
+* provide a path of flow for a material substance, energy, or information from a point to another.")
+AnnotationAssertion(rdfs:label tw:linearElement "linear element")
+SubClassOf(tw:linearElement tw:asset)
+
+# Class: tw:linearFunctionAsset_pathOfFlow (Linear Function Asset (Path of Flow))
+
+AnnotationAssertion(rdfs:label tw:linearFunctionAsset_pathOfFlow "Linear Function Asset (Path of Flow)")
+SubClassOf(tw:linearFunctionAsset_pathOfFlow tw:genericCrossDomainAsset)
+
+# Class: tw:liquid (tw:liquid)
+
+SubClassOf(tw:liquid tw:material)
+
+# Class: tw:loadBreakSwitch (tw:loadBreakSwitch)
+
+SubClassOf(tw:loadBreakSwitch tw:disconnectSwitch)
+
+# Class: tw:loadingDock (tw:loadingDock)
+
+SubClassOf(tw:loadingDock tw:discreteAsset)
+SubClassOf(tw:loadingDock tw:partOfBuildingOrStructure)
+
+# Class: tw:mainPathLine (tw:mainPathLine)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:mainPathLine "A line that has one or more junction along its length, linking it to minor branches, but only has one main path that carries a bulk flow from one point to another.")
+SubClassOf(tw:mainPathLine tw:line)
+
+# Class: tw:manhole (tw:manhole)
+
+SubClassOf(tw:manhole tw:discreteAsset)
+SubClassOf(tw:manhole tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:manlift (tw:manlift)
+
+SubClassOf(tw:manlift tw:mobileLift)
+
+# Class: tw:mass (mass)
+
+AnnotationAssertion(rdfs:label tw:mass "mass"@en)
+SubClassOf(tw:mass tw:quality)
+
+# Class: tw:material (material)
+
+AnnotationAssertion(rdfs:label tw:material "material"@en)
+
+# Class: tw:materialAdditionOrDosing (Material Addition or Dosing)
+
+AnnotationAssertion(rdfs:label tw:materialAdditionOrDosing "Material Addition or Dosing")
+SubClassOf(tw:materialAdditionOrDosing tw:waterOrWastewaterTreatment)
+
+# Class: tw:materialDistributionPanel (tw:materialDistributionPanel)
+
+SubClassOf(tw:materialDistributionPanel tw:discreteAsset)
+SubClassOf(tw:materialDistributionPanel tw:enclosure)
+SubClassOf(tw:materialDistributionPanel tw:partOfProcessPiping)
+
+# Class: tw:measureOfElectricalCurrent (tw:measureOfElectricalCurrent)
+
+SubClassOf(tw:measureOfElectricalCurrent tw:unitOfMeasure)
+
+# Class: tw:measureOfMass (tw:measureOfMass)
+
+SubClassOf(tw:measureOfMass tw:unitOfMeasure)
+
+# Class: tw:measureOfPower (tw:measureOfPower)
+
+SubClassOf(tw:measureOfPower tw:unitOfMeasure)
+
+# Class: tw:measureOfPressure (tw:measureOfPressure)
+
+SubClassOf(tw:measureOfPressure tw:unitOfMeasure)
+
+# Class: tw:measureOfVoltage (tw:measureOfVoltage)
+
+SubClassOf(tw:measureOfVoltage tw:unitOfMeasure)
+
+# Class: tw:mechanicalAssembly (tw:mechanicalAssembly)
+
+SubClassOf(tw:mechanicalAssembly tw:discreteAsset)
+SubClassOf(tw:mechanicalAssembly tw:generalMechanicalComponent)
+
+# Class: tw:mechanicalDrive (mechanical drive)
+
+AnnotationAssertion(rdfs:label tw:mechanicalDrive "mechanical drive"@en)
+SubClassOf(tw:mechanicalDrive tw:function)
+
+# Class: tw:mechanicalEnergyAndMotion (Mechanical Energy and Motion)
+
+AnnotationAssertion(rdfs:label tw:mechanicalEnergyAndMotion "Mechanical Energy and Motion")
+SubClassOf(tw:mechanicalEnergyAndMotion tw:genericCrossDomainAsset)
+
+# Class: tw:mechanicalFitting (tw:mechanicalFitting)
+
+SubClassOf(tw:mechanicalFitting tw:discreteAsset)
+SubClassOf(tw:mechanicalFitting tw:generalMechanicalComponent)
+
+# Class: tw:mixerOrAgitator (tw:mixerOrAgitator)
+
+AnnotationAssertion(tw:AvClassEquivalent tw:mixerOrAgitator "Agitator")
+SubClassOf(tw:mixerOrAgitator tw:discreteAsset)
+SubClassOf(tw:mixerOrAgitator tw:processingOfMaterial)
+
+# Class: tw:mobileLift (tw:mobileLift)
+
+SubClassOf(tw:mobileLift tw:discreteAsset)
+SubClassOf(tw:mobileLift tw:liftingOrTransport)
+
+# Class: tw:modularDiscreteAssembly (modular discrete assembly)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:modularDiscreteAssembly "A discrete asset, which, because the integration of the major components makes their replacement relatively easy, is also managed as a discrete asset in the asset inventory. Examples include equipment skid and pump-motor set.")
+AnnotationAssertion(rdfs:label tw:modularDiscreteAssembly "modular discrete assembly")
+SubClassOf(tw:modularDiscreteAssembly tw:discreteAsset)
+
+# Class: tw:motionSensor (tw:motionSensor)
+
+SubClassOf(tw:motionSensor tw:discreteAsset)
+SubClassOf(tw:motionSensor tw:securityOrAccessControlAsset)
+
+# Class: tw:motor (motor)
+
+AnnotationAssertion(rdfs:label tw:motor "motor"@en)
+SubClassOf(tw:motor tw:discreteAsset)
+SubClassOf(tw:motor tw:generalMechanicalComponent)
+
+# Class: tw:motorDriveOr_VFD (tw:motorDriveOr_VFD)
+
+SubClassOf(tw:motorDriveOr_VFD tw:discreteAsset)
+SubClassOf(tw:motorDriveOr_VFD tw:electricalAssetOrComponent)
+
+# Class: tw:motorStarter (tw:motorStarter)
+
+SubClassOf(tw:motorStarter tw:discreteAsset)
+SubClassOf(tw:motorStarter tw:electricalAssetOrComponent)
+
+# Class: tw:multiParametertrumentation (tw:multiParametertrumentation)
+
+SubClassOf(tw:multiParametertrumentation tw:discreteAsset)
+SubClassOf(tw:multiParametertrumentation tw:sensing_informationCapture)
+
+# Class: tw:naturalGas (tw:naturalGas)
+
+SubClassOf(tw:naturalGas tw:fuel)
+SubClassOf(tw:naturalGas tw:gaseousMaterial)
+
+# Class: tw:networkPanelOraccessCloset (tw:networkPanelOraccessCloset)
+
+SubClassOf(tw:networkPanelOraccessCloset tw:discreteAsset)
+SubClassOf(tw:networkPanelOraccessCloset tw:enclosure)
+
+# Class: tw:networkRouter (tw:networkRouter)
+
+SubClassOf(tw:networkRouter tw:discreteAsset)
+SubClassOf(tw:networkRouter tw:generalNetworkingAsset)
+
+# Class: tw:networkStorageAppliance (tw:networkStorageAppliance)
+
+SubClassOf(tw:networkStorageAppliance tw:computer)
+
+# Class: tw:networkSwitch (tw:networkSwitch)
+
+SubClassOf(tw:networkSwitch tw:discreteAsset)
+SubClassOf(tw:networkSwitch tw:generalNetworkingAsset)
+
+# Class: tw:nitrateOrNitriteAnalyzer (tw:nitrateOrNitriteAnalyzer)
+
+SubClassOf(tw:nitrateOrNitriteAnalyzer tw:dissolvedChemicalAnalyzer)
+
+# Class: tw:noteTaking (tw:noteTaking)
+
+SubClassOf(tw:noteTaking tw:process)
+
+# Class: tw:observation (tw:observation)
+
+AnnotationAssertion(rdfs:comment tw:observation "Feb'24 TH: intent on turning this term into a defined term")
+SubClassOf(tw:observation tw:description)
+
+# Class: tw:occupying (occupying)
+
+AnnotationAssertion(rdfs:label tw:occupying "occupying"@en)
+SubClassOf(tw:occupying tw:relationalState)
+
+# Class: tw:oilGreaseSeparator_MTD (tw:oilGreaseSeparator_MTD)
+
+SubClassOf(tw:oilGreaseSeparator_MTD tw:MTD)
+
+# Class: tw:oilGritSeperator (oil grit separator)
+
+AnnotationAssertion(rdfs:label tw:oilGritSeperator "oil grit separator")
+SubClassOf(tw:oilGritSeperator tw:discreteAsset)
+
+# Class: tw:ontarioRegulation (Ontario provincial regulation)
+
+AnnotationAssertion(rdfs:label tw:ontarioRegulation "Ontario provincial regulation"@en)
+SubClassOf(tw:ontarioRegulation tw:governmentRegulation)
+
+# Class: tw:opperationState (operational state)
+
+AnnotationAssertion(rdfs:label tw:opperationState "operational state"@en)
+SubClassOf(tw:opperationState tw:state)
+
+# Class: tw:organization (organization)
+
+AnnotationAssertion(rdfs:label tw:organization "organization")
+
+# Class: tw:outfallOrDischargePoint (tw:outfallOrDischargePoint)
+
+SubClassOf(tw:outfallOrDischargePoint tw:discreteAsset)
+SubClassOf(tw:outfallOrDischargePoint tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:ozoneGenerator (tw:ozoneGenerator)
+
+SubClassOf(tw:ozoneGenerator tw:discreteAsset)
+
+# Class: tw:pH_analyzer (tw:pH_analyzer)
+
+SubClassOf(tw:pH_analyzer tw:discreteAsset)
+
+# Class: tw:pH_instrumentation (tw:pH_instrumentation)
+
+SubClassOf(tw:pH_instrumentation tw:discreteAsset)
+
+# Class: tw:packaged_AC_Unit (tw:packaged_AC_Unit)
+
+SubClassOf(tw:packaged_AC_Unit tw:airConditioning)
+SubClassOf(tw:packaged_AC_Unit tw:discreteAsset)
+
+# Class: tw:paragraphContent (paragraph content)
+
+AnnotationAssertion(rdfs:label tw:paragraphContent "paragraph content"@en)
+SubClassOf(tw:paragraphContent tw:pieceOfContent)
+
+# Class: tw:partOfBuildingOrStructure (Part of Building or Structure)
+
+AnnotationAssertion(rdfs:comment tw:partOfBuildingOrStructure "Examples include interior walls, doors, windows, roofing, eaves troughs, and the City logo sign.")
+AnnotationAssertion(rdfs:isDefinedBy tw:partOfBuildingOrStructure "Any part of a built structure that
+* bears physical integrity for it to bear load and stress or
+* is any part permanently connected to one of the parts above while not being a part of a facility spatial support system.")
+AnnotationAssertion(rdfs:label tw:partOfBuildingOrStructure "Part of Building or Structure")
+SubClassOf(tw:partOfBuildingOrStructure tw:TorontoWaterAsset)
+
+# Class: tw:partOfProcessPiping (Part of Process Piping)
+
+AnnotationAssertion(rdfs:label tw:partOfProcessPiping "Part of Process Piping")
+SubClassOf(tw:partOfProcessPiping tw:TorontoWaterAsset)
+
+# Class: tw:passengerVehicles (tw:passengerVehicles)
+
+SubClassOf(tw:passengerVehicles tw:discreteAsset)
+SubClassOf(tw:passengerVehicles tw:roadVehicleOrTransportationTool)
+
+# Class: tw:pelletizer (tw:pelletizer)
+
+AnnotationAssertion(tw:SHACL_note tw:pelletizer "DiscreteModular? System?")
+SubClassOf(tw:pelletizer tw:discreteAsset)
+
+# Class: tw:personalGasMeter (tw:personalGasMeter)
+
+SubClassOf(tw:personalGasMeter tw:discreteAsset)
+
+# Class: tw:personnalFloatationDevice (tw:personnalFloatationDevice)
+
+SubClassOf(tw:personnalFloatationDevice tw:discreteAsset)
+SubClassOf(tw:personnalFloatationDevice tw:floatationEquipment)
+
+# Class: tw:phosphateAnalyzer (tw:phosphateAnalyzer)
+
+SubClassOf(tw:phosphateAnalyzer tw:dissolvedChemicalAnalyzer)
+
+# Class: tw:pickupTruck (tw:pickupTruck)
+
+SubClassOf(tw:pickupTruck tw:discreteAsset)
+SubClassOf(tw:pickupTruck tw:roadVehicleOrTransportationTool)
+
+# Class: tw:pieceOfContent (pieceOfContent)
+
+AnnotationAssertion(rdfs:comment tw:pieceOfContent "TH 12/5/2023: created to represent a piece of content about some part of the world, as oppose to other pieces of content used to organize these pieces of content, such as a folder in a computer, a compilation, or section delimiter in a document.")
+AnnotationAssertion(rdfs:label tw:pieceOfContent "pieceOfContent"@en)
+SubClassOf(tw:pieceOfContent tw:informationContentEntity)
+
+# Class: tw:pieceOfLawn (tw:pieceOfLawn)
+
+SubClassOf(tw:pieceOfLawn tw:discreteAsset)
+SubClassOf(tw:pieceOfLawn tw:greenInfrastructureAsset)
+
+# Class: tw:pipeFitting (tw:pipeFitting)
+
+SubClassOf(tw:pipeFitting tw:discreteAsset)
+SubClassOf(tw:pipeFitting tw:distributionAndCollectionNetoworkAsset)
+SubClassOf(tw:pipeFitting tw:partOfProcessPiping)
+
+# Class: tw:pipeManifold (tw:pipeManifold)
+
+SubClassOf(tw:pipeManifold tw:discreteAsset)
+SubClassOf(tw:pipeManifold tw:partOfProcessPiping)
+
+# Class: tw:pipeSection (tw:pipeSection)
+
+SubClassOf(tw:pipeSection tw:discreteAsset)
+SubClassOf(tw:pipeSection tw:partOfProcessPiping)
+
+# Class: tw:pipeSegment (pipe segment)
+
+AnnotationAssertion(rdfs:label tw:pipeSegment "pipe segment")
+SubClassOf(tw:pipeSegment tw:discreteAsset)
+SubClassOf(tw:pipeSegment tw:linearFunctionAsset_pathOfFlow)
+
+# Class: tw:pipette (tw:pipette)
+
+SubClassOf(tw:pipette tw:commonTool)
+SubClassOf(tw:pipette tw:discreteAsset)
+
+# Class: tw:pipingSystem (tw:pipingSystem)
+
+SubClassOf(tw:pipingSystem tw:flowIntegratedSystem)
+
+# Class: tw:plantingSpace (tw:plantingSpace)
+
+SubClassOf(tw:plantingSpace tw:discreteAsset)
+SubClassOf(tw:plantingSpace tw:greenInfrastructureAsset)
+
+# Class: tw:polymerDosingAssembly (tw:polymerDosingAssembly)
+
+SubClassOf(tw:polymerDosingAssembly tw:dosingSystemAssembly)
+
+# Class: tw:polymerMixingTank (tw:polymerMixingTank)
+
+SubClassOf(tw:polymerMixingTank tw:dewatering)
+SubClassOf(tw:polymerMixingTank tw:discreteAsset)
+SubClassOf(tw:polymerMixingTank tw:mixerOrAgitator)
+
+# Class: tw:pond (tw:pond)
+
+SubClassOf(tw:pond tw:discreteAsset)
+SubClassOf(tw:pond tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:portableGasDetector (tw:portableGasDetector)
+
+SubClassOf(tw:portableGasDetector tw:commonTool)
+SubClassOf(tw:portableGasDetector tw:discreteAsset)
+
+# Class: tw:portableLadder (tw:portableLadder)
+
+AnnotationAssertion(tw:notionMappingID tw:portableLadder "79fddffa402d41d1aee6c4e68bce3341")
+SubClassOf(tw:portableLadder tw:commonTool)
+SubClassOf(tw:portableLadder tw:ladder)
+
+# Class: tw:portableScaffolding (tw:portableScaffolding)
+
+SubClassOf(tw:portableScaffolding tw:commonTool)
+SubClassOf(tw:portableScaffolding tw:discreteAsset)
+
+# Class: tw:portionOfGranularFilterMedium (tw:portionOfGranularFilterMedium)
+
+SubClassOf(tw:portionOfGranularFilterMedium tw:discreteAsset)
+SubClassOf(tw:portionOfGranularFilterMedium tw:filtration)
+
+# Class: tw:positionInstrumentation (tw:positionInstrumentation)
+
+SubClassOf(tw:positionInstrumentation tw:discreteAsset)
+
+# Class: tw:powerBoiler (power boiler)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:powerBoiler "from TSSA BPV-20-01 R1:
+i. steam service operating pressure above 103 kPa (15 psig)
+ii. hot water service operating pressure above 1100 kPa (160 psig) or above the temperature 121 C (250 F)")
+AnnotationAssertion(rdfs:label tw:powerBoiler "power boiler")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> tw:powerBoiler "high-pressure boiler")
+SubClassOf(tw:powerBoiler tw:boiler)
+
+# Class: tw:powerHarmonicFilter (tw:powerHarmonicFilter)
+
+SubClassOf(tw:powerHarmonicFilter tw:discreteAsset)
+SubClassOf(tw:powerHarmonicFilter tw:electricalAssetOrComponent)
+
+# Class: tw:powerWasher (tw:powerWasher)
+
+SubClassOf(tw:powerWasher tw:commonTool)
+SubClassOf(tw:powerWasher tw:discreteAsset)
+
+# Class: tw:poweredAirRespirator (tw:poweredAirRespirator)
+
+SubClassOf(tw:poweredAirRespirator tw:discreteAsset)
+SubClassOf(tw:poweredAirRespirator tw:respiratoryHazardProtection)
+
+# Class: tw:press (tw:press)
+
+SubClassOf(tw:press tw:discreteAsset)
+
+# Class: tw:pressureInstrumentation (tw:pressureInstrumentation)
+
+SubClassOf(tw:pressureInstrumentation tw:discreteAsset)
+
+# Class: tw:pressureSwitch (tw:pressureSwitch)
+
+SubClassOf(tw:pressureSwitch tw:discreteAsset)
+
+# Class: tw:pressureTransmitter (tw:pressureTransmitter)
+
+SubClassOf(tw:pressureTransmitter tw:discreteAsset)
+
+# Class: tw:pressurizedPipingSystem (tw:pressurizedPipingSystem)
+
+AnnotationAssertion(tw:notionMappingID tw:pressurizedPipingSystem "315f3959781f42bd81154d50fa751f1b")
+SubClassOf(tw:pressurizedPipingSystem tw:pipingSystem)
+
+# Class: tw:preventiveWork (preventive work)
+
+AnnotationAssertion(rdfs:label tw:preventiveWork "preventive work")
+SubClassOf(tw:preventiveWork tw:workOrderLevelWork)
+
+# Class: tw:processControlPanel (tw:processControlPanel)
+
+SubClassOf(tw:processControlPanel tw:discreteAsset)
+SubClassOf(tw:processControlPanel tw:enclosure)
+
+# Class: tw:processing (processing)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:processing "a function that is realized when a physical or chemical property of the thing being processed is changed by the bearer of the function.")
+AnnotationAssertion(rdfs:label tw:processing "processing")
+SubClassOf(tw:processing tw:function)
+
+# Class: tw:processingOfMaterial (Processing of Material)
+
+AnnotationAssertion(rdfs:label tw:processingOfMaterial "Processing of Material")
+SubClassOf(tw:processingOfMaterial tw:genericCrossDomainAsset)
+
+# Class: tw:productLine (product line)
+
+AnnotationAssertion(rdfs:label tw:productLine "product line")
+SubClassOf(tw:productLine tw:definedCollection)
+
+# Class: tw:progammableLogicController (tw:progammableLogicController)
+
+SubClassOf(tw:progammableLogicController tw:controller)
+
+# Class: tw:projectWork (project work)
+
+AnnotationAssertion(rdfs:label tw:projectWork "project work")
+SubClassOf(tw:projectWork tw:workOrderLevelWork)
+
+# Class: tw:propane (tw:propane)
+
+SubClassOf(tw:propane tw:fuel)
+SubClassOf(tw:propane tw:gaseousMaterial)
+
+# Class: tw:property (property)
+
+AnnotationAssertion(rdfs:comment tw:property "TH Dec/2023: roughly eqvivalent to BFO:Specifically Depdendent Continuent. The majority of the properties are reified (and temporalized) data properties under \"hasPresentPropertyValue\", to allow us to specify, among other metadata, the unit of measure and the time period in the life of the asset during which a property is valid.
+
+You may notice that some properties do not need to be temporalized (I.e., they stay the same over the lifetime of the asset) and do not require qualification by an unit of measure. For example, NEMA Frame Rating property of motors. But there is still a good case to reify them, as they may be the subjects of review and correction in a reconciliation project.")
+AnnotationAssertion(rdfs:label tw:property "property"@en)
+
+# Class: tw:protectionRelay (tw:protectionRelay)
+
+SubClassOf(tw:protectionRelay tw:discreteAsset)
+SubClassOf(tw:protectionRelay tw:electricalAssetOrComponent)
+SubClassOf(tw:protectionRelay tw:electricalSafety)
+
+# Class: tw:publisher (publisher)
+
+AnnotationAssertion(rdfs:label tw:publisher "publisher"@en)
+SubClassOf(tw:publisher tw:organization)
+
+# Class: tw:pulsationDampener (tw:pulsationDampener)
+
+SubClassOf(tw:pulsationDampener tw:discreteAsset)
+SubClassOf(tw:pulsationDampener tw:partOfProcessPiping)
+
+# Class: tw:pump (tw:pump)
+
+SubClassOf(tw:pump tw:discreteAsset)
+SubClassOf(tw:pump tw:flowOrPressureControl)
+
+# Class: tw:pumpSurgeSuppressionTank (tw:pumpSurgeSuppressionTank)
+
+SubClassOf(tw:pumpSurgeSuppressionTank tw:discreteAsset)
+SubClassOf(tw:pumpSurgeSuppressionTank tw:storageOrSurgeSuppression)
+
+# Class: tw:pumpWetWell (tw:pumpWetWell)
+
+SubClassOf(tw:pumpWetWell tw:discreteAsset)
+SubClassOf(tw:pumpWetWell tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:pumpingStationSystem (tw:pumpingStationSystem)
+
+SubClassOf(tw:pumpingStationSystem tw:hierarchicalSystem)
+
+# Class: tw:quality (quality)
+
+AnnotationAssertion(rdfs:label tw:quality "quality"@en)
+SubClassOf(tw:quality tw:property)
+
+# Class: tw:quencher (tw:quencher)
+
+SubClassOf(tw:quencher tw:discreteAsset)
+SubClassOf(tw:quencher tw:partOfProcessPiping)
+
+# Class: tw:reactorOfUnnamedTypes (tw:reactorOfUnnamedTypes)
+
+SubClassOf(tw:reactorOfUnnamedTypes tw:discreteAsset)
+
+# Class: tw:regionalizedSystem (regionalized system)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:regionalizedSystem "Feb4th'24 TH: used to be call localized system")
+AnnotationAssertion(rdfs:isDefinedBy tw:regionalizedSystem "a system in which all assets playing the same functional role are situated in the same region of the system topology.")
+AnnotationAssertion(rdfs:label tw:regionalizedSystem "regionalized system")
+SubClassOf(tw:regionalizedSystem tw:flowIntegratedSystem)
+DisjointClasses(tw:regionalizedSystem tw:systemTrain)
+
+# Class: tw:relationalState (relational property)
+
+AnnotationAssertion(rdfs:label tw:relationalState "relational property"@en)
+SubClassOf(tw:relationalState tw:property)
+
+# Class: tw:remoteTerminalUnit (tw:remoteTerminalUnit)
+
+SubClassOf(tw:remoteTerminalUnit tw:controller)
+
+# Class: tw:replaceableFilterCartridge (tw:replaceableFilterCartridge)
+
+SubClassOf(tw:replaceableFilterCartridge tw:discreteAsset)
+SubClassOf(tw:replaceableFilterCartridge tw:generalMechanicalComponent)
+
+# Class: tw:requirement (tw:requirement)
+
+AnnotationAssertion(rdfs:comment tw:requirement "Feb'24 TH: intent on turning this term into a defined term
+Jan'24 TH: this term is to be develope further, likely as a defined term.")
+AnnotationAssertion(rdfs:isDefinedBy tw:requirement "a specification enforced by an organization of person that has legitimate authority over an aspect of the asset owner organization.")
+SubClassOf(tw:requirement tw:description)
+
+# Class: tw:reservoir (tw:reservoir)
+
+SubClassOf(tw:reservoir tw:discreteAsset)
+
+# Class: tw:residualChloringInstrumentation (tw:residualChloringInstrumentation)
+
+SubClassOf(tw:residualChloringInstrumentation tw:discreteAsset)
+
+# Class: tw:respiratorMask (tw:respiratorMask)
+
+SubClassOf(tw:respiratorMask tw:discreteAsset)
+SubClassOf(tw:respiratorMask tw:respiratoryHazardProtection)
+
+# Class: tw:respiratoryHazardProtection (Respiratory Hazard Protection)
+
+AnnotationAssertion(rdfs:label tw:respiratoryHazardProtection "Respiratory Hazard Protection")
+SubClassOf(tw:respiratoryHazardProtection tw:safetyOrEnvironmentalHarmPreventionAsset)
+
+# Class: tw:revision (revision)
+
+AnnotationAssertion(rdfs:label tw:revision "revision"@en)
+
+# Class: tw:roadSegement (tw:roadSegement)
+
+SubClassOf(tw:roadSegement tw:discreteAsset)
+
+# Class: tw:roadVehicleOrTransportationTool (Road Vehicle or Transportation Tool)
+
+AnnotationAssertion(rdfs:label tw:roadVehicleOrTransportationTool "Road Vehicle or Transportation Tool")
+SubClassOf(tw:roadVehicleOrTransportationTool tw:TorontoWaterAsset)
+
+# Class: tw:roleOfAPerson (role of a person)
+
+AnnotationAssertion(rdfs:label tw:roleOfAPerson "role of a person")
+SubClassOf(tw:roleOfAPerson tw:role)
+
+# Class: tw:rollUpDoor (tw:rollUpDoor)
+
+SubClassOf(tw:rollUpDoor tw:discreteAsset)
+SubClassOf(tw:rollUpDoor tw:partOfBuildingOrStructure)
+
+# Class: tw:roof (tw:roof)
+
+SubClassOf(tw:roof tw:discreteAsset)
+SubClassOf(tw:roof tw:partOfBuildingOrStructure)
+
+# Class: tw:rotaryDrumThickener (tw:rotaryDrumThickener)
+
+SubClassOf(tw:rotaryDrumThickener tw:dewatering)
+SubClassOf(tw:rotaryDrumThickener tw:discreteAsset)
+
+# Class: tw:rotationalSpeed (rotational speed)
+
+AnnotationAssertion(rdfs:label tw:rotationalSpeed "rotational speed"@en)
+SubClassOf(tw:rotationalSpeed tw:expressionOfSpeed)
+
+# Class: tw:rubberInsulatingGloves (tw:rubberInsulatingGloves)
+
+SubClassOf(tw:rubberInsulatingGloves tw:discreteAsset)
+SubClassOf(tw:rubberInsulatingGloves tw:electricalSafety)
+
+# Class: tw:rubberInsulatingSleeves (tw:rubberInsulatingSleeves)
+
+SubClassOf(tw:rubberInsulatingSleeves tw:discreteAsset)
+SubClassOf(tw:rubberInsulatingSleeves tw:electricalSafety)
+
+# Class: tw:ruptureDisk (tw:ruptureDisk)
+
+SubClassOf(tw:ruptureDisk tw:discreteAsset)
+SubClassOf(tw:ruptureDisk tw:explosionPreventionEquipment)
+
+# Class: tw:safetyOrEnvironmentalHarmPreventionAsset (Safety or Environmental Harm Prevention Asset)
+
+AnnotationAssertion(rdfs:label tw:safetyOrEnvironmentalHarmPreventionAsset "Safety or Environmental Harm Prevention Asset")
+SubClassOf(tw:safetyOrEnvironmentalHarmPreventionAsset tw:TorontoWaterAsset)
+
+# Class: tw:samplingPoint (tw:samplingPoint)
+
+SubClassOf(tw:samplingPoint tw:discreteAsset)
+SubClassOf(tw:samplingPoint tw:partOfProcessPiping)
+
+# Class: tw:scaffolding (tw:scaffolding)
+
+AnnotationAssertion(tw:notionMappingID tw:scaffolding "4961170b77b24110a3655ba7386b04c4")
+SubClassOf(tw:scaffolding tw:assembly)
+
+# Class: tw:scissorsLift (tw:scissorsLift)
+
+SubClassOf(tw:scissorsLift tw:manlift)
+
+# Class: tw:screwPress (tw:screwPress)
+
+SubClassOf(tw:screwPress tw:dewatering)
+SubClassOf(tw:screwPress tw:discreteAsset)
+
+# Class: tw:scrubber (tw:scrubber)
+
+SubClassOf(tw:scrubber tw:discreteAsset)
+
+# Class: tw:sealOrGasket (tw:sealOrGasket)
+
+SubClassOf(tw:sealOrGasket tw:discreteAsset)
+SubClassOf(tw:sealOrGasket tw:generalMechanicalComponent)
+
+# Class: tw:sectionContent (section content)
+
+AnnotationAssertion(rdfs:label tw:sectionContent "section content"@en)
+SubClassOf(tw:sectionContent tw:pieceOfContent)
+
+# Class: tw:securityCamera (tw:securityCamera)
+
+AnnotationAssertion(rdfs:comment tw:securityCamera "Mar'24 TH: the parent class of camera was removed because there is no imaginable use for it in queries or other contexts.")
+SubClassOf(tw:securityCamera tw:securityOrAccessControlAsset)
+
+# Class: tw:securityOrAccessControlAsset (Security or Access Control Asset)
+
+AnnotationAssertion(rdfs:label tw:securityOrAccessControlAsset "Security or Access Control Asset")
+SubClassOf(tw:securityOrAccessControlAsset tw:HVAC_buildingOrGroundsServiceAsset)
+
+# Class: tw:sedimentationTank (tw:sedimentationTank)
+
+SubClassOf(tw:sedimentationTank tw:discreteAsset)
+SubClassOf(tw:sedimentationTank tw:solidsSeparation)
+SubClassOf(tw:sedimentationTank ObjectSomeValuesFrom(tw:hasPhysicalPart tw:structuralTank))
+
+# Class: tw:selfContainedBreathingApparatus (tw:selfContainedBreathingApparatus)
+
+SubClassOf(tw:selfContainedBreathingApparatus tw:discreteAsset)
+SubClassOf(tw:selfContainedBreathingApparatus tw:respiratoryHazardProtection)
+
+# Class: tw:selfRetractingLifeline (tw:selfRetractingLifeline)
+
+AnnotationAssertion(tw:notionMappingID tw:selfRetractingLifeline "c319721ea78042788fb746723e66e038")
+AnnotationAssertion(rdfs:isDefinedBy tw:selfRetractingLifeline "CSA Z259.2.2-17: a component that automatically adjusts its length under light tension, and automatically applies to arrest force in the event of a fall.")
+SubClassOf(tw:selfRetractingLifeline tw:discreteAsset)
+SubClassOf(tw:selfRetractingLifeline tw:fallProtectionEquipment)
+
+# Class: tw:semi-solid (tw:semi-solid)
+
+SubClassOf(tw:semi-solid tw:material)
+
+# Class: tw:sensing_informationCapture (Sensing (Information Capture))
+
+AnnotationAssertion(rdfs:label tw:sensing_informationCapture "Sensing (Information Capture)")
+SubClassOf(tw:sensing_informationCapture tw:genericCrossDomainAsset)
+
+# Class: tw:separator (tw:separator)
+
+SubClassOf(tw:separator tw:discreteAsset)
+
+# Class: tw:serverAppliance (tw:serverAppliance)
+
+SubClassOf(tw:serverAppliance tw:discreteAsset)
+SubClassOf(tw:serverAppliance tw:generalNetworkingAsset)
+
+# Class: tw:sewer (tw:sewer)
+
+SubClassOf(tw:sewer tw:discreteAsset)
+SubClassOf(tw:sewer tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:sewerForceMain (sewer force main)
+
+AnnotationAssertion(rdfs:label tw:sewerForceMain "sewer force main")
+SubClassOf(tw:sewerForceMain tw:sewerMain)
+
+# Class: tw:sewerGravityMain (sewer gravity main)
+
+AnnotationAssertion(rdfs:label tw:sewerGravityMain "sewer gravity main")
+SubClassOf(tw:sewerGravityMain tw:sewerMain)
+
+# Class: tw:sewerMain (sewer main)
+
+AnnotationAssertion(rdfs:label tw:sewerMain "sewer main")
+SubClassOf(tw:sewerMain tw:pipeSegment)
+
+# Class: tw:sewerServiceConnection (tw:sewerServiceConnection)
+
+SubClassOf(tw:sewerServiceConnection tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:simpleLine (tw:simpleLine)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:simpleLine "An line that has no junction across its span.")
+SubClassOf(tw:simpleLine tw:line)
+
+# Class: tw:singleParameterInstrumentation (tw:singleParameterInstrumentation)
+
+SubClassOf(tw:singleParameterInstrumentation tw:discreteAsset)
+SubClassOf(tw:singleParameterInstrumentation tw:sensing_informationCapture)
+
+# Class: tw:sittingWithin (sitting within)
+
+AnnotationAssertion(rdfs:label tw:sittingWithin "sitting within"@en)
+SubClassOf(tw:sittingWithin tw:relationalState)
+
+# Class: tw:sling (tw:sling)
+
+AnnotationAssertion(tw:notionMappingID tw:sling "602f9138b2d84c3b9d0054fb164fe852")
+AnnotationAssertion(rdfs:isDefinedBy tw:sling "OSHA 1910.184: an assembly which connects the load to the material handling equipment.")
+SubClassOf(tw:sling tw:discreteAsset)
+
+# Class: tw:sludge (tw:sludge)
+
+SubClassOf(tw:sludge tw:material)
+
+# Class: tw:sludgeIncineratorAssembly (tw:sludgeIncineratorAssembly)
+
+SubClassOf(tw:sludgeIncineratorAssembly tw:discreteAsset)
+
+# Class: tw:soilCell (tw:soilCell)
+
+SubClassOf(tw:soilCell tw:discreteAsset)
+SubClassOf(tw:soilCell tw:greenInfrastructureAsset)
+
+# Class: tw:solid (tw:solid)
+
+SubClassOf(tw:solid tw:material)
+
+# Class: tw:solidsSeparation (Solids Separation)
+
+AnnotationAssertion(rdfs:label tw:solidsSeparation "Solids Separation")
+SubClassOf(tw:solidsSeparation tw:waterOrWastewaterTreatment)
+
+# Class: tw:space (tw:space)
+
+AnnotationAssertion(rdfs:comment tw:space "The subtypes of concern include 
+3-dimensional space that is fully or partially enclosed by the surfaces of a set of architectural parts, structural parts, or a parcel of land. 
+A 2-dimensional or a depthless 3-dimensional surface space that coincides with a surface formed by a set of architectural parts, structural parts, or a parcel of land.")
+AnnotationAssertion(rdfs:isDefinedBy tw:space "A space enclosed or partially enclosed by a set of physical boundaries or distinctions")
+
+# Class: tw:specification (tw:specification)
+
+SubClassOf(tw:specification tw:description)
+
+# Class: tw:speedOfTravel (speed of travel)
+
+AnnotationAssertion(rdfs:label tw:speedOfTravel "speed of travel"@en)
+SubClassOf(tw:speedOfTravel tw:expressionOfSpeed)
+
+# Class: tw:spillKit (tw:spillKit)
+
+SubClassOf(tw:spillKit tw:chemicalProtection)
+SubClassOf(tw:spillKit tw:discreteAsset)
+
+# Class: tw:stack (tw:stack)
+
+SubClassOf(tw:stack tw:buildingArchitecturalOrStructural)
+SubClassOf(tw:stack tw:discreteAsset)
+
+# Class: tw:state (state)
+
+AnnotationAssertion(rdfs:comment tw:state "Jan'24 TH: This class is create because we considered the status of a particular asset to be an instance of this class")
+AnnotationAssertion(rdfs:comment tw:state "TH Dec/2023: a property that denote a composite of values in multiple qualities, functional capabiliy, and other possible property that inhere in the asset itself (not listed in this ontology).")
+AnnotationAssertion(rdfs:label tw:state "state"@en)
+SubClassOf(tw:state tw:property)
+
+# Class: tw:stationaryMachineTool (tw:stationaryMachineTool)
+
+SubClassOf(tw:stationaryMachineTool tw:commonTool)
+SubClassOf(tw:stationaryMachineTool tw:discreteAsset)
+
+# Class: tw:steamTrap (tw:steamTrap)
+
+SubClassOf(tw:steamTrap tw:discreteAsset)
+SubClassOf(tw:steamTrap tw:partOfProcessPiping)
+
+# Class: tw:stillOrVideoMobileCamera (tw:stillOrVideoMobileCamera)
+
+AnnotationAssertion(rdfs:comment tw:stillOrVideoMobileCamera "Mar'24 TH: the parent class of camera was removed because there is no imaginable use for it in queries or other contexts.")
+SubClassOf(tw:stillOrVideoMobileCamera tw:commonTool)
+
+# Class: tw:storage (storage)
+
+AnnotationAssertion(rdfs:comment tw:storage "store function implies the existance of containment function.")
+AnnotationAssertion(rdfs:isDefinedBy tw:storage "a function that is realized when the input flow in to the bearer of the function is greater than the output flow and the difference between the input and the output is held within the bearer.")
+AnnotationAssertion(rdfs:label tw:storage "storage")
+SubClassOf(tw:storage tw:function)
+
+# Class: tw:storageOrSurgeSuppression (Storage or Surge Suppression)
+
+AnnotationAssertion(rdfs:label tw:storageOrSurgeSuppression "Storage or Surge Suppression")
+SubClassOf(tw:storageOrSurgeSuppression tw:genericCrossDomainAsset)
+
+# Class: tw:storageTank (tw:storageTank)
+
+SubClassOf(tw:storageTank tw:storageOrSurgeSuppression)
+SubClassOf(tw:storageTank tw:tankOrVessel)
+
+# Class: tw:stormServiceConnection (tw:stormServiceConnection)
+
+SubClassOf(tw:stormServiceConnection tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:strainer (tw:strainer)
+
+SubClassOf(tw:strainer tw:discreteAsset)
+SubClassOf(tw:strainer tw:partOfProcessPiping)
+
+# Class: tw:structuralTank (tw:structuralTank)
+
+SubClassOf(tw:structuralTank tw:buildingArchitecturalOrStructural)
+SubClassOf(tw:structuralTank tw:tankOrVessel)
+
+# Class: tw:structuralTankComponent (tw:structuralTankComponent)
+
+SubClassOf(tw:structuralTankComponent tw:tankOrVessel)
+
+# Class: tw:structuralWall (tw:structuralWall)
+
+SubClassOf(tw:structuralWall tw:discreteAsset)
+
+# Class: tw:sulphinatorAssembly (tw:sulphinatorAssembly)
+
+SubClassOf(tw:sulphinatorAssembly tw:dosingSystemAssembly)
+
+# Class: tw:suppliedAirRespirator (tw:suppliedAirRespirator)
+
+SubClassOf(tw:suppliedAirRespirator tw:discreteAsset)
+SubClassOf(tw:suppliedAirRespirator tw:respiratoryHazardProtection)
+
+# Class: tw:supply (supply)
+
+AnnotationAssertion(rdfs:comment tw:supply "a function that is realized when the input flow of a substance or energy in to the bearer of the function is greater than the output flow.")
+AnnotationAssertion(rdfs:label tw:supply "supply")
+SubClassOf(tw:supply tw:function)
+
+# Class: tw:supplyOfMaterial (Supply of Material)
+
+AnnotationAssertion(rdfs:label tw:supplyOfMaterial "Supply of Material")
+SubClassOf(tw:supplyOfMaterial tw:genericCrossDomainAsset)
+
+# Class: tw:surgeSuppression (surge suppression)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:surgeSuppression "a momentary storage function realized to achieve relative stability in one or more qualities of the output (i.e. flow or pressure) dispite a large and sudden increase of input.")
+AnnotationAssertion(rdfs:label tw:surgeSuppression "surge suppression")
+SubClassOf(tw:surgeSuppression tw:storage)
+
+# Class: tw:switchgearDistributionBus (tw:switchgearDistributionBus)
+
+SubClassOf(tw:switchgearDistributionBus tw:discreteAsset)
+SubClassOf(tw:switchgearDistributionBus tw:electricalAssetOrComponent)
+
+# Class: tw:switchgearGroundingDevice (tw:switchgearGroundingDevice)
+
+SubClassOf(tw:switchgearGroundingDevice tw:discreteAsset)
+SubClassOf(tw:switchgearGroundingDevice tw:electricalSafety)
+
+# Class: tw:system (system of discrete assets)
+
+AnnotationAssertion(rdfs:comment tw:system "The asset parts of a system can be interrelated by physical connections, controlled material flows, information flow, or energy transmission between the parts.
+Each part of the system should be involved in a higher-order function of the system. While some parts are directly involved in realizing the function others are involved by supporting the regulation, reliability, maintainability, and other implicit goals of the system.
+Examples of system include
+* wireless radio network
+* a building or a bridge
+* a stormwater management pond
+* any subsystem functional structure")
+AnnotationAssertion(rdfs:isDefinedBy tw:system "A collection of interrelated assets capable of some higher-order function.")
+AnnotationAssertion(rdfs:label tw:system "system of discrete assets"@en)
+SubClassOf(tw:system tw:asset)
+
+# Class: tw:systemTrain (tw:systemTrain)
+
+AnnotationAssertion(rdfs:comment tw:systemTrain "A system train has the characteristic of being set of connected assets that 
+* is a part of a system
+* exists among multiple similar sets of connected assets, functionally equivalent to itself, in the same system
+is capable of realizing a unit of the system primary functions.")
+AnnotationAssertion(rdfs:isDefinedBy tw:systemTrain "A component, among multiple functionally equivalent components of a regionalized system, that offers a unit of the complete set of primary functions of a regionalized system.")
+AnnotationAssertion(rdfs:isDefinedBy tw:systemTrain "a part of a facility system consisting of a set of connected discrete assets that provides one unit, among multiple redundant units, of the primary functions of the facility system.")
+SubClassOf(tw:systemTrain tw:flowIntegratedSystem)
+
+# Class: tw:tableContent (table content)
+
+AnnotationAssertion(rdfs:label tw:tableContent "table content"@en)
+SubClassOf(tw:tableContent tw:pieceOfContent)
+
+# Class: tw:tankOrVessel (tw:tankOrVessel)
+
+AnnotationAssertion(rdfs:comment tw:tankOrVessel "Jan'24: since vessel and tank are words often used interchangeably, they are combined here into a single term")
+SubClassOf(tw:tankOrVessel tw:discreteAsset)
+
+# Class: tw:technicalStandard (technical standard)
+
+AnnotationAssertion(rdfs:label tw:technicalStandard "technical standard"@en)
+SubClassOf(tw:technicalStandard tw:contentSubject)
+
+# Class: tw:temperatureInstrumentation (tw:temperatureInstrumentation)
+
+SubClassOf(tw:temperatureInstrumentation tw:discreteAsset)
+
+# Class: tw:temperatureSwitch (tw:temperatureSwitch)
+
+SubClassOf(tw:temperatureSwitch tw:discreteAsset)
+
+# Class: tw:temperatureTransmitter (tw:temperatureTransmitter)
+
+SubClassOf(tw:temperatureTransmitter tw:discreteAsset)
+
+# Class: tw:theMaxAllowableWorkingPressure (Maximum Allowable Working Pressure)
+
+AnnotationAssertion(rdfs:label tw:theMaxAllowableWorkingPressure "Maximum Allowable Working Pressure")
+SubClassOf(tw:theMaxAllowableWorkingPressure tw:aPressureDesc)
+
+# Class: tw:theMaxAllowableWorkingTemp (Maxiumum Allowable Working Temperature)
+
+AnnotationAssertion(rdfs:label tw:theMaxAllowableWorkingTemp "Maxiumum Allowable Working Temperature")
+SubClassOf(tw:theMaxAllowableWorkingTemp tw:aTemperatureDesc)
+
+# Class: tw:theMaxInputVoltageDesc (tw:theMaxInputVoltageDesc)
+
+AnnotationAssertion(rdfs:comment tw:theMaxInputVoltageDesc "Maximum Input Voltage")
+SubClassOf(tw:theMaxInputVoltageDesc tw:aVoltageDesc)
+
+# Class: tw:theMinInputVoltageDesc (Mininum Input Voltage)
+
+AnnotationAssertion(rdfs:label tw:theMinInputVoltageDesc "Mininum Input Voltage")
+SubClassOf(tw:theMinInputVoltageDesc tw:aVoltageDesc)
+
+# Class: tw:theNominalOutputPower (Nominal Output Power)
+
+AnnotationAssertion(rdfs:label tw:theNominalOutputPower "Nominal Output Power")
+SubClassOf(tw:theNominalOutputPower tw:aPowerDesc)
+
+# Class: tw:theSubstanceInContainment (tw:theSubstanceInContainment)
+
+SubClassOf(tw:theSubstanceInContainment tw:assetDescription)
+
+# Class: tw:theVolumetricCapacityDesc (tw:theVolumetricCapacityDesc)
+
+SubClassOf(tw:theVolumetricCapacityDesc tw:aVolumetricCapacityDesc)
+
+# Class: tw:thermostatOrZoneControllerUnit (tw:thermostatOrZoneControllerUnit)
+
+SubClassOf(tw:thermostatOrZoneControllerUnit tw:HVAC_systemAsset)
+SubClassOf(tw:thermostatOrZoneControllerUnit tw:discreteAsset)
+
+# Class: tw:tool (tw:tool)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:tool "A discrete asset that is not a part of a larger system; it is usually (but not necessarily) portable and operated by a single user when in use.")
+SubClassOf(tw:tool tw:asset)
+
+# Class: tw:totalDissolvedSolidsInstrumentation (tw:totalDissolvedSolidsInstrumentation)
+
+SubClassOf(tw:totalDissolvedSolidsInstrumentation tw:discreteAsset)
+
+# Class: tw:totalSuspendedSolidsInstrumentation (tw:totalSuspendedSolidsInstrumentation)
+
+SubClassOf(tw:totalSuspendedSolidsInstrumentation tw:discreteAsset)
+
+# Class: tw:tower (tw:tower)
+
+SubClassOf(tw:tower tw:buildingArchitecturalOrStructural)
+SubClassOf(tw:tower tw:discreteAsset)
+
+# Class: tw:transferSwitch (tw:transferSwitch)
+
+SubClassOf(tw:transferSwitch tw:discreteAsset)
+SubClassOf(tw:transferSwitch tw:electricalAssetOrComponent)
+
+# Class: tw:transformer (tw:transformer)
+
+SubClassOf(tw:transformer tw:discreteAsset)
+SubClassOf(tw:transformer tw:electricalAssetOrComponent)
+
+# Class: tw:trapPrimer (tw:trapPrimer)
+
+SubClassOf(tw:trapPrimer tw:discreteAsset)
+SubClassOf(tw:trapPrimer tw:partOfProcessPiping)
+
+# Class: tw:travelingScreen (tw:travelingScreen)
+
+SubClassOf(tw:travelingScreen tw:barScreen)
+
+# Class: tw:travelingScreenUnit (tw:travelingScreenUnit)
+
+SubClassOf(tw:travelingScreenUnit tw:discreteAsset)
+SubClassOf(tw:travelingScreenUnit tw:solidsSeparation)
+
+# Class: tw:treatmentFilterBank (tw:treatmentFilterBank)
+
+SubClassOf(tw:treatmentFilterBank tw:discreteAsset)
+SubClassOf(tw:treatmentFilterBank tw:filtration)
+
+# Class: tw:treatmentFilterUnit (tw:treatmentFilterUnit)
+
+SubClassOf(tw:treatmentFilterUnit tw:discreteAsset)
+SubClassOf(tw:treatmentFilterUnit tw:filtration)
+
+# Class: tw:tunnel (tw:tunnel)
+
+SubClassOf(tw:tunnel tw:buildingArchitecturalOrStructural)
+SubClassOf(tw:tunnel tw:discreteAsset)
+
+# Class: tw:turbidityAnalyzer (tw:turbidityAnalyzer)
+
+SubClassOf(tw:turbidityAnalyzer tw:discreteAsset)
+
+# Class: tw:turbidityMeter (tw:turbidityMeter)
+
+SubClassOf(tw:turbidityMeter tw:discreteAsset)
+
+# Class: tw:undergroundFuelOilTank_TEMP (tw:undergroundFuelOilTank_TEMP)
+
+AnnotationAssertion(tw:notionMappingID tw:undergroundFuelOilTank_TEMP "f6a0886defb9495e8da78b897445275b")
+EquivalentClasses(tw:undergroundFuelOilTank_TEMP ObjectIntersectionOf(tw:fuelOilTank DataHasValue(tw:isUnderGround "true"^^xsd:boolean)))
+
+# Class: tw:undergroundFuelTank_TEMP (tw:undergroundFuelTank_TEMP)
+
+AnnotationAssertion(tw:notionMappingID tw:undergroundFuelTank_TEMP "36c706f0a1524bc49f64b76bd1e184b5")
+EquivalentClasses(tw:undergroundFuelTank_TEMP ObjectIntersectionOf(tw:fuelTank DataHasValue(tw:isUnderGround "true"^^xsd:boolean)))
+
+# Class: tw:uninterruptedPowerSupply (tw:uninterruptedPowerSupply)
+
+SubClassOf(tw:uninterruptedPowerSupply tw:discreteAsset)
+SubClassOf(tw:uninterruptedPowerSupply tw:electricalAssetOrComponent)
+
+# Class: tw:unitOfMeasure (unit of measure)
+
+AnnotationAssertion(rdfs:label tw:unitOfMeasure "unit of measure"@en)
+SubClassOf(tw:unitOfMeasure tw:informationContentEntity)
+
+# Class: tw:vaccumCleaner (tw:vaccumCleaner)
+
+SubClassOf(tw:vaccumCleaner tw:commonTool)
+SubClassOf(tw:vaccumCleaner tw:discreteAsset)
+
+# Class: tw:valve (valve)
+
+AnnotationAssertion(rdfs:label tw:valve "valve"@en)
+SubClassOf(tw:valve tw:discreteAsset)
+SubClassOf(tw:valve tw:distributionAndCollectionNetoworkAsset)
+SubClassOf(tw:valve tw:flowOrPressureControl)
+SubClassOf(tw:valve tw:partOfProcessPiping)
+
+# Class: tw:valveRole (valve role)
+
+AnnotationAssertion(rdfs:label tw:valveRole "valve role"@en)
+SubClassOf(tw:valveRole tw:assetRole)
+
+# Class: tw:vapour (tw:vapour)
+
+SubClassOf(tw:vapour tw:material)
+
+# Class: tw:variableAirVolumeUnit (tw:variableAirVolumeUnit)
+
+SubClassOf(tw:variableAirVolumeUnit tw:HVAC_systemAsset)
+SubClassOf(tw:variableAirVolumeUnit tw:discreteAsset)
+
+# Class: tw:ventilationSystem (tw:ventilationSystem)
+
+AnnotationAssertion(tw:notionMappingID tw:ventilationSystem "a5d009d138a14963a62ee0d5753c6a74")
+SubClassOf(tw:ventilationSystem tw:system)
+
+# Class: tw:verticalLifeline (tw:verticalLifeline)
+
+AnnotationAssertion(tw:notionMappingID tw:verticalLifeline "ac3fd2e6499d4797954dc714a796c3bc")
+SubClassOf(tw:verticalLifeline tw:discreteAsset)
+SubClassOf(tw:verticalLifeline tw:fallProtectionEquipment)
+
+# Class: tw:vibrationAnalyzer (tw:vibrationAnalyzer)
+
+SubClassOf(tw:vibrationAnalyzer tw:discreteAsset)
+
+# Class: tw:vibrationInstrumentation (tw:vibrationInstrumentation)
+
+SubClassOf(tw:vibrationInstrumentation tw:discreteAsset)
+
+# Class: tw:voltageInstrumentation (tw:voltageInstrumentation)
+
+SubClassOf(tw:voltageInstrumentation tw:discreteAsset)
+
+# Class: tw:voltageSurgeSuppression (tw:voltageSurgeSuppression)
+
+SubClassOf(tw:voltageSurgeSuppression tw:discreteAsset)
+SubClassOf(tw:voltageSurgeSuppression tw:electricalSafety)
+
+# Class: tw:wastewaterStoragePipe (tw:wastewaterStoragePipe)
+
+SubClassOf(tw:wastewaterStoragePipe tw:wetWeatherFlowStorage)
+
+# Class: tw:water (tw:water)
+
+SubClassOf(tw:water tw:liquid)
+
+# Class: tw:waterMain (water main)
+
+AnnotationAssertion(rdfs:label tw:waterMain "water main")
+SubClassOf(tw:waterMain tw:pipeSegment)
+
+# Class: tw:waterOrWastewaterTreatment (Water or Wastewater Treatment)
+
+AnnotationAssertion(rdfs:label tw:waterOrWastewaterTreatment "Water or Wastewater Treatment")
+SubClassOf(tw:waterOrWastewaterTreatment tw:TorontoWaterAsset)
+
+# Class: tw:waterServiceConnection (tw:waterServiceConnection)
+
+SubClassOf(tw:waterServiceConnection tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:waterTower (tw:waterTower)
+
+SubClassOf(tw:waterTower tw:discreteAsset)
+SubClassOf(tw:waterTower tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:waterTrailer (tw:waterTrailer)
+
+SubClassOf(tw:waterTrailer tw:discreteAsset)
+SubClassOf(tw:waterTrailer tw:roadVehicleOrTransportationTool)
+
+# Class: tw:watermain (tw:watermain)
+
+SubClassOf(tw:watermain tw:distributionAndCollectionNetoworkAsset)
+SubClassOf(tw:watermain tw:pipeSection)
+
+# Class: tw:weightScale (tw:weightScale)
+
+SubClassOf(tw:weightScale tw:discreteAsset)
+
+# Class: tw:weirStructure (tw:weirStructure)
+
+SubClassOf(tw:weirStructure tw:discreteAsset)
+SubClassOf(tw:weirStructure tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:weldingReceptacle (tw:weldingReceptacle)
+
+SubClassOf(tw:weldingReceptacle tw:discreteAsset)
+SubClassOf(tw:weldingReceptacle tw:electricalAssetOrComponent)
+
+# Class: tw:well (tw:well)
+
+SubClassOf(tw:well tw:discreteAsset)
+SubClassOf(tw:well tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:wetPond (tw:wetPond)
+
+SubClassOf(tw:wetPond tw:pond)
+
+# Class: tw:wetWeatherFlowStorage (wet weather flow storage)
+
+AnnotationAssertion(rdfs:label tw:wetWeatherFlowStorage "wet weather flow storage"@en)
+SubClassOf(tw:wetWeatherFlowStorage tw:discreteAsset)
+SubClassOf(tw:wetWeatherFlowStorage tw:distributionAndCollectionNetoworkAsset)
+
+# Class: tw:wirelessAccessPoint (tw:wirelessAccessPoint)
+
+SubClassOf(tw:wirelessAccessPoint tw:discreteAsset)
+SubClassOf(tw:wirelessAccessPoint tw:generalNetworkingAsset)
+
+# Class: tw:work (tw:work)
+
+SubClassOf(tw:work tw:process)
+
+# Class: tw:workOrderLevelWork (tw:workOrderLevelWork)
+
+SubClassOf(tw:workOrderLevelWork tw:work)
+
+# Class: tw:workOrderSpecification (work order specification)
+
+AnnotationAssertion(rdfs:label tw:workOrderSpecification "work order specification")
+SubClassOf(tw:workOrderSpecification tw:workSpecification)
+
+# Class: tw:workSpecification (work specification)
+
+AnnotationAssertion(rdfs:label tw:workSpecification "work specification")
+SubClassOf(tw:workSpecification tw:description)
+
+# Class: tw:wrench (tw:wrench)
+
+SubClassOf(tw:wrench tw:commonTool)
+SubClassOf(tw:wrench tw:discreteAsset)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: tw:MV (tw:MV)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:MV "megavolt")
+ClassAssertion(tw:measureOfVoltage tw:MV)
+
+# Individual: tw:MVA (tw:MVA)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:MVA "megavolt-ampere")
+ClassAssertion(tw:measureOfPower tw:MVA)
+
+# Individual: tw:V (tw:V)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:V "volt")
+ClassAssertion(tw:measureOfVoltage tw:V)
+
+# Individual: tw:VA (tw:VA)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:VA "volt-ampere")
+ClassAssertion(tw:measureOfPower tw:VA)
+
+# Individual: tw:W (tw:W)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:W "watt")
+ClassAssertion(tw:measureOfPower tw:W)
+
+# Individual: tw:hp (tw:hp)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:hp "horsepower")
+ClassAssertion(tw:measureOfPower tw:hp)
+
+# Individual: tw:kPa (tw:kPa)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:kPa "kilopascal")
+ClassAssertion(tw:measureOfPressure tw:kPa)
+
+# Individual: tw:kV (tw:kV)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:kV "kilovolt")
+ClassAssertion(tw:measureOfVoltage tw:kV)
+
+# Individual: tw:kVA (tw:kVA)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:kVA "kilovolt-ampere")
+ClassAssertion(tw:measureOfPower tw:kVA)
+
+# Individual: tw:kW (tw:kW)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:kW "kilowatt")
+ClassAssertion(tw:measureOfPower tw:kW)
+
+# Individual: tw:psi (tw:psi)
+
+AnnotationAssertion(rdfs:isDefinedBy tw:psi "pounds per square inch")
+ClassAssertion(tw:measureOfPressure tw:psi)
+
+
+SubClassOf(ObjectSomeValuesFrom(tw:hasPhysicalPart ObjectIntersectionOf(tw:discreteAsset tw:structuralTankComponent)) tw:structuralTank)
+DisjointClasses(tw:asset tw:assetRole tw:informationContentEntity tw:material tw:organization tw:property)
+)
