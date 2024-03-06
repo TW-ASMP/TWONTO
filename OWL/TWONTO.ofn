@@ -20,7 +20,6 @@ Declaration(Class(tw:CSA-B149-6_membraneGasholder))
 Declaration(Class(tw:HVAC_buildingOrGroundsServiceAsset))
 Declaration(Class(tw:HVAC_systemAsset))
 Declaration(Class(tw:MTD))
-Declaration(Class(tw:OReg220PressureVessel))
 Declaration(Class(tw:PA_systemSpeaker))
 Declaration(Class(tw:TorontoWaterAsset))
 Declaration(Class(tw:UV_disinfectionAssembly))
@@ -65,6 +64,7 @@ Declaration(Class(tw:batteryBank))
 Declaration(Class(tw:batteryCharger))
 Declaration(Class(tw:batteryUnit))
 Declaration(Class(tw:bearing))
+Declaration(Class(tw:beingAPartOfThe))
 Declaration(Class(tw:belt))
 Declaration(Class(tw:biogas))
 Declaration(Class(tw:biologicalOrChemicalTreatmentAsset))
@@ -77,10 +77,10 @@ Declaration(Class(tw:bridge))
 Declaration(Class(tw:building))
 Declaration(Class(tw:buildingArchitecturalOrStructural))
 Declaration(Class(tw:buildingAutomationSystemController))
-Declaration(Class(tw:bulkStorage))
 Declaration(Class(tw:burner))
 Declaration(Class(tw:cableSection))
 Declaration(Class(tw:cableSegment))
+Declaration(Class(tw:capability))
 Declaration(Class(tw:capacitor))
 Declaration(Class(tw:cardReader))
 Declaration(Class(tw:catchBasin))
@@ -108,8 +108,7 @@ Declaration(Class(tw:compressor))
 Declaration(Class(tw:computer))
 Declaration(Class(tw:condensateTrap))
 Declaration(Class(tw:conductivityAnalyzer))
-Declaration(Class(tw:containing))
-Declaration(Class(tw:containment))
+Declaration(Class(tw:containingA))
 Declaration(Class(tw:contentCompilation))
 Declaration(Class(tw:contentSubject))
 Declaration(Class(tw:contentSummary))
@@ -126,6 +125,7 @@ Declaration(Class(tw:crane))
 Declaration(Class(tw:culvert))
 Declaration(Class(tw:cycloneSeparator))
 Declaration(Class(tw:definedCollection))
+Declaration(Class(tw:definedState))
 Declaration(Class(tw:dehumidifier))
 Declaration(Class(tw:descendingDevice))
 Declaration(Class(tw:description))
@@ -153,6 +153,7 @@ Declaration(Class(tw:dosingOrMeteringPump))
 Declaration(Class(tw:dosingPump))
 Declaration(Class(tw:dosingSystemAssembly))
 Declaration(Class(tw:dosingSystemUnit))
+Declaration(Class(tw:driving))
 Declaration(Class(tw:dryPond))
 Declaration(Class(tw:dryer))
 Declaration(Class(tw:dustCollecter))
@@ -179,14 +180,6 @@ Declaration(Class(tw:equipmentLocalControlPanel))
 Declaration(Class(tw:event))
 Declaration(Class(tw:expansionJoint))
 Declaration(Class(tw:explosionPreventionEquipment))
-Declaration(Class(tw:expressionOfCurrentFlow))
-Declaration(Class(tw:expressionOfMassFlow))
-Declaration(Class(tw:expressionOfPowerLevel))
-Declaration(Class(tw:expressionOfPressure))
-Declaration(Class(tw:expressionOfQuantity))
-Declaration(Class(tw:expressionOfSpeed))
-Declaration(Class(tw:expressionOfVoltageLevel))
-Declaration(Class(tw:expressionOfWeight))
 Declaration(Class(tw:facility))
 Declaration(Class(tw:facilityProcessSystem))
 Declaration(Class(tw:facilitySystem))
@@ -227,7 +220,6 @@ Declaration(Class(tw:fuelOilAppliance))
 Declaration(Class(tw:fuelOilTank))
 Declaration(Class(tw:fuelPipingSystem))
 Declaration(Class(tw:fuelTank))
-Declaration(Class(tw:function))
 Declaration(Class(tw:furnace))
 Declaration(Class(tw:fuse))
 Declaration(Class(tw:gasAppliance))
@@ -255,7 +247,6 @@ Declaration(Class(tw:gritClassifier))
 Declaration(Class(tw:groundingEquipment))
 Declaration(Class(tw:guideline))
 Declaration(Class(tw:havingAPart))
-Declaration(Class(tw:havingAPartOf))
 Declaration(Class(tw:hazard))
 Declaration(Class(tw:hazardousGasMonitoringDevice))
 Declaration(Class(tw:healthAndSafetyHazard))
@@ -269,6 +260,7 @@ Declaration(Class(tw:hierarchicalSystem))
 Declaration(Class(tw:highVoltageStick))
 Declaration(Class(tw:highVoltageTester))
 Declaration(Class(tw:hoist))
+Declaration(Class(tw:holdingCapacity))
 Declaration(Class(tw:horizontalLifeline))
 Declaration(Class(tw:hotWorkEquipment))
 Declaration(Class(tw:hydrant))
@@ -309,15 +301,19 @@ Declaration(Class(tw:mass))
 Declaration(Class(tw:material))
 Declaration(Class(tw:materialAdditionOrDosing))
 Declaration(Class(tw:materialDistributionPanel))
-Declaration(Class(tw:measureOfElectricalCurrent))
-Declaration(Class(tw:measureOfMass))
-Declaration(Class(tw:measureOfPower))
+Declaration(Class(tw:maxInputVoltage))
+Declaration(Class(tw:measureOfCurrentFlow))
+Declaration(Class(tw:measureOfMassFlow))
+Declaration(Class(tw:measureOfPowerLevel))
 Declaration(Class(tw:measureOfPressure))
-Declaration(Class(tw:measureOfVoltage))
+Declaration(Class(tw:measureOfQuantity))
+Declaration(Class(tw:measureOfSpeed))
+Declaration(Class(tw:measureOfVoltageLevel))
+Declaration(Class(tw:measureOfWeight))
 Declaration(Class(tw:mechanicalAssembly))
-Declaration(Class(tw:mechanicalDrive))
 Declaration(Class(tw:mechanicalEnergyAndMotion))
 Declaration(Class(tw:mechanicalFitting))
+Declaration(Class(tw:minInputVoltage))
 Declaration(Class(tw:mixerOrAgitator))
 Declaration(Class(tw:mobileLift))
 Declaration(Class(tw:modularDiscreteAssembly))
@@ -332,9 +328,10 @@ Declaration(Class(tw:networkRouter))
 Declaration(Class(tw:networkStorageAppliance))
 Declaration(Class(tw:networkSwitch))
 Declaration(Class(tw:nitrateOrNitriteAnalyzer))
+Declaration(Class(tw:nominalInputVoltage))
 Declaration(Class(tw:noteTaking))
 Declaration(Class(tw:observation))
-Declaration(Class(tw:occupying))
+Declaration(Class(tw:occupyingThe))
 Declaration(Class(tw:oilGreaseSeparator_MTD))
 Declaration(Class(tw:oilGritSeperator))
 Declaration(Class(tw:ontarioRegulation))
@@ -400,6 +397,7 @@ Declaration(Class(tw:pumpingStationSystem))
 Declaration(Class(tw:qualification))
 Declaration(Class(tw:quality))
 Declaration(Class(tw:quencher))
+Declaration(Class(tw:ratedPowerOutput))
 Declaration(Class(tw:reactorOfUnnamedTypes))
 Declaration(Class(tw:regionalizedSystem))
 Declaration(Class(tw:relationalState))
@@ -446,7 +444,7 @@ Declaration(Class(tw:sewerMain))
 Declaration(Class(tw:sewerServiceConnection))
 Declaration(Class(tw:simpleLine))
 Declaration(Class(tw:singleParameterInstrumentation))
-Declaration(Class(tw:sittingWithin))
+Declaration(Class(tw:sittingWithinThe))
 Declaration(Class(tw:sling))
 Declaration(Class(tw:sludge))
 Declaration(Class(tw:sludgeIncineratorAssembly))
@@ -462,7 +460,6 @@ Declaration(Class(tw:state))
 Declaration(Class(tw:stationaryMachineTool))
 Declaration(Class(tw:steamTrap))
 Declaration(Class(tw:stillOrVideoMobileCamera))
-Declaration(Class(tw:storage))
 Declaration(Class(tw:storageOrSurgeSuppression))
 Declaration(Class(tw:storageTank))
 Declaration(Class(tw:stormServiceConnection))
@@ -472,9 +469,7 @@ Declaration(Class(tw:structuralTankComponent))
 Declaration(Class(tw:structuralWall))
 Declaration(Class(tw:sulphinatorAssembly))
 Declaration(Class(tw:suppliedAirRespirator))
-Declaration(Class(tw:supply))
 Declaration(Class(tw:supplyOfMaterial))
-Declaration(Class(tw:surgeSuppression))
 Declaration(Class(tw:switchgearDistributionBus))
 Declaration(Class(tw:switchgearGroundingDevice))
 Declaration(Class(tw:system))
@@ -510,7 +505,12 @@ Declaration(Class(tw:turbidityMeter))
 Declaration(Class(tw:undergroundFuelOilTank_TEMP))
 Declaration(Class(tw:undergroundFuelTank_TEMP))
 Declaration(Class(tw:uninterruptedPowerSupply))
+Declaration(Class(tw:unitOfElectricalCurrent))
+Declaration(Class(tw:unitOfMass))
 Declaration(Class(tw:unitOfMeasure))
+Declaration(Class(tw:unitOfPower))
+Declaration(Class(tw:unitOfPressure))
+Declaration(Class(tw:unitOfVoltage))
 Declaration(Class(tw:vaccumCleaner))
 Declaration(Class(tw:valve))
 Declaration(Class(tw:valveRole))
@@ -548,7 +548,6 @@ Declaration(ObjectProperty(tw:describes))
 Declaration(ObjectProperty(tw:descriptionProperty))
 Declaration(ObjectProperty(tw:fullyGrounds))
 Declaration(ObjectProperty(tw:grounds))
-Declaration(ObjectProperty(tw:hasAStateOf))
 Declaration(ObjectProperty(tw:hasContentPart))
 Declaration(ObjectProperty(tw:hasEarlierVersion))
 Declaration(ObjectProperty(tw:hasInputVoltageSpec))
@@ -565,13 +564,15 @@ Declaration(ObjectProperty(tw:hasPerformanceRequirement))
 Declaration(ObjectProperty(tw:hasPhysicalPart))
 Declaration(ObjectProperty(tw:hasPresentProperty))
 Declaration(ObjectProperty(tw:hasPreviousVersion))
-Declaration(ObjectProperty(tw:hasPropertyState))
+Declaration(ObjectProperty(tw:hasProperty))
 Declaration(ObjectProperty(tw:hasPublisher))
 Declaration(ObjectProperty(tw:hasSpecifedRelation))
 Declaration(ObjectProperty(tw:hasSpecification))
+Declaration(ObjectProperty(tw:hasStateProperty))
 Declaration(ObjectProperty(tw:hasSubjectType))
 Declaration(ObjectProperty(tw:hasSubsystem))
 Declaration(ObjectProperty(tw:hasSummary))
+Declaration(ObjectProperty(tw:hasTheState))
 Declaration(ObjectProperty(tw:hasUnitOfMeasure))
 Declaration(ObjectProperty(tw:includesContent))
 Declaration(ObjectProperty(tw:includesContentAbout))
@@ -589,6 +590,7 @@ Declaration(ObjectProperty(tw:isOccupiedBy))
 Declaration(ObjectProperty(tw:isPartOf))
 Declaration(ObjectProperty(tw:isPartOfContent))
 Declaration(ObjectProperty(tw:isPhysicalPartOf))
+Declaration(ObjectProperty(tw:isQuantifiedBy))
 Declaration(ObjectProperty(tw:isSubsystemOf))
 Declaration(ObjectProperty(tw:occupies))
 Declaration(ObjectProperty(tw:partiallyGrounds))
@@ -607,29 +609,17 @@ Declaration(DataProperty(tw:hasContentText))
 Declaration(DataProperty(tw:hasCreationTime))
 Declaration(DataProperty(tw:hasDeaerator))
 Declaration(DataProperty(tw:hasDocumentURL))
-Declaration(DataProperty(tw:hasHorsepowerValue))
 Declaration(DataProperty(tw:hasIntentDescription))
 Declaration(DataProperty(tw:hasInterpretationText))
-Declaration(DataProperty(tw:hasMeasurementValue))
 Declaration(DataProperty(tw:hasName))
 Declaration(DataProperty(tw:hasOperationalState))
-Declaration(DataProperty(tw:hasPowerValue))
 Declaration(DataProperty(tw:hasPresentValue))
 Declaration(DataProperty(tw:hasPublicationDate))
 Declaration(DataProperty(tw:hasRevisionDate))
 Declaration(DataProperty(tw:hasScopeDescription))
 Declaration(DataProperty(tw:hasSealedOrShieldedBearing))
-Declaration(DataProperty(tw:hasVoltageValue))
-Declaration(DataProperty(tw:hasVolumnValue))
-Declaration(DataProperty(tw:has_L_value))
-Declaration(DataProperty(tw:has_MVA_value))
 Declaration(DataProperty(tw:has_NEMA_enclosureType))
 Declaration(DataProperty(tw:has_NEMA_frameType))
-Declaration(DataProperty(tw:has_PF_value))
-Declaration(DataProperty(tw:has_V_value))
-Declaration(DataProperty(tw:has_kVA_value))
-Declaration(DataProperty(tw:has_kV_value))
-Declaration(DataProperty(tw:has_liquidGallon_value))
 Declaration(DataProperty(tw:includesWorkInstructionText))
 Declaration(DataProperty(tw:isAboveGround))
 Declaration(DataProperty(tw:isActuatedValve))
@@ -640,17 +630,17 @@ Declaration(DataProperty(tw:isLatestVersion))
 Declaration(DataProperty(tw:isSubjectOfNote))
 Declaration(DataProperty(tw:isUnderGround))
 Declaration(DataProperty(tw:usesBearingLubricantType))
-Declaration(NamedIndividual(tw:MV))
-Declaration(NamedIndividual(tw:MVA))
-Declaration(NamedIndividual(tw:V))
-Declaration(NamedIndividual(tw:VA))
-Declaration(NamedIndividual(tw:W))
-Declaration(NamedIndividual(tw:hp))
-Declaration(NamedIndividual(tw:kPa))
-Declaration(NamedIndividual(tw:kV))
-Declaration(NamedIndividual(tw:kVA))
-Declaration(NamedIndividual(tw:kW))
-Declaration(NamedIndividual(tw:psi))
+Declaration(NamedIndividual(tw:horsepower))
+Declaration(NamedIndividual(tw:kilopascal))
+Declaration(NamedIndividual(tw:kilovolt))
+Declaration(NamedIndividual(tw:kilovolt-ampere))
+Declaration(NamedIndividual(tw:kilowatt))
+Declaration(NamedIndividual(tw:megavolt-ampere))
+Declaration(NamedIndividual(tw:megawatt))
+Declaration(NamedIndividual(tw:poundsPerSquareInch))
+Declaration(NamedIndividual(tw:volt))
+Declaration(NamedIndividual(tw:volt-ampere))
+Declaration(NamedIndividual(tw:watt))
 Declaration(AnnotationProperty(tw:AvClassChild))
 Declaration(AnnotationProperty(tw:AvClassEquivalent))
 Declaration(AnnotationProperty(tw:AvClassOverlap))
@@ -705,14 +695,6 @@ SubObjectPropertyOf(tw:fullyGrounds tw:grounds)
 AnnotationAssertion(rdfs:label tw:grounds "grounds"@en)
 SubObjectPropertyOf(tw:grounds tw:hasPresentProperty)
 TransitiveObjectProperty(tw:grounds)
-
-# Object Property: tw:hasAStateOf (tw:hasAStateOf)
-
-AnnotationAssertion(rdfs:comment tw:hasAStateOf "Specialized for states related to the physical quality of the entity
-Usage Examples:
-AssetX hasAStateOf assetMass
-AssetX hasAStateOf assetHealth")
-SubObjectPropertyOf(tw:hasAStateOf tw:hasPropertyState)
 
 # Object Property: tw:hasContentPart (tw:hasContentPart)
 
@@ -793,11 +775,6 @@ The following properties are represented without reification.
 AnnotationAssertion(rdfs:label tw:hasPreviousVersion "has previous version"@en)
 SubObjectPropertyOf(tw:hasPreviousVersion tw:hasEarlierVersion)
 
-# Object Property: tw:hasPropertyState (tw:hasPropertyState)
-
-AnnotationAssertion(rdfs:comment tw:hasPropertyState "Feb'24: Competing for existence against the description property")
-AnnotationAssertion(rdfs:comment tw:hasPropertyState "Jan'24 TH: Existence is useful for querying all relational and quality states")
-
 # Object Property: tw:hasPublisher (has publisher)
 
 AnnotationAssertion(tw:SHACL_note tw:hasPublisher "range tw:publisher")
@@ -812,6 +789,12 @@ SubObjectPropertyOf(tw:hasSpecifedRelation tw:hasSpecification)
 # Object Property: tw:hasSpecification (tw:hasSpecification)
 
 SubObjectPropertyOf(tw:hasSpecification tw:hasPresentProperty)
+
+# Object Property: tw:hasStateProperty (tw:hasStateProperty)
+
+AnnotationAssertion(rdfs:comment tw:hasStateProperty "Feb'24: Competing for existence against the description property")
+AnnotationAssertion(rdfs:comment tw:hasStateProperty "Jan'24 TH: Existence is useful for querying all relational and quality states")
+SubObjectPropertyOf(tw:hasStateProperty tw:hasProperty)
 
 # Object Property: tw:hasSubjectType (tw:hasSubjectType)
 
@@ -828,8 +811,18 @@ InverseObjectProperties(tw:hasSubsystem tw:isSubsystemOf)
 AnnotationAssertion(rdfs:label tw:hasSummary "has summary"@en)
 SubObjectPropertyOf(tw:hasSummary tw:hasPresentProperty)
 
+# Object Property: tw:hasTheState (tw:hasTheState)
+
+AnnotationAssertion(rdfs:comment tw:hasTheState "Specialized for states related to the physical quality of the entity
+Usage Examples:
+AssetX hasTheState assetMass
+AssetX hasTheState assetHealth")
+AnnotationAssertion(rdfs:comment tw:hasTheState "TH Mar: changed from \"inAStateOf\" to \"inTheState\".  \"The\" signifies that that the relation is functional.")
+SubObjectPropertyOf(tw:hasTheState tw:hasStateProperty)
+
 # Object Property: tw:hasUnitOfMeasure (tw:hasUnitOfMeasure)
 
+AnnotationAssertion(rdfs:comment tw:hasUnitOfMeasure "has unit of measure")
 SubObjectPropertyOf(tw:hasUnitOfMeasure tw:hasPresentProperty)
 
 # Object Property: tw:includesContent (includes content)
@@ -898,7 +891,7 @@ as a part of binary relation:
 - AssetX isInAStateOf SittingInside theIndividual RoomY
 - AssetX isInAStateOf possessing theIndividual FunctionAC
 as a part of unary relation: AssetX isInAStateOf  assetOperationalState")
-SubObjectPropertyOf(tw:isInAStateOf tw:hasPropertyState)
+SubObjectPropertyOf(tw:isInAStateOf tw:hasStateProperty)
 
 # Object Property: tw:isOccupiedBy (tw:isOccupiedBy)
 
@@ -975,7 +968,7 @@ SubObjectPropertyOf(tw:specifiesTriggerEvent tw:hasSpecifedRelation)
 # Object Property: tw:theIndividual (tw:theIndividual)
 
 AnnotationAssertion(rdfs:comment tw:theIndividual "Usage Examples:
-AssetX isInAStateOf SittingInside theIndividual RoomY")
+AssetX tw:isInAStateOf SittingInside tw:theIndividual RoomY")
 
 
 ############################
@@ -1014,11 +1007,6 @@ DataPropertyRange(tw:hasDeaerator xsd:boolean)
 AnnotationAssertion(rdfs:label tw:hasDocumentURL "has document URL"@en)
 SubDataPropertyOf(tw:hasDocumentURL tw:hasPresentValue)
 
-# Data Property: tw:hasHorsepowerValue (horsepower)
-
-AnnotationAssertion(rdfs:label tw:hasHorsepowerValue "horsepower")
-SubDataPropertyOf(tw:hasHorsepowerValue tw:hasPowerValue)
-
 # Data Property: tw:hasIntentDescription (has intent description)
 
 AnnotationAssertion(rdfs:comment tw:hasIntentDescription "TH 12/02/23:
@@ -1031,10 +1019,6 @@ SubDataPropertyOf(tw:hasIntentDescription tw:hasPresentValue)
 SubDataPropertyOf(tw:hasInterpretationText tw:hasPresentValue)
 DataPropertyRange(tw:hasInterpretationText xsd:string)
 
-# Data Property: tw:hasMeasurementValue (tw:hasMeasurementValue)
-
-DataPropertyRange(tw:hasMeasurementValue xsd:float)
-
 # Data Property: tw:hasName (tw:hasName)
 
 SubDataPropertyOf(tw:hasName tw:hasPresentValue)
@@ -1044,10 +1028,6 @@ DataPropertyRange(tw:hasName xsd:string)
 
 AnnotationAssertion(rdfs:label tw:hasOperationalState "operational state"@en)
 SubDataPropertyOf(tw:hasOperationalState tw:hasPresentValue)
-
-# Data Property: tw:hasPowerValue (tw:hasPowerValue)
-
-SubDataPropertyOf(tw:hasPowerValue tw:hasMeasurementValue)
 
 # Data Property: tw:hasPresentValue (tw:hasPresentValue)
 
@@ -1076,24 +1056,6 @@ DataPropertyRange(tw:hasScopeDescription xsd:string)
 AnnotationAssertion(rdfs:label tw:hasSealedOrShieldedBearing "sealed or shielded bearing?"@en)
 SubDataPropertyOf(tw:hasSealedOrShieldedBearing tw:hasPresentValue)
 
-# Data Property: tw:hasVoltageValue (tw:hasVoltageValue)
-
-SubDataPropertyOf(tw:hasVoltageValue tw:hasMeasurementValue)
-
-# Data Property: tw:hasVolumnValue (tw:hasVolumnValue)
-
-SubDataPropertyOf(tw:hasVolumnValue tw:hasMeasurementValue)
-
-# Data Property: tw:has_L_value (tw:has_L_value)
-
-SubDataPropertyOf(tw:has_L_value tw:hasVolumnValue)
-
-# Data Property: tw:has_MVA_value (MVA)
-
-AnnotationAssertion(rdfs:isDefinedBy tw:has_MVA_value "megavolt-ampere")
-AnnotationAssertion(rdfs:label tw:has_MVA_value "MVA")
-SubDataPropertyOf(tw:has_MVA_value tw:hasPowerValue)
-
 # Data Property: tw:has_NEMA_enclosureType (NEMA enclosure type)
 
 AnnotationAssertion(rdfs:label tw:has_NEMA_enclosureType "NEMA enclosure type"@en)
@@ -1103,32 +1065,6 @@ SubDataPropertyOf(tw:has_NEMA_enclosureType tw:hasPresentValue)
 
 AnnotationAssertion(rdfs:label tw:has_NEMA_frameType "NEMA frame type"@en)
 SubDataPropertyOf(tw:has_NEMA_frameType tw:hasPresentValue)
-
-# Data Property: tw:has_PF_value (percent power factor)
-
-AnnotationAssertion(rdfs:isDefinedBy tw:has_PF_value "percent power factor")
-AnnotationAssertion(rdfs:label tw:has_PF_value "percent power factor")
-SubDataPropertyOf(tw:has_PF_value tw:hasMeasurementValue)
-
-# Data Property: tw:has_V_value (V)
-
-AnnotationAssertion(rdfs:label tw:has_V_value "V")
-SubDataPropertyOf(tw:has_V_value tw:hasVoltageValue)
-
-# Data Property: tw:has_kVA_value (kVA)
-
-AnnotationAssertion(rdfs:isDefinedBy tw:has_kVA_value "kilovolt-ampere")
-AnnotationAssertion(rdfs:label tw:has_kVA_value "kVA")
-SubDataPropertyOf(tw:has_kVA_value tw:hasPowerValue)
-
-# Data Property: tw:has_kV_value (kV)
-
-AnnotationAssertion(rdfs:label tw:has_kV_value "kV")
-SubDataPropertyOf(tw:has_kV_value tw:hasVoltageValue)
-
-# Data Property: tw:has_liquidGallon_value (tw:has_liquidGallon_value)
-
-SubDataPropertyOf(tw:has_liquidGallon_value tw:hasVolumnValue)
 
 # Data Property: tw:includesWorkInstructionText (tw:includesWorkInstructionText)
 
@@ -1233,10 +1169,6 @@ SubClassOf(tw:HVAC_systemAsset tw:HVAC_buildingOrGroundsServiceAsset)
 AnnotationAssertion(rdfs:label tw:MTD "manufacturered treatment device")
 SubClassOf(tw:MTD tw:discreteAsset)
 SubClassOf(tw:MTD tw:distributionAndCollectionNetoworkAsset)
-
-# Class: tw:OReg220PressureVessel (tw:OReg220PressureVessel)
-
-AnnotationAssertion(tw:notionMappingID tw:OReg220PressureVessel "4b7cb9e58d89436c9bea55d7f978b997")
 
 # Class: tw:PA_systemSpeaker (tw:PA_systemSpeaker)
 
@@ -1420,7 +1352,7 @@ SubClassOf(tw:assetRole tw:role)
 # Class: tw:assetStatus (asset status)
 
 AnnotationAssertion(rdfs:label tw:assetStatus "asset status"@en)
-SubClassOf(tw:assetStatus tw:state)
+SubClassOf(tw:assetStatus tw:definedState)
 
 # Class: tw:atomicLevelWork (tw:atomicLevelWork)
 
@@ -1463,6 +1395,11 @@ SubClassOf(tw:batteryUnit tw:discreteAsset)
 
 SubClassOf(tw:bearing tw:discreteAsset)
 SubClassOf(tw:bearing tw:generalMechanicalComponent)
+
+# Class: tw:beingAPartOfThe (being a part of)
+
+AnnotationAssertion(rdfs:label tw:beingAPartOfThe "being a part of"@en)
+SubClassOf(tw:beingAPartOfThe tw:relationalState)
 
 # Class: tw:belt (tw:belt)
 
@@ -1540,12 +1477,6 @@ SubClassOf(tw:buildingArchitecturalOrStructural tw:TorontoWaterAsset)
 SubClassOf(tw:buildingAutomationSystemController tw:HVAC_buildingOrGroundsServiceAsset)
 SubClassOf(tw:buildingAutomationSystemController tw:discreteAsset)
 
-# Class: tw:bulkStorage (storage and longer term retention of a substance for later use)
-
-AnnotationAssertion(rdfs:label tw:bulkStorage "bulk storage"@en)
-AnnotationAssertion(rdfs:label tw:bulkStorage "storage and longer term retention of a substance for later use")
-SubClassOf(tw:bulkStorage tw:storage)
-
 # Class: tw:burner (tw:burner)
 
 SubClassOf(tw:burner tw:discreteAsset)
@@ -1558,6 +1489,12 @@ SubClassOf(tw:cableSection tw:electricalAssetOrComponent)
 # Class: tw:cableSegment (tw:cableSegment)
 
 SubClassOf(tw:cableSegment tw:discreteAsset)
+
+# Class: tw:capability (function)
+
+AnnotationAssertion(rdfs:comment tw:capability "TH Mar'24: property related to what something is able to do or tolerate.")
+AnnotationAssertion(rdfs:label tw:capability "function")
+SubClassOf(tw:capability tw:property)
 
 # Class: tw:capacitor (tw:capacitor)
 
@@ -1690,15 +1627,10 @@ SubClassOf(tw:condensateTrap tw:partOfProcessPiping)
 
 SubClassOf(tw:conductivityAnalyzer tw:discreteAsset)
 
-# Class: tw:containing (containing)
+# Class: tw:containingA (containing)
 
-AnnotationAssertion(rdfs:label tw:containing "containing"@en)
-SubClassOf(tw:containing tw:relationalState)
-
-# Class: tw:containment (containment)
-
-AnnotationAssertion(rdfs:label tw:containment "containment")
-SubClassOf(tw:containment tw:function)
+AnnotationAssertion(rdfs:label tw:containingA "containing"@en)
+SubClassOf(tw:containingA tw:relationalState)
 
 # Class: tw:contentCompilation (content compilation)
 
@@ -1779,6 +1711,13 @@ SubClassOf(tw:cycloneSeparator tw:separator)
 AnnotationAssertion(rdfs:isDefinedBy tw:definedCollection "A set of entities unified by a written definition, which specifies the necessary conditions for each individual entity qualify as a member of the collection")
 AnnotationAssertion(rdfs:label tw:definedCollection "defined asset collection")
 
+# Class: tw:definedState (state)
+
+AnnotationAssertion(rdfs:comment tw:definedState "Jan'24 TH: This class is create because we considered the status of a particular asset to be an instance of this class")
+AnnotationAssertion(rdfs:comment tw:definedState "TH Dec/2023: a property that denote a composite of values in multiple qualities, functional capabiliy, and other possible property that inhere in the asset itself (not listed in this ontology).")
+AnnotationAssertion(rdfs:label tw:definedState "state"@en)
+SubClassOf(tw:definedState tw:state)
+
 # Class: tw:dehumidifier (tw:dehumidifier)
 
 SubClassOf(tw:dehumidifier tw:HVAC_systemAsset)
@@ -1793,6 +1732,7 @@ SubClassOf(tw:descendingDevice tw:discreteAsset)
 # Class: tw:description (tw:description)
 
 AnnotationAssertion(rdfs:comment tw:description "Feb'24 TH: possibly in competition for existence against state")
+AnnotationAssertion(rdfs:comment tw:description "Mar'24: Now I am in favour of using the state representation over the description representaton")
 AnnotationAssertion(rdfs:comment tw:description "REASON WHY SPECIFICATIONS SHOULD BE REIFIED:
 1. PARTIALLY VALIDATED: This allows us to add more metadata. For example, who made the specification - i.e., Is it the consultant or the manufacturer? When was it made? Does it indicate required performance or specsheet performance?  If we cannot attach this information, we would have to specialize in many different types of relations. VALIDATION: Provenance metadata is only needed for some usecases. However, reification offers a way to distinguish between specification and observation, which is very helpful to avoid defining similar relations repetitively, for example instead of using isHolding and isSpecifiedToHold, use theSubstanceInContainment description instance either as a requirement or observation. 
 2. REFUTED: This allows us to find all specifications for a given entity easily. (Instead of querying for object specifications and data specification separately) REFUTATION: one can list all properties of the entity using SPARQL
@@ -1933,6 +1873,11 @@ SubClassOf(tw:dosingSystemAssembly tw:materialAdditionOrDosing)
 
 SubClassOf(tw:dosingSystemUnit tw:discreteAsset)
 SubClassOf(tw:dosingSystemUnit tw:materialAdditionOrDosing)
+
+# Class: tw:driving (mechanical drive)
+
+AnnotationAssertion(rdfs:label tw:driving "mechanical drive"@en)
+SubClassOf(tw:driving tw:capability)
 
 # Class: tw:dryPond (tw:dryPond)
 
@@ -2079,47 +2024,6 @@ SubClassOf(tw:expansionJoint tw:partOfProcessPiping)
 
 AnnotationAssertion(rdfs:label tw:explosionPreventionEquipment "Explosion Prevention Equipment")
 SubClassOf(tw:explosionPreventionEquipment tw:safetyOrEnvironmentalHarmPreventionAsset)
-
-# Class: tw:expressionOfCurrentFlow (current output)
-
-AnnotationAssertion(rdfs:label tw:expressionOfCurrentFlow "current output"@en)
-SubClassOf(tw:expressionOfCurrentFlow tw:expressionOfQuantity)
-
-# Class: tw:expressionOfMassFlow (material output)
-
-AnnotationAssertion(rdfs:label tw:expressionOfMassFlow "material output"@en)
-SubClassOf(tw:expressionOfMassFlow tw:expressionOfQuantity)
-
-# Class: tw:expressionOfPowerLevel (tw:expressionOfPowerLevel)
-
-SubClassOf(tw:expressionOfPowerLevel tw:expressionOfQuantity)
-
-# Class: tw:expressionOfPressure (pressure measurement)
-
-AnnotationAssertion(rdfs:label tw:expressionOfPressure "pressure measurement")
-SubClassOf(tw:expressionOfPressure tw:expressionOfQuantity)
-
-# Class: tw:expressionOfQuantity (measurement)
-
-AnnotationAssertion(rdfs:comment tw:expressionOfQuantity "Feb'24: considered for DEPRECATION, after we have the more specialized properties of hasMeasurementValue")
-AnnotationAssertion(rdfs:comment tw:expressionOfQuantity "TH Dec/2023: a level of function that is realized at a certain type t")
-AnnotationAssertion(rdfs:label tw:expressionOfQuantity "measurement"@en)
-SubClassOf(tw:expressionOfQuantity tw:informationContentEntity)
-
-# Class: tw:expressionOfSpeed (speed)
-
-AnnotationAssertion(rdfs:label tw:expressionOfSpeed "speed"@en)
-SubClassOf(tw:expressionOfSpeed tw:expressionOfQuantity)
-
-# Class: tw:expressionOfVoltageLevel (output voltage)
-
-AnnotationAssertion(rdfs:label tw:expressionOfVoltageLevel "output voltage"@en)
-SubClassOf(tw:expressionOfVoltageLevel tw:expressionOfQuantity)
-
-# Class: tw:expressionOfWeight (lifting capacity)
-
-AnnotationAssertion(rdfs:label tw:expressionOfWeight "lifting capacity"@en)
-SubClassOf(tw:expressionOfWeight tw:expressionOfQuantity)
 
 # Class: tw:facility (tw:facility)
 
@@ -2335,11 +2239,6 @@ AnnotationAssertion(tw:notionMappingID tw:fuelTank "7260475a6c0a49ca85670e37ae82
 AnnotationAssertion(rdfs:label tw:fuelTank "fuel tank")
 EquivalentClasses(tw:fuelTank ObjectIntersectionOf(tw:storageTank ObjectSomeValuesFrom(tw:isDesignedToHold tw:fuel)))
 
-# Class: tw:function (function)
-
-AnnotationAssertion(rdfs:label tw:function "function")
-SubClassOf(tw:function tw:property)
-
 # Class: tw:furnace (tw:furnace)
 
 SubClassOf(tw:furnace tw:discreteAsset)
@@ -2469,11 +2368,6 @@ SubClassOf(tw:guideline tw:informationContentEntity)
 AnnotationAssertion(rdfs:label tw:havingAPart "having a part"@en)
 SubClassOf(tw:havingAPart tw:relationalState)
 
-# Class: tw:havingAPartOf (being a part of)
-
-AnnotationAssertion(rdfs:label tw:havingAPartOf "being a part of"@en)
-SubClassOf(tw:havingAPartOf tw:relationalState)
-
 # Class: tw:hazardousGasMonitoringDevice (Hazardous Gas Monitoring Device)
 
 AnnotationAssertion(rdfs:label tw:hazardousGasMonitoringDevice "Hazardous Gas Monitoring Device")
@@ -2538,6 +2432,11 @@ AnnotationAssertion(tw:notionMappingID tw:hoist "704b49f311e4431a8f4cf701e42fe02
 AnnotationAssertion(rdfs:isDefinedBy tw:hoist "CSA B167-16(R2021): a machinery unit that is used for vertical lifting or lowering a freely suspended (unguided) load.")
 SubClassOf(tw:hoist tw:discreteAsset)
 SubClassOf(tw:hoist tw:liftingOrTransport)
+
+# Class: tw:holdingCapacity (containment)
+
+AnnotationAssertion(rdfs:label tw:holdingCapacity "containment")
+SubClassOf(tw:holdingCapacity tw:capability)
 
 # Class: tw:horizontalLifeline (tw:horizontalLifeline)
 
@@ -2738,35 +2637,55 @@ SubClassOf(tw:materialDistributionPanel tw:discreteAsset)
 SubClassOf(tw:materialDistributionPanel tw:enclosure)
 SubClassOf(tw:materialDistributionPanel tw:partOfProcessPiping)
 
-# Class: tw:measureOfElectricalCurrent (tw:measureOfElectricalCurrent)
+# Class: tw:maxInputVoltage (tw:maxInputVoltage)
 
-SubClassOf(tw:measureOfElectricalCurrent tw:unitOfMeasure)
+SubClassOf(tw:maxInputVoltage tw:capability)
 
-# Class: tw:measureOfMass (tw:measureOfMass)
+# Class: tw:measureOfCurrentFlow (current output)
 
-SubClassOf(tw:measureOfMass tw:unitOfMeasure)
+AnnotationAssertion(rdfs:label tw:measureOfCurrentFlow "current output"@en)
+SubClassOf(tw:measureOfCurrentFlow tw:measureOfQuantity)
 
-# Class: tw:measureOfPower (tw:measureOfPower)
+# Class: tw:measureOfMassFlow (material output)
 
-SubClassOf(tw:measureOfPower tw:unitOfMeasure)
+AnnotationAssertion(rdfs:label tw:measureOfMassFlow "material output"@en)
+SubClassOf(tw:measureOfMassFlow tw:measureOfQuantity)
 
-# Class: tw:measureOfPressure (tw:measureOfPressure)
+# Class: tw:measureOfPowerLevel (tw:measureOfPowerLevel)
 
-SubClassOf(tw:measureOfPressure tw:unitOfMeasure)
+SubClassOf(tw:measureOfPowerLevel tw:measureOfQuantity)
 
-# Class: tw:measureOfVoltage (tw:measureOfVoltage)
+# Class: tw:measureOfPressure (pressure measurement)
 
-SubClassOf(tw:measureOfVoltage tw:unitOfMeasure)
+AnnotationAssertion(rdfs:label tw:measureOfPressure "pressure measurement")
+SubClassOf(tw:measureOfPressure tw:measureOfQuantity)
+
+# Class: tw:measureOfQuantity (measurement)
+
+AnnotationAssertion(rdfs:comment tw:measureOfQuantity "Feb'24: considered for DEPRECATION, after we have the more specialized properties of hasMeasurementValue")
+AnnotationAssertion(rdfs:comment tw:measureOfQuantity "TH Dec/2023: a level of function that is realized at a certain type t")
+AnnotationAssertion(rdfs:label tw:measureOfQuantity "measurement"@en)
+SubClassOf(tw:measureOfQuantity tw:informationContentEntity)
+
+# Class: tw:measureOfSpeed (speed)
+
+AnnotationAssertion(rdfs:label tw:measureOfSpeed "speed"@en)
+SubClassOf(tw:measureOfSpeed tw:measureOfQuantity)
+
+# Class: tw:measureOfVoltageLevel (output voltage)
+
+AnnotationAssertion(rdfs:label tw:measureOfVoltageLevel "output voltage"@en)
+SubClassOf(tw:measureOfVoltageLevel tw:measureOfQuantity)
+
+# Class: tw:measureOfWeight (lifting capacity)
+
+AnnotationAssertion(rdfs:label tw:measureOfWeight "lifting capacity"@en)
+SubClassOf(tw:measureOfWeight tw:measureOfQuantity)
 
 # Class: tw:mechanicalAssembly (tw:mechanicalAssembly)
 
 SubClassOf(tw:mechanicalAssembly tw:discreteAsset)
 SubClassOf(tw:mechanicalAssembly tw:generalMechanicalComponent)
-
-# Class: tw:mechanicalDrive (mechanical drive)
-
-AnnotationAssertion(rdfs:label tw:mechanicalDrive "mechanical drive"@en)
-SubClassOf(tw:mechanicalDrive tw:function)
 
 # Class: tw:mechanicalEnergyAndMotion (Mechanical Energy and Motion)
 
@@ -2777,6 +2696,10 @@ SubClassOf(tw:mechanicalEnergyAndMotion tw:genericCrossDomainAsset)
 
 SubClassOf(tw:mechanicalFitting tw:discreteAsset)
 SubClassOf(tw:mechanicalFitting tw:generalMechanicalComponent)
+
+# Class: tw:minInputVoltage (tw:minInputVoltage)
+
+SubClassOf(tw:minInputVoltage tw:capability)
 
 # Class: tw:mixerOrAgitator (tw:mixerOrAgitator)
 
@@ -2849,6 +2772,10 @@ SubClassOf(tw:networkSwitch tw:generalNetworkingAsset)
 
 SubClassOf(tw:nitrateOrNitriteAnalyzer tw:dissolvedChemicalAnalyzer)
 
+# Class: tw:nominalInputVoltage (tw:nominalInputVoltage)
+
+SubClassOf(tw:nominalInputVoltage tw:capability)
+
 # Class: tw:noteTaking (tw:noteTaking)
 
 SubClassOf(tw:noteTaking tw:process)
@@ -2858,10 +2785,11 @@ SubClassOf(tw:noteTaking tw:process)
 AnnotationAssertion(rdfs:comment tw:observation "Feb'24 TH: intent on turning this term into a defined term")
 SubClassOf(tw:observation tw:description)
 
-# Class: tw:occupying (occupying)
+# Class: tw:occupyingThe (occupying)
 
-AnnotationAssertion(rdfs:label tw:occupying "occupying"@en)
-SubClassOf(tw:occupying tw:relationalState)
+AnnotationAssertion(rdfs:comment tw:occupyingThe "TH: range should be a role, domain should be an asset")
+AnnotationAssertion(rdfs:label tw:occupyingThe "occupying"@en)
+SubClassOf(tw:occupyingThe tw:relationalState)
 
 # Class: tw:oilGreaseSeparator_MTD (tw:oilGreaseSeparator_MTD)
 
@@ -2880,7 +2808,7 @@ SubClassOf(tw:ontarioRegulation tw:governmentRegulation)
 # Class: tw:opperationState (operational state)
 
 AnnotationAssertion(rdfs:label tw:opperationState "operational state"@en)
-SubClassOf(tw:opperationState tw:state)
+SubClassOf(tw:opperationState tw:definedState)
 
 # Class: tw:organization (organization)
 
@@ -3101,7 +3029,7 @@ SubClassOf(tw:processControlPanel tw:enclosure)
 
 AnnotationAssertion(rdfs:isDefinedBy tw:processing "a function that is realized when a physical or chemical property of the thing being processed is changed by the bearer of the function.")
 AnnotationAssertion(rdfs:label tw:processing "processing")
-SubClassOf(tw:processing tw:function)
+SubClassOf(tw:processing tw:capability)
 
 # Class: tw:processingOfMaterial (Processing of Material)
 
@@ -3129,6 +3057,7 @@ SubClassOf(tw:propane tw:gaseousMaterial)
 
 # Class: tw:property (property)
 
+AnnotationAssertion(rdfs:comment tw:property "Mar '24: only intended to be used for 1) properties associated with a UoM and 2) a property that could change with time. e.g. assetStatus. Where these conditions are not met, use a specific and direct property to the value (e.g., hasServaceableBearing).")
 AnnotationAssertion(rdfs:comment tw:property "TH Dec/2023: roughly eqvivalent to BFO:Specifically Depdendent Continuent. The majority of the properties are reified (and temporalized) data properties under \"hasPresentPropertyValue\", to allow us to specify, among other metadata, the unit of measure and the time period in the life of the asset during which a property is valid.
 
 You may notice that some properties do not need to be temporalized (I.e., they stay the same over the lifetime of the asset) and do not require qualification by an unit of measure. For example, NEMA Frame Rating property of motors. But there is still a good case to reify them, as they may be the subjects of review and correction in a reconciliation project.")
@@ -3171,6 +3100,7 @@ SubClassOf(tw:pumpingStationSystem tw:hierarchicalSystem)
 
 # Class: tw:quality (quality)
 
+AnnotationAssertion(rdfs:comment tw:quality "TH Mar 24: property that is not related to what the asset can do. For example, its colour.")
 AnnotationAssertion(rdfs:label tw:quality "quality"@en)
 SubClassOf(tw:quality tw:property)
 
@@ -3178,6 +3108,10 @@ SubClassOf(tw:quality tw:property)
 
 SubClassOf(tw:quencher tw:discreteAsset)
 SubClassOf(tw:quencher tw:partOfProcessPiping)
+
+# Class: tw:ratedPowerOutput (tw:ratedPowerOutput)
+
+SubClassOf(tw:ratedPowerOutput tw:capability)
 
 # Class: tw:reactorOfUnnamedTypes (tw:reactorOfUnnamedTypes)
 
@@ -3194,7 +3128,7 @@ DisjointClasses(tw:regionalizedSystem tw:systemTrain)
 # Class: tw:relationalState (relational property)
 
 AnnotationAssertion(rdfs:label tw:relationalState "relational property"@en)
-SubClassOf(tw:relationalState tw:property)
+SubClassOf(tw:relationalState tw:state)
 
 # Class: tw:remoteTerminalUnit (tw:remoteTerminalUnit)
 
@@ -3266,7 +3200,7 @@ SubClassOf(tw:rotaryDrumThickener tw:discreteAsset)
 # Class: tw:rotationalSpeed (rotational speed)
 
 AnnotationAssertion(rdfs:label tw:rotationalSpeed "rotational speed"@en)
-SubClassOf(tw:rotationalSpeed tw:expressionOfSpeed)
+SubClassOf(tw:rotationalSpeed tw:measureOfSpeed)
 
 # Class: tw:rubberInsulatingGloves (tw:rubberInsulatingGloves)
 
@@ -3401,10 +3335,10 @@ SubClassOf(tw:simpleLine tw:line)
 SubClassOf(tw:singleParameterInstrumentation tw:discreteAsset)
 SubClassOf(tw:singleParameterInstrumentation tw:sensing_informationCapture)
 
-# Class: tw:sittingWithin (sitting within)
+# Class: tw:sittingWithinThe (sitting within)
 
-AnnotationAssertion(rdfs:label tw:sittingWithin "sitting within"@en)
-SubClassOf(tw:sittingWithin tw:relationalState)
+AnnotationAssertion(rdfs:label tw:sittingWithinThe "sitting within"@en)
+SubClassOf(tw:sittingWithinThe tw:relationalState)
 
 # Class: tw:sling (tw:sling)
 
@@ -3448,7 +3382,7 @@ SubClassOf(tw:specification tw:description)
 # Class: tw:speedOfTravel (speed of travel)
 
 AnnotationAssertion(rdfs:label tw:speedOfTravel "speed of travel"@en)
-SubClassOf(tw:speedOfTravel tw:expressionOfSpeed)
+SubClassOf(tw:speedOfTravel tw:measureOfSpeed)
 
 # Class: tw:spillKit (tw:spillKit)
 
@@ -3460,12 +3394,9 @@ SubClassOf(tw:spillKit tw:discreteAsset)
 SubClassOf(tw:stack tw:buildingArchitecturalOrStructural)
 SubClassOf(tw:stack tw:discreteAsset)
 
-# Class: tw:state (state)
+# Class: tw:state (tw:state)
 
-AnnotationAssertion(rdfs:comment tw:state "Jan'24 TH: This class is create because we considered the status of a particular asset to be an instance of this class")
-AnnotationAssertion(rdfs:comment tw:state "TH Dec/2023: a property that denote a composite of values in multiple qualities, functional capabiliy, and other possible property that inhere in the asset itself (not listed in this ontology).")
-AnnotationAssertion(rdfs:label tw:state "state"@en)
-SubClassOf(tw:state tw:property)
+SubClassOf(tw:state tw:process)
 
 # Class: tw:stationaryMachineTool (tw:stationaryMachineTool)
 
@@ -3481,13 +3412,6 @@ SubClassOf(tw:steamTrap tw:partOfProcessPiping)
 
 AnnotationAssertion(rdfs:comment tw:stillOrVideoMobileCamera "Mar'24 TH: the parent class of camera was removed because there is no imaginable use for it in queries or other contexts.")
 SubClassOf(tw:stillOrVideoMobileCamera tw:commonTool)
-
-# Class: tw:storage (storage)
-
-AnnotationAssertion(rdfs:comment tw:storage "store function implies the existance of containment function.")
-AnnotationAssertion(rdfs:isDefinedBy tw:storage "a function that is realized when the input flow in to the bearer of the function is greater than the output flow and the difference between the input and the output is held within the bearer.")
-AnnotationAssertion(rdfs:label tw:storage "storage")
-SubClassOf(tw:storage tw:function)
 
 # Class: tw:storageOrSurgeSuppression (Storage or Surge Suppression)
 
@@ -3530,22 +3454,10 @@ SubClassOf(tw:sulphinatorAssembly tw:dosingSystemAssembly)
 SubClassOf(tw:suppliedAirRespirator tw:discreteAsset)
 SubClassOf(tw:suppliedAirRespirator tw:respiratoryHazardProtection)
 
-# Class: tw:supply (supply)
-
-AnnotationAssertion(rdfs:comment tw:supply "a function that is realized when the input flow of a substance or energy in to the bearer of the function is greater than the output flow.")
-AnnotationAssertion(rdfs:label tw:supply "supply")
-SubClassOf(tw:supply tw:function)
-
 # Class: tw:supplyOfMaterial (Supply of Material)
 
 AnnotationAssertion(rdfs:label tw:supplyOfMaterial "Supply of Material")
 SubClassOf(tw:supplyOfMaterial tw:genericCrossDomainAsset)
-
-# Class: tw:surgeSuppression (surge suppression)
-
-AnnotationAssertion(rdfs:isDefinedBy tw:surgeSuppression "a momentary storage function realized to achieve relative stability in one or more qualities of the output (i.e. flow or pressure) dispite a large and sudden increase of input.")
-AnnotationAssertion(rdfs:label tw:surgeSuppression "surge suppression")
-SubClassOf(tw:surgeSuppression tw:storage)
 
 # Class: tw:switchgearDistributionBus (tw:switchgearDistributionBus)
 
@@ -3725,10 +3637,30 @@ EquivalentClasses(tw:undergroundFuelTank_TEMP ObjectIntersectionOf(tw:fuelTank D
 SubClassOf(tw:uninterruptedPowerSupply tw:discreteAsset)
 SubClassOf(tw:uninterruptedPowerSupply tw:electricalAssetOrComponent)
 
+# Class: tw:unitOfElectricalCurrent (tw:unitOfElectricalCurrent)
+
+SubClassOf(tw:unitOfElectricalCurrent tw:unitOfMeasure)
+
+# Class: tw:unitOfMass (tw:unitOfMass)
+
+SubClassOf(tw:unitOfMass tw:unitOfMeasure)
+
 # Class: tw:unitOfMeasure (unit of measure)
 
 AnnotationAssertion(rdfs:label tw:unitOfMeasure "unit of measure"@en)
 SubClassOf(tw:unitOfMeasure tw:informationContentEntity)
+
+# Class: tw:unitOfPower (tw:unitOfPower)
+
+SubClassOf(tw:unitOfPower tw:unitOfMeasure)
+
+# Class: tw:unitOfPressure (tw:unitOfPressure)
+
+SubClassOf(tw:unitOfPressure tw:unitOfMeasure)
+
+# Class: tw:unitOfVoltage (tw:unitOfVoltage)
+
+SubClassOf(tw:unitOfVoltage tw:unitOfMeasure)
 
 # Class: tw:vaccumCleaner (tw:vaccumCleaner)
 
@@ -3884,60 +3816,59 @@ SubClassOf(tw:wrench tw:discreteAsset)
 #   Named Individuals
 ############################
 
-# Individual: tw:MV (tw:MV)
+# Individual: tw:horsepower (hp)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:MV "megavolt")
-ClassAssertion(tw:measureOfVoltage tw:MV)
+AnnotationAssertion(rdfs:label tw:horsepower "hp")
+ClassAssertion(tw:unitOfPower tw:horsepower)
 
-# Individual: tw:MVA (tw:MVA)
+# Individual: tw:kilopascal (kPa)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:MVA "megavolt-ampere")
-ClassAssertion(tw:measureOfPower tw:MVA)
+AnnotationAssertion(rdfs:label tw:kilopascal "kPa")
+ClassAssertion(tw:unitOfPressure tw:kilopascal)
 
-# Individual: tw:V (tw:V)
+# Individual: tw:kilovolt (kV)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:V "volt")
-ClassAssertion(tw:measureOfVoltage tw:V)
+AnnotationAssertion(rdfs:label tw:kilovolt "kV")
+ClassAssertion(tw:unitOfVoltage tw:kilovolt)
 
-# Individual: tw:VA (tw:VA)
+# Individual: tw:kilovolt-ampere (kVA)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:VA "volt-ampere")
-ClassAssertion(tw:measureOfPower tw:VA)
+AnnotationAssertion(rdfs:label tw:kilovolt-ampere "kVA")
+ClassAssertion(tw:unitOfPower tw:kilovolt-ampere)
 
-# Individual: tw:W (tw:W)
+# Individual: tw:kilowatt (kW)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:W "watt")
-ClassAssertion(tw:measureOfPower tw:W)
+AnnotationAssertion(rdfs:label tw:kilowatt "kW")
+ClassAssertion(tw:unitOfPower tw:kilowatt)
 
-# Individual: tw:hp (tw:hp)
+# Individual: tw:megavolt-ampere (MVA)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:hp "horsepower")
-ClassAssertion(tw:measureOfPower tw:hp)
+AnnotationAssertion(rdfs:label tw:megavolt-ampere "MVA")
+ClassAssertion(tw:unitOfPower tw:megavolt-ampere)
 
-# Individual: tw:kPa (tw:kPa)
+# Individual: tw:megawatt (MW)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:kPa "kilopascal")
-ClassAssertion(tw:measureOfPressure tw:kPa)
+AnnotationAssertion(rdfs:label tw:megawatt "MW")
 
-# Individual: tw:kV (tw:kV)
+# Individual: tw:poundsPerSquareInch (pounds / square inch)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:kV "kilovolt")
-ClassAssertion(tw:measureOfVoltage tw:kV)
+AnnotationAssertion(rdfs:label tw:poundsPerSquareInch "pounds / square inch")
+ClassAssertion(tw:unitOfPressure tw:poundsPerSquareInch)
 
-# Individual: tw:kVA (tw:kVA)
+# Individual: tw:volt (V)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:kVA "kilovolt-ampere")
-ClassAssertion(tw:measureOfPower tw:kVA)
+AnnotationAssertion(rdfs:label tw:volt "V")
+ClassAssertion(tw:unitOfVoltage tw:volt)
 
-# Individual: tw:kW (tw:kW)
+# Individual: tw:volt-ampere (VA)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:kW "kilowatt")
-ClassAssertion(tw:measureOfPower tw:kW)
+AnnotationAssertion(rdfs:label tw:volt-ampere "VA")
+ClassAssertion(tw:unitOfPower tw:volt-ampere)
 
-# Individual: tw:psi (tw:psi)
+# Individual: tw:watt (W)
 
-AnnotationAssertion(rdfs:isDefinedBy tw:psi "pounds per square inch")
-ClassAssertion(tw:measureOfPressure tw:psi)
+AnnotationAssertion(rdfs:label tw:watt "W")
+ClassAssertion(tw:unitOfPower tw:watt)
 
 
 SubClassOf(ObjectSomeValuesFrom(tw:hasPhysicalPart ObjectIntersectionOf(tw:discreteAsset tw:structuralTankComponent)) tw:structuralTank)

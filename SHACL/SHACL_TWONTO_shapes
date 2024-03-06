@@ -12,11 +12,10 @@
 # sh:minCount 0 ; to say that a property is option and expect an array
 #
 # Please take note of other in-line 4Dev comment 
-##################################################################################
 
 
 ##################################################################################
-# NodeShape Definitions
+# NODES HAPE DEFINITIONS
 ##################################################################################
 
 # MOTOR SHAPE
@@ -25,7 +24,7 @@ tw:Motor_defaultShape
 	a sh:NodeShape ;
 	sh:targetClass tw:motor ;    
   
-    sh:property [
+    sh:property [ _:b of a property shape
 		sh:name "NEMA enclosure type" ;
 		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:path tw:has_NEMA_enclosureType ;
@@ -37,8 +36,7 @@ tw:Motor_defaultShape
 		
 		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
     	sh:severity sh:Warning ;
-	];
-
+	] ;
 
     sh:property [
 		sh:name "NEMA frame type" ;
@@ -47,96 +45,148 @@ tw:Motor_defaultShape
 		sh:datatype xsd:string ;
 		sh:in ( "42" "48" "48H" "56" "56H" "56HZ" "66" "143T" "145T" "146AT" "148AT" "149AT" "1412AT" "182" "184" "182T" "184T" "182AT" "L182ACY" "186ACY" "186AT" "L186AT" "189AT" "203#" "204#" "213" "215" "213T" "215T" "219AT" "2110AT" "224#" "225#" "254#" "254U" "256U" "254T" "256T" "284#" "284U" "286U" "284T" "286T" "284TS" "286TS" "324#" "326#" "324U" "326U" "324T" "326T" "324TS" "326TS" "364#" "364S#" "365#" "364U" "365U" "364T" "365T" "364TS" "365TS" "404T" "405T" "404TS" "405TS" "404U" "405U" "444T" "445T" "447T&&" "444TS" "447TS&&" "445TS" "444U" "445U" "449T" "449TS" "#Other" ) ;
 		
+		#4Dev: true means that the user can type in a value not in the sh:in line
 		tw:allowAlternative true ;  
-		#4Dev: a true value means that the user can type in a value not in the sh:in line
 		
 		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
     	sh:severity sh:Warning ;
-	];
+	] ;
 
+	#4Dev: can have more than 1 of the property:
+	sh:property tw:ratedPowerOutput_propertyShape ;
 	
-	sh:property tw:maxInputVoltageProperty_defaultShape;
-
-
-	sh:property tw:minInputVoltageProperty_defaultShape;
+	#4Dev: can have more than 1 of the property:
+	sh:property tw:nominalInputVoltage_propertyShape ;
 	
-
 	#4Dev: these nested logical conditions state:
 	#if hasSealedOrShieldedBearing value is true, then the user does not need to provide a value for usesBearingLubricantType (i.e. it is optional)
 	#but if hasSealedOrShieldedBearing value is false, then the user must also provide a value for usesBearingLubricantType
 	sh:or (  
 		[  
 			sh:and (
-				tw:hasSealedOrShieldedBearing_defaultShape
+				tw:hasSealedOrShieldedBearing_propertyShape
 				[
 					sh:path tw:hasSealedOrShieldedBearing ;
-					sh:minCount 1 ;
 					sh:hasValue true ;
 				]
 			) 
 		]
 		[   
 			sh:and (
-				tw:hasSealedOrShieldedBearing_defaultShape
+				tw:hasSealedOrShieldedBearing_propertyShape
 				[
 					sh:path tw:hasSealedOrShieldedBearing ;
-					sh:minCount 1 ;
 					sh:hasValue false ;
 				]
-				tw:usesBearingLubricantType_defaultShape
-				[
-					sh:path tw:usesBearingLubricantType ;
-					sh:minCount 1 ;
-				]
+				tw:usesBearingLubricantType_propertyShape
 			) 
 		] 
 	) . 
 
 ##################################################################################
-# Re-usable PropertyShape Definitions
+# RE-USABLE PROPERTY SHAPE DEFINITIONS
 ##################################################################################
 
-tw:theMaxInputVoltageDesc_defaultShape				
-	sh:name "maximum input voltage" ;
-	sh:maxCount 1 ;
-	sh:path tw:isDescribedBy ;
-	sh:class tw:theMaxInputVoltageDesc ;
+#---------------------------------------------------------------------------------
+# SHAPES IN ASSET CAPABILITY SPEC GROUP
+#---------------------------------------------------------------------------------
+
+tw:ratedPowerOutput_propertyShape	
+	sh:name "rated power output" ;
+	sh:minCount 1 ;
+	sh:path tw:hasProperty ;
+	sh:class tw:ratedPowerOutput ;
+	sh:closed true ;
 	sh:node [				#_:b
 		sh:property [
-			sh:path tw:hasVoltageValue ;
-			# 4Dev:
-			# The tw:hasVoltageValue will not be used, but instead a sub-property of it will be used
-			# Please look into the sub-properties of tw:hasVoltageValue to find the different units of meausure.
-			# The UoM are embedded in as rdfs:labels
-			sh:datatype xsd:decimal ;
-		] 
-	].
+			sh:minCount 1 ;
+			sh:path tw:isQuantifiedBy ;
+			sh:class tw:measureOfPowerLevel ;
+			sh:closed true ;
+			sh:node [
+				sh:property [
+					sh:maxCount 1 ; sh:minCount 1 ;
+					sh:path tw:hasNumericValue ;
+					sh:datatype xsd:float ;
+				];
+				sh:property [
+					sh:maxCount 1 ; sh:minCount 1 ;
+					sh:path tw:hasUnitOfMeasure ;	
+					sh:class tw:unitOfPower ;
+					# 4Dev: look into the individuals under the unitOfVoltage the particular units, such as "V" "kV". 
+				];
+			];
+		];
+		
+		# 4Modeller:develop the modelling constrain condition in the next round
+		# sh:property [
+			#sh:minCount & minCount 0 - optional and allow more than 1 
+			#sh:path tw:isContingentOn ;
+			#sh:class tw:state
+		#]; 
+		
+	];
+	sh:group tw:capabilitySpecGroup ;
+	sh:order 10 .
 
-tw:theMinInputVoltageDesc_defaultShape					
-	sh:name "minimum input voltage" ;
-	sh:maxCount 1 ;
-	sh:path tw:isDescribedBy ;
-	sh:class tw:theMinInputVoltageDesc ;
+
+#---------------------------------------------------------------------------------
+# SHAPES IN ASSET ELECTRICAL INPUT SPEC GROUP
+#---------------------------------------------------------------------------------
+
+tw:nominalInputVoltage_propertyShape	
+	sh:name "nominal input voltage" ;
+	sh:minCount 1 ;
+	sh:path tw:hasProperty ;
+	sh:class tw:inputVoltage ;
+	sh:closed true ;
 	sh:node [				#_:b
 		sh:property [
-			sh:path tw:hasVoltageValue ;
-			# 4Dev:
-			# The tw:hasVoltageValue will not be used, but instead a sub-property of it will be used
-			# Please look into the sub-properties of tw:hasVoltageValue to find the different units of meausure.
-			# The UoM are embedded in as rdfs:labels
-			sh:datatype xsd:decimal ;
-		] ;
-	].
+			sh:minCount 1 ;
+			sh:path tw:isQuantifiedBy ;
+			sh:class tw:measureOfVoltage ;
+			sh:closed true ;
+			sh:node [
+				sh:property [
+					sh:maxCount 1 ; sh:minCount 1 ;
+					sh:path tw:hasNumericValue ;
+					sh:datatype xsd:float ;
+				];
+				sh:property [
+					sh:maxCount 1 ; sh:minCount 1 ;
+					sh:path tw:hasUnitOfMeasure ;	
+					sh:class tw:unitOfVoltage ;
+					# 4Dev: look into the individuals under the unitOfVoltage the particular units, such as "V" "kV". 
+				];
+			];
+		];
+	];
+	sh:group electricalInputSpecGroup;
+	sh:order 10 .
 
-tw:hasSealedOrShieldedBearing_defaultShape
+
+tw:hasSealedOrShieldedBearing_propertyShape
 	sh:name "uses sealed or shielded bearing?" ;
-	sh:maxCount 1 ;
+	sh:minCount 1 ; sh:maxCount 1 ;
 	sh:path tw:hasSealedOrShieldedBearing ;
-	a sh:propertyShape .
-	
-tw:usesBearingLubricantType_defaultShape
-	sh:name "type of bearing lubrication used" ;
+	sh:datatype xsd:boolean .
+
+tw:usesBearingLubricantType_propertyShape
+	sh:name "lubricant type" ;
+	sh:minCount 1 ; sh:maxCount 1 ;
 	sh:path tw:usesBearingLubricantType ;
-	sh:maxCount 1 ;
 	sh:datatype xsd:string ;
 	sh:in ( "oil" "grease" ) .
+
+
+##################################################################################
+# GROUP DEINITIONS
+##################################################################################
+
+tw:capabilitySpecGroup
+	a sh:PropertyGroup ;
+	sh:order 10 .
+
+tw:electricalInputSpecGroup
+	a sh:PropertyGroup ;
+	sh:order 20 .
