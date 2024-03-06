@@ -24,7 +24,7 @@ tw:Motor_defaultShape
 	a sh:NodeShape ;
 	sh:targetClass tw:motor ;    
   
-    sh:property [ _:b of a property shape
+    sh:property [ 
 		sh:name "NEMA enclosure type" ;
 		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:path tw:has_NEMA_enclosureType ;
@@ -161,7 +161,7 @@ tw:nominalInputVoltage_propertyShape
 			];
 		];
 	];
-	sh:group electricalInputSpecGroup;
+	sh:group tw:electricalInputSpecGroup;
 	sh:order 10 .
 
 
