@@ -568,11 +568,9 @@ Declaration(ObjectProperty(tw:hasProperty))
 Declaration(ObjectProperty(tw:hasPublisher))
 Declaration(ObjectProperty(tw:hasSpecifedRelation))
 Declaration(ObjectProperty(tw:hasSpecification))
-Declaration(ObjectProperty(tw:hasStateProperty))
 Declaration(ObjectProperty(tw:hasSubjectType))
 Declaration(ObjectProperty(tw:hasSubsystem))
 Declaration(ObjectProperty(tw:hasSummary))
-Declaration(ObjectProperty(tw:hasTheState))
 Declaration(ObjectProperty(tw:hasUnitOfMeasure))
 Declaration(ObjectProperty(tw:includesContent))
 Declaration(ObjectProperty(tw:includesContentAbout))
@@ -775,6 +773,15 @@ The following properties are represented without reification.
 AnnotationAssertion(rdfs:label tw:hasPreviousVersion "has previous version"@en)
 SubObjectPropertyOf(tw:hasPreviousVersion tw:hasEarlierVersion)
 
+# Object Property: tw:hasProperty (tw:hasProperty)
+
+AnnotationAssertion(rdfs:comment tw:hasProperty "TH Mar: changed from \"inAStateOf\" to \"inTheState\".  \"The\" signifies that that the relation is functional.")
+AnnotationAssertion(rdfs:comment tw:hasProperty "Specialized for states related to the physical quality of the entity
+Usage Examples:
+AssetX hasProperty assetMass
+AssetX hasProperty assetHealth")
+SubObjectPropertyOf(tw:hasProperty owl:topObjectProperty)
+
 # Object Property: tw:hasPublisher (has publisher)
 
 AnnotationAssertion(tw:SHACL_note tw:hasPublisher "range tw:publisher")
@@ -790,12 +797,6 @@ SubObjectPropertyOf(tw:hasSpecifedRelation tw:hasSpecification)
 
 SubObjectPropertyOf(tw:hasSpecification tw:hasPresentProperty)
 
-# Object Property: tw:hasStateProperty (tw:hasStateProperty)
-
-AnnotationAssertion(rdfs:comment tw:hasStateProperty "Feb'24: Competing for existence against the description property")
-AnnotationAssertion(rdfs:comment tw:hasStateProperty "Jan'24 TH: Existence is useful for querying all relational and quality states")
-SubObjectPropertyOf(tw:hasStateProperty tw:hasProperty)
-
 # Object Property: tw:hasSubjectType (tw:hasSubjectType)
 
 SubObjectPropertyOf(tw:hasSubjectType tw:hasPresentProperty)
@@ -810,15 +811,6 @@ InverseObjectProperties(tw:hasSubsystem tw:isSubsystemOf)
 
 AnnotationAssertion(rdfs:label tw:hasSummary "has summary"@en)
 SubObjectPropertyOf(tw:hasSummary tw:hasPresentProperty)
-
-# Object Property: tw:hasTheState (tw:hasTheState)
-
-AnnotationAssertion(rdfs:comment tw:hasTheState "Specialized for states related to the physical quality of the entity
-Usage Examples:
-AssetX hasTheState assetMass
-AssetX hasTheState assetHealth")
-AnnotationAssertion(rdfs:comment tw:hasTheState "TH Mar: changed from \"inAStateOf\" to \"inTheState\".  \"The\" signifies that that the relation is functional.")
-SubObjectPropertyOf(tw:hasTheState tw:hasStateProperty)
 
 # Object Property: tw:hasUnitOfMeasure (tw:hasUnitOfMeasure)
 
@@ -891,7 +883,7 @@ as a part of binary relation:
 - AssetX isInAStateOf SittingInside theIndividual RoomY
 - AssetX isInAStateOf possessing theIndividual FunctionAC
 as a part of unary relation: AssetX isInAStateOf  assetOperationalState")
-SubObjectPropertyOf(tw:isInAStateOf tw:hasStateProperty)
+SubObjectPropertyOf(tw:isInAStateOf tw:hasProperty)
 
 # Object Property: tw:isOccupiedBy (tw:isOccupiedBy)
 
@@ -3061,12 +3053,9 @@ SubClassOf(tw:propane tw:gaseousMaterial)
 
 # Class: tw:propertyState (property)
 
-AnnotationAssertion(rdfs:comment tw:propertyState "Mar '24: only intended to be used for 1) properties associated with a UoM and 2) a property that could change with time. e.g. assetStatus. Where these conditions are not met, use a specific and direct property to the value (e.g., hasServaceableBearing).")
-AnnotationAssertion(rdfs:comment tw:propertyState "TH Dec/2023: roughly eqvivalent to BFO:Specifically Depdendent Continuent. The majority of the properties are reified (and temporalized) data properties under \"hasPresentPropertyValue\", to allow us to specify, among other metadata, the unit of measure and the time period in the life of the asset during which a property is valid.
-
-You may notice that some properties do not need to be temporalized (I.e., they stay the same over the lifetime of the asset) and do not require qualification by an unit of measure. For example, NEMA Frame Rating property of motors. But there is still a good case to reify them, as they may be the subjects of review and correction in a reconciliation project.")
+AnnotationAssertion(rdfs:comment tw:propertyState "Mar 2 '24: only intended to be used for 1) properties associated with a UoM and 2) a property that could change with time. e.g. assetStatus. Where these conditions are not met, use a specific and direct property to the value (e.g., hasServaceableBearing).")
+AnnotationAssertion(rdfs:comment tw:propertyState "Mar 6 '24 Th: renamed to propertyState, which is the same notion as property manifestation, used my Megan in UofT version of FAMO. The intent is to use this as the general description of all properties that change or are quantified by some UoM. If a property is not ascribed to an asset, but exists as a specification for a role or the design of an asset, we must not use the hasProperty relation.  Instead we should use requiresProperty or requiresOccupantProperty.")
 AnnotationAssertion(rdfs:label tw:propertyState "property"@en)
-SubClassOf(tw:propertyState tw:asset)
 
 # Class: tw:protectionRelay (tw:protectionRelay)
 
