@@ -1,5 +1,6 @@
 @prefix tw: <http://www.toronto.ca/twonto#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh: <http://www.w3.org/ns/shacl#>.
 
 ##################################################################################
@@ -36,7 +37,7 @@ tw:Motor_defaultShape
 		sh:class tw:nominalInputVoltage ;
 		sh:minCount 1 ; 
 		sh:node tw:voltageSpec_nodeShape ;
-		sh:order 20 .
+		sh:order 20 ;
 	];
 
 	sh:property [
@@ -64,7 +65,7 @@ tw:Motor_defaultShape
 			sh:path tw:usesBearingLubricantType ;
 			sh:minCount 1 ; 
 		]
-	) 
+	) .
 	
 	#4Dev: these nested logical conditions above state:
 	#if hasSealedOrShieldedBearing value is true, then the user does not need to provide a value for usesBearingLubricantType (i.e. it is optional)
@@ -118,8 +119,9 @@ tw:powerSpec_nodeShape[ #_:b of something like tw:
 	];
 ].
 
-	
-tw:voltageSpec_nodeShape [ #_:b of a sh:NodeShape
+
+tw:voltageSpec_nodeShape
+	a sh:NodeShape;
 	sh:property [
 		sh:path tw:isQuantifiedBy ;
 		sh:class tw:measureOfVoltage ;
