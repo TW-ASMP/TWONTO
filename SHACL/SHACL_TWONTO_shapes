@@ -1,7 +1,8 @@
 @prefix tw: <http://www.toronto.ca/twonto#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix dash: <http://datashapes.org/dash#>.
 
 ##################################################################################
 # Notes 4Dev  
@@ -65,13 +66,13 @@ tw:Motor_defaultShape
 			sh:path tw:usesBearingLubricantType ;
 			sh:minCount 1 ; 
 		]
-	) .
+	) ;
 	
 	#4Dev: these nested logical conditions above state:
 	#if hasSealedOrShieldedBearing value is true, then the user does not need to provide a value for usesBearingLubricantType (i.e. it is optional)
 	#but if hasSealedOrShieldedBearing value is false, then the user must also provide a value for usesBearingLubricantType
 
-	sh:property [ 
+	sh:property [
 		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:path tw:has_NEMA_enclosureType ; #4Dev: the property label on the form "NEMA enclosure type" is the RDFS:label of this OWL dataProperty.
 		sh:datatype xsd:string ;
@@ -141,5 +142,4 @@ tw:voltageSpec_nodeShape
 				sh:order 20 ; 
 			];
 		];
-	];
-].
+	].

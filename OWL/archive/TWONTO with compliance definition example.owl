@@ -1,0 +1,2811 @@
+@prefix : <http://www.toronto.ca/TWONTO#> .
+@prefix tw: <http://www.toronto.ca/TWONTO#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.toronto.ca/TWONTO> .
+
+<http://www.toronto.ca/TWONTO> rdf:type owl:Ontology ;
+                                owl:versionIRI <http://www.toronto.ca/TWONTO/0.1> ;
+                                owl:imports <http://www.toronto.ca/FAMO/0.1> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.toronto.ca/TWONTO#PCS_code
+tw:PCS_code rdf:type owl:AnnotationProperty .
+
+
+###  http://www.toronto.ca/TWONTO#SHACL_note
+tw:SHACL_note rdf:type owl:AnnotationProperty .
+
+
+###  http://www.toronto.ca/TWONTO#UNSPSC_code
+tw:UNSPSC_code rdf:type owl:AnnotationProperty .
+
+
+###  http://www.toronto.ca/TWONTO#avantisClass
+tw:avantisClass rdf:type owl:AnnotationProperty .
+
+
+###  http://www.toronto.ca/TWONTO#devNote
+tw:devNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.toronto.ca/TWONTO#mappingNote
+tw:mappingNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.toronto.ca/FAMO#hasInformation
+<http://www.toronto.ca/FAMO#hasInformation> rdf:type owl:ObjectProperty .
+
+
+###  http://www.toronto.ca/FAMO#hasSpecifedRelation
+<http://www.toronto.ca/FAMO#hasSpecifedRelation> rdf:type owl:ObjectProperty .
+
+
+###  http://www.toronto.ca/FAMO#hasSpecifiedProperty
+<http://www.toronto.ca/FAMO#hasSpecifiedProperty> rdf:type owl:ObjectProperty .
+
+
+###  http://www.toronto.ca/FAMO#isRelatedTo
+<http://www.toronto.ca/FAMO#isRelatedTo> rdf:type owl:ObjectProperty .
+
+
+###  http://www.toronto.ca/TWONTO#grounds
+tw:grounds rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+           rdf:type owl:TransitiveProperty ;
+           rdfs:label "grounds"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasContentAbout
+tw:hasContentAbout rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+                   rdfs:label "has content about"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasContentPart
+tw:hasContentPart rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf tw:hasPart ;
+                  owl:inverseOf tw:isPartOfContent .
+
+
+###  http://www.toronto.ca/TWONTO#hasEarlierVersion
+tw:hasEarlierVersion rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+                     rdf:type owl:TransitiveProperty ;
+                     rdfs:label "has earlier version"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasLaterVersion
+tw:hasLaterVersion rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+                   rdf:type owl:TransitiveProperty ;
+                   rdfs:label "has later version"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasMaxAllowableWorkingPressure
+tw:hasMaxAllowableWorkingPressure rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasSpecifiedProperty> ;
+                                  rdfs:label "maximum allowable working pressure" .
+
+
+###  http://www.toronto.ca/TWONTO#hasMaxAllowableWorkingTemperature
+tw:hasMaxAllowableWorkingTemperature rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasSpecifiedProperty> ;
+                                     rdfs:label "maximum allowable working temperature" .
+
+
+###  http://www.toronto.ca/TWONTO#hasNextVersion
+tw:hasNextVersion rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf tw:hasLaterVersion ;
+                  rdfs:label "has next version"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasPart
+tw:hasPart rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.toronto.ca/FAMO#isRelatedTo> ;
+           owl:inverseOf tw:isPartOf ;
+           rdfs:comment """Feb2024: consider moving into FAMO
+created to represent differ types of parthood""" .
+
+
+###  http://www.toronto.ca/TWONTO#hasPhysicalPart
+tw:hasPhysicalPart rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf tw:hasPart ;
+                   owl:inverseOf tw:isPhysicalPartOf .
+
+
+###  http://www.toronto.ca/TWONTO#hasPreviousVersion
+tw:hasPreviousVersion rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf tw:hasEarlierVersion ;
+                      rdfs:label "has previous version"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasPublisher
+tw:hasPublisher rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://www.toronto.ca/FAMO#isRelatedTo> ;
+                rdfs:domain tw:pieceOfContent ;
+                tw:SHACL_note "range tw:publisher" ;
+                tw:mappingNote "Body of Content > Publisher (use abbr where available)" ;
+                rdfs:label "has publisher"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasSubjectType
+tw:hasSubjectType rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+                  rdfs:range tw:contentSubject .
+
+
+###  http://www.toronto.ca/TWONTO#hasSummary
+tw:hasSummary rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+              rdfs:label "has summary"@en .
+
+
+###  http://www.toronto.ca/TWONTO#includesContent
+tw:includesContent rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+                   rdfs:comment "TH Dec2023: range: information content entity" ;
+                   rdfs:label "includes content"@en .
+
+
+###  http://www.toronto.ca/TWONTO#includesContentAbout
+tw:includesContentAbout rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+                        rdfs:comment "TH Dec2023: range:OWL thing" ;
+                        rdfs:label "includes content about"@en .
+
+
+###  http://www.toronto.ca/TWONTO#includesWorkRequirementContent
+tw:includesWorkRequirementContent rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf tw:includesContent ;
+                                  rdfs:label "includes work requirement content"@en .
+
+
+###  http://www.toronto.ca/TWONTO#includesWorkerQualificationContent
+tw:includesWorkerQualificationContent rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf tw:includesContent ;
+                                      rdfs:label "includes worker qualification content"@en .
+
+
+###  http://www.toronto.ca/TWONTO#isADevelopmentOf
+tw:isADevelopmentOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://www.toronto.ca/FAMO#isRelatedTo> ;
+                    owl:inverseOf tw:isDevelopedInto .
+
+
+###  http://www.toronto.ca/TWONTO#isDesignedToHold
+tw:isDesignedToHold rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasSpecifedRelation> .
+
+
+###  http://www.toronto.ca/TWONTO#isDevelopedInto
+tw:isDevelopedInto rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.toronto.ca/FAMO#isRelatedTo> ;
+                   rdfs:domain <http://www.toronto.ca/FAMO#informationContentEntity> ;
+                   rdfs:label "has developed manifestation"@en .
+
+
+###  http://www.toronto.ca/TWONTO#isPartOf
+tw:isPartOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://www.toronto.ca/FAMO#isRelatedTo> ;
+            rdfs:comment "See comments for hasPart" .
+
+
+###  http://www.toronto.ca/TWONTO#isPartOfContent
+tw:isPartOfContent rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf tw:isPartOf .
+
+
+###  http://www.toronto.ca/TWONTO#isPhysicalPartOf
+tw:isPhysicalPartOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf tw:isPartOf .
+
+
+###  http://www.toronto.ca/TWONTO#partiallyGrounds
+tw:partiallyGrounds rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+                    rdfs:label "partially grounds"@en .
+
+
+###  http://www.toronto.ca/TWONTO#references
+tw:references rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasInformation> ;
+              rdfs:comment "TH 12.5.2023: Create to indicate that one document makes an explicit reference of another body of content." ;
+              rdfs:label "references"@en .
+
+
+###  http://www.toronto.ca/TWONTO#referencesForAdoption
+tw:referencesForAdoption rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf tw:references ;
+                         rdfs:comment "TH 12/5/2023: created to indicate that a body of content does not only contain a reference to another body of content, but also adopts the referred content to be enforceable, under the authority of an origanization such as the government legislature, or the employer." ;
+                         rdfs:label "references for adoption"@en .
+
+
+###  http://www.toronto.ca/TWONTO#specifiesTriggerEvent
+tw:specifiesTriggerEvent rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasSpecifedRelation> ;
+                         rdfs:label "specifies trigger event"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.toronto.ca/FAMO#hasPresentValue
+<http://www.toronto.ca/FAMO#hasPresentValue> rdf:type owl:DatatypeProperty ;
+                                             rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                                             <http://www.w3.org/2004/02/skos/core#altLabel> "has interpretation text"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasBoilerServiceType
+tw:hasBoilerServiceType rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                        rdfs:comment "either \"hot water\" or \"steam\"" ;
+                        rdfs:label "service type" .
+
+
+###  http://www.toronto.ca/TWONTO#hasContentIdentifier
+tw:hasContentIdentifier rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                        rdfs:range xsd:string ;
+                        tw:devNote "Consider restricting to class:document in SHACL" ;
+                        tw:mappingNote "Body of Content/Commonly Referred Identifier" ;
+                        rdfs:label "has content identifier"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasContentText
+tw:hasContentText rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                  rdfs:label "has content text"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasCreationTime
+tw:hasCreationTime rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                   rdfs:label "has creation time"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasDeaerator
+tw:hasDeaerator rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                rdfs:range xsd:boolean ;
+                rdfs:label "equiped with deaerator?" .
+
+
+###  http://www.toronto.ca/TWONTO#hasDocumentIdentifier
+tw:hasDocumentIdentifier rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf tw:hasContentIdentifier ;
+                         rdfs:range xsd:string .
+
+
+###  http://www.toronto.ca/TWONTO#hasDocumentURL
+tw:hasDocumentURL rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                  rdfs:label "has document URL"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasIntentDescription
+tw:hasIntentDescription rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                        rdfs:comment """TH 12/02/23:
+I created this property to point to a piece of text describing the intent of the person(s) who raise the a certain Specific Content Subject.  For example the intent of the legislators who raise the subject of a new legislation.""" ;
+                        rdfs:label "has intent description"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasInterpretationText
+tw:hasInterpretationText rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                         rdfs:range xsd:string .
+
+
+###  http://www.toronto.ca/TWONTO#hasName
+tw:hasName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+           rdfs:range xsd:string .
+
+
+###  http://www.toronto.ca/TWONTO#hasPublicationDate
+tw:hasPublicationDate rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                      tw:devNote "SHACL: xsd date" ;
+                      rdfs:label "has publication date"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasRevisionDate
+tw:hasRevisionDate rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                   rdfs:label "has revision date"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasScopeDescription
+tw:hasScopeDescription rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "has scope description"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasSealedOrShieldedBearing
+tw:hasSealedOrShieldedBearing rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                              rdfs:range xsd:boolean ;
+                              rdfs:label "sealed or shielded bearing?"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hasSubjectIdentifier
+tw:hasSubjectIdentifier rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf tw:hasContentIdentifier ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.toronto.ca/TWONTO#has_NEMA_enclosureType
+tw:has_NEMA_enclosureType rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "NEMA enclosure type"@en .
+
+
+###  http://www.toronto.ca/TWONTO#has_NEMA_frameRating
+tw:has_NEMA_frameRating rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                        rdfs:label "NEMA frame type"@en .
+
+
+###  http://www.toronto.ca/TWONTO#isActuatedValve
+tw:isActuatedValve rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:label "actuated valve?" .
+
+
+###  http://www.toronto.ca/TWONTO#isControlledValve
+tw:isControlledValve rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:label "controlled valve?" .
+
+
+###  http://www.toronto.ca/TWONTO#isInstalledUnderground
+tw:isInstalledUnderground rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                          rdfs:label "underground?" .
+
+
+###  http://www.toronto.ca/TWONTO#isLatestVersion
+tw:isLatestVersion rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:label "is latest version"@en .
+
+
+###  http://www.toronto.ca/TWONTO#isSubjectOfNote
+tw:isSubjectOfNote rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.toronto.ca/TWONTO#usesBearingLubricantType
+tw:usesBearingLubricantType rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf <http://www.toronto.ca/FAMO#hasPresentValue> ;
+                            rdfs:label "type of bearing lubricant"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.toronto.ca/FAMO#asset
+<http://www.toronto.ca/FAMO#asset> rdf:type owl:Class .
+
+
+###  http://www.toronto.ca/FAMO#assetRole
+<http://www.toronto.ca/FAMO#assetRole> rdf:type owl:Class .
+
+
+###  http://www.toronto.ca/FAMO#discreteAsset
+<http://www.toronto.ca/FAMO#discreteAsset> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://www.toronto.ca/FAMO#asset> .
+
+
+###  http://www.toronto.ca/FAMO#informationContentEntity
+<http://www.toronto.ca/FAMO#informationContentEntity> rdf:type owl:Class .
+
+
+###  http://www.toronto.ca/FAMO#organization
+<http://www.toronto.ca/FAMO#organization> rdf:type owl:Class .
+
+
+###  http://www.toronto.ca/TWONTO#AC_condenserUnit
+tw:AC_condenserUnit rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                    tw:airConditioning .
+
+
+###  http://www.toronto.ca/TWONTO#AC_evaporatorUnit
+tw:AC_evaporatorUnit rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:airConditioning .
+
+
+###  http://www.toronto.ca/TWONTO#AC_system
+tw:AC_system rdf:type owl:Class ;
+             rdfs:subClassOf tw:airConditioning .
+
+
+###  http://www.toronto.ca/TWONTO#COCOA
+tw:COCOA rdf:type owl:Class ;
+         rdfs:subClassOf tw:contentCompilation ;
+         rdfs:label "compilation of content on activity specification"@en ;
+         <http://www.w3.org/2004/02/skos/core#altLabel> "COCOA" .
+
+
+###  http://www.toronto.ca/TWONTO#HVAC_buildingOrGroundsServiceAsset
+tw:HVAC_buildingOrGroundsServiceAsset rdf:type owl:Class ;
+                                      rdfs:subClassOf tw:TorontoWaterAsset ;
+                                      rdfs:label "HVAC, Building, or Grounds Service Asset" .
+
+
+###  http://www.toronto.ca/TWONTO#HVAC_systemAsset
+tw:HVAC_systemAsset rdf:type owl:Class ;
+                    rdfs:subClassOf tw:HVAC_buildingOrGroundsServiceAsset ;
+                    rdfs:label "HVAC System Asset" .
+
+
+###  http://www.toronto.ca/TWONTO#MTD
+tw:MTD rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                       tw:distributionAndCollectionNetoworkAsset ;
+       rdfs:label "manufacturered treatment device" .
+
+
+###  http://www.toronto.ca/TWONTO#OReg220PressureVessel
+tw:OReg220PressureVessel rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( tw:vesselOrTank
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty tw:hasMaxAllowableWorkingPressure ;
+                                                                      owl:someValuesFrom [ owl:intersectionOf ( <http://www.toronto.ca/FAMO#pressureMeasurement>
+                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                  owl:onProperty <http://www.toronto.ca/FAMO#hasUnitOfMeasure> ;
+                                                                                                                  owl:hasValue <http://www.toronto.ca/FAMO#psi>
+                                                                                                                ]
+                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                  owl:onProperty <http://www.toronto.ca/FAMO#hasMeasurementValue> ;
+                                                                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                       owl:onDatatype xsd:float ;
+                                                                                                                                       owl:withRestrictions ( [ xsd:minExclusive "15.0"^^xsd:float
+                                                                                                                                                              ]
+                                                                                                                                                            )
+                                                                                                                                     ]
+                                                                                                                ]
+                                                                                                              ) ;
+                                                                                           rdf:type owl:Class
+                                                                                         ]
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty tw:isDesignedToHold ;
+                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                           owl:unionOf ( <http://www.toronto.ca/FAMO#gaseousMaterial>
+                                                                                                         <http://www.toronto.ca/FAMO#liquid>
+                                                                                                         <http://www.toronto.ca/FAMO#vapour>
+                                                                                                       )
+                                                                                         ]
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] .
+
+
+###  http://www.toronto.ca/TWONTO#PA_systemSpeaker
+tw:PA_systemSpeaker rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                    tw:informationOutput .
+
+
+###  http://www.toronto.ca/TWONTO#TorontoWaterAsset
+tw:TorontoWaterAsset rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#asset> ;
+                     rdfs:label "Toronto Water Asset Class" .
+
+
+###  http://www.toronto.ca/TWONTO#UV_disinfectionAssembly
+tw:UV_disinfectionAssembly rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#UV_disinfectionLampUnit
+tw:UV_disinfectionLampUnit rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#aPortionOfGranularFilterMedium
+tw:aPortionOfGranularFilterMedium rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                                  tw:filtration .
+
+
+###  http://www.toronto.ca/TWONTO#actuator
+tw:actuator rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:HVAC_systemAsset .
+
+
+###  http://www.toronto.ca/TWONTO#aerationReactorTank
+tw:aerationReactorTank rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ;
+                       rdfs:label "aeration reactor tank" .
+
+
+###  http://www.toronto.ca/TWONTO#airConditioning
+tw:airConditioning rdf:type owl:Class ;
+                   rdfs:subClassOf tw:HVAC_systemAsset ;
+                   rdfs:label "Air Conditioning" .
+
+
+###  http://www.toronto.ca/TWONTO#airDamper
+tw:airDamper rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                             tw:HVAC_systemAsset ,
+                             tw:flowOrPressureControl .
+
+
+###  http://www.toronto.ca/TWONTO#airDryer
+tw:airDryer rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#airDuctSegment
+tw:airDuctSegment rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:linearFunctionAsset_pathOfFlow .
+
+
+###  http://www.toronto.ca/TWONTO#airExchangerUnit
+tw:airExchangerUnit rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#airFilterUnit
+tw:airFilterUnit rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#airFiltration
+tw:airFiltration rdf:type owl:Class ;
+                 rdfs:subClassOf tw:HVAC_systemAsset ;
+                 rdfs:label "Air Filtration" .
+
+
+###  http://www.toronto.ca/TWONTO#airFiltrationUnit
+tw:airFiltrationUnit rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:airFiltration .
+
+
+###  http://www.toronto.ca/TWONTO#airHandlingUnit
+tw:airHandlingUnit rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                   tw:HVAC_systemAsset .
+
+
+###  http://www.toronto.ca/TWONTO#airScrubber
+tw:airScrubber rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:processingOfMaterial ,
+                               tw:respiratoryHazardProtection .
+
+
+###  http://www.toronto.ca/TWONTO#alarm
+tw:alarm rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                         tw:informationOutput .
+
+
+###  http://www.toronto.ca/TWONTO#analyzer
+tw:analyzer rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#anchorageConnector
+tw:anchorageConnector rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                      tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#annunciator
+tw:annunciator rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:informationOutput .
+
+
+###  http://www.toronto.ca/TWONTO#applicationServerAppliance
+tw:applicationServerAppliance rdf:type owl:Class ;
+                              rdfs:subClassOf tw:computer .
+
+
+###  http://www.toronto.ca/TWONTO#ashLagoon
+tw:ashLagoon rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ;
+             rdfs:label "ash lagoon"@en .
+
+
+###  http://www.toronto.ca/TWONTO#automaticExternalDefibrillator
+tw:automaticExternalDefibrillator rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                                  tw:firstAidEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#backflowPreventer
+tw:backflowPreventer rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:distributionAndCollectionNetoworkAsset ,
+                                     tw:flowOrPressureControl .
+
+
+###  http://www.toronto.ca/TWONTO#barScreen
+tw:barScreen rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#batteryBank
+tw:batteryBank rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#batteryCharger
+tw:batteryCharger rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#bearing
+tw:bearing rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#component> ,
+                           <http://www.toronto.ca/FAMO#discreteAsset> ,
+                           tw:generalMechanicalComponent .
+
+
+###  http://www.toronto.ca/TWONTO#belt
+tw:belt rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.toronto.ca/FAMO#component> ,
+                        <http://www.toronto.ca/FAMO#discreteAsset> ,
+                        tw:generalMechanicalComponent .
+
+
+###  http://www.toronto.ca/TWONTO#blowerOrFan
+tw:blowerOrFan rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:flowOrPressureControl .
+
+
+###  http://www.toronto.ca/TWONTO#boat
+tw:boat rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                        tw:roadVehicleOrTransportationTool .
+
+
+###  http://www.toronto.ca/TWONTO#boiler
+tw:boiler rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                          tw:HVAC_systemAsset ,
+                          tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#breaker
+tw:breaker rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#bridge
+tw:bridge rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                          tw:buildingArchitecturalOrStructural .
+
+
+###  http://www.toronto.ca/TWONTO#building
+tw:building rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:buildingArchitecturalOrStructural ;
+            rdfs:comment "This definition allows for portable buildings to be classified as building" ;
+            rdfs:isDefinedBy "A structure with a roof and some walls that partition its interior space from the outdoor space and stands in one place when it is used." .
+
+
+###  http://www.toronto.ca/TWONTO#buildingArchitecturalOrStructural
+tw:buildingArchitecturalOrStructural rdf:type owl:Class ;
+                                     rdfs:subClassOf tw:TorontoWaterAsset ;
+                                     rdfs:comment """Examples of structural asset include large processing tanks, roads, stacks, tunnels, and bridges.
+Note that under this definition, a diesel generator bolted to a foundation is not a built structure, while a wind turbine generator is. This is because the ability to withstand a load was not a primary consideration in the generator's design.""" ;
+                                     rdfs:isDefinedBy """Partial Definition: Structure - an asset that
+* is permanently affixed to the earth (or to another structure affixed to the earth)
+* is designed to withstand a static load and environmental stress
+and its ability to withstand load and stress was a primary consideration in its design process""" ;
+                                     rdfs:label "Building, Architectural, or Structural Asset" .
+
+
+###  http://www.toronto.ca/TWONTO#buildingAutomationSystemController
+tw:buildingAutomationSystemController rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                                      tw:HVAC_buildingOrGroundsServiceAsset .
+
+
+###  http://www.toronto.ca/TWONTO#burner
+tw:burner rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#cableSection
+tw:cableSection rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#cableSegment
+tw:cableSegment rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#camera
+tw:camera rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#capacitor
+tw:capacitor rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                             tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#cardReader
+tw:cardReader rdf:type owl:Class ;
+              rdfs:subClassOf tw:entryAccessControlUnit .
+
+
+###  http://www.toronto.ca/TWONTO#catchBasin
+tw:catchBasin rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                              tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#centrifuge
+tw:centrifuge rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                              tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#chamber
+tw:chamber rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                           tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#chemicalProtection
+tw:chemicalProtection rdf:type owl:Class ;
+                      rdfs:subClassOf tw:safetyOrEnvironmentalHarmPreventionAsset ;
+                      rdfs:label "Chemical Protection" .
+
+
+###  http://www.toronto.ca/TWONTO#chemicalSuit
+tw:chemicalSuit rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:chemicalProtection .
+
+
+###  http://www.toronto.ca/TWONTO#chiller
+tw:chiller rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                           tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#chillerCondenser
+tw:chillerCondenser rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                    tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#chillerEvaporator
+tw:chillerEvaporator rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#chlorinatorAssembly
+tw:chlorinatorAssembly rdf:type owl:Class ;
+                       rdfs:subClassOf tw:dosingSystemAssembly .
+
+
+###  http://www.toronto.ca/TWONTO#chlorineAnalyzer
+tw:chlorineAnalyzer rdf:type owl:Class ;
+                    rdfs:subClassOf tw:dissolvedChemicalAnalyzer .
+
+
+###  http://www.toronto.ca/TWONTO#clarificationTank
+tw:clarificationTank rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:solidsSeparation .
+
+
+###  http://www.toronto.ca/TWONTO#classifier
+tw:classifier rdf:type owl:Class ;
+              rdfs:subClassOf tw:separator ,
+                              tw:solidsSeparation .
+
+
+###  http://www.toronto.ca/TWONTO#coagulationOrFlocculationTank
+tw:coagulationOrFlocculationTank rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#combustionTurbine
+tw:combustionTurbine rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:mechanicalEnergyAndMotion .
+
+
+###  http://www.toronto.ca/TWONTO#commonInstrumentation
+tw:commonInstrumentation rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#commonTool
+tw:commonTool rdf:type owl:Class ;
+              rdfs:subClassOf tw:TorontoWaterAsset ;
+              rdfs:label "Common Tool" .
+
+
+###  http://www.toronto.ca/TWONTO#compactor
+tw:compactor rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                             tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#compressedGasCylinder
+tw:compressedGasCylinder rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#compressor
+tw:compressor rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                              tw:flowOrPressureControl .
+
+
+###  http://www.toronto.ca/TWONTO#computer
+tw:computer rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#condensateTrap
+tw:condensateTrap rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:HVAC_systemAsset ,
+                                  tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#conductivityAnalyzer
+tw:conductivityAnalyzer rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#contentCompilation
+tw:contentCompilation rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#informationContentEntity> ;
+                      rdfs:label "content compilation"@en .
+
+
+###  http://www.toronto.ca/TWONTO#contentSubject
+tw:contentSubject rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#informationContentEntity> ;
+                  rdfs:label "content subject"@en .
+
+
+###  http://www.toronto.ca/TWONTO#contentSummary
+tw:contentSummary rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#informationContentEntity> ;
+                  rdfs:label "content summary"@en .
+
+
+###  http://www.toronto.ca/TWONTO#controlledAccessBarrier
+tw:controlledAccessBarrier rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                           tw:securityOrAccessControlAsset .
+
+
+###  http://www.toronto.ca/TWONTO#controlledDoorAccess
+tw:controlledDoorAccess rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#controller
+tw:controller rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#conveyanceOfFlow
+tw:conveyanceOfFlow rdf:type owl:Class ;
+                    rdfs:subClassOf tw:genericCrossDomainAsset ;
+                    rdfs:label "Conveyance of Flow" .
+
+
+###  http://www.toronto.ca/TWONTO#conveyor
+tw:conveyor rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:liftingOrTransport .
+
+
+###  http://www.toronto.ca/TWONTO#coolingTower
+tw:coolingTower rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#corporatePolicy
+tw:corporatePolicy rdf:type owl:Class ;
+                   rdfs:subClassOf tw:contentSubject ;
+                   rdfs:label "corporate policy"@en .
+
+
+###  http://www.toronto.ca/TWONTO#correctiveWork
+tw:correctiveWork rdf:type owl:Class ;
+                  rdfs:subClassOf tw:workOrderLevelWork ;
+                  rdfs:label "corrective work" .
+
+
+###  http://www.toronto.ca/TWONTO#counter
+tw:counter rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#crane
+tw:crane rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                         tw:liftingOrTransport .
+
+
+###  http://www.toronto.ca/TWONTO#culvert
+tw:culvert rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                           tw:buildingArchitecturalOrStructural ,
+                           tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#cycloneSeparator
+tw:cycloneSeparator rdf:type owl:Class ;
+                    rdfs:subClassOf tw:separator .
+
+
+###  http://www.toronto.ca/TWONTO#dehumidifier
+tw:dehumidifier rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:HVAC_systemAsset .
+
+
+###  http://www.toronto.ca/TWONTO#detentionPond
+tw:detentionPond rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ;
+                 rdfs:label "detention pond"@en .
+
+
+###  http://www.toronto.ca/TWONTO#detentionTank
+tw:detentionTank rdf:type owl:Class ;
+                 rdfs:subClassOf tw:wetWeatherFlowStorage .
+
+
+###  http://www.toronto.ca/TWONTO#dewatering
+tw:dewatering rdf:type owl:Class ;
+              rdfs:subClassOf tw:waterOrWastewaterTreatment ;
+              rdfs:label "Dewatering" .
+
+
+###  http://www.toronto.ca/TWONTO#dewateringCentrifuge
+tw:dewateringCentrifuge rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                        tw:dewatering .
+
+
+###  http://www.toronto.ca/TWONTO#diesel
+tw:diesel rdfs:subClassOf tw:fuelOil .
+
+
+###  http://www.toronto.ca/TWONTO#digesterGas
+tw:digesterGas rdfs:subClassOf tw:fuel .
+
+
+###  http://www.toronto.ca/TWONTO#digesterReactor
+tw:digesterReactor rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ;
+                   rdfs:label "digester reactor" .
+
+
+###  http://www.toronto.ca/TWONTO#disconnectSwitch
+tw:disconnectSwitch rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                    tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#disinfectionTank
+tw:disinfectionTank rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#display
+tw:display rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                           tw:informationOutput .
+
+
+###  http://www.toronto.ca/TWONTO#dissolvedChemicalAnalyzer
+tw:dissolvedChemicalAnalyzer rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#dissolvedOxygenInstrumentation
+tw:dissolvedOxygenInstrumentation rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#distributionAndCollectionNetoworkAsset
+tw:distributionAndCollectionNetoworkAsset rdf:type owl:Class ;
+                                          rdfs:subClassOf tw:TorontoWaterAsset ;
+                                          rdfs:label "Distribution and Collection Network Asset" .
+
+
+###  http://www.toronto.ca/TWONTO#documentContent
+tw:documentContent rdf:type owl:Class ;
+                   rdfs:subClassOf tw:pieceOfContent ;
+                   rdfs:label "document content"@en .
+
+
+###  http://www.toronto.ca/TWONTO#dosingEductor
+tw:dosingEductor rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:materialAdditionOrDosing .
+
+
+###  http://www.toronto.ca/TWONTO#dosingInjector
+tw:dosingInjector rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:materialAdditionOrDosing .
+
+
+###  http://www.toronto.ca/TWONTO#dosingOrMeteringPump
+tw:dosingOrMeteringPump rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                        tw:materialAdditionOrDosing .
+
+
+###  http://www.toronto.ca/TWONTO#dosingPump
+tw:dosingPump rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#dosingSystemAssembly
+tw:dosingSystemAssembly rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                        tw:materialAdditionOrDosing .
+
+
+###  http://www.toronto.ca/TWONTO#dosingSystemUnit
+tw:dosingSystemUnit rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                    tw:materialAdditionOrDosing .
+
+
+###  http://www.toronto.ca/TWONTO#dryPond
+tw:dryPond rdf:type owl:Class ;
+           rdfs:subClassOf tw:pond .
+
+
+###  http://www.toronto.ca/TWONTO#dryer
+tw:dryer rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#dustCollecter
+tw:dustCollecter rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#easement
+tw:easement rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#electricalAssetOrComponent
+tw:electricalAssetOrComponent rdf:type owl:Class ;
+                              rdfs:subClassOf tw:TorontoWaterAsset ;
+                              rdfs:label "Electrical Asset or Component" .
+
+
+###  http://www.toronto.ca/TWONTO#electricalConduitSection
+tw:electricalConduitSection rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                            tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#electricalCurrentInstrumentation
+tw:electricalCurrentInstrumentation rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#electricalDistributionOrMotorControlPanel
+tw:electricalDistributionOrMotorControlPanel rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                                             tw:enclosure .
+
+
+###  http://www.toronto.ca/TWONTO#electricalDuctBankSection
+tw:electricalDuctBankSection rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                             tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#electricalSafety
+tw:electricalSafety rdf:type owl:Class ;
+                    rdfs:subClassOf tw:safetyOrEnvironmentalHarmPreventionAsset ;
+                    rdfs:label "Electrical Safety" .
+
+
+###  http://www.toronto.ca/TWONTO#electrostaticPrecipitator
+tw:electrostaticPrecipitator rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#elevator
+tw:elevator rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:partOfBuildingOrStructure .
+
+
+###  http://www.toronto.ca/TWONTO#emergencyEyewashOrShower
+tw:emergencyEyewashOrShower rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                            tw:safetyOrEnvironmentalHarmPreventionAsset .
+
+
+###  http://www.toronto.ca/TWONTO#emergencyWork
+tw:emergencyWork rdf:type owl:Class ;
+                 rdfs:subClassOf tw:workOrderLevelWork ;
+                 rdfs:label "emergency work" .
+
+
+###  http://www.toronto.ca/TWONTO#enclosure
+tw:enclosure rdf:type owl:Class ;
+             rdfs:subClassOf tw:genericCrossDomainAsset ;
+             rdfs:label "Enclosure" .
+
+
+###  http://www.toronto.ca/TWONTO#energyRecoveryVentilator
+tw:energyRecoveryVentilator rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                            tw:HVAC_systemAsset .
+
+
+###  http://www.toronto.ca/TWONTO#engine
+tw:engine rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                          tw:mechanicalEnergyAndMotion .
+
+
+###  http://www.toronto.ca/TWONTO#entryAccessControlUnit
+tw:entryAccessControlUnit rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                          tw:securityOrAccessControlAsset .
+
+
+###  http://www.toronto.ca/TWONTO#equipmentLocalControlPanel
+tw:equipmentLocalControlPanel rdf:type owl:Class ;
+                              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                              tw:enclosure .
+
+
+###  http://www.toronto.ca/TWONTO#expansionJoint
+tw:expansionJoint rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#explosionPreventionEquipment
+tw:explosionPreventionEquipment rdf:type owl:Class ;
+                                rdfs:subClassOf tw:safetyOrEnvironmentalHarmPreventionAsset ;
+                                rdfs:label "Explosion Prevention Equipment" .
+
+
+###  http://www.toronto.ca/TWONTO#facilityProcessSystem
+tw:facilityProcessSystem rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#hierarchicalSystem> .
+
+
+###  http://www.toronto.ca/TWONTO#facilitySystem
+tw:facilitySystem rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#hierarchicalSystem> .
+
+
+###  http://www.toronto.ca/TWONTO#fallArrestDavitArm
+tw:fallArrestDavitArm rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                      tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#fallArrestHarness
+tw:fallArrestHarness rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#fallArrestLanyard
+tw:fallArrestLanyard rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#fallProtectionEquipment
+tw:fallProtectionEquipment rdf:type owl:Class ;
+                           rdfs:subClassOf tw:safetyOrEnvironmentalHarmPreventionAsset ;
+                           rdfs:label "Fall Protection Equipment" .
+
+
+###  http://www.toronto.ca/TWONTO#fallRestrictingSystem
+tw:fallRestrictingSystem rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                         tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#federalRegulation
+tw:federalRegulation rdf:type owl:Class ;
+                     rdfs:subClassOf tw:governmentRegulation ;
+                     rdfs:label "Canadian federal regulation"@en .
+
+
+###  http://www.toronto.ca/TWONTO#feederOrHopper
+tw:feederOrHopper rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#fenceSection
+tw:fenceSection rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:buildingArchitecturalOrStructural .
+
+
+###  http://www.toronto.ca/TWONTO#figureContent
+tw:figureContent rdf:type owl:Class ;
+                 rdfs:subClassOf tw:pieceOfContent ;
+                 rdfs:label "figure content"@en .
+
+
+###  http://www.toronto.ca/TWONTO#filter_MTD
+tw:filter_MTD rdf:type owl:Class ;
+              rdfs:subClassOf tw:MTD .
+
+
+###  http://www.toronto.ca/TWONTO#filtration
+tw:filtration rdf:type owl:Class ;
+              rdfs:subClassOf tw:waterOrWastewaterTreatment ;
+              rdfs:label "Filtration" .
+
+
+###  http://www.toronto.ca/TWONTO#filtrationTank
+tw:filtrationTank rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#fireRatedDoor
+tw:fireRatedDoor rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:partOfBuildingOrStructure .
+
+
+###  http://www.toronto.ca/TWONTO#firstAidEquipment
+tw:firstAidEquipment rdf:type owl:Class ;
+                     rdfs:subClassOf tw:safetyOrEnvironmentalHarmPreventionAsset ;
+                     rdfs:label "First-Aid Equipment" .
+
+
+###  http://www.toronto.ca/TWONTO#firstAidKit
+tw:firstAidKit rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:firstAidEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#firstAidRoomEquipment
+tw:firstAidRoomEquipment rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#firstAidStationEquipment
+tw:firstAidStationEquipment rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                            tw:firstAidEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#fixedGasDetector
+tw:fixedGasDetector rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#fixedLadder
+tw:fixedLadder rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:partOfBuildingOrStructure .
+
+
+###  http://www.toronto.ca/TWONTO#flameArrestor
+tw:flameArrestor rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:explosionPreventionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#flameOrCombustionInstrumentation
+tw:flameOrCombustionInstrumentation rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#floatationEquipment
+tw:floatationEquipment rdf:type owl:Class ;
+                       rdfs:subClassOf tw:safetyOrEnvironmentalHarmPreventionAsset ;
+                       rdfs:label "Floatation Equipment" .
+
+
+###  http://www.toronto.ca/TWONTO#flowOrPressureControl
+tw:flowOrPressureControl rdf:type owl:Class ;
+                         rdfs:subClassOf tw:genericCrossDomainAsset ;
+                         rdfs:label "Flow or Pressure Control" .
+
+
+###  http://www.toronto.ca/TWONTO#flowmeter
+tw:flowmeter rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#forklift
+tw:forklift rdf:type owl:Class ;
+            rdfs:subClassOf tw:mobileLift .
+
+
+###  http://www.toronto.ca/TWONTO#fuel
+tw:fuel rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.toronto.ca/FAMO#material> .
+
+
+###  http://www.toronto.ca/TWONTO#fuelOil
+tw:fuelOil rdfs:subClassOf tw:fuel .
+
+
+###  http://www.toronto.ca/TWONTO#fuelOilTank
+tw:fuelOilTank rdf:type owl:Class ;
+               rdfs:subClassOf tw:fuelStorageTank ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty tw:isDesignedToHold ;
+                                 owl:someValuesFrom tw:fuelOil
+                               ] .
+
+
+###  http://www.toronto.ca/TWONTO#fuelStorageTank
+tw:fuelStorageTank rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                   tw:storageAndSurgeSuppression ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty tw:isDesignedToHold ;
+                                     owl:someValuesFrom tw:fuel
+                                   ] ;
+                   rdfs:label "fuel storage tank" .
+
+
+###  http://www.toronto.ca/TWONTO#fullBodyHarness
+tw:fullBodyHarness rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                   tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#furnace
+tw:furnace rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#fuse
+tw:fuse rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                        tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#gasDiffuser
+tw:gasDiffuser rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:materialAdditionOrDosing .
+
+
+###  http://www.toronto.ca/TWONTO#gasDiffuserGridAssembly
+tw:gasDiffuserGridAssembly rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#gasInstrumentation
+tw:gasInstrumentation rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#gasoline
+tw:gasoline rdfs:subClassOf tw:fuel .
+
+
+###  http://www.toronto.ca/TWONTO#gasolineTank
+tw:gasolineTank rdf:type owl:Class ;
+                rdfs:subClassOf tw:fuelStorageTank ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tw:isDesignedToHold ;
+                                  owl:someValuesFrom tw:gasoline
+                                ] .
+
+
+###  http://www.toronto.ca/TWONTO#gate
+tw:gate rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                        tw:flowOrPressureControl .
+
+
+###  http://www.toronto.ca/TWONTO#gauge
+tw:gauge rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                         tw:informationOutput .
+
+
+###  http://www.toronto.ca/TWONTO#generalMechanicalComponent
+tw:generalMechanicalComponent rdf:type owl:Class ;
+                              rdfs:subClassOf tw:TorontoWaterAsset ;
+                              rdfs:label "General Mechanical Component" .
+
+
+###  http://www.toronto.ca/TWONTO#generalNetworkingAsset
+tw:generalNetworkingAsset rdf:type owl:Class ;
+                          rdfs:subClassOf tw:TorontoWaterAsset ,
+                                          tw:grinderOrComminutor ;
+                          rdfs:label "General Networking Asset" .
+
+
+###  http://www.toronto.ca/TWONTO#generator
+tw:generator rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                             tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#genericCrossDomainAsset
+tw:genericCrossDomainAsset rdf:type owl:Class ;
+                           rdfs:subClassOf tw:TorontoWaterAsset ;
+                           rdfs:label "Generic Cross-Domain Asset" .
+
+
+###  http://www.toronto.ca/TWONTO#golfCart
+tw:golfCart rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:roadVehicleOrTransportationTool .
+
+
+###  http://www.toronto.ca/TWONTO#governmentRegulation
+tw:governmentRegulation rdf:type owl:Class ;
+                        rdfs:subClassOf tw:contentSubject ;
+                        rdfs:label "government regulation"@en .
+
+
+###  http://www.toronto.ca/TWONTO#greenInfrastructureAsset
+tw:greenInfrastructureAsset rdf:type owl:Class ;
+                            rdfs:subClassOf tw:TorontoWaterAsset ;
+                            rdfs:label "Green Infrastructure Asset" .
+
+
+###  http://www.toronto.ca/TWONTO#grinder
+tw:grinder rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                           tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#grinderOrComminutor
+tw:grinderOrComminutor rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:waterOrWastewaterTreatment .
+
+
+###  http://www.toronto.ca/TWONTO#gritClassifier
+tw:gritClassifier rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#groundingEquipment
+tw:groundingEquipment rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                      tw:electricalSafety .
+
+
+###  http://www.toronto.ca/TWONTO#hazardousGasMonitoringDevice
+tw:hazardousGasMonitoringDevice rdf:type owl:Class ;
+                                rdfs:subClassOf tw:safetyOrEnvironmentalHarmPreventionAsset ;
+                                rdfs:label "Hazardous Gas Monitoring Device" .
+
+
+###  http://www.toronto.ca/TWONTO#heatExchanger
+tw:heatExchanger rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#heatPumpUnit
+tw:heatPumpUnit rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:HVAC_systemAsset .
+
+
+###  http://www.toronto.ca/TWONTO#heater
+tw:heater rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                          tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#heatingOrCooling
+tw:heatingOrCooling rdf:type owl:Class ;
+                    rdfs:subClassOf tw:genericCrossDomainAsset ;
+                    rdfs:label "Heating or Cooling" .
+
+
+###  http://www.toronto.ca/TWONTO#heavyMetalAnalyzer
+tw:heavyMetalAnalyzer rdf:type owl:Class ;
+                      rdfs:subClassOf tw:dissolvedChemicalAnalyzer .
+
+
+###  http://www.toronto.ca/TWONTO#highVoltageStick
+tw:highVoltageStick rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                    tw:electricalSafety .
+
+
+###  http://www.toronto.ca/TWONTO#highVoltageTester
+tw:highVoltageTester rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:electricalSafety .
+
+
+###  http://www.toronto.ca/TWONTO#horizontalLifeline
+tw:horizontalLifeline rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                      tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#hydrant
+tw:hydrant rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                           tw:distributionAndCollectionNetoworkAsset ;
+           rdfs:label "hydrant"@en .
+
+
+###  http://www.toronto.ca/TWONTO#hydrantSystem
+tw:hydrantSystem rdf:type owl:Class ;
+                 rdfs:subClassOf tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#infiltrationTrench
+tw:infiltrationTrench rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                      tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#informationOutput
+tw:informationOutput rdf:type owl:Class ;
+                     rdfs:subClassOf tw:genericCrossDomainAsset ;
+                     rdfs:label "Information Output" .
+
+
+###  http://www.toronto.ca/TWONTO#informationRecordingOrStorage
+tw:informationRecordingOrStorage rdf:type owl:Class ;
+                                 rdfs:subClassOf tw:genericCrossDomainAsset ;
+                                 rdfs:label "Information Recording or Storage" .
+
+
+###  http://www.toronto.ca/TWONTO#infraredCamera
+tw:infraredCamera rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#injector
+tw:injector rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#instrumentAirOrPneumaticControlPanel
+tw:instrumentAirOrPneumaticControlPanel rdf:type owl:Class ;
+                                        rdfs:subClassOf tw:processControlPanel .
+
+
+###  http://www.toronto.ca/TWONTO#intercomUnit
+tw:intercomUnit rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:informationOutput .
+
+
+###  http://www.toronto.ca/TWONTO#interpretation
+tw:interpretation rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#atomicLevelWork> ;
+                  rdfs:comment "Jan2024 TH: consider moving to FAMO" .
+
+
+###  http://www.toronto.ca/TWONTO#investigativeWork
+tw:investigativeWork rdf:type owl:Class ;
+                     rdfs:subClassOf tw:workOrderLevelWork ;
+                     rdfs:label "investigative work" .
+
+
+###  http://www.toronto.ca/TWONTO#kerosene
+tw:kerosene rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#liquid> ,
+                            tw:fuelOil .
+
+
+###  http://www.toronto.ca/TWONTO#legislation
+tw:legislation rdf:type owl:Class ;
+               rdfs:subClassOf tw:contentSubject ;
+               rdfs:label "legislation"@en .
+
+
+###  http://www.toronto.ca/TWONTO#levelInstrumentation
+tw:levelInstrumentation rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#lifeJacket
+tw:lifeJacket rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                              tw:floatationEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#lifeRing
+tw:lifeRing rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:floatationEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#liftingOrTransport
+tw:liftingOrTransport rdf:type owl:Class ;
+                      rdfs:subClassOf tw:genericCrossDomainAsset ;
+                      rdfs:label "Lifting or Transport" .
+
+
+###  http://www.toronto.ca/TWONTO#lightingPanel
+tw:lightingPanel rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#lightingUnit
+tw:lightingUnit rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:HVAC_buildingOrGroundsServiceAsset .
+
+
+###  http://www.toronto.ca/TWONTO#linearFunctionAsset_pathOfFlow
+tw:linearFunctionAsset_pathOfFlow rdf:type owl:Class ;
+                                  rdfs:subClassOf tw:genericCrossDomainAsset ;
+                                  rdfs:label "Linear Function Asset (Path of Flow)" .
+
+
+###  http://www.toronto.ca/TWONTO#loadBreakSwitch
+tw:loadBreakSwitch rdf:type owl:Class ;
+                   rdfs:subClassOf tw:disconnectSwitch .
+
+
+###  http://www.toronto.ca/TWONTO#loadingDock
+tw:loadingDock rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:partOfBuildingOrStructure .
+
+
+###  http://www.toronto.ca/TWONTO#mainPathLine
+tw:mainPathLine rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#line> ;
+                rdfs:isDefinedBy "A line that has one or more junction along its length, linking it to minor branches, but only has one main path that carries a bulk flow from one point to another." .
+
+
+###  http://www.toronto.ca/TWONTO#manhole
+tw:manhole rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                           tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#manlift
+tw:manlift rdf:type owl:Class ;
+           rdfs:subClassOf tw:mobileLift .
+
+
+###  http://www.toronto.ca/TWONTO#materialAdditionOrDosing
+tw:materialAdditionOrDosing rdf:type owl:Class ;
+                            rdfs:subClassOf tw:waterOrWastewaterTreatment ;
+                            rdfs:label "Material Addition or Dosing" .
+
+
+###  http://www.toronto.ca/TWONTO#materialDistributionPanel
+tw:materialDistributionPanel rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                             tw:enclosure ,
+                                             tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#mechanicalAssembly
+tw:mechanicalAssembly rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                      tw:generalMechanicalComponent .
+
+
+###  http://www.toronto.ca/TWONTO#mechanicalEnergyAndMotion
+tw:mechanicalEnergyAndMotion rdf:type owl:Class ;
+                             rdfs:subClassOf tw:genericCrossDomainAsset ;
+                             rdfs:label "Mechanical Energy and Motion" .
+
+
+###  http://www.toronto.ca/TWONTO#mechanicalFitting
+tw:mechanicalFitting rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:generalMechanicalComponent .
+
+
+###  http://www.toronto.ca/TWONTO#membraneGasholder
+tw:membraneGasholder rdf:type owl:Class ;
+                     rdfs:subClassOf tw:fuelStorageTank ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty tw:isDesignedToHold ;
+                                       owl:someValuesFrom <http://www.toronto.ca/FAMO#gaseousMaterial>
+                                     ] .
+
+
+###  http://www.toronto.ca/TWONTO#mixerOrAgitator
+tw:mixerOrAgitator rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                   tw:processingOfMaterial .
+
+
+###  http://www.toronto.ca/TWONTO#mobileLift
+tw:mobileLift rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                              tw:liftingOrTransport .
+
+
+###  http://www.toronto.ca/TWONTO#motionSensor
+tw:motionSensor rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:securityOrAccessControlAsset .
+
+
+###  http://www.toronto.ca/TWONTO#motor
+tw:motor rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                         tw:generalMechanicalComponent ;
+         rdfs:label "motor"@en .
+
+
+###  http://www.toronto.ca/TWONTO#motorDriveOr_VFD
+tw:motorDriveOr_VFD rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                    tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#motorStarter
+tw:motorStarter rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#multiParametertrumentation
+tw:multiParametertrumentation rdf:type owl:Class ;
+                              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                              tw:sensing_informationCapture .
+
+
+###  http://www.toronto.ca/TWONTO#namedBiologicalOrChemicalTreatment
+tw:namedBiologicalOrChemicalTreatment rdf:type owl:Class ;
+                                      rdfs:subClassOf tw:waterOrWastewaterTreatment ;
+                                      rdfs:label "Named Biological or Chemical Treatment" .
+
+
+###  http://www.toronto.ca/TWONTO#naturalGas
+tw:naturalGas rdfs:subClassOf tw:fuel .
+
+
+###  http://www.toronto.ca/TWONTO#networkPanelOraccessCloset
+tw:networkPanelOraccessCloset rdf:type owl:Class ;
+                              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                              tw:enclosure .
+
+
+###  http://www.toronto.ca/TWONTO#networkRouter
+tw:networkRouter rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:generalNetworkingAsset .
+
+
+###  http://www.toronto.ca/TWONTO#networkStorageAppliance
+tw:networkStorageAppliance rdf:type owl:Class ;
+                           rdfs:subClassOf tw:computer .
+
+
+###  http://www.toronto.ca/TWONTO#networkSwitch
+tw:networkSwitch rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:generalNetworkingAsset .
+
+
+###  http://www.toronto.ca/TWONTO#nitrateOrNitriteAnalyzer
+tw:nitrateOrNitriteAnalyzer rdf:type owl:Class ;
+                            rdfs:subClassOf tw:dissolvedChemicalAnalyzer .
+
+
+###  http://www.toronto.ca/TWONTO#noteTaking
+tw:noteTaking rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#process> .
+
+
+###  http://www.toronto.ca/TWONTO#oilGreaseSeparator_MTD
+tw:oilGreaseSeparator_MTD rdf:type owl:Class ;
+                          rdfs:subClassOf tw:MTD .
+
+
+###  http://www.toronto.ca/TWONTO#oilGritSeperator
+tw:oilGritSeperator rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ;
+                    rdfs:label "oil grit separator" .
+
+
+###  http://www.toronto.ca/TWONTO#ontarioRegulation
+tw:ontarioRegulation rdf:type owl:Class ;
+                     rdfs:subClassOf tw:governmentRegulation ;
+                     rdfs:label "Ontario provincial regulation"@en .
+
+
+###  http://www.toronto.ca/TWONTO#outfallOrDischargePoint
+tw:outfallOrDischargePoint rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                           tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#ozoneGenerator
+tw:ozoneGenerator rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#pH_analyzer
+tw:pH_analyzer rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#pH_instrumentation
+tw:pH_instrumentation rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#packagedAcUnit
+tw:packagedAcUnit rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:airConditioning .
+
+
+###  http://www.toronto.ca/TWONTO#paragraphContent
+tw:paragraphContent rdf:type owl:Class ;
+                    rdfs:subClassOf tw:pieceOfContent ;
+                    rdfs:label "paragraph content"@en .
+
+
+###  http://www.toronto.ca/TWONTO#partOfBuildingOrStructure
+tw:partOfBuildingOrStructure rdf:type owl:Class ;
+                             rdfs:subClassOf tw:TorontoWaterAsset ;
+                             rdfs:comment "Examples include interior walls, doors, windows, roofing, eaves troughs, and the City logo sign." ;
+                             rdfs:isDefinedBy """Any part of a built structure that
+* bears physical integrity for it to bear load and stress or
+* is any part permanently connected to one of the parts above while not being a part of a facility spatial support system.""" ;
+                             rdfs:label "Part of Building or Structure" .
+
+
+###  http://www.toronto.ca/TWONTO#partOfProcessPiping
+tw:partOfProcessPiping rdf:type owl:Class ;
+                       rdfs:subClassOf tw:TorontoWaterAsset ;
+                       rdfs:label "Part of Process Piping" .
+
+
+###  http://www.toronto.ca/TWONTO#passengerVehicles
+tw:passengerVehicles rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:roadVehicleOrTransportationTool .
+
+
+###  http://www.toronto.ca/TWONTO#pelletizerAssembly
+tw:pelletizerAssembly rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#personalGasMeter
+tw:personalGasMeter rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#personnalFloatationDevice
+tw:personnalFloatationDevice rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                             tw:floatationEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#phosphateAnalyzer
+tw:phosphateAnalyzer rdf:type owl:Class ;
+                     rdfs:subClassOf tw:dissolvedChemicalAnalyzer .
+
+
+###  http://www.toronto.ca/TWONTO#pickupTruck
+tw:pickupTruck rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:roadVehicleOrTransportationTool .
+
+
+###  http://www.toronto.ca/TWONTO#pieceOfContent
+tw:pieceOfContent rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#informationContentEntity> ;
+                  rdfs:comment "TH 12/5/2023: created to represent a piece of content about some part of the world, as oppose to other pieces of content used to organize these pieces of content, such as a folder in a computer, a compilation, or section delimiter in a document." ;
+                  rdfs:label "pieceOfContent"@en .
+
+
+###  http://www.toronto.ca/TWONTO#pieceOfLawn
+tw:pieceOfLawn rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:greenInfrastructureAsset .
+
+
+###  http://www.toronto.ca/TWONTO#pipeFitting
+tw:pipeFitting rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:distributionAndCollectionNetoworkAsset ,
+                               tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#pipeManifold
+tw:pipeManifold rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#pipeSection
+tw:pipeSection rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#pipeSegment
+tw:pipeSegment rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:linearFunctionAsset_pathOfFlow ;
+               rdfs:label "pipe segment" .
+
+
+###  http://www.toronto.ca/TWONTO#pipette
+tw:pipette rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                           tw:commonTool .
+
+
+###  http://www.toronto.ca/TWONTO#plantingSpace
+tw:plantingSpace rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:greenInfrastructureAsset .
+
+
+###  http://www.toronto.ca/TWONTO#polymerDosingAssembly
+tw:polymerDosingAssembly rdf:type owl:Class ;
+                         rdfs:subClassOf tw:dosingSystemAssembly .
+
+
+###  http://www.toronto.ca/TWONTO#polymerMixingTank
+tw:polymerMixingTank rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:dewatering ,
+                                     tw:mixerOrAgitator .
+
+
+###  http://www.toronto.ca/TWONTO#pond
+tw:pond rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                        tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#portableGasDetector
+tw:portableGasDetector rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:commonTool .
+
+
+###  http://www.toronto.ca/TWONTO#portableLadder
+tw:portableLadder rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:commonTool .
+
+
+###  http://www.toronto.ca/TWONTO#portableScaffolding
+tw:portableScaffolding rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:commonTool .
+
+
+###  http://www.toronto.ca/TWONTO#positionInstrumentation
+tw:positionInstrumentation rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#powerHarmonicFilter
+tw:powerHarmonicFilter rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#powerWasher
+tw:powerWasher rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:commonTool .
+
+
+###  http://www.toronto.ca/TWONTO#poweredAirRespirator
+tw:poweredAirRespirator rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                        tw:respiratoryHazardProtection .
+
+
+###  http://www.toronto.ca/TWONTO#press
+tw:press rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#pressureInstrumentation
+tw:pressureInstrumentation rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#pressureSwitch
+tw:pressureSwitch rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#pressureTransmitter
+tw:pressureTransmitter rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#preventiveWork
+tw:preventiveWork rdf:type owl:Class ;
+                  rdfs:subClassOf tw:workOrderLevelWork ;
+                  rdfs:label "preventive work" .
+
+
+###  http://www.toronto.ca/TWONTO#processControlPanel
+tw:processControlPanel rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:enclosure .
+
+
+###  http://www.toronto.ca/TWONTO#processingOfMaterial
+tw:processingOfMaterial rdf:type owl:Class ;
+                        rdfs:subClassOf tw:genericCrossDomainAsset ;
+                        rdfs:label "Processing of Material" .
+
+
+###  http://www.toronto.ca/TWONTO#progammableLogicController
+tw:progammableLogicController rdf:type owl:Class ;
+                              rdfs:subClassOf tw:controller .
+
+
+###  http://www.toronto.ca/TWONTO#projectWork
+tw:projectWork rdf:type owl:Class ;
+               rdfs:subClassOf tw:workOrderLevelWork ;
+               rdfs:label "project work" .
+
+
+###  http://www.toronto.ca/TWONTO#propane
+tw:propane rdfs:subClassOf tw:fuel .
+
+
+###  http://www.toronto.ca/TWONTO#protectionRelay
+tw:protectionRelay rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                   tw:electricalAssetOrComponent ,
+                                   tw:electricalSafety .
+
+
+###  http://www.toronto.ca/TWONTO#publisher
+tw:publisher rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#organization> ;
+             rdfs:label "publisher"@en .
+
+
+###  http://www.toronto.ca/TWONTO#pulsationDampener
+tw:pulsationDampener rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#pump
+tw:pump rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                        tw:flowOrPressureControl .
+
+
+###  http://www.toronto.ca/TWONTO#pumpWetWell
+tw:pumpWetWell rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#pumpingStationSystem
+tw:pumpingStationSystem rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.toronto.ca/FAMO#hierarchicalSystem> .
+
+
+###  http://www.toronto.ca/TWONTO#quencher
+tw:quencher rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#reactorOfUnnamedTypes
+tw:reactorOfUnnamedTypes rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#remoteTerminalUnit
+tw:remoteTerminalUnit rdf:type owl:Class ;
+                      rdfs:subClassOf tw:controller .
+
+
+###  http://www.toronto.ca/TWONTO#replaceableFilterCartridge
+tw:replaceableFilterCartridge rdf:type owl:Class ;
+                              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                              tw:generalMechanicalComponent .
+
+
+###  http://www.toronto.ca/TWONTO#reservoir
+tw:reservoir rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#residualChloringInstrumentation
+tw:residualChloringInstrumentation rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#respiratorMask
+tw:respiratorMask rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:respiratoryHazardProtection .
+
+
+###  http://www.toronto.ca/TWONTO#respiratoryHazardProtection
+tw:respiratoryHazardProtection rdf:type owl:Class ;
+                               rdfs:subClassOf tw:safetyOrEnvironmentalHarmPreventionAsset ;
+                               rdfs:label "Respiratory Hazard Protection" .
+
+
+###  http://www.toronto.ca/TWONTO#revision
+tw:revision rdf:type owl:Class ;
+            rdfs:label "revision"@en .
+
+
+###  http://www.toronto.ca/TWONTO#roadSegement
+tw:roadSegement rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#roadVehicleOrTransportationTool
+tw:roadVehicleOrTransportationTool rdf:type owl:Class ;
+                                   rdfs:subClassOf tw:TorontoWaterAsset ;
+                                   rdfs:label "Road Vehicle or Transportation Tool" .
+
+
+###  http://www.toronto.ca/TWONTO#rollUpDoor
+tw:rollUpDoor rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                              tw:partOfBuildingOrStructure .
+
+
+###  http://www.toronto.ca/TWONTO#roof
+tw:roof rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                        tw:partOfBuildingOrStructure .
+
+
+###  http://www.toronto.ca/TWONTO#ropeOrCableGrab
+tw:ropeOrCableGrab rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                   tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#rotaryDrumThickener
+tw:rotaryDrumThickener rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:dewatering .
+
+
+###  http://www.toronto.ca/TWONTO#rubberInsulatingGloves
+tw:rubberInsulatingGloves rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                          tw:electricalSafety .
+
+
+###  http://www.toronto.ca/TWONTO#rubberInsulatingSleeves
+tw:rubberInsulatingSleeves rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                           tw:electricalSafety .
+
+
+###  http://www.toronto.ca/TWONTO#ruptureDisk
+tw:ruptureDisk rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:explosionPreventionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#safetyOrEnvironmentalHarmPreventionAsset
+tw:safetyOrEnvironmentalHarmPreventionAsset rdf:type owl:Class ;
+                                            rdfs:subClassOf tw:TorontoWaterAsset ;
+                                            rdfs:label "Safety or Environmental Harm Prevention Asset" .
+
+
+###  http://www.toronto.ca/TWONTO#samplingPoint
+tw:samplingPoint rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#scissorsLift
+tw:scissorsLift rdf:type owl:Class ;
+                rdfs:subClassOf tw:manlift .
+
+
+###  http://www.toronto.ca/TWONTO#screwPress
+tw:screwPress rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                              tw:dewatering .
+
+
+###  http://www.toronto.ca/TWONTO#scrubber
+tw:scrubber rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#sealOrGasket
+tw:sealOrGasket rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:generalMechanicalComponent .
+
+
+###  http://www.toronto.ca/TWONTO#sectionContent
+tw:sectionContent rdf:type owl:Class ;
+                  rdfs:subClassOf tw:pieceOfContent ;
+                  rdfs:label "section content"@en .
+
+
+###  http://www.toronto.ca/TWONTO#securityCamera
+tw:securityCamera rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:securityOrAccessControlAsset .
+
+
+###  http://www.toronto.ca/TWONTO#securityOrAccessControlAsset
+tw:securityOrAccessControlAsset rdf:type owl:Class ;
+                                rdfs:subClassOf tw:HVAC_buildingOrGroundsServiceAsset ;
+                                rdfs:label "Security or Access Control Asset" .
+
+
+###  http://www.toronto.ca/TWONTO#sedimentationTank
+tw:sedimentationTank rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:solidsSeparation .
+
+
+###  http://www.toronto.ca/TWONTO#selfContainedBreathingApparatus
+tw:selfContainedBreathingApparatus rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                                   tw:respiratoryHazardProtection .
+
+
+###  http://www.toronto.ca/TWONTO#selfRetractingLifeline
+tw:selfRetractingLifeline rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                          tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#sensing_informationCapture
+tw:sensing_informationCapture rdf:type owl:Class ;
+                              rdfs:subClassOf tw:genericCrossDomainAsset ;
+                              rdfs:label "Sensing (Information Capture)" .
+
+
+###  http://www.toronto.ca/TWONTO#separator
+tw:separator rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#serverAppliance
+tw:serverAppliance rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                   tw:generalNetworkingAsset .
+
+
+###  http://www.toronto.ca/TWONTO#sewer
+tw:sewer rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                         tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#sewerForceMain
+tw:sewerForceMain rdf:type owl:Class ;
+                  rdfs:subClassOf tw:sewerMain ;
+                  rdfs:label "sewer force main" .
+
+
+###  http://www.toronto.ca/TWONTO#sewerGravityMain
+tw:sewerGravityMain rdf:type owl:Class ;
+                    rdfs:subClassOf tw:sewerMain ;
+                    rdfs:label "sewer gravity main" .
+
+
+###  http://www.toronto.ca/TWONTO#sewerMain
+tw:sewerMain rdf:type owl:Class ;
+             rdfs:subClassOf tw:pipeSegment ;
+             rdfs:label "sewer main" .
+
+
+###  http://www.toronto.ca/TWONTO#sewerServiceConnection
+tw:sewerServiceConnection rdf:type owl:Class ;
+                          rdfs:subClassOf tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#sewerSystemInlineStorage
+tw:sewerSystemInlineStorage rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ;
+                            rdfs:label "sewer system inline storage"@en .
+
+
+###  http://www.toronto.ca/TWONTO#simpleLine
+tw:simpleLine rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.toronto.ca/FAMO#line> ;
+              rdfs:isDefinedBy "An line that has no junction across its span." .
+
+
+###  http://www.toronto.ca/TWONTO#singleParameterInstrumentation
+tw:singleParameterInstrumentation rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                                  tw:sensing_informationCapture .
+
+
+###  http://www.toronto.ca/TWONTO#sludgeIncineratorAssembly
+tw:sludgeIncineratorAssembly rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#soilCell
+tw:soilCell rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:greenInfrastructureAsset .
+
+
+###  http://www.toronto.ca/TWONTO#solidsSeparation
+tw:solidsSeparation rdf:type owl:Class ;
+                    rdfs:subClassOf tw:waterOrWastewaterTreatment ;
+                    rdfs:label "Solids Separation" .
+
+
+###  http://www.toronto.ca/TWONTO#spillKit
+tw:spillKit rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:chemicalProtection .
+
+
+###  http://www.toronto.ca/TWONTO#stack
+tw:stack rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                         tw:buildingArchitecturalOrStructural .
+
+
+###  http://www.toronto.ca/TWONTO#stationaryMachineTool
+tw:stationaryMachineTool rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                         tw:commonTool .
+
+
+###  http://www.toronto.ca/TWONTO#steamTrap
+tw:steamTrap rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                             tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#storageAndSurgeSuppression
+tw:storageAndSurgeSuppression rdf:type owl:Class ;
+                              rdfs:subClassOf tw:genericCrossDomainAsset ;
+                              rdfs:label "Storage and Surge Suppression" .
+
+
+###  http://www.toronto.ca/TWONTO#stormServiceConnection
+tw:stormServiceConnection rdf:type owl:Class ;
+                          rdfs:subClassOf tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#stormwaterOr_CSO_Tank
+tw:stormwaterOr_CSO_Tank rdf:type owl:Class ;
+                         rdfs:subClassOf tw:vesselOrTank ;
+                         rdfs:label "stormwater or CSO storage tank"@en .
+
+
+###  http://www.toronto.ca/TWONTO#strainer
+tw:strainer rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                            tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#structuralTankPartOfAssembly
+tw:structuralTankPartOfAssembly rdf:type owl:Class ;
+                                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                                tw:buildingArchitecturalOrStructural .
+
+
+###  http://www.toronto.ca/TWONTO#structuralWall
+tw:structuralWall rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#sulphinatorAssembly
+tw:sulphinatorAssembly rdf:type owl:Class ;
+                       rdfs:subClassOf tw:dosingSystemAssembly .
+
+
+###  http://www.toronto.ca/TWONTO#suppliedAirRespirator
+tw:suppliedAirRespirator rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                         tw:respiratoryHazardProtection .
+
+
+###  http://www.toronto.ca/TWONTO#supplyOfMaterial
+tw:supplyOfMaterial rdf:type owl:Class ;
+                    rdfs:subClassOf tw:genericCrossDomainAsset ;
+                    rdfs:label "Supply of Material" .
+
+
+###  http://www.toronto.ca/TWONTO#surgeSuppressionTank
+tw:surgeSuppressionTank rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                        tw:storageAndSurgeSuppression .
+
+
+###  http://www.toronto.ca/TWONTO#switchgearDistributionBus
+tw:switchgearDistributionBus rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                             tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#switchgearGroundingDevice
+tw:switchgearGroundingDevice rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                             tw:electricalSafety .
+
+
+###  http://www.toronto.ca/TWONTO#tableContent
+tw:tableContent rdf:type owl:Class ;
+                rdfs:subClassOf tw:pieceOfContent ;
+                rdfs:label "table content"@en .
+
+
+###  http://www.toronto.ca/TWONTO#tankPartOfAssembly
+tw:tankPartOfAssembly rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#technicalStandard
+tw:technicalStandard rdf:type owl:Class ;
+                     rdfs:subClassOf tw:contentSubject ;
+                     rdfs:label "technical standard"@en .
+
+
+###  http://www.toronto.ca/TWONTO#tempTW_sewerControlValve
+tw:tempTW_sewerControlValve rdf:type owl:Class ;
+                            rdfs:subClassOf tw:valve ;
+                            rdfs:comment "Notice that isRepresentedIn relation is a functional. Coupled with the some qualitifier equivalent of max cardinality of 1." ;
+                            rdfs:isDefinedBy "is a valve that is that is 1) a part of of the drinking water system and 2) represented on the GIS." ;
+                            rdfs:label "temp TW sewer control valve" .
+
+
+###  http://www.toronto.ca/TWONTO#tempTW_waterSystemValve
+tw:tempTW_waterSystemValve rdf:type owl:Class ;
+                           rdfs:subClassOf tw:valve ;
+                           rdfs:comment "Notice that isRepresentedIn relation is a functional. Coupled with the some qualitifier equivalent of max cardinality of 1." ;
+                           rdfs:isDefinedBy "is a valve that is that is 1) a part of of the drinking water system and 2) represented on the GIS." ;
+                           rdfs:label "temp TW water system valve" .
+
+
+###  http://www.toronto.ca/TWONTO#temperatureInstrumentation
+tw:temperatureInstrumentation rdf:type owl:Class ;
+                              rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#temperatureSwitch
+tw:temperatureSwitch rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#temperatureTransmitter
+tw:temperatureTransmitter rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#thermostatOrZoneControllerUnit
+tw:thermostatOrZoneControllerUnit rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                                  tw:HVAC_systemAsset .
+
+
+###  http://www.toronto.ca/TWONTO#totalDissolvedSolidsInstrumentation
+tw:totalDissolvedSolidsInstrumentation rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#totalSuspendedSolidsInstrumentation
+tw:totalSuspendedSolidsInstrumentation rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#tower
+tw:tower rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                         tw:buildingArchitecturalOrStructural .
+
+
+###  http://www.toronto.ca/TWONTO#transferSwitch
+tw:transferSwitch rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                  tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#transformer
+tw:transformer rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                               tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#trapPrimingDevice
+tw:trapPrimingDevice rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:partOfProcessPiping .
+
+
+###  http://www.toronto.ca/TWONTO#travelingScreen
+tw:travelingScreen rdf:type owl:Class ;
+                   rdfs:subClassOf tw:barScreen .
+
+
+###  http://www.toronto.ca/TWONTO#travelingScreenUnit
+tw:travelingScreenUnit rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:solidsSeparation .
+
+
+###  http://www.toronto.ca/TWONTO#treatmentFilterBank
+tw:treatmentFilterBank rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:filtration .
+
+
+###  http://www.toronto.ca/TWONTO#treatmentFilterUnit
+tw:treatmentFilterUnit rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:filtration .
+
+
+###  http://www.toronto.ca/TWONTO#tunnel
+tw:tunnel rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                          tw:buildingArchitecturalOrStructural .
+
+
+###  http://www.toronto.ca/TWONTO#turbidityAnalyzer
+tw:turbidityAnalyzer rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#turbidityMeter
+tw:turbidityMeter rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#uninterruptedPowerSupply
+tw:uninterruptedPowerSupply rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                            tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#vaccumCleaner
+tw:vaccumCleaner rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:commonTool .
+
+
+###  http://www.toronto.ca/TWONTO#valve
+tw:valve rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                         tw:distributionAndCollectionNetoworkAsset ,
+                         tw:flowOrPressureControl ,
+                         tw:partOfProcessPiping ;
+         rdfs:label "valve"@en .
+
+
+###  http://www.toronto.ca/TWONTO#valveRole
+tw:valveRole rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.toronto.ca/FAMO#assetRole> ;
+             rdfs:label "valve role"@en .
+
+
+###  http://www.toronto.ca/TWONTO#variableAirVolumeUnit
+tw:variableAirVolumeUnit rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                         tw:HVAC_systemAsset .
+
+
+###  http://www.toronto.ca/TWONTO#verticalLifeline
+tw:verticalLifeline rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                    tw:fallProtectionEquipment .
+
+
+###  http://www.toronto.ca/TWONTO#vesselOrTank
+tw:vesselOrTank rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ;
+                rdfs:comment "Jan'24: since vessel and tank are words often used interchangeably, they are combined here into a single term" .
+
+
+###  http://www.toronto.ca/TWONTO#vibrationAnalyzer
+tw:vibrationAnalyzer rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#vibrationInstrumentation
+tw:vibrationInstrumentation rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#voltageInstrumentation
+tw:voltageInstrumentation rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#voltageSurgeSuppression
+tw:voltageSurgeSuppression rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                           tw:electricalSafety .
+
+
+###  http://www.toronto.ca/TWONTO#wastewaterStoragePipe
+tw:wastewaterStoragePipe rdf:type owl:Class ;
+                         rdfs:subClassOf tw:wetWeatherFlowStorage .
+
+
+###  http://www.toronto.ca/TWONTO#waterMain
+tw:waterMain rdf:type owl:Class ;
+             rdfs:subClassOf tw:pipeSegment ;
+             rdfs:label "water main" .
+
+
+###  http://www.toronto.ca/TWONTO#waterOrWastewaterTreatment
+tw:waterOrWastewaterTreatment rdf:type owl:Class ;
+                              rdfs:subClassOf tw:TorontoWaterAsset ;
+                              rdfs:label "Water or Wastewater Treatment" .
+
+
+###  http://www.toronto.ca/TWONTO#waterServiceConnection
+tw:waterServiceConnection rdf:type owl:Class ;
+                          rdfs:subClassOf tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#waterTrailer
+tw:waterTrailer rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                tw:roadVehicleOrTransportationTool .
+
+
+###  http://www.toronto.ca/TWONTO#watermain
+tw:watermain rdf:type owl:Class ;
+             rdfs:subClassOf tw:distributionAndCollectionNetoworkAsset ,
+                             tw:pipeSection .
+
+
+###  http://www.toronto.ca/TWONTO#weightScale
+tw:weightScale rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+###  http://www.toronto.ca/TWONTO#weirStructure
+tw:weirStructure rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                 tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#weldingReceptacle
+tw:weldingReceptacle rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                     tw:electricalAssetOrComponent .
+
+
+###  http://www.toronto.ca/TWONTO#well
+tw:well rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                        tw:distributionAndCollectionNetoworkAsset .
+
+
+###  http://www.toronto.ca/TWONTO#wetPond
+tw:wetPond rdf:type owl:Class ;
+           rdfs:subClassOf tw:pond .
+
+
+###  http://www.toronto.ca/TWONTO#wetWeatherFlowStorage
+tw:wetWeatherFlowStorage rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Class ;
+                                               owl:unionOf ( tw:ashLagoon
+                                                             tw:detentionPond
+                                                             tw:sewerSystemInlineStorage
+                                                             tw:stormwaterOr_CSO_Tank
+                                                           )
+                                             ] ;
+                         rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                         tw:distributionAndCollectionNetoworkAsset ;
+                         rdfs:label "wet weather flow storage"@en .
+
+
+###  http://www.toronto.ca/TWONTO#wirelessAccessPoint
+tw:wirelessAccessPoint rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                                       tw:generalNetworkingAsset .
+
+
+###  http://www.toronto.ca/TWONTO#workOrderLevelWork
+tw:workOrderLevelWork rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.toronto.ca/FAMO#work> .
+
+
+###  http://www.toronto.ca/TWONTO#wrench
+tw:wrench rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> ,
+                          tw:commonTool .
+
+
+###  http://www.toronto.ca/TWONTO#waterTower/ElevatedTank
+<http://www.toronto.ca/TWONTO#waterTower/ElevatedTank> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.toronto.ca/FAMO#discreteAsset> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.toronto.ca/TWONTO#actuator
+tw:actuator rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.toronto.ca/FAMO#systemTrain> rdfs:comment """A system train has the characteristic of being set of connected assets that 
+* is a part of a system
+* exists among multiple similar sets of connected assets, functionally equivalent to itself, in the same system
+is capable of realizing a unit of the system primary functions.""" ;
+                                         rdfs:isDefinedBy "a part of a facility system consisting of a set of connected discrete assets that provides one unit, among multiple redundant units, of the primary functions of the facility system." .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

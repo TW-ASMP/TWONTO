@@ -68,6 +68,7 @@ Declaration(Class(tw:biogas))
 Declaration(Class(tw:biologicalOrChemicalTreatmentAsset))
 Declaration(Class(tw:blowerOrFan))
 Declaration(Class(tw:boat))
+Declaration(Class(tw:bodyMaterial))
 Declaration(Class(tw:boiler))
 Declaration(Class(tw:boilerFitting))
 Declaration(Class(tw:breaker))
@@ -404,7 +405,7 @@ Declaration(Class(tw:quencher))
 Declaration(Class(tw:ratedPowerOutput))
 Declaration(Class(tw:reactorOfUnnamedTypes))
 Declaration(Class(tw:regionalizedSystem))
-Declaration(Class(tw:relationalProperty))
+Declaration(Class(tw:relationalState))
 Declaration(Class(tw:remoteTerminalUnit))
 Declaration(Class(tw:replaceableFilterCartridge))
 Declaration(Class(tw:requirement))
@@ -551,14 +552,11 @@ Declaration(ObjectProperty(tw:fullyGrounds))
 Declaration(ObjectProperty(tw:grounds))
 Declaration(ObjectProperty(tw:hasContentPart))
 Declaration(ObjectProperty(tw:hasEarlierVersion))
-Declaration(ObjectProperty(tw:hasInputVoltageSpec))
+Declaration(ObjectProperty(tw:hasInputVoltageInVolts))
 Declaration(ObjectProperty(tw:hasLaterVersion))
-Declaration(ObjectProperty(tw:hasMaxAllowableWorkingPressure))
-Declaration(ObjectProperty(tw:hasMaxAllowableWorkingTemperature))
 Declaration(ObjectProperty(tw:hasMeasurement))
 Declaration(ObjectProperty(tw:hasNextVersion))
 Declaration(ObjectProperty(tw:hasNumericSpec))
-Declaration(ObjectProperty(tw:hasOutputPowerSpec))
 Declaration(ObjectProperty(tw:hasPart))
 Declaration(ObjectProperty(tw:hasPerformanceMeasurement))
 Declaration(ObjectProperty(tw:hasPerformanceRequirement))
@@ -687,7 +685,6 @@ InverseObjectProperties(tw:describes tw:isDescribedBy)
 
 # Object Property: tw:descriptionProperty (tw:descriptionProperty)
 
-AnnotationAssertion(rdfs:comment tw:descriptionProperty "Feb'24: Proposed as completing properties under hasPropertyState")
 AnnotationAssertion(rdfs:comment tw:descriptionProperty "Feb'24: competing for existence agains hasPropertyState")
 
 # Object Property: tw:fullyGrounds (tw:fullyGrounds)
@@ -711,25 +708,15 @@ AnnotationAssertion(rdfs:label tw:hasEarlierVersion "has earlier version"@en)
 SubObjectPropertyOf(tw:hasEarlierVersion tw:hasPresentProperty)
 TransitiveObjectProperty(tw:hasEarlierVersion)
 
-# Object Property: tw:hasInputVoltageSpec (tw:hasInputVoltageSpec)
+# Object Property: tw:hasInputVoltageInVolts (tw:hasInputVoltageInVolts)
 
-SubObjectPropertyOf(tw:hasInputVoltageSpec tw:hasNumericSpec)
+SubObjectPropertyOf(tw:hasInputVoltageInVolts tw:hasNumericSpec)
 
 # Object Property: tw:hasLaterVersion (has later version)
 
 AnnotationAssertion(rdfs:label tw:hasLaterVersion "has later version"@en)
 SubObjectPropertyOf(tw:hasLaterVersion tw:hasPresentProperty)
 TransitiveObjectProperty(tw:hasLaterVersion)
-
-# Object Property: tw:hasMaxAllowableWorkingPressure (maximum allowable working pressure)
-
-AnnotationAssertion(rdfs:label tw:hasMaxAllowableWorkingPressure "maximum allowable working pressure")
-SubObjectPropertyOf(tw:hasMaxAllowableWorkingPressure tw:hasNumericSpec)
-
-# Object Property: tw:hasMaxAllowableWorkingTemperature (maximum allowable working temperature)
-
-AnnotationAssertion(rdfs:label tw:hasMaxAllowableWorkingTemperature "maximum allowable working temperature")
-SubObjectPropertyOf(tw:hasMaxAllowableWorkingTemperature tw:hasNumericSpec)
 
 # Object Property: tw:hasMeasurement (tw:hasMeasurement)
 
@@ -742,12 +729,9 @@ SubObjectPropertyOf(tw:hasNextVersion tw:hasLaterVersion)
 
 # Object Property: tw:hasNumericSpec (tw:hasNumericSpec)
 
-AnnotationAssertion(rdfs:comment tw:hasNumericSpec "Mar'24 TH: The use of this has been deprecated.  This implementation was considered before I had settled on using reified measurement entities. Such as measureOfPowerLevel")
+AnnotationAssertion(rdfs:comment tw:hasNumericSpec "Mar10'24 TH: The use of this has been deprecated.  This implementation was considered before I had settled on using reified measurement entities. Such as measureOfPowerLevel")
+AnnotationAssertion(rdfs:comment tw:hasNumericSpec "Mar20'24: this cat. still has a place in the ontology to present a \"shortcut\" to an often used value. For instance. hasInputVoltageInVolts instead of just hasInputVoltage.")
 SubObjectPropertyOf(tw:hasNumericSpec tw:hasSpecification)
-
-# Object Property: tw:hasOutputPowerSpec (tw:hasOutputPowerSpec)
-
-SubObjectPropertyOf(tw:hasOutputPowerSpec tw:hasNumericSpec)
 
 # Object Property: tw:hasPart (tw:hasPart)
 
@@ -786,8 +770,8 @@ AnnotationAssertion(rdfs:comment tw:hasProperty "Specialized for states related 
 Usage Examples:
 AssetX hasProperty assetMass
 AssetX hasProperty assetHealth")
-AnnotationAssertion(rdfs:comment tw:hasProperty "TH Mar: changed from \"inAStateOf\" to \"inTheState\".  \"The\" signifies that that the relation is functional.")
 SubObjectPropertyOf(tw:hasProperty owl:topObjectProperty)
+ObjectPropertyRange(tw:hasProperty tw:propertyState)
 
 # Object Property: tw:hasPublisher (has publisher)
 
@@ -802,7 +786,7 @@ SubObjectPropertyOf(tw:hasSpecifedRelation tw:hasSpecification)
 
 # Object Property: tw:hasSpecification (tw:hasSpecification)
 
-SubObjectPropertyOf(tw:hasSpecification tw:hasPresentProperty)
+SubObjectPropertyOf(tw:hasSpecification owl:topObjectProperty)
 
 # Object Property: tw:hasSubjectType (tw:hasSubjectType)
 
@@ -891,6 +875,7 @@ as a part of binary relation:
 - AssetX isInAStateOf possessing theIndividual FunctionAC
 as a part of unary relation: AssetX isInAStateOf  assetOperationalState")
 SubObjectPropertyOf(tw:isInAStateOf tw:hasProperty)
+ObjectPropertyRange(tw:isInAStateOf tw:propertyState)
 
 # Object Property: tw:isOccupiedBy (tw:isOccupiedBy)
 
@@ -911,6 +896,12 @@ SubObjectPropertyOf(tw:isPartOfContent tw:isPartOf)
 
 SubObjectPropertyOf(tw:isPhysicalPartOf tw:isPartOf)
 
+# Object Property: tw:isQuantifiedBy (tw:isQuantifiedBy)
+
+AnnotationAssertion(rdfs:comment tw:isQuantifiedBy "Mar2024 TH: Example usage: :outputVoltage :isQuantifiedBy :measureOfPowerLevel")
+ObjectPropertyDomain(tw:isQuantifiedBy tw:propertyState)
+ObjectPropertyRange(tw:isQuantifiedBy tw:measureOfQuantity)
+
 # Object Property: tw:isSubsystemOf (tw:isSubsystemOf)
 
 AnnotationAssertion(rdfs:isDefinedBy tw:isSubsystemOf "A relation that refers to any system in relation to a larger system to which it is a part of.")
@@ -928,6 +919,10 @@ SubObjectPropertyOf(tw:partiallyGrounds tw:grounds)
 # Object Property: tw:possessesFunction (tw:possessesFunction)
 
 SubObjectPropertyOf(tw:possessesFunction tw:hasPresentProperty)
+
+# Object Property: tw:realizationContingentOn (tw:realizationContingentOn)
+
+AnnotationAssertion(rdfs:comment tw:realizationContingentOn "Mar20'24: This is meant to be used with capability specifications, to keep track of the condition under which the capability / function can be realized. For example. certain pump flow rate being contingent on a certain temperature.")
 
 # Object Property: tw:references (references)
 
@@ -968,6 +963,7 @@ SubObjectPropertyOf(tw:specifiesTriggerEvent tw:hasSpecifedRelation)
 
 AnnotationAssertion(rdfs:comment tw:theIndividual "Usage Examples:
 AssetX tw:isInAStateOf SittingInside tw:theIndividual RoomY")
+ObjectPropertyDomain(tw:theIndividual tw:relationalState)
 
 
 ############################
@@ -1393,7 +1389,7 @@ SubClassOf(tw:bearing tw:generalMechanicalComponent)
 # Class: tw:beingAPartOfThe (being a part of)
 
 AnnotationAssertion(rdfs:label tw:beingAPartOfThe "being a part of"@en)
-SubClassOf(tw:beingAPartOfThe tw:relationalProperty)
+SubClassOf(tw:beingAPartOfThe tw:relationalState)
 
 # Class: tw:belt (tw:belt)
 
@@ -1421,6 +1417,10 @@ SubClassOf(tw:blowerOrFan tw:flowOrPressureControlAsset)
 AnnotationAssertion(tw:AvClassEquivalent tw:boat "Boat")
 SubClassOf(tw:boat tw:discreteAsset)
 SubClassOf(tw:boat tw:roadVehicleOrTransportationTool)
+
+# Class: tw:bodyMaterial (tw:bodyMaterial)
+
+SubClassOf(tw:bodyMaterial tw:quality)
 
 # Class: tw:boiler (tw:boiler)
 
@@ -1627,7 +1627,7 @@ SubClassOf(tw:conductivityAnalyzer tw:discreteAsset)
 # Class: tw:containingA (containing)
 
 AnnotationAssertion(rdfs:label tw:containingA "containing"@en)
-SubClassOf(tw:containingA tw:relationalProperty)
+SubClassOf(tw:containingA tw:relationalState)
 
 # Class: tw:contentCompilation (content compilation)
 
@@ -2381,7 +2381,7 @@ SubClassOf(tw:guideline tw:informationContentEntity)
 # Class: tw:havingAPart (having a part)
 
 AnnotationAssertion(rdfs:label tw:havingAPart "having a part"@en)
-SubClassOf(tw:havingAPart tw:relationalProperty)
+SubClassOf(tw:havingAPart tw:relationalState)
 
 # Class: tw:hazardousGasMonitoringDevice (Hazardous Gas Monitoring Device)
 
@@ -2811,7 +2811,7 @@ SubClassOf(tw:observation tw:description)
 
 AnnotationAssertion(rdfs:comment tw:occupyingThe "TH: range should be a role, domain should be an asset")
 AnnotationAssertion(rdfs:label tw:occupyingThe "occupying"@en)
-SubClassOf(tw:occupyingThe tw:relationalProperty)
+SubClassOf(tw:occupyingThe tw:relationalState)
 
 # Class: tw:oilGreaseSeparator_MTD (tw:oilGreaseSeparator_MTD)
 
@@ -3158,10 +3158,10 @@ AnnotationAssertion(rdfs:label tw:regionalizedSystem "regionalized system")
 SubClassOf(tw:regionalizedSystem tw:flowIntegratedSystem)
 DisjointClasses(tw:regionalizedSystem tw:systemTrain)
 
-# Class: tw:relationalProperty (relational property)
+# Class: tw:relationalState (relational property)
 
-AnnotationAssertion(rdfs:label tw:relationalProperty "relational property"@en)
-SubClassOf(tw:relationalProperty tw:propertyState)
+AnnotationAssertion(rdfs:label tw:relationalState "relational property"@en)
+SubClassOf(tw:relationalState tw:propertyState)
 
 # Class: tw:remoteTerminalUnit (tw:remoteTerminalUnit)
 
@@ -3362,7 +3362,7 @@ SubClassOf(tw:singleParameterInstrumentation tw:sensingAsset)
 # Class: tw:sittingWithinThe (sitting within)
 
 AnnotationAssertion(rdfs:label tw:sittingWithinThe "sitting within"@en)
-SubClassOf(tw:sittingWithinThe tw:relationalProperty)
+SubClassOf(tw:sittingWithinThe tw:relationalState)
 
 # Class: tw:sling (tw:sling)
 
@@ -3694,6 +3694,15 @@ SubClassOf(tw:vaccumCleaner tw:discreteAsset)
 
 # Class: tw:valve (valve)
 
+AnnotationAssertion(rdfs:isDefinedBy tw:valve "A device for controlling the passage of fluid or air through a pipe.  The device is integrated into the pipe through a flanged, threaded, or wielded connection. 
+The following are considered to be subclasses of valves
+* solenoid, 
+* thermostatic mixing valve, 
+* check valve,
+* check valve, backflow preventer
+* pressure relief valve, 
+* pressure-reducing valve, 
+* safety valve in general.")
 AnnotationAssertion(rdfs:label tw:valve "valve"@en)
 SubClassOf(tw:valve tw:discreteAsset)
 SubClassOf(tw:valve tw:distributionAndCollectionNetoworkAsset)
