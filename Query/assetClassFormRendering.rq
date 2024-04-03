@@ -2,32 +2,33 @@ CONSTRUCT {
     ?s ?p ?o .
 }
 WHERE {
-    { # recursively find all shapes from the Asset Shape node.
-        tw:Motor_defaultShape (sh:property|sh:node)+ ?shape1 .
-        ?shape1 ?p1 ?o1 .
-        BIND(?shape1 AS ?s)
-        BIND(?p1 AS ?p)
-        BIND(?o1 AS ?o)
-
-    } UNION {
-        # get the properties of the Asset Shape node (tested)
-        tw:Motor_defaultShape ?p1 ?o1
-        BIND(tw:Motor_defaultShape AS ?s)
-        BIND(?p1 AS ?p)
-        BIND(?o1 AS ?o)
-
-    } UNION {# get the measurement info sub-graph (tested)
+    {
         tw:Motor_defaultShape (sh:property|sh:node)+ ?shape .
-        ?shape ?shapeRelation ?UoM_property .
-        ?UoM_property sh:path tw:hasUnitOfMeasure .
-        ?UoM_property (sh:class|^a)+ ?UoM_node .
-        ?UoM_node ?p1 ?o1 .
+        { # recursively find all shapes from the Asset Shape node.
+            ?shape ?p1 ?o1 .
+            BIND(?shape AS ?s)
+            BIND(?p1 AS ?p)
+            BIND(?o1 AS ?o)
+        } 
+        UNION {# get the measurement info sub-graph (tested)
+            ?shape ?shapeRelation ?UoM_property .
+            ?UoM_property sh:path tw:hasUnitOfMeasure .
+            ?UoM_property (sh:class|^a)+ ?UoM_node .
+            ?UoM_node ?p1 ?o1 .
+            BIND(?UoM_node AS ?s)
+            BIND(?p1 AS ?p)
+            BIND(?o1 AS ?o)
+        } 
 
-        BIND(?UoM_node AS ?s)
-        BIND(?p1 AS ?p)
-        BIND(?o1 AS ?o)
-
-    } UNION {
+    }
+        UNION {
+            # get the properties of the Asset Shape node (tested)
+            tw:Motor_defaultShape ?p1 ?o1
+            BIND(tw:Motor_defaultShape AS ?s)
+            BIND(?p1 AS ?p)
+            BIND(?o1 AS ?o)
+        } 
+    UNION {
         # get the lists that appear in sh:in (tested)
         #tw:Motor_defaultShape (sh:property|sh:node)+ ?shape .
         tw:Motor_defaultShape ?p_list ?listProperty .
