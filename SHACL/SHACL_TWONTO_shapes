@@ -68,6 +68,19 @@ tw:Motor_defaultShape
 			sh:minCount 1 ; 
 		]
 	) ;
+
+	# sh:or ( #4Dev: using the material implication rule to express and if-then statement;
+	# 	sh:not [  #: this is the if block;
+	# 			sh:path tw:hasSealedOrShieldedBearing ; 
+	# 			sh:hasValue false ;
+	# 		]
+	# 	sh:and (  #: this is the then block.
+	# 		[	
+	# 			sh:path tw:usesBearingLubricantType ;
+	# 			sh:minCount 1 ; 
+	# 		]  
+	# 	)
+	# ) ;
 	
 	#4Dev: these nested logical conditions above state:
 	#if hasSealedOrShieldedBearing value is true, then the user does not need to provide a value for usesBearingLubricantType (i.e. it is optional)
@@ -117,7 +130,6 @@ tw:voltageSpec_nodeShape
 			sh:property [
 				sh:maxCount 1 ; sh:minCount 1 ;
 				sh:path tw:hasUnitOfMeasure ;
-				sh:name "unit of measuure" ;
 				sh:class tw:unitOfVoltage ;
 				dash:editor dash:InstancesSelectEditor ;
 				sh:order 20 ;
@@ -141,8 +153,7 @@ tw:powerSpec_nodeShape
 			];
 			sh:property [
 				sh:maxCount 1 ; sh:minCount 1 ;
-				sh:path tw:hasUnitOfMeasure ;	
-				sh:name "unit of measuure";
+				sh:path tw:hasUnitOfMeasure ;
 				sh:class tw:unitOfPower ;
 				dash:editor dash:InstancesSelectEditor ;
 				sh:order 20 ;
