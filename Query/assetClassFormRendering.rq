@@ -2,55 +2,22 @@ CONSTRUCT {
     ?s ?p ?o .
 }
 WHERE {
+    {tw:Motor_defaultShape (sh:property|sh:node|sh:and)+ ?shape .} 
+    UNION { bind (tw:Motor_defaultShape as ?shape)}
+    
     {
-        tw:Motor_defaultShape (sh:property|sh:node)+ ?shape .
-        { # recursively find all shapes from the Asset Shape node.
-            ?shape ?p1 ?o1 .
-            BIND(?shape AS ?s)
-            BIND(?p1 AS ?p)
-            BIND(?o1 AS ?o)
-        } 
-        UNION {# get the measurement info sub-graph (tested)
-            ?shape ?shapeRelation ?UoM_property .
-            ?UoM_property sh:path tw:hasUnitOfMeasure .
-            ?UoM_property (sh:class|^a)+ ?UoM_node .
-            ?UoM_node ?p1 ?o1 .
-            BIND(?UoM_node AS ?s)
-            BIND(?p1 AS ?p)
-            BIND(?o1 AS ?o)
-        } 
-
-    }
-        UNION {
-            # get the properties of the Asset Shape node (tested)
-            tw:Motor_defaultShape ?p1 ?o1
-            BIND(tw:Motor_defaultShape AS ?s)
-            BIND(?p1 AS ?p)
-            BIND(?o1 AS ?o)
-        } 
-    UNION {
-        # get the lists that appear in sh:in (tested)
-        #tw:Motor_defaultShape (sh:property|sh:node)+ ?shape .
-        tw:Motor_defaultShape ?p_list ?listProperty .
-        ?listProperty sh:in ?list .
-        ?list (rdf:first|rdf:rest)+ ?listNodes .
-        ?listNodes ?p1 ?o1 .
-
-        BIND(?listNodes AS ?s)
-        BIND(?p1 AS ?p)
-        BIND(?o1 AS ?o)
-
+        ?shape ?p ?o .
+        BIND(?shape AS ?s)
     } UNION {
-        # get the lists that appear in sh:and (tested)
-        tw:Motor_defaultShape sh:and ?shape .
-        ?shape (rdf:first|rdf:rest)+ ?conditionNode .
-        ?conditionNode ?p7 ?o7 .
-        ?shape ?p6 ?o6 . #with this line we are also listing out the properties on the AND condition branch
-
-        BIND(?conditionNode AS ?s)
-        BIND(?p7 AS ?p)
-        BIND(?o7 AS ?o)
-    }
-
-    FILTER (?o != tw:informationContentEntity)
+        ?shape ?p1 ?UoM_property .
+        ?UoM_property sh:path tw:hasUnitOfMeasure .
+        ?UoM_property sh:class ?UnitsOfSomeM .
+        ?s ?p ?UnitsOfSomeM. 
+        BIND(?UnitsOfSomeM AS ?o)
+    } UNION {
+        ?shape (sh:in|sh:and) ?list .
+        ?list (rdf:first|rdf:rest)+ ?listNodes .
+        ?listNodes ?p ?o .
+        BIND(?listNodes AS ?s)
+    } 
 }
