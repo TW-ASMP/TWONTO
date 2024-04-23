@@ -29,8 +29,9 @@ tw:Motor_defaultShape
 		sh:minCount 1 ; sh:maxCount 1 ; 
 		# a functional property, but only for motors
 		sh:node tw:powerSpec_nodeShape ;
+		sh:severity sh:Violation ;
 		sh:order 10 ;
-	];
+	] ;
 	#4Dev: can have more than 1 of the property:
 	sh:property [
 		sh:path tw:hasProperty ;
@@ -38,67 +39,73 @@ tw:Motor_defaultShape
 		sh:name "nominal input voltage";
 		sh:minCount 1 ; 
 		sh:node tw:voltageSpec_nodeShape ;
+		sh:severity sh:Violation ;
 		sh:order 20 ;
-	];
+	] ;
 	sh:property [
 		sh:path tw:hasSealedOrShieldedBearing ;
 		sh:name "has sealed or shiedled bearing";
 		sh:datatype xsd:boolean ;
 		sh:maxCount 1 ; sh:minCount 1 ;#functional property
+		sh:severity sh:Violation ;
 		sh:order 30 ;
 	] ;
-
 	sh:property [
 		sh:path tw:usesBearingLubricantType ;
 		sh:name "uses bearing lubricant type";
 		sh:datatype xsd:string ;
 		sh:in ( "oil" "grease" ) ;
 		sh:maxCount 1 ;
+		sh:severity sh:Violation ;
 		sh:order 40 ;
 	] ;
 
-	#Dependancy condition
-	sh:and (
-		[	#4Dev: this first part has the conditional
-			sh:path tw:hasSealedOrShieldedBearing ; 
-			sh:hasValue false ;
-		]
-		[	#4Dev: this is the conditional outcome
-			sh:path tw:usesBearingLubricantType ;
-			sh:minCount 1 ; 
-		]
+	sh:or ( #4Dev: using the material implication rule to express and if-then statement;
+		sh:not [  #: this is the if block;
+				sh:path tw:hasSealedOrShieldedBearing ; 
+				sh:hasValue false ;
+			]
+			[	
+				sh:path tw:usesBearingLubricantType ;
+				sh:minCount 1 ;
+				sh:severity sh:Violation ;
+			]  
 	) ;
 
-	# sh:or ( #4Dev: using the material implication rule to express and if-then statement;
-	# 	sh:not [  #: this is the if block;
-	# 			sh:path tw:hasSealedOrShieldedBearing ; 
-	# 			sh:hasValue false ;
-	# 		]
-	# 	sh:and (  #: this is the then block.
-	# 		[	
-	# 			sh:path tw:usesBearingLubricantType ;
-	# 			sh:minCount 1 ; 
-	# 		]  
-	# 	)
+	#Dependancy condition
+	# sh:and (
+	# 	[	#4Dev: this first part has the conditional
+	# 		sh:path tw:hasSealedOrShieldedBearing ; 
+	# 		sh:hasValue false ;
+	# 	]
+	# 	[	#4Dev: this is the conditional outcome
+	# 		sh:path tw:usesBearingLubricantType ;
+	# 		sh:minCount 1 ; 
+	# 	]
 	# ) ;
+
 	
 	#4Dev: these nested logical conditions above state:
 	#if hasSealedOrShieldedBearing value is true, then the user does not need to provide a value for usesBearingLubricantType (i.e. it is optional)
 	#but if hasSealedOrShieldedBearing value is false, then the user must also provide a value for usesBearingLubricantType
 
 	sh:property [
-		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:path tw:has_NEMA_enclosureType ; #4Dev: the property label on the form "NEMA enclosure type" is the RDFS:label of this OWL dataProperty.
-		sh:name "NEMA enclosur type";
+		sh:name "NEMA enclosure type";
 		sh:datatype xsd:string ;
 		sh:in ( "ODP" "TEFC" "TENV" "TEAO" "TEWD" "EXPL" "HAZ" ) ;
+		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
     	sh:severity sh:Warning ; #4Dev: this line tells you to allow alternatives
 		sh:order 50 ;
 	] ;
+	sh:property [
+		sh:maxCount 1 ; sh:minCount 1 ;
+		sh:path tw:has_NEMA_enclosureType ;
+		sh:severity sh:Violation ;
+	] ;
 
     sh:property [
-		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:path tw:has_NEMA_frameType ;
 		sh:name "NEMA frame rating";
 		sh:datatype xsd:string ;
@@ -106,6 +113,11 @@ tw:Motor_defaultShape
 		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
     	sh:severity sh:Warning ;
 		sh:order 60 ;
+	] ;
+	sh:property [
+		sh:path tw:has_NEMA_enclosureType ;
+		sh:maxCount 1 ; sh:minCount 1 ;
+		sh:severity sh:Violation ;
 	] .
 
 ##################################################################################
