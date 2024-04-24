@@ -1,23 +1,36 @@
 CONSTRUCT {
     ?s ?p ?o .
+# <UnderReview    
+    ?UoM_property tw:hasUnitLabel ?unitLabel
+# UnderReview>
 }
-WHERE {
-    {tw:Motor_defaultShape (sh:property|sh:node|sh:and)+ ?shape .} 
-    UNION { bind (tw:Motor_defaultShape as ?shape)}
+WHERE { 
+    # Recursively traverse, from asset shape node (e.g. motor shape), to the end of the shape specification tree.
+    {tw:Motor_defaultShape (sh:property|sh:node|sh:in|sh:and|rdf:first|rdf:rest)+ ?shape .}
+    UNION {BIND (tw:Motor_defaultShape as ?shape)}   # add the asset shape node to the shape specification tree too.
     
-    {
+    {  # Get all the properties, reachable from each node on the shape specification tree.
         ?shape ?p ?o .
         BIND(?shape AS ?s)
-    } UNION {
+    } 
+    UNION
+    {   # Part of query for finding the type of measurement used used in the asset shape.
         ?shape ?p1 ?UoM_property .
-        ?UoM_property sh:path tw:hasUnitOfMeasure .
-        ?UoM_property sh:class ?UnitsOfSomeM .
-        ?s ?p ?UnitsOfSomeM. 
-        BIND(?UnitsOfSomeM AS ?o)
-    } UNION {
-        ?shape (sh:in|sh:and) ?list .
-        ?list (rdf:first|rdf:rest)+ ?listNodes .
-        ?listNodes ?p ?o .
-        BIND(?listNodes AS ?s)
+        ?UoM_property sh:path tw:hasUnitOfMeasure . # locates the node on the UoM branch (as opposed to the numeric branch) of a measured quantity
+        ?UoM_property sh:class ?classOfUnits .
+        {   # Finds the UoM class, for example unitOfPowerMeasure
+            ?unitInstance rdf:type ?classOfUnits .
+            BIND(?unitInstance AS ?s)
+            BIND(rdf:type AS ?p)
+            BIND(?classOfUnits AS ?o)
+        }
+        UNION
+        {   # Find the set of rdfs labels used for the UoM class (e.g. "kW" for unitOfPower) 
+            ?unitInstance rdf:type ?classOfUnits ;
+                          rdfs:label ?unitLabel .
+            BIND(?unitInstance AS ?s)
+            BIND(rdfs:lable AS ?p)
+            BIND(?unitLabel AS ?o)
+        }
     } 
 }
