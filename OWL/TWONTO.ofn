@@ -140,10 +140,12 @@ Declaration(Class(:collectorMecahanism))
 Declaration(Class(:combustableMaterial))
 Declaration(Class(:combustionTurbine))
 Declaration(Class(:compactor))
+Declaration(Class(:compositeState))
 Declaration(Class(:compressedGasCylinder))
 Declaration(Class(:compressor))
 Declaration(Class(:computer))
 Declaration(Class(:condensateTrap))
+Declaration(Class(:condition))
 Declaration(Class(:conductivityAnalyzer))
 Declaration(Class(:constructedOilGreaseSeparator))
 Declaration(Class(:containingA))
@@ -164,7 +166,6 @@ Declaration(Class(:culvert))
 Declaration(Class(:cycloneClassifier))
 Declaration(Class(:damperActuator))
 Declaration(Class(:definedCollectionOfAssets))
-Declaration(Class(:definedState))
 Declaration(Class(:dehumidifier))
 Declaration(Class(:descendingDevice))
 Declaration(Class(:description))
@@ -256,8 +257,8 @@ Declaration(Class(:fuelOilAppliance))
 Declaration(Class(:fuelOilTank))
 Declaration(Class(:fuelPipingSystem))
 Declaration(Class(:fuelTank))
+Declaration(Class(:function))
 Declaration(Class(:functionalAssemblyOfComponents))
-Declaration(Class(:functionalCapability))
 Declaration(Class(:furnace))
 Declaration(Class(:fuse))
 Declaration(Class(:fusiblePlug))
@@ -284,6 +285,7 @@ Declaration(Class(:havingAPart))
 Declaration(Class(:hazard))
 Declaration(Class(:hazardousGasMonitoringDevice))
 Declaration(Class(:healthAndSafetyHazard))
+Declaration(Class(:healthIssue))
 Declaration(Class(:heatExchanger))
 Declaration(Class(:heatPumpUnit))
 Declaration(Class(:heater))
@@ -301,6 +303,7 @@ Declaration(Class(:hotWorkEquipment))
 Declaration(Class(:hydrant))
 Declaration(Class(:hydrantSystem))
 Declaration(Class(:incinerator))
+Declaration(Class(:inferredCondition))
 Declaration(Class(:infiltrationTrench))
 Declaration(Class(:informationContentEntity))
 Declaration(Class(:informationIOutputDevice))
@@ -449,6 +452,7 @@ Declaration(Class(:radialArmDrill))
 Declaration(Class(:ratedPowerOutput))
 Declaration(Class(:reactor))
 Declaration(Class(:reactorComponent))
+Declaration(Class(:realizableProperty))
 Declaration(Class(:relationalState))
 Declaration(Class(:reliefValve))
 Declaration(Class(:remoteTerminalUnit))
@@ -1525,14 +1529,14 @@ SubClassOf(:area :dimension)
 SubClassOf(:ashLagoon :NavTree_003)
 SubClassOf(:ashLagoon :discreteAsset)
 
-# Class: :asset (Asset)
+# Class: :asset (asset)
 
 AnnotationAssertion(rdfs:comment :asset "The function of an asset is to be realized continuously or repeatedly, which differs from consumables materials. The function of consumable materials is realized only once.
 An asset is not always associated with a market value – some assets’ market value may have depreciated to nothing.  However, the assets may continue to provide capabilities useful to Toronto Water. The capability, if lost, is associated with a cost to replace.")
 AnnotationAssertion(rdfs:isDefinedBy :asset "a material entity owned by a person or organization that possesses
 * functions useful for its owner's goal
 * and/or monetary value")
-AnnotationAssertion(rdfs:label :asset "Asset")
+AnnotationAssertion(rdfs:label :asset "asset")
 
 # Class: :assetDescription (asset specification)
 
@@ -1558,7 +1562,7 @@ SubClassOf(:assetRole :role)
 # Class: :assetStatus (asset status)
 
 AnnotationAssertion(rdfs:label :assetStatus "asset status"@en)
-SubClassOf(:assetStatus :definedState)
+SubClassOf(:assetStatus :compositeState)
 
 # Class: :atomicLevelWork (:atomicLevelWork)
 
@@ -1727,11 +1731,10 @@ SubClassOf(:cableSegment :LinearSegmentAsset)
 SubClassOf(:cableSegment :NavTree_005)
 SubClassOf(:cableSegment :discreteAsset)
 
-# Class: :capability (function)
+# Class: :capability (:capability)
 
 AnnotationAssertion(rdfs:comment :capability "TH Mar'24: property related to what something is able to do or tolerate.")
-AnnotationAssertion(rdfs:label :capability "function")
-SubClassOf(:capability :propertyState)
+SubClassOf(:capability :realizableProperty)
 
 # Class: :capacitor (:capacitor)
 
@@ -1888,6 +1891,11 @@ SubClassOf(:compactor :NavTree_003)
 SubClassOf(:compactor :discreteAsset)
 SubClassOf(:compactor :materialProcessingAsset)
 
+# Class: :compositeState (:compositeState)
+
+AnnotationAssertion(rdfs:comment :compositeState "TH Dec/2023: a property that denote a composite of values in multiple properties.")
+SubClassOf(:compositeState :propertyState)
+
 # Class: :compressedGasCylinder (:compressedGasCylinder)
 
 SubClassOf(:compressedGasCylinder :MaterialStorageOrSurgeSuppressionAsset)
@@ -1910,6 +1918,10 @@ SubClassOf(:computer :informationProcessingOrAnalysis)
 SubClassOf(:condensateTrap :NavTree_006)
 SubClassOf(:condensateTrap :discreteAsset)
 SubClassOf(:condensateTrap :processPipeSegment)
+
+# Class: :condition (:condition)
+
+SubClassOf(:condition :realizableProperty)
 
 # Class: :conductivityAnalyzer (:conductivityAnalyzer)
 
@@ -2015,13 +2027,6 @@ AnnotationAssertion(rdfs:comment :definedCollectionOfAssets "e.g., all fire-door
 AnnotationAssertion(rdfs:label :definedCollectionOfAssets "Defined Collection of Assets")
 SubClassOf(:definedCollectionOfAssets :NavTree_015)
 SubClassOf(:definedCollectionOfAssets :collectionOfAssets)
-
-# Class: :definedState (state)
-
-AnnotationAssertion(rdfs:comment :definedState "Jan'24 TH: This class is create because we considered the status of a particular asset to be an instance of this class")
-AnnotationAssertion(rdfs:comment :definedState "TH Dec/2023: a property that denote a composite of values in multiple qualities, functional capabiliy, and other possible property that inhere in the asset itself (not listed in this ontology).")
-AnnotationAssertion(rdfs:label :definedState "state"@en)
-SubClassOf(:definedState :propertyState)
 
 # Class: :dehumidifier (:dehumidifier)
 
@@ -2176,7 +2181,7 @@ SubClassOf(:drinkingWaterStorage :NavTree_002)
 # Class: :driving (mechanical drive)
 
 AnnotationAssertion(rdfs:label :driving "mechanical drive"@en)
-SubClassOf(:driving :functionalCapability)
+SubClassOf(:driving :function)
 
 # Class: :dryPond (:dryPond)
 
@@ -2549,16 +2554,16 @@ AnnotationAssertion(:notionMappingID :fuelTank "7260475a6c0a49ca85670e37ae82dfdc
 AnnotationAssertion(rdfs:label :fuelTank "fuel tank")
 EquivalentClasses(:fuelTank ObjectIntersectionOf(:storageTank ObjectSomeValuesFrom(:isDesignedToHold :fuel)))
 
+# Class: :function (:function)
+
+SubClassOf(:function :capability)
+
 # Class: :functionalAssemblyOfComponents (Functional Assembly of Components)
 
 AnnotationAssertion(rdfs:comment :functionalAssemblyOfComponents "This is to say that the assembly's parts (and all of its parts) are not sufficiently physically unified to allow it to be moved around as a unit.")
 AnnotationAssertion(rdfs:isDefinedBy :functionalAssemblyOfComponents "A system comprising physically integrated discrete parts that is not itself a discrete asset.")
 AnnotationAssertion(rdfs:label :functionalAssemblyOfComponents "Functional Assembly of Components")
 SubClassOf(:functionalAssemblyOfComponents :systemOfDiscreteAssets)
-
-# Class: :functionalCapability (:functionalCapability)
-
-SubClassOf(:functionalCapability :capability)
 
 # Class: :furnace (:furnace)
 
@@ -2689,6 +2694,10 @@ SubClassOf(:hazardousGasMonitoringDevice :NavTree_004)
 AnnotationAssertion(rdfs:label :healthAndSafetyHazard "health and safety hazard")
 SubClassOf(:healthAndSafetyHazard :hazard)
 
+# Class: :healthIssue (:healthIssue)
+
+SubClassOf(:healthIssue :realizableProperty)
+
 # Class: :heatExchanger (:heatExchanger)
 
 SubClassOf(:heatExchanger :discreteAsset)
@@ -2748,7 +2757,7 @@ SubClassOf(:hoist :liftingOrTransport)
 # Class: :holdingCapacity (containment)
 
 AnnotationAssertion(rdfs:label :holdingCapacity "containment")
-SubClassOf(:holdingCapacity :functionalCapability)
+SubClassOf(:holdingCapacity :function)
 
 # Class: :hopper (:hopper)
 
@@ -2781,6 +2790,12 @@ SubClassOf(:hydrantSystem :NavTree_002)
 
 SubClassOf(:incinerator :NavTree_024)
 SubClassOf(:incinerator :materialProcessingAsset)
+
+# Class: :inferredCondition (:inferredCondition)
+
+AnnotationAssertion(rdfs:comment :inferredCondition "A guess, or inference, of the true condition of an asset")
+AnnotationAssertion(rdfs:seeAlso :inferredCondition :condition)
+SubClassOf(:inferredCondition :informationContentEntity)
 
 # Class: :infiltrationTrench (:infiltrationTrench)
 
@@ -3189,7 +3204,7 @@ SubClassOf(:ontarioRegulation :governmentRegulation)
 # Class: :opperationState (operational state)
 
 AnnotationAssertion(rdfs:label :opperationState "operational state"@en)
-SubClassOf(:opperationState :definedState)
+SubClassOf(:opperationState :compositeState)
 
 # Class: :organization (Organization)
 
@@ -3450,7 +3465,7 @@ SubClassOf(:processPipeSegment :pipeSegment)
 
 AnnotationAssertion(rdfs:isDefinedBy :processing "a function that is realized when a physical or chemical property of the thing being processed is changed by the bearer of the function.")
 AnnotationAssertion(rdfs:label :processing "processing")
-SubClassOf(:processing :functionalCapability)
+SubClassOf(:processing :function)
 
 # Class: :progammableLogicController (:progammableLogicController)
 
@@ -3517,7 +3532,6 @@ SubClassOf(:pumpingStation :facility)
 
 # Class: :quality (quality)
 
-AnnotationAssertion(rdfs:comment :quality "TH Mar 24: property that is not related to what the asset can do. For example, its colour.")
 AnnotationAssertion(rdfs:label :quality "quality"@en)
 SubClassOf(:quality :propertyState)
 
@@ -3532,7 +3546,7 @@ SubClassOf(:radialArmDrill :machineShopTool)
 
 # Class: :ratedPowerOutput (:ratedPowerOutput)
 
-SubClassOf(:ratedPowerOutput :functionalCapability)
+SubClassOf(:ratedPowerOutput :function)
 
 # Class: :reactor (:reactor)
 
@@ -3544,9 +3558,12 @@ SubClassOf(:reactor :discreteAsset)
 AnnotationAssertion(rdfs:label :reactorComponent "#. reactor component")
 SubClassOf(:reactorComponent :NavTree_019)
 
-# Class: :relationalState (relational property)
+# Class: :realizableProperty (:realizableProperty)
 
-AnnotationAssertion(rdfs:label :relationalState "relational property"@en)
+SubClassOf(:realizableProperty :propertyState)
+
+# Class: :relationalState (:relationalState)
+
 SubClassOf(:relationalState :propertyState)
 
 # Class: :reliefValve (:reliefValve)
