@@ -6,7 +6,7 @@ CONSTRUCT {
 }
 WHERE { 
     # Recursively traverse, from asset shape node (e.g. motor shape), to the end of the shape specification tree.
-    {tw:Motor_defaultShape (sh:property|sh:node|sh:in|sh:and|rdf:first|rdf:rest)+ ?shape .}
+    {tw:Motor_defaultShape (sh:property|sh:node|sh:in|sh:or|sh:not|rdf:first|rdf:rest)+ ?shape .}
     UNION {BIND (tw:Motor_defaultShape as ?shape)}   # add the asset shape node to the shape specification tree too.
     
     {  # Get all the properties, reachable from each node on the shape specification tree.
