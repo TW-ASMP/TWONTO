@@ -3,6 +3,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh: <http://www.w3.org/ns/shacl#>.
 @prefix dash: <http://datashapes.org/dash#>.
+@prefix twf: <http://www.toronto.ca/TWFORM#>.
+
 
 ##################################################################################
 # Notes 4Dev  
@@ -72,33 +74,18 @@ tw:Motor_defaultShape
 			]  
 	) ;
 
-	#Dependancy condition
-	# sh:and (
-	# 	[	#4Dev: this first part has the conditional
-	# 		sh:path tw:hasSealedOrShieldedBearing ; 
-	# 		sh:hasValue false ;
-	# 	]
-	# 	[	#4Dev: this is the conditional outcome
-	# 		sh:path tw:usesBearingLubricantType ;
-	# 		sh:minCount 1 ; 
-	# 	]
-	# ) ;
-
-	
-	#4Dev: these nested logical conditions above state:
-	#if hasSealedOrShieldedBearing value is true, then the user does not need to provide a value for usesBearingLubricantType (i.e. it is optional)
-	#but if hasSealedOrShieldedBearing value is false, then the user must also provide a value for usesBearingLubricantType
-
 	sh:property [
-		sh:path tw:has_NEMA_enclosureType ; #4Dev: the property label on the form "NEMA enclosure type" is the RDFS:label of this OWL dataProperty.
-		sh:name "NEMA enclosure type";
-		sh:datatype xsd:string ;
-		sh:in ( "ODP" "TEFC" "TENV" "TEAO" "TEWD" "EXPL" "HAZ" ) ;
+		sh:path tw:hasProperty ; 
+		sh:name "NEMA enclosure type" ;
+		sh:class tw:NEMA_motorEnclosure ;
+		twf:editor twf:SubClassSelector ;
+		twf:selectionLabel twf:acronym ;
 		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
     	sh:severity sh:Warning ; #4Dev: this line tells you to allow alternatives
 		sh:order 50 ;
 	] ;
+
 	sh:property [
 		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:path tw:has_NEMA_enclosureType ;
