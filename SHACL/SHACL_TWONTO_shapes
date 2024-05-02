@@ -61,10 +61,12 @@ tw:Motor_defaultShape
 	] ;
 
 	sh:or ( #4Dev: using the material implication rule to express and if-then statement;
-		sh:not [  #: this is the if block;
+			[
+              sh:not [  #: this is the if block;
 				sh:path tw:hasSealedOrShieldedBearing ; 
 				sh:hasValue false ;
-			]
+				]
+            ]
 			[	
 				sh:path tw:usesBearingLubricantType ;
 				sh:minCount 1 ;
