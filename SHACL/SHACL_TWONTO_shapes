@@ -117,7 +117,7 @@ tw:Motor_defaultShape
 		sh:order 60 ;
 	] ;
 	sh:property [
-		sh:path tw:has_NEMA_enclosureType ;
+		sh:path tw:has_NEMA_frameType ;
 		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:severity sh:Violation ;
 	] .
