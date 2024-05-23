@@ -1,8 +1,6 @@
 CONSTRUCT {
     ?s ?p ?o .
-# <UnderReview    
-    ?UoM_property tw:hasUnitLabel ?unitLabel
-# UnderReview>
+    ?classOfUnits tw:hasInstance ?unitInstance .
 }
 WHERE { 
     # Recursively traverse, from asset shape node (e.g. motor shape), to the end of the shape specification tree.
@@ -29,7 +27,7 @@ WHERE {
             ?unitInstance rdf:type ?classOfUnits ;
                           rdfs:label ?unitLabel .
             BIND(?unitInstance AS ?s)
-            BIND(rdfs:lable AS ?p)
+            BIND(rdfs:label AS ?p)
             BIND(?unitLabel AS ?o)
         }
     } 
