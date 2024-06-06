@@ -1,8 +1,8 @@
 CONSTRUCT {
     ?shape ?p ?o .
     ?classOfUnits tw:hasInstance ?unitInstance .
-    ?UoM_property tw:shortcutsTo ?unitInstance . # 06/06
-    ?shape tw:shortcutsToInstance ?shortcutTarget_1 .
+    ?UoM_property tw:shortcutsToInstance ?unitInstance . # 06/06
+    ?shape tw:shortcutsTo ?shortcutTarget_1 .
     tw:Motor_defaultShape tw:shortcutsTo ?shortcutTarget_2 .
 } 
 WHERE {         
