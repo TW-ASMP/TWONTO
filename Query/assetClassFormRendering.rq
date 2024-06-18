@@ -2,6 +2,7 @@ CONSTRUCT {
     ?shape ?p ?o .
     ?classOfUnits tw:hasInstance ?unitInstance .
     ?UoM_property tw:shortcutsToInstance ?unitInstance . # 06/06
+    ?metaClass_property tw:shortcutsToInstance ?metaClassInstance . # 06/14
     ?shape tw:shortcutsTo ?shortcutTarget_1 .
     tw:Motor_defaultShape tw:shortcutsTo ?shortcutTarget_2 .
 } 
@@ -18,7 +19,9 @@ WHERE {
         { # Add the asset shape node to the shape specification tree too.
             BIND (tw:Motor_defaultShape as ?shape)
         } 
-        #----INTERSECTION----
+
+    #----OUTERJOIN----
+        
         {
             ?shape sh:node/sh:property ?shortcutTarget_1 .
         }
@@ -26,6 +29,26 @@ WHERE {
         {   #Get all the properties, reachable from each node on the shape specification tree.
             ?shape ?p ?o .
             BIND(?shape AS ?s)
+        } 
+        UNION # 06/14
+        {   
+            ?shape ?p1 ?metaClass_property .
+            ?metaClass_property sh:path tw:metaClass .
+            ?metaClass_property sh:class ?metaClassParentClass .
+            {
+                ?metaClassInstance rdf:type ?metaClassParentClass .
+                BIND(?metaClassInstance AS ?s)
+                BIND(rdf:type AS ?p)
+                BIND(?metaClassParentClass AS ?o)
+            }
+            UNION
+            {
+                ?metaClassInstance rdf:type ?metaClassParentClass ;
+                        rdfs:label ?unitLabel . 
+                BIND(?metaClassInstance AS ?s)
+                BIND(rdfs:label AS ?p)
+                BIND(?unitLabel AS ?o)
+            }
         } 
         UNION
         {   #Part of query for finding the type of measurement used used in the asset shape.

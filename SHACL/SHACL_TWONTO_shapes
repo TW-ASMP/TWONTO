@@ -17,13 +17,16 @@
 # NODES HAPE DEFINITIONS
 ##################################################################################
 
+# TODOs
+# [] Review where sh:closed should be added
+
 # MOTOR SHAPE
 
 tw:Motor_defaultShape
 	a sh:NodeShape ;
 	sh:targetClass tw:motor ;    
 	sh:property [
-		sh:path tw:hasProperty ;
+		sh:path tw:hasSpecification ;
 		sh:class tw:ratedPowerOutput ;
 		sh:name "rated power output";
 		sh:minCount 1 ; sh:maxCount 1 ; 
@@ -34,7 +37,7 @@ tw:Motor_defaultShape
 	] ;
 	#4Dev: can have more than 1 of the property:
 	sh:property [
-		sh:path tw:hasProperty ;
+		sh:path tw:hasSpecification ;
 		sh:class tw:nominalInputVoltage ;
 		sh:name "nominal input voltage";
 		sh:minCount 1 ; 
@@ -72,25 +75,7 @@ tw:Motor_defaultShape
 				sh:minCount 1 ;
 				sh:severity sh:Violation ;
 			]  
-	) ;
-
-	#Dependancy condition
-	# sh:and (
-	# 	[	#4Dev: this first part has the conditional
-	# 		sh:path tw:hasSealedOrShieldedBearing ; 
-	# 		sh:hasValue false ;
-	# 	]
-	# 	[	#4Dev: this is the conditional outcome
-	# 		sh:path tw:usesBearingLubricantType ;
-	# 		sh:minCount 1 ; 
-	# 	]
-	# ) ;
-
-	
-	#4Dev: these nested logical conditions above state:
-	#if hasSealedOrShieldedBearing value is true, then the user does not need to provide a value for usesBearingLubricantType (i.e. it is optional)
-	#but if hasSealedOrShieldedBearing value is false, then the user must also provide a value for usesBearingLubricantType
-
+	) ;                    
 	sh:property [
 		sh:path tw:has_NEMA_enclosureType ; #4Dev: the property label on the form "NEMA enclosure type" is the RDFS:label of this OWL dataProperty.
 		sh:name "NEMA enclosure type";
@@ -120,19 +105,84 @@ tw:Motor_defaultShape
 		sh:path tw:has_NEMA_frameType ;
 		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:severity sh:Violation ;
-	] .
+	] 
+
+.  ### End of Shape ###=================================================
+
+# BOILER SHAPE
+
+tw:Boiler_defaultShape
+	a sh:NodeShape ;
+	sh:targetClass tw:boiler ;
+	# BOILER MEDIUM PROPERTY
+	## Option 1: Using property manifestation and metaclass 
+	### 5/30: Option chosen
+	
+	sh:property [
+		sh:path tw:hasSpecification ;
+		sh:class tw:maxHoldingCapacity ; #checked
+		sh:name "boiler capacity" ;
+		sh:minCount 1 ; 
+		sh:node tw:holdingCapacitySpec_nodeShape ; #checked
+		sh:severity sh:Violation ;
+		sh:order 10 ;
+	] ;
+	sh:property [ 
+		sh:path tw:hasSpecification ;
+		sh:class tw:processMedium ; #checked
+		sh:name "boiler medium" ;
+		sh:node [
+			sh:property [
+				sh:path tw:theMetaClass ;
+				sh:class tw:commonBoilerMedium ;
+			] ;
+			sh:closed true ;
+		] ;
+		sh:severity sh:Warning ;
+		sh:minCount 1 ; sh:maxCount 1 ;
+		sh:order 20 ;
+	] ;
+	sh:property [
+		sh:path tw:hasSpecification ;
+		sh:class tw:maxMediumTemperature ; #checked
+		sh:name "maximum temperature" ;
+		sh:minCount 1 ; 
+		sh:node tw:temperatureSpec_nodeShape ; #checked
+		sh:severity sh:Violation ;
+		sh:order 30 ;
+	] ;
+	sh:property [
+		sh:path tw:hasSpecification ;
+		sh:class tw:maxOperatingPressure ; #checked
+		sh:name "maximum operating pressure" ;
+		sh:minCount 1 ; 
+		sh:node tw:pressureSpec_nodeShape ; #checked
+		sh:severity sh:Violation ;
+		sh:order 40 ;
+	] ;
+	sh:property [
+		sh:path tw:hasSpecification ;
+		sh:class tw:boilerHeatingSurfaceArea ; #checked
+		sh:name "heating surface area" ;
+		sh:minCount 1 ; 
+		sh:node tw:surfaceAreaSpec_nodeShape ; #checked
+		sh:severity sh:Violation ;
+		sh:order 50 ;
+	] ;
+
+. # End of Shape #=================================================
+
 
 ##################################################################################
 # RE-USABLE PROPERTY SHAPE DEFINITIONS
 ##################################################################################
 
 
-
 tw:voltageSpec_nodeShape
 	a sh:NodeShape;
 	sh:property [
 		sh:path tw:isQuantifiedBy ;
-		sh:class tw:measureOfVoltage ;
+		sh:class tw:measurement ;
 		sh:minCount 1 ;
 		sh:node [
 			sh:property [
@@ -155,7 +205,7 @@ tw:powerSpec_nodeShape
 	a sh:NodeShape;
 	sh:property [
 		sh:path tw:isQuantifiedBy ;
-		sh:class tw:measureOfPowerLevel ;
+		sh:class tw:measurement ;
 		sh:minCount 1 ;
 		sh:node [
 			sh:property [
@@ -171,7 +221,104 @@ tw:powerSpec_nodeShape
 				sh:class tw:unitOfPower ;
 				dash:editor dash:InstancesSelectEditor ;
 				sh:order 20 ;
-				#4Dev, this is similar to sh:in, except define instances of the sh:class value are presented
+			];
+		];
+	] .
+
+
+tw:holdingCapacitySpec_nodeShape
+	a sh:NodeShape;
+	sh:property [
+		sh:path tw:isQuantifiedBy ;
+		sh:class tw:measurement ;
+		sh:minCount 1 ;
+		sh:node [
+			sh:property [
+				sh:maxCount 1 ; 
+				sh:minCount 1 ;
+				sh:path tw:hasNumericValue ;
+				sh:datatype xsd:float ;
+				sh:order 10 ;
+			];
+			sh:property [
+				sh:maxCount 1 ; sh:minCount 1 ;
+				sh:path tw:hasUnitOfMeasure ;
+				sh:class tw:unitOfVolume ;
+				dash:editor dash:InstancesSelectEditor ;
+				sh:order 20 ;
+			];
+		];
+	] .
+
+
+tw:temperatureSpec_nodeShape
+	a sh:NodeShape;
+	sh:property [
+		sh:path tw:isQuantifiedBy ;
+		sh:class tw:measurement ;
+		sh:minCount 1 ;
+		sh:node [
+			sh:property [
+				sh:maxCount 1 ; 
+				sh:minCount 1 ;
+				sh:path tw:hasNumericValue ;
+				sh:datatype xsd:float ;
+				sh:order 10 ;
+			];
+			sh:property [
+				sh:maxCount 1 ; sh:minCount 1 ;
+				sh:path tw:hasUnitOfMeasure ;
+				sh:class tw:unitOfTemperature ;
+				dash:editor dash:InstancesSelectEditor ;
+				sh:order 20 ;
+			];
+		];
+	] .
+
+tw:pressureSpec_nodeShape
+	a sh:NodeShape;
+	sh:property [
+		sh:path tw:isQuantifiedBy ;
+		sh:class tw:measurement ;
+		sh:minCount 1 ;
+		sh:node [
+			sh:property [
+				sh:maxCount 1 ; 
+				sh:minCount 1 ;
+				sh:path tw:hasNumericValue ;
+				sh:datatype xsd:float ;
+				sh:order 10 ;
+			];
+			sh:property [
+				sh:maxCount 1 ; sh:minCount 1 ;
+				sh:path tw:hasUnitOfMeasure ;
+				sh:class tw:unitOfPressure ;
+				dash:editor dash:InstancesSelectEditor ;
+				sh:order 20 ;
+			];
+		];
+	] .
+
+tw:surfaceAreaSpec_nodeShape
+	a sh:NodeShape;
+	sh:property [
+		sh:path tw:isQuantifiedBy ;
+		sh:class tw:measurement ;
+		sh:minCount 1 ;
+		sh:node [
+			sh:property [
+				sh:maxCount 1 ; 
+				sh:minCount 1 ;
+				sh:path tw:hasNumericValue ;
+				sh:datatype xsd:float ;
+				sh:order 10 ;
+			];
+			sh:property [
+				sh:maxCount 1 ; sh:minCount 1 ;
+				sh:path tw:hasUnitOfMeasure ;
+				sh:class tw:unitOfArea ;
+				dash:editor dash:InstancesSelectEditor ;
+				sh:order 20 ;
 			];
 		];
 	] .
