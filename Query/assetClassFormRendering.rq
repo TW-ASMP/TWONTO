@@ -1,23 +1,24 @@
 CONSTRUCT {
     ?shape ?p ?o .
     ?classOfUnits tw:hasInstance ?unitInstance .
+    ?metaClassParentClass tw:hasInstance ?metaClassInstance . 
     ?UoM_property tw:shortcutsToInstance ?unitInstance . # 06/06
     ?metaClass_property tw:shortcutsToInstance ?metaClassInstance . # 06/14
     ?shape tw:shortcutsTo ?shortcutTarget_1 .
-    tw:Motor_defaultShape tw:shortcutsTo ?shortcutTarget_2 .
+    tw:Boiler_defaultShape tw:shortcutsTo ?shortcutTarget_2 .
 } 
 WHERE {         
     { #6/4: I had to move this line out of the union block below, because of repetition issues.
-        tw:Motor_defaultShape sh:property ?shortcutTarget_2 .
+        tw:Boiler_defaultShape sh:property ?shortcutTarget_2 .
     }
     UNION
     {
         { # Recursively traverse, from asset shape node (e.g. motor shape), to the end of the shape specification tree.
-            tw:Motor_defaultShape (sh:property|sh:node|sh:in|sh:or|sh:not|rdf:first|rdf:rest)+ ?shape . #|sh:in|sh:or|sh:not|rdf:first|rdf:rest
+            tw:Boiler_defaultShape (sh:property|sh:node|sh:in|sh:or|sh:not|rdf:first|rdf:rest)+ ?shape . #|sh:in|sh:or|sh:not|rdf:first|rdf:rest
         } 
         UNION 
         { # Add the asset shape node to the shape specification tree too.
-            BIND (tw:Motor_defaultShape as ?shape)
+            BIND (tw:Boiler_defaultShape as ?shape)
         } 
 
     #----OUTERJOIN----
@@ -33,10 +34,11 @@ WHERE {
         UNION # 06/14
         {   
             ?shape ?p1 ?metaClass_property .
-            ?metaClass_property sh:path tw:metaClass .
+            ?metaClass_property sh:path tw:theMetaClass .
             ?metaClass_property sh:class ?metaClassParentClass .
             {
-                ?metaClassInstance rdf:type ?metaClassParentClass .
+                ?metaClassInstance rdf:type ?metaClassParentClass . 
+                #?metaClassInstance rdfs:subClassOf ?metaClassParentClass .  # a metaclass is both an instance and a subclass of thet parent class
                 BIND(?metaClassInstance AS ?s)
                 BIND(rdf:type AS ?p)
                 BIND(?metaClassParentClass AS ?o)
@@ -45,6 +47,7 @@ WHERE {
             {
                 ?metaClassInstance rdf:type ?metaClassParentClass ;
                         rdfs:label ?unitLabel . 
+                #?metaClassInstance rdfs:subClassOf ?metaClassParentClass .  # a metaclass is both an instance and a subclass of thet parent class
                 BIND(?metaClassInstance AS ?s)
                 BIND(rdfs:label AS ?p)
                 BIND(?unitLabel AS ?o)
