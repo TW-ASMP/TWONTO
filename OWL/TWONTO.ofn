@@ -42,7 +42,8 @@ Declaration(Class(:NavTree_023))
 Declaration(Class(:NavTree_024))
 Declaration(Class(:NavTree_025))
 Declaration(Class(:NavTree_028))
-Declaration(Class(:Regionalized_System))
+Declaration(Class(:PLC))
+Declaration(Class(:RTU))
 Declaration(Class(:SCADA_terminal))
 Declaration(Class(:TorontoWaterAsset))
 Declaration(Class(:UPS))
@@ -78,7 +79,6 @@ Declaration(Class(:assetManufacturer))
 Declaration(Class(:assetOwner))
 Declaration(Class(:assetRole))
 Declaration(Class(:assetStatus))
-Declaration(Class(:atomicLevelWork))
 Declaration(Class(:audibleAlarm))
 Declaration(Class(:automaticExternalDefibrillator))
 Declaration(Class(:backflowPreventer))
@@ -88,7 +88,7 @@ Declaration(Class(:batteryBank))
 Declaration(Class(:batteryCharger))
 Declaration(Class(:batteryUnit))
 Declaration(Class(:bearing))
-Declaration(Class(:beingAPartOfThe))
+Declaration(Class(:beingAPartOf))
 Declaration(Class(:belt))
 Declaration(Class(:beltConveyor))
 Declaration(Class(:beltPress))
@@ -101,6 +101,7 @@ Declaration(Class(:boat))
 Declaration(Class(:bodyMaterial))
 Declaration(Class(:boiler))
 Declaration(Class(:boilerFitting))
+Declaration(Class(:boilerHeatingSurfaceArea))
 Declaration(Class(:breaker))
 Declaration(Class(:bridge))
 Declaration(Class(:building))
@@ -108,7 +109,6 @@ Declaration(Class(:buildingAutomationSystemController))
 Declaration(Class(:burner))
 Declaration(Class(:burnerComponent))
 Declaration(Class(:cableSegment))
-Declaration(Class(:capability))
 Declaration(Class(:capacitor))
 Declaration(Class(:cardReader))
 Declaration(Class(:catchBasin))
@@ -139,6 +139,8 @@ Declaration(Class(:collectionOfThings))
 Declaration(Class(:collectorMecahanism))
 Declaration(Class(:combustableMaterial))
 Declaration(Class(:combustionTurbine))
+Declaration(Class(:commonBoilerMedium))
+Declaration(Class(:communicationNetwork))
 Declaration(Class(:compactor))
 Declaration(Class(:compressedGasCylinder))
 Declaration(Class(:compressor))
@@ -146,10 +148,11 @@ Declaration(Class(:computer))
 Declaration(Class(:condensateTrap))
 Declaration(Class(:conductivityAnalyzer))
 Declaration(Class(:constructedOilGreaseSeparator))
-Declaration(Class(:containingA))
+Declaration(Class(:containing))
 Declaration(Class(:contentCompilation))
 Declaration(Class(:contentSubject))
 Declaration(Class(:contentSummary))
+Declaration(Class(:controlNetwork))
 Declaration(Class(:controlledAccessBarrier))
 Declaration(Class(:controlledDoorAccess))
 Declaration(Class(:controller))
@@ -163,7 +166,7 @@ Declaration(Class(:crane))
 Declaration(Class(:culvert))
 Declaration(Class(:cycloneClassifier))
 Declaration(Class(:damperActuator))
-Declaration(Class(:definedCollectionOfAssets))
+Declaration(Class(:defineSetOfAssets))
 Declaration(Class(:definedState))
 Declaration(Class(:dehumidifier))
 Declaration(Class(:descendingDevice))
@@ -177,8 +180,8 @@ Declaration(Class(:digesterTank))
 Declaration(Class(:dimension))
 Declaration(Class(:disconnectSwitch))
 Declaration(Class(:discreteAsset))
-Declaration(Class(:discreteAssetSystem))
 Declaration(Class(:discreteCommercialProduct))
+Declaration(Class(:discretePieceOfWork))
 Declaration(Class(:disinfectionTank))
 Declaration(Class(:display))
 Declaration(Class(:dissolvedChemicalAnalyzer))
@@ -216,7 +219,6 @@ Declaration(Class(:equipmentLocalControlPanelAssets))
 Declaration(Class(:event))
 Declaration(Class(:expansionJoint))
 Declaration(Class(:facility))
-Declaration(Class(:facilityProcessSystem))
 Declaration(Class(:fallArrestDavitArm))
 Declaration(Class(:fallArrestHarness))
 Declaration(Class(:fallArrestRopeGrab))
@@ -243,7 +245,6 @@ Declaration(Class(:flameArrestor))
 Declaration(Class(:flameOrCombustionInstrumentation))
 Declaration(Class(:floatationEquipment))
 Declaration(Class(:flocculationTank))
-Declaration(Class(:flowIntegratedSystem))
 Declaration(Class(:flowOrPressureControlAsset))
 Declaration(Class(:flowSensingElement))
 Declaration(Class(:flowmeter))
@@ -256,8 +257,8 @@ Declaration(Class(:fuelOilAppliance))
 Declaration(Class(:fuelOilTank))
 Declaration(Class(:fuelPipingSystem))
 Declaration(Class(:fuelTank))
-Declaration(Class(:functionalAssemblyOfComponents))
-Declaration(Class(:functionalCapability))
+Declaration(Class(:function))
+Declaration(Class(:functionalSpecification))
 Declaration(Class(:furnace))
 Declaration(Class(:fuse))
 Declaration(Class(:fusiblePlug))
@@ -290,11 +291,10 @@ Declaration(Class(:heater))
 Declaration(Class(:heatingBoiler))
 Declaration(Class(:heatingOrCoolingAsset))
 Declaration(Class(:heavyMetalAnalyzer))
-Declaration(Class(:hierarchicalSystem))
+Declaration(Class(:hierarchalSystem))
 Declaration(Class(:highVoltageStick))
 Declaration(Class(:highVoltageTester))
 Declaration(Class(:hoist))
-Declaration(Class(:holdingCapacity))
 Declaration(Class(:hopper))
 Declaration(Class(:horizontalLifeline))
 Declaration(Class(:hotWorkEquipment))
@@ -303,14 +303,13 @@ Declaration(Class(:hydrantSystem))
 Declaration(Class(:incinerator))
 Declaration(Class(:infiltrationTrench))
 Declaration(Class(:informationContentEntity))
-Declaration(Class(:informationIOutputDevice))
+Declaration(Class(:informationDisplayOrOutput))
 Declaration(Class(:informationProcessingOrAnalysis))
 Declaration(Class(:informationRecordingOrStorage))
 Declaration(Class(:informativeResource))
 Declaration(Class(:infraredCamera))
 Declaration(Class(:instrumentAirOrPneumaticControlPanel))
 Declaration(Class(:instrumentation))
-Declaration(Class(:integratedUnitOfStandalones))
 Declaration(Class(:interceptor))
 Declaration(Class(:intercomUnit))
 Declaration(Class(:interpretation))
@@ -337,7 +336,6 @@ Declaration(Class(:liquid))
 Declaration(Class(:loadBreakSwitch))
 Declaration(Class(:loadingDock))
 Declaration(Class(:machineShopTool))
-Declaration(Class(:mainPathLine))
 Declaration(Class(:manhole))
 Declaration(Class(:manlift))
 Declaration(Class(:manufacturedOilGreaseSeparator))
@@ -347,15 +345,21 @@ Declaration(Class(:material))
 Declaration(Class(:materialAdditionOrFeedingAsset))
 Declaration(Class(:materialDistributionPanelAssets))
 Declaration(Class(:materialProcessingAsset))
+Declaration(Class(:maxHoldingCapacity))
 Declaration(Class(:maxInputVoltage))
+Declaration(Class(:maxMediumTemperature))
+Declaration(Class(:maxOperatingPressure))
 Declaration(Class(:measureOfCurrentFlow))
+Declaration(Class(:measureOfMass))
 Declaration(Class(:measureOfMassFlow))
 Declaration(Class(:measureOfPowerLevel))
 Declaration(Class(:measureOfPressure))
-Declaration(Class(:measureOfQuantity))
+Declaration(Class(:measureOfRotationalSpeed))
 Declaration(Class(:measureOfSpeed))
+Declaration(Class(:measureOfTemperature))
 Declaration(Class(:measureOfVoltageLevel))
-Declaration(Class(:measureOfWeight))
+Declaration(Class(:measureOfVolume))
+Declaration(Class(:measurement))
 Declaration(Class(:mechanicalEnergyOrMotion))
 Declaration(Class(:mechanicalFitting))
 Declaration(Class(:membraneBioreactor))
@@ -374,12 +378,12 @@ Declaration(Class(:networkPanelAssets))
 Declaration(Class(:networkRouter))
 Declaration(Class(:networkStorageAppliance))
 Declaration(Class(:networkSwitch))
+Declaration(Class(:neverStandaloneAsset))
 Declaration(Class(:nitrateOrNitriteAnalyzer))
 Declaration(Class(:nominalInputVoltage))
-Declaration(Class(:non-standaloneComponent))
 Declaration(Class(:noteTaking))
 Declaration(Class(:observation))
-Declaration(Class(:occupyingThe))
+Declaration(Class(:occupying))
 Declaration(Class(:oilGreaseSeperator))
 Declaration(Class(:ontarioRegulation))
 Declaration(Class(:opperationState))
@@ -387,6 +391,7 @@ Declaration(Class(:organization))
 Declaration(Class(:outfallOrDischargePoint))
 Declaration(Class(:ozoneGenerator))
 Declaration(Class(:pH_analyzer))
+Declaration(Class(:packageOfDiscreteWork))
 Declaration(Class(:packaged_AC_Unit))
 Declaration(Class(:paragraphContent))
 Declaration(Class(:partOfBuildingOrStructure))
@@ -426,11 +431,12 @@ Declaration(Class(:pressureSwitch))
 Declaration(Class(:pressureTransmitter))
 Declaration(Class(:pressurizedPipingSystem))
 Declaration(Class(:preventiveWork))
+Declaration(Class(:primaryPathLine))
 Declaration(Class(:process))
 Declaration(Class(:processControlPanelAssets))
+Declaration(Class(:processMedium))
 Declaration(Class(:processPipeSegment))
 Declaration(Class(:processing))
-Declaration(Class(:progammableLogicController))
 Declaration(Class(:projectWork))
 Declaration(Class(:propane))
 Declaration(Class(:propertyState))
@@ -451,7 +457,6 @@ Declaration(Class(:reactor))
 Declaration(Class(:reactorComponent))
 Declaration(Class(:relationalState))
 Declaration(Class(:reliefValve))
-Declaration(Class(:remoteTerminalUnit))
 Declaration(Class(:replaceableFilterCartridge))
 Declaration(Class(:requirement))
 Declaration(Class(:reservoir))
@@ -467,7 +472,6 @@ Declaration(Class(:roof))
 Declaration(Class(:ropeOrCableGrab))
 Declaration(Class(:rotaryDrumThickener))
 Declaration(Class(:rotatingCollector))
-Declaration(Class(:rotationalSpeed))
 Declaration(Class(:rubberInsulatingGloves))
 Declaration(Class(:rubberInsulatingSleeves))
 Declaration(Class(:ruptureDisc))
@@ -494,16 +498,16 @@ Declaration(Class(:sewerSegment))
 Declaration(Class(:sewerServiceConnection))
 Declaration(Class(:simpleLine))
 Declaration(Class(:singleParameterInstrumentation))
-Declaration(Class(:sittingWithinThe))
+Declaration(Class(:situatedWithin))
 Declaration(Class(:sling))
 Declaration(Class(:sludge))
 Declaration(Class(:solenoid))
 Declaration(Class(:solid))
 Declaration(Class(:space))
-Declaration(Class(:specification))
-Declaration(Class(:speedOfTravel))
+Declaration(Class(:specificationDescription))
 Declaration(Class(:spillKit))
 Declaration(Class(:stack))
+Declaration(Class(:steam))
 Declaration(Class(:steamTrap))
 Declaration(Class(:stillOrVideoMobileCamera))
 Declaration(Class(:storageTank))
@@ -517,7 +521,10 @@ Declaration(Class(:suppliedAirRespirator))
 Declaration(Class(:switchgearDistributionBus))
 Declaration(Class(:switchgearGroundingDevice))
 Declaration(Class(:system))
+Declaration(Class(:systemOfAssembledAssetParts))
 Declaration(Class(:systemOfDiscreteAssets))
+Declaration(Class(:systemOfStandardizedModularParts))
+Declaration(Class(:systemOnASkid))
 Declaration(Class(:systemTrain))
 Declaration(Class(:tableContent))
 Declaration(Class(:tableSaw))
@@ -534,6 +541,7 @@ Declaration(Class(:theMinInputVoltageDesc))
 Declaration(Class(:theNominalOutputPower))
 Declaration(Class(:theSubstanceInContainment))
 Declaration(Class(:theVolumetricCapacityDesc))
+Declaration(Class(:thermalOil))
 Declaration(Class(:thermostatOrZoneControllerUnit))
 Declaration(Class(:thickener))
 Declaration(Class(:thickeningCentrifuge))
@@ -547,37 +555,41 @@ Declaration(Class(:trapPrimer))
 Declaration(Class(:travelingScreenUnit))
 Declaration(Class(:travellingBridgeCollector))
 Declaration(Class(:treatmentFilterCartridgeOrCassette))
+Declaration(Class(:treatmentProcess))
 Declaration(Class(:treatmentSeparator))
 Declaration(Class(:treePlantingSoilCell))
 Declaration(Class(:tunnel))
 Declaration(Class(:turbidityAnalyzer))
 Declaration(Class(:undergroundFuelOilTank_TEMP))
 Declaration(Class(:undergroundFuelTank_TEMP))
+Declaration(Class(:unitOfArea))
 Declaration(Class(:unitOfBioreactorMedium))
 Declaration(Class(:unitOfElectricalCurrent))
 Declaration(Class(:unitOfMass))
 Declaration(Class(:unitOfMeasure))
 Declaration(Class(:unitOfPower))
 Declaration(Class(:unitOfPressure))
+Declaration(Class(:unitOfTemperature))
 Declaration(Class(:unitOfTreatmentFilterMedium))
 Declaration(Class(:unitOfVoltage))
+Declaration(Class(:unitOfVolume))
 Declaration(Class(:vaccumCleaner))
 Declaration(Class(:valve))
 Declaration(Class(:valveActuator))
 Declaration(Class(:valveRole))
-Declaration(Class(:vapour))
 Declaration(Class(:variableAirVolumeUnit))
 Declaration(Class(:ventilationSystem))
 Declaration(Class(:verticalLifeline))
-Declaration(Class(:vibratingConveyor))
 Declaration(Class(:vibrationAnalyzer))
 Declaration(Class(:vibrationInstrumentation))
 Declaration(Class(:voltageInstrumentation))
 Declaration(Class(:voltageSurgeSuppressor))
+Declaration(Class(:volumnCapacity))
 Declaration(Class(:vortexClassifier))
 Declaration(Class(:wasteGasBurner))
 Declaration(Class(:wastewaterStoragePipe))
 Declaration(Class(:water))
+Declaration(Class(:waterGlycolMixture))
 Declaration(Class(:waterQualityInstrumentation))
 Declaration(Class(:waterServiceConnection))
 Declaration(Class(:waterTower))
@@ -591,7 +603,6 @@ Declaration(Class(:wetPond))
 Declaration(Class(:wetWeatherFlowStorage))
 Declaration(Class(:wirelessAccessPoint))
 Declaration(Class(:work))
-Declaration(Class(:workOrderLevelWork))
 Declaration(Class(:workOrderSpecification))
 Declaration(Class(:workSpecification))
 Declaration(Class(:wrench))
@@ -608,16 +619,13 @@ Declaration(ObjectProperty(:hasInputVoltageInVolts))
 Declaration(ObjectProperty(:hasLaterVersion))
 Declaration(ObjectProperty(:hasMeasurement))
 Declaration(ObjectProperty(:hasNextVersion))
-Declaration(ObjectProperty(:hasNumericSpec))
 Declaration(ObjectProperty(:hasPart))
 Declaration(ObjectProperty(:hasPerformanceMeasurement))
-Declaration(ObjectProperty(:hasPerformanceRequirement))
 Declaration(ObjectProperty(:hasPhysicalPart))
 Declaration(ObjectProperty(:hasPresentProperty))
 Declaration(ObjectProperty(:hasPreviousVersion))
 Declaration(ObjectProperty(:hasProperty))
 Declaration(ObjectProperty(:hasPublisher))
-Declaration(ObjectProperty(:hasSpecifedRelation))
 Declaration(ObjectProperty(:hasSpecification))
 Declaration(ObjectProperty(:hasSubjectType))
 Declaration(ObjectProperty(:hasSubsystem))
@@ -632,7 +640,6 @@ Declaration(ObjectProperty(:isCreatedBy))
 Declaration(ObjectProperty(:isDescribedAsObjectOf))
 Declaration(ObjectProperty(:isDescribedAsSubjectOf))
 Declaration(ObjectProperty(:isDescribedBy))
-Declaration(ObjectProperty(:isDesignedToHold))
 Declaration(ObjectProperty(:isDevelopedInto))
 Declaration(ObjectProperty(:isInAStateOf))
 Declaration(ObjectProperty(:isOccupiedBy))
@@ -653,6 +660,7 @@ Declaration(ObjectProperty(:sitsWithin))
 Declaration(ObjectProperty(:specifiedAsHavingPart))
 Declaration(ObjectProperty(:specifiesTriggerEvent))
 Declaration(ObjectProperty(:theIndividual))
+Declaration(ObjectProperty(:theMetaClass))
 Declaration(DataProperty(:hasAssetStatus))
 Declaration(DataProperty(:hasBoilerServiceType))
 Declaration(DataProperty(:hasContentText))
@@ -681,16 +689,33 @@ Declaration(DataProperty(:isLatestVersion))
 Declaration(DataProperty(:isSubjectOfNote))
 Declaration(DataProperty(:isUnderGround))
 Declaration(DataProperty(:usesBearingLubricantType))
+Declaration(NamedIndividual(:Celsius))
+Declaration(NamedIndividual(:Fahrenheit))
+Declaration(NamedIndividual(:Kelvin))
+Declaration(NamedIndividual(:bar))
+Declaration(NamedIndividual(:cubicFeet))
+Declaration(NamedIndividual(:cubicMetre))
 Declaration(NamedIndividual(:horsepower))
-Declaration(NamedIndividual(:kilopascal))
+Declaration(NamedIndividual(:kiloPascal))
 Declaration(NamedIndividual(:kilovolt))
 Declaration(NamedIndividual(:kilovolt-ampere))
 Declaration(NamedIndividual(:kilowatt))
+Declaration(NamedIndividual(:litre))
 Declaration(NamedIndividual(:megavolt-ampere))
 Declaration(NamedIndividual(:megawatt))
 Declaration(NamedIndividual(:poundsPerSquareInch))
+Declaration(NamedIndividual(:squareCentimetre))
+Declaration(NamedIndividual(:squareFeet))
+Declaration(NamedIndividual(:squareInch))
+Declaration(NamedIndividual(:squareKilometre))
+Declaration(NamedIndividual(:squareMetre))
+Declaration(NamedIndividual(:squareMile))
+Declaration(NamedIndividual(:steam))
+Declaration(NamedIndividual(:thermalOil))
 Declaration(NamedIndividual(:volt))
 Declaration(NamedIndividual(:volt-ampere))
+Declaration(NamedIndividual(:water))
+Declaration(NamedIndividual(:waterGlycolMixture))
 Declaration(NamedIndividual(:watt))
 Declaration(AnnotationProperty(:AvClassChild))
 Declaration(AnnotationProperty(:AvClassEquivalent))
@@ -698,11 +723,11 @@ Declaration(AnnotationProperty(:AvClassOverlap))
 Declaration(AnnotationProperty(:AvClassParent))
 Declaration(AnnotationProperty(:TW_PCS_code))
 Declaration(AnnotationProperty(:classTree-excludeFromBranch))
-Declaration(AnnotationProperty(:classTree-inclusion))
 Declaration(AnnotationProperty(:classTree-sortOrder))
 Declaration(AnnotationProperty(:dev-PropertyNote))
 Declaration(AnnotationProperty(:dev-developerNote))
 Declaration(AnnotationProperty(:dev-ontologyNote))
+Declaration(AnnotationProperty(:excludeFromAssetClassList))
 Declaration(AnnotationProperty(:notionMappingID))
 Declaration(AnnotationProperty(<http://www.w3.org/2004/02/skos/core#altLabel>))
 ############################
@@ -713,9 +738,9 @@ Declaration(AnnotationProperty(<http://www.w3.org/2004/02/skos/core#altLabel>))
 
 AnnotationPropertyRange(:classTree-excludeFromBranch xsd:anyURI)
 
-# Annotation Property: :classTree-inclusion (:classTree-inclusion)
+# Annotation Property: :excludeFromAssetClassList (:excludeFromAssetClassList)
 
-AnnotationPropertyRange(:classTree-inclusion xsd:boolean)
+AnnotationPropertyRange(:excludeFromAssetClassList xsd:boolean)
 
 # Annotation Property: :notionMappingID (:notionMappingID)
 
@@ -771,10 +796,6 @@ AnnotationAssertion(rdfs:label :hasEarlierVersion "has earlier version"@en)
 SubObjectPropertyOf(:hasEarlierVersion :hasPresentProperty)
 TransitiveObjectProperty(:hasEarlierVersion)
 
-# Object Property: :hasInputVoltageInVolts (:hasInputVoltageInVolts)
-
-SubObjectPropertyOf(:hasInputVoltageInVolts :hasNumericSpec)
-
 # Object Property: :hasLaterVersion (has later version)
 
 AnnotationAssertion(rdfs:label :hasLaterVersion "has later version"@en)
@@ -790,12 +811,6 @@ SubObjectPropertyOf(:hasMeasurement :hasPresentProperty)
 AnnotationAssertion(rdfs:label :hasNextVersion "has next version"@en)
 SubObjectPropertyOf(:hasNextVersion :hasLaterVersion)
 
-# Object Property: :hasNumericSpec (:hasNumericSpec)
-
-AnnotationAssertion(rdfs:comment :hasNumericSpec "Mar10'24 TH: The use of this has been deprecated.  This implementation was considered before I had settled on using reified measurement entities. Such as measureOfPowerLevel")
-AnnotationAssertion(rdfs:comment :hasNumericSpec "Mar20'24: this cat. still has a place in the ontology to present a \"shortcut\" to an often used value. For instance. hasInputVoltageInVolts instead of just hasInputVoltage.")
-SubObjectPropertyOf(:hasNumericSpec :hasSpecification)
-
 # Object Property: :hasPart (:hasPart)
 
 SubObjectPropertyOf(:hasPart :hasPresentProperty)
@@ -805,10 +820,6 @@ TransitiveObjectProperty(:hasPart)
 # Object Property: :hasPerformanceMeasurement (:hasPerformanceMeasurement)
 
 SubObjectPropertyOf(:hasPerformanceMeasurement :hasMeasurement)
-
-# Object Property: :hasPerformanceRequirement (:hasPerformanceRequirement)
-
-SubObjectPropertyOf(:hasPerformanceRequirement :hasSpecification)
 
 # Object Property: :hasPhysicalPart (:hasPhysicalPart)
 
@@ -843,13 +854,10 @@ AnnotationAssertion(rdfs:label :hasPublisher "has publisher"@en)
 SubObjectPropertyOf(:hasPublisher :hasPresentProperty)
 ObjectPropertyDomain(:hasPublisher :pieceOfContent)
 
-# Object Property: :hasSpecifedRelation (:hasSpecifedRelation)
-
-SubObjectPropertyOf(:hasSpecifedRelation :hasSpecification)
-
 # Object Property: :hasSpecification (:hasSpecification)
 
-SubObjectPropertyOf(:hasSpecification owl:topObjectProperty)
+AnnotationAssertion(rdfs:comment :hasSpecification "See comment in tw:theMetaClass")
+SubObjectPropertyOf(:hasSpecification :hasProperty)
 
 # Object Property: :hasSubjectType (:hasSubjectType)
 
@@ -919,11 +927,6 @@ SubObjectPropertyOf(:isDescribedAsSubjectOf :descriptionProperty)
 SubObjectPropertyOf(:isDescribedBy :descriptionProperty)
 ObjectPropertyRange(:isDescribedBy :description)
 
-# Object Property: :isDesignedToHold (:isDesignedToHold)
-
-AnnotationAssertion(rdfs:comment :isDesignedToHold "Initially meant to describe the function of vessel or piping.")
-SubObjectPropertyOf(:isDesignedToHold :hasSpecifedRelation)
-
 # Object Property: :isDevelopedInto (has developed manifestation)
 
 AnnotationAssertion(rdfs:label :isDevelopedInto "has developed manifestation"@en)
@@ -932,12 +935,14 @@ ObjectPropertyDomain(:isDevelopedInto :informationContentEntity)
 
 # Object Property: :isInAStateOf (:isInAStateOf)
 
+AnnotationAssertion(rdfs:comment :isInAStateOf "Could be synonymous to \"inAnObservableStateOf\"")
 AnnotationAssertion(rdfs:comment :isInAStateOf "Specialized for states associated with one or more relations to other entities in the world.
 Usage Examples:
 as a part of binary relation: 
 - AssetX isInAStateOf SittingInside theIndividual RoomY
 - AssetX isInAStateOf possessing theIndividual FunctionAC
-as a part of unary relation: AssetX isInAStateOf  assetOperationalState")
+as a part of unary relation: 
+- AssetX isInAStateOf  assetOperationalState")
 SubObjectPropertyOf(:isInAStateOf :hasProperty)
 ObjectPropertyRange(:isInAStateOf :propertyState)
 
@@ -964,7 +969,7 @@ SubObjectPropertyOf(:isPhysicalPartOf :isPartOf)
 
 AnnotationAssertion(rdfs:comment :isQuantifiedBy "Mar2024 TH: Example usage: :outputVoltage :isQuantifiedBy :measureOfPowerLevel")
 ObjectPropertyDomain(:isQuantifiedBy :propertyState)
-ObjectPropertyRange(:isQuantifiedBy :measureOfQuantity)
+ObjectPropertyRange(:isQuantifiedBy :measurement)
 
 # Object Property: :isSubsystemOf (:isSubsystemOf)
 
@@ -1014,20 +1019,25 @@ ObjectPropertyRange(:relativeToTerminationOf :process)
 
 SubObjectPropertyOf(:sitsWithin :hasPresentProperty)
 
-# Object Property: :specifiedAsHavingPart (:specifiedAsHavingPart)
-
-SubObjectPropertyOf(:specifiedAsHavingPart :hasSpecifedRelation)
-
 # Object Property: :specifiesTriggerEvent (specifies trigger event)
 
 AnnotationAssertion(rdfs:label :specifiesTriggerEvent "specifies trigger event"@en)
-SubObjectPropertyOf(:specifiesTriggerEvent :hasSpecifedRelation)
 
 # Object Property: :theIndividual (:theIndividual)
 
 AnnotationAssertion(rdfs:comment :theIndividual "Usage Examples:
 AssetX tw:isInAStateOf SittingInside tw:theIndividual RoomY")
 ObjectPropertyDomain(:theIndividual :relationalState)
+
+# Object Property: :theMetaClass (:theMetaClass)
+
+AnnotationAssertion(rdfs:comment :theMetaClass "5/22/24:
+Used for representing metaclass in data (through the OWL concept of punning); Usually used in a chain with tw:hasSpecification.
+
+Usage Examples:
+tw:water rdf:type owl:class
+tw:AssetX   tw:hasSpecification   tw:containingMedium
+tw:containingMedium  tw:theMetaClass   tw:water")
 
 
 ############################
@@ -1211,7 +1221,6 @@ SubClassOf(:COCOA :contentCompilation)
 
 AnnotationAssertion(:notionMappingID :CSA-B149-6_membraneGasholder "c9c243803090466e87183f25bbcf7ff4")
 SubClassOf(:CSA-B149-6_membraneGasholder :gasometer)
-SubClassOf(:CSA-B149-6_membraneGasholder ObjectSomeValuesFrom(:isDesignedToHold :biogas))
 
 # Class: :LinearSegmentAsset (linear segment asset)
 
@@ -1369,19 +1378,20 @@ SubClassOf(:NavTree_025 :NavTree_003)
 AnnotationAssertion(rdfs:label :NavTree_028 "#. coarse solids removal asset")
 SubClassOf(:NavTree_028 :NavTree_003)
 
-# Class: :Regionalized_System (regionalized system)
+# Class: :PLC (:PLC)
 
-AnnotationAssertion(rdfs:isDefinedBy :Regionalized_System "Feb4th'24 TH: used to be call localized system")
-AnnotationAssertion(rdfs:isDefinedBy :Regionalized_System "a system in which all assets playing the same functional role are situated in the same region of the system topology.")
-AnnotationAssertion(rdfs:label :Regionalized_System "regionalized system")
-SubClassOf(:Regionalized_System :flowIntegratedSystem)
-DisjointClasses(:Regionalized_System :distributedSystem)
-DisjointClasses(:Regionalized_System :systemTrain)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "progammable logic controller")
+SubClassOf(:PLC :controller)
+
+# Class: :RTU (:RTU)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :RTU "remote terminal unit")
+SubClassOf(:RTU :controller)
 
 # Class: :SCADA_terminal (:SCADA_terminal)
 
 SubClassOf(:SCADA_terminal :computer)
-SubClassOf(:SCADA_terminal :informationIOutputDevice)
+SubClassOf(:SCADA_terminal :informationDisplayOrOutput)
 
 # Class: :TorontoWaterAsset (----Toronto Water Asset Class-----)
 
@@ -1507,7 +1517,7 @@ SubClassOf(:analyzer :informationProcessingOrAnalysis)
 # Class: :annunciatorPanel (:annunciatorPanel)
 
 SubClassOf(:annunciatorPanel :discreteAsset)
-SubClassOf(:annunciatorPanel :informationIOutputDevice)
+SubClassOf(:annunciatorPanel :informationDisplayOrOutput)
 
 # Class: :applicationServerAppliance (:applicationServerAppliance)
 
@@ -1525,14 +1535,13 @@ SubClassOf(:area :dimension)
 SubClassOf(:ashLagoon :NavTree_003)
 SubClassOf(:ashLagoon :discreteAsset)
 
-# Class: :asset (Asset)
+# Class: :asset (:asset)
 
 AnnotationAssertion(rdfs:comment :asset "The function of an asset is to be realized continuously or repeatedly, which differs from consumables materials. The function of consumable materials is realized only once.
 An asset is not always associated with a market value – some assets’ market value may have depreciated to nothing.  However, the assets may continue to provide capabilities useful to Toronto Water. The capability, if lost, is associated with a cost to replace.")
 AnnotationAssertion(rdfs:isDefinedBy :asset "a material entity owned by a person or organization that possesses
 * functions useful for its owner's goal
 * and/or monetary value")
-AnnotationAssertion(rdfs:label :asset "Asset")
 
 # Class: :assetDescription (asset specification)
 
@@ -1560,15 +1569,11 @@ SubClassOf(:assetRole :role)
 AnnotationAssertion(rdfs:label :assetStatus "asset status"@en)
 SubClassOf(:assetStatus :definedState)
 
-# Class: :atomicLevelWork (:atomicLevelWork)
-
-SubClassOf(:atomicLevelWork :work)
-
 # Class: :audibleAlarm (:audibleAlarm)
 
 AnnotationAssertion(:AvClassEquivalent :audibleAlarm "Alarm")
 SubClassOf(:audibleAlarm :discreteAsset)
-SubClassOf(:audibleAlarm :informationIOutputDevice)
+SubClassOf(:audibleAlarm :informationDisplayOrOutput)
 
 # Class: :automaticExternalDefibrillator (:automaticExternalDefibrillator)
 
@@ -1615,10 +1620,9 @@ SubClassOf(:batteryUnit :discreteAsset)
 SubClassOf(:bearing :NavTree_009)
 SubClassOf(:bearing :discreteAsset)
 
-# Class: :beingAPartOfThe (being a part of)
+# Class: :beingAPartOf (:beingAPartOf)
 
-AnnotationAssertion(rdfs:label :beingAPartOfThe "being a part of"@en)
-SubClassOf(:beingAPartOfThe :relationalState)
+SubClassOf(:beingAPartOf :relationalState)
 
 # Class: :belt (:belt)
 
@@ -1684,6 +1688,10 @@ AnnotationAssertion(rdfs:isDefinedBy :boilerFitting "a valve, gauge, regulating 
 SubClassOf(:boilerFitting :NavTree_009)
 SubClassOf(:boilerFitting :discreteAsset)
 
+# Class: :boilerHeatingSurfaceArea (:boilerHeatingSurfaceArea)
+
+SubClassOf(:boilerHeatingSurfaceArea :quality)
+
 # Class: :breaker (:breaker)
 
 AnnotationAssertion(:AvClassEquivalent :breaker "Circuit Breaker")
@@ -1727,12 +1735,6 @@ SubClassOf(:cableSegment :LinearSegmentAsset)
 SubClassOf(:cableSegment :NavTree_005)
 SubClassOf(:cableSegment :discreteAsset)
 
-# Class: :capability (function)
-
-AnnotationAssertion(rdfs:comment :capability "TH Mar'24: property related to what something is able to do or tolerate.")
-AnnotationAssertion(rdfs:label :capability "function")
-SubClassOf(:capability :propertyState)
-
 # Class: :capacitor (:capacitor)
 
 SubClassOf(:capacitor :NavTree_005)
@@ -1749,7 +1751,7 @@ SubClassOf(:catchBasin :discreteAsset)
 
 # Class: :category_G_boilerFitting (:category_G_boilerFitting)
 
-AnnotationAssertion(:classTree-inclusion :category_G_boilerFitting "false"^^xsd:boolean)
+AnnotationAssertion(:excludeFromAssetClassList :category_G_boilerFitting "true"^^xsd:boolean)
 AnnotationAssertion(rdfs:isDefinedBy :category_G_boilerFitting "CSA B51-19, Table 1: Certified capacity-rated pressure relief devices acceptable as primary overpressure protection on boilers, pressure vessels and pressure piping, and fusible plugs")
 SubClassOf(:category_G_boilerFitting :boilerFitting)
 
@@ -1858,16 +1860,14 @@ SubClassOf(:coagulationTank :NavTree_020)
 SubClassOf(:coagulationTank :NavTree_023)
 SubClassOf(:coagulationTank :discreteAsset)
 
-# Class: :collectionOfAssets (Collection of Assets)
+# Class: :collectionOfAssets (:collectionOfAssets)
 
 AnnotationAssertion(rdfs:comment :collectionOfAssets "A set of assets, whose membership in the set is either implicitly defined(e.g., being a part of a discrete asset) or expplicitly defined (e.g. define by the statement \"all the chairs on the 18th floor).")
-AnnotationAssertion(rdfs:label :collectionOfAssets "Collection of Assets")
 SubClassOf(:collectionOfAssets :asset)
 
-# Class: :collectionOfThings (Collection of Things)
+# Class: :collectionOfThings (:collectionOfThings)
 
 AnnotationAssertion(rdfs:isDefinedBy :collectionOfThings "The collection of all entities (e.g., asset, spaces, group of people) unified by a definition, which specifies the necessary conditions for each entity to qualify as a member of the collection.")
-AnnotationAssertion(rdfs:label :collectionOfThings "Collection of Things")
 
 # Class: :collectorMecahanism (:collectorMecahanism)
 
@@ -1881,6 +1881,14 @@ SubClassOf(:combustableMaterial :material)
 
 SubClassOf(:combustionTurbine :discreteAsset)
 SubClassOf(:combustionTurbine :mechanicalEnergyOrMotion)
+
+# Class: :commonBoilerMedium (:commonBoilerMedium)
+
+SubClassOf(:commonBoilerMedium :material)
+
+# Class: :communicationNetwork (:communicationNetwork)
+
+SubClassOf(:communicationNetwork :distributedSystem)
 
 # Class: :compactor (:compactor)
 
@@ -1919,10 +1927,9 @@ SubClassOf(:conductivityAnalyzer :discreteAsset)
 
 SubClassOf(:constructedOilGreaseSeparator :oilGreaseSeperator)
 
-# Class: :containingA (containing)
+# Class: :containing (:containing)
 
-AnnotationAssertion(rdfs:label :containingA "containing"@en)
-SubClassOf(:containingA :relationalState)
+SubClassOf(:containing :relationalState)
 
 # Class: :contentCompilation (content compilation)
 
@@ -1939,6 +1946,10 @@ SubClassOf(:contentSubject :informationContentEntity)
 AnnotationAssertion(rdfs:label :contentSummary "content summary"@en)
 SubClassOf(:contentSummary :informationContentEntity)
 
+# Class: :controlNetwork (:controlNetwork)
+
+SubClassOf(:controlNetwork :distributedSystem)
+
 # Class: :controlledAccessBarrier (:controlledAccessBarrier)
 
 SubClassOf(:controlledAccessBarrier :discreteAsset)
@@ -1952,7 +1963,7 @@ SubClassOf(:controlledDoorAccess :discreteAsset)
 # Class: :controller (:controller)
 
 SubClassOf(:controller :discreteAsset)
-SubClassOf(:controller :informationIOutputDevice)
+SubClassOf(:controller :informationDisplayOrOutput)
 SubClassOf(:controller :informationProcessingOrAnalysis)
 
 # Class: :conveyanceOfMaterialFlow (01. conveyance of material flow)
@@ -1980,7 +1991,7 @@ SubClassOf(:corporatePolicy :contentSubject)
 # Class: :correctiveWork (corrective work)
 
 AnnotationAssertion(rdfs:label :correctiveWork "corrective work")
-SubClassOf(:correctiveWork :workOrderLevelWork)
+SubClassOf(:correctiveWork :packageOfDiscreteWork)
 
 # Class: :counter (:counter)
 
@@ -2009,12 +2020,11 @@ SubClassOf(:cycloneClassifier :classifier)
 SubClassOf(:damperActuator :NavTree_006)
 SubClassOf(:damperActuator :actuator)
 
-# Class: :definedCollectionOfAssets (Defined Collection of Assets)
+# Class: :defineSetOfAssets (:defineSetOfAssets)
 
-AnnotationAssertion(rdfs:comment :definedCollectionOfAssets "e.g., all fire-doors in the admin building")
-AnnotationAssertion(rdfs:label :definedCollectionOfAssets "Defined Collection of Assets")
-SubClassOf(:definedCollectionOfAssets :NavTree_015)
-SubClassOf(:definedCollectionOfAssets :collectionOfAssets)
+AnnotationAssertion(rdfs:comment :defineSetOfAssets "e.g., all fire-doors in the admin building")
+SubClassOf(:defineSetOfAssets :NavTree_015)
+SubClassOf(:defineSetOfAssets :collectionOfAssets)
 
 # Class: :definedState (state)
 
@@ -2095,7 +2105,7 @@ SubClassOf(:dimension :quality)
 SubClassOf(:disconnectSwitch :NavTree_005)
 SubClassOf(:disconnectSwitch :discreteAsset)
 
-# Class: :discreteAsset (Discrete Asset)
+# Class: :discreteAsset (:discreteAsset)
 
 AnnotationAssertion(:dev-ontologyNote :discreteAsset "Old Definition:
 
@@ -2106,24 +2116,18 @@ AnnotationAssertion(rdfs:comment :discreteAsset "An asset may have smaller discr
 A manufactured asset product is a set of assets made under the same specification, which is usually related to a certain product-line identification (i.e. manufacturer, model, catalogue number, etc.)
 The asset that consists of a television and its remote control is an example of a discrete asset that is unified by a manufactured asset product, though it does not exist as a single physical unit.")
 AnnotationAssertion(rdfs:isDefinedBy :discreteAsset "An asset whose parts are unified, through physical integration, into a single object.")
-AnnotationAssertion(rdfs:label :discreteAsset "Discrete Asset"@en)
 SubClassOf(:discreteAsset :asset)
 DisjointClasses(:discreteAsset :systemOfDiscreteAssets)
 
-# Class: :discreteAssetSystem (Discrete Asset System)
-
-AnnotationAssertion(rdfs:comment :discreteAssetSystem "The vast majority of discrete assets have components, therefore they would be considered as discrete asset systems. The discrete asset that are not systems are all in one piece.  For example, a screw driver.")
-AnnotationAssertion(rdfs:isDefinedBy :discreteAssetSystem "A system of asset parts that satisfy the criteria of discrete asset.")
-AnnotationAssertion(rdfs:label :discreteAssetSystem "Discrete Asset System")
-SubClassOf(:discreteAssetSystem :discreteAsset)
-SubClassOf(:discreteAssetSystem :system)
-
-# Class: :discreteCommercialProduct (Discrete Commercial Product)
+# Class: :discreteCommercialProduct (:discreteCommercialProduct)
 
 AnnotationAssertion(rdfs:comment :discreteCommercialProduct "TH: 26Mar14: a Discrete Comercial Products are in most cases, discrete assets, but they may be a Collection of Assets - i.e System of Discrete Assets to be more precise.")
 AnnotationAssertion(rdfs:isDefinedBy :discreteCommercialProduct "An asset whose parts are unified under their common membership in a collection of objects that constitutes a unit of a manufactured product")
-AnnotationAssertion(rdfs:label :discreteCommercialProduct "Discrete Commercial Product")
 SubClassOf(:discreteCommercialProduct :asset)
+
+# Class: :discretePieceOfWork (:discretePieceOfWork)
+
+SubClassOf(:discretePieceOfWork :work)
 
 # Class: :disinfectionTank (:disinfectionTank)
 
@@ -2132,7 +2136,7 @@ SubClassOf(:disinfectionTank :discreteAsset)
 # Class: :display (:display)
 
 SubClassOf(:display :discreteAsset)
-SubClassOf(:display :informationIOutputDevice)
+SubClassOf(:display :informationDisplayOrOutput)
 
 # Class: :dissolvedChemicalAnalyzer (:dissolvedChemicalAnalyzer)
 
@@ -2142,18 +2146,17 @@ SubClassOf(:dissolvedChemicalAnalyzer :discreteAsset)
 
 SubClassOf(:dissolvedOxygenInstrumentation :discreteAsset)
 
-# Class: :distributedSystem (Distributed System)
+# Class: :distributedSystem (:distributedSystem)
 
 AnnotationAssertion(rdfs:isDefinedBy :distributedSystem "a system in a primary function is performed by assets occupying distinct positions that are distributed across different positions in its system topology.")
-AnnotationAssertion(rdfs:label :distributedSystem "Distributed System")
-SubClassOf(:distributedSystem :flowIntegratedSystem)
+SubClassOf(:distributedSystem :systemOfDiscreteAssets)
+DisjointClasses(:distributedSystem :hierarchalSystem)
 
-# Class: :distributionSystem (Distribution System)
+# Class: :distributionSystem (:distributionSystem)
 
 AnnotationAssertion(rdfs:comment :distributionSystem "a distribution system would be mainly comprised of linear elements, which carries the resource over a distance, and conveyance assets, such as pumps, blowers, or conveyors.")
 AnnotationAssertion(rdfs:isDefinedBy :distributionSystem "DRAFT: a system whose function is to distribute a resource from one or more sources to sites where they are needed.")
-AnnotationAssertion(rdfs:label :distributionSystem "Distribution System")
-SubClassOf(:distributionSystem :flowIntegratedSystem)
+SubClassOf(:distributionSystem :distributedSystem)
 
 # Class: :documentContent (document content)
 
@@ -2176,7 +2179,7 @@ SubClassOf(:drinkingWaterStorage :NavTree_002)
 # Class: :driving (mechanical drive)
 
 AnnotationAssertion(rdfs:label :driving "mechanical drive"@en)
-SubClassOf(:driving :functionalCapability)
+SubClassOf(:driving :function)
 
 # Class: :dryPond (:dryPond)
 
@@ -2271,12 +2274,12 @@ electrical power supplied to the building, and the building is within the scope 
 (c) fans and other electrical equipment that are installed to maintain the air quality specified in Article
 3.2.6.2., and
 (d) fans required for venting by Article 3.2.6.6.")
-SubClassOf(:emergencyPowerSystem :system)
+SubClassOf(:emergencyPowerSystem :hierarchalSystem)
 
 # Class: :emergencyWork (emergency work)
 
 AnnotationAssertion(rdfs:label :emergencyWork "emergency work")
-SubClassOf(:emergencyWork :workOrderLevelWork)
+SubClassOf(:emergencyWork :packageOfDiscreteWork)
 
 # Class: :endTruck (:endTruck)
 
@@ -2301,9 +2304,9 @@ SubClassOf(:engine :mechanicalEnergyOrMotion)
 SubClassOf(:entryAccessControlUnit :discreteAsset)
 SubClassOf(:entryAccessControlUnit :securityOrAccessControlAsset)
 
-# Class: :environmentalHazard (environmenta hazard)
+# Class: :environmentalHazard (environmental hazard)
 
-AnnotationAssertion(rdfs:label :environmentalHazard "environmenta hazard")
+AnnotationAssertion(rdfs:label :environmentalHazard "environmental hazard")
 SubClassOf(:environmentalHazard :hazard)
 
 # Class: :equipmentLocalControlPanelAssets (:equipmentLocalControlPanelAssets)
@@ -2311,24 +2314,15 @@ SubClassOf(:environmentalHazard :hazard)
 SubClassOf(:equipmentLocalControlPanelAssets :NavTree_016)
 SubClassOf(:equipmentLocalControlPanelAssets :discreteAsset)
 
-# Class: :event (Event)
-
-AnnotationAssertion(rdfs:label :event "Event")
-
 # Class: :expansionJoint (:expansionJoint)
 
 SubClassOf(:expansionJoint :NavTree_010)
 SubClassOf(:expansionJoint :discreteAsset)
 
-# Class: :facility (Facility)
+# Class: :facility (:facility)
 
 AnnotationAssertion(rdfs:isDefinedBy :facility "The collection of all assets located in a facility, spaces within the facility foundary, and organization of people who manage the facility.")
-AnnotationAssertion(rdfs:label :facility "Facility")
 SubClassOf(:facility :collectionOfThings)
-
-# Class: :facilityProcessSystem (:facilityProcessSystem)
-
-SubClassOf(:facilityProcessSystem :hierarchicalSystem)
 
 # Class: :fallArrestDavitArm (:fallArrestDavitArm)
 
@@ -2358,7 +2352,7 @@ AnnotationAssertion(:notionMappingID :fallArrestSystem "d419b16212f340e797aa00e8
 AnnotationAssertion(rdfs:isDefinedBy :fallArrestSystem "O.Reg 213/91: an assembly of components joined together so that when the assembly is connected to a fixed support, it is capable of arresting a worker’s fall
 26.6 (1) modified: A fall arrest system shall consist of a full body harness with adequate attachment points and a lanyard equipped with a shock absorber or similar device, unless the shock absorber if wearing one could cause a worker to hit the ground or an object or level below the work")
 SubClassOf(:fallArrestSystem :fallProtectionEquipment)
-SubClassOf(:fallArrestSystem :functionalAssemblyOfComponents)
+SubClassOf(:fallArrestSystem :systemOfStandardizedModularParts)
 
 # Class: :fallProtectionDescendingDevice (:fallProtectionDescendingDevice)
 
@@ -2384,7 +2378,7 @@ AnnotationAssertion(rdfs:isDefinedBy :fallRestraintSystem "O.Reg 213/91: means a
 26.4(1) A travel restraint system shall consist of a full body harness with adequate attachment points or a safety belt.
 CSA Z259.1-05: an assembly of components that, when property assembled and used together and when connected to a suitable anchorage, prevents a worker from reaching an unprotected edge or opening where a fall could occur. A TRS is not intended for use as a work positioning system or Fall Arrest System.")
 SubClassOf(:fallRestraintSystem :fallProtectionEquipment)
-SubClassOf(:fallRestraintSystem :functionalAssemblyOfComponents)
+SubClassOf(:fallRestraintSystem :systemOfStandardizedModularParts)
 
 # Class: :fallRestrictingSystem (:fallRestrictingSystem)
 
@@ -2483,13 +2477,6 @@ SubClassOf(:floatationEquipment :NavTree_004)
 
 SubClassOf(:flocculationTank :NavTree_020)
 
-# Class: :flowIntegratedSystem (Flow Integrated System)
-
-AnnotationAssertion(rdfs:isDefinedBy :flowIntegratedSystem "a system that is integrated by lines or wireless links, carrying flows of substance, energy, or signal.")
-AnnotationAssertion(rdfs:label :flowIntegratedSystem "Flow Integrated System")
-SubClassOf(:flowIntegratedSystem :systemOfDiscreteAssets)
-DisjointClasses(:flowIntegratedSystem :functionalAssemblyOfComponents)
-
 # Class: :flowOrPressureControlAsset (02. flow or pressure control)
 
 AnnotationAssertion(rdfs:label :flowOrPressureControlAsset "02. flow or pressure control")
@@ -2536,7 +2523,7 @@ SubClassOf(:fuelOilAppliance :fuelAppliance)
 # Class: :fuelOilTank (:fuelOilTank)
 
 AnnotationAssertion(:notionMappingID :fuelOilTank "346427579fb94e93a6f40ac6620ed2b0")
-EquivalentClasses(:fuelOilTank ObjectIntersectionOf(:fuelTank ObjectSomeValuesFrom(:isDesignedToHold :fuelOil)))
+SubClassOf(:fuelOilTank :discreteAsset)
 
 # Class: :fuelPipingSystem (:fuelPipingSystem)
 
@@ -2547,18 +2534,17 @@ SubClassOf(:fuelPipingSystem :pipingSystem)
 
 AnnotationAssertion(:notionMappingID :fuelTank "7260475a6c0a49ca85670e37ae82dfdc")
 AnnotationAssertion(rdfs:label :fuelTank "fuel tank")
-EquivalentClasses(:fuelTank ObjectIntersectionOf(:storageTank ObjectSomeValuesFrom(:isDesignedToHold :fuel)))
+SubClassOf(:fuelTank :discreteAsset)
 
-# Class: :functionalAssemblyOfComponents (Functional Assembly of Components)
+# Class: :function (:function)
 
-AnnotationAssertion(rdfs:comment :functionalAssemblyOfComponents "This is to say that the assembly's parts (and all of its parts) are not sufficiently physically unified to allow it to be moved around as a unit.")
-AnnotationAssertion(rdfs:isDefinedBy :functionalAssemblyOfComponents "A system comprising physically integrated discrete parts that is not itself a discrete asset.")
-AnnotationAssertion(rdfs:label :functionalAssemblyOfComponents "Functional Assembly of Components")
-SubClassOf(:functionalAssemblyOfComponents :systemOfDiscreteAssets)
+AnnotationAssertion(rdfs:comment :function "Function is the capability of an asset that is built into the asset as an outcome of the intention of the designer.")
+SubClassOf(:function :propertyState)
 
-# Class: :functionalCapability (:functionalCapability)
+# Class: :functionalSpecification (:functionalSpecification)
 
-SubClassOf(:functionalCapability :capability)
+AnnotationAssertion(rdfs:comment :functionalSpecification "6/18: indicates the level of capability of an asset at a specific function.")
+SubClassOf(:functionalSpecification :propertyState)
 
 # Class: :furnace (:furnace)
 
@@ -2610,12 +2596,10 @@ SubClassOf(:gasoline :liquid)
 # Class: :gasolineTank (:gasolineTank)
 
 SubClassOf(:gasolineTank :fuelTank)
-SubClassOf(:gasolineTank ObjectSomeValuesFrom(:isDesignedToHold :gasoline))
 
 # Class: :gasometer (:gasometer)
 
 SubClassOf(:gasometer :storageTank)
-SubClassOf(:gasometer ObjectSomeValuesFrom(:isDesignedToHold ObjectIntersectionOf(:combustableMaterial :gaseousMaterial)))
 
 # Class: :gate (:gate)
 
@@ -2628,7 +2612,7 @@ SubClassOf(:gate :flowOrPressureControlAsset)
 # Class: :gauge (:gauge)
 
 SubClassOf(:gauge :discreteAsset)
-SubClassOf(:gauge :informationIOutputDevice)
+SubClassOf(:gauge :informationDisplayOrOutput)
 
 # Class: :generator (:generator)
 
@@ -2670,14 +2654,9 @@ SubClassOf(:grinderOrComminutor :discreteAsset)
 
 SubClassOf(:guideline :informationContentEntity)
 
-# Class: :havingAPart (having a part)
+# Class: :havingAPart (:havingAPart)
 
-AnnotationAssertion(rdfs:label :havingAPart "having a part"@en)
 SubClassOf(:havingAPart :relationalState)
-
-# Class: :hazard (Hazard)
-
-AnnotationAssertion(rdfs:label :hazard "Hazard")
 
 # Class: :hazardousGasMonitoringDevice (#. hazardous gas monitoring device)
 
@@ -2704,13 +2683,12 @@ SubClassOf(:heatPumpUnit :discreteAsset)
 SubClassOf(:heater :discreteAsset)
 SubClassOf(:heater :heatingOrCoolingAsset)
 
-# Class: :heatingBoiler (heating boiler)
+# Class: :heatingBoiler (:heatingBoiler)
 
-AnnotationAssertion(:classTree-inclusion :heatingBoiler "false"^^xsd:boolean)
+AnnotationAssertion(:excludeFromAssetClassList :heatingBoiler "true"^^xsd:boolean)
 AnnotationAssertion(rdfs:isDefinedBy :heatingBoiler "O.Reg 220: “low pressure boiler” means,
 (a) a boiler that is intended to generate steam or other vapour at a pressure of 15 psi (103 kPa) or less, or
 (b) a boiler that is intended to be operated at a pressure of 160 psi (1,100 kPa) or less where the water temperature at any boiler outlet is 250°F (121°C) or less; (“chaudière à basse pression”)")
-AnnotationAssertion(rdfs:label :heatingBoiler "heating boiler")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :heatingBoiler "low-pressure boiler")
 SubClassOf(:heatingBoiler :boiler)
 
@@ -2723,10 +2701,12 @@ SubClassOf(:heatingOrCoolingAsset :NavTree_017)
 
 SubClassOf(:heavyMetalAnalyzer :dissolvedChemicalAnalyzer)
 
-# Class: :hierarchicalSystem (hierarchical system)
+# Class: :hierarchalSystem (:hierarchalSystem)
 
-AnnotationAssertion(rdfs:label :hierarchicalSystem "hierarchical system")
-SubClassOf(:hierarchicalSystem :Regionalized_System)
+AnnotationAssertion(rdfs:comment :hierarchalSystem "Feb4th'24 TH: used to be call localized system")
+AnnotationAssertion(rdfs:isDefinedBy :hierarchalSystem "a system in which all assets playing the same class of functional role are situated in the same region of the system topology.")
+SubClassOf(:hierarchalSystem :systemOfDiscreteAssets)
+DisjointClasses(:hierarchalSystem :systemTrain)
 
 # Class: :highVoltageStick (:highVoltageStick)
 
@@ -2744,11 +2724,6 @@ AnnotationAssertion(:notionMappingID :hoist "704b49f311e4431a8f4cf701e42fe024")
 AnnotationAssertion(rdfs:isDefinedBy :hoist "CSA B167-16(R2021): a machinery unit that is used for vertical lifting or lowering a freely suspended (unguided) load.")
 SubClassOf(:hoist :discreteAsset)
 SubClassOf(:hoist :liftingOrTransport)
-
-# Class: :holdingCapacity (containment)
-
-AnnotationAssertion(rdfs:label :holdingCapacity "containment")
-SubClassOf(:holdingCapacity :functionalCapability)
 
 # Class: :hopper (:hopper)
 
@@ -2788,15 +2763,14 @@ SubClassOf(:infiltrationTrench :NavTree_002)
 SubClassOf(:infiltrationTrench :NavTree_013)
 SubClassOf(:infiltrationTrench :discreteAsset)
 
-# Class: :informationContentEntity (Information Content Entity)
+# Class: :informationContentEntity (:informationContentEntity)
 
 AnnotationAssertion(rdfs:isDefinedBy :informationContentEntity "an non-phyislcal entity that is about something")
-AnnotationAssertion(rdfs:label :informationContentEntity "Information Content Entity"@en)
 
-# Class: :informationIOutputDevice (23. information output device)
+# Class: :informationDisplayOrOutput (23. information display or output)
 
-AnnotationAssertion(rdfs:label :informationIOutputDevice "23. information output device")
-SubClassOf(:informationIOutputDevice :NavTree_017)
+AnnotationAssertion(rdfs:label :informationDisplayOrOutput "23. information display or output")
+SubClassOf(:informationDisplayOrOutput :NavTree_017)
 
 # Class: :informationProcessingOrAnalysis (22. information processing or analysis)
 
@@ -2826,14 +2800,6 @@ SubClassOf(:instrumentAirOrPneumaticControlPanel :processControlPanelAssets)
 
 SubClassOf(:instrumentation :discreteAsset)
 
-# Class: :integratedUnitOfStandalones (Integrated Collection of Standalone Assets)
-
-AnnotationAssertion(rdfs:comment :integratedUnitOfStandalones "Mar25,24: It is important to define the concept of a IUSA because they may extend across lines and trains and represent a special case in the asset hierarchy specification. Also, unlike other discrete assets, we need to fully catalog their parts, because they are easily replaceable. Finally, many common equipment, such as pump and motor sets, are IUSAs equipment.")
-AnnotationAssertion(rdfs:isDefinedBy :integratedUnitOfStandalones "A discrete asset that consists a collection of discrete asset parts, many of them often appear in other contexts as stand-alone discrete assets (not part of another discrete asset).  The set of parts are physical integrated onto a structure skid, frame, panel, etc, such that the part can be moved or sold together.")
-AnnotationAssertion(rdfs:label :integratedUnitOfStandalones "Integrated Collection of Standalone Assets")
-SubClassOf(:integratedUnitOfStandalones :NavTree_015)
-SubClassOf(:integratedUnitOfStandalones :discreteAssetSystem)
-
 # Class: :interceptor (:interceptor)
 
 SubClassOf(:interceptor :NavTree_002)
@@ -2841,17 +2807,17 @@ SubClassOf(:interceptor :NavTree_002)
 # Class: :intercomUnit (:intercomUnit)
 
 SubClassOf(:intercomUnit :discreteAsset)
-SubClassOf(:intercomUnit :informationIOutputDevice)
+SubClassOf(:intercomUnit :informationDisplayOrOutput)
 
 # Class: :interpretation (:interpretation)
 
 AnnotationAssertion(rdfs:comment :interpretation "Jan2024 TH: consider moving to FAMO")
-SubClassOf(:interpretation :atomicLevelWork)
+SubClassOf(:interpretation :discretePieceOfWork)
 
 # Class: :investigativeWork (investigative work)
 
 AnnotationAssertion(rdfs:label :investigativeWork "investigative work")
-SubClassOf(:investigativeWork :workOrderLevelWork)
+SubClassOf(:investigativeWork :packageOfDiscreteWork)
 
 # Class: :jointer (:jointer)
 
@@ -2931,12 +2897,11 @@ SubClassOf(:lightingPanel :discreteAsset)
 SubClassOf(:lightingUnit :NavTree_007)
 SubClassOf(:lightingUnit :discreteAsset)
 
-# Class: :lineStructure (Line Structure)
+# Class: :lineStructure (:lineStructure)
 
 AnnotationAssertion(rdfs:isDefinedBy :lineStructure "A asset that contains at least one piece of line segment asset carries a stream of material substance, energy, or information from one point to another.")
-AnnotationAssertion(rdfs:label :lineStructure "Line Structure")
-SubClassOf(:lineStructure :flowIntegratedSystem)
 SubClassOf(:lineStructure :pathOfConveyance)
+SubClassOf(:lineStructure :systemOfDiscreteAssets)
 
 # Class: :liquid (:liquid)
 
@@ -2955,11 +2920,6 @@ SubClassOf(:loadingDock :partOfBuildingOrStructure)
 
 SubClassOf(:machineShopTool :NavTree_014)
 SubClassOf(:machineShopTool :discreteAsset)
-
-# Class: :mainPathLine (:mainPathLine)
-
-AnnotationAssertion(rdfs:isDefinedBy :mainPathLine "A line that has one or more junction along its length, linking it to minor branches, but only has one main path that carries a bulk flow from one point to another.")
-SubClassOf(:mainPathLine :lineStructure)
 
 # Class: :manhole (:manhole)
 
@@ -2985,10 +2945,8 @@ SubClassOf(:manufacturedTreatmentDevice :discreteAsset)
 AnnotationAssertion(rdfs:label :mass "mass"@en)
 SubClassOf(:mass :quality)
 
-# Class: :material (Material)
+# Class: :material (:material)
 
-AnnotationAssertion(rdfs:label :material "Material")
-AnnotationAssertion(rdfs:label :material "Material"@en)
 
 # Class: :materialAdditionOrFeedingAsset (06. material addition or feeding)
 
@@ -3006,50 +2964,68 @@ SubClassOf(:materialDistributionPanelAssets :discreteAsset)
 AnnotationAssertion(rdfs:label :materialProcessingAsset "05. material processing")
 SubClassOf(:materialProcessingAsset :NavTree_017)
 
+# Class: :maxHoldingCapacity (containment)
+
+AnnotationAssertion(rdfs:label :maxHoldingCapacity "containment")
+SubClassOf(:maxHoldingCapacity :volumnCapacity)
+
 # Class: :maxInputVoltage (:maxInputVoltage)
 
-SubClassOf(:maxInputVoltage :capability)
+SubClassOf(:maxInputVoltage :functionalSpecification)
 
-# Class: :measureOfCurrentFlow (current output)
+# Class: :maxMediumTemperature (:maxMediumTemperature)
 
-AnnotationAssertion(rdfs:label :measureOfCurrentFlow "current output"@en)
-SubClassOf(:measureOfCurrentFlow :measureOfQuantity)
+SubClassOf(:maxMediumTemperature :functionalSpecification)
 
-# Class: :measureOfMassFlow (material output)
+# Class: :maxOperatingPressure (:maxOperatingPressure)
 
-AnnotationAssertion(rdfs:label :measureOfMassFlow "material output"@en)
-SubClassOf(:measureOfMassFlow :measureOfQuantity)
+SubClassOf(:maxOperatingPressure :functionalSpecification)
+
+# Class: :measureOfCurrentFlow (:measureOfCurrentFlow)
+
+SubClassOf(:measureOfCurrentFlow :measurement)
+
+# Class: :measureOfMass (:measureOfMass)
+
+SubClassOf(:measureOfMass :measurement)
+
+# Class: :measureOfMassFlow (:measureOfMassFlow)
+
+SubClassOf(:measureOfMassFlow :measurement)
 
 # Class: :measureOfPowerLevel (:measureOfPowerLevel)
 
-SubClassOf(:measureOfPowerLevel :measureOfQuantity)
+SubClassOf(:measureOfPowerLevel :measurement)
 
-# Class: :measureOfPressure (pressure measurement)
+# Class: :measureOfPressure (:measureOfPressure)
 
-AnnotationAssertion(rdfs:label :measureOfPressure "pressure measurement")
-SubClassOf(:measureOfPressure :measureOfQuantity)
+SubClassOf(:measureOfPressure :measurement)
 
-# Class: :measureOfQuantity (measurement)
+# Class: :measureOfRotationalSpeed (:measureOfRotationalSpeed)
 
-AnnotationAssertion(rdfs:comment :measureOfQuantity "Feb'24: considered for DEPRECATION, after we have the more specialized properties of hasMeasurementValue")
-AnnotationAssertion(rdfs:comment :measureOfQuantity "TH Dec/2023: a level of function that is realized at a certain type t")
-AnnotationAssertion(rdfs:label :measureOfQuantity "measurement"@en)
-SubClassOf(:measureOfQuantity :informationContentEntity)
+SubClassOf(:measureOfRotationalSpeed :measurement)
 
-# Class: :measureOfSpeed (speed)
+# Class: :measureOfSpeed (:measureOfSpeed)
 
-AnnotationAssertion(rdfs:label :measureOfSpeed "speed"@en)
-SubClassOf(:measureOfSpeed :measureOfQuantity)
+SubClassOf(:measureOfSpeed :measurement)
 
-# Class: :measureOfVoltageLevel (output voltage)
+# Class: :measureOfTemperature (:measureOfTemperature)
 
-AnnotationAssertion(rdfs:label :measureOfVoltageLevel "output voltage"@en)
-SubClassOf(:measureOfVoltageLevel :measureOfQuantity)
+SubClassOf(:measureOfTemperature :measurement)
 
-# Class: :measureOfWeight (lifting capacity)
+# Class: :measureOfVoltageLevel (:measureOfVoltageLevel)
 
-AnnotationAssertion(rdfs:label :measureOfWeight "lifting capacity"@en)
-SubClassOf(:measureOfWeight :measureOfQuantity)
+SubClassOf(:measureOfVoltageLevel :measurement)
+
+# Class: :measureOfVolume (:measureOfVolume)
+
+SubClassOf(:measureOfVolume :measurement)
+
+# Class: :measurement (:measurement)
+
+AnnotationAssertion(rdfs:comment :measurement "Feb'24: considered for DEPRECATION, after we have the more specialized properties of hasMeasurementValue")
+AnnotationAssertion(rdfs:comment :measurement "TH Dec/2023: a level of function that is realized at a certain type t")
+SubClassOf(:measurement :informationContentEntity)
 
 # Class: :mechanicalEnergyOrMotion (08. mechanical energy or motion)
 
@@ -3071,7 +3047,7 @@ SubClassOf(:millingMachine :machineShopTool)
 
 # Class: :minInputVoltage (:minInputVoltage)
 
-SubClassOf(:minInputVoltage :capability)
+SubClassOf(:minInputVoltage :functionalSpecification)
 
 # Class: :mixerOrAgitator (:mixerOrAgitator)
 
@@ -3145,21 +3121,20 @@ SubClassOf(:networkStorageAppliance :serverAppliance)
 SubClassOf(:networkSwitch :NavTree_012)
 SubClassOf(:networkSwitch :discreteAsset)
 
+# Class: :neverStandaloneAsset (:neverStandaloneAsset)
+
+AnnotationAssertion(rdfs:comment :neverStandaloneAsset "Mar26,24: there is currently no use-case for this concept")
+AnnotationAssertion(rdfs:isDefinedBy :neverStandaloneAsset "A discrete asset, when in use, is always a phyiscal part of a larger discrete asset.")
+SubClassOf(:neverStandaloneAsset :asset)
+SubClassOf(:neverStandaloneAsset :discreteAsset)
+
 # Class: :nitrateOrNitriteAnalyzer (:nitrateOrNitriteAnalyzer)
 
 SubClassOf(:nitrateOrNitriteAnalyzer :dissolvedChemicalAnalyzer)
 
 # Class: :nominalInputVoltage (:nominalInputVoltage)
 
-SubClassOf(:nominalInputVoltage :capability)
-
-# Class: :non-standaloneComponent (Non-Standalone Component)
-
-AnnotationAssertion(rdfs:comment :non-standaloneComponent "Mar26,24: there is currently no use-case for this concept")
-AnnotationAssertion(rdfs:isDefinedBy :non-standaloneComponent "A discrete asset, when in use, is always a phyiscal part of a larger discrete asset.")
-AnnotationAssertion(rdfs:label :non-standaloneComponent "Non-Standalone Component")
-SubClassOf(:non-standaloneComponent :asset)
-SubClassOf(:non-standaloneComponent :discreteAsset)
+SubClassOf(:nominalInputVoltage :functionalSpecification)
 
 # Class: :noteTaking (:noteTaking)
 
@@ -3170,11 +3145,10 @@ SubClassOf(:noteTaking :process)
 AnnotationAssertion(rdfs:comment :observation "Feb'24 TH: intent on turning this term into a defined term")
 SubClassOf(:observation :description)
 
-# Class: :occupyingThe (occupying)
+# Class: :occupying (:occupying)
 
-AnnotationAssertion(rdfs:comment :occupyingThe "TH: range should be a role, domain should be an asset")
-AnnotationAssertion(rdfs:label :occupyingThe "occupying"@en)
-SubClassOf(:occupyingThe :relationalState)
+AnnotationAssertion(rdfs:comment :occupying "TH: range should be a role, domain should be an asset")
+SubClassOf(:occupying :relationalState)
 
 # Class: :oilGreaseSeperator (oil grit separator)
 
@@ -3191,9 +3165,8 @@ SubClassOf(:ontarioRegulation :governmentRegulation)
 AnnotationAssertion(rdfs:label :opperationState "operational state"@en)
 SubClassOf(:opperationState :definedState)
 
-# Class: :organization (Organization)
+# Class: :organization (:organization)
 
-AnnotationAssertion(rdfs:label :organization "Organization")
 
 # Class: :outfallOrDischargePoint (:outfallOrDischargePoint)
 
@@ -3209,6 +3182,10 @@ SubClassOf(:ozoneGenerator :discreteAsset)
 
 SubClassOf(:pH_analyzer :discreteAsset)
 SubClassOf(:pH_analyzer :waterQualityInstrumentation)
+
+# Class: :packageOfDiscreteWork (:packageOfDiscreteWork)
+
+SubClassOf(:packageOfDiscreteWork :work)
 
 # Class: :packaged_AC_Unit (:packaged_AC_Unit)
 
@@ -3302,7 +3279,7 @@ SubClassOf(:pipette :laboratoryTool)
 
 # Class: :pipingSystem (:pipingSystem)
 
-SubClassOf(:pipingSystem :flowIntegratedSystem)
+SubClassOf(:pipingSystem :distributionSystem)
 
 # Class: :planer (:planer)
 
@@ -3352,13 +3329,12 @@ SubClassOf(:portionOfGranularFilterMedium :unitOfTreatmentFilterMedium)
 SubClassOf(:positionInstrumentation :discreteAsset)
 SubClassOf(:positionInstrumentation :singleParameterInstrumentation)
 
-# Class: :powerBoiler (power boiler)
+# Class: :powerBoiler (:powerBoiler)
 
-AnnotationAssertion(:classTree-inclusion :powerBoiler "false"^^xsd:boolean)
+AnnotationAssertion(:excludeFromAssetClassList :powerBoiler "true"^^xsd:boolean)
 AnnotationAssertion(rdfs:isDefinedBy :powerBoiler "from TSSA BPV-20-01 R1:
 i. steam service operating pressure above 103 kPa (15 psig)
 ii. hot water service operating pressure above 1100 kPa (160 psig) or above the temperature 121 C (250 F)")
-AnnotationAssertion(rdfs:label :powerBoiler "power boiler")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :powerBoiler "high-pressure boiler")
 SubClassOf(:powerBoiler :boiler)
 
@@ -3430,16 +3406,21 @@ SubClassOf(:pressurizedPipingSystem :pipingSystem)
 # Class: :preventiveWork (preventive work)
 
 AnnotationAssertion(rdfs:label :preventiveWork "preventive work")
-SubClassOf(:preventiveWork :workOrderLevelWork)
+SubClassOf(:preventiveWork :packageOfDiscreteWork)
 
-# Class: :process (Process)
+# Class: :primaryPathLine (:primaryPathLine)
 
-AnnotationAssertion(rdfs:label :process "Process")
+AnnotationAssertion(rdfs:isDefinedBy :primaryPathLine "A line that has one or more junction along its length, linking it to minor branches, but only has one main path that carries a bulk flow from one point to another.")
+SubClassOf(:primaryPathLine :lineStructure)
 
 # Class: :processControlPanelAssets (:processControlPanelAssets)
 
 SubClassOf(:processControlPanelAssets :NavTree_016)
 SubClassOf(:processControlPanelAssets :discreteAsset)
+
+# Class: :processMedium (:processMedium)
+
+SubClassOf(:processMedium :relationalState)
 
 # Class: :processPipeSegment (:processPipeSegment)
 
@@ -3450,16 +3431,12 @@ SubClassOf(:processPipeSegment :pipeSegment)
 
 AnnotationAssertion(rdfs:isDefinedBy :processing "a function that is realized when a physical or chemical property of the thing being processed is changed by the bearer of the function.")
 AnnotationAssertion(rdfs:label :processing "processing")
-SubClassOf(:processing :functionalCapability)
-
-# Class: :progammableLogicController (:progammableLogicController)
-
-SubClassOf(:progammableLogicController :controller)
+SubClassOf(:processing :function)
 
 # Class: :projectWork (project work)
 
 AnnotationAssertion(rdfs:label :projectWork "project work")
-SubClassOf(:projectWork :workOrderLevelWork)
+SubClassOf(:projectWork :packageOfDiscreteWork)
 
 # Class: :propane (:propane)
 
@@ -3483,7 +3460,7 @@ SubClassOf(:protectionRelay :electricalSafety)
 # Class: :publicAnnoucementSpeaker (:publicAnnoucementSpeaker)
 
 SubClassOf(:publicAnnoucementSpeaker :discreteAsset)
-SubClassOf(:publicAnnoucementSpeaker :informationIOutputDevice)
+SubClassOf(:publicAnnoucementSpeaker :informationDisplayOrOutput)
 
 # Class: :publisher (publisher)
 
@@ -3532,7 +3509,7 @@ SubClassOf(:radialArmDrill :machineShopTool)
 
 # Class: :ratedPowerOutput (:ratedPowerOutput)
 
-SubClassOf(:ratedPowerOutput :functionalCapability)
+SubClassOf(:ratedPowerOutput :functionalSpecification)
 
 # Class: :reactor (:reactor)
 
@@ -3553,10 +3530,6 @@ SubClassOf(:relationalState :propertyState)
 
 AnnotationAssertion(rdfs:isDefinedBy :reliefValve "A pressure relief valve characterized by gradual opening or closing generally proportional to the increase or decrease in pressure. It is normally used for incompressible fluids.- ANSI/ASME Performance Test Code PTC-25-2008")
 SubClassOf(:reliefValve :pressureReliefValve)
-
-# Class: :remoteTerminalUnit (:remoteTerminalUnit)
-
-SubClassOf(:remoteTerminalUnit :controller)
 
 # Class: :replaceableFilterCartridge (:replaceableFilterCartridge)
 
@@ -3625,11 +3598,6 @@ SubClassOf(:rotaryDrumThickener :thickener)
 
 SubClassOf(:rotatingCollector :collectorMecahanism)
 
-# Class: :rotationalSpeed (rotational speed)
-
-AnnotationAssertion(rdfs:label :rotationalSpeed "rotational speed"@en)
-SubClassOf(:rotationalSpeed :measureOfSpeed)
-
 # Class: :rubberInsulatingGloves (:rubberInsulatingGloves)
 
 SubClassOf(:rubberInsulatingGloves :discreteAsset)
@@ -3663,7 +3631,7 @@ SubClassOf(:samplingPoint :discreteAsset)
 # Class: :scaffolding (:scaffolding)
 
 AnnotationAssertion(:notionMappingID :scaffolding "4961170b77b24110a3655ba7386b04c4")
-SubClassOf(:scaffolding :functionalAssemblyOfComponents)
+SubClassOf(:scaffolding :systemOfStandardizedModularParts)
 
 # Class: :scissorsLift (:scissorsLift)
 
@@ -3761,10 +3729,9 @@ SubClassOf(:simpleLine :lineStructure)
 SubClassOf(:singleParameterInstrumentation :instrumentation)
 SubClassOf(:singleParameterInstrumentation :sensingAsset)
 
-# Class: :sittingWithinThe (sitting within)
+# Class: :situatedWithin (:situatedWithin)
 
-AnnotationAssertion(rdfs:label :sittingWithinThe "sitting within"@en)
-SubClassOf(:sittingWithinThe :relationalState)
+SubClassOf(:situatedWithin :relationalState)
 
 # Class: :sling (:sling)
 
@@ -3795,14 +3762,9 @@ AnnotationAssertion(rdfs:comment :space "The subtypes of concern include
 A 2-dimensional or a depthless 3-dimensional surface space that coincides with a surface formed by a set of architectural parts, structural parts, or a parcel of land.")
 AnnotationAssertion(rdfs:isDefinedBy :space "A space enclosed or partially enclosed by a set of physical boundaries or distinctions")
 
-# Class: :specification (:specification)
+# Class: :specificationDescription (:specificationDescription)
 
-SubClassOf(:specification :description)
-
-# Class: :speedOfTravel (speed of travel)
-
-AnnotationAssertion(rdfs:label :speedOfTravel "speed of travel"@en)
-SubClassOf(:speedOfTravel :measureOfSpeed)
+SubClassOf(:specificationDescription :description)
 
 # Class: :spillKit (:spillKit)
 
@@ -3813,6 +3775,12 @@ SubClassOf(:spillKit :discreteAsset)
 
 SubClassOf(:stack :NavTree_008)
 SubClassOf(:stack :discreteAsset)
+
+# Class: :steam (steam)
+
+AnnotationAssertion(rdfs:label :steam "steam")
+SubClassOf(:steam :commonBoilerMedium)
+SubClassOf(:steam :gaseousMaterial)
 
 # Class: :steamTrap (:steamTrap)
 
@@ -3842,6 +3810,7 @@ SubClassOf(:strainer :discreteAsset)
 # Class: :structuralTank (:structuralTank)
 
 SubClassOf(:structuralTank :NavTree_008)
+SubClassOf(:structuralTank :systemOfAssembledAssetParts)
 SubClassOf(:structuralTank :tankOrVessel)
 
 # Class: :structuralTankComponent (:structuralTankComponent)
@@ -3873,7 +3842,7 @@ SubClassOf(:switchgearGroundingDevice :NavTree_005)
 SubClassOf(:switchgearGroundingDevice :discreteAsset)
 SubClassOf(:switchgearGroundingDevice :electricalSafety)
 
-# Class: :system (System)
+# Class: :system (:system)
 
 AnnotationAssertion(rdfs:comment :system "Further Clarifications:
 The asset parts of a system can be interrelated by physical connections, controlled material flows, information flow, or energy transmission between the parts.
@@ -3884,18 +3853,34 @@ Examples of system include
 * a stormwater management pond
 * any subsystem functional structure")
 AnnotationAssertion(rdfs:isDefinedBy :system "A collection of interrelated assets capable of some higher-order function.")
-AnnotationAssertion(rdfs:label :system "System")
 SubClassOf(:system :collectionOfAssets)
 
-# Class: :systemOfDiscreteAssets (System of Discrete Assets)
+# Class: :systemOfAssembledAssetParts (:systemOfAssembledAssetParts)
 
-AnnotationAssertion(rdfs:isDefinedBy :systemOfDiscreteAssets "A system made up of interrelated discrete assets while not being a discrete asset itself, whose discrete asset parts are associated with lines or wireless signal.")
-AnnotationAssertion(rdfs:label :systemOfDiscreteAssets "System of Discrete Assets")
-AnnotationAssertion(rdfs:label :systemOfDiscreteAssets "System of Discrete Assets"@en)
-SubClassOf(:systemOfDiscreteAssets :NavTree_015)
+AnnotationAssertion(rdfs:comment :systemOfAssembledAssetParts "6/5/24: This type of system qualifiy to have children, under the relation \"parent assembly\", being specified for Maximo implementation.")
+AnnotationAssertion(rdfs:isDefinedBy :systemOfAssembledAssetParts "A system made up of discrete asset parts, assembled with sufficient structural integrity and coherence that the assembled whole also qualifies as a discrete asset.")
+SubClassOf(:systemOfAssembledAssetParts :system)
+
+# Class: :systemOfDiscreteAssets (:systemOfDiscreteAssets)
+
+AnnotationAssertion(rdfs:isDefinedBy :systemOfDiscreteAssets "A system made up of interrelated discrete assets while not being a discrete asset itself; the discrete asset are integrate by lines or wireless signal.")
 SubClassOf(:systemOfDiscreteAssets :system)
 
-# Class: :systemTrain (System Train)
+# Class: :systemOfStandardizedModularParts (:systemOfStandardizedModularParts)
+
+AnnotationAssertion(rdfs:comment :systemOfStandardizedModularParts "This is to say that the assembly's parts (and all of its parts) are not always sufficiently physically unified to allow it to be moved around as a unit.")
+AnnotationAssertion(rdfs:isDefinedBy :systemOfStandardizedModularParts "A system comprising physically integrated discrete parts that is not itself a discrete asset.")
+SubClassOf(:systemOfStandardizedModularParts :systemOfAssembledAssetParts)
+
+# Class: :systemOnASkid (:systemOnASkid)
+
+AnnotationAssertion(rdfs:comment :systemOnASkid "Mar25,24: It is important to define the concept of a integrated standalone because they may extend across lines and trains and represent a special case in the asset hierarchy specification. Also, unlike other discrete assets, we need to fully catalog their parts, because they are easily replaceable. Finally, many common equipment, such as pump and motor sets, are IUSAs equipment.")
+AnnotationAssertion(rdfs:isDefinedBy :systemOnASkid "A discrete asset that consists a collection of discrete asset parts, many of them often appear in other contexts as stand-alone discrete assets (not part of another discrete asset).  The set of parts are physical integrated onto a structure skid, frame, panel, etc, such that the part can be moved or sold together.")
+SubClassOf(:systemOnASkid :NavTree_015)
+SubClassOf(:systemOnASkid :discreteAsset)
+SubClassOf(:systemOnASkid :systemOfAssembledAssetParts)
+
+# Class: :systemTrain (:systemTrain)
 
 AnnotationAssertion(rdfs:comment :systemTrain "A system train has the characteristic of being set of connected assets that 
 * is a part of a system
@@ -3903,8 +3888,7 @@ AnnotationAssertion(rdfs:comment :systemTrain "A system train has the characteri
 is capable of realizing a unit of the system primary functions.")
 AnnotationAssertion(rdfs:isDefinedBy :systemTrain "A component, among multiple functionally equivalent components of a regionalized system, that offers a unit of the complete set of primary functions of a regionalized system.")
 AnnotationAssertion(rdfs:isDefinedBy :systemTrain "a part of a facility system consisting of a set of connected discrete assets that provides one unit, among multiple redundant units, of the primary functions of the facility system.")
-AnnotationAssertion(rdfs:label :systemTrain "System Train")
-SubClassOf(:systemTrain :flowIntegratedSystem)
+SubClassOf(:systemTrain :systemOfDiscreteAssets)
 
 # Class: :tableContent (table content)
 
@@ -3978,6 +3962,12 @@ SubClassOf(:theSubstanceInContainment :assetDescription)
 
 SubClassOf(:theVolumetricCapacityDesc :aVolumetricCapacityDesc)
 
+# Class: :thermalOil (thermal oil)
+
+AnnotationAssertion(rdfs:label :thermalOil "thermal oil")
+SubClassOf(:thermalOil :commonBoilerMedium)
+SubClassOf(:thermalOil :liquid)
+
 # Class: :thermostatOrZoneControllerUnit (:thermostatOrZoneControllerUnit)
 
 SubClassOf(:thermostatOrZoneControllerUnit :NavTree_006)
@@ -4042,6 +4032,10 @@ SubClassOf(:travellingBridgeCollector :collectorMecahanism)
 SubClassOf(:treatmentFilterCartridgeOrCassette :discreteAsset)
 SubClassOf(:treatmentFilterCartridgeOrCassette :unitOfTreatmentFilterMedium)
 
+# Class: :treatmentProcess (:treatmentProcess)
+
+SubClassOf(:treatmentProcess :hierarchalSystem)
+
 # Class: :treatmentSeparator (:treatmentSeparator)
 
 SubClassOf(:treatmentSeparator :separator)
@@ -4071,6 +4065,10 @@ EquivalentClasses(:undergroundFuelOilTank_TEMP ObjectIntersectionOf(:fuelOilTank
 AnnotationAssertion(:notionMappingID :undergroundFuelTank_TEMP "36c706f0a1524bc49f64b76bd1e184b5")
 EquivalentClasses(:undergroundFuelTank_TEMP ObjectIntersectionOf(:fuelTank DataHasValue(:isUnderGround "true"^^xsd:boolean)))
 
+# Class: :unitOfArea (:unitOfArea)
+
+SubClassOf(:unitOfArea :unitOfMeasure)
+
 # Class: :unitOfBioreactorMedium (:unitOfBioreactorMedium)
 
 AnnotationAssertion(:classTree-excludeFromBranch :unitOfBioreactorMedium :unitOfTreatmentFilterMedium)
@@ -4084,9 +4082,8 @@ SubClassOf(:unitOfElectricalCurrent :unitOfMeasure)
 
 SubClassOf(:unitOfMass :unitOfMeasure)
 
-# Class: :unitOfMeasure (unit of measure)
+# Class: :unitOfMeasure (:unitOfMeasure)
 
-AnnotationAssertion(rdfs:label :unitOfMeasure "unit of measure"@en)
 SubClassOf(:unitOfMeasure :informationContentEntity)
 
 # Class: :unitOfPower (:unitOfPower)
@@ -4097,6 +4094,10 @@ SubClassOf(:unitOfPower :unitOfMeasure)
 
 SubClassOf(:unitOfPressure :unitOfMeasure)
 
+# Class: :unitOfTemperature (:unitOfTemperature)
+
+SubClassOf(:unitOfTemperature :unitOfMeasure)
+
 # Class: :unitOfTreatmentFilterMedium (:unitOfTreatmentFilterMedium)
 
 SubClassOf(:unitOfTreatmentFilterMedium :NavTree_021)
@@ -4104,6 +4105,10 @@ SubClassOf(:unitOfTreatmentFilterMedium :NavTree_021)
 # Class: :unitOfVoltage (:unitOfVoltage)
 
 SubClassOf(:unitOfVoltage :unitOfMeasure)
+
+# Class: :unitOfVolume (:unitOfVolume)
+
+SubClassOf(:unitOfVolume :unitOfMeasure)
 
 # Class: :vaccumCleaner (:vaccumCleaner)
 
@@ -4136,10 +4141,6 @@ SubClassOf(:valveActuator :flowOrPressureControlAsset)
 AnnotationAssertion(rdfs:label :valveRole "valve role"@en)
 SubClassOf(:valveRole :assetRole)
 
-# Class: :vapour (:vapour)
-
-SubClassOf(:vapour :material)
-
 # Class: :variableAirVolumeUnit (:variableAirVolumeUnit)
 
 SubClassOf(:variableAirVolumeUnit :NavTree_006)
@@ -4148,17 +4149,13 @@ SubClassOf(:variableAirVolumeUnit :discreteAsset)
 # Class: :ventilationSystem (:ventilationSystem)
 
 AnnotationAssertion(:notionMappingID :ventilationSystem "a5d009d138a14963a62ee0d5753c6a74")
-SubClassOf(:ventilationSystem :system)
+SubClassOf(:ventilationSystem :systemOfDiscreteAssets)
 
 # Class: :verticalLifeline (:verticalLifeline)
 
 AnnotationAssertion(:notionMappingID :verticalLifeline "ac3fd2e6499d4797954dc714a796c3bc")
 SubClassOf(:verticalLifeline :discreteAsset)
 SubClassOf(:verticalLifeline :fallProtectionEquipment)
-
-# Class: :vibratingConveyor (:vibratingConveyor)
-
-SubClassOf(:vibratingConveyor :conveyor)
 
 # Class: :vibrationAnalyzer (:vibrationAnalyzer)
 
@@ -4179,6 +4176,10 @@ SubClassOf(:voltageInstrumentation :electricalInstrumentation)
 SubClassOf(:voltageSurgeSuppressor :discreteAsset)
 SubClassOf(:voltageSurgeSuppressor :electricalSafety)
 
+# Class: :volumnCapacity (:volumnCapacity)
+
+SubClassOf(:volumnCapacity :functionalSpecification)
+
 # Class: :vortexClassifier (:vortexClassifier)
 
 SubClassOf(:vortexClassifier :classifier)
@@ -4191,9 +4192,17 @@ SubClassOf(:wasteGasBurner :burner)
 
 SubClassOf(:wastewaterStoragePipe :wetWeatherFlowStorage)
 
-# Class: :water (:water)
+# Class: :water (water)
 
+AnnotationAssertion(rdfs:label :water "water")
+SubClassOf(:water :commonBoilerMedium)
 SubClassOf(:water :liquid)
+
+# Class: :waterGlycolMixture (water glycol mixture)
+
+AnnotationAssertion(rdfs:label :waterGlycolMixture "water glycol mixture")
+SubClassOf(:waterGlycolMixture :commonBoilerMedium)
+SubClassOf(:waterGlycolMixture :liquid)
 
 # Class: :waterQualityInstrumentation (:waterQualityInstrumentation)
 
@@ -4244,9 +4253,8 @@ SubClassOf(:well :discreteAsset)
 
 SubClassOf(:wetPond :pond)
 
-# Class: :wetWeatherFlowStorage (wet weather flow storage)
+# Class: :wetWeatherFlowStorage (:wetWeatherFlowStorage)
 
-AnnotationAssertion(rdfs:label :wetWeatherFlowStorage "wet weather flow storage"@en)
 SubClassOf(:wetWeatherFlowStorage :NavTree_002)
 SubClassOf(:wetWeatherFlowStorage :discreteAsset)
 
@@ -4258,10 +4266,6 @@ SubClassOf(:wirelessAccessPoint :discreteAsset)
 # Class: :work (:work)
 
 SubClassOf(:work :process)
-
-# Class: :workOrderLevelWork (:workOrderLevelWork)
-
-SubClassOf(:workOrderLevelWork :work)
 
 # Class: :workOrderSpecification (work order specification)
 
@@ -4287,15 +4291,45 @@ SubClassOf(:yard :facility)
 #   Named Individuals
 ############################
 
+# Individual: :Celsius (degC)
+
+AnnotationAssertion(rdfs:label :Celsius "degC")
+ClassAssertion(:unitOfTemperature :Celsius)
+
+# Individual: :Fahrenheit (degF)
+
+AnnotationAssertion(rdfs:label :Fahrenheit "degF")
+ClassAssertion(:unitOfTemperature :Fahrenheit)
+
+# Individual: :Kelvin (degK)
+
+AnnotationAssertion(rdfs:label :Kelvin "degK")
+ClassAssertion(:unitOfTemperature :Kelvin)
+
+# Individual: :bar (bar)
+
+AnnotationAssertion(rdfs:label :bar "bar")
+ClassAssertion(:unitOfPressure :bar)
+
+# Individual: :cubicFeet (ft^3)
+
+AnnotationAssertion(rdfs:label :cubicFeet "ft^3")
+ClassAssertion(:unitOfVolume :cubicFeet)
+
+# Individual: :cubicMetre (m^3)
+
+AnnotationAssertion(rdfs:label :cubicMetre "m^3")
+ClassAssertion(:unitOfVolume :cubicMetre)
+
 # Individual: :horsepower (hp)
 
 AnnotationAssertion(rdfs:label :horsepower "hp")
 ClassAssertion(:unitOfPower :horsepower)
 
-# Individual: :kilopascal (kPa)
+# Individual: :kiloPascal (kPa)
 
-AnnotationAssertion(rdfs:label :kilopascal "kPa")
-ClassAssertion(:unitOfPressure :kilopascal)
+AnnotationAssertion(rdfs:label :kiloPascal "kPa")
+ClassAssertion(:unitOfPressure :kiloPascal)
 
 # Individual: :kilovolt (kV)
 
@@ -4312,6 +4346,11 @@ ClassAssertion(:unitOfPower :kilovolt-ampere)
 AnnotationAssertion(rdfs:label :kilowatt "kW")
 ClassAssertion(:unitOfPower :kilowatt)
 
+# Individual: :litre (L)
+
+AnnotationAssertion(rdfs:label :litre "L")
+ClassAssertion(:unitOfVolume :litre)
+
 # Individual: :megavolt-ampere (MVA)
 
 AnnotationAssertion(rdfs:label :megavolt-ampere "MVA")
@@ -4322,10 +4361,48 @@ ClassAssertion(:unitOfPower :megavolt-ampere)
 AnnotationAssertion(rdfs:label :megawatt "MW")
 ClassAssertion(:unitOfPower :megawatt)
 
-# Individual: :poundsPerSquareInch (pounds / square inch)
+# Individual: :poundsPerSquareInch (psi)
 
-AnnotationAssertion(rdfs:label :poundsPerSquareInch "pounds / square inch")
+AnnotationAssertion(rdfs:label :poundsPerSquareInch "psi")
 ClassAssertion(:unitOfPressure :poundsPerSquareInch)
+
+# Individual: :squareCentimetre (cm^2)
+
+AnnotationAssertion(rdfs:label :squareCentimetre "cm^2")
+ClassAssertion(:unitOfArea :squareCentimetre)
+
+# Individual: :squareFeet (ft^2)
+
+AnnotationAssertion(rdfs:label :squareFeet "ft^2")
+ClassAssertion(:unitOfArea :squareFeet)
+
+# Individual: :squareInch (inch^2)
+
+AnnotationAssertion(rdfs:label :squareInch "inch^2")
+ClassAssertion(:unitOfArea :squareInch)
+
+# Individual: :squareKilometre (km^2)
+
+AnnotationAssertion(rdfs:label :squareKilometre "km^2")
+ClassAssertion(:unitOfArea :squareKilometre)
+
+# Individual: :squareMetre (m^2)
+
+AnnotationAssertion(rdfs:label :squareMetre "m^2")
+ClassAssertion(:unitOfArea :squareMetre)
+
+# Individual: :squareMile (mile^2)
+
+AnnotationAssertion(rdfs:label :squareMile "mile^2")
+ClassAssertion(:unitOfArea :squareMile)
+
+# Individual: :steam (steam)
+
+ClassAssertion(:commonBoilerMedium :steam)
+
+# Individual: :thermalOil (thermal oil)
+
+ClassAssertion(:commonBoilerMedium :thermalOil)
 
 # Individual: :volt (V)
 
@@ -4336,6 +4413,14 @@ ClassAssertion(:unitOfVoltage :volt)
 
 AnnotationAssertion(rdfs:label :volt-ampere "VA")
 ClassAssertion(:unitOfPower :volt-ampere)
+
+# Individual: :water (water)
+
+ClassAssertion(:commonBoilerMedium :water)
+
+# Individual: :waterGlycolMixture (water glycol mixture)
+
+ClassAssertion(:commonBoilerMedium :waterGlycolMixture)
 
 # Individual: :watt (W)
 
