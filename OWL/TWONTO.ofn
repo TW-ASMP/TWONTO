@@ -3453,7 +3453,7 @@ SubClassOf(:structural_wall :discrete_asset)
 
 AnnotationAssertion(:exclude_from_asset_class_list :subsystem_of_a_discrete_asset "true"^^xsd:boolean)
 AnnotationAssertion(rdfs:comment :subsystem_of_a_discrete_asset "Example: power train system of a car")
-AnnotationAssertion(rdfs:isDefinedBy :subsystem_of_a_discrete_asset "A subsystem of a discrete asset, which does not have qualify as a discrete asset itself.")
+AnnotationAssertion(rdfs:isDefinedBy :subsystem_of_a_discrete_asset "A subsystem of a discrete asset, which does not have to qualify as a discrete asset itself.")
 SubClassOf(:subsystem_of_a_discrete_asset :system)
 
 # Class: :sulphonation_system (:sulphonation_system)
@@ -3499,6 +3499,8 @@ AnnotationAssertion(rdfs:comment :system_of_assembled_discrete_assets "6/19/24: 
 AnnotationAssertion(rdfs:comment :system_of_assembled_discrete_assets "6/30: A reason to keep this class: It is useful to use this class in setting a rule, stating that the next lower level of discrete assets must be indexed with a certain degree of rigour as well.")
 AnnotationAssertion(rdfs:comment :system_of_assembled_discrete_assets "6/5/24: This type of system qualifiy to have children, under the relation \"parent assembly\", being specified for Maximo implementation.")
 AnnotationAssertion(rdfs:isDefinedBy :system_of_assembled_discrete_assets "A system made up of discrete asset parts, assembled with sufficient structural integrity or coherence that the assembled whole also qualifies as a discrete asset.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :system_of_assembled_discrete_assets "equipment skid")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :system_of_assembled_discrete_assets "skid mounted system")
 SubClassOf(:system_of_assembled_discrete_assets :discrete_asset)
 SubClassOf(:system_of_assembled_discrete_assets :system)
 
