@@ -1,0 +1,4009 @@
+Prefix(:=<http://www.toronto.ca/TWONTO#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.toronto.ca/TWONTO>
+<http://www.toronto.ca/TWONTO/0.1>
+Annotation(rdfs:comment "07/04/2024 - An Explanation of State (tw:definedState):
+A thing that is too complex or cumbersome for axiomatic representation from primitive concepts.  Instead it is represented symbolically as a literal value or as a state entity. Note that we are not talking about predicates, which are property states, but the state object (or literal representing a state object).")
+Annotation(rdfs:comment "07/04/2024 - When are we using tw:dataRecordDataProperties, such as EIDF?
+We use them when the information collected from a data system is not in the same format used natively in the ontology, and therefore would require data transformation through datalog. Presently, the values in many datafield value lists are represented as individuals instead of literal values in the databub.  For example, all commonBoilerMedium are individuals under the material class. (see When to Choose Literal Value to Represent an Entity?). (This is the case for some boolean datafield as well.)")
+Annotation(rdfs:comment "07/04/2024 - When do we reify a properties into a \"Property State\"? 
+The strongest reason is if we want to keep track of history of changes in the datahub. For this reason, the only properties that we would consider not reifying are permanence properties that we do not expect to change, such as the weight of a piece of equipment.  Another reason would be to record provenance information, such as who established the relation.  The last reason is to keep track of corrective changes, which could be made even on permanent property values (that are incorrect).
+With all of the above in mind, properties should be reified by default.
+The reified properties are associated with (continuent) entitiies through the generic prediates, including the following and their subclasses. 
+- hasProperty
+- theIndividual")
+Annotation(rdfs:comment "07/04/2024 - When to Choose Literal Value to Represent a Entity?
+We can choose to represent a entity using a literal value, as opposed to an actual entity object, 
+1) when we don't have a need to represent any property of the entity, even text  explanation of what it is or additional axiomization. 
+2) we don't expect the literal value would change very much at all. 
+For the reasons above, examples of things that should be represented by a text value include the NEMA frame rating and enclosure type.")
+
+Declaration(Class(:AC_condenser_unit))
+Declaration(Class(:AC_evaporator_unit))
+Declaration(Class(:COCOA))
+Declaration(Class(:HV_disconnectSwitch))
+Declaration(Class(:InstrumentGaugeOrDisplay))
+Declaration(Class(:NEMA_EXPL))
+Declaration(Class(:NEMA_HAZ))
+Declaration(Class(:NEMA_enclosureType))
+Declaration(Class(:PLC))
+Declaration(Class(:PLC_moduleComponent))
+Declaration(Class(:PPE))
+Declaration(Class(:RTU))
+Declaration(Class(:SCADA_computerTerminal))
+Declaration(Class(:UPS))
+Declaration(Class(:UV_disinfectionLampUnit))
+Declaration(Class(:UV_disinfection_assembly))
+Declaration(Class(:aPortionOfMaterialOfAsset))
+Declaration(Class(:aPowerDesc))
+Declaration(Class(:aPressureDesc))
+Declaration(Class(:aTemperatureDesc))
+Declaration(Class(:aVoltageDesc))
+Declaration(Class(:aVolumetricCapacityDesc))
+Declaration(Class(:abovegroundFuelOilTank_TEMP))
+Declaration(Class(:abovegroundFuelTank_TEMP))
+Declaration(Class(:actuator))
+Declaration(Class(:aerationGasDiffuser))
+Declaration(Class(:aerationTank))
+Declaration(Class(:airDryer))
+Declaration(Class(:airDuctSegment))
+Declaration(Class(:air_condition))
+Declaration(Class(:air_damper))
+Declaration(Class(:air_exchange_unit))
+Declaration(Class(:air_handler_unit))
+Declaration(Class(:air_scrubber))
+Declaration(Class(:alarm_device))
+Declaration(Class(:ammoniaAnalyzer))
+Declaration(Class(:annunciator_panel))
+Declaration(Class(:arc-flash_suit))
+Declaration(Class(:ash_lagoon))
+Declaration(Class(:asset))
+Declaration(Class(:assetDescription))
+Declaration(Class(:assetManufacturer))
+Declaration(Class(:assetOpperationState))
+Declaration(Class(:assetOwner))
+Declaration(Class(:assetPhysicalStatus))
+Declaration(Class(:automatic_external_defibrillator))
+Declaration(Class(:backflow_preventer))
+Declaration(Class(:bandSaw))
+Declaration(Class(:bar_screen_unit))
+Declaration(Class(:battery))
+Declaration(Class(:battery_charger))
+Declaration(Class(:bearing))
+Declaration(Class(:beingAPartOf))
+Declaration(Class(:belt))
+Declaration(Class(:beltConveyor))
+Declaration(Class(:beltPress))
+Declaration(Class(:biogas))
+Declaration(Class(:bioreactor))
+Declaration(Class(:bioswale))
+Declaration(Class(:blower_or_fan))
+Declaration(Class(:boat))
+Declaration(Class(:bodyMaterial))
+Declaration(Class(:boiler))
+Declaration(Class(:boilerHeatingSurfaceArea))
+Declaration(Class(:boiler_fitting))
+Declaration(Class(:breaker))
+Declaration(Class(:bridge))
+Declaration(Class(:building))
+Declaration(Class(:building_automation_system_controller))
+Declaration(Class(:building_or_structural_foundation))
+Declaration(Class(:burner_component_of_asset))
+Declaration(Class(:cableSegment))
+Declaration(Class(:capacitor))
+Declaration(Class(:card_reader))
+Declaration(Class(:catch_basin))
+Declaration(Class(:centrifuge))
+Declaration(Class(:chain_and_flight_collector))
+Declaration(Class(:channelSegment))
+Declaration(Class(:channel_gate))
+Declaration(Class(:checkValve))
+Declaration(Class(:chemcialOrConcentrationSensorElement))
+Declaration(Class(:chemicalOrConcentrationAnalyzer))
+Declaration(Class(:chemicalReactor))
+Declaration(Class(:chemicalStorageTank))
+Declaration(Class(:chemicalSuit))
+Declaration(Class(:chiller))
+Declaration(Class(:chillerCondenserUnit))
+Declaration(Class(:chillerEvaporatorUnit))
+Declaration(Class(:chlorinator_system))
+Declaration(Class(:chlorineAnalyzer))
+Declaration(Class(:chlorineDisinfectionTank))
+Declaration(Class(:cityByLaw))
+Declaration(Class(:clarifier))
+Declaration(Class(:classifier))
+Declaration(Class(:coagulationAndFlocculationTank))
+Declaration(Class(:coagulationTank))
+Declaration(Class(:collectionOfAssetRoles))
+Declaration(Class(:collectionOfThings))
+Declaration(Class(:collection_of_assets))
+Declaration(Class(:collector_mechanism))
+Declaration(Class(:combustableMaterial))
+Declaration(Class(:combustionTurbine))
+Declaration(Class(:commonBoilerMedium))
+Declaration(Class(:communication_of_control_network))
+Declaration(Class(:compactor))
+Declaration(Class(:compressedGasCylinder))
+Declaration(Class(:compressor))
+Declaration(Class(:computer))
+Declaration(Class(:condensateTrap))
+Declaration(Class(:conductivitySensingInstrument))
+Declaration(Class(:containing))
+Declaration(Class(:contentCompilation))
+Declaration(Class(:contentSubject))
+Declaration(Class(:contentSummary))
+Declaration(Class(:controlledAccessBarrier))
+Declaration(Class(:controlledDoorAccess))
+Declaration(Class(:controller))
+Declaration(Class(:conveyor))
+Declaration(Class(:coolingTower))
+Declaration(Class(:corporatePolicy))
+Declaration(Class(:correctiveWork))
+Declaration(Class(:counter))
+Declaration(Class(:crane))
+Declaration(Class(:culvert))
+Declaration(Class(:cyclone_classifier))
+Declaration(Class(:damper_actuator))
+Declaration(Class(:dataLogger))
+Declaration(Class(:dataRecord))
+Declaration(Class(:defineSetOfDiscreteAssetRoles))
+Declaration(Class(:defineSetOfFunctionalStructureRoles))
+Declaration(Class(:definedSetOfRoles))
+Declaration(Class(:definedState))
+Declaration(Class(:defined_collection_of_assets))
+Declaration(Class(:dehumidifier))
+Declaration(Class(:descendingDevice))
+Declaration(Class(:description))
+Declaration(Class(:detentionTank))
+Declaration(Class(:dewateringPress))
+Declaration(Class(:diesel))
+Declaration(Class(:digesterGas))
+Declaration(Class(:digesterTank))
+Declaration(Class(:discreteAssetRole))
+Declaration(Class(:discretePieceOfWork))
+Declaration(Class(:discretePieceOfWorkSpecification))
+Declaration(Class(:discreteUnitOfBioreactorMedium))
+Declaration(Class(:discreteUnitOfTreatmentFilter))
+Declaration(Class(:discrete_asset))
+Declaration(Class(:displayPanel))
+Declaration(Class(:dissolvedOxygenAnalyzer))
+Declaration(Class(:distributed_system))
+Declaration(Class(:distribution_system))
+Declaration(Class(:documentContent))
+Declaration(Class(:dosingPump))
+Declaration(Class(:drillPress))
+Declaration(Class(:driving))
+Declaration(Class(:dryer))
+Declaration(Class(:dustCollector))
+Declaration(Class(:easement))
+Declaration(Class(:eductor))
+Declaration(Class(:ejector))
+Declaration(Class(:electricalConduitSection))
+Declaration(Class(:electricalCurrentSensingInstrument))
+Declaration(Class(:electricalDistributionOrMCC_Panel))
+Declaration(Class(:electricalDuctBankSection))
+Declaration(Class(:electrostatic_percipitator))
+Declaration(Class(:elevator))
+Declaration(Class(:emergencyEyewash))
+Declaration(Class(:emergencyEyewashAndShower))
+Declaration(Class(:emergencyShower))
+Declaration(Class(:emergencyWork))
+Declaration(Class(:emergency_power_system))
+Declaration(Class(:endTruck))
+Declaration(Class(:engine))
+Declaration(Class(:environmentalHazard))
+Declaration(Class(:equipmentLocalPanel))
+Declaration(Class(:equipmentOrAccessChamber))
+Declaration(Class(:event))
+Declaration(Class(:exhaustStack))
+Declaration(Class(:expansionJoint))
+Declaration(Class(:facility))
+Declaration(Class(:facilityRole))
+Declaration(Class(:fallArrestDavitArm))
+Declaration(Class(:fallArrestHarness))
+Declaration(Class(:fallArrestRopeGrab))
+Declaration(Class(:fallArrestSystem))
+Declaration(Class(:fallProtectionDescendingDevice))
+Declaration(Class(:fallProtectionEnergyAbsorber))
+Declaration(Class(:fallProtectionSling))
+Declaration(Class(:fallRestraintSystem))
+Declaration(Class(:fallRestrictingSystem))
+Declaration(Class(:federalRegulation))
+Declaration(Class(:fenceSection))
+Declaration(Class(:fiat_part_of_asset))
+Declaration(Class(:figureContent))
+Declaration(Class(:filterPress))
+Declaration(Class(:filtrationTank))
+Declaration(Class(:fireRatedDoor))
+Declaration(Class(:firstAidKit))
+Declaration(Class(:firstAidRoomEquipmentSet))
+Declaration(Class(:firstAidStationEquipmentSet))
+Declaration(Class(:fixedGasDetector))
+Declaration(Class(:fixedLadder))
+Declaration(Class(:flameArrestor))
+Declaration(Class(:flameOrCombustionSensingInstrument))
+Declaration(Class(:flocculationTank))
+Declaration(Class(:fluidizedBedIncinerator))
+Declaration(Class(:forklift))
+Declaration(Class(:fuel))
+Declaration(Class(:fuelOil))
+Declaration(Class(:fuelOilTank))
+Declaration(Class(:fuelTank))
+Declaration(Class(:fuel_piping_system))
+Declaration(Class(:functionAndCapability))
+Declaration(Class(:functionalStructureRole))
+Declaration(Class(:furnace))
+Declaration(Class(:fuse))
+Declaration(Class(:fusiblePlug))
+Declaration(Class(:gasDiffuser))
+Declaration(Class(:gasDiffuserGridAssembly))
+Declaration(Class(:gasHolder))
+Declaration(Class(:gaseousMaterial))
+Declaration(Class(:gasoline))
+Declaration(Class(:gasolineTank))
+Declaration(Class(:generator-set))
+Declaration(Class(:generatorWithoutADrive))
+Declaration(Class(:golfCart))
+Declaration(Class(:governmentRegulation))
+Declaration(Class(:granularMaterial))
+Declaration(Class(:gravitySewerSegment))
+Declaration(Class(:grinderOrComminutor))
+Declaration(Class(:guideline))
+Declaration(Class(:hainvgProcessMedium))
+Declaration(Class(:havingAPart))
+Declaration(Class(:hazard))
+Declaration(Class(:healthAndSafetyHazard))
+Declaration(Class(:heatExchanger))
+Declaration(Class(:heatPumpUnit))
+Declaration(Class(:heater))
+Declaration(Class(:heavyMetalAnalyzer))
+Declaration(Class(:highVoltageHotStick))
+Declaration(Class(:highVoltageSurgeSuppressor))
+Declaration(Class(:hopper))
+Declaration(Class(:horizontalLifeline))
+Declaration(Class(:hydrant))
+Declaration(Class(:hydrant_system))
+Declaration(Class(:incinerator))
+Declaration(Class(:infiltrationTrench))
+Declaration(Class(:informationContentEntity))
+Declaration(Class(:informativeResource))
+Declaration(Class(:infraredCamera))
+Declaration(Class(:instrumentAirOrPneumaticControlPanel))
+Declaration(Class(:interceptorSegment))
+Declaration(Class(:intercomUnit))
+Declaration(Class(:interpretation))
+Declaration(Class(:investigativeWork))
+Declaration(Class(:jointer))
+Declaration(Class(:junctionStructureRole))
+Declaration(Class(:junction_structure))
+Declaration(Class(:kerosene))
+Declaration(Class(:laboratory))
+Declaration(Class(:ladder))
+Declaration(Class(:landfillGas))
+Declaration(Class(:largeStationaryTool))
+Declaration(Class(:lathe))
+Declaration(Class(:legislation))
+Declaration(Class(:levelSensorElement))
+Declaration(Class(:levelSwitch))
+Declaration(Class(:levelTransmitter))
+Declaration(Class(:lifeJacket))
+Declaration(Class(:lifeRing))
+Declaration(Class(:liftingEquipmentHoist))
+Declaration(Class(:lightingPanel))
+Declaration(Class(:lightingUnit))
+Declaration(Class(:lineStructureRole))
+Declaration(Class(:line_structure))
+Declaration(Class(:linearFunctionStructureRole))
+Declaration(Class(:linear_function_structure))
+Declaration(Class(:liquid))
+Declaration(Class(:liveVoltageDetector))
+Declaration(Class(:loadBearing))
+Declaration(Class(:loadBreakDisconnetSwitch))
+Declaration(Class(:loading_dock))
+Declaration(Class(:localized_function_system))
+Declaration(Class(:majorTreatmentProcessRole))
+Declaration(Class(:manhole))
+Declaration(Class(:manlift))
+Declaration(Class(:manufacturedOilGreaseSeparator))
+Declaration(Class(:manufacturedTreatmentDevice))
+Declaration(Class(:manufacturedTreatmentFilterDevice))
+Declaration(Class(:massSpectrometer))
+Declaration(Class(:material))
+Declaration(Class(:materialDistributionPanel))
+Declaration(Class(:maxHoldingCapacity))
+Declaration(Class(:maxInputVoltage))
+Declaration(Class(:maxMediumTemperature))
+Declaration(Class(:maxOperatingPressure))
+Declaration(Class(:measureOfArea))
+Declaration(Class(:measureOfCurrentFlow))
+Declaration(Class(:measureOfMass))
+Declaration(Class(:measureOfMassFlow))
+Declaration(Class(:measureOfPowerLevel))
+Declaration(Class(:measureOfPressure))
+Declaration(Class(:measureOfProperty))
+Declaration(Class(:measureOfRotationalSpeed))
+Declaration(Class(:measureOfSpeed))
+Declaration(Class(:measureOfTemperature))
+Declaration(Class(:measureOfVoltageLevel))
+Declaration(Class(:measureOfVolume))
+Declaration(Class(:measurement))
+Declaration(Class(:mechanicalFitting))
+Declaration(Class(:membraneBioreactor))
+Declaration(Class(:millingMachine))
+Declaration(Class(:minInputVoltage))
+Declaration(Class(:mixerOrAgitator))
+Declaration(Class(:mobileLift))
+Declaration(Class(:modularDiscreteAssembly))
+Declaration(Class(:motor))
+Declaration(Class(:motorDriveOr_VFD))
+Declaration(Class(:motorStarter))
+Declaration(Class(:naturalGas))
+Declaration(Class(:networkPanel))
+Declaration(Class(:networkRouter))
+Declaration(Class(:networkSwitch))
+Declaration(Class(:nitrateOrNitriteAnalyzer))
+Declaration(Class(:nominalInputVoltage))
+Declaration(Class(:noteTaking))
+Declaration(Class(:observation))
+Declaration(Class(:occupying))
+Declaration(Class(:oilGreaseSeperator))
+Declaration(Class(:ontarioRegulation))
+Declaration(Class(:organization))
+Declaration(Class(:outfallOrDischargePoint))
+Declaration(Class(:ozoneGenerator))
+Declaration(Class(:pH_analyzer))
+Declaration(Class(:packageOfDiscreteWork))
+Declaration(Class(:packaged_AC_Unit))
+Declaration(Class(:paragraphContent))
+Declaration(Class(:passengerVehicles))
+Declaration(Class(:pelletizer))
+Declaration(Class(:personnalFloatationDevice))
+Declaration(Class(:phosphateAnalyzer))
+Declaration(Class(:pickupTruck))
+Declaration(Class(:pieceOfAirFiltrationEquipment))
+Declaration(Class(:pieceOfContent))
+Declaration(Class(:pipeFitting))
+Declaration(Class(:pipeManifold))
+Declaration(Class(:pipeSegment))
+Declaration(Class(:pipette))
+Declaration(Class(:piping_system))
+Declaration(Class(:planer))
+Declaration(Class(:plantingSoilCell))
+Declaration(Class(:plantingSpace))
+Declaration(Class(:polymer_preparation_system))
+Declaration(Class(:pond))
+Declaration(Class(:portableGasDetector))
+Declaration(Class(:portableLadder))
+Declaration(Class(:portableScaffolding))
+Declaration(Class(:portionOfGranularBioreactorMedium))
+Declaration(Class(:portionOfGranularFilterMedium))
+Declaration(Class(:positionSensingInstrument))
+Declaration(Class(:positionSwitch))
+Declaration(Class(:positionTransmitter))
+Declaration(Class(:powerHarmonicFilter))
+Declaration(Class(:powerWasher))
+Declaration(Class(:poweredAirRespirator))
+Declaration(Class(:pressureReliefDevice))
+Declaration(Class(:pressureReliefValve))
+Declaration(Class(:pressureSensorElement))
+Declaration(Class(:pressureSwitch))
+Declaration(Class(:pressureTransmitter))
+Declaration(Class(:pressurizedSewerSegment))
+Declaration(Class(:pressurized_piping_system))
+Declaration(Class(:preventiveWork))
+Declaration(Class(:primaryPathLineRole))
+Declaration(Class(:primary_path_line))
+Declaration(Class(:process))
+Declaration(Class(:processControlPanel))
+Declaration(Class(:processPipeSegment))
+Declaration(Class(:processing))
+Declaration(Class(:projectWork))
+Declaration(Class(:propane))
+Declaration(Class(:property))
+Declaration(Class(:protectionRelay))
+Declaration(Class(:publicAnnoucementSpeaker))
+Declaration(Class(:publisher))
+Declaration(Class(:pulsationDampener))
+Declaration(Class(:pump))
+Declaration(Class(:pumpWithoutADrive))
+Declaration(Class(:pumpingStation))
+Declaration(Class(:pumpingSurgeSuppressionTank))
+Declaration(Class(:pumpingWetWell))
+Declaration(Class(:qualification))
+Declaration(Class(:quality))
+Declaration(Class(:quencher))
+Declaration(Class(:radialArmDrill))
+Declaration(Class(:ratedPowerOutput))
+Declaration(Class(:reactor))
+Declaration(Class(:relationalState))
+Declaration(Class(:reliefValve))
+Declaration(Class(:replaceableAirFilter))
+Declaration(Class(:replaceableOilOrFuelFilter))
+Declaration(Class(:requirement))
+Declaration(Class(:reservoirTank))
+Declaration(Class(:respiratorMask))
+Declaration(Class(:revision))
+Declaration(Class(:roadSegement))
+Declaration(Class(:role))
+Declaration(Class(:rollUpDoor))
+Declaration(Class(:roof))
+Declaration(Class(:ropeOrCableGrab))
+Declaration(Class(:rotating_collector))
+Declaration(Class(:rubberInsulatingGloves))
+Declaration(Class(:rubberInsulatingSleeves))
+Declaration(Class(:ruptureDisc))
+Declaration(Class(:safetyReliefValve))
+Declaration(Class(:safetyValve))
+Declaration(Class(:samplingPoint))
+Declaration(Class(:samplingPump))
+Declaration(Class(:scaffolding))
+Declaration(Class(:screwConveyor))
+Declaration(Class(:screwPress))
+Declaration(Class(:screw_classifier))
+Declaration(Class(:sealOrGasket))
+Declaration(Class(:sectionContent))
+Declaration(Class(:securityCamera))
+Declaration(Class(:securityMotionSensor))
+Declaration(Class(:sedimentationTank))
+Declaration(Class(:segmentOfLinearAsset))
+Declaration(Class(:selfContainedBreathingApparatus))
+Declaration(Class(:selfRetractingLifeline))
+Declaration(Class(:semi-solid))
+Declaration(Class(:sensingInstrumentation))
+Declaration(Class(:separator))
+Declaration(Class(:server_appliance))
+Declaration(Class(:sewerSegment))
+Declaration(Class(:sewer_service_connection))
+Declaration(Class(:simpleLineRole))
+Declaration(Class(:simple_line))
+Declaration(Class(:situatedWithin))
+Declaration(Class(:sludge))
+Declaration(Class(:sludgeThickenerUnit))
+Declaration(Class(:solenoid))
+Declaration(Class(:solid))
+Declaration(Class(:space))
+Declaration(Class(:specificationDescription))
+Declaration(Class(:spillKit))
+Declaration(Class(:steam))
+Declaration(Class(:steamTrap))
+Declaration(Class(:stillOrVideoMobileCamera))
+Declaration(Class(:storageTank))
+Declaration(Class(:storm_service_connection))
+Declaration(Class(:strainer))
+Declaration(Class(:structuralTankComponent))
+Declaration(Class(:structuralWall))
+Declaration(Class(:subsystem_of_a_discrete_asset))
+Declaration(Class(:sulphination_system))
+Declaration(Class(:suppliedAirRespirator))
+Declaration(Class(:switchgearDistributionBus))
+Declaration(Class(:switchgearGroundingDevice))
+Declaration(Class(:system))
+Declaration(Class(:systemBlockRole))
+Declaration(Class(:systemOfStandardizedModularParts))
+Declaration(Class(:systemOnASkid))
+Declaration(Class(:systemTrainRole))
+Declaration(Class(:system_block))
+Declaration(Class(:system_of_assembled_discrete_assets))
+Declaration(Class(:system_train))
+Declaration(Class(:tableContent))
+Declaration(Class(:tableSaw))
+Declaration(Class(:tankOrVesselComponent))
+Declaration(Class(:technicalStandard))
+Declaration(Class(:temperartureSwitch))
+Declaration(Class(:temperatureSensorElement))
+Declaration(Class(:temperatureTransmitter))
+Declaration(Class(:theMaxAllowableWorkingPressure))
+Declaration(Class(:theMaxAllowableWorkingTemp))
+Declaration(Class(:theMaxInputVoltageDesc))
+Declaration(Class(:theMinInputVoltageDesc))
+Declaration(Class(:theNominalOutputPower))
+Declaration(Class(:theSubstanceInContainment))
+Declaration(Class(:theVolumetricCapacityDesc))
+Declaration(Class(:thermalOil))
+Declaration(Class(:thermostatOrZoneControllerUnit))
+Declaration(Class(:torqueWrench))
+Declaration(Class(:totalDissolvedSolidsAnalyzer))
+Declaration(Class(:totalSuspendedSolidsAnalyzer))
+Declaration(Class(:transferSwitch))
+Declaration(Class(:transformer))
+Declaration(Class(:trapPrimingDevice))
+Declaration(Class(:traveling_bridge_collector))
+Declaration(Class(:treatment_process))
+Declaration(Class(:tunnel))
+Declaration(Class(:turbidityAnalyzer))
+Declaration(Class(:undergroundFuelOilTank_TEMP))
+Declaration(Class(:undergroundFuelTank_TEMP))
+Declaration(Class(:unitOfArea))
+Declaration(Class(:unitOfElectricalCurrent))
+Declaration(Class(:unitOfMass))
+Declaration(Class(:unitOfMeasure))
+Declaration(Class(:unitOfPower))
+Declaration(Class(:unitOfPressure))
+Declaration(Class(:unitOfTemperature))
+Declaration(Class(:unitOfVoltage))
+Declaration(Class(:unitOfVolume))
+Declaration(Class(:vaccumCleaner))
+Declaration(Class(:valve))
+Declaration(Class(:valveRole))
+Declaration(Class(:valve_actuator))
+Declaration(Class(:variableAirVolumeUnit))
+Declaration(Class(:ventilation_system))
+Declaration(Class(:ventilator))
+Declaration(Class(:verticalLifeline))
+Declaration(Class(:vibrationAnalyzer))
+Declaration(Class(:vibrationSensorElement))
+Declaration(Class(:voltageTester))
+Declaration(Class(:volumnCapacity))
+Declaration(Class(:vortex_classifier))
+Declaration(Class(:wasteGasBurner))
+Declaration(Class(:wastewaterStoragePipe))
+Declaration(Class(:water))
+Declaration(Class(:waterGlycolMixture))
+Declaration(Class(:waterTower))
+Declaration(Class(:waterTrailer))
+Declaration(Class(:water_service_connection))
+Declaration(Class(:watermain))
+Declaration(Class(:weightScale))
+Declaration(Class(:weirStructure))
+Declaration(Class(:weldingReceptacle))
+Declaration(Class(:well))
+Declaration(Class(:wirelessNetworkAccessPoint))
+Declaration(Class(:work))
+Declaration(Class(:workOrderSpecification))
+Declaration(Class(:workSpecification))
+Declaration(Class(:wrench))
+Declaration(Class(:yard))
+Declaration(Class(:EIDF:assetRecord))
+Declaration(Class(:EIDF:dataRecord))
+Declaration(Class(:EIDF:spaceRecord))
+Declaration(Class(:definedClass:CSA-B149-6_membraneGasholder))
+Declaration(Class(:definedClass:FuelAppliance))
+Declaration(Class(:definedClass:FuelOilAppliance))
+Declaration(Class(:definedClass:GasAppliance))
+Declaration(Class(:definedClass:HotWorkEquipment))
+Declaration(Class(:definedClass:_heating_boiler))
+Declaration(Class(:definedClass:_power_boiler))
+Declaration(Class(:definedClass:category_G_boilerFitting))
+Declaration(Class(:term:Multi-parameterSensingInstrument))
+Declaration(Class(:term:Single-parameterInstrument))
+Declaration(ObjectProperty(:contains))
+Declaration(ObjectProperty(:created))
+Declaration(ObjectProperty(:fullyGrounds))
+Declaration(ObjectProperty(:grounds))
+Declaration(ObjectProperty(:hasBoilerHeatingSurfaceArea))
+Declaration(ObjectProperty(:hasContentPart))
+Declaration(ObjectProperty(:hasEarlierVersion))
+Declaration(ObjectProperty(:hasLaterVersion))
+Declaration(ObjectProperty(:hasMaxHoldingCapacity))
+Declaration(ObjectProperty(:hasMaxMediumTemperature))
+Declaration(ObjectProperty(:hasMaxOperatingPressure))
+Declaration(ObjectProperty(:hasNextVersion))
+Declaration(ObjectProperty(:hasNominalInputVoltage))
+Declaration(ObjectProperty(:hasPart))
+Declaration(ObjectProperty(:hasPhysicalPart))
+Declaration(ObjectProperty(:hasPresentMeasureOfProperty))
+Declaration(ObjectProperty(:hasPresentProperty))
+Declaration(ObjectProperty(:hasPresentRelation))
+Declaration(ObjectProperty(:hasPreviousVersion))
+Declaration(ObjectProperty(:hasProcessMedium))
+Declaration(ObjectProperty(:hasProperty))
+Declaration(ObjectProperty(:hasPublisher))
+Declaration(ObjectProperty(:hasRatedOutputPower))
+Declaration(ObjectProperty(:hasSpecification))
+Declaration(ObjectProperty(:hasSubjectType))
+Declaration(ObjectProperty(:hasSubsystem))
+Declaration(ObjectProperty(:hasUnitOfMeasure))
+Declaration(ObjectProperty(:includesContent))
+Declaration(ObjectProperty(:includesContentAbout))
+Declaration(ObjectProperty(:includesWorkInstructionContent))
+Declaration(ObjectProperty(:includesWorkerQualificationContent))
+Declaration(ObjectProperty(:isADevelopmentOf))
+Declaration(ObjectProperty(:isCreatedBy))
+Declaration(ObjectProperty(:isDevelopedInto))
+Declaration(ObjectProperty(:isInAStateOf))
+Declaration(ObjectProperty(:isOccupiedBy))
+Declaration(ObjectProperty(:isPartOf))
+Declaration(ObjectProperty(:isPartOfContent))
+Declaration(ObjectProperty(:isPhysicalPartOf))
+Declaration(ObjectProperty(:isQuantifiedBy))
+Declaration(ObjectProperty(:isSubsystemOf))
+Declaration(ObjectProperty(:occupies))
+Declaration(ObjectProperty(:partiallyGrounds))
+Declaration(ObjectProperty(:possessesFunction))
+Declaration(ObjectProperty(:realizationContingentOn))
+Declaration(ObjectProperty(:references))
+Declaration(ObjectProperty(:referencesForAdoption))
+Declaration(ObjectProperty(:relativeToOnsetOf))
+Declaration(ObjectProperty(:relativeToTerminationOf))
+Declaration(ObjectProperty(:sitsWithin))
+Declaration(ObjectProperty(:specifiesTriggerEvent))
+Declaration(ObjectProperty(:theClass))
+Declaration(ObjectProperty(:theIndividual))
+Declaration(DataProperty(:hasAssetStatus))
+Declaration(DataProperty(:hasBoilerServiceType))
+Declaration(DataProperty(:hasContentText))
+Declaration(DataProperty(:hasCreationTime))
+Declaration(DataProperty(:hasDeaerator))
+Declaration(DataProperty(:hasDocumentURL))
+Declaration(DataProperty(:hasIntentDescription))
+Declaration(DataProperty(:hasInterpretationText))
+Declaration(DataProperty(:hasName))
+Declaration(DataProperty(:hasNumericValue))
+Declaration(DataProperty(:hasOperationalState))
+Declaration(DataProperty(:hasPresentPropertyIndicatedByLiteralValue))
+Declaration(DataProperty(:hasPublicationDate))
+Declaration(DataProperty(:hasRecordDataValue))
+Declaration(DataProperty(:hasRevisionDate))
+Declaration(DataProperty(:hasScopeDescription))
+Declaration(DataProperty(:hasSealedOrShieldedBearing))
+Declaration(DataProperty(:hasSummary))
+Declaration(DataProperty(:has_NEMA_enclosureType))
+Declaration(DataProperty(:has_NEMA_frameType))
+Declaration(DataProperty(:includesWorkInstructionText))
+Declaration(DataProperty(:isAboveGround))
+Declaration(DataProperty(:isActuatedValve))
+Declaration(DataProperty(:isControlledValve))
+Declaration(DataProperty(:isDesignatedBy))
+Declaration(DataProperty(:isInstalledUnderground))
+Declaration(DataProperty(:isLatestVersion))
+Declaration(DataProperty(:isSubjectOfNote))
+Declaration(DataProperty(:isUnderGround))
+Declaration(DataProperty(:usesBearingLubricantType))
+Declaration(DataProperty(:EIDF:ChangeToPhysicalAsset))
+Declaration(DataProperty(:EIDF:assetRecordDataProperty))
+Declaration(DataProperty(:EIDF:hasAsset_JSON-LD_data))
+Declaration(DataProperty(:EIDF:hasBoilerEnergySource))
+Declaration(DataProperty(:EIDF:hasBoilerProcessMedium))
+Declaration(DataProperty(:EIDF:hasEntityName))
+Declaration(DataProperty(:EIDF:hasEntityNumber))
+Declaration(DataProperty(:EIDF:hasParentEntityNumber))
+Declaration(DataProperty(:EIDF:usesBearingLubricantType))
+Declaration(NamedIndividual(:Celsius))
+Declaration(NamedIndividual(:Fahrenheit))
+Declaration(NamedIndividual(:Kelvin))
+Declaration(NamedIndividual(:NEMA_EXPL))
+Declaration(NamedIndividual(:NEMA_HAZ))
+Declaration(NamedIndividual(:NEMA_ODP))
+Declaration(NamedIndividual(:NEMA_TEAO))
+Declaration(NamedIndividual(:NEMA_TEFC))
+Declaration(NamedIndividual(:NEMA_TENV))
+Declaration(NamedIndividual(:NEMA_TEWD))
+Declaration(NamedIndividual(:assetAvailableState))
+Declaration(NamedIndividual(:assetUnavailableState))
+Declaration(NamedIndividual(:bar))
+Declaration(NamedIndividual(:cubicFeet))
+Declaration(NamedIndividual(:cubicMetre))
+Declaration(NamedIndividual(:horsepower))
+Declaration(NamedIndividual(:kiloPascal))
+Declaration(NamedIndividual(:kilovolt))
+Declaration(NamedIndividual(:kilovolt-ampere))
+Declaration(NamedIndividual(:kilowatt))
+Declaration(NamedIndividual(:litre))
+Declaration(NamedIndividual(:megavolt-ampere))
+Declaration(NamedIndividual(:megawatt))
+Declaration(NamedIndividual(:poundsPerSquareInch))
+Declaration(NamedIndividual(:squareCentimetre))
+Declaration(NamedIndividual(:squareFeet))
+Declaration(NamedIndividual(:squareInch))
+Declaration(NamedIndividual(:squareKilometre))
+Declaration(NamedIndividual(:squareMetre))
+Declaration(NamedIndividual(:squareMile))
+Declaration(NamedIndividual(:steam))
+Declaration(NamedIndividual(:thermalOil))
+Declaration(NamedIndividual(:volt))
+Declaration(NamedIndividual(:volt-ampere))
+Declaration(NamedIndividual(:water))
+Declaration(NamedIndividual(:waterGlycolMixture))
+Declaration(NamedIndividual(:watt))
+Declaration(AnnotationProperty(:TW_PCS_code))
+Declaration(AnnotationProperty(:alwaysFunctionsAsPartOfDiscreteAsset))
+Declaration(AnnotationProperty(:dev-PropertyNote))
+Declaration(AnnotationProperty(:dev-ontologyNote))
+Declaration(AnnotationProperty(:excludeFromAssetClassList))
+Declaration(AnnotationProperty(:excludeParentFromClassificationTree))
+Declaration(AnnotationProperty(:isEquivalentToAvantisCategory))
+Declaration(AnnotationProperty(:isEquivalentToAvantisClass))
+Declaration(AnnotationProperty(:isEquivalentToTagCode))
+Declaration(AnnotationProperty(:isSuperclassOfAvantisCategory))
+Declaration(AnnotationProperty(:isSuperclassOfAvantisClass))
+Declaration(AnnotationProperty(:isSuperclassOfTagCode))
+Declaration(AnnotationProperty(:notionMappingID))
+Declaration(AnnotationProperty(:tool))
+Declaration(AnnotationProperty(<http://www.w3.org/2004/02/skos/core#altLabel>))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: :alwaysFunctionsAsPartOfDiscreteAsset (Always Functions as Part of a Discrete Asset)
+
+AnnotationAssertion(rdfs:label :alwaysFunctionsAsPartOfDiscreteAsset "Always Functions as Part of a Discrete Asset")
+AnnotationPropertyRange(:alwaysFunctionsAsPartOfDiscreteAsset xsd:boolean)
+
+# Annotation Property: :excludeFromAssetClassList (:excludeFromAssetClassList)
+
+AnnotationPropertyRange(:excludeFromAssetClassList xsd:boolean)
+
+# Annotation Property: :notionMappingID (:notionMappingID)
+
+AnnotationAssertion(rdfs:isDefinedBy :notionMappingID "CSA C282: A generator providing emergency power to one of the following:
+a) fire alarm and emergency voice communications systems;
+b) firefighter’s elevators and elevators serving storeys above the first storey in a high building;
+c) fire protection water supply pumps that depend on electrical power supplied to the building;
+d) smoke control and smoke venting systems;
+e) emergency lighting; and
+f) exit signs that depend on electrical power supplied to the building.")
+
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :contains (:contains)
+
+SubObjectPropertyOf(:contains :hasPresentRelation)
+
+# Object Property: :created (:created)
+
+SubObjectPropertyOf(:created :hasPresentRelation)
+
+# Object Property: :fullyGrounds (:fullyGrounds)
+
+SubObjectPropertyOf(:fullyGrounds :grounds)
+
+# Object Property: :grounds (grounds)
+
+AnnotationAssertion(rdfs:label :grounds "grounds"@en)
+SubObjectPropertyOf(:grounds :hasPresentRelation)
+TransitiveObjectProperty(:grounds)
+
+# Object Property: :hasBoilerHeatingSurfaceArea (:hasBoilerHeatingSurfaceArea)
+
+SubObjectPropertyOf(:hasBoilerHeatingSurfaceArea :hasPresentMeasureOfProperty)
+
+# Object Property: :hasContentPart (:hasContentPart)
+
+SubObjectPropertyOf(:hasContentPart :hasPart)
+InverseObjectProperties(:hasContentPart :isPartOfContent)
+
+# Object Property: :hasEarlierVersion (:hasEarlierVersion)
+
+SubObjectPropertyOf(:hasEarlierVersion :hasPresentRelation)
+TransitiveObjectProperty(:hasEarlierVersion)
+
+# Object Property: :hasLaterVersion (:hasLaterVersion)
+
+SubObjectPropertyOf(:hasLaterVersion :hasPresentRelation)
+TransitiveObjectProperty(:hasLaterVersion)
+
+# Object Property: :hasMaxHoldingCapacity (:hasMaxHoldingCapacity)
+
+SubObjectPropertyOf(:hasMaxHoldingCapacity :hasPresentMeasureOfProperty)
+
+# Object Property: :hasMaxMediumTemperature (:hasMaxMediumTemperature)
+
+SubObjectPropertyOf(:hasMaxMediumTemperature :hasPresentMeasureOfProperty)
+
+# Object Property: :hasMaxOperatingPressure (:hasMaxOperatingPressure)
+
+SubObjectPropertyOf(:hasMaxOperatingPressure :hasPresentMeasureOfProperty)
+
+# Object Property: :hasNextVersion (has next version)
+
+AnnotationAssertion(rdfs:label :hasNextVersion "has next version"@en)
+SubObjectPropertyOf(:hasNextVersion :hasLaterVersion)
+
+# Object Property: :hasNominalInputVoltage (:hasNominalInputVoltage)
+
+SubObjectPropertyOf(:hasNominalInputVoltage :hasPresentMeasureOfProperty)
+
+# Object Property: :hasPart (:hasPart)
+
+SubObjectPropertyOf(:hasPart :hasPresentRelation)
+InverseObjectProperties(:hasPart :isPartOf)
+TransitiveObjectProperty(:hasPart)
+
+# Object Property: :hasPhysicalPart (:hasPhysicalPart)
+
+SubObjectPropertyOf(:hasPhysicalPart :hasPart)
+InverseObjectProperties(:hasPhysicalPart :isPhysicalPartOf)
+
+# Object Property: :hasPresentMeasureOfProperty (:hasPresentMeasureOfProperty)
+
+AnnotationAssertion(rdfs:comment :hasPresentMeasureOfProperty "The direct forms of tw:measureOfProperty")
+SubObjectPropertyOf(:hasPresentMeasureOfProperty :hasPresentProperty)
+
+# Object Property: :hasPresentProperty (:hasPresentProperty)
+
+AnnotationAssertion(rdfs:comment :hasPresentProperty "TH Dec/2023: 
+The following properties are represented without reification.
+1. The binary relations represented by classes \"Relation>Binary Relation To\" 
+2. Unary relations pointing to a (complex) state, represented by a string or boolean value (This is represented as a DataProperty)")
+
+# Object Property: :hasPresentRelation (:hasPresentRelation)
+
+SubObjectPropertyOf(:hasPresentRelation :hasPresentProperty)
+
+# Object Property: :hasPreviousVersion (has previous version)
+
+AnnotationAssertion(rdfs:label :hasPreviousVersion "has previous version"@en)
+SubObjectPropertyOf(:hasPreviousVersion :hasEarlierVersion)
+
+# Object Property: :hasProcessMedium (:hasProcessMedium)
+
+AnnotationAssertion(rdfs:seeAlso :hasProcessMedium "http://www.toronto.ca/TWONTO#processMedium"^^xsd:anyURI)
+SubObjectPropertyOf(:hasProcessMedium :hasPresentRelation)
+
+# Object Property: :hasProperty (:hasProperty)
+
+AnnotationAssertion(rdfs:comment :hasProperty "Specialized for states related to the physical quality of the entity
+Usage Examples:
+AssetX hasProperty assetMass
+AssetX hasProperty assetHealth")
+SubObjectPropertyOf(:hasProperty owl:topObjectProperty)
+ObjectPropertyRange(:hasProperty :property)
+
+# Object Property: :hasPublisher (:hasPublisher)
+
+AnnotationAssertion(:dev-PropertyNote :hasPublisher "range tw:publisher")
+SubObjectPropertyOf(:hasPublisher :hasPresentRelation)
+ObjectPropertyDomain(:hasPublisher :pieceOfContent)
+
+# Object Property: :hasRatedOutputPower (:hasRatedOutputPower)
+
+SubObjectPropertyOf(:hasRatedOutputPower :hasPresentMeasureOfProperty)
+
+# Object Property: :hasSpecification (:hasSpecification)
+
+AnnotationAssertion(rdfs:comment :hasSpecification "May2024:  A specification (the object of this predicate) is technically an information entity (from say the designer of an asset), which you would use to infer the actual property of a an object at a certain time t (e.g., the property of the asset when it was new). 
+Also see further comment under the tw:theMetaClass class.")
+SubObjectPropertyOf(:hasSpecification :hasProperty)
+
+# Object Property: :hasSubjectType (:hasSubjectType)
+
+SubObjectPropertyOf(:hasSubjectType :hasPresentRelation)
+ObjectPropertyRange(:hasSubjectType :contentSubject)
+
+# Object Property: :hasSubsystem (:hasSubsystem)
+
+SubObjectPropertyOf(:hasSubsystem :hasPresentRelation)
+InverseObjectProperties(:hasSubsystem :isSubsystemOf)
+
+# Object Property: :hasUnitOfMeasure (:hasUnitOfMeasure)
+
+AnnotationAssertion(rdfs:comment :hasUnitOfMeasure "unit")
+AnnotationAssertion(rdfs:seeAlso :hasUnitOfMeasure "TWONTO:hasNumericValue")
+SubObjectPropertyOf(:hasUnitOfMeasure owl:topObjectProperty)
+
+# Object Property: :includesContent (:includesContent)
+
+AnnotationAssertion(rdfs:comment :includesContent "TH Dec2023: range: information content entity")
+SubObjectPropertyOf(:includesContent :hasPresentRelation)
+ObjectPropertyRange(:includesContent :pieceOfContent)
+
+# Object Property: :includesContentAbout (:includesContentAbout)
+
+AnnotationAssertion(rdfs:comment :includesContentAbout "TH Dec2023: range:OWL thing")
+SubObjectPropertyOf(:includesContentAbout :hasPresentRelation)
+
+# Object Property: :includesWorkInstructionContent (includes work instruction content)
+
+AnnotationAssertion(rdfs:label :includesWorkInstructionContent "includes work instruction content"@en)
+SubObjectPropertyOf(:includesWorkInstructionContent :includesContent)
+ObjectPropertyRange(:includesWorkInstructionContent :pieceOfContent)
+
+# Object Property: :includesWorkerQualificationContent (includes worker qualification content)
+
+AnnotationAssertion(rdfs:label :includesWorkerQualificationContent "includes worker qualification content"@en)
+SubObjectPropertyOf(:includesWorkerQualificationContent :includesContent)
+ObjectPropertyRange(:includesWorkerQualificationContent :pieceOfContent)
+
+# Object Property: :isADevelopmentOf (:isADevelopmentOf)
+
+SubObjectPropertyOf(:isADevelopmentOf :hasPresentRelation)
+InverseObjectProperties(:isADevelopmentOf :isDevelopedInto)
+
+# Object Property: :isCreatedBy (:isCreatedBy)
+
+SubObjectPropertyOf(:isCreatedBy :hasPresentRelation)
+
+# Object Property: :isDevelopedInto (:isDevelopedInto)
+
+SubObjectPropertyOf(:isDevelopedInto :hasPresentRelation)
+ObjectPropertyDomain(:isDevelopedInto :informationContentEntity)
+
+# Object Property: :isInAStateOf (:isInAStateOf)
+
+AnnotationAssertion(rdfs:comment :isInAStateOf "Could be synonymous to \"inAnObservableStateOf\"")
+AnnotationAssertion(rdfs:comment :isInAStateOf "Specialized for states associated with one or more relations to other entities in the world.
+Usage Examples:
+as a part of binary relation: 
+- AssetX -isInAStateOf-> SittingInside -theIndividual-> RoomY
+- AssetX -isInAStateOf->  possessing -theIndividual-> FunctionAC
+as a part of unary relation: 
+- AssetX isInAStateOf  assetOperationalState")
+SubObjectPropertyOf(:isInAStateOf :hasProperty)
+ObjectPropertyRange(:isInAStateOf :property)
+
+# Object Property: :isOccupiedBy (:isOccupiedBy)
+
+SubObjectPropertyOf(:isOccupiedBy :hasPresentRelation)
+InverseObjectProperties(:isOccupiedBy :occupies)
+
+# Object Property: :isPartOf (:isPartOf)
+
+AnnotationAssertion(rdfs:comment :isPartOf "is physical proper part of")
+SubObjectPropertyOf(:isPartOf :hasPresentRelation)
+TransitiveObjectProperty(:isPartOf)
+
+# Object Property: :isPartOfContent (:isPartOfContent)
+
+SubObjectPropertyOf(:isPartOfContent :isPartOf)
+
+# Object Property: :isPhysicalPartOf (:isPhysicalPartOf)
+
+SubObjectPropertyOf(:isPhysicalPartOf :isPartOf)
+
+# Object Property: :isQuantifiedBy (:isQuantifiedBy)
+
+AnnotationAssertion(rdfs:comment :isQuantifiedBy "Mar2024 TH: Example usage: :outputVoltage :isQuantifiedBy :measureOfPowerLevel")
+AnnotationAssertion(rdfs:seeAlso :isQuantifiedBy "hasNumericValue")
+AnnotationAssertion(rdfs:seeAlso :isQuantifiedBy "hasUnitOfMeasure")
+ObjectPropertyDomain(:isQuantifiedBy :property)
+ObjectPropertyRange(:isQuantifiedBy :measurement)
+
+# Object Property: :isSubsystemOf (:isSubsystemOf)
+
+AnnotationAssertion(rdfs:isDefinedBy :isSubsystemOf "A relation that refers to any system in relation to a larger system to which it is a part of.")
+SubObjectPropertyOf(:isSubsystemOf :hasPresentRelation)
+
+# Object Property: :occupies (:occupies)
+
+SubObjectPropertyOf(:occupies :hasPresentRelation)
+
+# Object Property: :partiallyGrounds (partially grounds)
+
+AnnotationAssertion(rdfs:label :partiallyGrounds "partially grounds"@en)
+SubObjectPropertyOf(:partiallyGrounds :grounds)
+
+# Object Property: :possessesFunction (:possessesFunction)
+
+SubObjectPropertyOf(:possessesFunction :hasPresentRelation)
+
+# Object Property: :realizationContingentOn (:realizationContingentOn)
+
+AnnotationAssertion(rdfs:comment :realizationContingentOn "Mar20'24: This is meant to be used with capability specifications, to keep track of the condition under which the capability / function can be realized. For example. certain pump flow rate being contingent on a certain temperature.")
+
+# Object Property: :references (references)
+
+AnnotationAssertion(rdfs:comment :references "TH 12.5.2023: Create to indicate that one document makes an explicit reference of another body of content.")
+AnnotationAssertion(rdfs:label :references "references"@en)
+SubObjectPropertyOf(:references :hasPresentRelation)
+
+# Object Property: :referencesForAdoption (references for adoption)
+
+AnnotationAssertion(rdfs:comment :referencesForAdoption "TH 12/5/2023: created to indicate that a body of content does not only contain a reference to another body of content, but also adopts the referred content to be enforceable, under the authority of an origanization such as the government legislature, or the employer.")
+AnnotationAssertion(rdfs:label :referencesForAdoption "references for adoption"@en)
+SubObjectPropertyOf(:referencesForAdoption :references)
+
+# Object Property: :relativeToOnsetOf (:relativeToOnsetOf)
+
+SubObjectPropertyOf(:relativeToOnsetOf :hasPresentRelation)
+ObjectPropertyRange(:relativeToOnsetOf :process)
+
+# Object Property: :relativeToTerminationOf (:relativeToTerminationOf)
+
+SubObjectPropertyOf(:relativeToTerminationOf :hasPresentRelation)
+ObjectPropertyRange(:relativeToTerminationOf :process)
+
+# Object Property: :sitsWithin (:sitsWithin)
+
+SubObjectPropertyOf(:sitsWithin :hasPresentRelation)
+
+# Object Property: :theClass (:theClass)
+
+AnnotationAssertion(rdfs:comment :theClass "07/05/2024: previous IRI name: theMetaClass")
+AnnotationAssertion(rdfs:comment :theClass "7/05/2024: Example of usage
+boilerX  -hasSpecification->  processMedium  -theClass->  heatingOil
+with heatingOil defined as a subclass of substance in the ontology")
+SubObjectPropertyOf(:theClass :theIndividual)
+
+# Object Property: :theIndividual (:theIndividual)
+
+AnnotationAssertion(rdfs:comment :theIndividual "Usage Examples:
+AssetX -tw:isInAStateOf-> SittingInside -tw:theIndividual-> RoomY")
+ObjectPropertyDomain(:theIndividual :relationalState)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :hasAssetStatus (:hasAssetStatus)
+
+SubDataPropertyOf(:hasAssetStatus :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasBoilerServiceType (:hasBoilerServiceType)
+
+AnnotationAssertion(rdfs:comment :hasBoilerServiceType "either \"hot water\" or \"steam\"")
+SubDataPropertyOf(:hasBoilerServiceType :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasContentText (:hasContentText)
+
+SubDataPropertyOf(:hasContentText :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasCreationTime (:hasCreationTime)
+
+SubDataPropertyOf(:hasCreationTime :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasDeaerator (:hasDeaerator)
+
+SubDataPropertyOf(:hasDeaerator :hasPresentPropertyIndicatedByLiteralValue)
+DataPropertyRange(:hasDeaerator xsd:boolean)
+
+# Data Property: :hasDocumentURL (:hasDocumentURL)
+
+SubDataPropertyOf(:hasDocumentURL :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasIntentDescription (:hasIntentDescription)
+
+AnnotationAssertion(rdfs:comment :hasIntentDescription "TH 12/02/23:
+I created this property to point to a piece of text describing the intent of the person(s) who raise the a certain Specific Content Subject.  For example the intent of the legislators who raise the subject of a new legislation.")
+SubDataPropertyOf(:hasIntentDescription :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasInterpretationText (:hasInterpretationText)
+
+SubDataPropertyOf(:hasInterpretationText :hasPresentPropertyIndicatedByLiteralValue)
+DataPropertyRange(:hasInterpretationText xsd:string)
+
+# Data Property: :hasName (:hasName)
+
+SubDataPropertyOf(:hasName :hasPresentPropertyIndicatedByLiteralValue)
+DataPropertyRange(:hasName xsd:string)
+
+# Data Property: :hasNumericValue (:hasNumericValue)
+
+AnnotationAssertion(rdfs:comment :hasNumericValue "numeric value")
+AnnotationAssertion(rdfs:seeAlso :hasNumericValue "hasUnitOfMeasure")
+
+# Data Property: :hasOperationalState (:hasOperationalState)
+
+SubDataPropertyOf(:hasOperationalState :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasPresentPropertyIndicatedByLiteralValue (:hasPresentPropertyIndicatedByLiteralValue)
+
+AnnotationAssertion(rdfs:comment :hasPresentPropertyIndicatedByLiteralValue "07/04/2024: name changed from hasPresentValue. The \"dataValue\" in the new name \"hasPresentPropertyDataValue\" reflects that the predicate is always a literal value, symbolic of a property state. The \"Present\" reflects the state represented by the predicate is valid for the present time.")
+AnnotationAssertion(rdfs:comment :hasPresentPropertyIndicatedByLiteralValue "TH Jan'24: This is mean to be used with non-numeric values. All numerical values are reified in order to accomedate a UOM")
+SubDataPropertyOf(:hasPresentPropertyIndicatedByLiteralValue :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasPublicationDate (:hasPublicationDate)
+
+SubDataPropertyOf(:hasPublicationDate :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasRevisionDate (:hasRevisionDate)
+
+SubDataPropertyOf(:hasRevisionDate :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasScopeDescription (:hasScopeDescription)
+
+SubDataPropertyOf(:hasScopeDescription :hasPresentPropertyIndicatedByLiteralValue)
+DataPropertyRange(:hasScopeDescription xsd:string)
+
+# Data Property: :hasSealedOrShieldedBearing (:hasSealedOrShieldedBearing)
+
+SubDataPropertyOf(:hasSealedOrShieldedBearing :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :hasSummary (:hasSummary)
+
+SubDataPropertyOf(:hasSummary :hasPresentPropertyIndicatedByLiteralValue)
+DataPropertyRange(:hasSummary xsd:string)
+
+# Data Property: :has_NEMA_enclosureType (:has_NEMA_enclosureType)
+
+SubDataPropertyOf(:has_NEMA_enclosureType :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :has_NEMA_frameType (:has_NEMA_frameType)
+
+SubDataPropertyOf(:has_NEMA_frameType :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :includesWorkInstructionText (:includesWorkInstructionText)
+
+AnnotationAssertion(rdfs:comment :includesWorkInstructionText "TH: used in compliance app")
+SubDataPropertyOf(:includesWorkInstructionText :hasContentText)
+
+# Data Property: :isAboveGround (:isAboveGround)
+
+SubDataPropertyOf(:isAboveGround :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :isActuatedValve (:isActuatedValve)
+
+SubDataPropertyOf(:isActuatedValve :hasPresentPropertyIndicatedByLiteralValue)
+DataPropertyRange(:isActuatedValve xsd:boolean)
+
+# Data Property: :isControlledValve (:isControlledValve)
+
+SubDataPropertyOf(:isControlledValve :hasPresentPropertyIndicatedByLiteralValue)
+DataPropertyRange(:isControlledValve xsd:boolean)
+
+# Data Property: :isDesignatedBy (:isDesignatedBy)
+
+SubDataPropertyOf(:isDesignatedBy :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :isInstalledUnderground (:isInstalledUnderground)
+
+SubDataPropertyOf(:isInstalledUnderground :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :isLatestVersion (:isLatestVersion)
+
+SubDataPropertyOf(:isLatestVersion :hasPresentPropertyIndicatedByLiteralValue)
+DataPropertyRange(:isLatestVersion xsd:boolean)
+
+# Data Property: :isSubjectOfNote (:isSubjectOfNote)
+
+SubDataPropertyOf(:isSubjectOfNote :hasPresentPropertyIndicatedByLiteralValue)
+DataPropertyRange(:isSubjectOfNote xsd:string)
+
+# Data Property: :isUnderGround (:isUnderGround)
+
+SubDataPropertyOf(:isUnderGround :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :usesBearingLubricantType (:usesBearingLubricantType)
+
+SubDataPropertyOf(:usesBearingLubricantType :hasPresentPropertyIndicatedByLiteralValue)
+
+# Data Property: :ChangeToPhysicalAsset (:ChangeToPhysicalAsset)
+
+SubDataPropertyOf(:EIDF:ChangeToPhysicalAsset :EIDF:assetRecordDataProperty)
+
+# Data Property: :assetRecordDataProperty (:assetRecordDataProperty)
+
+AnnotationAssertion(rdfs:comment :EIDF:assetRecordDataProperty "July24: 
+- EIDF stands for Entity Information Data Format , which is developed from the Entity Information Workbook. The valid values are specified for each data property is, for now, specified in the SHACL.")
+SubDataPropertyOf(:EIDF:assetRecordDataProperty :hasRecordDataValue)
+
+# Data Property: :hasAsset_JSON-LD_data (:hasAsset_JSON-LD_data)
+
+SubDataPropertyOf(:EIDF:hasAsset_JSON-LD_data :EIDF:assetRecordDataProperty)
+
+# Data Property: :hasBoilerEnergySource (:hasBoilerEnergySource)
+
+SubDataPropertyOf(:EIDF:hasBoilerEnergySource :EIDF:assetRecordDataProperty)
+
+# Data Property: :hasBoilerProcessMedium (:hasBoilerProcessMedium)
+
+SubDataPropertyOf(:EIDF:hasBoilerProcessMedium :EIDF:assetRecordDataProperty)
+
+# Data Property: :hasEntityName (:hasEntityName)
+
+SubDataPropertyOf(:EIDF:hasEntityName :EIDF:assetRecordDataProperty)
+
+# Data Property: :hasEntityNumber (:hasEntityNumber)
+
+SubDataPropertyOf(:EIDF:hasEntityNumber :EIDF:assetRecordDataProperty)
+
+# Data Property: :hasParentEntityNumber (:hasParentEntityNumber)
+
+SubDataPropertyOf(:EIDF:hasParentEntityNumber :EIDF:assetRecordDataProperty)
+
+# Data Property: :usesBearingLubricantType (:usesBearingLubricantType)
+
+SubDataPropertyOf(:EIDF:usesBearingLubricantType :EIDF:assetRecordDataProperty)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :AC_condenser_unit (:AC_condenser_unit)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :AC_condenser_unit "AC outdoor unit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :AC_condenser_unit "air condition condenser")
+SubClassOf(:AC_condenser_unit :discrete_asset)
+
+# Class: :AC_evaporator_unit (:AC_evaporator_unit)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :AC_evaporator_unit "AC indoor unit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :AC_evaporator_unit "air condition evaporator")
+SubClassOf(:AC_evaporator_unit :discrete_asset)
+
+# Class: :COCOA (compilation of content on activity specification)
+
+AnnotationAssertion(rdfs:label :COCOA "compilation of content on activity specification"@en)
+SubClassOf(:COCOA :contentCompilation)
+
+# Class: :HV_disconnectSwitch (:HV_disconnectSwitch)
+
+SubClassOf(:HV_disconnectSwitch :discrete_asset)
+
+# Class: :InstrumentGaugeOrDisplay (:InstrumentGaugeOrDisplay)
+
+SubClassOf(:InstrumentGaugeOrDisplay :discrete_asset)
+
+# Class: :NEMA_EXPL (EXPL)
+
+AnnotationAssertion(rdfs:isDefinedBy :NEMA_EXPL "NEMA EXPL is a designation by the National Electrical Manufacturers Association for explosion-proof electrical enclosures. These enclosures contain internal explosions and prevent ignition of surrounding hazardous atmospheres.")
+AnnotationAssertion(rdfs:label :NEMA_EXPL "EXPL")
+SubClassOf(:NEMA_EXPL :NEMA_enclosureType)
+
+# Class: :NEMA_HAZ (HAZ)
+
+AnnotationAssertion(rdfs:label :NEMA_HAZ "HAZ")
+SubClassOf(:NEMA_HAZ :NEMA_enclosureType)
+
+# Class: :NEMA_enclosureType (:NEMA_enclosureType)
+
+SubClassOf(:NEMA_enclosureType :quality)
+
+# Class: :PLC (:PLC)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "progammable logic controller")
+SubClassOf(:PLC :controller)
+
+# Class: :PLC_moduleComponent (:PLC_moduleComponent)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :PLC_moduleComponent "true"^^xsd:boolean)
+SubClassOf(:PLC_moduleComponent :controller)
+
+# Class: :PPE (:PPE)
+
+AnnotationAssertion(:excludeFromAssetClassList :PPE "true"^^xsd:boolean)
+SubClassOf(:PPE :discrete_asset)
+
+# Class: :RTU (:RTU)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :RTU "remote terminal unit")
+SubClassOf(:RTU :controller)
+
+# Class: :SCADA_computerTerminal (:SCADA_computerTerminal)
+
+SubClassOf(:SCADA_computerTerminal :computer)
+
+# Class: :UPS (:UPS)
+
+SubClassOf(:UPS :discrete_asset)
+
+# Class: :UV_disinfectionLampUnit (:UV_disinfectionLampUnit)
+
+SubClassOf(:UV_disinfectionLampUnit :discrete_asset)
+
+# Class: :UV_disinfection_assembly (:UV_disinfection_assembly)
+
+SubClassOf(:UV_disinfection_assembly :localized_function_system)
+
+# Class: :aPortionOfMaterialOfAsset (:aPortionOfMaterialOfAsset)
+
+AnnotationAssertion(rdfs:comment :aPortionOfMaterialOfAsset "6/18: e.g. lubircating oil, granular filter medium")
+SubClassOf(:aPortionOfMaterialOfAsset :material)
+
+# Class: :aPowerDesc (:aPowerDesc)
+
+SubClassOf(:aPowerDesc :assetDescription)
+
+# Class: :aPressureDesc (:aPressureDesc)
+
+SubClassOf(:aPressureDesc :assetDescription)
+
+# Class: :aTemperatureDesc (:aTemperatureDesc)
+
+SubClassOf(:aTemperatureDesc :assetDescription)
+
+# Class: :aVoltageDesc (:aVoltageDesc)
+
+SubClassOf(:aVoltageDesc :assetDescription)
+
+# Class: :aVolumetricCapacityDesc (:aVolumetricCapacityDesc)
+
+SubClassOf(:aVolumetricCapacityDesc :assetDescription)
+
+# Class: :abovegroundFuelOilTank_TEMP (:abovegroundFuelOilTank_TEMP)
+
+AnnotationAssertion(:excludeFromAssetClassList :abovegroundFuelOilTank_TEMP "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :abovegroundFuelOilTank_TEMP "420e434923b848fabad3492f3a2fc981")
+EquivalentClasses(:abovegroundFuelOilTank_TEMP ObjectIntersectionOf(:fuelOilTank DataHasValue(:isAboveGround "true"^^xsd:boolean)))
+
+# Class: :abovegroundFuelTank_TEMP (:abovegroundFuelTank_TEMP)
+
+AnnotationAssertion(:excludeFromAssetClassList :abovegroundFuelTank_TEMP "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :abovegroundFuelTank_TEMP "f6a5a26efef34b9d967e390024b800c4")
+EquivalentClasses(:abovegroundFuelTank_TEMP ObjectIntersectionOf(:fuelTank DataHasValue(:isAboveGround "true"^^xsd:boolean)))
+
+# Class: :actuator (:actuator)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :actuator "true"^^xsd:boolean)
+SubClassOf(:actuator :discrete_asset)
+
+# Class: :aerationGasDiffuser (:aerationGasDiffuser)
+
+SubClassOf(:aerationGasDiffuser :gasDiffuser)
+
+# Class: :aerationTank (:aerationTank)
+
+SubClassOf(:aerationTank :bioreactor)
+
+# Class: :airDryer (:airDryer)
+
+AnnotationAssertion(:dev-ontologyNote :airDryer "Desiccant Air Dryers (heated, heatless), Refrigerated Air Dryer, Membrane Air Dryer,")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :airDryer "dehumidifier")
+SubClassOf(:airDryer :dryer)
+
+# Class: :airDuctSegment (:airDuctSegment)
+
+SubClassOf(:airDuctSegment :segmentOfLinearAsset)
+
+# Class: :air_condition (:air_condition)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :air_condition "AC")
+SubClassOf(:air_condition :discrete_asset)
+
+# Class: :air_damper (:air_damper)
+
+AnnotationAssertion(:dev-ontologyNote :air_damper "from P&ID symbols: motorized, back draft damper, fire damper")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :air_damper "louver")
+SubClassOf(:air_damper :discrete_asset)
+
+# Class: :air_exchange_unit (:air_exchange_unit)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :air_exchange_unit "Air Exchanger Unit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :air_exchange_unit "fresh air unit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :air_exchange_unit "ventilator")
+SubClassOf(:air_exchange_unit :discrete_asset)
+
+# Class: :air_handler_unit (:air_handler_unit)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :air_handler_unit "Air Handling Unit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :air_handler_unit "AHU")
+SubClassOf(:air_handler_unit :discrete_asset)
+
+# Class: :air_scrubber (:air_scrubber)
+
+SubClassOf(:air_scrubber :localized_function_system)
+
+# Class: :alarm_device (:alarm_device)
+
+AnnotationAssertion(:dev-ontologyNote :alarm_device "hasStrobe?
+producesAudibleAlarm?
+isFireSystemAlarm?")
+AnnotationAssertion(:isEquivalentToAvantisClass :alarm_device "Alarm")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :alarm_device "alarm")
+SubClassOf(:alarm_device :discrete_asset)
+
+# Class: :ammoniaAnalyzer (:ammoniaAnalyzer)
+
+SubClassOf(:ammoniaAnalyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :annunciator_panel (:annunciator_panel)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :annunciator_panel "fire panel")
+SubClassOf(:annunciator_panel :discrete_asset)
+
+# Class: :arc-flash_suit (:arc-flash_suit)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :arc-flash_suit "protective suit")
+SubClassOf(:arc-flash_suit :discrete_asset)
+
+# Class: :ash_lagoon (:ash_lagoon)
+
+SubClassOf(:ash_lagoon :discrete_asset)
+
+# Class: :asset (:asset)
+
+AnnotationAssertion(rdfs:comment :asset "The function of an asset is to be realized continuously or repeatedly, which differs from consumables materials. The function of consumable materials is realized only once.
+An asset is not always associated with a market value – some assets’ market value may have depreciated to nothing.  However, the assets may continue to provide capabilities useful to Toronto Water. The capability, if lost, is associated with a cost to replace.")
+AnnotationAssertion(rdfs:isDefinedBy :asset "a material entity owned by a person or organization that possesses
+* functions useful for its owner's goal
+* and/or monetary value")
+
+# Class: :assetDescription (asset specification)
+
+AnnotationAssertion(rdfs:isDefinedBy :assetDescription "a description of the capability of an asset or a product-line of assets.")
+AnnotationAssertion(rdfs:label :assetDescription "asset specification")
+SubClassOf(:assetDescription :description)
+
+# Class: :assetManufacturer (:assetManufacturer)
+
+SubClassOf(:assetManufacturer :organization)
+
+# Class: :assetOpperationState (:assetOpperationState)
+
+SubClassOf(:assetOpperationState :definedState)
+
+# Class: :assetOwner (:assetOwner)
+
+SubClassOf(:assetOwner :organization)
+
+# Class: :assetPhysicalStatus (:assetPhysicalStatus)
+
+SubClassOf(:assetPhysicalStatus :definedState)
+
+# Class: :automatic_external_defibrillator (:automatic_external_defibrillator)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :automatic_external_defibrillator "AED")
+SubClassOf(:automatic_external_defibrillator :discrete_asset)
+
+# Class: :backflow_preventer (:backflow_preventer)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :backflow_preventer "Back Flow Preventer")
+AnnotationAssertion(:notionMappingID :backflow_preventer "820677d0c7e44520a83d328e2e371d97")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :backflow_preventer "BFP")
+SubClassOf(:backflow_preventer :discrete_asset)
+
+# Class: :bandSaw (:bandSaw)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :bandSaw "saw")
+SubClassOf(:bandSaw :largeStationaryTool)
+
+# Class: :bar_screen_unit (:bar_screen_unit)
+
+AnnotationAssertion(:dev-ontologyNote :bar_screen_unit "isTravelingScreenUnit")
+SubClassOf(:bar_screen_unit :discrete_asset)
+
+# Class: :battery (:battery)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :battery "Battery")
+SubClassOf(:battery :discrete_asset)
+
+# Class: :battery_charger (:battery_charger)
+
+SubClassOf(:battery_charger :discrete_asset)
+
+# Class: :bearing (:bearing)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :bearing "true"^^xsd:boolean)
+SubClassOf(:bearing :discrete_asset)
+
+# Class: :beingAPartOf (:beingAPartOf)
+
+SubClassOf(:beingAPartOf :relationalState)
+
+# Class: :belt (:belt)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :belt "true"^^xsd:boolean)
+SubClassOf(:belt :discrete_asset)
+
+# Class: :beltConveyor (:beltConveyor)
+
+SubClassOf(:beltConveyor :conveyor)
+
+# Class: :beltPress (:beltPress)
+
+SubClassOf(:beltPress :dewateringPress)
+
+# Class: :biogas (:biogas)
+
+SubClassOf(:biogas :combustableMaterial)
+SubClassOf(:biogas :gaseousMaterial)
+
+# Class: :bioreactor (:bioreactor)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :bioreactor "reactor")
+SubClassOf(:bioreactor :reactor)
+
+# Class: :bioswale (:bioswale)
+
+SubClassOf(:bioswale :discrete_asset)
+
+# Class: :blower_or_fan (:blower_or_fan)
+
+AnnotationAssertion(:dev-ontologyNote :blower_or_fan "from P&ID symbol: axial, centrifugal")
+SubClassOf(:blower_or_fan :discrete_asset)
+
+# Class: :boat (:boat)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :boat "Boat")
+SubClassOf(:boat :discrete_asset)
+
+# Class: :bodyMaterial (:bodyMaterial)
+
+SubClassOf(:bodyMaterial :quality)
+
+# Class: :boiler (:boiler)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :boiler "Boiler")
+AnnotationAssertion(:notionMappingID :boiler "3d186d6bc9cb4c70987f7e85f2ff1871")
+SubClassOf(:boiler :discrete_asset)
+
+# Class: :boilerHeatingSurfaceArea (:boilerHeatingSurfaceArea)
+
+SubClassOf(:boilerHeatingSurfaceArea :quality)
+
+# Class: :boiler_fitting (:boiler_fitting)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :boiler_fitting "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :boiler_fitting "5fa540fcf96d46719f000b7ef9d14c9d")
+AnnotationAssertion(rdfs:isDefinedBy :boiler_fitting "a valve, gauge, regulating or controlling device, flange, pipe fitting, nozzle, or thing that is attached to or forms part of a boiler, pressure vessel, or pressure piping system.")
+SubClassOf(:boiler_fitting :discrete_asset)
+
+# Class: :breaker (:breaker)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :breaker "Circuit Breaker")
+AnnotationAssertion(:isSuperclassOfTagCode :breaker "SWG")
+AnnotationAssertion(:isSuperclassOfTagCode :breaker "TB")
+SubClassOf(:breaker :discrete_asset)
+
+# Class: :bridge (:bridge)
+
+SubClassOf(:bridge :discrete_asset)
+
+# Class: :building (:building)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :building "Building")
+AnnotationAssertion(rdfs:comment :building "This definition allows for portable buildings to be classified as building")
+AnnotationAssertion(rdfs:isDefinedBy :building "A structure with a roof and some walls that partition its interior space from the outdoor space and stands in one place when it is used.")
+SubClassOf(:building :discrete_asset)
+SubClassOf(:building ObjectSomeValuesFrom(:hasPhysicalPart :building_or_structural_foundation))
+SubClassOf(:building ObjectSomeValuesFrom(:hasPhysicalPart :roof))
+
+# Class: :building_automation_system_controller (:building_automation_system_controller)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :building_automation_system_controller "BAS")
+SubClassOf(:building_automation_system_controller :discrete_asset)
+
+# Class: :building_or_structural_foundation (:building_or_structural_foundation)
+
+SubClassOf(:building_or_structural_foundation :fiat_part_of_asset)
+
+# Class: :burner_component_of_asset (:burner_component_of_asset)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :burner_component_of_asset "true"^^xsd:boolean)
+AnnotationAssertion(rdfs:comment :burner_component_of_asset "The component of another asset such as a boiler or incinerator.")
+SubClassOf(:burner_component_of_asset :discrete_asset)
+
+# Class: :cableSegment (:cableSegment)
+
+SubClassOf(:cableSegment :segmentOfLinearAsset)
+
+# Class: :capacitor (:capacitor)
+
+SubClassOf(:capacitor :discrete_asset)
+
+# Class: :card_reader (:card_reader)
+
+SubClassOf(:card_reader :discrete_asset)
+
+# Class: :catch_basin (:catch_basin)
+
+SubClassOf(:catch_basin :discrete_asset)
+
+# Class: :centrifuge (:centrifuge)
+
+AnnotationAssertion(:dev-ontologyNote :centrifuge "isDewateringCentrifuge
+isThickeningCentrifuge")
+SubClassOf(:centrifuge :discrete_asset)
+
+# Class: :chain_and_flight_collector (:chain_and_flight_collector)
+
+SubClassOf(:chain_and_flight_collector :collector_mechanism)
+
+# Class: :channelSegment (:channelSegment)
+
+SubClassOf(:channelSegment :segmentOfLinearAsset)
+
+# Class: :channel_gate (:channel_gate)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :channel_gate "sliding gate")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :channel_gate "sluice gate")
+SubClassOf(:channel_gate :discrete_asset)
+
+# Class: :checkValve (:checkValve)
+
+SubClassOf(:checkValve :discrete_asset)
+
+# Class: :chemcialOrConcentrationSensorElement (:chemcialOrConcentrationSensorElement)
+
+SubClassOf(:chemcialOrConcentrationSensorElement :sensingInstrumentation)
+
+# Class: :chemicalOrConcentrationAnalyzer (:chemicalOrConcentrationAnalyzer)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :chemicalOrConcentrationAnalyzer "Analyzer")
+SubClassOf(:chemicalOrConcentrationAnalyzer :sensingInstrumentation)
+
+# Class: :chemicalReactor (:chemicalReactor)
+
+SubClassOf(:chemicalReactor :reactor)
+
+# Class: :chemicalStorageTank (:chemicalStorageTank)
+
+SubClassOf(:chemicalStorageTank :storageTank)
+
+# Class: :chemicalSuit (:chemicalSuit)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :chemicalSuit "protective suit")
+SubClassOf(:chemicalSuit :PPE)
+SubClassOf(:chemicalSuit :discrete_asset)
+
+# Class: :chiller (:chiller)
+
+SubClassOf(:chiller :discrete_asset)
+
+# Class: :chillerCondenserUnit (:chillerCondenserUnit)
+
+SubClassOf(:chillerCondenserUnit :discrete_asset)
+SubClassOf(:chillerCondenserUnit ObjectSomeValuesFrom(:isPhysicalPartOf :chiller))
+
+# Class: :chillerEvaporatorUnit (:chillerEvaporatorUnit)
+
+SubClassOf(:chillerEvaporatorUnit :discrete_asset)
+SubClassOf(:chillerEvaporatorUnit ObjectSomeValuesFrom(:isPhysicalPartOf :chiller))
+
+# Class: :chlorinator_system (:chlorinator_system)
+
+AnnotationAssertion(:dev-PropertyNote :chlorinator_system "DiscreteModular? System?")
+SubClassOf(:chlorinator_system :localized_function_system)
+
+# Class: :chlorineAnalyzer (:chlorineAnalyzer)
+
+SubClassOf(:chlorineAnalyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :chlorineDisinfectionTank (:chlorineDisinfectionTank)
+
+SubClassOf(:chlorineDisinfectionTank :chemicalReactor)
+
+# Class: :cityByLaw (:cityByLaw)
+
+SubClassOf(:cityByLaw :documentContent)
+
+# Class: :clarifier (:clarifier)
+
+SubClassOf(:clarifier :discrete_asset)
+
+# Class: :classifier (:classifier)
+
+SubClassOf(:classifier :separator)
+
+# Class: :coagulationAndFlocculationTank (:coagulationAndFlocculationTank)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :coagulationAndFlocculationTank "coagulation tank")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :coagulationAndFlocculationTank "flocculation tank")
+SubClassOf(:coagulationAndFlocculationTank :chemicalReactor)
+SubClassOf(:coagulationAndFlocculationTank ObjectIntersectionOf(ObjectSomeValuesFrom(:hasPhysicalPart :coagulationTank) ObjectSomeValuesFrom(:hasPhysicalPart :flocculationTank)))
+
+# Class: :coagulationTank (:coagulationTank)
+
+SubClassOf(:coagulationTank :chemicalReactor)
+
+# Class: :collectionOfAssetRoles (:collectionOfAssetRoles)
+
+SubClassOf(:collectionOfAssetRoles :role)
+
+# Class: :collectionOfThings (:collectionOfThings)
+
+AnnotationAssertion(rdfs:isDefinedBy :collectionOfThings "The collection of all entities (e.g., asset, spaces, group of people) unified by a definition, which specifies the necessary conditions for each entity to qualify as a member of the collection.")
+
+# Class: :collection_of_assets (:collection_of_assets)
+
+SubClassOf(:collection_of_assets :asset)
+
+# Class: :collector_mechanism (:collector_mechanism)
+
+SubClassOf(:collector_mechanism :localized_function_system)
+
+# Class: :combustableMaterial (:combustableMaterial)
+
+SubClassOf(:combustableMaterial :material)
+
+# Class: :combustionTurbine (:combustionTurbine)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :combustionTurbine "turbine")
+SubClassOf(:combustionTurbine :discrete_asset)
+
+# Class: :commonBoilerMedium (:commonBoilerMedium)
+
+SubClassOf(:commonBoilerMedium :material)
+
+# Class: :communication_of_control_network (:communication_of_control_network)
+
+SubClassOf(:communication_of_control_network :distributed_system)
+
+# Class: :compactor (:compactor)
+
+SubClassOf(:compactor :discrete_asset)
+
+# Class: :compressedGasCylinder (:compressedGasCylinder)
+
+SubClassOf(:compressedGasCylinder :discrete_asset)
+
+# Class: :compressor (:compressor)
+
+SubClassOf(:compressor :discrete_asset)
+
+# Class: :computer (:computer)
+
+SubClassOf(:computer :discrete_asset)
+
+# Class: :condensateTrap (:condensateTrap)
+
+SubClassOf(:condensateTrap :discrete_asset)
+
+# Class: :conductivitySensingInstrument (:conductivitySensingInstrument)
+
+SubClassOf(:conductivitySensingInstrument :sensingInstrumentation)
+
+# Class: :containing (:containing)
+
+SubClassOf(:containing :relationalState)
+
+# Class: :contentCompilation (:contentCompilation)
+
+SubClassOf(:contentCompilation :informationContentEntity)
+
+# Class: :contentSubject (:contentSubject)
+
+SubClassOf(:contentSubject :informationContentEntity)
+
+# Class: :contentSummary (:contentSummary)
+
+SubClassOf(:contentSummary :informationContentEntity)
+
+# Class: :controlledAccessBarrier (:controlledAccessBarrier)
+
+SubClassOf(:controlledAccessBarrier :discrete_asset)
+
+# Class: :controlledDoorAccess (:controlledDoorAccess)
+
+SubClassOf(:controlledDoorAccess :discrete_asset)
+
+# Class: :controller (:controller)
+
+SubClassOf(:controller :discrete_asset)
+
+# Class: :conveyor (:conveyor)
+
+SubClassOf(:conveyor :discrete_asset)
+
+# Class: :coolingTower (:coolingTower)
+
+SubClassOf(:coolingTower :discrete_asset)
+
+# Class: :corporatePolicy (corporate policy)
+
+AnnotationAssertion(rdfs:label :corporatePolicy "corporate policy"@en)
+SubClassOf(:corporatePolicy :contentSubject)
+
+# Class: :correctiveWork (:correctiveWork)
+
+SubClassOf(:correctiveWork :packageOfDiscreteWork)
+
+# Class: :counter (:counter)
+
+SubClassOf(:counter :discrete_asset)
+
+# Class: :crane (:crane)
+
+AnnotationAssertion(:notionMappingID :crane "7215f0de0aaa42a7a9cb0d9b00e9a205")
+AnnotationAssertion(rdfs:isDefinedBy :crane "CSA B167-16(R2021): a machine consisting of a brdge/girder, end trucks, and a hoisting mechanism for lifting a load vertically and moving it horizontally. where the hoisting mechanism is typically an integral part of the machine")
+SubClassOf(:crane :discrete_asset)
+
+# Class: :culvert (:culvert)
+
+SubClassOf(:culvert :discrete_asset)
+
+# Class: :cyclone_classifier (:cyclone_classifier)
+
+SubClassOf(:cyclone_classifier :classifier)
+
+# Class: :damper_actuator (:damper_actuator)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :damper_actuator "louver actuator")
+SubClassOf(:damper_actuator :actuator)
+
+# Class: :dataLogger (:dataLogger)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :dataLogger "data logging instrumentation")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :dataLogger "recorder")
+SubClassOf(:dataLogger :discrete_asset)
+
+# Class: :dataRecord (:dataRecord)
+
+SubClassOf(:dataRecord :informationContentEntity)
+
+# Class: :defineSetOfDiscreteAssetRoles (:defineSetOfDiscreteAssetRoles)
+
+SubClassOf(:defineSetOfDiscreteAssetRoles :definedSetOfRoles)
+
+# Class: :defineSetOfFunctionalStructureRoles (:defineSetOfFunctionalStructureRoles)
+
+AnnotationAssertion(rdfs:comment :defineSetOfFunctionalStructureRoles "Jul24: Added because we do not want people to add discrete asset roles and functional structure roles under the same collection, which would sugges that the collection is not very well defined.")
+SubClassOf(:defineSetOfFunctionalStructureRoles :definedSetOfRoles)
+
+# Class: :definedSetOfRoles (:definedSetOfRoles)
+
+SubClassOf(:definedSetOfRoles :collectionOfAssetRoles)
+
+# Class: :definedState (:definedState)
+
+AnnotationAssertion(rdfs:comment :definedState "Jan'24 TH: This class is create because we considered the status of a particular asset to be an instance of this class")
+AnnotationAssertion(rdfs:comment :definedState "TH Dec/2023: a property that denote a composite of values in multiple qualities, functional capabiliy, and other possible property that inhere in the asset itself (not listed in this ontology).")
+SubClassOf(:definedState :property)
+
+# Class: :defined_collection_of_assets (:defined_collection_of_assets)
+
+AnnotationAssertion(rdfs:comment :defined_collection_of_assets "e.g., all fire-doors in the admin building")
+AnnotationAssertion(rdfs:isDefinedBy :defined_collection_of_assets "A set of assets, whose membership in the set is either implicitly definedA set of assets, whose membership in the set is explicitly defined.")
+SubClassOf(:defined_collection_of_assets :collection_of_assets)
+
+# Class: :dehumidifier (:dehumidifier)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :dehumidifier "air dryer")
+SubClassOf(:dehumidifier :discrete_asset)
+
+# Class: :descendingDevice (:descendingDevice)
+
+AnnotationAssertion(:notionMappingID :descendingDevice "c60fe085f5634da29f57fbb69741b4ef")
+AnnotationAssertion(rdfs:isDefinedBy :descendingDevice "CSA Z259.2.3:16: automatic or manual operated device used in conjunction with an appropriate descent line, which allows the user, either individually or assisted by another person, to achieve a descent with controllable velocity.")
+SubClassOf(:descendingDevice :discrete_asset)
+
+# Class: :description (:description)
+
+AnnotationAssertion(rdfs:comment :description "Feb'24 TH: possibly in competition for existence against state")
+AnnotationAssertion(rdfs:comment :description "Mar'24: Now I am in favour of using the state representation over the description representaton")
+AnnotationAssertion(rdfs:comment :description "REASON WHY SPECIFICATIONS SHOULD BE REIFIED:
+1. PARTIALLY VALIDATED: This allows us to add more metadata. For example, who made the specification - i.e., Is it the consultant or the manufacturer? When was it made? Does it indicate required performance or specsheet performance?  If we cannot attach this information, we would have to specialize in many different types of relations. VALIDATION: Provenance metadata is only needed for some usecases. However, reification offers a way to distinguish between specification and observation, which is very helpful to avoid defining similar relations repetitively, for example instead of using isHolding and isSpecifiedToHold, use theSubstanceInContainment description instance either as a requirement or observation. 
+2. REFUTED: This allows us to find all specifications for a given entity easily. (Instead of querying for object specifications and data specification separately) REFUTATION: one can list all properties of the entity using SPARQL
+3. VALID:For numerical measurement specifications, having a reified entity allows us to attach the equivalent values in other units, such as specification in kg and lbs.
+4. VALID: Allows the database to be operated like an append-only-ledger and in good accord with the datahub architecture. Boolean data value specifications like hasActuactor are simple, but if someone had made the wrong specification, we would have to retract them, removing this historical representation. 
+
+DECISION:
+1) Definitely use the class of description entities to record numeric properties (with UOM) or evolving properties (from capital projects and from the field). 
+2) For some often used relations, like parthood, infer the value from the most current description and map to a hasPresentProperty relation (i.e. hasPart)
+3) For non-numeric properties that are inherent to the entity and would virtually never change, such as NEMA frame type data property or isCreatedBy object property, it is highly optional to record them using an description instance.  Doing so has the advantage of traking data entry mistakes (and their consequences before they were correctly), however this is an obscure use-case for most organizations.")
+AnnotationAssertion(rdfs:comment :description "The more generic term \"description\" is chosen over \"specification\" or \"observation\" so these can be used as both")
+SubClassOf(:description :informationContentEntity)
+
+# Class: :detentionTank (:detentionTank)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :detentionTank "CSO tank")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :detentionTank "combined sewer overflow tank")
+SubClassOf(:detentionTank :storageTank)
+
+# Class: :dewateringPress (:dewateringPress)
+
+SubClassOf(:dewateringPress :discrete_asset)
+
+# Class: :diesel (:diesel)
+
+SubClassOf(:diesel :fuelOil)
+SubClassOf(:diesel :liquid)
+
+# Class: :digesterGas (digester gas)
+
+AnnotationAssertion(rdfs:comment :digesterGas "TH Dec/2023: intended to quantify instances of Functional Capability or Quality entity")
+AnnotationAssertion(rdfs:label :digesterGas "digester gas"@en)
+SubClassOf(:digesterGas :biogas)
+
+# Class: :digesterTank (:digesterTank)
+
+AnnotationAssertion(:notionMappingID :digesterTank "6b05951a956d4b0288df8f8b4211e78a")
+SubClassOf(:digesterTank :bioreactor)
+
+# Class: :discreteAssetRole (:discreteAssetRole)
+
+SubClassOf(:discreteAssetRole :role)
+
+# Class: :discretePieceOfWork (:discretePieceOfWork)
+
+SubClassOf(:discretePieceOfWork :work)
+
+# Class: :discretePieceOfWorkSpecification (:discretePieceOfWorkSpecification)
+
+SubClassOf(:discretePieceOfWorkSpecification :workSpecification)
+
+# Class: :discreteUnitOfBioreactorMedium (:discreteUnitOfBioreactorMedium)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :discreteUnitOfBioreactorMedium "true"^^xsd:boolean)
+AnnotationAssertion(:dev-ontologyNote :discreteUnitOfBioreactorMedium "isBiofilterToo?")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :discreteUnitOfBioreactorMedium "bioreactor cartridge")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :discreteUnitOfBioreactorMedium "bioreactor cassette")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :discreteUnitOfBioreactorMedium "bioreactor rod")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :discreteUnitOfBioreactorMedium "membrane bioreactor cassette")
+SubClassOf(:discreteUnitOfBioreactorMedium :discrete_asset)
+
+# Class: :discreteUnitOfTreatmentFilter (:discreteUnitOfTreatmentFilter)
+
+AnnotationAssertion(:dev-ontologyNote :discreteUnitOfTreatmentFilter "isBiofilter?")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :discreteUnitOfTreatmentFilter "treatment filter cartridge")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :discreteUnitOfTreatmentFilter "treatment filter cassette")
+SubClassOf(:discreteUnitOfTreatmentFilter :discrete_asset)
+
+# Class: :discrete_asset (:discrete_asset)
+
+AnnotationAssertion(:dev-ontologyNote :discrete_asset "Old Definition:
+
+An asset whose parts are 
+* unified, through physical integration, into a single object, or
+* unified under their common membership in a collection of objects that constitutes a manufactured product")
+AnnotationAssertion(rdfs:comment :discrete_asset "An asset may have smaller discrete assets in its set of parts.
+A manufactured asset product is a set of assets made under the same specification, which is usually related to a certain product-line identification (i.e. manufacturer, model, catalogue number, etc.)
+The asset that consists of a television and its remote control is an example of a discrete asset that is unified by a manufactured asset product, though it does not exist as a single physical unit.")
+AnnotationAssertion(rdfs:isDefinedBy :discrete_asset "An asset whose parts are unified, through physical integration, into a single object.")
+SubClassOf(:discrete_asset :asset)
+
+# Class: :displayPanel (:displayPanel)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :displayPanel "LCD display")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :displayPanel "LED display")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :displayPanel "monitor")
+SubClassOf(:displayPanel :discrete_asset)
+
+# Class: :dissolvedOxygenAnalyzer (:dissolvedOxygenAnalyzer)
+
+SubClassOf(:dissolvedOxygenAnalyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :distributed_system (:distributed_system)
+
+AnnotationAssertion(rdfs:isDefinedBy :distributed_system "a system in a primary function is performed by assets occupying distinct positions that are distributed across different positions in its system topology.")
+SubClassOf(:distributed_system :system)
+DisjointClasses(:distributed_system :localized_function_system)
+
+# Class: :distribution_system (:distribution_system)
+
+AnnotationAssertion(rdfs:comment :distribution_system "a distribution system would be mainly comprised of linear elements, which carries the resource over a distance, and conveyance assets, such as pumps, blowers, or conveyors.")
+AnnotationAssertion(rdfs:isDefinedBy :distribution_system "DRAFT: a system whose function is to distribute a resource from one or more sources to sites where they are needed.")
+SubClassOf(:distribution_system :distributed_system)
+
+# Class: :documentContent (:documentContent)
+
+SubClassOf(:documentContent :informationContentEntity)
+SubClassOf(:documentContent :pieceOfContent)
+
+# Class: :dosingPump (:dosingPump)
+
+SubClassOf(:dosingPump :discrete_asset)
+SubClassOf(:dosingPump :pump)
+
+# Class: :drillPress (:drillPress)
+
+SubClassOf(:drillPress :largeStationaryTool)
+
+# Class: :driving (:driving)
+
+SubClassOf(:driving :functionAndCapability)
+
+# Class: :dryer (:dryer)
+
+SubClassOf(:dryer :discrete_asset)
+
+# Class: :dustCollector (:dustCollector)
+
+SubClassOf(:dustCollector :discrete_asset)
+
+# Class: :easement (:easement)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :easement "right of way")
+SubClassOf(:easement :asset)
+
+# Class: :eductor (:eductor)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :eductor "ejector")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :eductor "injector")
+SubClassOf(:eductor :discrete_asset)
+
+# Class: :ejector (:ejector)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :ejector "eductor")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :ejector "injector")
+SubClassOf(:ejector :discrete_asset)
+
+# Class: :electricalConduitSection (:electricalConduitSection)
+
+SubClassOf(:electricalConduitSection :discrete_asset)
+
+# Class: :electricalCurrentSensingInstrument (:electricalCurrentSensingInstrument)
+
+SubClassOf(:electricalCurrentSensingInstrument :sensingInstrumentation)
+
+# Class: :electricalDistributionOrMCC_Panel (:electricalDistributionOrMCC_Panel)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :electricalDistributionOrMCC_Panel "BUS bar greater than 750 volts")
+AnnotationAssertion(:isEquivalentToAvantisClass :electricalDistributionOrMCC_Panel "Control Panel,MCC")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :electricalDistributionOrMCC_Panel "motor control panel")
+SubClassOf(:electricalDistributionOrMCC_Panel :discrete_asset)
+
+# Class: :electricalDuctBankSection (:electricalDuctBankSection)
+
+SubClassOf(:electricalDuctBankSection :discrete_asset)
+
+# Class: :electrostatic_percipitator (:electrostatic_percipitator)
+
+SubClassOf(:electrostatic_percipitator :separator)
+
+# Class: :elevator (:elevator)
+
+SubClassOf(:elevator :discrete_asset)
+
+# Class: :emergencyEyewash (:emergencyEyewash)
+
+SubClassOf(:emergencyEyewash :discrete_asset)
+
+# Class: :emergencyEyewashAndShower (:emergencyEyewashAndShower)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :emergencyEyewashAndShower "combinational eyewash and shower")
+SubClassOf(:emergencyEyewashAndShower :discrete_asset)
+
+# Class: :emergencyShower (:emergencyShower)
+
+SubClassOf(:emergencyShower :discrete_asset)
+
+# Class: :emergencyWork (:emergencyWork)
+
+SubClassOf(:emergencyWork :packageOfDiscreteWork)
+
+# Class: :emergency_power_system (:emergency_power_system)
+
+AnnotationAssertion(:notionMappingID :emergency_power_system "f4731a88fff54178bb8c4f1073657749")
+AnnotationAssertion(rdfs:isDefinedBy :emergency_power_system "The system to provide emergency power including: emergency generator, ventilation and fuel supply.
+
+Ontario Building Code:
+... power supply capable of operating under a full load for not less than 2 h shall be
+provided by an emergency generator for,
+(a) every elevator serving storeys above the first storeyin a building that is more than 36 m high
+measured between grade and the floor level of the top storey and every elevator for firefighters in
+conformance with Sentence (2),
+(b) water supply for firefighting in conformance with Article 3.2.5.7., if the supply is dependent on
+electrical power supplied to the building, and the building is within the scope of Subsection 3.2.6.,
+(c) fans and other electrical equipment that are installed to maintain the air quality specified in Article
+3.2.6.2., and
+(d) fans required for venting by Article 3.2.6.6.")
+SubClassOf(:emergency_power_system :localized_function_system)
+
+# Class: :endTruck (:endTruck)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :endTruck "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :endTruck "6249a4184d4445d59ed191877babc8d8")
+AnnotationAssertion(rdfs:isDefinedBy :endTruck "End truck — a crane component that supgorts and carries the bridge girders or end ties of an overhead travelling crane, or the sill of a gantry crane.
+Note: An end truck is usually constructed as a frame that houses wheels, bearings, and axles.")
+SubClassOf(:endTruck :discrete_asset)
+
+# Class: :engine (:engine)
+
+SubClassOf(:engine :discrete_asset)
+
+# Class: :environmentalHazard (environmental hazard)
+
+AnnotationAssertion(rdfs:label :environmentalHazard "environmental hazard")
+SubClassOf(:environmentalHazard :hazard)
+
+# Class: :equipmentLocalPanel (:equipmentLocalPanel)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :equipmentLocalPanel "equipment local controller")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :equipmentLocalPanel "local control panel")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :equipmentLocalPanel "local remote panel")
+SubClassOf(:equipmentLocalPanel :discrete_asset)
+
+# Class: :equipmentOrAccessChamber (:equipmentOrAccessChamber)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :equipmentOrAccessChamber "chamber")
+SubClassOf(:equipmentOrAccessChamber :discrete_asset)
+
+# Class: :exhaustStack (:exhaustStack)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :exhaustStack "chimney")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :exhaustStack "smoke stack")
+SubClassOf(:exhaustStack :discrete_asset)
+
+# Class: :expansionJoint (:expansionJoint)
+
+SubClassOf(:expansionJoint :discrete_asset)
+
+# Class: :facility (:facility)
+
+AnnotationAssertion(rdfs:isDefinedBy :facility "The collection of all assets located in a facility, spaces within the facility foundary, and organization of people who manage the facility.")
+SubClassOf(:facility :collectionOfThings)
+
+# Class: :facilityRole (facility)
+
+AnnotationAssertion(rdfs:label :facilityRole "facility")
+SubClassOf(:facilityRole :systemBlockRole)
+
+# Class: :fallArrestDavitArm (:fallArrestDavitArm)
+
+SubClassOf(:fallArrestDavitArm :discrete_asset)
+
+# Class: :fallArrestHarness (:fallArrestHarness)
+
+AnnotationAssertion(:notionMappingID :fallArrestHarness "e9ecea6e400843ba9e874bff9378b22f")
+SubClassOf(:fallArrestHarness :PPE)
+SubClassOf(:fallArrestHarness :discrete_asset)
+
+# Class: :fallArrestRopeGrab (:fallArrestRopeGrab)
+
+AnnotationAssertion(rdfs:isDefinedBy :fallArrestRopeGrab "CSA Z259.2.5-17: a component that
+a) engages a vertical lifeline or rigid rail in the vertical or sloped plane;
+b) accepts a connecting linkage;
+c) can be moved along the lifeline or rail in accordance with the position of the worker;
+d) automatically engages on the lifeline or rail in the event of a fall in order to arrest the fall; and
+e) has a integral connecting means.")
+SubClassOf(:fallArrestRopeGrab :PPE)
+SubClassOf(:fallArrestRopeGrab :discrete_asset)
+
+# Class: :fallArrestSystem (:fallArrestSystem)
+
+AnnotationAssertion(:notionMappingID :fallArrestSystem "d419b16212f340e797aa00e8ae3d50c8")
+AnnotationAssertion(rdfs:isDefinedBy :fallArrestSystem "O.Reg 213/91: an assembly of components joined together so that when the assembly is connected to a fixed support, it is capable of arresting a worker’s fall
+26.6 (1) modified: A fall arrest system shall consist of a full body harness with adequate attachment points and a lanyard equipped with a shock absorber or similar device, unless the shock absorber if wearing one could cause a worker to hit the ground or an object or level below the work")
+SubClassOf(:fallArrestSystem :systemOfStandardizedModularParts)
+
+# Class: :fallProtectionDescendingDevice (:fallProtectionDescendingDevice)
+
+AnnotationAssertion(rdfs:isDefinedBy :fallProtectionDescendingDevice "CSA Z259.2.3:16: automatic or manual operated device used in conjunction with an appropriate descent line, which allows the user, either individually or assisted by another person, to achieve a descent with controllable velocity.")
+SubClassOf(:fallProtectionDescendingDevice :PPE)
+SubClassOf(:fallProtectionDescendingDevice :discrete_asset)
+
+# Class: :fallProtectionEnergyAbsorber (:fallProtectionEnergyAbsorber)
+
+AnnotationAssertion(rdfs:isDefinedBy :fallProtectionEnergyAbsorber "CSA Z259.11-17: any device that dissipates kinetic energy, limits deceleration force during fall arrest, and does not return kinetic energy to the system or into the human body.")
+SubClassOf(:fallProtectionEnergyAbsorber :PPE)
+SubClassOf(:fallProtectionEnergyAbsorber :discrete_asset)
+
+# Class: :fallProtectionSling (:fallProtectionSling)
+
+AnnotationAssertion(:notionMappingID :fallProtectionSling "602f9138b2d84c3b9d0054fb164fe852")
+AnnotationAssertion(rdfs:isDefinedBy :fallProtectionSling "OSHA 1910.184: an assembly which connects the load to the material handling equipment.")
+SubClassOf(:fallProtectionSling :PPE)
+SubClassOf(:fallProtectionSling :discrete_asset)
+
+# Class: :fallRestraintSystem (:fallRestraintSystem)
+
+AnnotationAssertion(:notionMappingID :fallRestraintSystem "4e219f01e83d4268ad9a31818332e09a")
+AnnotationAssertion(rdfs:isDefinedBy :fallRestraintSystem "O.Reg 213/91: means an assembly of components capable of restricting a worker’s movement on a work surface and preventing the worker from reaching a location from which he or she could fall.
+26.4(1) A travel restraint system shall consist of a full body harness with adequate attachment points or a safety belt.
+CSA Z259.1-05: an assembly of components that, when property assembled and used together and when connected to a suitable anchorage, prevents a worker from reaching an unprotected edge or opening where a fall could occur. A TRS is not intended for use as a work positioning system or Fall Arrest System.")
+SubClassOf(:fallRestraintSystem :systemOfStandardizedModularParts)
+
+# Class: :fallRestrictingSystem (:fallRestrictingSystem)
+
+AnnotationAssertion(:notionMappingID :fallRestrictingSystem "b6b38579ad7a4d10ad0653bccd57ce16")
+AnnotationAssertion(rdfs:isDefinedBy :fallRestrictingSystem "O.Reg 213/91:  a type of fall arrest system that has been designed to limit a worker’s fall to a specified distance.
+25.6(1) A fall restricting system that is not designed for use in wood pole climbing shall consist of an assembly of components that is,
+(a) attached to an independent fixed support that meets the requirements of section 26.7; and
+(b) designed and arranged in accordance with the manufacturer’s instructions and so that a worker’s free fall distance does not exceed 0.6 metres.")
+SubClassOf(:fallRestrictingSystem :fallArrestSystem)
+
+# Class: :federalRegulation (Canadian federal regulation)
+
+AnnotationAssertion(rdfs:label :federalRegulation "Canadian federal regulation"@en)
+SubClassOf(:federalRegulation :governmentRegulation)
+
+# Class: :fenceSection (:fenceSection)
+
+SubClassOf(:fenceSection :segmentOfLinearAsset)
+
+# Class: :fiat_part_of_asset (:fiat_part_of_asset)
+
+SubClassOf(:fiat_part_of_asset :asset)
+
+# Class: :figureContent (figure content)
+
+AnnotationAssertion(rdfs:label :figureContent "figure content"@en)
+SubClassOf(:figureContent :pieceOfContent)
+
+# Class: :filterPress (:filterPress)
+
+SubClassOf(:filterPress :dewateringPress)
+
+# Class: :filtrationTank (:filtrationTank)
+
+AnnotationAssertion(:dev-ontologyNote :filtrationTank "also a biofilter?")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :filtrationTank "filter tank")
+SubClassOf(:filtrationTank :discrete_asset)
+
+# Class: :fireRatedDoor (:fireRatedDoor)
+
+SubClassOf(:fireRatedDoor :discrete_asset)
+
+# Class: :firstAidKit (:firstAidKit)
+
+SubClassOf(:firstAidKit :discrete_asset)
+
+# Class: :firstAidRoomEquipmentSet (:firstAidRoomEquipmentSet)
+
+SubClassOf(:firstAidRoomEquipmentSet :discrete_asset)
+
+# Class: :firstAidStationEquipmentSet (:firstAidStationEquipmentSet)
+
+SubClassOf(:firstAidStationEquipmentSet :discrete_asset)
+
+# Class: :fixedGasDetector (:fixedGasDetector)
+
+SubClassOf(:fixedGasDetector :discrete_asset)
+
+# Class: :fixedLadder (:fixedLadder)
+
+AnnotationAssertion(:notionMappingID :fixedLadder "20fd58dbecb7487ba70b8c577d3be64a")
+SubClassOf(:fixedLadder :ladder)
+
+# Class: :flameArrestor (:flameArrestor)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :flameArrestor "true"^^xsd:boolean)
+SubClassOf(:flameArrestor :discrete_asset)
+
+# Class: :flameOrCombustionSensingInstrument (:flameOrCombustionSensingInstrument)
+
+SubClassOf(:flameOrCombustionSensingInstrument :sensingInstrumentation)
+
+# Class: :flocculationTank (:flocculationTank)
+
+SubClassOf(:flocculationTank :chemicalReactor)
+
+# Class: :fluidizedBedIncinerator (:fluidizedBedIncinerator)
+
+AnnotationAssertion(:excludeFromAssetClassList :fluidizedBedIncinerator "true"^^xsd:boolean)
+SubClassOf(:fluidizedBedIncinerator :incinerator)
+
+# Class: :forklift (:forklift)
+
+SubClassOf(:forklift :mobileLift)
+
+# Class: :fuel (:fuel)
+
+SubClassOf(:fuel :combustableMaterial)
+
+# Class: :fuelOil (:fuelOil)
+
+SubClassOf(:fuelOil :fuel)
+SubClassOf(:fuelOil :liquid)
+
+# Class: :fuelOilTank (:fuelOilTank)
+
+AnnotationAssertion(:excludeFromAssetClassList :fuelOilTank "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :fuelOilTank "346427579fb94e93a6f40ac6620ed2b0")
+SubClassOf(:fuelOilTank :fuelTank)
+
+# Class: :fuelTank (:fuelTank)
+
+AnnotationAssertion(:notionMappingID :fuelTank "7260475a6c0a49ca85670e37ae82dfdc")
+SubClassOf(:fuelTank :storageTank)
+
+# Class: :fuel_piping_system (:fuel_piping_system)
+
+AnnotationAssertion(:notionMappingID :fuel_piping_system "2176ff53fd794671b03ffae50c930345")
+SubClassOf(:fuel_piping_system :piping_system)
+
+# Class: :functionAndCapability (:functionAndCapability)
+
+AnnotationAssertion(rdfs:comment :functionAndCapability "07/05/2024 - function is a subset of capability")
+SubClassOf(:functionAndCapability :property)
+
+# Class: :functionalStructureRole (:functionalStructureRole)
+
+SubClassOf(:functionalStructureRole :collectionOfAssetRoles)
+
+# Class: :furnace (:furnace)
+
+SubClassOf(:furnace :discrete_asset)
+
+# Class: :fuse (:fuse)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :fuse "true"^^xsd:boolean)
+SubClassOf(:fuse :discrete_asset)
+
+# Class: :fusiblePlug (:fusiblePlug)
+
+SubClassOf(:fusiblePlug :pressureReliefDevice)
+
+# Class: :gasDiffuser (:gasDiffuser)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :gasDiffuser "true"^^xsd:boolean)
+SubClassOf(:gasDiffuser :discrete_asset)
+
+# Class: :gasDiffuserGridAssembly (:gasDiffuserGridAssembly)
+
+SubClassOf(:gasDiffuserGridAssembly :discrete_asset)
+
+# Class: :gasHolder (:gasHolder)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :gasHolder "gasometer")
+SubClassOf(:gasHolder :storageTank)
+
+# Class: :gaseousMaterial (gaseous material)
+
+AnnotationAssertion(rdfs:label :gaseousMaterial "gaseous material")
+SubClassOf(:gaseousMaterial :material)
+
+# Class: :gasoline (:gasoline)
+
+SubClassOf(:gasoline :fuel)
+SubClassOf(:gasoline :liquid)
+
+# Class: :gasolineTank (:gasolineTank)
+
+AnnotationAssertion(:excludeFromAssetClassList :gasolineTank "true"^^xsd:boolean)
+SubClassOf(:gasolineTank :fuelTank)
+
+# Class: :generator-set (:generator-set)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :generator-set "genset")
+SubClassOf(:generator-set :discrete_asset)
+
+# Class: :generatorWithoutADrive (:generatorWithoutADrive)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :generatorWithoutADrive "true"^^xsd:boolean)
+SubClassOf(:generatorWithoutADrive :discrete_asset)
+
+# Class: :golfCart (:golfCart)
+
+SubClassOf(:golfCart :discrete_asset)
+
+# Class: :governmentRegulation (government regulation)
+
+AnnotationAssertion(rdfs:label :governmentRegulation "government regulation"@en)
+SubClassOf(:governmentRegulation :contentSubject)
+
+# Class: :granularMaterial (:granularMaterial)
+
+SubClassOf(:granularMaterial :material)
+
+# Class: :gravitySewerSegment (:gravitySewerSegment)
+
+SubClassOf(:gravitySewerSegment :sewerSegment)
+
+# Class: :grinderOrComminutor (:grinderOrComminutor)
+
+SubClassOf(:grinderOrComminutor :discrete_asset)
+
+# Class: :guideline (:guideline)
+
+SubClassOf(:guideline :informationContentEntity)
+
+# Class: :hainvgProcessMedium (:hainvgProcessMedium)
+
+SubClassOf(:hainvgProcessMedium :relationalState)
+
+# Class: :havingAPart (:havingAPart)
+
+SubClassOf(:havingAPart :relationalState)
+
+# Class: :healthAndSafetyHazard (health and safety hazard)
+
+AnnotationAssertion(rdfs:label :healthAndSafetyHazard "health and safety hazard")
+SubClassOf(:healthAndSafetyHazard :hazard)
+
+# Class: :heatExchanger (:heatExchanger)
+
+SubClassOf(:heatExchanger :discrete_asset)
+
+# Class: :heatPumpUnit (:heatPumpUnit)
+
+SubClassOf(:heatPumpUnit :discrete_asset)
+
+# Class: :heater (:heater)
+
+SubClassOf(:heater :discrete_asset)
+
+# Class: :heavyMetalAnalyzer (:heavyMetalAnalyzer)
+
+SubClassOf(:heavyMetalAnalyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :highVoltageHotStick (:highVoltageHotStick)
+
+SubClassOf(:highVoltageHotStick :discrete_asset)
+
+# Class: :highVoltageSurgeSuppressor (:highVoltageSurgeSuppressor)
+
+SubClassOf(:highVoltageSurgeSuppressor :discrete_asset)
+
+# Class: :hopper (:hopper)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :hopper "feeder hopper")
+SubClassOf(:hopper :discrete_asset)
+
+# Class: :horizontalLifeline (:horizontalLifeline)
+
+AnnotationAssertion(:notionMappingID :horizontalLifeline "7b621b38a6f54aff9c0afc513b442438")
+SubClassOf(:horizontalLifeline :discrete_asset)
+
+# Class: :hydrant (hydrant)
+
+AnnotationAssertion(rdfs:label :hydrant "hydrant"@en)
+SubClassOf(:hydrant :discrete_asset)
+
+# Class: :hydrant_system (:hydrant_system)
+
+SubClassOf(:hydrant_system :localized_function_system)
+
+# Class: :incinerator (:incinerator)
+
+SubClassOf(:incinerator :discrete_asset)
+
+# Class: :infiltrationTrench (:infiltrationTrench)
+
+SubClassOf(:infiltrationTrench :discrete_asset)
+
+# Class: :informationContentEntity (:informationContentEntity)
+
+AnnotationAssertion(rdfs:isDefinedBy :informationContentEntity "an non-phyislcal entity that is about something")
+
+# Class: :informativeResource (:informativeResource)
+
+SubClassOf(:informativeResource :informationContentEntity)
+
+# Class: :infraredCamera (:infraredCamera)
+
+AnnotationAssertion(:excludeParentFromClassificationTree :infraredCamera "http://www.toronto.ca/TWONTO#discreteAsset")
+SubClassOf(:infraredCamera :sensingInstrumentation)
+
+# Class: :instrumentAirOrPneumaticControlPanel (:instrumentAirOrPneumaticControlPanel)
+
+SubClassOf(:instrumentAirOrPneumaticControlPanel :processControlPanel)
+
+# Class: :interceptorSegment (:interceptorSegment)
+
+SubClassOf(:interceptorSegment :sewerSegment)
+
+# Class: :intercomUnit (:intercomUnit)
+
+SubClassOf(:intercomUnit :discrete_asset)
+
+# Class: :interpretation (:interpretation)
+
+AnnotationAssertion(rdfs:comment :interpretation "Jan2024 TH: consider moving to FAMO")
+SubClassOf(:interpretation :discretePieceOfWork)
+
+# Class: :investigativeWork (:investigativeWork)
+
+SubClassOf(:investigativeWork :packageOfDiscreteWork)
+
+# Class: :jointer (:jointer)
+
+SubClassOf(:jointer :largeStationaryTool)
+
+# Class: :junctionStructureRole (:junctionStructureRole)
+
+SubClassOf(:junctionStructureRole :linearFunctionStructureRole)
+
+# Class: :junction_structure (:junction_structure)
+
+SubClassOf(:junction_structure :linear_function_structure)
+
+# Class: :kerosene (:kerosene)
+
+SubClassOf(:kerosene :fuelOil)
+SubClassOf(:kerosene :liquid)
+
+# Class: :laboratory (:laboratory)
+
+SubClassOf(:laboratory :facility)
+
+# Class: :ladder (:ladder)
+
+AnnotationAssertion(:notionMappingID :ladder "4f7f8bace8744d0f88601eed4b91b777")
+SubClassOf(:ladder :discrete_asset)
+
+# Class: :landfillGas (:landfillGas)
+
+SubClassOf(:landfillGas :gaseousMaterial)
+
+# Class: :largeStationaryTool (:largeStationaryTool)
+
+AnnotationAssertion(rdfs:comment :largeStationaryTool "6/19: we are keeping this class on the classification tree to allow people to find the tools.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :largeStationaryTool "machine shop tool")
+SubClassOf(:largeStationaryTool :discrete_asset)
+
+# Class: :lathe (:lathe)
+
+SubClassOf(:lathe :largeStationaryTool)
+
+# Class: :legislation (legislation)
+
+AnnotationAssertion(rdfs:label :legislation "legislation"@en)
+SubClassOf(:legislation :contentSubject)
+
+# Class: :levelSensorElement (:levelSensorElement)
+
+SubClassOf(:levelSensorElement :sensingInstrumentation)
+
+# Class: :levelSwitch (:levelSwitch)
+
+SubClassOf(:levelSwitch :sensingInstrumentation)
+
+# Class: :levelTransmitter (:levelTransmitter)
+
+SubClassOf(:levelTransmitter :sensingInstrumentation)
+
+# Class: :lifeJacket (:lifeJacket)
+
+SubClassOf(:lifeJacket :discrete_asset)
+
+# Class: :lifeRing (:lifeRing)
+
+SubClassOf(:lifeRing :personnalFloatationDevice)
+
+# Class: :liftingEquipmentHoist (:liftingEquipmentHoist)
+
+AnnotationAssertion(:notionMappingID :liftingEquipmentHoist "704b49f311e4431a8f4cf701e42fe024")
+AnnotationAssertion(rdfs:isDefinedBy :liftingEquipmentHoist "CSA B167-16(R2021): a machinery unit that is used for vertical lifting or lowering a freely suspended (unguided) load.")
+SubClassOf(:liftingEquipmentHoist :discrete_asset)
+
+# Class: :lightingPanel (:lightingPanel)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :lightingPanel "electrical panel")
+SubClassOf(:lightingPanel :discrete_asset)
+
+# Class: :lightingUnit (:lightingUnit)
+
+SubClassOf(:lightingUnit :discrete_asset)
+
+# Class: :lineStructureRole (:lineStructureRole)
+
+SubClassOf(:lineStructureRole :linearFunctionStructureRole)
+
+# Class: :line_structure (:line_structure)
+
+AnnotationAssertion(rdfs:isDefinedBy :line_structure "A asset that contains at least one piece of line segment asset carries a stream of material substance, energy, or information from one point to another.")
+SubClassOf(:line_structure :linear_function_structure)
+
+# Class: :linearFunctionStructureRole (linear function structure)
+
+AnnotationAssertion(rdfs:label :linearFunctionStructureRole "linear function structure")
+SubClassOf(:linearFunctionStructureRole :functionalStructureRole)
+
+# Class: :linear_function_structure (:linear_function_structure)
+
+SubClassOf(:linear_function_structure :collection_of_assets)
+
+# Class: :liquid (:liquid)
+
+SubClassOf(:liquid :material)
+
+# Class: :liveVoltageDetector (:liveVoltageDetector)
+
+SubClassOf(:liveVoltageDetector :discrete_asset)
+
+# Class: :loadBearing (:loadBearing)
+
+SubClassOf(:loadBearing :functionAndCapability)
+
+# Class: :loadBreakDisconnetSwitch (:loadBreakDisconnetSwitch)
+
+SubClassOf(:loadBreakDisconnetSwitch :HV_disconnectSwitch)
+
+# Class: :loading_dock (:loading_dock)
+
+SubClassOf(:loading_dock :fiat_part_of_asset)
+
+# Class: :localized_function_system (:localized_function_system)
+
+AnnotationAssertion(rdfs:comment :localized_function_system "6/26: nearly all conceivable discrete assets are also localized function assets.  I did not subsume discrete asset under localized functional asset to hold out the possibility that there may be a distributed discrete asset system.")
+AnnotationAssertion(rdfs:comment :localized_function_system "Feb4th'24 TH: used to be call localized system
+6/19/23 TH: changed back from \"hierarchal system\" to \"localized function system\", as the term hierarchal system just in not intuitive for something like a hydrant system.")
+AnnotationAssertion(rdfs:isDefinedBy :localized_function_system "a system in which all assets playing the same class of functional role are situated in the same region of the system topology.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :localized_function_system "hierarchal system")
+SubClassOf(:localized_function_system :system)
+DisjointClasses(:localized_function_system :system_train)
+
+# Class: :majorTreatmentProcessRole (process)
+
+AnnotationAssertion(rdfs:label :majorTreatmentProcessRole "process")
+SubClassOf(:majorTreatmentProcessRole :systemBlockRole)
+
+# Class: :manhole (:manhole)
+
+SubClassOf(:manhole :discrete_asset)
+
+# Class: :manlift (:manlift)
+
+SubClassOf(:manlift :mobileLift)
+
+# Class: :manufacturedOilGreaseSeparator (:manufacturedOilGreaseSeparator)
+
+AnnotationAssertion(:excludeFromAssetClassList :manufacturedOilGreaseSeparator "true"^^xsd:boolean)
+SubClassOf(:manufacturedOilGreaseSeparator :manufacturedTreatmentDevice)
+SubClassOf(:manufacturedOilGreaseSeparator :oilGreaseSeperator)
+
+# Class: :manufacturedTreatmentDevice (:manufacturedTreatmentDevice)
+
+AnnotationAssertion(rdfs:comment :manufacturedTreatmentDevice "7/29/2024: only reason that this would be included in the classifiation is that it is in TWAG classfication")
+SubClassOf(:manufacturedTreatmentDevice :discrete_asset)
+
+# Class: :manufacturedTreatmentFilterDevice (:manufacturedTreatmentFilterDevice)
+
+AnnotationAssertion(:excludeFromAssetClassList :manufacturedTreatmentFilterDevice "true"^^xsd:boolean)
+SubClassOf(:manufacturedTreatmentFilterDevice :manufacturedTreatmentDevice)
+
+# Class: :massSpectrometer (:massSpectrometer)
+
+SubClassOf(:massSpectrometer :chemicalOrConcentrationAnalyzer)
+
+# Class: :material (:material)
+
+
+# Class: :materialDistributionPanel (:materialDistributionPanel)
+
+SubClassOf(:materialDistributionPanel :discrete_asset)
+
+# Class: :maxHoldingCapacity (:maxHoldingCapacity)
+
+SubClassOf(:maxHoldingCapacity :volumnCapacity)
+
+# Class: :maxInputVoltage (:maxInputVoltage)
+
+SubClassOf(:maxInputVoltage :measureOfProperty)
+
+# Class: :maxMediumTemperature (:maxMediumTemperature)
+
+SubClassOf(:maxMediumTemperature :measureOfProperty)
+
+# Class: :maxOperatingPressure (:maxOperatingPressure)
+
+SubClassOf(:maxOperatingPressure :measureOfProperty)
+
+# Class: :measureOfArea (:measureOfArea)
+
+SubClassOf(:measureOfArea :measurement)
+
+# Class: :measureOfCurrentFlow (:measureOfCurrentFlow)
+
+SubClassOf(:measureOfCurrentFlow :measurement)
+
+# Class: :measureOfMass (:measureOfMass)
+
+SubClassOf(:measureOfMass :measurement)
+
+# Class: :measureOfMassFlow (:measureOfMassFlow)
+
+SubClassOf(:measureOfMassFlow :measurement)
+
+# Class: :measureOfPowerLevel (:measureOfPowerLevel)
+
+SubClassOf(:measureOfPowerLevel :measurement)
+
+# Class: :measureOfPressure (:measureOfPressure)
+
+SubClassOf(:measureOfPressure :measurement)
+
+# Class: :measureOfProperty (:measureOfProperty)
+
+AnnotationAssertion(:dev-ontologyNote :measureOfProperty "07/24/2024: each on is necessarily observed or specified by someone.")
+AnnotationAssertion(rdfs:comment :measureOfProperty "07/05/2024: name changed from capabilty and established another category call functionAndCapability, to capabilityOrQualityMeasure, then to measureOfProperty")
+AnnotationAssertion(rdfs:comment :measureOfProperty "07/05/2024: technically, this is a property (or from another point of ivew, a description ) of a capability and function, quality, or relation, but it can also be expressed as a property of the physical entity bearing that capability, function, ... .")
+AnnotationAssertion(rdfs:comment :measureOfProperty "7/05/2024: Example of usage
+assetX hasProperty _:b(maxInputVoltage)
+_:b(maxInputVoltage) isQuantifiedBy _:b(measurement)
+_:b(measurement) hasNumericValue 25
+_:b(measurement) hasUnitOfMeasure volt")
+AnnotationAssertion(rdfs:comment :measureOfProperty "Jul24: indicates the level of capability at realizing a function. This figure should come from an observation or a specification process that involves someone and took place at a particular point in time. 
+Some of these figures are, like \"maxVoltageWithstand\", would likely have come from specification (which itself comes from a prior observation, witnessed in a test on an engineering sample). Some other figures, like \"nominalInputVoltage\" could come from a specification, inferred from the desgin. While others, like \"maxAchievedSpeed\", likely comes from an observation.")
+SubClassOf(:measureOfProperty :informationContentEntity)
+SubClassOf(:measureOfProperty :property)
+
+# Class: :measureOfRotationalSpeed (:measureOfRotationalSpeed)
+
+SubClassOf(:measureOfRotationalSpeed :measurement)
+
+# Class: :measureOfSpeed (:measureOfSpeed)
+
+SubClassOf(:measureOfSpeed :measurement)
+
+# Class: :measureOfTemperature (:measureOfTemperature)
+
+SubClassOf(:measureOfTemperature :measurement)
+
+# Class: :measureOfVoltageLevel (:measureOfVoltageLevel)
+
+SubClassOf(:measureOfVoltageLevel :measurement)
+
+# Class: :measureOfVolume (:measureOfVolume)
+
+SubClassOf(:measureOfVolume :measurement)
+
+# Class: :measurement (:measurement)
+
+AnnotationAssertion(rdfs:comment :measurement "Feb'24: considered for DEPRECATION, after we have the more specialized properties of hasMeasurementValue")
+AnnotationAssertion(rdfs:comment :measurement "TH Dec/2023: a level of function that is realized at a certain type t")
+SubClassOf(:measurement :informationContentEntity)
+
+# Class: :mechanicalFitting (:mechanicalFitting)
+
+SubClassOf(:mechanicalFitting :discrete_asset)
+
+# Class: :membraneBioreactor (:membraneBioreactor)
+
+AnnotationAssertion(:excludeFromAssetClassList :membraneBioreactor "true"^^xsd:boolean)
+SubClassOf(:membraneBioreactor :bioreactor)
+
+# Class: :millingMachine (:millingMachine)
+
+SubClassOf(:millingMachine :largeStationaryTool)
+
+# Class: :minInputVoltage (:minInputVoltage)
+
+SubClassOf(:minInputVoltage :measureOfProperty)
+
+# Class: :mixerOrAgitator (:mixerOrAgitator)
+
+AnnotationAssertion(:isEquivalentToAvantisClass :mixerOrAgitator "Agitator")
+SubClassOf(:mixerOrAgitator :discrete_asset)
+
+# Class: :mobileLift (:mobileLift)
+
+SubClassOf(:mobileLift :discrete_asset)
+
+# Class: :modularDiscreteAssembly (DEPRECATED modular discrete assembly)
+
+AnnotationAssertion(rdfs:comment :modularDiscreteAssembly "This concept is no longer useful after we have a broader notion of system that also covers discrete asset. A modular discrete assembly would simply be a skid-mounted system")
+AnnotationAssertion(rdfs:label :modularDiscreteAssembly "DEPRECATED modular discrete assembly")
+AnnotationAssertion(owl:deprecated :modularDiscreteAssembly "true"^^xsd:boolean)
+
+# Class: :motor (motor)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :motor "true"^^xsd:boolean)
+AnnotationAssertion(rdfs:label :motor "motor"@en)
+SubClassOf(:motor :discrete_asset)
+
+# Class: :motorDriveOr_VFD (:motorDriveOr_VFD)
+
+SubClassOf(:motorDriveOr_VFD :discrete_asset)
+
+# Class: :motorStarter (:motorStarter)
+
+SubClassOf(:motorStarter :discrete_asset)
+
+# Class: :naturalGas (:naturalGas)
+
+SubClassOf(:naturalGas :fuel)
+SubClassOf(:naturalGas :gaseousMaterial)
+
+# Class: :networkPanel (:networkPanel)
+
+SubClassOf(:networkPanel :discrete_asset)
+
+# Class: :networkRouter (:networkRouter)
+
+SubClassOf(:networkRouter :discrete_asset)
+
+# Class: :networkSwitch (:networkSwitch)
+
+SubClassOf(:networkSwitch :discrete_asset)
+
+# Class: :nitrateOrNitriteAnalyzer (:nitrateOrNitriteAnalyzer)
+
+SubClassOf(:nitrateOrNitriteAnalyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :nominalInputVoltage (:nominalInputVoltage)
+
+SubClassOf(:nominalInputVoltage :measureOfProperty)
+
+# Class: :noteTaking (:noteTaking)
+
+SubClassOf(:noteTaking :process)
+
+# Class: :observation (:observation)
+
+AnnotationAssertion(rdfs:comment :observation "Feb'24 TH: intent on turning this term into a defined term")
+SubClassOf(:observation :description)
+
+# Class: :occupying (:occupying)
+
+AnnotationAssertion(rdfs:comment :occupying "TH: range should be a role, domain should be an asset")
+SubClassOf(:occupying :relationalState)
+
+# Class: :oilGreaseSeperator (:oilGreaseSeperator)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :oilGreaseSeperator "OGS")
+SubClassOf(:oilGreaseSeperator :discrete_asset)
+
+# Class: :ontarioRegulation (Ontario provincial regulation)
+
+AnnotationAssertion(rdfs:label :ontarioRegulation "Ontario provincial regulation"@en)
+SubClassOf(:ontarioRegulation :governmentRegulation)
+
+# Class: :organization (:organization)
+
+
+# Class: :outfallOrDischargePoint (:outfallOrDischargePoint)
+
+SubClassOf(:outfallOrDischargePoint :discrete_asset)
+
+# Class: :ozoneGenerator (:ozoneGenerator)
+
+SubClassOf(:ozoneGenerator :discrete_asset)
+
+# Class: :pH_analyzer (:pH_analyzer)
+
+SubClassOf(:pH_analyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :packageOfDiscreteWork (:packageOfDiscreteWork)
+
+SubClassOf(:packageOfDiscreteWork :work)
+
+# Class: :packaged_AC_Unit (:packaged_AC_Unit)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :packaged_AC_Unit "air condition")
+SubClassOf(:packaged_AC_Unit :discrete_asset)
+
+# Class: :paragraphContent (paragraph content)
+
+AnnotationAssertion(rdfs:label :paragraphContent "paragraph content"@en)
+SubClassOf(:paragraphContent :pieceOfContent)
+
+# Class: :passengerVehicles (:passengerVehicles)
+
+SubClassOf(:passengerVehicles :discrete_asset)
+
+# Class: :pelletizer (:pelletizer)
+
+AnnotationAssertion(:dev-PropertyNote :pelletizer "DiscreteModular? System?")
+SubClassOf(:pelletizer :discrete_asset)
+
+# Class: :personnalFloatationDevice (:personnalFloatationDevice)
+
+AnnotationAssertion(rdfs:comment :personnalFloatationDevice "A life jacket is not a subclass of Personal Flotation Device (PFD) in the technical sense. In regulatory and safety standards, life jackets and PFDs are distinct categories of flotation devices, each with its own specifications, intended uses, and buoyancy requirements. While both life jackets and PFDs serve the purpose of keeping individuals afloat in water, they differ in their design, buoyancy levels, and intended applications. Life jackets typically provide higher levels of buoyancy and are designed to turn an unconscious wearer face-up in the water, while PFDs are more varied in design and may not always have the same level of buoyancy or the ability to turn a wearer face-up.")
+SubClassOf(:personnalFloatationDevice :discrete_asset)
+
+# Class: :phosphateAnalyzer (:phosphateAnalyzer)
+
+SubClassOf(:phosphateAnalyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :pickupTruck (:pickupTruck)
+
+SubClassOf(:pickupTruck :discrete_asset)
+
+# Class: :pieceOfAirFiltrationEquipment (:pieceOfAirFiltrationEquipment)
+
+AnnotationAssertion(rdfs:comment :pieceOfAirFiltrationEquipment "29/07/24: The long name \"piece of air filtration equipment\" is chosen because it is less ambiguous and awkward sounding than \"air filter\" or \"air filtration asset\"")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :pieceOfAirFiltrationEquipment "air filter")
+SubClassOf(:pieceOfAirFiltrationEquipment :discrete_asset)
+
+# Class: :pieceOfContent (pieceOfContent)
+
+AnnotationAssertion(rdfs:comment :pieceOfContent "TH 12/5/2023: created to represent a piece of content about some part of the world, as oppose to other pieces of content used to organize these pieces of content, such as a folder in a computer, a compilation, or section delimiter in a document.")
+AnnotationAssertion(rdfs:label :pieceOfContent "pieceOfContent"@en)
+SubClassOf(:pieceOfContent :informationContentEntity)
+
+# Class: :pipeFitting (:pipeFitting)
+
+SubClassOf(:pipeFitting :discrete_asset)
+
+# Class: :pipeManifold (:pipeManifold)
+
+SubClassOf(:pipeManifold :discrete_asset)
+
+# Class: :pipeSegment (:pipeSegment)
+
+SubClassOf(:pipeSegment :segmentOfLinearAsset)
+
+# Class: :pipette (:pipette)
+
+AnnotationAssertion(:tool :pipette "true"^^xsd:boolean)
+SubClassOf(:pipette :discrete_asset)
+
+# Class: :piping_system (:piping_system)
+
+SubClassOf(:piping_system :distribution_system)
+
+# Class: :planer (:planer)
+
+SubClassOf(:planer :largeStationaryTool)
+
+# Class: :plantingSoilCell (:plantingSoilCell)
+
+SubClassOf(:plantingSoilCell :discrete_asset)
+
+# Class: :plantingSpace (:plantingSpace)
+
+SubClassOf(:plantingSpace :discrete_asset)
+
+# Class: :polymer_preparation_system (:polymer_preparation_system)
+
+SubClassOf(:polymer_preparation_system :localized_function_system)
+
+# Class: :pond (:pond)
+
+AnnotationAssertion(:dev-ontologyNote :pond "dryPond?
+wetPond?")
+SubClassOf(:pond :discrete_asset)
+
+# Class: :portableGasDetector (:portableGasDetector)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :portableGasDetector "personal gas detector")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :portableGasDetector "personal gas meter")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :portableGasDetector "portable gas meter")
+SubClassOf(:portableGasDetector :discrete_asset)
+
+# Class: :portableLadder (:portableLadder)
+
+AnnotationAssertion(:notionMappingID :portableLadder "79fddffa402d41d1aee6c4e68bce3341")
+SubClassOf(:portableLadder :ladder)
+
+# Class: :portableScaffolding (:portableScaffolding)
+
+SubClassOf(:portableScaffolding :discrete_asset)
+
+# Class: :portionOfGranularBioreactorMedium (:portionOfGranularBioreactorMedium)
+
+SubClassOf(:portionOfGranularBioreactorMedium :aPortionOfMaterialOfAsset)
+SubClassOf(:portionOfGranularBioreactorMedium :granularMaterial)
+
+# Class: :portionOfGranularFilterMedium (:portionOfGranularFilterMedium)
+
+SubClassOf(:portionOfGranularFilterMedium :aPortionOfMaterialOfAsset)
+SubClassOf(:portionOfGranularFilterMedium :granularMaterial)
+
+# Class: :positionSensingInstrument (:positionSensingInstrument)
+
+SubClassOf(:positionSensingInstrument :sensingInstrumentation)
+
+# Class: :positionSwitch (:positionSwitch)
+
+SubClassOf(:positionSwitch :sensingInstrumentation)
+
+# Class: :positionTransmitter (:positionTransmitter)
+
+SubClassOf(:positionTransmitter :sensingInstrumentation)
+
+# Class: :powerHarmonicFilter (:powerHarmonicFilter)
+
+SubClassOf(:powerHarmonicFilter :discrete_asset)
+
+# Class: :powerWasher (:powerWasher)
+
+SubClassOf(:powerWasher :discrete_asset)
+
+# Class: :poweredAirRespirator (:poweredAirRespirator)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :poweredAirRespirator "breathing aparatus")
+SubClassOf(:poweredAirRespirator :discrete_asset)
+
+# Class: :pressureReliefDevice (:pressureReliefDevice)
+
+AnnotationAssertion(rdfs:isDefinedBy :pressureReliefDevice "Pressure relief device (PRD) — a fitting installed on pressure equipment designed to provide primary protection from overpressurization. PRDs include both reclosing devices (e.g., safety valves, relief valves,safety relief valves) and non-reclosing devices (including rupture discs and fusible plugs). - CSA-B51-19")
+SubClassOf(:pressureReliefDevice :discrete_asset)
+
+# Class: :pressureReliefValve (:pressureReliefValve)
+
+AnnotationAssertion(:dev-PropertyNote :pressureReliefValve "A pressure relief device designed to actuate on inlet static pressure and to reclose after normal conditions have been restored. It may be one of the following types and have one or more of the following design features.
+A. Restricted lift PRV: a pressure relief valve in which the actual discharge area is determined by the position of the disc.
+B. Full lift PRV: a pressure relief valve in which the actual discharge area is not determined by the position of the disc.
+C. Reduced bore PRV: a pressure relief valve in which the flow path area below the seat is less than the flow area at the inlet to the valve.
+D. Full bore PRV: a pressure relief valve in which the bore area is equal to the flow area at the inlet to the valve and there are no protrusions in the bore.
+E. Direct spring loaded PRV: a pressure relief valve in which the disc is held closed by a spring.
+F. Pilot operated PRV: a pressure relief valve in which a piston or diaphragm is held closed by system pressure and the holding pressure is controlled by a pilot valve actuated by system pressure. 
+G. Conventional direct spring loaded PRV: a direct spring loaded pressure relief valve whose operational characteristics are directly affected by changes in the back pressure
+H. Balanced direct spring loaded PRV: a direct spring loaded pressure relief valve which incorporates means of minimizing the effect of back pressure on the operational characteristics (opening pressure, closing pressure, and relieving capacity).
+I. Internal spring PRV: a direct spring loaded pressure relief valve whose spring and all or part of the operating mechanism is exposed to the system pressure when the valve is in the closed position. 
+J. Temperature and pressure relief valve: a pressure relief valve that may be actuated by pressure at the valve inlet or by temperature at the valve inlet.
+K. Power actuated PRV: a pressure relief valve actuated by an externally powered control device.")
+AnnotationAssertion(rdfs:isDefinedBy :pressureReliefValve "A device designed to prevent pressure or vacuum from exceeding a predetermined value in a pressure vessel. - adapted from ANSI/ASME Performance Test Code PTC-25-2008")
+SubClassOf(:pressureReliefValve :pressureReliefDevice)
+
+# Class: :pressureSensorElement (:pressureSensorElement)
+
+SubClassOf(:pressureSensorElement :sensingInstrumentation)
+
+# Class: :pressureSwitch (:pressureSwitch)
+
+SubClassOf(:pressureSwitch :sensingInstrumentation)
+
+# Class: :pressureTransmitter (:pressureTransmitter)
+
+SubClassOf(:pressureTransmitter :sensingInstrumentation)
+
+# Class: :pressurizedSewerSegment (:pressurizedSewerSegment)
+
+SubClassOf(:pressurizedSewerSegment :sewerSegment)
+
+# Class: :pressurized_piping_system (:pressurized_piping_system)
+
+AnnotationAssertion(:notionMappingID :pressurized_piping_system "315f3959781f42bd81154d50fa751f1b")
+SubClassOf(:pressurized_piping_system :piping_system)
+
+# Class: :preventiveWork (:preventiveWork)
+
+SubClassOf(:preventiveWork :packageOfDiscreteWork)
+
+# Class: :primaryPathLineRole (:primaryPathLineRole)
+
+SubClassOf(:primaryPathLineRole :lineStructureRole)
+
+# Class: :primary_path_line (:primary_path_line)
+
+AnnotationAssertion(rdfs:isDefinedBy :primary_path_line "A line that has one or more junction along its length, linking it to minor branches, but only has one main path that carries a bulk flow from one point to another.")
+SubClassOf(:primary_path_line :line_structure)
+
+# Class: :processControlPanel (:processControlPanel)
+
+SubClassOf(:processControlPanel :discrete_asset)
+
+# Class: :processPipeSegment (:processPipeSegment)
+
+SubClassOf(:processPipeSegment :pipeSegment)
+
+# Class: :processing (processing)
+
+AnnotationAssertion(rdfs:isDefinedBy :processing "a function that is realized when a physical or chemical property of the thing being processed is changed by the bearer of the function.")
+AnnotationAssertion(rdfs:label :processing "processing")
+SubClassOf(:processing :functionAndCapability)
+
+# Class: :projectWork (:projectWork)
+
+SubClassOf(:projectWork :packageOfDiscreteWork)
+
+# Class: :propane (:propane)
+
+SubClassOf(:propane :fuel)
+SubClassOf(:propane :gaseousMaterial)
+
+# Class: :property (:property)
+
+AnnotationAssertion(rdfs:comment :property "07/02/2024: 
+- IRI changed from propertyState
+- \"property\" is a very general notion that covers quality, function, measure of function, relation, and complex higher-level qualities.")
+AnnotationAssertion(rdfs:comment :property "Mar 2 '24: only intended to be used for 1) properties associated with a UoM and 2) a property that could change with time. e.g. assetStatus. Where these conditions are not met, use a specific and direct property to the value (e.g., hasServaceableBearing).")
+AnnotationAssertion(rdfs:comment :property "Mar 6 '24 Th: renamed to propertyState, which is the same notion as property manifestation, used my Megan in UofT version of FAMO. The intent is to use this as the general description of all properties that change or are quantified by some UoM. If a property is not ascribed to an asset, but exists as a specification for a role or the design of an asset, we must not use the hasProperty relation.  Instead we should use requiresProperty or requiresOccupantProperty.")
+
+# Class: :protectionRelay (:protectionRelay)
+
+SubClassOf(:protectionRelay :discrete_asset)
+
+# Class: :publicAnnoucementSpeaker (:publicAnnoucementSpeaker)
+
+SubClassOf(:publicAnnoucementSpeaker :discrete_asset)
+
+# Class: :publisher (publisher)
+
+AnnotationAssertion(rdfs:label :publisher "publisher"@en)
+SubClassOf(:publisher :organization)
+
+# Class: :pulsationDampener (:pulsationDampener)
+
+SubClassOf(:pulsationDampener :discrete_asset)
+
+# Class: :pump (:pump)
+
+SubClassOf(:pump :discrete_asset)
+
+# Class: :pumpWithoutADrive (:pumpWithoutADrive)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :pumpWithoutADrive "true"^^xsd:boolean)
+SubClassOf(:pumpWithoutADrive :discrete_asset)
+
+# Class: :pumpingStation (:pumpingStation)
+
+SubClassOf(:pumpingStation :facility)
+
+# Class: :pumpingSurgeSuppressionTank (:pumpingSurgeSuppressionTank)
+
+SubClassOf(:pumpingSurgeSuppressionTank :discrete_asset)
+
+# Class: :pumpingWetWell (:pumpingWetWell)
+
+SubClassOf(:pumpingWetWell :discrete_asset)
+
+# Class: :quality (:quality)
+
+AnnotationAssertion(rdfs:comment :quality "TH Mar 24: property that is not related to what the asset can do. For example, its colour.  07/02/2024: The quality is modeled as an entity (instead of a literal) so we can keep track of change.")
+SubClassOf(:quality :property)
+
+# Class: :quencher (:quencher)
+
+SubClassOf(:quencher :discrete_asset)
+
+# Class: :radialArmDrill (:radialArmDrill)
+
+SubClassOf(:radialArmDrill :largeStationaryTool)
+
+# Class: :ratedPowerOutput (:ratedPowerOutput)
+
+SubClassOf(:ratedPowerOutput :measureOfProperty)
+
+# Class: :reactor (:reactor)
+
+AnnotationAssertion(rdfs:comment :reactor "March23'24: did not use \"tank\" in the naming because, there are reactors that do not take the form of a tank")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :reactor "processing tank")
+SubClassOf(:reactor :discrete_asset)
+
+# Class: :relationalState (:relationalState)
+
+SubClassOf(:relationalState :property)
+
+# Class: :reliefValve (:reliefValve)
+
+AnnotationAssertion(rdfs:isDefinedBy :reliefValve "A pressure relief valve characterized by gradual opening or closing generally proportional to the increase or decrease in pressure. It is normally used for incompressible fluids.- ANSI/ASME Performance Test Code PTC-25-2008")
+SubClassOf(:reliefValve :pressureReliefValve)
+
+# Class: :replaceableAirFilter (:replaceableAirFilter)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :replaceableAirFilter "true"^^xsd:boolean)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :replaceableAirFilter "air filter cassette")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :replaceableAirFilter "filter")
+SubClassOf(:replaceableAirFilter :discrete_asset)
+
+# Class: :replaceableOilOrFuelFilter (:replaceableOilOrFuelFilter)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :replaceableOilOrFuelFilter "true"^^xsd:boolean)
+SubClassOf(:replaceableOilOrFuelFilter :discrete_asset)
+
+# Class: :requirement (:requirement)
+
+AnnotationAssertion(rdfs:comment :requirement "Feb'24 TH: intent on turning this term into a defined term
+Jan'24 TH: this term is to be develope further, likely as a defined term.")
+AnnotationAssertion(rdfs:isDefinedBy :requirement "a specification enforced by an organization of person that has legitimate authority over an aspect of the asset owner organization.")
+SubClassOf(:requirement :description)
+
+# Class: :reservoirTank (:reservoirTank)
+
+SubClassOf(:reservoirTank :storageTank)
+
+# Class: :respiratorMask (:respiratorMask)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :respiratorMask "gas mask")
+SubClassOf(:respiratorMask :discrete_asset)
+
+# Class: :revision (revision)
+
+AnnotationAssertion(rdfs:label :revision "revision"@en)
+
+# Class: :roadSegement (:roadSegement)
+
+SubClassOf(:roadSegement :discrete_asset)
+
+# Class: :rollUpDoor (:rollUpDoor)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :rollUpDoor "loading dock door")
+SubClassOf(:rollUpDoor :discrete_asset)
+
+# Class: :roof (:roof)
+
+SubClassOf(:roof :fiat_part_of_asset)
+
+# Class: :ropeOrCableGrab (:ropeOrCableGrab)
+
+SubClassOf(:ropeOrCableGrab :discrete_asset)
+
+# Class: :rotating_collector (:rotating_collector)
+
+SubClassOf(:rotating_collector :collector_mechanism)
+
+# Class: :rubberInsulatingGloves (:rubberInsulatingGloves)
+
+SubClassOf(:rubberInsulatingGloves :discrete_asset)
+
+# Class: :rubberInsulatingSleeves (:rubberInsulatingSleeves)
+
+SubClassOf(:rubberInsulatingSleeves :discrete_asset)
+
+# Class: :ruptureDisc (:ruptureDisc)
+
+SubClassOf(:ruptureDisc :pressureReliefDevice)
+
+# Class: :safetyReliefValve (:safetyReliefValve)
+
+AnnotationAssertion(rdfs:isDefinedBy :safetyReliefValve "A pressure relief valve characterized by rapid opening or closing or by gradual opening or closing, generally proportional to the increase or decrease in pressure.")
+SubClassOf(:safetyReliefValve :pressureReliefValve)
+
+# Class: :safetyValve (:safetyValve)
+
+AnnotationAssertion(rdfs:isDefinedBy :safetyValve "A pressure relief valve characterized by full-opening pop action and recloses when the pressure drops to a value consistent with the blowdown requirements prescribed by the applicable governing code or standard.")
+SubClassOf(:safetyValve :pressureReliefValve)
+
+# Class: :samplingPoint (:samplingPoint)
+
+SubClassOf(:samplingPoint :discrete_asset)
+
+# Class: :samplingPump (:samplingPump)
+
+SubClassOf(:samplingPump :pump)
+
+# Class: :scaffolding (:scaffolding)
+
+AnnotationAssertion(:notionMappingID :scaffolding "4961170b77b24110a3655ba7386b04c4")
+SubClassOf(:scaffolding :systemOfStandardizedModularParts)
+
+# Class: :screwConveyor (:screwConveyor)
+
+AnnotationAssertion(:dev-PropertyNote :screwConveyor "shaftless(boolean) - from Avantis category")
+SubClassOf(:screwConveyor :conveyor)
+
+# Class: :screwPress (:screwPress)
+
+SubClassOf(:screwPress :dewateringPress)
+
+# Class: :screw_classifier (:screw_classifier)
+
+SubClassOf(:screw_classifier :classifier)
+
+# Class: :sealOrGasket (:sealOrGasket)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :sealOrGasket "true"^^xsd:boolean)
+SubClassOf(:sealOrGasket :discrete_asset)
+
+# Class: :sectionContent (section content)
+
+AnnotationAssertion(rdfs:label :sectionContent "section content"@en)
+SubClassOf(:sectionContent :pieceOfContent)
+
+# Class: :securityCamera (:securityCamera)
+
+AnnotationAssertion(rdfs:comment :securityCamera "Mar'24 TH: the parent class of camera was removed because there is no imaginable use for it in queries or other contexts.")
+SubClassOf(:securityCamera :discrete_asset)
+
+# Class: :securityMotionSensor (:securityMotionSensor)
+
+SubClassOf(:securityMotionSensor :discrete_asset)
+
+# Class: :sedimentationTank (:sedimentationTank)
+
+SubClassOf(:sedimentationTank :discrete_asset)
+
+# Class: :segmentOfLinearAsset (:segmentOfLinearAsset)
+
+AnnotationAssertion(rdfs:comment :segmentOfLinearAsset "Examples of linear segment include pipe, cable, duct, cable, and road. 
+An asset is structurally continuous when its physical and geometric attributes are the same at any two points along its length.  This means there are no junctions.
+Many linear assets, such as cables, also provide containment, but this is not a necessary attribute.  A section of road, for example, cannot necessarily contain vehicles")
+AnnotationAssertion(rdfs:isDefinedBy :segmentOfLinearAsset "An elongated asset that 
+* is structurally continuous and 
+* provide a path of flow for a material substance, energy, or information from a point to another.")
+SubClassOf(:segmentOfLinearAsset :discrete_asset)
+
+# Class: :selfContainedBreathingApparatus (:selfContainedBreathingApparatus)
+
+SubClassOf(:selfContainedBreathingApparatus :discrete_asset)
+
+# Class: :selfRetractingLifeline (:selfRetractingLifeline)
+
+AnnotationAssertion(:notionMappingID :selfRetractingLifeline "c319721ea78042788fb746723e66e038")
+AnnotationAssertion(rdfs:isDefinedBy :selfRetractingLifeline "CSA Z259.2.2-17: a component that automatically adjusts its length under light tension, and automatically applies to arrest force in the event of a fall.")
+SubClassOf(:selfRetractingLifeline :discrete_asset)
+
+# Class: :semi-solid (:semi-solid)
+
+SubClassOf(:semi-solid :material)
+
+# Class: :sensingInstrumentation (:sensingInstrumentation)
+
+SubClassOf(:sensingInstrumentation :discrete_asset)
+
+# Class: :separator (:separator)
+
+SubClassOf(:separator :discrete_asset)
+
+# Class: :server_appliance (:server_appliance)
+
+SubClassOf(:server_appliance :discrete_asset)
+
+# Class: :sewerSegment (:sewerSegment)
+
+AnnotationAssertion(rdfs:comment :sewerSegment "Candice state that representation of pressurized / gravity subclasses is necessary")
+SubClassOf(:sewerSegment :pipeSegment)
+
+# Class: :sewer_service_connection (:sewer_service_connection)
+
+SubClassOf(:sewer_service_connection :localized_function_system)
+
+# Class: :simpleLineRole (:simpleLineRole)
+
+SubClassOf(:simpleLineRole :lineStructureRole)
+
+# Class: :simple_line (:simple_line)
+
+AnnotationAssertion(rdfs:isDefinedBy :simple_line "An line that has no junction across its span.")
+SubClassOf(:simple_line :line_structure)
+
+# Class: :situatedWithin (:situatedWithin)
+
+SubClassOf(:situatedWithin :relationalState)
+
+# Class: :sludge (:sludge)
+
+SubClassOf(:sludge :material)
+
+# Class: :sludgeThickenerUnit (:sludgeThickenerUnit)
+
+AnnotationAssertion(:dev-ontologyNote :sludgeThickenerUnit "isRotaryDrumThickener")
+SubClassOf(:sludgeThickenerUnit :discrete_asset)
+
+# Class: :solenoid (:solenoid)
+
+SubClassOf(:solenoid :discrete_asset)
+
+# Class: :solid (:solid)
+
+SubClassOf(:solid :material)
+
+# Class: :space (:space)
+
+AnnotationAssertion(rdfs:comment :space "The subtypes of concern include 
+3-dimensional space that is fully or partially enclosed by the surfaces of a set of architectural parts, structural parts, or a parcel of land. 
+A 2-dimensional or a depthless 3-dimensional surface space that coincides with a surface formed by a set of architectural parts, structural parts, or a parcel of land.")
+AnnotationAssertion(rdfs:isDefinedBy :space "A space enclosed or partially enclosed by a set of physical boundaries or distinctions")
+
+# Class: :specificationDescription (:specificationDescription)
+
+SubClassOf(:specificationDescription :description)
+
+# Class: :spillKit (:spillKit)
+
+SubClassOf(:spillKit :discrete_asset)
+
+# Class: :steam (steam)
+
+AnnotationAssertion(rdfs:label :steam "steam")
+SubClassOf(:steam :commonBoilerMedium)
+SubClassOf(:steam :gaseousMaterial)
+
+# Class: :steamTrap (:steamTrap)
+
+SubClassOf(:steamTrap :discrete_asset)
+
+# Class: :stillOrVideoMobileCamera (:stillOrVideoMobileCamera)
+
+AnnotationAssertion(rdfs:comment :stillOrVideoMobileCamera "Mar'24 TH: the parent class of camera was removed because there is no imaginable use for it in queries or other contexts.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :stillOrVideoMobileCamera "camera")
+SubClassOf(:stillOrVideoMobileCamera :discrete_asset)
+
+# Class: :storageTank (:storageTank)
+
+SubClassOf(:storageTank :discrete_asset)
+
+# Class: :storm_service_connection (:storm_service_connection)
+
+SubClassOf(:storm_service_connection :localized_function_system)
+
+# Class: :strainer (:strainer)
+
+AnnotationAssertion(:dev-PropertyNote :strainer "motorized (boolean) - from P&ID drawing")
+SubClassOf(:strainer :discrete_asset)
+
+# Class: :structuralTankComponent (:structuralTankComponent)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :structuralTankComponent "true"^^xsd:boolean)
+SubClassOf(:structuralTankComponent :tankOrVesselComponent)
+
+# Class: :structuralWall (:structuralWall)
+
+SubClassOf(:structuralWall :discrete_asset)
+
+# Class: :subsystem_of_a_discrete_asset (:subsystem_of_a_discrete_asset)
+
+AnnotationAssertion(:excludeFromAssetClassList :subsystem_of_a_discrete_asset "true"^^xsd:boolean)
+AnnotationAssertion(rdfs:comment :subsystem_of_a_discrete_asset "Example: power train system of a car")
+AnnotationAssertion(rdfs:isDefinedBy :subsystem_of_a_discrete_asset "A subsystem of a discrete asset, which does not have qualify as a discrete asset itself.")
+SubClassOf(:subsystem_of_a_discrete_asset :system)
+
+# Class: :sulphination_system (:sulphination_system)
+
+SubClassOf(:sulphination_system :localized_function_system)
+
+# Class: :suppliedAirRespirator (:suppliedAirRespirator)
+
+SubClassOf(:suppliedAirRespirator :discrete_asset)
+
+# Class: :switchgearDistributionBus (:switchgearDistributionBus)
+
+SubClassOf(:switchgearDistributionBus :discrete_asset)
+
+# Class: :switchgearGroundingDevice (:switchgearGroundingDevice)
+
+SubClassOf(:switchgearGroundingDevice :discrete_asset)
+
+# Class: :system (:system)
+
+AnnotationAssertion(rdfs:comment :system "Further Clarifications:
+The asset parts of a system can be interrelated by physical connections, controlled material flows, information flow, or energy transmission between the parts.
+Each part of the system should be involved in a higher-order function of the system. While some parts are directly involved in realizing the function others are involved by supporting the regulation, reliability, maintainability, and other implicit goals of the system.
+Examples of system include
+* wireless radio network
+* a building or a bridge
+* a stormwater management pond
+* any subsystem functional structure")
+AnnotationAssertion(rdfs:isDefinedBy :system "A collection of interrelated assets capable of some higher-order function.")
+SubClassOf(:system :collection_of_assets)
+
+# Class: :systemBlockRole (system)
+
+AnnotationAssertion(rdfs:label :systemBlockRole "system")
+SubClassOf(:systemBlockRole :functionalStructureRole)
+
+# Class: :systemOfStandardizedModularParts (:systemOfStandardizedModularParts)
+
+AnnotationAssertion(rdfs:comment :systemOfStandardizedModularParts "This is to say that the assembly's parts (and all of its parts) are not always sufficiently physically unified to allow it to be moved around as a unit.")
+AnnotationAssertion(rdfs:isDefinedBy :systemOfStandardizedModularParts "A system comprising physically integrated discrete parts that is not itself a discrete asset.")
+AnnotationAssertion(owl:deprecated :systemOfStandardizedModularParts "true"^^xsd:boolean)
+SubClassOf(:systemOfStandardizedModularParts :system_of_assembled_discrete_assets)
+
+# Class: :systemOnASkid (:systemOnASkid)
+
+AnnotationAssertion(rdfs:comment :systemOnASkid "Mar25,24: It is important to define the concept of a integrated standalone because they may extend across lines and trains and represent a special case in the asset hierarchy specification. Also, unlike other discrete assets, we need to fully catalog their parts, because they are easily replaceable. Finally, many common equipment, such as pump and motor sets, are IUSAs equipment.")
+AnnotationAssertion(rdfs:isDefinedBy :systemOnASkid "A discrete asset that consists a collection of discrete asset parts, many of them often appear in other contexts as stand-alone discrete assets (not part of another discrete asset).  The set of parts are physical integrated onto a structure skid, frame, panel, etc, such that the part can be moved or sold together.")
+AnnotationAssertion(owl:deprecated :systemOnASkid "true"^^xsd:boolean)
+SubClassOf(:systemOnASkid :discrete_asset)
+SubClassOf(:systemOnASkid :system_of_assembled_discrete_assets)
+
+# Class: :systemTrainRole (:systemTrainRole)
+
+SubClassOf(:systemTrainRole :linearFunctionStructureRole)
+
+# Class: :system_block (:system_block)
+
+AnnotationAssertion(rdfs:isDefinedBy :system_block "A system part of a bigger localized function system that completely subsumes a certain function of the bigger system - i.e all assets playing the equivalent role to realize the function are all parts of this system.")
+SubClassOf(:system_block :system)
+
+# Class: :system_of_assembled_discrete_assets (:system_of_assembled_discrete_assets)
+
+AnnotationAssertion(rdfs:comment :system_of_assembled_discrete_assets "6/19/24: This class is both a subclass of Discrete Asset and System of Discrete Asset")
+AnnotationAssertion(rdfs:comment :system_of_assembled_discrete_assets "6/30: A reason to keep this class: It is useful to use this class in setting a rule, stating that the next lower level of discrete assets must be indexed with a certain degree of rigour as well.")
+AnnotationAssertion(rdfs:comment :system_of_assembled_discrete_assets "6/5/24: This type of system qualifiy to have children, under the relation \"parent assembly\", being specified for Maximo implementation.")
+AnnotationAssertion(rdfs:isDefinedBy :system_of_assembled_discrete_assets "A system made up of discrete asset parts, assembled with sufficient structural integrity or coherence that the assembled whole also qualifies as a discrete asset.")
+SubClassOf(:system_of_assembled_discrete_assets :discrete_asset)
+SubClassOf(:system_of_assembled_discrete_assets :system)
+
+# Class: :system_train (:system_train)
+
+AnnotationAssertion(rdfs:comment :system_train "A system train has the characteristic of being set of connected assets that 
+* is a part of a system
+* exists among multiple similar sets of connected assets, functionally equivalent to itself, in the same system
+is capable of realizing a unit of the system primary functions.")
+AnnotationAssertion(rdfs:isDefinedBy :system_train "A component, among multiple functionally equivalent components of a regionalized system, that offers a unit of the complete set of primary functions of a regionalized system.")
+AnnotationAssertion(rdfs:isDefinedBy :system_train "a part of a facility system consisting of a set of connected discrete assets that provides one unit, among multiple redundant units, of the primary functions of the facility system.")
+SubClassOf(:system_train :linear_function_structure)
+
+# Class: :tableContent (table content)
+
+AnnotationAssertion(rdfs:label :tableContent "table content"@en)
+SubClassOf(:tableContent :pieceOfContent)
+
+# Class: :tankOrVesselComponent (:tankOrVesselComponent)
+
+AnnotationAssertion(:alwaysFunctionsAsPartOfDiscreteAsset :tankOrVesselComponent "true"^^xsd:boolean)
+SubClassOf(:tankOrVesselComponent :discrete_asset)
+
+# Class: :technicalStandard (technical standard)
+
+AnnotationAssertion(rdfs:label :technicalStandard "technical standard"@en)
+SubClassOf(:technicalStandard :contentSubject)
+
+# Class: :temperartureSwitch (:temperartureSwitch)
+
+SubClassOf(:temperartureSwitch :sensingInstrumentation)
+
+# Class: :temperatureSensorElement (:temperatureSensorElement)
+
+SubClassOf(:temperatureSensorElement :sensingInstrumentation)
+
+# Class: :temperatureTransmitter (:temperatureTransmitter)
+
+SubClassOf(:temperatureTransmitter :sensingInstrumentation)
+
+# Class: :theMaxAllowableWorkingPressure (Maximum Allowable Working Pressure)
+
+AnnotationAssertion(rdfs:label :theMaxAllowableWorkingPressure "Maximum Allowable Working Pressure")
+SubClassOf(:theMaxAllowableWorkingPressure :aPressureDesc)
+
+# Class: :theMaxAllowableWorkingTemp (Maxiumum Allowable Working Temperature)
+
+AnnotationAssertion(rdfs:label :theMaxAllowableWorkingTemp "Maxiumum Allowable Working Temperature")
+SubClassOf(:theMaxAllowableWorkingTemp :aTemperatureDesc)
+
+# Class: :theMaxInputVoltageDesc (:theMaxInputVoltageDesc)
+
+AnnotationAssertion(rdfs:comment :theMaxInputVoltageDesc "Maximum Input Voltage")
+SubClassOf(:theMaxInputVoltageDesc :aVoltageDesc)
+
+# Class: :theMinInputVoltageDesc (Mininum Input Voltage)
+
+AnnotationAssertion(rdfs:label :theMinInputVoltageDesc "Mininum Input Voltage")
+SubClassOf(:theMinInputVoltageDesc :aVoltageDesc)
+
+# Class: :theNominalOutputPower (Nominal Output Power)
+
+AnnotationAssertion(rdfs:label :theNominalOutputPower "Nominal Output Power")
+SubClassOf(:theNominalOutputPower :aPowerDesc)
+
+# Class: :theSubstanceInContainment (:theSubstanceInContainment)
+
+SubClassOf(:theSubstanceInContainment :assetDescription)
+
+# Class: :theVolumetricCapacityDesc (:theVolumetricCapacityDesc)
+
+SubClassOf(:theVolumetricCapacityDesc :aVolumetricCapacityDesc)
+
+# Class: :thermalOil (thermal oil)
+
+AnnotationAssertion(rdfs:label :thermalOil "thermal oil")
+SubClassOf(:thermalOil :commonBoilerMedium)
+SubClassOf(:thermalOil :liquid)
+
+# Class: :thermostatOrZoneControllerUnit (:thermostatOrZoneControllerUnit)
+
+SubClassOf(:thermostatOrZoneControllerUnit :discrete_asset)
+
+# Class: :torqueWrench (:torqueWrench)
+
+SubClassOf(:torqueWrench :wrench)
+
+# Class: :totalDissolvedSolidsAnalyzer (:totalDissolvedSolidsAnalyzer)
+
+SubClassOf(:totalDissolvedSolidsAnalyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :totalSuspendedSolidsAnalyzer (:totalSuspendedSolidsAnalyzer)
+
+SubClassOf(:totalSuspendedSolidsAnalyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :transferSwitch (:transferSwitch)
+
+SubClassOf(:transferSwitch :discrete_asset)
+
+# Class: :transformer (:transformer)
+
+SubClassOf(:transformer :discrete_asset)
+
+# Class: :trapPrimingDevice (:trapPrimingDevice)
+
+SubClassOf(:trapPrimingDevice :discrete_asset)
+
+# Class: :traveling_bridge_collector (:traveling_bridge_collector)
+
+SubClassOf(:traveling_bridge_collector :collector_mechanism)
+
+# Class: :treatment_process (:treatment_process)
+
+SubClassOf(:treatment_process :localized_function_system)
+
+# Class: :tunnel (:tunnel)
+
+SubClassOf(:tunnel :discrete_asset)
+
+# Class: :turbidityAnalyzer (:turbidityAnalyzer)
+
+SubClassOf(:turbidityAnalyzer :chemicalOrConcentrationAnalyzer)
+
+# Class: :undergroundFuelOilTank_TEMP (:undergroundFuelOilTank_TEMP)
+
+AnnotationAssertion(:excludeFromAssetClassList :undergroundFuelOilTank_TEMP "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :undergroundFuelOilTank_TEMP "f6a0886defb9495e8da78b897445275b")
+EquivalentClasses(:undergroundFuelOilTank_TEMP ObjectIntersectionOf(:fuelOilTank DataHasValue(:isUnderGround "true"^^xsd:boolean)))
+
+# Class: :undergroundFuelTank_TEMP (:undergroundFuelTank_TEMP)
+
+AnnotationAssertion(:excludeFromAssetClassList :undergroundFuelTank_TEMP "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :undergroundFuelTank_TEMP "36c706f0a1524bc49f64b76bd1e184b5")
+EquivalentClasses(:undergroundFuelTank_TEMP ObjectIntersectionOf(:fuelTank DataHasValue(:isUnderGround "true"^^xsd:boolean)))
+
+# Class: :unitOfArea (:unitOfArea)
+
+SubClassOf(:unitOfArea :unitOfMeasure)
+
+# Class: :unitOfElectricalCurrent (:unitOfElectricalCurrent)
+
+SubClassOf(:unitOfElectricalCurrent :unitOfMeasure)
+
+# Class: :unitOfMass (:unitOfMass)
+
+SubClassOf(:unitOfMass :unitOfMeasure)
+
+# Class: :unitOfMeasure (:unitOfMeasure)
+
+SubClassOf(:unitOfMeasure :informationContentEntity)
+
+# Class: :unitOfPower (:unitOfPower)
+
+SubClassOf(:unitOfPower :unitOfMeasure)
+
+# Class: :unitOfPressure (:unitOfPressure)
+
+SubClassOf(:unitOfPressure :unitOfMeasure)
+
+# Class: :unitOfTemperature (:unitOfTemperature)
+
+SubClassOf(:unitOfTemperature :unitOfMeasure)
+
+# Class: :unitOfVoltage (:unitOfVoltage)
+
+SubClassOf(:unitOfVoltage :unitOfMeasure)
+
+# Class: :unitOfVolume (:unitOfVolume)
+
+SubClassOf(:unitOfVolume :unitOfMeasure)
+
+# Class: :vaccumCleaner (:vaccumCleaner)
+
+SubClassOf(:vaccumCleaner :discrete_asset)
+
+# Class: :valve (valve)
+
+AnnotationAssertion(rdfs:isDefinedBy :valve "A device for controlling the passage of fluid or air through a pipe.  The device is integrated into the pipe through a flanged, threaded, or wielded connection. 
+The following are considered to be subclasses of valves
+* solenoid, 
+* check valve,
+* backflow preventer,
+* subtypes of pressure relief valve.")
+AnnotationAssertion(rdfs:label :valve "valve"@en)
+SubClassOf(:valve :discrete_asset)
+
+# Class: :valveRole (:valveRole)
+
+SubClassOf(:valveRole :discreteAssetRole)
+
+# Class: :valve_actuator (:valve_actuator)
+
+SubClassOf(:valve_actuator :actuator)
+
+# Class: :variableAirVolumeUnit (:variableAirVolumeUnit)
+
+SubClassOf(:variableAirVolumeUnit :discrete_asset)
+
+# Class: :ventilation_system (:ventilation_system)
+
+AnnotationAssertion(:notionMappingID :ventilation_system "a5d009d138a14963a62ee0d5753c6a74")
+SubClassOf(:ventilation_system :localized_function_system)
+
+# Class: :ventilator (:ventilator)
+
+SubClassOf(:ventilator :discrete_asset)
+
+# Class: :verticalLifeline (:verticalLifeline)
+
+AnnotationAssertion(:notionMappingID :verticalLifeline "ac3fd2e6499d4797954dc714a796c3bc")
+SubClassOf(:verticalLifeline :discrete_asset)
+
+# Class: :vibrationAnalyzer (:vibrationAnalyzer)
+
+SubClassOf(:vibrationAnalyzer :sensingInstrumentation)
+
+# Class: :vibrationSensorElement (:vibrationSensorElement)
+
+SubClassOf(:vibrationSensorElement :sensingInstrumentation)
+
+# Class: :voltageTester (:voltageTester)
+
+SubClassOf(:voltageTester :discrete_asset)
+
+# Class: :volumnCapacity (:volumnCapacity)
+
+SubClassOf(:volumnCapacity :measureOfProperty)
+
+# Class: :vortex_classifier (:vortex_classifier)
+
+SubClassOf(:vortex_classifier :classifier)
+
+# Class: :wasteGasBurner (:wasteGasBurner)
+
+SubClassOf(:wasteGasBurner :discrete_asset)
+
+# Class: :wastewaterStoragePipe (:wastewaterStoragePipe)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :wastewaterStoragePipe "super pipe")
+SubClassOf(:wastewaterStoragePipe :storageTank)
+
+# Class: :water (water)
+
+AnnotationAssertion(rdfs:label :water "water")
+SubClassOf(:water :commonBoilerMedium)
+SubClassOf(:water :liquid)
+
+# Class: :waterGlycolMixture (water glycol mixture)
+
+AnnotationAssertion(rdfs:label :waterGlycolMixture "water glycol mixture")
+SubClassOf(:waterGlycolMixture :commonBoilerMedium)
+SubClassOf(:waterGlycolMixture :liquid)
+
+# Class: :waterTower (:waterTower)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :waterTower "elevated water tank")
+SubClassOf(:waterTower :reservoirTank)
+
+# Class: :waterTrailer (:waterTrailer)
+
+SubClassOf(:waterTrailer :discrete_asset)
+
+# Class: :water_service_connection (:water_service_connection)
+
+SubClassOf(:water_service_connection :localized_function_system)
+
+# Class: :watermain (:watermain)
+
+SubClassOf(:watermain :pipeSegment)
+
+# Class: :weightScale (:weightScale)
+
+SubClassOf(:weightScale :sensingInstrumentation)
+
+# Class: :weirStructure (:weirStructure)
+
+SubClassOf(:weirStructure :discrete_asset)
+
+# Class: :weldingReceptacle (:weldingReceptacle)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :weldingReceptacle "receptable")
+SubClassOf(:weldingReceptacle :discrete_asset)
+
+# Class: :well (:well)
+
+SubClassOf(:well :discrete_asset)
+
+# Class: :wirelessNetworkAccessPoint (:wirelessNetworkAccessPoint)
+
+SubClassOf(:wirelessNetworkAccessPoint :discrete_asset)
+
+# Class: :work (:work)
+
+SubClassOf(:work :process)
+
+# Class: :workOrderSpecification (work order specification)
+
+AnnotationAssertion(rdfs:label :workOrderSpecification "work order specification")
+SubClassOf(:workOrderSpecification :workSpecification)
+
+# Class: :workSpecification (work specification)
+
+AnnotationAssertion(rdfs:label :workSpecification "work specification")
+SubClassOf(:workSpecification :description)
+
+# Class: :wrench (:wrench)
+
+AnnotationAssertion(:excludeFromAssetClassList :wrench "true"^^xsd:boolean)
+SubClassOf(:wrench :discrete_asset)
+
+# Class: :yard (:yard)
+
+SubClassOf(:yard :facility)
+
+# Class: :assetRecord (:assetRecord)
+
+SubClassOf(:EIDF:assetRecord :EIDF:dataRecord)
+
+# Class: :dataRecord (:dataRecord)
+
+AnnotationAssertion(rdfs:comment :EIDF:dataRecord "July24: 
+ERIS stands for Entity Record Information Standard, which is implicitly defined in the Entity Information Workbook.")
+SubClassOf(:EIDF:dataRecord :dataRecord)
+
+# Class: :spaceRecord (:spaceRecord)
+
+SubClassOf(:EIDF:spaceRecord :EIDF:dataRecord)
+
+# Class: :CSA-B149-6_membraneGasholder (:CSA-B149-6_membraneGasholder)
+
+AnnotationAssertion(:notionMappingID :definedClass:CSA-B149-6_membraneGasholder "c9c243803090466e87183f25bbcf7ff4")
+SubClassOf(:definedClass:CSA-B149-6_membraneGasholder :gasHolder)
+
+# Class: :FuelAppliance (:FuelAppliance)
+
+AnnotationAssertion(:excludeFromAssetClassList :definedClass:FuelAppliance "true"^^xsd:boolean)
+AnnotationAssertion(rdfs:isDefinedBy :definedClass:FuelAppliance "a device used to convert fuel into energy.")
+SubClassOf(:definedClass:FuelAppliance :discrete_asset)
+
+# Class: :FuelOilAppliance (:FuelOilAppliance)
+
+AnnotationAssertion(:excludeFromAssetClassList :definedClass:FuelOilAppliance "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :definedClass:FuelOilAppliance "82537133b8f24fe1870c2457c6212b4f")
+AnnotationAssertion(rdfs:isDefinedBy :definedClass:FuelOilAppliance "O. Reg 212/01: “appliance” means a device that consumes or is intended to consume a gas and includes all valves, fittings, controls and components attached or to be attached to it.
+CSA 149.2: a device to convert gas into energy or compress gas for the purpose of fuelling; the term includes any component, control, wiring, piping, or tubing required to be part of the device.")
+SubClassOf(:definedClass:FuelOilAppliance :definedClass:FuelAppliance)
+
+# Class: :GasAppliance (:GasAppliance)
+
+AnnotationAssertion(:excludeFromAssetClassList :definedClass:GasAppliance "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :definedClass:GasAppliance "6fb4bd445ab8441d8557e738d70edafe")
+AnnotationAssertion(rdfs:isDefinedBy :definedClass:GasAppliance "CSA B139: a device used to convert fuel into energy. Note: This term includes all components, controls, wiring, and piping required as part of the device by the applicable standard")
+SubClassOf(:definedClass:GasAppliance :definedClass:FuelAppliance)
+
+# Class: :HotWorkEquipment (:HotWorkEquipment)
+
+AnnotationAssertion(:excludeFromAssetClassList :definedClass:HotWorkEquipment "true"^^xsd:boolean)
+AnnotationAssertion(:notionMappingID :definedClass:HotWorkEquipment "5f674b2aae0e4f43b19d6e669ce82610")
+AnnotationAssertion(rdfs:isDefinedBy :definedClass:HotWorkEquipment "Modified from the description of hot work in Ontario Fire Code O.Reg 213/07: equipment involved in work that uses open flames or produce heat or sparks, including cutting, welding, soldering, brazing, grinding, adhesive bonding, thermal spraying and thawing pipes.")
+SubClassOf(:definedClass:HotWorkEquipment :discrete_asset)
+
+# Class: :_heating_boiler (:_heating_boiler)
+
+AnnotationAssertion(:excludeFromAssetClassList :definedClass:_heating_boiler "true"^^xsd:boolean)
+AnnotationAssertion(rdfs:isDefinedBy :definedClass:_heating_boiler "O.Reg 220: “low pressure boiler” means,
+(a) a boiler that is intended to generate steam or other vapour at a pressure of 15 psi (103 kPa) or less, or
+(b) a boiler that is intended to be operated at a pressure of 160 psi (1,100 kPa) or less where the water temperature at any boiler outlet is 250°F (121°C) or less; (“chaudière à basse pression”)")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :definedClass:_heating_boiler "low-pressure boiler")
+SubClassOf(:definedClass:_heating_boiler :boiler)
+
+# Class: :_power_boiler (:_power_boiler)
+
+AnnotationAssertion(:excludeFromAssetClassList :definedClass:_power_boiler "true"^^xsd:boolean)
+AnnotationAssertion(rdfs:isDefinedBy :definedClass:_power_boiler "from TSSA BPV-20-01 R1:
+i. steam service operating pressure above 103 kPa (15 psig)
+ii. hot water service operating pressure above 1100 kPa (160 psig) or above the temperature 121 C (250 F)")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :definedClass:_power_boiler "high-pressure boiler")
+SubClassOf(:definedClass:_power_boiler :boiler)
+
+# Class: :category_G_boilerFitting (:category_G_boilerFitting)
+
+AnnotationAssertion(:excludeFromAssetClassList :definedClass:category_G_boilerFitting "true"^^xsd:boolean)
+AnnotationAssertion(rdfs:isDefinedBy :definedClass:category_G_boilerFitting "CSA B51-19, Table 1: Certified capacity-rated pressure relief devices acceptable as primary overpressure protection on boilers, pressure vessels and pressure piping, and fusible plugs")
+SubClassOf(:definedClass:category_G_boilerFitting :boiler_fitting)
+
+# Class: :Multi-parameterSensingInstrument (:Multi-parameterSensingInstrument)
+
+AnnotationAssertion(:excludeFromAssetClassList :term:Multi-parameterSensingInstrument "true"^^xsd:boolean)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :term:Multi-parameterSensingInstrument "multi-parameter instrumentation")
+SubClassOf(:term:Multi-parameterSensingInstrument :sensingInstrumentation)
+SubClassOf(:term:Multi-parameterSensingInstrument ObjectSomeValuesFrom(:hasPhysicalPart :sensingInstrumentation))
+
+# Class: :Single-parameterInstrument (:Single-parameterInstrument)
+
+SubClassOf(:term:Single-parameterInstrument :sensingInstrumentation)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :Celsius (degC)
+
+AnnotationAssertion(rdfs:label :Celsius "degC")
+ClassAssertion(:unitOfTemperature :Celsius)
+
+# Individual: :Fahrenheit (degF)
+
+AnnotationAssertion(rdfs:label :Fahrenheit "degF")
+ClassAssertion(:unitOfTemperature :Fahrenheit)
+
+# Individual: :Kelvin (degK)
+
+AnnotationAssertion(rdfs:label :Kelvin "degK")
+ClassAssertion(:unitOfTemperature :Kelvin)
+
+# Individual: :NEMA_EXPL (EXPL)
+
+ClassAssertion(:NEMA_enclosureType :NEMA_EXPL)
+
+# Individual: :NEMA_HAZ (HAZ)
+
+ClassAssertion(:NEMA_enclosureType :NEMA_HAZ)
+
+# Individual: :NEMA_ODP (:NEMA_ODP)
+
+ClassAssertion(:NEMA_enclosureType :NEMA_ODP)
+
+# Individual: :NEMA_TEAO (:NEMA_TEAO)
+
+ClassAssertion(:NEMA_enclosureType :NEMA_TEAO)
+
+# Individual: :NEMA_TEFC (:NEMA_TEFC)
+
+ClassAssertion(:NEMA_enclosureType :NEMA_TEFC)
+
+# Individual: :NEMA_TENV (:NEMA_TENV)
+
+ClassAssertion(:NEMA_enclosureType :NEMA_TENV)
+
+# Individual: :NEMA_TEWD (:NEMA_TEWD)
+
+ClassAssertion(:NEMA_enclosureType :NEMA_TEWD)
+
+# Individual: :assetAvailableState (available)
+
+AnnotationAssertion(rdfs:label :assetAvailableState "available")
+ClassAssertion(:assetOpperationState :assetAvailableState)
+
+# Individual: :assetUnavailableState (unavailable)
+
+AnnotationAssertion(rdfs:label :assetUnavailableState "unavailable")
+ClassAssertion(:assetOpperationState :assetUnavailableState)
+
+# Individual: :bar (bar)
+
+AnnotationAssertion(rdfs:label :bar "bar")
+ClassAssertion(:unitOfPressure :bar)
+
+# Individual: :cubicFeet (ft^3)
+
+AnnotationAssertion(rdfs:label :cubicFeet "ft^3")
+ClassAssertion(:unitOfVolume :cubicFeet)
+
+# Individual: :cubicMetre (m^3)
+
+AnnotationAssertion(rdfs:label :cubicMetre "m^3")
+ClassAssertion(:unitOfVolume :cubicMetre)
+
+# Individual: :horsepower (hp)
+
+AnnotationAssertion(rdfs:label :horsepower "hp")
+ClassAssertion(:unitOfPower :horsepower)
+
+# Individual: :kiloPascal (kPa)
+
+AnnotationAssertion(rdfs:label :kiloPascal "kPa")
+ClassAssertion(:unitOfPressure :kiloPascal)
+
+# Individual: :kilovolt (kV)
+
+AnnotationAssertion(rdfs:label :kilovolt "kV")
+ClassAssertion(:unitOfVoltage :kilovolt)
+
+# Individual: :kilovolt-ampere (kVA)
+
+AnnotationAssertion(rdfs:label :kilovolt-ampere "kVA")
+ClassAssertion(:unitOfPower :kilovolt-ampere)
+
+# Individual: :kilowatt (kW)
+
+AnnotationAssertion(rdfs:label :kilowatt "kW")
+ClassAssertion(:unitOfPower :kilowatt)
+
+# Individual: :litre (L)
+
+AnnotationAssertion(rdfs:label :litre "L")
+ClassAssertion(:unitOfVolume :litre)
+
+# Individual: :megavolt-ampere (MVA)
+
+AnnotationAssertion(rdfs:label :megavolt-ampere "MVA")
+ClassAssertion(:unitOfPower :megavolt-ampere)
+
+# Individual: :megawatt (MW)
+
+AnnotationAssertion(rdfs:label :megawatt "MW")
+ClassAssertion(:unitOfPower :megawatt)
+
+# Individual: :poundsPerSquareInch (psi)
+
+AnnotationAssertion(rdfs:label :poundsPerSquareInch "psi")
+ClassAssertion(:unitOfPressure :poundsPerSquareInch)
+
+# Individual: :squareCentimetre (cm^2)
+
+AnnotationAssertion(rdfs:label :squareCentimetre "cm^2")
+ClassAssertion(:unitOfArea :squareCentimetre)
+
+# Individual: :squareFeet (ft^2)
+
+AnnotationAssertion(rdfs:label :squareFeet "ft^2")
+ClassAssertion(:unitOfArea :squareFeet)
+
+# Individual: :squareInch (inch^2)
+
+AnnotationAssertion(rdfs:label :squareInch "inch^2")
+ClassAssertion(:unitOfArea :squareInch)
+
+# Individual: :squareKilometre (km^2)
+
+AnnotationAssertion(rdfs:label :squareKilometre "km^2")
+ClassAssertion(:unitOfArea :squareKilometre)
+
+# Individual: :squareMetre (m^2)
+
+AnnotationAssertion(rdfs:label :squareMetre "m^2")
+ClassAssertion(:unitOfArea :squareMetre)
+
+# Individual: :squareMile (mile^2)
+
+AnnotationAssertion(rdfs:label :squareMile "mile^2")
+ClassAssertion(:unitOfArea :squareMile)
+
+# Individual: :steam (steam)
+
+ClassAssertion(:commonBoilerMedium :steam)
+
+# Individual: :thermalOil (thermal oil)
+
+ClassAssertion(:commonBoilerMedium :thermalOil)
+
+# Individual: :volt (V)
+
+AnnotationAssertion(rdfs:label :volt "V")
+ClassAssertion(:unitOfVoltage :volt)
+
+# Individual: :volt-ampere (VA)
+
+AnnotationAssertion(rdfs:label :volt-ampere "VA")
+ClassAssertion(:unitOfPower :volt-ampere)
+
+# Individual: :water (water)
+
+ClassAssertion(:commonBoilerMedium :water)
+
+# Individual: :waterGlycolMixture (water glycol mixture)
+
+ClassAssertion(:commonBoilerMedium :waterGlycolMixture)
+
+# Individual: :watt (W)
+
+AnnotationAssertion(rdfs:label :watt "W")
+ClassAssertion(:unitOfPower :watt)
+
+
+DisjointClasses(:asset :discreteAssetRole :informationContentEntity :material :organization :property)
+)
