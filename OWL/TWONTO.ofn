@@ -1707,6 +1707,7 @@ SubClassOf(:collection_of_asset_roles :role)
 # Class: :collection_of_assets (:collection_of_assets)
 
 SubClassOf(:collection_of_assets :asset)
+SubClassOf(:collection_of_assets :collection_of_things)
 
 # Class: :collection_of_things (:collection_of_things)
 
