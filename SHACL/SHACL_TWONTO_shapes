@@ -47,7 +47,7 @@ tw:Motor_defaultShape
 	] ;
 	sh:property [
 		sh:path tw:hasSealedOrShieldedBearing ;
-		sh:name "has sealed or shiedled bearing";
+		sh:name "has sealed or shielded bearing";
 		sh:datatype xsd:boolean ;
 		sh:maxCount 1 ; sh:minCount 1 ;#functional property
 		sh:severity sh:Violation ;
