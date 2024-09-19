@@ -127,6 +127,7 @@ Declaration(Class(:coagulation_and_flocculation_tank))
 Declaration(Class(:coagulation_tank))
 Declaration(Class(:collection_of_asset_roles))
 Declaration(Class(:collection_of_assets))
+Declaration(Class(:collection_of_things))
 Declaration(Class(:collector_mechanism))
 Declaration(Class(:combustible_material))
 Declaration(Class(:combustion_turbine))
@@ -1721,7 +1722,6 @@ SubClassOf(:collection_of_asset_roles :role)
 
 # Class: :collection_of_assets (:collection_of_assets)
 
-SubClassOf(:collection_of_assets :asset)
 SubClassOf(:collection_of_assets :collection_of_things)
 
 # Class: :collector_mechanism (:collector_mechanism)
@@ -2627,6 +2627,7 @@ SubClassOf(:line_structure_role :linear_function_structure_role)
 
 # Class: :linear_function_structure (:linear_function_structure)
 
+SubClassOf(:linear_function_structure :asset)
 SubClassOf(:linear_function_structure :collection_of_assets)
 
 # Class: :linear_function_structure_role (linear function structure)
@@ -3479,6 +3480,7 @@ Examples of system include
 * a stormwater management pond
 * any subsystem functional structure")
 AnnotationAssertion(rdfs:isDefinedBy :system "A collection of interrelated assets capable of some higher-order function.")
+SubClassOf(:system :asset)
 SubClassOf(:system :collection_of_assets)
 
 # Class: :system_block (:system_block)
