@@ -32,20 +32,23 @@ Declaration(Class(:NEMA_EXPL))
 Declaration(Class(:NEMA_HAZ))
 Declaration(Class(:NEMA_enclosure_type))
 Declaration(Class(:Ontario_regulation))
+Declaration(Class(:PH_analyzer))
 Declaration(Class(:PLC))
 Declaration(Class(:PLC_module_component))
 Declaration(Class(:PPE))
 Declaration(Class(:RTU))
+Declaration(Class(:SCADA_computer_terminal))
 Declaration(Class(:UPS))
 Declaration(Class(:UV_disinfection_assembly))
 Declaration(Class(:UV_disinfection_lamp_unit))
+Declaration(Class(:VFD))
 Declaration(Class(:a_portion_of_material_asset))
 Declaration(Class(:a_power_desc))
 Declaration(Class(:a_pressure_desc))
 Declaration(Class(:a_temperature_desc))
 Declaration(Class(:a_voltage_desc))
 Declaration(Class(:a_volumetric_capacity_desc))
-Declaration(Class(:above_750V_electrical_cabinet))
+Declaration(Class(:above_5kV_electrical_cabinet))
 Declaration(Class(:aboveground_fuel_oil_tank_temp))
 Declaration(Class(:aboveground_fuel_tank_temp))
 Declaration(Class(:actuator))
@@ -83,8 +86,8 @@ Declaration(Class(:belt_press))
 Declaration(Class(:biogas))
 Declaration(Class(:bioreactor))
 Declaration(Class(:bioswale))
-Declaration(Class(:blower_component_-_no_drive))
-Declaration(Class(:blower_or_fan))
+Declaration(Class(:blower_-_without_drive))
+Declaration(Class(:blower_or_fan_with_drive))
 Declaration(Class(:boat))
 Declaration(Class(:body_material))
 Declaration(Class(:boiler))
@@ -94,7 +97,6 @@ Declaration(Class(:breaker))
 Declaration(Class(:bridge))
 Declaration(Class(:building))
 Declaration(Class(:building_automation_system_controller))
-Declaration(Class(:building_or_structural_foundation))
 Declaration(Class(:burner_component_of_asset))
 Declaration(Class(:cable_segment))
 Declaration(Class(:capacitor))
@@ -106,6 +108,7 @@ Declaration(Class(:chain_and_flight_collector))
 Declaration(Class(:channel_gate))
 Declaration(Class(:channel_segment))
 Declaration(Class(:check_valve))
+Declaration(Class(:chemical_contact_tank))
 Declaration(Class(:chemical_or_concentration_analyzer))
 Declaration(Class(:chemical_or_concentration_sensor_element))
 Declaration(Class(:chemical_reactor))
@@ -124,7 +127,6 @@ Declaration(Class(:coagulation_and_flocculation_tank))
 Declaration(Class(:coagulation_tank))
 Declaration(Class(:collection_of_asset_roles))
 Declaration(Class(:collection_of_assets))
-Declaration(Class(:collection_of_things))
 Declaration(Class(:collector_mechanism))
 Declaration(Class(:combustible_material))
 Declaration(Class(:combustion_turbine))
@@ -175,7 +177,7 @@ Declaration(Class(:discrete_unit_of_bioreactor_medium))
 Declaration(Class(:discrete_unit_of_treatment_filter))
 Declaration(Class(:display_panel))
 Declaration(Class(:dissolved_oxygen_analyzer))
-Declaration(Class(:distributed_system))
+Declaration(Class(:distributed_function_system))
 Declaration(Class(:distribution_system))
 Declaration(Class(:document_content))
 Declaration(Class(:dosing_pump))
@@ -183,14 +185,14 @@ Declaration(Class(:drill_press))
 Declaration(Class(:driving))
 Declaration(Class(:dryer))
 Declaration(Class(:dust_collector))
-Declaration(Class(:easement))
 Declaration(Class(:educator))
 Declaration(Class(:ejector))
 Declaration(Class(:electrical_conduit_section))
 Declaration(Class(:electrical_current_sensing_instrument))
-Declaration(Class(:electrical_distribution_cabinet))
 Declaration(Class(:electrical_duct_bank_section))
+Declaration(Class(:electrical_panel_or_cabinet))
 Declaration(Class(:electrostatic_percipitator))
+Declaration(Class(:elevated_water_tank))
 Declaration(Class(:elevator))
 Declaration(Class(:emergency_eyewash))
 Declaration(Class(:emergency_eyewash_and_shower))
@@ -205,7 +207,7 @@ Declaration(Class(:equipment_or_access_chamber))
 Declaration(Class(:event))
 Declaration(Class(:exhaust_stack))
 Declaration(Class(:expansion_joint))
-Declaration(Class(:facility))
+Declaration(Class(:facility_location_assets))
 Declaration(Class(:facility_role))
 Declaration(Class(:fall_arrest_Davit_arm))
 Declaration(Class(:fall_arrest_harness))
@@ -218,7 +220,6 @@ Declaration(Class(:fall_restraint_system))
 Declaration(Class(:fall_restricting_system))
 Declaration(Class(:federal_regulation))
 Declaration(Class(:fence_section))
-Declaration(Class(:fiat_part_of_asset))
 Declaration(Class(:figure_content))
 Declaration(Class(:filter_press))
 Declaration(Class(:filtration_tank))
@@ -233,6 +234,7 @@ Declaration(Class(:flame_or_combustion_sensing_instrument))
 Declaration(Class(:flocculation_tank))
 Declaration(Class(:fluidized_bed_incinerator))
 Declaration(Class(:forklift))
+Declaration(Class(:foundation_of_building_or_structure))
 Declaration(Class(:fuel))
 Declaration(Class(:fuel_appliance))
 Declaration(Class(:fuel_oil))
@@ -253,7 +255,7 @@ Declaration(Class(:gaseous_material))
 Declaration(Class(:gasoline))
 Declaration(Class(:gasoline_tank))
 Declaration(Class(:generator-set))
-Declaration(Class(:generator_without_a_drive))
+Declaration(Class(:generator_-_without_drive))
 Declaration(Class(:golf_cart))
 Declaration(Class(:government_regulation))
 Declaration(Class(:granular_material))
@@ -283,6 +285,7 @@ Declaration(Class(:informative_resource))
 Declaration(Class(:infrared_camera))
 Declaration(Class(:instrument_air_or_pneumatic_control_panel))
 Declaration(Class(:instrument_gauge_or_display))
+Declaration(Class(:instrumentation))
 Declaration(Class(:interceptor_segment))
 Declaration(Class(:intercom_unit))
 Declaration(Class(:interpretation))
@@ -291,7 +294,6 @@ Declaration(Class(:jointer))
 Declaration(Class(:junction_structure))
 Declaration(Class(:junction_structure_role))
 Declaration(Class(:kerosene))
-Declaration(Class(:laboratory))
 Declaration(Class(:ladder))
 Declaration(Class(:landfill_gas))
 Declaration(Class(:large_stationary_tool))
@@ -312,7 +314,6 @@ Declaration(Class(:liquid))
 Declaration(Class(:live_voltage_detector))
 Declaration(Class(:load_bearing))
 Declaration(Class(:load_break_disconnect_switch))
-Declaration(Class(:loading_dock))
 Declaration(Class(:localized_function_system))
 Declaration(Class(:major_treatment_process_role))
 Declaration(Class(:man_lift))
@@ -347,9 +348,7 @@ Declaration(Class(:min_input_voltage))
 Declaration(Class(:mixer_or_agitator))
 Declaration(Class(:mobile_lift))
 Declaration(Class(:modular_discrete_assembly))
-Declaration(Class(:molded_case_electrical_cabinet))
 Declaration(Class(:motor))
-Declaration(Class(:motor_drive_or_VFD))
 Declaration(Class(:motor_starter))
 Declaration(Class(:natural_gas))
 Declaration(Class(:network_panel))
@@ -361,16 +360,16 @@ Declaration(Class(:note_taking))
 Declaration(Class(:observation))
 Declaration(Class(:occupying))
 Declaration(Class(:oil_grease_separator))
+Declaration(Class(:operation_unit_assets))
 Declaration(Class(:organization))
 Declaration(Class(:outfall_or_discharge_point))
 Declaration(Class(:ozone_generator))
-Declaration(Class(:p_h_analyzer))
 Declaration(Class(:package_of_discrete_work))
-Declaration(Class(:packaged_ac_unit))
+Declaration(Class(:packaged_AC_unit))
 Declaration(Class(:paragraph_content))
 Declaration(Class(:passenger_vehicles))
 Declaration(Class(:pelletizer))
-Declaration(Class(:personnal_floatation_device))
+Declaration(Class(:personal_floatation_device))
 Declaration(Class(:phosphate_analyzer))
 Declaration(Class(:pickup_truck))
 Declaration(Class(:piece_of_air_filtration_equipment))
@@ -411,6 +410,7 @@ Declaration(Class(:process))
 Declaration(Class(:process_control_panel))
 Declaration(Class(:process_pipe_segment))
 Declaration(Class(:processing))
+Declaration(Class(:programmable_controller))
 Declaration(Class(:project_work))
 Declaration(Class(:propane))
 Declaration(Class(:property))
@@ -418,9 +418,8 @@ Declaration(Class(:protection_relay))
 Declaration(Class(:public_annoucement_speaker))
 Declaration(Class(:publisher))
 Declaration(Class(:pulsation_dampener))
-Declaration(Class(:pump_component_-_no_drive))
-Declaration(Class(:pump_set))
-Declaration(Class(:pumping_station))
+Declaration(Class(:pump_-_without_drive))
+Declaration(Class(:pump_set_-_with_drive))
 Declaration(Class(:pumping_surge_suppression_tank))
 Declaration(Class(:pumping_wet_well))
 Declaration(Class(:qualification))
@@ -450,7 +449,6 @@ Declaration(Class(:safety_relief_valve))
 Declaration(Class(:safety_valve))
 Declaration(Class(:sampling_point))
 Declaration(Class(:sampling_pump))
-Declaration(Class(:scada_computer_terminal))
 Declaration(Class(:scaffolding))
 Declaration(Class(:screw_classifier))
 Declaration(Class(:screw_conveyor))
@@ -464,7 +462,6 @@ Declaration(Class(:segment_of_linear_asset))
 Declaration(Class(:self-contained_breathing_apparatus))
 Declaration(Class(:self-retracting_lifeline))
 Declaration(Class(:semi-solid))
-Declaration(Class(:sensing_instrumentation))
 Declaration(Class(:separator))
 Declaration(Class(:server_appliance))
 Declaration(Class(:sewer_segment))
@@ -485,7 +482,8 @@ Declaration(Class(:still_or_video_mobile_camera))
 Declaration(Class(:storage_tank))
 Declaration(Class(:storm_service_connection))
 Declaration(Class(:strainer))
-Declaration(Class(:structural_tank_component))
+Declaration(Class(:structural_part))
+Declaration(Class(:structural_tank_part_of_asset))
 Declaration(Class(:structural_wall))
 Declaration(Class(:subsystem_of_a_discrete_asset))
 Declaration(Class(:sulphonation_system))
@@ -494,14 +492,13 @@ Declaration(Class(:surge_suppressor))
 Declaration(Class(:system))
 Declaration(Class(:system_block))
 Declaration(Class(:system_block_role))
-Declaration(Class(:system_of_assembled_discrete_assets))
-Declaration(Class(:system_of_standardized_modular_parts))
+Declaration(Class(:system_of_integrated_discrete_assets))
 Declaration(Class(:system_on_a_skid))
 Declaration(Class(:system_train))
 Declaration(Class(:system_train_role))
 Declaration(Class(:table_content))
 Declaration(Class(:table_saw))
-Declaration(Class(:tank_or_vessel_component))
+Declaration(Class(:tank_or_vessel_part_of_asset))
 Declaration(Class(:technical_standard))
 Declaration(Class(:temperature_sensor_element))
 Declaration(Class(:temperature_switch))
@@ -523,6 +520,7 @@ Declaration(Class(:transformer))
 Declaration(Class(:trap_priming_device))
 Declaration(Class(:travelling_bridge_collector))
 Declaration(Class(:treatment_process))
+Declaration(Class(:truck_loading_dock))
 Declaration(Class(:tunnel))
 Declaration(Class(:turbidity_analyzer))
 Declaration(Class(:underground_fuel_oil_tank_temp))
@@ -554,7 +552,6 @@ Declaration(Class(:wastewater_storage_pipe))
 Declaration(Class(:water))
 Declaration(Class(:water-glycol_mixture))
 Declaration(Class(:water_service_connection))
-Declaration(Class(:water_tower))
 Declaration(Class(:water_trailer))
 Declaration(Class(:watermain))
 Declaration(Class(:weight_scale))
@@ -566,9 +563,10 @@ Declaration(Class(:work))
 Declaration(Class(:work_order_specification))
 Declaration(Class(:work_specification))
 Declaration(Class(:wrench))
-Declaration(Class(:yard))
-Declaration(Class(<http://www.toronto.ca/TWONTO#120_208V_electrical_panel>))
-Declaration(Class(<http://www.toronto.ca/TWONTO#600V_insultated_case_electrical_cabinet>))
+Declaration(Class(<http://www.toronto.ca/TWONTO#120V-208V_electrical_panel>))
+Declaration(Class(<http://www.toronto.ca/TWONTO#5kV_electrical_cabinet>))
+Declaration(Class(<http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet>))
+Declaration(Class(<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet>))
 Declaration(Class(:eidf:_asset_record))
 Declaration(Class(:eidf:_data_record))
 Declaration(Class(:eidf:_space_record))
@@ -1256,15 +1254,20 @@ SubClassOf(:NEMA_enclosure_type :quality)
 AnnotationAssertion(rdfs:label :Ontario_regulation "Ontario provincial regulation"@en)
 SubClassOf(:Ontario_regulation :government_regulation)
 
+# Class: :PH_analyzer (:PH_analyzer)
+
+SubClassOf(:PH_analyzer :chemical_or_concentration_analyzer)
+
 # Class: :PLC (:PLC)
 
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "progammable logic controller")
-SubClassOf(:PLC :controller)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "An industrial computer designed for real-time control of machines and processes, and is highly programmable to suit a wide range of automation tasks. It monitors inputs from sensors and executes user-defined programs to control outputs like motors, actuators, and other devices.")
+SubClassOf(:PLC :programmable_controller)
 
 # Class: :PLC_module_component (:PLC_module_component)
 
 AnnotationAssertion(:always_functions_as_part_of_discrete_asset :PLC_module_component "true"^^xsd:boolean)
-SubClassOf(:PLC_module_component :controller)
+SubClassOf(:PLC_module_component :programmable_controller)
 
 # Class: :PPE (:PPE)
 
@@ -1273,11 +1276,17 @@ SubClassOf(:PPE :discrete_asset)
 
 # Class: :RTU (:RTU)
 
+AnnotationAssertion(rdfs:isDefinedBy :RTU "A device that collects data from sensors and equipment in remote locations and transmits it to a central control system, typically in industrial automation or SCADA applications. RTUs process local data and facilitate communication using various interfaces, enabling effective monitoring and control.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :RTU "remote terminal unit")
 SubClassOf(:RTU :controller)
 
+# Class: :SCADA_computer_terminal (:SCADA_computer_terminal)
+
+SubClassOf(:SCADA_computer_terminal :computer)
+
 # Class: :UPS (:UPS)
 
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :UPS "uninterrupted power supply")
 SubClassOf(:UPS :discrete_asset)
 
 # Class: :UV_disinfection_assembly (:UV_disinfection_assembly)
@@ -1287,6 +1296,13 @@ SubClassOf(:UV_disinfection_assembly :localized_function_system)
 # Class: :UV_disinfection_lamp_unit (:UV_disinfection_lamp_unit)
 
 SubClassOf(:UV_disinfection_lamp_unit :discrete_asset)
+
+# Class: :VFD (:VFD)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :VFD "motor drive")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :VFD "starter")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :VFD "variable frequency controller")
+SubClassOf(:VFD :discrete_asset)
 
 # Class: :a_portion_of_material_asset (:a_portion_of_material_asset)
 
@@ -1313,13 +1329,9 @@ SubClassOf(:a_voltage_desc :asset_description)
 
 SubClassOf(:a_volumetric_capacity_desc :asset_description)
 
-# Class: :above_750V_electrical_cabinet (:above_750V_electrical_cabinet)
+# Class: :above_5kV_electrical_cabinet (:above_5kV_electrical_cabinet)
 
-AnnotationAssertion(:TW_misnomer :above_750V_electrical_cabinet "switchgear")
-AnnotationAssertion(:defined_class :above_750V_electrical_cabinet "true"^^xsd:boolean)
-AnnotationAssertion(:is_equivalent_to_tag_code :above_750V_electrical_cabinet "BUS")
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :above_750V_electrical_cabinet "medium voltage electrical panel")
-SubClassOf(:above_750V_electrical_cabinet :electrical_distribution_cabinet)
+SubClassOf(:above_5kV_electrical_cabinet :electrical_panel_or_cabinet)
 
 # Class: :aboveground_fuel_oil_tank_temp (:aboveground_fuel_oil_tank_temp)
 
@@ -1340,6 +1352,7 @@ SubClassOf(:actuator :discrete_asset)
 
 # Class: :aeration_gas_diffuser (:aeration_gas_diffuser)
 
+AnnotationAssertion(:always_functions_as_part_of_discrete_asset :aeration_gas_diffuser "true"^^xsd:boolean)
 SubClassOf(:aeration_gas_diffuser :gas_diffuser)
 
 # Class: :aeration_tank (:aeration_tank)
@@ -1405,7 +1418,7 @@ SubClassOf(:annunciator_panel :discrete_asset)
 # Class: :arc-flash_suit (:arc-flash_suit)
 
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :arc-flash_suit "protective suit")
-SubClassOf(:arc-flash_suit :discrete_asset)
+SubClassOf(:arc-flash_suit :PPE)
 
 # Class: :ash_lagoon (:ash_lagoon)
 
@@ -1506,17 +1519,18 @@ SubClassOf(:bioreactor :reactor)
 
 # Class: :bioswale (:bioswale)
 
+AnnotationAssertion(rdfs:isDefinedBy :bioswale "A bioswale is a vegetated drainage feature designed to manage and filter stormwater runoff, enhancing water infiltration and pollutant removal.")
 SubClassOf(:bioswale :discrete_asset)
 
-# Class: :blower_component_-_no_drive (:blower_component_-_no_drive)
+# Class: :blower_-_without_drive (:blower_-_without_drive)
 
-AnnotationAssertion(:always_functions_as_part_of_discrete_asset :blower_component_-_no_drive "true"^^xsd:boolean)
-SubClassOf(:blower_component_-_no_drive :discrete_asset)
+AnnotationAssertion(:always_functions_as_part_of_discrete_asset :blower_-_without_drive "true"^^xsd:boolean)
+SubClassOf(:blower_-_without_drive :discrete_asset)
 
-# Class: :blower_or_fan (:blower_or_fan)
+# Class: :blower_or_fan_with_drive (:blower_or_fan_with_drive)
 
-AnnotationAssertion(:dev-ontology_note :blower_or_fan "from P&ID symbol: axial, centrifugal")
-SubClassOf(:blower_or_fan :discrete_asset)
+AnnotationAssertion(:dev-ontology_note :blower_or_fan_with_drive "from P&ID symbol: axial, centrifugal")
+SubClassOf(:blower_or_fan_with_drive :discrete_asset)
 
 # Class: :boat (:boat)
 
@@ -1562,17 +1576,13 @@ AnnotationAssertion(:is_equivalent_to_Avantis_class :building "Building")
 AnnotationAssertion(rdfs:comment :building "This definition allows for portable buildings to be classified as building")
 AnnotationAssertion(rdfs:isDefinedBy :building "A structure with a roof and some walls that partition its interior space from the outdoor space and stands in one place when it is used.")
 SubClassOf(:building :discrete_asset)
-SubClassOf(:building ObjectSomeValuesFrom(:has_physical_part :building_or_structural_foundation))
+SubClassOf(:building ObjectSomeValuesFrom(:has_physical_part :foundation_of_building_or_structure))
 SubClassOf(:building ObjectSomeValuesFrom(:has_physical_part :roof))
 
 # Class: :building_automation_system_controller (:building_automation_system_controller)
 
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :building_automation_system_controller "BAS")
 SubClassOf(:building_automation_system_controller :discrete_asset)
-
-# Class: :building_or_structural_foundation (:building_or_structural_foundation)
-
-SubClassOf(:building_or_structural_foundation :fiat_part_of_asset)
 
 # Class: :burner_component_of_asset (:burner_component_of_asset)
 
@@ -1627,14 +1637,19 @@ SubClassOf(:channel_segment :segment_of_linear_asset)
 
 SubClassOf(:check_valve :discrete_asset)
 
+# Class: :chemical_contact_tank (:chemical_contact_tank)
+
+AnnotationAssertion(rdfs:isDefinedBy :chemical_contact_tank "A chemical contact tank is a container used in industrial processes to mix chemicals with water or other substances for various applications, such as water treatment, chemical processing, or wastewater management. These tanks facilitate the reaction or contact time needed for the chemicals to effectively perform their intended function, often equipped with mixing mechanisms to ensure uniformity and efficiency in the chemical reactions.")
+SubClassOf(:chemical_contact_tank :discrete_asset)
+
 # Class: :chemical_or_concentration_analyzer (:chemical_or_concentration_analyzer)
 
 AnnotationAssertion(:is_equivalent_to_Avantis_class :chemical_or_concentration_analyzer "Analyzer")
-SubClassOf(:chemical_or_concentration_analyzer :sensing_instrumentation)
+SubClassOf(:chemical_or_concentration_analyzer :instrumentation)
 
 # Class: :chemical_or_concentration_sensor_element (:chemical_or_concentration_sensor_element)
 
-SubClassOf(:chemical_or_concentration_sensor_element :sensing_instrumentation)
+SubClassOf(:chemical_or_concentration_sensor_element :instrumentation)
 
 # Class: :chemical_reactor (:chemical_reactor)
 
@@ -1708,10 +1723,6 @@ SubClassOf(:collection_of_asset_roles :role)
 
 SubClassOf(:collection_of_assets :asset)
 
-# Class: :collection_of_things (:collection_of_things)
-
-AnnotationAssertion(rdfs:isDefinedBy :collection_of_things "The collection of all entities (e.g., asset, spaces, group of people) unified by a definition, which specifies the necessary conditions for each entity to qualify as a member of the collection.")
-
 # Class: :collector_mechanism (:collector_mechanism)
 
 SubClassOf(:collector_mechanism :localized_function_system)
@@ -1751,7 +1762,7 @@ SubClassOf(:condensate_trap :discrete_asset)
 
 # Class: :conductivity_sensing_instrument (:conductivity_sensing_instrument)
 
-SubClassOf(:conductivity_sensing_instrument :sensing_instrumentation)
+SubClassOf(:conductivity_sensing_instrument :instrumentation)
 
 # Class: :containing (:containing)
 
@@ -1843,7 +1854,7 @@ SubClassOf(:define_set_of_functional_structure_roles :defined_set_of_roles)
 # Class: :defined_collection_of_assets (:defined_collection_of_assets)
 
 AnnotationAssertion(rdfs:comment :defined_collection_of_assets "e.g., all fire-doors in the admin building")
-AnnotationAssertion(rdfs:isDefinedBy :defined_collection_of_assets "A set of assets, whose membership in the set is either implicitly definedA set of assets, whose membership in the set is explicitly defined.")
+AnnotationAssertion(rdfs:isDefinedBy :defined_collection_of_assets "A set of assets, whose memberships in the set is explicitly defined by a definition.")
 SubClassOf(:defined_collection_of_assets :collection_of_assets)
 
 # Class: :defined_set_of_roles (:defined_set_of_roles)
@@ -1967,17 +1978,17 @@ SubClassOf(:display_panel :discrete_asset)
 
 SubClassOf(:dissolved_oxygen_analyzer :chemical_or_concentration_analyzer)
 
-# Class: :distributed_system (:distributed_system)
+# Class: :distributed_function_system (:distributed_function_system)
 
-AnnotationAssertion(rdfs:isDefinedBy :distributed_system "a system in a primary function is performed by assets occupying distinct positions that are distributed across different positions in its system topology.")
-SubClassOf(:distributed_system :system)
-DisjointClasses(:distributed_system :localized_function_system)
+AnnotationAssertion(rdfs:isDefinedBy :distributed_function_system "a system in a primary function is performed by assets occupying distinct positions that are distributed across different positions in its system topology.")
+SubClassOf(:distributed_function_system :system)
+DisjointClasses(:distributed_function_system :localized_function_system)
 
 # Class: :distribution_system (:distribution_system)
 
 AnnotationAssertion(rdfs:comment :distribution_system "a distribution system would be mainly comprised of linear elements, which carries the resource over a distance, and conveyance assets, such as pumps, blowers, or conveyors.")
 AnnotationAssertion(rdfs:isDefinedBy :distribution_system "DRAFT: a system whose function is to distribute a resource from one or more sources to sites where they are needed.")
-SubClassOf(:distribution_system :distributed_system)
+SubClassOf(:distribution_system :distributed_function_system)
 
 # Class: :document_content (:document_content)
 
@@ -1986,8 +1997,7 @@ SubClassOf(:document_content :piece_of_content)
 
 # Class: :dosing_pump (:dosing_pump)
 
-SubClassOf(:dosing_pump :discrete_asset)
-SubClassOf(:dosing_pump :pump_set)
+SubClassOf(:dosing_pump :pump_set_-_with_drive)
 
 # Class: :drill_press (:drill_press)
 
@@ -2004,11 +2014,6 @@ SubClassOf(:dryer :discrete_asset)
 # Class: :dust_collector (:dust_collector)
 
 SubClassOf(:dust_collector :discrete_asset)
-
-# Class: :easement (:easement)
-
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :easement "right of way")
-SubClassOf(:easement :asset)
 
 # Class: :educator (:educator)
 
@@ -2028,19 +2033,24 @@ SubClassOf(:electrical_conduit_section :discrete_asset)
 
 # Class: :electrical_current_sensing_instrument (:electrical_current_sensing_instrument)
 
-SubClassOf(:electrical_current_sensing_instrument :sensing_instrumentation)
-
-# Class: :electrical_distribution_cabinet (:electrical_distribution_cabinet)
-
-SubClassOf(:electrical_distribution_cabinet :discrete_asset)
+SubClassOf(:electrical_current_sensing_instrument :instrumentation)
 
 # Class: :electrical_duct_bank_section (:electrical_duct_bank_section)
 
 SubClassOf(:electrical_duct_bank_section :discrete_asset)
 
+# Class: :electrical_panel_or_cabinet (:electrical_panel_or_cabinet)
+
+SubClassOf(:electrical_panel_or_cabinet :discrete_asset)
+
 # Class: :electrostatic_percipitator (:electrostatic_percipitator)
 
 SubClassOf(:electrostatic_percipitator :separator)
+
+# Class: :elevated_water_tank (:elevated_water_tank)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :elevated_water_tank "water tower")
+SubClassOf(:elevated_water_tank :reservoir_tank)
 
 # Class: :elevator (:elevator)
 
@@ -2120,10 +2130,10 @@ SubClassOf(:exhaust_stack :discrete_asset)
 
 SubClassOf(:expansion_joint :discrete_asset)
 
-# Class: :facility (:facility)
+# Class: :facility_location_assets (:facility_location_assets)
 
-AnnotationAssertion(rdfs:isDefinedBy :facility "The collection of all assets located in a facility, spaces within the facility foundary, and organization of people who manage the facility.")
-SubClassOf(:facility :collection_of_things)
+AnnotationAssertion(rdfs:isDefinedBy :facility_location_assets "A collection of assets located within a facility.")
+SubClassOf(:facility_location_assets :defined_collection_of_assets)
 
 # Class: :facility_role (facility)
 
@@ -2154,9 +2164,9 @@ SubClassOf(:fall_arrest_rope_grab :discrete_asset)
 # Class: :fall_arrest_system (:fall_arrest_system)
 
 AnnotationAssertion(:notion_mapping_id :fall_arrest_system "d419b16212f340e797aa00e8ae3d50c8")
-AnnotationAssertion(rdfs:isDefinedBy :fall_arrest_system "O.Reg 213/91: an assembly of components joined together so that when the assembly is connected to a fixed support, it is capable of arresting a worker’s fall
+AnnotationAssertion(rdfs:isDefinedBy :fall_arrest_system "O.Reg 213/91: an assembly of components joined together so that when the assembly is connected to a fixed support, it is capable of arresting a worker’s fall.
 26.6 (1) modified: A fall arrest system shall consist of a full body harness with adequate attachment points and a lanyard equipped with a shock absorber or similar device, unless the shock absorber if wearing one could cause a worker to hit the ground or an object or level below the work")
-SubClassOf(:fall_arrest_system :system_of_standardized_modular_parts)
+SubClassOf(:fall_arrest_system :localized_function_system)
 
 # Class: :fall_protection_descending_device (:fall_protection_descending_device)
 
@@ -2183,7 +2193,7 @@ AnnotationAssertion(:notion_mapping_id :fall_restraint_system "4e219f01e83d4268a
 AnnotationAssertion(rdfs:isDefinedBy :fall_restraint_system "O.Reg 213/91: means an assembly of components capable of restricting a worker’s movement on a work surface and preventing the worker from reaching a location from which he or she could fall.
 26.4(1) A travel restraint system shall consist of a full body harness with adequate attachment points or a safety belt.
 CSA Z259.1-05: an assembly of components that, when property assembled and used together and when connected to a suitable anchorage, prevents a worker from reaching an unprotected edge or opening where a fall could occur. A TRS is not intended for use as a work positioning system or Fall Arrest System.")
-SubClassOf(:fall_restraint_system :system_of_standardized_modular_parts)
+SubClassOf(:fall_restraint_system :localized_function_system)
 
 # Class: :fall_restricting_system (:fall_restricting_system)
 
@@ -2202,10 +2212,6 @@ SubClassOf(:federal_regulation :government_regulation)
 # Class: :fence_section (:fence_section)
 
 SubClassOf(:fence_section :segment_of_linear_asset)
-
-# Class: :fiat_part_of_asset (:fiat_part_of_asset)
-
-SubClassOf(:fiat_part_of_asset :asset)
 
 # Class: :figure_content (figure content)
 
@@ -2232,10 +2238,12 @@ SubClassOf(:first_aid_kit :discrete_asset)
 
 # Class: :first_aid_room_equipment (:first_aid_room_equipment)
 
+AnnotationAssertion(rdfs:isDefinedBy :first_aid_room_equipment "A collection of all assets, deem necessary by local regulation, to be present in a first aid room.")
 SubClassOf(:first_aid_room_equipment :defined_collection_of_assets)
 
 # Class: :first_aid_station_equipment (:first_aid_station_equipment)
 
+AnnotationAssertion(rdfs:isDefinedBy :first_aid_station_equipment "A collection of all assets, deem necessary by local regulation, to be present in a first aid station.")
 SubClassOf(:first_aid_station_equipment :defined_collection_of_assets)
 
 # Class: :fixed_gas_detector (:fixed_gas_detector)
@@ -2254,7 +2262,7 @@ SubClassOf(:flame_arrestor :discrete_asset)
 
 # Class: :flame_or_combustion_sensing_instrument (:flame_or_combustion_sensing_instrument)
 
-SubClassOf(:flame_or_combustion_sensing_instrument :sensing_instrumentation)
+SubClassOf(:flame_or_combustion_sensing_instrument :instrumentation)
 
 # Class: :flocculation_tank (:flocculation_tank)
 
@@ -2268,6 +2276,10 @@ SubClassOf(:fluidized_bed_incinerator :incinerator)
 # Class: :forklift (:forklift)
 
 SubClassOf(:forklift :mobile_lift)
+
+# Class: :foundation_of_building_or_structure (:foundation_of_building_or_structure)
+
+SubClassOf(:foundation_of_building_or_structure :structural_part)
 
 # Class: :fuel (:fuel)
 
@@ -2302,6 +2314,7 @@ SubClassOf(:fuel_oil_tank :fuel_tank)
 
 # Class: :fuel_piping_system (:fuel_piping_system)
 
+AnnotationAssertion(:exclude_from_asset_class_list :fuel_piping_system "true"^^xsd:boolean)
 AnnotationAssertion(:notion_mapping_id :fuel_piping_system "2176ff53fd794671b03ffae50c930345")
 SubClassOf(:fuel_piping_system :piping_system)
 
@@ -2342,7 +2355,6 @@ SubClassOf(:gas_appliance :fuel_appliance)
 
 # Class: :gas_diffuser (:gas_diffuser)
 
-AnnotationAssertion(:always_functions_as_part_of_discrete_asset :gas_diffuser "true"^^xsd:boolean)
 SubClassOf(:gas_diffuser :discrete_asset)
 
 # Class: :gas_diffuser_grid_assembly (:gas_diffuser_grid_assembly)
@@ -2374,10 +2386,10 @@ SubClassOf(:gasoline_tank :fuel_tank)
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :generator-set "genset")
 SubClassOf(:generator-set :discrete_asset)
 
-# Class: :generator_without_a_drive (:generator_without_a_drive)
+# Class: :generator_-_without_drive (:generator_-_without_drive)
 
-AnnotationAssertion(:always_functions_as_part_of_discrete_asset :generator_without_a_drive "true"^^xsd:boolean)
-SubClassOf(:generator_without_a_drive :discrete_asset)
+AnnotationAssertion(:always_functions_as_part_of_discrete_asset :generator_-_without_drive "true"^^xsd:boolean)
+SubClassOf(:generator_-_without_drive :discrete_asset)
 
 # Class: :golf_cart (:golf_cart)
 
@@ -2499,7 +2511,7 @@ SubClassOf(:informative_resource :information_content_entity)
 # Class: :infrared_camera (:infrared_camera)
 
 AnnotationAssertion(:exclude_parent_from_classification_tree :infrared_camera "http://www.toronto.ca/TWONTO#discreteAsset")
-SubClassOf(:infrared_camera :sensing_instrumentation)
+SubClassOf(:infrared_camera :instrumentation)
 
 # Class: :instrument_air_or_pneumatic_control_panel (:instrument_air_or_pneumatic_control_panel)
 
@@ -2508,6 +2520,10 @@ SubClassOf(:instrument_air_or_pneumatic_control_panel :process_control_panel)
 # Class: :instrument_gauge_or_display (:instrument_gauge_or_display)
 
 SubClassOf(:instrument_gauge_or_display :discrete_asset)
+
+# Class: :instrumentation (:instrumentation)
+
+SubClassOf(:instrumentation :discrete_asset)
 
 # Class: :interceptor_segment (:interceptor_segment)
 
@@ -2543,12 +2559,9 @@ SubClassOf(:junction_structure_role :linear_function_structure_role)
 SubClassOf(:kerosene :fuel_oil)
 SubClassOf(:kerosene :liquid)
 
-# Class: :laboratory (:laboratory)
-
-SubClassOf(:laboratory :facility)
-
 # Class: :ladder (:ladder)
 
+AnnotationAssertion(:exclude_from_asset_class_list :ladder "true"^^xsd:boolean)
 AnnotationAssertion(:notion_mapping_id :ladder "4f7f8bace8744d0f88601eed4b91b777")
 SubClassOf(:ladder :discrete_asset)
 
@@ -2558,6 +2571,7 @@ SubClassOf(:landfill_gas :gaseous_material)
 
 # Class: :large_stationary_tool (:large_stationary_tool)
 
+AnnotationAssertion(:exclude_from_asset_class_list :large_stationary_tool "true"^^xsd:boolean)
 AnnotationAssertion(rdfs:comment :large_stationary_tool "6/19: we are keeping this class on the classification tree to allow people to find the tools.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :large_stationary_tool "machine shop tool")
 SubClassOf(:large_stationary_tool :discrete_asset)
@@ -2573,23 +2587,23 @@ SubClassOf(:legislation :content_subject)
 
 # Class: :level_sensor_element (:level_sensor_element)
 
-SubClassOf(:level_sensor_element :sensing_instrumentation)
+SubClassOf(:level_sensor_element :instrumentation)
 
 # Class: :level_switch (:level_switch)
 
-SubClassOf(:level_switch :sensing_instrumentation)
+SubClassOf(:level_switch :instrumentation)
 
 # Class: :level_transmitter (:level_transmitter)
 
-SubClassOf(:level_transmitter :sensing_instrumentation)
+SubClassOf(:level_transmitter :instrumentation)
 
 # Class: :life_jacket (:life_jacket)
 
-SubClassOf(:life_jacket :discrete_asset)
+SubClassOf(:life_jacket :PPE)
 
 # Class: :life_ring (:life_ring)
 
-SubClassOf(:life_ring :personnal_floatation_device)
+SubClassOf(:life_ring :personal_floatation_device)
 
 # Class: :lifting_equipment_hoist (:lifting_equipment_hoist)
 
@@ -2635,16 +2649,11 @@ SubClassOf(:load_bearing :function_and_capability)
 
 SubClassOf(:load_break_disconnect_switch :disconnect_switch)
 
-# Class: :loading_dock (:loading_dock)
-
-SubClassOf(:loading_dock :fiat_part_of_asset)
-
 # Class: :localized_function_system (:localized_function_system)
 
-AnnotationAssertion(rdfs:comment :localized_function_system "6/26: nearly all conceivable discrete assets are also localized function assets.  I did not subsume discrete asset under localized functional asset to hold out the possibility that there may be a distributed discrete asset system.")
-AnnotationAssertion(rdfs:comment :localized_function_system "Feb4th'24 TH: used to be call localized system
-6/19/23 TH: changed back from \"hierarchal system\" to \"localized function system\", as the term hierarchal system just in not intuitive for something like a hydrant system.")
-AnnotationAssertion(rdfs:isDefinedBy :localized_function_system "a system in which all assets playing the same class of functional role are situated in the same region of the system topology.")
+AnnotationAssertion(rdfs:comment :localized_function_system "6/19/24 TH: changed back from \"hierarchal system\" to \"localized function system\", as the term hierarchal system is not intuitive for something like a hydrant system.")
+AnnotationAssertion(rdfs:comment :localized_function_system "6/26/24: nearly all conceivable discrete assets are also localized function assets.  I did not subsume discrete asset under localized functional asset to hold out the possibility that there may be a distributed discrete asset system.")
+AnnotationAssertion(rdfs:isDefinedBy :localized_function_system "a system in which the assets playing the same role are situated in the same region of the system topology.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :localized_function_system "hierarchal system")
 SubClassOf(:localized_function_system :system)
 DisjointClasses(:localized_function_system :system_train)
@@ -2802,23 +2811,11 @@ AnnotationAssertion(rdfs:comment :modular_discrete_assembly "This concept is no 
 AnnotationAssertion(rdfs:label :modular_discrete_assembly "DEPRECATED modular discrete assembly")
 AnnotationAssertion(owl:deprecated :modular_discrete_assembly "true"^^xsd:boolean)
 
-# Class: :molded_case_electrical_cabinet (:molded_case_electrical_cabinet)
-
-AnnotationAssertion(:TW_misnomer :molded_case_electrical_cabinet "bus bar")
-AnnotationAssertion(:defined_class :molded_case_electrical_cabinet "true"^^xsd:boolean)
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :molded_case_electrical_cabinet "MCC")
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :molded_case_electrical_cabinet "motor control centre")
-SubClassOf(:molded_case_electrical_cabinet :electrical_distribution_cabinet)
-
 # Class: :motor (motor)
 
 AnnotationAssertion(:always_functions_as_part_of_discrete_asset :motor "true"^^xsd:boolean)
 AnnotationAssertion(rdfs:label :motor "motor"@en)
 SubClassOf(:motor :discrete_asset)
-
-# Class: :motor_drive_or_VFD (:motor_drive_or_VFD)
-
-SubClassOf(:motor_drive_or_VFD :discrete_asset)
 
 # Class: :motor_starter (:motor_starter)
 
@@ -2868,6 +2865,11 @@ SubClassOf(:occupying :relational_state)
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :oil_grease_separator "OGS")
 SubClassOf(:oil_grease_separator :discrete_asset)
 
+# Class: :operation_unit_assets (:operation_unit_assets)
+
+AnnotationAssertion(rdfs:isDefinedBy :operation_unit_assets "The collection of all assets operated by a Toronto Water operation unit.")
+SubClassOf(:operation_unit_assets :defined_collection_of_assets)
+
 # Class: :organization (:organization)
 
 
@@ -2879,18 +2881,14 @@ SubClassOf(:outfall_or_discharge_point :discrete_asset)
 
 SubClassOf(:ozone_generator :discrete_asset)
 
-# Class: :p_h_analyzer (:p_h_analyzer)
-
-SubClassOf(:p_h_analyzer :chemical_or_concentration_analyzer)
-
 # Class: :package_of_discrete_work (:package_of_discrete_work)
 
 SubClassOf(:package_of_discrete_work :work)
 
-# Class: :packaged_ac_unit (:packaged_ac_unit)
+# Class: :packaged_AC_unit (:packaged_AC_unit)
 
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :packaged_ac_unit "air condition")
-SubClassOf(:packaged_ac_unit :discrete_asset)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :packaged_AC_unit "air condition")
+SubClassOf(:packaged_AC_unit :discrete_asset)
 
 # Class: :paragraph_content (paragraph content)
 
@@ -2906,10 +2904,11 @@ SubClassOf(:passenger_vehicles :discrete_asset)
 AnnotationAssertion(:dev-property_note :pelletizer "DiscreteModular? System?")
 SubClassOf(:pelletizer :discrete_asset)
 
-# Class: :personnal_floatation_device (:personnal_floatation_device)
+# Class: :personal_floatation_device (:personal_floatation_device)
 
-AnnotationAssertion(rdfs:comment :personnal_floatation_device "A life jacket is not a subclass of Personal Flotation Device (PFD) in the technical sense. In regulatory and safety standards, life jackets and PFDs are distinct categories of flotation devices, each with its own specifications, intended uses, and buoyancy requirements. While both life jackets and PFDs serve the purpose of keeping individuals afloat in water, they differ in their design, buoyancy levels, and intended applications. Life jackets typically provide higher levels of buoyancy and are designed to turn an unconscious wearer face-up in the water, while PFDs are more varied in design and may not always have the same level of buoyancy or the ability to turn a wearer face-up.")
-SubClassOf(:personnal_floatation_device :discrete_asset)
+AnnotationAssertion(rdfs:comment :personal_floatation_device "A life jacket is not a subclass of Personal Flotation Device (PFD) in the technical sense. In regulatory and safety standards, life jackets and PFDs are distinct categories of flotation devices, each with its own specifications, intended uses, and buoyancy requirements. While both life jackets and PFDs serve the purpose of keeping individuals afloat in water, they differ in their design, buoyancy levels, and intended applications. Life jackets typically provide higher levels of buoyancy and are designed to turn an unconscious wearer face-up in the water, while PFDs are more varied in design and may not always have the same level of buoyancy or the ability to turn a wearer face-up.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :personal_floatation_device "PFD")
+SubClassOf(:personal_floatation_device :PPE)
 
 # Class: :phosphate_analyzer (:phosphate_analyzer)
 
@@ -3002,15 +3001,15 @@ SubClassOf(:portion_of_granular_filter_medium :granular_material)
 
 # Class: :position_sensing_instrument (:position_sensing_instrument)
 
-SubClassOf(:position_sensing_instrument :sensing_instrumentation)
+SubClassOf(:position_sensing_instrument :instrumentation)
 
 # Class: :position_switch (:position_switch)
 
-SubClassOf(:position_switch :sensing_instrumentation)
+SubClassOf(:position_switch :instrumentation)
 
 # Class: :position_transmitter (:position_transmitter)
 
-SubClassOf(:position_transmitter :sensing_instrumentation)
+SubClassOf(:position_transmitter :instrumentation)
 
 # Class: :power_boiler (:power_boiler)
 
@@ -3059,18 +3058,19 @@ SubClassOf(:pressure_relief_valve :pressure_relief_device)
 
 # Class: :pressure_sensor_element (:pressure_sensor_element)
 
-SubClassOf(:pressure_sensor_element :sensing_instrumentation)
+SubClassOf(:pressure_sensor_element :instrumentation)
 
 # Class: :pressure_switch (:pressure_switch)
 
-SubClassOf(:pressure_switch :sensing_instrumentation)
+SubClassOf(:pressure_switch :instrumentation)
 
 # Class: :pressure_transmitter (:pressure_transmitter)
 
-SubClassOf(:pressure_transmitter :sensing_instrumentation)
+SubClassOf(:pressure_transmitter :instrumentation)
 
 # Class: :pressurized_piping_system (:pressurized_piping_system)
 
+AnnotationAssertion(:exclude_from_asset_class_list :pressurized_piping_system "true"^^xsd:boolean)
 AnnotationAssertion(:notion_mapping_id :pressurized_piping_system "315f3959781f42bd81154d50fa751f1b")
 SubClassOf(:pressurized_piping_system :piping_system)
 
@@ -3104,6 +3104,10 @@ SubClassOf(:process_pipe_segment :pipe_segment)
 AnnotationAssertion(rdfs:isDefinedBy :processing "a function that is realized when a physical or chemical property of the thing being processed is changed by the bearer of the function.")
 AnnotationAssertion(rdfs:label :processing "processing")
 SubClassOf(:processing :function_and_capability)
+
+# Class: :programmable_controller (:programmable_controller)
+
+SubClassOf(:programmable_controller :controller)
 
 # Class: :project_work (:project_work)
 
@@ -3139,18 +3143,14 @@ SubClassOf(:publisher :organization)
 
 SubClassOf(:pulsation_dampener :discrete_asset)
 
-# Class: :pump_component_-_no_drive (:pump_component_-_no_drive)
+# Class: :pump_-_without_drive (:pump_-_without_drive)
 
-AnnotationAssertion(:always_functions_as_part_of_discrete_asset :pump_component_-_no_drive "true"^^xsd:boolean)
-SubClassOf(:pump_component_-_no_drive :discrete_asset)
+AnnotationAssertion(:always_functions_as_part_of_discrete_asset :pump_-_without_drive "true"^^xsd:boolean)
+SubClassOf(:pump_-_without_drive :discrete_asset)
 
-# Class: :pump_set (:pump_set)
+# Class: :pump_set_-_with_drive (:pump_set_-_with_drive)
 
-SubClassOf(:pump_set :discrete_asset)
-
-# Class: :pumping_station (:pumping_station)
-
-SubClassOf(:pumping_station :facility)
+SubClassOf(:pump_set_-_with_drive :discrete_asset)
 
 # Class: :pumping_surge_suppression_tank (:pumping_surge_suppression_tank)
 
@@ -3235,7 +3235,7 @@ SubClassOf(:roll_up_door :discrete_asset)
 
 # Class: :roof (:roof)
 
-SubClassOf(:roof :fiat_part_of_asset)
+SubClassOf(:roof :structural_part)
 
 # Class: :rope_or_cable_grab (:rope_or_cable_grab)
 
@@ -3247,7 +3247,7 @@ SubClassOf(:rotating_collector :collector_mechanism)
 
 # Class: :rubber_insulating_gloves (:rubber_insulating_gloves)
 
-SubClassOf(:rubber_insulating_gloves :discrete_asset)
+SubClassOf(:rubber_insulating_gloves :PPE)
 
 # Class: :rubber_insulating_sleeves (:rubber_insulating_sleeves)
 
@@ -3273,16 +3273,12 @@ SubClassOf(:sampling_point :discrete_asset)
 
 # Class: :sampling_pump (:sampling_pump)
 
-SubClassOf(:sampling_pump :pump_set)
-
-# Class: :scada_computer_terminal (:scada_computer_terminal)
-
-SubClassOf(:scada_computer_terminal :computer)
+SubClassOf(:sampling_pump :pump_set_-_with_drive)
 
 # Class: :scaffolding (:scaffolding)
 
 AnnotationAssertion(:notion_mapping_id :scaffolding "4961170b77b24110a3655ba7386b04c4")
-SubClassOf(:scaffolding :system_of_standardized_modular_parts)
+SubClassOf(:scaffolding :distributed_function_system)
 
 # Class: :screw_classifier (:screw_classifier)
 
@@ -3322,6 +3318,7 @@ SubClassOf(:sedimentation_tank :discrete_asset)
 
 # Class: :segment_of_linear_asset (:segment_of_linear_asset)
 
+AnnotationAssertion(:exclude_from_asset_class_list :segment_of_linear_asset "true"^^xsd:boolean)
 AnnotationAssertion(rdfs:comment :segment_of_linear_asset "Examples of linear segment include pipe, cable, duct, cable, and road. 
 An asset is structurally continuous when its physical and geometric attributes are the same at any two points along its length.  This means there are no junctions.
 Many linear assets, such as cables, also provide containment, but this is not a necessary attribute.  A section of road, for example, cannot necessarily contain vehicles")
@@ -3343,10 +3340,6 @@ SubClassOf(:self-retracting_lifeline :discrete_asset)
 # Class: :semi-solid (:semi-solid)
 
 SubClassOf(:semi-solid :material)
-
-# Class: :sensing_instrumentation (:sensing_instrumentation)
-
-SubClassOf(:sensing_instrumentation :discrete_asset)
 
 # Class: :separator (:separator)
 
@@ -3440,20 +3433,24 @@ SubClassOf(:storm_service_connection :localized_function_system)
 AnnotationAssertion(:dev-property_note :strainer "motorized (boolean) - from P&ID drawing")
 SubClassOf(:strainer :discrete_asset)
 
-# Class: :structural_tank_component (:structural_tank_component)
+# Class: :structural_part (:structural_part)
 
-AnnotationAssertion(:always_functions_as_part_of_discrete_asset :structural_tank_component "true"^^xsd:boolean)
-SubClassOf(:structural_tank_component :tank_or_vessel_component)
+SubClassOf(:structural_part :asset)
+
+# Class: :structural_tank_part_of_asset (:structural_tank_part_of_asset)
+
+AnnotationAssertion(:always_functions_as_part_of_discrete_asset :structural_tank_part_of_asset "true"^^xsd:boolean)
+SubClassOf(:structural_tank_part_of_asset :tank_or_vessel_part_of_asset)
 
 # Class: :structural_wall (:structural_wall)
 
-SubClassOf(:structural_wall :discrete_asset)
+SubClassOf(:structural_wall :structural_part)
 
 # Class: :subsystem_of_a_discrete_asset (:subsystem_of_a_discrete_asset)
 
 AnnotationAssertion(:exclude_from_asset_class_list :subsystem_of_a_discrete_asset "true"^^xsd:boolean)
-AnnotationAssertion(rdfs:comment :subsystem_of_a_discrete_asset "Example: power train system of a car")
-AnnotationAssertion(rdfs:isDefinedBy :subsystem_of_a_discrete_asset "A subsystem of a discrete asset, which does not have to qualify as a discrete asset itself.")
+AnnotationAssertion(rdfs:comment :subsystem_of_a_discrete_asset "Example: the power train system or the exhaust system of a car")
+AnnotationAssertion(rdfs:isDefinedBy :subsystem_of_a_discrete_asset "A subsystem of a discrete asset, which may or may not be a discrete asset.")
 SubClassOf(:subsystem_of_a_discrete_asset :system)
 
 # Class: :sulphonation_system (:sulphonation_system)
@@ -3485,7 +3482,7 @@ SubClassOf(:system :collection_of_assets)
 
 # Class: :system_block (:system_block)
 
-AnnotationAssertion(rdfs:isDefinedBy :system_block "A system part of a bigger localized function system that completely subsumes a certain function of the bigger system - i.e all assets playing the equivalent role to realize the function are all parts of this system.")
+AnnotationAssertion(rdfs:isDefinedBy :system_block "A system part of a bigger localized function system that completely subsumes a certain function of the bigger system - i.e all assets playing the equivalent role are completely subsumed within a system block.")
 SubClassOf(:system_block :system)
 
 # Class: :system_block_role (system)
@@ -3493,31 +3490,22 @@ SubClassOf(:system_block :system)
 AnnotationAssertion(rdfs:label :system_block_role "system")
 SubClassOf(:system_block_role :functional_structure_role)
 
-# Class: :system_of_assembled_discrete_assets (:system_of_assembled_discrete_assets)
+# Class: :system_of_integrated_discrete_assets (:system_of_integrated_discrete_assets)
 
-AnnotationAssertion(rdfs:comment :system_of_assembled_discrete_assets "6/19/24: This class is both a subclass of Discrete Asset and System of Discrete Asset")
-AnnotationAssertion(rdfs:comment :system_of_assembled_discrete_assets "6/30: A reason to keep this class: It is useful to use this class in setting a rule, stating that the next lower level of discrete assets must be indexed with a certain degree of rigour as well.")
-AnnotationAssertion(rdfs:comment :system_of_assembled_discrete_assets "6/5/24: This type of system qualifiy to have children, under the relation \"parent assembly\", being specified for Maximo implementation.")
-AnnotationAssertion(rdfs:isDefinedBy :system_of_assembled_discrete_assets "A system made up of discrete asset parts, assembled with sufficient structural integrity or coherence that the assembled whole also qualifies as a discrete asset.")
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :system_of_assembled_discrete_assets "equipment skid")
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :system_of_assembled_discrete_assets "skid mounted system")
-SubClassOf(:system_of_assembled_discrete_assets :discrete_asset)
-SubClassOf(:system_of_assembled_discrete_assets :system)
-
-# Class: :system_of_standardized_modular_parts (:system_of_standardized_modular_parts)
-
-AnnotationAssertion(rdfs:comment :system_of_standardized_modular_parts "This is to say that the assembly's parts (and all of its parts) are not always sufficiently physically unified to allow it to be moved around as a unit.")
-AnnotationAssertion(rdfs:isDefinedBy :system_of_standardized_modular_parts "A system comprising physically integrated discrete parts that is not itself a discrete asset.")
-AnnotationAssertion(owl:deprecated :system_of_standardized_modular_parts "true"^^xsd:boolean)
-SubClassOf(:system_of_standardized_modular_parts :system_of_assembled_discrete_assets)
+AnnotationAssertion(rdfs:comment :system_of_integrated_discrete_assets "6/19/24: This class is both a subclass of Discrete Asset and System of Discrete Asset")
+AnnotationAssertion(rdfs:comment :system_of_integrated_discrete_assets "6/30/24: the reason to keep this class - this class - many of which are skids - is the only type of system that would be represented both as role as well as a physical asset.")
+AnnotationAssertion(rdfs:isDefinedBy :system_of_integrated_discrete_assets "A discrete asset that consists a collection of discrete asset parts, many of them often appear in other contexts as stand-alone discrete assets (not part of another discrete asset).  The set of parts are physical integrated onto a structure skid, frame, panel, etc, such that the part can be moved as a unit.")
+SubClassOf(:system_of_integrated_discrete_assets :discrete_asset)
+SubClassOf(:system_of_integrated_discrete_assets :system)
 
 # Class: :system_on_a_skid (:system_on_a_skid)
 
 AnnotationAssertion(rdfs:comment :system_on_a_skid "Mar25,24: It is important to define the concept of a integrated standalone because they may extend across lines and trains and represent a special case in the asset hierarchy specification. Also, unlike other discrete assets, we need to fully catalog their parts, because they are easily replaceable. Finally, many common equipment, such as pump and motor sets, are IUSAs equipment.")
-AnnotationAssertion(rdfs:isDefinedBy :system_on_a_skid "A discrete asset that consists a collection of discrete asset parts, many of them often appear in other contexts as stand-alone discrete assets (not part of another discrete asset).  The set of parts are physical integrated onto a structure skid, frame, panel, etc, such that the part can be moved or sold together.")
-AnnotationAssertion(owl:deprecated :system_on_a_skid "true"^^xsd:boolean)
+AnnotationAssertion(rdfs:comment :system_on_a_skid "equipment skid")
+AnnotationAssertion(rdfs:isDefinedBy :system_on_a_skid "A system made up of discrete asset parts, assembled on a movable skid with sufficient structural integrity to qualify as a discrete asset.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :system_on_a_skid "skid mounted system")
 SubClassOf(:system_on_a_skid :discrete_asset)
-SubClassOf(:system_on_a_skid :system_of_assembled_discrete_assets)
+SubClassOf(:system_on_a_skid :system_of_integrated_discrete_assets)
 
 # Class: :system_train (:system_train)
 
@@ -3525,8 +3513,7 @@ AnnotationAssertion(rdfs:comment :system_train "A system train has the character
 * is a part of a system
 * exists among multiple similar sets of connected assets, functionally equivalent to itself, in the same system
 is capable of realizing a unit of the system primary functions.")
-AnnotationAssertion(rdfs:isDefinedBy :system_train "A component, among multiple functionally equivalent components of a regionalized system, that offers a unit of the complete set of primary functions of a regionalized system.")
-AnnotationAssertion(rdfs:isDefinedBy :system_train "a part of a facility system consisting of a set of connected discrete assets that provides one unit, among multiple redundant units, of the primary functions of the facility system.")
+AnnotationAssertion(rdfs:isDefinedBy :system_train "A component, among multiple functionally equivalent components of a regionalized system, that offers a unit of the complete set of primary functions of that regionalized system.")
 SubClassOf(:system_train :linear_function_structure)
 
 # Class: :system_train_role (:system_train_role)
@@ -3542,10 +3529,10 @@ SubClassOf(:table_content :piece_of_content)
 
 SubClassOf(:table_saw :discrete_asset)
 
-# Class: :tank_or_vessel_component (:tank_or_vessel_component)
+# Class: :tank_or_vessel_part_of_asset (:tank_or_vessel_part_of_asset)
 
-AnnotationAssertion(:always_functions_as_part_of_discrete_asset :tank_or_vessel_component "true"^^xsd:boolean)
-SubClassOf(:tank_or_vessel_component :discrete_asset)
+AnnotationAssertion(:always_functions_as_part_of_discrete_asset :tank_or_vessel_part_of_asset "true"^^xsd:boolean)
+SubClassOf(:tank_or_vessel_part_of_asset :structural_part)
 
 # Class: :technical_standard (technical standard)
 
@@ -3554,15 +3541,15 @@ SubClassOf(:technical_standard :content_subject)
 
 # Class: :temperature_sensor_element (:temperature_sensor_element)
 
-SubClassOf(:temperature_sensor_element :sensing_instrumentation)
+SubClassOf(:temperature_sensor_element :instrumentation)
 
 # Class: :temperature_switch (:temperature_switch)
 
-SubClassOf(:temperature_switch :sensing_instrumentation)
+SubClassOf(:temperature_switch :instrumentation)
 
 # Class: :temperature_transmitter (:temperature_transmitter)
 
-SubClassOf(:temperature_transmitter :sensing_instrumentation)
+SubClassOf(:temperature_transmitter :instrumentation)
 
 # Class: :the_max_allowable_working_pressure (Maximum Allowable Working Pressure)
 
@@ -3638,6 +3625,11 @@ SubClassOf(:travelling_bridge_collector :collector_mechanism)
 # Class: :treatment_process (:treatment_process)
 
 SubClassOf(:treatment_process :localized_function_system)
+
+# Class: :truck_loading_dock (:truck_loading_dock)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :truck_loading_dock "truck loading bay")
+SubClassOf(:truck_loading_dock :structural_part)
 
 # Class: :tunnel (:tunnel)
 
@@ -3738,11 +3730,11 @@ SubClassOf(:vertical_lifeline :discrete_asset)
 
 # Class: :vibration_analyzer (:vibration_analyzer)
 
-SubClassOf(:vibration_analyzer :sensing_instrumentation)
+SubClassOf(:vibration_analyzer :instrumentation)
 
 # Class: :vibration_sensor_element (:vibration_sensor_element)
 
-SubClassOf(:vibration_sensor_element :sensing_instrumentation)
+SubClassOf(:vibration_sensor_element :instrumentation)
 
 # Class: :voltage_tester (:voltage_tester)
 
@@ -3763,7 +3755,7 @@ SubClassOf(:waste_gas_burner :discrete_asset)
 # Class: :wastewater_storage_pipe (:wastewater_storage_pipe)
 
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :wastewater_storage_pipe "super pipe")
-SubClassOf(:wastewater_storage_pipe :storage_tank)
+SubClassOf(:wastewater_storage_pipe :discrete_asset)
 
 # Class: :water (water)
 
@@ -3781,11 +3773,6 @@ SubClassOf(:water-glycol_mixture :liquid)
 
 SubClassOf(:water_service_connection :localized_function_system)
 
-# Class: :water_tower (:water_tower)
-
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :water_tower "elevated water tank")
-SubClassOf(:water_tower :reservoir_tank)
-
 # Class: :water_trailer (:water_trailer)
 
 SubClassOf(:water_trailer :discrete_asset)
@@ -3796,7 +3783,7 @@ SubClassOf(:watermain :pipe_segment)
 
 # Class: :weight_scale (:weight_scale)
 
-SubClassOf(:weight_scale :sensing_instrumentation)
+SubClassOf(:weight_scale :instrumentation)
 
 # Class: :weir_structure (:weir_structure)
 
@@ -3836,24 +3823,36 @@ SubClassOf(:work_specification :description)
 AnnotationAssertion(:exclude_from_asset_class_list :wrench "true"^^xsd:boolean)
 SubClassOf(:wrench :discrete_asset)
 
-# Class: :yard (:yard)
+# Class: <http://www.toronto.ca/TWONTO#120V-208V_electrical_panel> (<http://www.toronto.ca/TWONTO#120V-208V_electrical_panel>)
 
-SubClassOf(:yard :facility)
+AnnotationAssertion(:defined_class <http://www.toronto.ca/TWONTO#120V-208V_electrical_panel> "true"^^xsd:boolean)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#120V-208V_electrical_panel> "electrical panel")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#120V-208V_electrical_panel> "lighting panel")
+SubClassOf(<http://www.toronto.ca/TWONTO#120V-208V_electrical_panel> :electrical_panel_or_cabinet)
 
-# Class: <http://www.toronto.ca/TWONTO#120_208V_electrical_panel> (<http://www.toronto.ca/TWONTO#120_208V_electrical_panel>)
+# Class: <http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> (<http://www.toronto.ca/TWONTO#5kV_electrical_cabinet>)
 
-AnnotationAssertion(:defined_class <http://www.toronto.ca/TWONTO#120_208V_electrical_panel> "true"^^xsd:boolean)
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#120_208V_electrical_panel> "electrical panel")
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#120_208V_electrical_panel> "lighting panel")
-SubClassOf(<http://www.toronto.ca/TWONTO#120_208V_electrical_panel> :electrical_distribution_cabinet)
+AnnotationAssertion(:TW_misnomer <http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> "switchgear")
+AnnotationAssertion(:defined_class <http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> "true"^^xsd:boolean)
+AnnotationAssertion(:is_equivalent_to_tag_code <http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> "BUS")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> "medium voltage electrical panel")
+SubClassOf(<http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> :electrical_panel_or_cabinet)
 
-# Class: <http://www.toronto.ca/TWONTO#600V_insultated_case_electrical_cabinet> (<http://www.toronto.ca/TWONTO#600V_insultated_case_electrical_cabinet>)
+# Class: <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> (<http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet>)
 
-AnnotationAssertion(:defined_class <http://www.toronto.ca/TWONTO#600V_insultated_case_electrical_cabinet> "true"^^xsd:boolean)
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insultated_case_electrical_cabinet> "MCC")
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insultated_case_electrical_cabinet> "motor control centre")
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insultated_case_electrical_cabinet> "power distribution panel - PDP")
-SubClassOf(<http://www.toronto.ca/TWONTO#600V_insultated_case_electrical_cabinet> :electrical_distribution_cabinet)
+AnnotationAssertion(:defined_class <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "true"^^xsd:boolean)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "MCC")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "motor control centre")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "PDP")
+SubClassOf(<http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> :electrical_panel_or_cabinet)
+
+# Class: <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> (<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet>)
+
+AnnotationAssertion(:TW_misnomer <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> "bus bar")
+AnnotationAssertion(:defined_class <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> "true"^^xsd:boolean)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> "MCC")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> "motor control centre")
+SubClassOf(<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> :electrical_panel_or_cabinet)
 
 # Class: :_asset_record (:_asset_record)
 
@@ -3873,12 +3872,12 @@ SubClassOf(:eidf:_space_record :eidf:_data_record)
 
 AnnotationAssertion(:exclude_from_asset_class_list :term:_multi-parameter_sensing_instrument "true"^^xsd:boolean)
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :term:_multi-parameter_sensing_instrument "multi-parameter instrumentation")
-SubClassOf(:term:_multi-parameter_sensing_instrument :sensing_instrumentation)
-SubClassOf(:term:_multi-parameter_sensing_instrument ObjectSomeValuesFrom(:has_physical_part :sensing_instrumentation))
+SubClassOf(:term:_multi-parameter_sensing_instrument :instrumentation)
+SubClassOf(:term:_multi-parameter_sensing_instrument ObjectSomeValuesFrom(:has_physical_part :instrumentation))
 
 # Class: :_single-parameter_instrument (:_single-parameter_instrument)
 
-SubClassOf(:term:_single-parameter_instrument :sensing_instrumentation)
+SubClassOf(:term:_single-parameter_instrument :instrumentation)
 
 
 ############################
