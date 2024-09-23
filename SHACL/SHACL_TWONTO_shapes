@@ -3,7 +3,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh: <http://www.w3.org/ns/shacl#>.
-@prefix dash: <http://datashapes.org/dash#>.
+
 
 ##################################################################################
 # Notes 4Dev  
@@ -187,11 +187,11 @@ tw:voltageSpec_nodeShape
 				sh:datatype xsd:float ;
 				sh:order 10 ;
 			];
-			sh:property tw:voltage_UOM;
+			sh:property eidf:voltage_UOM;
 		];
 	] .
 
-tw:voltage_UOM 
+eidf:voltage_UOM 
 	a sh:PropertyShape ;
 	sh:maxCount 1 ; sh:minCount 1 ;
 	sh:path eidf:has_unit_of_measure ;
