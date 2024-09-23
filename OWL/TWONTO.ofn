@@ -1,4 +1,5 @@
 Prefix(:=<http://www.toronto.ca/TWONTO#>)
+Prefix(eidf:=<http://www.toronto.ca/EIDF#>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
@@ -568,11 +569,11 @@ Declaration(Class(<http://www.toronto.ca/TWONTO#120V-208V_electrical_panel>))
 Declaration(Class(<http://www.toronto.ca/TWONTO#5kV_electrical_cabinet>))
 Declaration(Class(<http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet>))
 Declaration(Class(<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet>))
-Declaration(Class(:eidf:_asset_record))
-Declaration(Class(:eidf:_data_record))
-Declaration(Class(:eidf:_space_record))
-Declaration(Class(:term:_multi-parameter_sensing_instrument))
-Declaration(Class(:term:_single-parameter_instrument))
+Declaration(Class(eidf:asset_record))
+Declaration(Class(eidf:data_record))
+Declaration(Class(eidf:space_record))
+Declaration(Class(:multi-parameter_sensing_instrument))
+Declaration(Class(:single-parameter_instrument))
 Declaration(ObjectProperty(:contains))
 Declaration(ObjectProperty(:created))
 Declaration(ObjectProperty(:fully_grounds))
@@ -655,16 +656,15 @@ Declaration(DataProperty(:is_installed_underground))
 Declaration(DataProperty(:is_latest_version))
 Declaration(DataProperty(:is_subject_of_note))
 Declaration(DataProperty(:is_underground))
-Declaration(DataProperty(:uses_bearing_lubricant_type))
-Declaration(DataProperty(:eidf:_asset_record_data_property))
-Declaration(DataProperty(:eidf:_change_to_physical_asset))
-Declaration(DataProperty(:eidf:_has_asset_JSON-LD_data))
-Declaration(DataProperty(:eidf:_has_boiler_energy_source))
-Declaration(DataProperty(:eidf:_has_boiler_process_medium))
-Declaration(DataProperty(:eidf:_has_entity_name))
-Declaration(DataProperty(:eidf:_has_entity_number))
-Declaration(DataProperty(:eidf:_has_parent_entity_number))
-Declaration(DataProperty(:eidf:_uses_bearing_lubricant_type))
+Declaration(DataProperty(eidf:asset_record_data_property))
+Declaration(DataProperty(eidf:change_to_physical_asset))
+Declaration(DataProperty(eidf:has_asset_JSON-LD_data))
+Declaration(DataProperty(eidf:has_boiler_energy_source))
+Declaration(DataProperty(eidf:has_boiler_process_medium))
+Declaration(DataProperty(eidf:has_entity_name))
+Declaration(DataProperty(eidf:has_entity_number))
+Declaration(DataProperty(eidf:has_parent_entity_number))
+Declaration(DataProperty(eidf:uses_bearing_lubricant_type))
 Declaration(NamedIndividual(:Fahrenheit))
 Declaration(NamedIndividual(:NEMA_EXPL))
 Declaration(NamedIndividual(:NEMA_HAZ))
@@ -1163,47 +1163,43 @@ DataPropertyRange(:is_subject_of_note xsd:string)
 
 SubDataPropertyOf(:is_underground :has_present_property_indicated_by_literal_value)
 
-# Data Property: :uses_bearing_lubricant_type (:uses_bearing_lubricant_type)
+# Data Property: eidf:asset_record_data_property (eidf:asset_record_data_property)
 
-SubDataPropertyOf(:uses_bearing_lubricant_type :has_present_property_indicated_by_literal_value)
-
-# Data Property: :_asset_record_data_property (:_asset_record_data_property)
-
-AnnotationAssertion(rdfs:comment :eidf:_asset_record_data_property "July24: 
+AnnotationAssertion(rdfs:comment eidf:asset_record_data_property "July24: 
 - EIDF stands for Entity Information Data Format , which is developed from the Entity Information Workbook. The valid values are specified for each data property is, for now, specified in the SHACL.")
-SubDataPropertyOf(:eidf:_asset_record_data_property :has_record_data_value)
+SubDataPropertyOf(eidf:asset_record_data_property :has_record_data_value)
 
-# Data Property: :_change_to_physical_asset (:_change_to_physical_asset)
+# Data Property: eidf:change_to_physical_asset (eidf:change_to_physical_asset)
 
-SubDataPropertyOf(:eidf:_change_to_physical_asset :eidf:_asset_record_data_property)
+SubDataPropertyOf(eidf:change_to_physical_asset eidf:asset_record_data_property)
 
-# Data Property: :_has_asset_JSON-LD_data (:_has_asset_JSON-LD_data)
+# Data Property: eidf:has_asset_JSON-LD_data (eidf:has_asset_JSON-LD_data)
 
-SubDataPropertyOf(:eidf:_has_asset_JSON-LD_data :eidf:_asset_record_data_property)
+SubDataPropertyOf(eidf:has_asset_JSON-LD_data eidf:asset_record_data_property)
 
-# Data Property: :_has_boiler_energy_source (:_has_boiler_energy_source)
+# Data Property: eidf:has_boiler_energy_source (eidf:has_boiler_energy_source)
 
-SubDataPropertyOf(:eidf:_has_boiler_energy_source :eidf:_asset_record_data_property)
+SubDataPropertyOf(eidf:has_boiler_energy_source eidf:asset_record_data_property)
 
-# Data Property: :_has_boiler_process_medium (:_has_boiler_process_medium)
+# Data Property: eidf:has_boiler_process_medium (eidf:has_boiler_process_medium)
 
-SubDataPropertyOf(:eidf:_has_boiler_process_medium :eidf:_asset_record_data_property)
+SubDataPropertyOf(eidf:has_boiler_process_medium eidf:asset_record_data_property)
 
-# Data Property: :_has_entity_name (:_has_entity_name)
+# Data Property: eidf:has_entity_name (eidf:has_entity_name)
 
-SubDataPropertyOf(:eidf:_has_entity_name :eidf:_asset_record_data_property)
+SubDataPropertyOf(eidf:has_entity_name eidf:asset_record_data_property)
 
-# Data Property: :_has_entity_number (:_has_entity_number)
+# Data Property: eidf:has_entity_number (eidf:has_entity_number)
 
-SubDataPropertyOf(:eidf:_has_entity_number :eidf:_asset_record_data_property)
+SubDataPropertyOf(eidf:has_entity_number eidf:asset_record_data_property)
 
-# Data Property: :_has_parent_entity_number (:_has_parent_entity_number)
+# Data Property: eidf:has_parent_entity_number (eidf:has_parent_entity_number)
 
-SubDataPropertyOf(:eidf:_has_parent_entity_number :eidf:_asset_record_data_property)
+SubDataPropertyOf(eidf:has_parent_entity_number eidf:asset_record_data_property)
 
-# Data Property: :_uses_bearing_lubricant_type (:_uses_bearing_lubricant_type)
+# Data Property: eidf:uses_bearing_lubricant_type (eidf:uses_bearing_lubricant_type)
 
-SubDataPropertyOf(:eidf:_uses_bearing_lubricant_type :eidf:_asset_record_data_property)
+SubDataPropertyOf(eidf:uses_bearing_lubricant_type eidf:asset_record_data_property)
 
 
 
@@ -1261,8 +1257,8 @@ SubClassOf(:PH_analyzer :chemical_or_concentration_analyzer)
 
 # Class: :PLC (:PLC)
 
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "progammable logic controller")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "An industrial computer designed for real-time control of machines and processes, and is highly programmable to suit a wide range of automation tasks. It monitors inputs from sensors and executes user-defined programs to control outputs like motors, actuators, and other devices.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "progammable logic controller")
 SubClassOf(:PLC :programmable_controller)
 
 # Class: :PLC_module_component (:PLC_module_component)
@@ -2165,7 +2161,8 @@ SubClassOf(:fall_arrest_rope_grab :discrete_asset)
 # Class: :fall_arrest_system (:fall_arrest_system)
 
 AnnotationAssertion(:notion_mapping_id :fall_arrest_system "d419b16212f340e797aa00e8ae3d50c8")
-AnnotationAssertion(rdfs:isDefinedBy :fall_arrest_system "O.Reg 213/91: an assembly of components joined together so that when the assembly is connected to a fixed support, it is capable of arresting a worker’s fall.
+AnnotationAssertion(rdfs:isDefinedBy :fall_arrest_system "O.Reg 213/91: an assembly of components joined together so that when the assembly is connected to a fixed support, it is capable of arresting a worker’s fall
+.
 26.6 (1) modified: A fall arrest system shall consist of a full body harness with adequate attachment points and a lanyard equipped with a shock absorber or similar device, unless the shock absorber if wearing one could cause a worker to hit the ground or an object or level below the work")
 SubClassOf(:fall_arrest_system :localized_function_system)
 
@@ -3845,8 +3842,8 @@ SubClassOf(<http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> :electrical_pan
 
 AnnotationAssertion(:defined_class <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "true"^^xsd:boolean)
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "MCC")
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "motor control centre")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "PDP")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "motor control centre")
 SubClassOf(<http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> :electrical_panel_or_cabinet)
 
 # Class: <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> (<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet>)
@@ -3857,30 +3854,30 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.t
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> "motor control centre")
 SubClassOf(<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> :electrical_panel_or_cabinet)
 
-# Class: :_asset_record (:_asset_record)
+# Class: eidf:asset_record (eidf:asset_record)
 
-SubClassOf(:eidf:_asset_record :eidf:_data_record)
+SubClassOf(eidf:asset_record eidf:data_record)
 
-# Class: :_data_record (:_data_record)
+# Class: eidf:data_record (eidf:data_record)
 
-AnnotationAssertion(rdfs:comment :eidf:_data_record "July24: 
+AnnotationAssertion(rdfs:comment eidf:data_record "July24: 
 ERIS stands for Entity Record Information Standard, which is implicitly defined in the Entity Information Workbook.")
-SubClassOf(:eidf:_data_record :data_record)
+SubClassOf(eidf:data_record :data_record)
 
-# Class: :_space_record (:_space_record)
+# Class: eidf:space_record (eidf:space_record)
 
-SubClassOf(:eidf:_space_record :eidf:_data_record)
+SubClassOf(eidf:space_record eidf:data_record)
 
-# Class: :_multi-parameter_sensing_instrument (:_multi-parameter_sensing_instrument)
+# Class: :multi-parameter_sensing_instrument (:multi-parameter_sensing_instrument)
 
-AnnotationAssertion(:exclude_from_asset_class_list :term:_multi-parameter_sensing_instrument "true"^^xsd:boolean)
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :term:_multi-parameter_sensing_instrument "multi-parameter instrumentation")
-SubClassOf(:term:_multi-parameter_sensing_instrument :instrumentation)
-SubClassOf(:term:_multi-parameter_sensing_instrument ObjectSomeValuesFrom(:has_physical_part :instrumentation))
+AnnotationAssertion(:exclude_from_asset_class_list :multi-parameter_sensing_instrument "true"^^xsd:boolean)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :multi-parameter_sensing_instrument "multi-parameter instrumentation")
+SubClassOf(:multi-parameter_sensing_instrument :instrumentation)
+SubClassOf(:multi-parameter_sensing_instrument ObjectSomeValuesFrom(:has_physical_part :instrumentation))
 
-# Class: :_single-parameter_instrument (:_single-parameter_instrument)
+# Class: :single-parameter_instrument (:single-parameter_instrument)
 
-SubClassOf(:term:_single-parameter_instrument :instrumentation)
+SubClassOf(:single-parameter_instrument :instrumentation)
 
 
 ############################
