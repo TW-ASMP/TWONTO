@@ -1,5 +1,5 @@
 @prefix tw: <http://www.toronto.ca/TWONTO#>.
-@prefix eidf: <http://www.toronto.ca/TWONTO#eidf#>.
+@prefix eidf: <http://www.toronto.ca/EIDF#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh: <http://www.w3.org/ns/shacl#>.
@@ -172,7 +172,6 @@ tw:Boiler_defaultShape
 # RE-USABLE PROPERTY SHAPE DEFINITIONS
 ##################################################################################
 
-
 tw:voltageSpec_nodeShape
 	a sh:NodeShape;
 	sh:property [
@@ -190,14 +189,6 @@ tw:voltageSpec_nodeShape
 			sh:property eidf:voltage_UOM;
 		];
 	] .
-
-eidf:voltage_UOM 
-	a sh:PropertyShape ;
-	sh:maxCount 1 ; sh:minCount 1 ;
-	sh:path eidf:has_unit_of_measure ;
-	sh:datatype xsd:string ;
-	sh:in ( "m^2" "in^2" "ft^2" ) ;
-	sh:order 20 .
 
 #------
 
@@ -219,15 +210,6 @@ tw:powerSpec_nodeShape
 		];
 	] .
 
-
-eidf:power_UOM 
-	a sh:PropertyShape ;
-	sh:maxCount 1 ; sh:minCount 1 ;
-	sh:path eidf:has_unit_of_measure ;
-	sh:datatype xsd:string ;
-	sh:in ( "W" "kW" "VA" "kVA" "MVA" ) ;
-	sh:order 20 .
-
 #-------
 
 tw:holdingCapacitySpec_nodeShape
@@ -247,14 +229,6 @@ tw:holdingCapacitySpec_nodeShape
 			sh:property eidf:volumn_UOM ;
 		];
 	] .
-
-eidf:volumn_UOM 
-	a sh:PropertyShape ;
-	sh:maxCount 1 ; sh:minCount 1 ;
-	sh:path eidf:has_unit_of_measure ;
-	sh:datatype xsd:string ;
-	sh:in ( "L" "gal" "cm^3" "m^3" "in^3" "ft^3" ) ;
-	sh:order 20 .
 
 #-------
 
@@ -276,14 +250,6 @@ tw:temperatureSpec_nodeShape
 		];
 	] .
 
-eidf:temperature_UOM 
-	a sh:PropertyShape ;
-	sh:maxCount 1 ; sh:minCount 1 ;
-	sh:path eidf:has_unit_of_measure ;
-	sh:datatype xsd:string ;
-	sh:in ( "C." "F." "K." ) ;
-	sh:order 20 .
-
 #-------
 
 tw:pressureSpec_nodeShape
@@ -304,14 +270,6 @@ tw:pressureSpec_nodeShape
 		];
 	] .
 
-eidf:pressure_UOM 
-	a sh:PropertyShape ;
-	sh:maxCount 1 ; sh:minCount 1 ;
-	sh:path eidf:has_unit_of_measure ;
-	sh:datatype xsd:string ;
-	sh:in ( "Pa" "kPa" "atm" "ppi" "mmHg" ) ;
-	sh:order 20 .
-
 #-------
 
 tw:surfaceAreaSpec_nodeShape
@@ -331,6 +289,50 @@ tw:surfaceAreaSpec_nodeShape
 			sh:property eidf:area_UOM ;
 		];
 	] .
+
+##################################################################################
+# RE-USABLE UNIT OF MEASURE DATA PROPERTY SHAPE DEFINITIONS
+##################################################################################
+
+eidf:voltage_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "m^2" "in^2" "ft^2" ) ;
+	sh:order 20 .
+
+eidf:power_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "W" "kW" "VA" "kVA" "MVA" ) ;
+	sh:order 20 .
+
+eidf:volumn_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "L" "gal" "cm^3" "m^3" "in^3" "ft^3" ) ;
+	sh:order 20 .
+
+eidf:temperature_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "C." "F." "K." ) ;
+	sh:order 20 .
+
+eidf:pressure_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "Pa" "kPa" "atm" "ppi" "mmHg" ) ;
+	sh:order 20 .
 
 eidf:area_UOM 
 	a sh:PropertyShape ;
