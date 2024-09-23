@@ -1,4 +1,5 @@
 @prefix tw: <http://www.toronto.ca/TWONTO#>.
+@prefix eidf: <http://www.toronto.ca/TWONTO#eidf#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh: <http://www.w3.org/ns/shacl#>.
@@ -54,7 +55,7 @@ tw:Motor_defaultShape
 		sh:order 30 ;
 	] ;
 	sh:property [
-		sh:path tw:usesBearingLubricantType ;
+		sh:path eidf:uses_bearing_lubricant_type ;
 		sh:name "uses bearing lubricant type";
 		sh:datatype xsd:string ;
 		sh:in ( "oil" "grease" ) ;
@@ -71,11 +72,12 @@ tw:Motor_defaultShape
 				]
             ]
 			[	
-				sh:path tw:usesBearingLubricantType ;
+				sh:path eidf:uses_bearing_lubricant_type ;
 				sh:minCount 1 ;
 				sh:severity sh:Violation ;
 			]  
-	) ;                    
+	) ;
+
 	sh:property [
 		sh:path tw:has_NEMA_enclosureType ; #4Dev: the property label on the form "NEMA enclosure type" is the RDFS:label of this OWL dataProperty.
 		sh:name "NEMA enclosure type";
@@ -86,6 +88,7 @@ tw:Motor_defaultShape
     	sh:severity sh:Warning ; #4Dev: this line tells you to allow alternatives
 		sh:order 50 ;
 	] ;
+
 	sh:property [
 		sh:maxCount 1 ; sh:minCount 1 ;
 		sh:path tw:has_NEMA_enclosureType ;
@@ -101,6 +104,7 @@ tw:Motor_defaultShape
     	sh:severity sh:Warning ;
 		sh:order 60 ;
 	] ;
+
 	sh:property [
 		sh:path tw:has_NEMA_frameType ;
 		sh:maxCount 1 ; sh:minCount 1 ;
@@ -114,9 +118,6 @@ tw:Motor_defaultShape
 tw:Boiler_defaultShape
 	a sh:NodeShape ;
 	sh:targetClass tw:boiler ;
-	# BOILER MEDIUM PROPERTY
-	## Option 1: Using property manifestation and metaclass 
-	### 5/30: Option chosen
 	
 	sh:property [
 		sh:path tw:hasSpecification ;
@@ -128,16 +129,10 @@ tw:Boiler_defaultShape
 		sh:order 10 ;
 	] ;
 	sh:property [ 
-		sh:path tw:hasSpecification ;
-		sh:class tw:processMedium ; #checked
+		sh:path eidf:has_boiler_energy_source ;
 		sh:name "boiler medium" ;
-		sh:node [
-			sh:property [
-				sh:path tw:theMetaClass ;
-				sh:class tw:commonBoilerMedium ;
-			] ;
-			sh:closed true ;
-		] ;
+		sh:datatype xsd:string ;
+		sh:in ( "steam" "thermal oil" "water" "water glycol mixture" ) ;
 		sh:severity sh:Warning ;
 		sh:minCount 1 ; sh:maxCount 1 ;
 		sh:order 20 ;
@@ -186,20 +181,25 @@ tw:voltageSpec_nodeShape
 		sh:minCount 1 ;
 		sh:node [
 			sh:property [
-				sh:maxCount 1 ; sh:minCount 1 ;
+				sh:maxCount 1 ; 
+				sh:minCount 1 ;
 				sh:path tw:hasNumericValue ;
 				sh:datatype xsd:float ;
 				sh:order 10 ;
 			];
-			sh:property [
-				sh:maxCount 1 ; sh:minCount 1 ;
-				sh:path tw:hasUnitOfMeasure ;
-				sh:class tw:unitOfVoltage ;
-				dash:editor dash:InstancesSelectEditor ;
-				sh:order 20 ;
-			];
+			sh:property tw:voltage_UOM;
 		];
 	] .
+
+tw:voltage_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "m^2" "in^2" "ft^2" ) ;
+	sh:order 20 .
+
+#------
 
 tw:powerSpec_nodeShape
 	a sh:NodeShape;
@@ -215,16 +215,20 @@ tw:powerSpec_nodeShape
 				sh:datatype xsd:float ;
 				sh:order 10 ;
 			];
-			sh:property [
-				sh:maxCount 1 ; sh:minCount 1 ;
-				sh:path tw:hasUnitOfMeasure ;
-				sh:class tw:unitOfPower ;
-				dash:editor dash:InstancesSelectEditor ;
-				sh:order 20 ;
-			];
+			sh:property eidf:power_UOM ;
 		];
 	] .
 
+
+eidf:power_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "W" "kW" "VA" "kVA" "MVA" ) ;
+	sh:order 20 .
+
+#-------
 
 tw:holdingCapacitySpec_nodeShape
 	a sh:NodeShape;
@@ -240,16 +244,19 @@ tw:holdingCapacitySpec_nodeShape
 				sh:datatype xsd:float ;
 				sh:order 10 ;
 			];
-			sh:property [
-				sh:maxCount 1 ; sh:minCount 1 ;
-				sh:path tw:hasUnitOfMeasure ;
-				sh:class tw:unitOfVolume ;
-				dash:editor dash:InstancesSelectEditor ;
-				sh:order 20 ;
-			];
+			sh:property eidf:volumn_UOM ;
 		];
 	] .
 
+eidf:volumn_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "L" "gal" "cm^3" "m^3" "in^3" "ft^3" ) ;
+	sh:order 20 .
+
+#-------
 
 tw:temperatureSpec_nodeShape
 	a sh:NodeShape;
@@ -265,15 +272,19 @@ tw:temperatureSpec_nodeShape
 				sh:datatype xsd:float ;
 				sh:order 10 ;
 			];
-			sh:property [
-				sh:maxCount 1 ; sh:minCount 1 ;
-				sh:path tw:hasUnitOfMeasure ;
-				sh:class tw:unitOfTemperature ;
-				dash:editor dash:InstancesSelectEditor ;
-				sh:order 20 ;
-			];
+			sh:property eidf:temperature_UOM ;
 		];
 	] .
+
+eidf:temperature_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "C." "F." "K." ) ;
+	sh:order 20 .
+
+#-------
 
 tw:pressureSpec_nodeShape
 	a sh:NodeShape;
@@ -289,15 +300,19 @@ tw:pressureSpec_nodeShape
 				sh:datatype xsd:float ;
 				sh:order 10 ;
 			];
-			sh:property [
-				sh:maxCount 1 ; sh:minCount 1 ;
-				sh:path tw:hasUnitOfMeasure ;
-				sh:class tw:unitOfPressure ;
-				dash:editor dash:InstancesSelectEditor ;
-				sh:order 20 ;
-			];
+			sh:property eidf:pressure_UOM ;
 		];
 	] .
+
+eidf:pressure_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "Pa" "kPa" "atm" "ppi" "mmHg" ) ;
+	sh:order 20 .
+
+#-------
 
 tw:surfaceAreaSpec_nodeShape
 	a sh:NodeShape;
@@ -313,12 +328,14 @@ tw:surfaceAreaSpec_nodeShape
 				sh:datatype xsd:float ;
 				sh:order 10 ;
 			];
-			sh:property [
-				sh:maxCount 1 ; sh:minCount 1 ;
-				sh:path tw:hasUnitOfMeasure ;
-				sh:class tw:unitOfArea ;
-				dash:editor dash:InstancesSelectEditor ;
-				sh:order 20 ;
-			];
+			sh:property eidf:area_UOM ;
 		];
 	] .
+
+eidf:area_UOM 
+	a sh:PropertyShape ;
+	sh:maxCount 1 ; sh:minCount 1 ;
+	sh:path eidf:has_unit_of_measure ;
+	sh:datatype xsd:string ;
+	sh:in ( "in^2" "cm^2" "m^2" "ft^2" ) ;
+	sh:order 20 .
