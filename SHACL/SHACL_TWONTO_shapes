@@ -52,7 +52,7 @@ tw:UPS_defaultShape
 	] ;
 
 	sh:property [ 
-		sh:class "battery_type"
+		sh:class "battery_type";
 		sh:name "Battery Type" ;
 		sh:datatype xsd:string ;
 		sh:in ( "piping in fire protection system" "piping in heating system" "piping in refrigeration system" "compressed air piping" "hot oil piping" "buried water piping") ;
@@ -112,7 +112,7 @@ tw:Generator_defaultShape
 	] ;
 
 	sh:property [ 
-		sh:class "generator_drive"
+		sh:class "generator_drive";
 		sh:name "Generator Drive" ;
 		sh:datatype xsd:string ;
 		sh:in ( "Sealed / Valve Regulated Lead Acid" "Flooded / Vented Lead Acid" "NiCad" "Li-ion") ;
@@ -150,7 +150,7 @@ tw:Generator_defaultShape
 	] ;
 
 	sh:property [ 
-		sh:class "generator_drive_coupling"
+		sh:class "generator_drive_coupling";
 		sh:name "Generator Drive Coupling" ;
 		sh:datatype xsd:string ;
 		sh:in ( "Water" "Glycol" "Steam") ;
@@ -183,7 +183,7 @@ tw:Compressor_defaultShape
 	] ;
 
 	sh:property [ 
-		sh:class "compressor_drive"
+		sh:class "compressor_drive";
 		sh:name "Compressor Drive Coupling" ;
 		sh:datatype xsd:string ;
 		sh:in ( "True" "False") ;
@@ -234,7 +234,7 @@ tw:Blower_defaultShape
 	] ;
 
 	sh:property [ 
-		sh:class "drive_coupling"
+		sh:class "drive_coupling";
 		sh:name "Drive Coupling" ;
 		sh:datatype xsd:string ;
 		sh:in ( "Direct Drive" "Belt Drive" "Gear Drive" "Flexible" "Chain Drive" "Hydraulic") ;
