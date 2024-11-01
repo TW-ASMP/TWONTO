@@ -4,647 +4,586 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh: <http://www.w3.org/ns/shacl#>.
 
-
-##################################################################################
-# Notes 4Dev  
-##################################################################################
-# I will be using 
-# sh:maxCount 1 ; to say that a property is singular and optional
-# sh:minCount 1 ; sh:maxCount1 ; to say that the property is singular and required
-# sh:minCount 1 ; to say that a property is required and expect an array
-# sh:minCount 0 ; to say that a property is option and expect an array
-
-#################################################################################
-# NODES HAPE DEFINITIONS
-##################################################################################
-
-# TODOs
-# [] Review where sh:closed should be added
-
 # UPS SHAPE
-
-tw:UPS_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:UPS ;    
-	sh:property [
-		sh:path tw:hasUPSBackup ;
-		sh:name "UPS Backup for Fire, Life Safety, Elevator Load or Their Control?";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:class tw:battery_capacity  ;
-		sh:name "Battery Capacity ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:output_voltage  ;
-		sh:name "Output Voltage";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [ 
-		sh:class "battery_type";
-		sh:name "Battery Type" ;
-		sh:datatype xsd:string ;
-		sh:in ( "piping in fire protection system" "piping in heating system" "piping in refrigeration system" "compressed air piping" "hot oil piping" "buried water piping") ;
-		sh:severity sh:Warning ;
-		sh:minCount 1 ; sh:maxCount 1 ;
-		sh:order 20 ;
-	] ;
-
-	sh:property [
-		sh:path tw:physicallyIntegrated ;
-		sh:name "Physically Integrated with Charger";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
+tw:UPS_default_shape a sh:NodeShape ;
+  sh:targetClass tw:UPS ;
+  sh:property [
+    sh:path tw:has_ups_backup ;
+    sh:name "UPS Backup for Fire, Life Safety, Elevator Load or Their Control?";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:class tw:battery_capacity ;
+    sh:name "Battery Capacity ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:output_voltage ;
+    sh:name "Output Voltage";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class "battery_type";
+    sh:name "Battery Type" ;
+    sh:datatype xsd:string ;
+    sh:in ( "piping in fire protection system" "piping in heating system" "piping in refrigeration system" "compressed air piping" "hot oil piping" "buried water piping") ;
+    sh:severity sh:Warning ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:order 20 ;
+  ] ;
+  sh:property [
+    sh:path tw:physically_integrated ;
+    sh:name "Physically Integrated with Charger";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
 .
 
 # Generator SHAPE
-
-tw:Generator_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:generator ;    
-	sh:property [
-		sh:path tw:hasGeneratorBackup ;
-		sh:name "Generator Backup for Fire, Life Safety, Elevator Load or Their Control?";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:isMobile ;
-		sh:name "Is Mobile";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:class tw:power_rating  ;
-		sh:name "Power Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:voltage_rating  ;
-		sh:name "Voltage Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [ 
-		sh:class "generator_drive";
-		sh:name "Generator Drive" ;
-		sh:datatype xsd:string ;
-		sh:in ( "Sealed / Valve Regulated Lead Acid" "Flooded / Vented Lead Acid" "NiCad" "Li-ion") ;
-		sh:severity sh:Warning ;
-		sh:minCount 1 ; sh:maxCount 1 ;
-		sh:order 20 ;
-	] ;
-
-	sh:property [
-		sh:path tw:brushlessGenerator ;
-		sh:name "Has Brushless Generator";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:hasTestLoadElectricalConnector ;
-		sh:name "Has Test Load Electrical Connector";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-
-	sh:property [
-		sh:path tw:hasSealedOrShieldedBearing ;
-		sh:name "Has Sealed or Shielded Bearing";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [ 
-		sh:class "generator_drive_coupling";
-		sh:name "Generator Drive Coupling" ;
-		sh:datatype xsd:string ;
-		sh:in ( "Water" "Glycol" "Steam") ;
-		sh:severity sh:Warning ;
-		sh:minCount 1 ; sh:maxCount 1 ;
-		sh:order 20 ;
-	] ;
-	
+tw:Generator_default_shape a sh:NodeShape ;
+  sh:targetClass tw:generator ;
+  sh:property [
+    sh:path tw:has_generator_backup ;
+    sh:name "Generator Backup for Fire, Life Safety, Elevator Load or Their Control?";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:is_mobile ;
+    sh:name "Is Mobile";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:class tw:power_rating ;
+    sh:name "Power Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:voltage_rating ;
+    sh:name "Voltage Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class "generator_drive";
+    sh:name "Generator Drive" ;
+    sh:datatype xsd:string ;
+    sh:in ( "Sealed / Valve Regulated Lead Acid" "Flooded / Vented Lead Acid" "NiCad" "Li-ion") ;
+    sh:severity sh:Warning ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:order 20 ;
+  ] ;
+  sh:property [
+    sh:path tw:brushless_generator ;
+    sh:name "Has Brushless Generator";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:has_test_load_electrical_connector ;
+    sh:name "Has Test Load Electrical Connector";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:has_sealed_or_shielded_bearing ;
+    sh:name "Has Sealed or Shielded Bearing";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:class "generator_drive_coupling";
+    sh:name "Generator Drive Coupling" ;
+    sh:datatype xsd:string ;
+    sh:in ( "Water" "Glycol" "Steam") ;
+    sh:severity sh:Warning ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:order 20 ;
+  ] ;
 .
 
 # Compressor SHAPE
-
-tw:Compressor_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:compressor ;    
-	sh:property [
-		sh:class tw:rated_output  ;
-		sh:name "Rated Output ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:flow  ;
-		sh:name "Flow ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [ 
-		sh:class "compressor_drive";
-		sh:name "Compressor Drive Coupling" ;
-		sh:datatype xsd:string ;
-		sh:in ( "True" "False") ;
-		sh:severity sh:Warning ;
-		sh:minCount 1 ; sh:maxCount 1 ;
-		sh:order 20 ;
-	] ;
-
-	sh:property [
-		sh:path tw:hasSealedOrShieldedBearing ;
-		sh:name "Has Sealed or Shield Bearing";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:hasIntegratedMotor ;
-		sh:name "Has Integrated Motor";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-	
+tw:Compressor_default_shape a sh:NodeShape ;
+  sh:targetClass tw:compressor ;
+  sh:property [
+    sh:class tw:rated_output ;
+    sh:name "Rated Output ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:flow ;
+    sh:name "Flow ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class "compressor_drive";
+    sh:name "Compressor Drive Coupling" ;
+    sh:datatype xsd:string ;
+    sh:in ( "True" "False") ;
+    sh:severity sh:Warning ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:order 20 ;
+  ] ;
+  sh:property [
+    sh:path tw:has_sealed_or_shielded_bearing ;
+    sh:name "Has Sealed or Shield Bearing";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:has_integrated_motor ;
+    sh:name "Has Integrated Motor";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
 .
 
 # Blower/Fan SHAPE
-
-tw:Blower_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:blower ;    
-	sh:property [
-		sh:class tw:air_flow_rating  ;
-		sh:name "Air Flow Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:static_pressure_rating  ;
-		sh:name "Static Pressure Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [ 
-		sh:class "drive_coupling";
-		sh:name "Drive Coupling" ;
-		sh:datatype xsd:string ;
-		sh:in ( "Direct Drive" "Belt Drive" "Gear Drive" "Flexible" "Chain Drive" "Hydraulic") ;
-		sh:severity sh:Warning ;
-		sh:minCount 1 ; sh:maxCount 1 ;
-		sh:order 20 ;
-	] ;
-
-	sh:property [
-		sh:path tw:cooling_function_present ;
-		sh:name "Cooling Function Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:hasSealedOrShieldedBearing ;
-		sh:name "Has Sealed or Shield Bearing";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:hasIntegratedMotor ;
-		sh:name "Has Integrated Motor";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-	
+tw:Blower_default_shape a sh:NodeShape ;
+  sh:targetClass tw:blower ;
+  sh:property [
+    sh:class tw:air_flow_rating ;
+    sh:name "Air Flow Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:static_pressure_rating ;
+    sh:name "Static Pressure Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class "drive_coupling";
+    sh:name "Drive Coupling" ;
+    sh:datatype xsd:string ;
+    sh:in ( "Direct Drive" "Belt Drive" "Gear Drive" "Flexible" "Chain Drive" "Hydraulic") ;
+    sh:severity sh:Warning ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:order 20 ;
+  ] ;
+  sh:property [
+    sh:path tw:cooling_function_present ;
+    sh:name "Cooling Function Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:has_sealed_or_shielded_bearing ;
+    sh:name "Has Sealed or Shield Bearing";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:has_integrated_motor ;
+    sh:name "Has Integrated Motor";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
 .
 
 # HVAC SHAPE
-
-tw:HVAC_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:HVAC ;    
-	sh:property [
-		sh:class tw:CFM_rating  ;
-		sh:name "CFM Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:static_pressure_rating  ;
-		sh:name "Static Pressure Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:path tw:heatingFunctionPresent ;
-		sh:name "Heating Function Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:cooling_function_present ;
-		sh:name "Cooling Function Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:dehumidify_function_present ;
-		sh:name "De-humidification function present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:MaintainableDamperPresent ;
-		sh:name "Maintainable Damper Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:BeltsPresent ;
-		sh:name "Belts Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-	
+tw:HVAC_default_shape a sh:NodeShape ;
+  sh:targetClass tw:HVAC ;
+  sh:property [
+    sh:class tw:cfm_rating ;
+    sh:name "CFM Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:static_pressure_rating ;
+    sh:name "Static Pressure Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:path tw:heating_function_present ;
+    sh:name "Heating Function Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:cooling_function_present ;
+    sh:name "Cooling Function Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:dehumidify_function_present ;
+    sh:name "De-humidification function present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:maintainable_damper_present ;
+    sh:name "Maintainable Damper Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:belts_present ;
+    sh:name "Belts Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
 .
 
-
 # Transformer SHAPE
-
-tw:Transformer_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:transformer ;    
-	sh:property [
-		sh:class tw:primary_voltage  ;
-		sh:name "Primary Voltage ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:secondary_voltage  ;
-		sh:name "Secondary Voltage ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:power_rating  ;
-		sh:name "Power Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:path tw:isOil ;
-		sh:name "Is Oil Transformer";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:SuddenPressureRelayPresent ;
-		sh:name "Sudden Pressure Relay Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:CoolingAirFanPresent ;
-		sh:name "Cooling Air Fan Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:CoolingLiquidPumpPresent ;
-		sh:name "Cooling Liquid Pump Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:OnlineGasMonitorInstalled ;
-		sh:name "Online Gas Monitor Installed";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-	
+tw:Transformer_default_shape a sh:NodeShape ;
+  sh:targetClass tw:transformer ;
+  sh:property [
+    sh:class tw:primary_voltage ;
+    sh:name "Primary Voltage ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:secondary_voltage ;
+    sh:name "Secondary Voltage ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:power_rating ;
+    sh:name "Power Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:path tw:is_oil ;
+    sh:name "Is Oil Transformer";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:sudden_pressure_relay_present ;
+    sh:name "Sudden Pressure Relay Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:cooling_air_fan_present ;
+    sh:name "Cooling Air Fan Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:cooling_liquid_pump_present ;
+    sh:name "Cooling Liquid Pump Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:online_gas_monitor_installed ;
+    sh:name "Online Gas Monitor Installed";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
 .
 
 # Starter SHAPE
-
-tw:Starter_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:starter ;    
-	sh:property [
-		sh:class tw:Continuous_Voltage_Rating  ;
-		sh:name "Continuous Voltage Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:Continuous_Current_Rating  ;
-		sh:name "Continuous Current Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:path tw:VFD_function_present ;
-		sh:name "VFD Function Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
-	sh:property [
-		sh:path tw:soft_start_functioning_present ;
-		sh:name "Soft Start Functioning Present";
-		sh:datatype xsd:boolean ;
-		sh:maxCount 1 ; sh:minCount 1 ;#functional property
-		sh:severity sh:Violation ;
-		sh:order 30 ;
-	] ;
-
+tw:Starter_default_shape a sh:NodeShape ;
+  sh:targetClass tw:starter ;
+  sh:property [
+    sh:class tw:continuous_voltage_rating ;
+    sh:name "Continuous Voltage Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:continuous_current_rating ;
+    sh:name "Continuous Current Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:path tw:vfd_function_present ;
+    sh:name "VFD Function Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
+  sh:property [
+    sh:path tw:soft_start_functioning_present ;
+    sh:name "Soft Start Functioning Present";
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 30 ;
+  ] ;
 .
 
 # Breaker SHAPE
-
-tw:Breaker_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:breaker ;    
-	sh:property [
-		sh:path tw:breaker_type ; #4Dev: the property label on the form "NEMA enclosure type" is the RDFS:label of this OWL dataProperty.
-		sh:name "Breaker Type";
-		sh:datatype xsd:string ;
-		sh:in ( "Insulated Case" "Metal Clad or Enclosed" "Molded Case") ;
-		sh:maxCount 1 ; sh:minCount 1 ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ; #4Dev: this line tells you to allow alternatives
-		sh:order 50 ;
-	] ;
-
-    sh:property [
-		sh:path tw:specialized_valve_type ;
-		sh:name "Specialized Valve Type";
-		sh:datatype xsd:string ;
-		sh:in ("Air Release Valve" "Backflow Preventer" "Check" "Pressure Relief Valve" "Solenoid") ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ;
-		sh:order 60 ;
-	] ;
-
-	sh:property [
-		sh:class tw:Max_Continuous_Voltage_Rating  ;
-		sh:name "Max Continuous Voltage Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:Max_Continuous_Current_Rating  ;
-		sh:name "Max Continuous Current Rating ";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:path tw:Breaker_Main_Contractor_Type ;
-		sh:name "Breaker Main Contractor Type";
-		sh:datatype xsd:string ;
-		sh:in ("Air Insulated" "Air Insulated, Air Blast" "Vacuum Insulated" "Oil Insultated" "Gas Insulated") ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ;
-		sh:order 60 ;
-	] ;
-
+tw:Breaker_default_shape a sh:NodeShape ;
+  sh:targetClass tw:breaker ;
+  sh:property [
+    sh:path tw:breaker_type ;
+    sh:name "Breaker Type";
+    sh:datatype xsd:string ;
+    sh:in ( "Insulated Case" "Metal Clad or Enclosed" "Molded Case") ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 50 ;
+  ] ;
+  sh:property [
+    sh:path tw:specialized_valve_type ;
+    sh:name "Specialized Valve Type";
+    sh:datatype xsd:string ;
+    sh:in ("Air Release Valve" "Backflow Preventer" "Check" "Pressure Relief Valve" "Solenoid") ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 60 ;
+  ] ;
+  sh:property [
+    sh:class tw:max_continuous_voltage_rating ;
+    sh:name "Max Continuous Voltage Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:max_continuous_current_rating ;
+    sh:name "Max Continuous Current Rating ";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:path tw:breaker_main_contractor_type ;
+    sh:name "Breaker Main Contractor Type";
+    sh:datatype xsd:string ;
+    sh:in ("Air Insulated" "Air Insulated, Air Blast" "Vacuum Insulated" "Oil Insultated" "Gas Insulated") ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 60 ;
+  ] ;
 .
 
 # Valve or PRV SHAPE
-
-tw:Valve_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:valve ;    
-	sh:property [
-		sh:path tw:valve_type ; #4Dev: the property label on the form "NEMA enclosure type" is the RDFS:label of this OWL dataProperty.
-		sh:name "Valve Type";
-		sh:datatype xsd:string ;
-		sh:in ( "Ball" "Butterfly" "Cone" "Diaphram" "Gate Valve" "Globe Valve" "Knife Valve" "Needle Valve" "Pinch Valve" "Plug Valve" ) ;
-		sh:maxCount 1 ; sh:minCount 1 ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ; #4Dev: this line tells you to allow alternatives
-		sh:order 50 ;
-	] ;
-
-    sh:property [
-		sh:path tw:specialized_valve_type ;
-		sh:name "Specialized Valve Type";
-		sh:datatype xsd:string ;
-		sh:in ("Air Release Valve" "Backflow Preventer" "Check" "Pressure Relief Valve" "Solenoid") ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ;
-		sh:order 60 ;
-	] ;
-
-	sh:property [
-		sh:class tw:valve_size ;
-		sh:name "Max RPM";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		# a functional property, but only for motors
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	 sh:property [
-		sh:path tw:ANSI_class_type ;
-		sh:name "ANSI Class Type";
-		sh:datatype xsd:string ;
-		sh:in ("A - Special" "B - Standard" "Limited") ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ;
-		sh:order 60 ;
-	] ;
-
-	sh:property [
-		sh:class tw:CWP_or_POG ;
-		sh:name "CWP or POG";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		# a functional property, but only for motors
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:class tw:nominal_pressure ;
-		sh:name "Nominal Pressure";
-		sh:minCount 1 ; sh:maxCount 1 ; 
-		# a functional property, but only for motors
-		sh:severity sh:Violation ;
-		sh:order 10 ;
-	] ;
-
-	sh:property [
-		sh:path tw:body_material ;
-		sh:name "Body Material";
-		sh:datatype xsd:string ;
-		sh:in ("Carbon Steel" "Stainless Steel" "Duplex" "Alloy" "Composite" "Titanium") ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ;
-		sh:order 60 ;
-	] ;
-
-	sh:property [
-		sh:path tw:actuator_type ;
-		sh:name "Actuator Type";
-		sh:datatype xsd:string ;
-		sh:in ("Electric" "Pneumatuic" "Hydraulic" "Manual") ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ;
-		sh:order 60 ;
-	] ;
-	
-	sh:property [
-		sh:path tw:actuator_type ;
-		sh:name "Actuator Type";
-		sh:datatype xsd:string ;
-		sh:in ("Electric" "Pneumatuic" "Hydraulic" "Manual") ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ;
-		sh:order 60 ;
-	] ;
-
-	sh:property [
-		sh:path tw:stem_sealing ;
-		sh:name "Stem Sealing";
-		sh:datatype xsd:string ;
-		sh:in ("Duplex" "Lip Seal" "O-Ring" "Stuffing Box") ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ;
-		sh:order 60 ;
-	] ;
-	
-
-. ### End of Shape ###=================================================
-
+tw:Valve_default_shape a sh:NodeShape ;
+  sh:targetClass tw:valve ;
+  sh:property [
+    sh:path tw:valve_type ;
+    sh:name "Valve Type";
+    sh:datatype xsd:string ;
+    sh:in ( "Ball" "Butterfly" "Cone" "Diaphram" "Gate Valve" "Globe Valve" "Knife Valve" "Needle Valve" "Pinch Valve" "Plug Valve" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 50 ;
+  ] ;
+  sh:property [
+    sh:path tw:specialized_valve_type ;
+    sh:name "Specialized Valve Type";
+    sh:datatype xsd:string ;
+    sh:in ("Air Release Valve" "Backflow Preventer" "Check" "Pressure Relief Valve" "Solenoid") ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 60 ;
+  ] ;
+  sh:property [
+    sh:class tw:valve_size ;
+    sh:name "Max RPM";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:path tw:ansi_class_type ;
+    sh:name "ANSI Class Type";
+    sh:datatype xsd:string ;
+    sh:in ("A - Special" "B - Standard" "Limited") ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 60 ;
+  ] ;
+  sh:property [
+    sh:class tw:cwp_or_pog ;
+    sh:name "CWP or POG";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:class tw:nominal_pressure ;
+    sh:name "Nominal Pressure";
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:order 10 ;
+  ] ;
+  sh:property [
+    sh:path tw:body_material ;
+    sh:name "Body Material";
+    sh:datatype xsd:string ;
+    sh:in ("Carbon Steel" "Stainless Steel" "Duplex" "Alloy" "Composite" "Titanium") ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 60 ;
+  ] ;
+  sh:property [
+    sh:path tw:actuator_type ;
+    sh:name "Actuator Type";
+    sh:datatype xsd:string ;
+    sh:in ("Electric" "Pneumatuic" "Hydraulic" "Manual") ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 60 ;
+  ] ;
+  sh:property [
+    sh:path tw:stem_sealing ;
+    sh:name "Stem Sealing";
+    sh:datatype xsd:string ;
+    sh:in ("Duplex" "Lip Seal" "O-Ring" "Stuffing Box") ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 60 ;
+  ] ;
+.
 
 # Pump SHAPE
-
-tw:PumpSet_defaultShape
-	a sh:NodeShape ;
-	sh:targetClass tw:pumpset ;    
-	sh:property [
-		sh:path tw:orientation ; #4Dev: the property label on the form "NEMA enclosure type" is the RDFS:label of this OWL dataProperty.
-		sh:name "Orientation";
-		sh:datatype xsd:string ;
-		sh:in ( "Horizontal" "Vertical" "Angled" "Inverted" ) ;
-		sh:maxCount 1 ; sh:minCount 1 ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ; #4Dev: this line tells you to allow alternatives
-		sh:order 50 ;
-	] ;
-
-    sh:property [
-		sh:path tw:variable_speed ;
-		sh:name "Variable Speed";
-		sh:datatype xsd:string ;
-		sh:in ("True" "False") ;
-		sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
-    	sh:severity sh:Warning ;
-		sh:order 60 ;
-	] ;
-
+tw:PumpSet_default_shape a sh:NodeShape ;
+  sh:targetClass tw:pumpset ;
+  sh:property [
+    sh:path tw:orientation ;
+    sh:name "Orientation";
+    sh:datatype xsd:string ;
+    sh:in ( "Horizontal" "Vertical" "Angled" "Inverted" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 50 ;
+  ] ;
+  sh:property [
+    sh:path tw:variable_speed ;
+    sh:name "Variable Speed";
+    sh:datatype xsd:string ;
+    sh:in ("True" "False") ;
+    sh:message "Value must be a string and should be found in the standard / dropdown value list" ;
+    sh:severity sh:Warning ;
+    sh:order 60 ;
+  ] ;
+  
 	sh:property [
 		sh:path tw:pump_type ; #4Dev: the property label on the form "NEMA enclosure type" is the RDFS:label of this OWL dataProperty.
 		sh:name "Pump Type";
