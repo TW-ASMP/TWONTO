@@ -568,9 +568,6 @@ Declaration(Class(<http://www.toronto.ca/TWONTO#120V-208V_electrical_panel>))
 Declaration(Class(<http://www.toronto.ca/TWONTO#5kV_electrical_cabinet>))
 Declaration(Class(<http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet>))
 Declaration(Class(<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet>))
-Declaration(Class(:eidf:_asset_record))
-Declaration(Class(:eidf:_data_record))
-Declaration(Class(:eidf:_space_record))
 Declaration(Class(:term:_multi-parameter_sensing_instrument))
 Declaration(Class(:term:_single-parameter_instrument))
 Declaration(ObjectProperty(:contains))
@@ -1261,8 +1258,8 @@ SubClassOf(:PH_analyzer :chemical_or_concentration_analyzer)
 
 # Class: :PLC (:PLC)
 
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "progammable logic controller")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "An industrial computer designed for real-time control of machines and processes, and is highly programmable to suit a wide range of automation tasks. It monitors inputs from sensors and executes user-defined programs to control outputs like motors, actuators, and other devices.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> :PLC "progammable logic controller")
 SubClassOf(:PLC :programmable_controller)
 
 # Class: :PLC_module_component (:PLC_module_component)
@@ -3845,8 +3842,8 @@ SubClassOf(<http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> :electrical_pan
 
 AnnotationAssertion(:defined_class <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "true"^^xsd:boolean)
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "MCC")
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "motor control centre")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "PDP")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> "motor control centre")
 SubClassOf(<http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> :electrical_panel_or_cabinet)
 
 # Class: <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> (<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet>)
@@ -3856,20 +3853,6 @@ AnnotationAssertion(:defined_class <http://www.toronto.ca/TWONTO#600V_molded_cas
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> "MCC")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> "motor control centre")
 SubClassOf(<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> :electrical_panel_or_cabinet)
-
-# Class: :_asset_record (:_asset_record)
-
-SubClassOf(:eidf:_asset_record :eidf:_data_record)
-
-# Class: :_data_record (:_data_record)
-
-AnnotationAssertion(rdfs:comment :eidf:_data_record "July24: 
-ERIS stands for Entity Record Information Standard, which is implicitly defined in the Entity Information Workbook.")
-SubClassOf(:eidf:_data_record :data_record)
-
-# Class: :_space_record (:_space_record)
-
-SubClassOf(:eidf:_space_record :eidf:_data_record)
 
 # Class: :_multi-parameter_sensing_instrument (:_multi-parameter_sensing_instrument)
 
