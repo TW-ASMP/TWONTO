@@ -3453,12 +3453,6 @@ Vehicle,Unlicensed""" .
                 rdfs:subClassOf :discrete_asset .
 
 
-###  http://www.toronto.ca/TWONTO#pneumatic_system
-:pneumatic_system rdf:type owl:Class ;
-                  rdfs:subClassOf :distribution_system ;
-                  :is_equivalent_to_Avantis_class "Pneumatic System" .
-
-
 ###  http://www.toronto.ca/TWONTO#polymer_preparation_system
 :polymer_preparation_system rdf:type owl:Class ;
                             rdfs:subClassOf :localized_function_system ;
