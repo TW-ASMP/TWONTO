@@ -130,8 +130,7 @@ f) exit signs that depend on electrical power supplied to the building.""" .
 ###  http://www.toronto.ca/TWONTO#grounds
 :grounds rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf :has_present_relation ;
-         rdf:type owl:TransitiveProperty ;
-         rdfs:label "grounds"@en .
+         rdf:type owl:TransitiveProperty .
 
 
 ###  http://www.toronto.ca/TWONTO#has_boiler_heating_surface_area
@@ -1198,6 +1197,13 @@ isThickeningCentrifuge""" .
                        rdfs:isDefinedBy "A chemical contact tank is a container used in industrial processes to mix chemicals with water or other substances for various applications, such as water treatment, chemical processing, or wastewater management. These tanks facilitate the reaction or contact time needed for the chemicals to effectively perform their intended function, often equipped with mixing mechanisms to ensure uniformity and efficiency in the chemical reactions." .
 
 
+###  http://www.toronto.ca/TWONTO#chemical_feeder
+:chemical_feeder rdf:type owl:Class ;
+                 rdfs:subClassOf :asset ;
+                 :is_equivalent_to_Avantis_class "Chemical Feeder" ;
+                 owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://www.toronto.ca/TWONTO#chemical_or_concentration_analyzer
 :chemical_or_concentration_analyzer rdf:type owl:Class ;
                                     rdfs:subClassOf :instrumentation ;
@@ -1338,6 +1344,13 @@ isThickeningCentrifuge""" .
                       rdfs:subClassOf :material .
 
 
+###  http://www.toronto.ca/TWONTO#communication_equipment
+:communication_equipment rdf:type owl:Class ;
+                         rdfs:subClassOf :asset ;
+                         :is_equivalent_to_Avantis_class "Communications Equipment" ;
+                         owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://www.toronto.ca/TWONTO#compactor
 :compactor rdf:type owl:Class ;
            rdfs:subClassOf :discrete_asset .
@@ -1386,6 +1399,12 @@ isThickeningCentrifuge""" .
 ###  http://www.toronto.ca/TWONTO#content_summary
 :content_summary rdf:type owl:Class ;
                  rdfs:subClassOf :information_content_entity .
+
+
+###  http://www.toronto.ca/TWONTO#control_loop
+:control_loop rdf:type owl:Class ;
+              :is_equivalent_to_Avantis_class "Control Loop" ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#controlled_access_barrier
@@ -1647,9 +1666,22 @@ The asset that consists of a television and its remote control is an example of 
              rdfs:subClassOf :pump_set_-_with_drive .
 
 
+###  http://www.toronto.ca/TWONTO#drain
+:drain rdf:type owl:Class ;
+       rdfs:subClassOf :localized_function_system ;
+       :is_equivalent_to_Avantis_class "Drain" .
+
+
 ###  http://www.toronto.ca/TWONTO#drill_press
 :drill_press rdf:type owl:Class ;
              rdfs:subClassOf :large_stationary_tool .
+
+
+###  http://www.toronto.ca/TWONTO#drive_mechanism
+:drive_mechanism rdf:type owl:Class ;
+                 rdfs:subClassOf :asset ;
+                 :is_equivalent_to_Avantis_class "Drive mechanism" ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#driving
@@ -1698,7 +1730,8 @@ The asset that consists of a television and its remote control is an example of 
 
 ###  http://www.toronto.ca/TWONTO#electrical_panel_or_cabinet
 :electrical_panel_or_cabinet rdf:type owl:Class ;
-                             rdfs:subClassOf :discrete_asset .
+                             rdfs:subClassOf :discrete_asset ;
+                             :is_superclass_of_avantis_class "Power Distribution Panel" .
 
 
 ###  http://www.toronto.ca/TWONTO#electrostatic_percipitator
@@ -1807,10 +1840,10 @@ Note: An end truck is usually constructed as a frame that houses wheels, bearing
                  rdfs:subClassOf :discrete_asset .
 
 
-###  http://www.toronto.ca/TWONTO#facility_location_assets
-:facility_location_assets rdf:type owl:Class ;
-                          rdfs:subClassOf :defined_collection_of_assets ;
-                          rdfs:isDefinedBy "A collection of assets located within a facility." .
+###  http://www.toronto.ca/TWONTO#facility_assets
+:facility_assets rdf:type owl:Class ;
+                 rdfs:subClassOf :defined_collection_of_assets ;
+                 rdfs:isDefinedBy "A collection of assets located within a facility." .
 
 
 ###  http://www.toronto.ca/TWONTO#facility_role
@@ -1919,6 +1952,13 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
                  rdfs:subClassOf :discrete_asset ;
                  :dev-ontology_note "also a biofilter?" ;
                  <http://www.w3.org/2004/02/skos/core#altLabel> "filter tank" .
+
+
+###  http://www.toronto.ca/TWONTO#fire_equipment
+:fire_equipment rdf:type owl:Class ;
+                rdfs:subClassOf :asset ;
+                :is_equivalent_to_Avantis_class "Fire Equipment" ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#fire_rated_door
@@ -2071,6 +2111,13 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                rdfs:isDefinedBy "CSA B139: a device used to convert fuel into energy. Note: This term includes all components, controls, wiring, and piping required as part of the device by the applicable standard" .
 
 
+###  http://www.toronto.ca/TWONTO#gas_collector
+:gas_collector rdf:type owl:Class ;
+               rdfs:subClassOf :asset ;
+               :is_equivalent_to_Avantis_class "Gas Collection" ;
+               owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://www.toronto.ca/TWONTO#gas_diffuser
 :gas_diffuser rdf:type owl:Class ;
               rdfs:subClassOf :discrete_asset .
@@ -2147,6 +2194,10 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 :ground_and_test_device rdf:type owl:Class ;
                         rdfs:subClassOf :discrete_asset ;
                         <http://www.w3.org/2004/02/skos/core#altLabel> "swichgear grounding device" .
+
+
+###  http://www.toronto.ca/TWONTO#grounds
+:grounds rdf:type owl:Class .
 
 
 ###  http://www.toronto.ca/TWONTO#guideline
@@ -2243,6 +2294,12 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                 rdfs:subClassOf :localized_function_system .
 
 
+###  http://www.toronto.ca/TWONTO#hydraulic_system
+:hydraulic_system rdf:type owl:Class ;
+                  rdfs:subClassOf :system_of_integrated_discrete_assets ;
+                  :is_equivalent_to_Avantis_class "Hydraulic System" .
+
+
 ###  http://www.toronto.ca/TWONTO#incinerator
 :incinerator rdf:type owl:Class ;
              rdfs:subClassOf :discrete_asset .
@@ -2284,6 +2341,12 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                  rdfs:subClassOf :discrete_asset .
 
 
+###  http://www.toronto.ca/TWONTO#instrumentation_switch
+:instrumentation_switch rdf:type owl:Class ;
+                        rdfs:subClassOf :instrumentation ;
+                        owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://www.toronto.ca/TWONTO#interceptor_segment
 :interceptor_segment rdf:type owl:Class ;
                      rdfs:subClassOf :sewer_segment .
@@ -2310,9 +2373,9 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
          rdfs:subClassOf :large_stationary_tool .
 
 
-###  http://www.toronto.ca/TWONTO#junction_structure
-:junction_structure rdf:type owl:Class ;
-                    rdfs:subClassOf :linear_function_structure .
+###  http://www.toronto.ca/TWONTO#junction
+:junction rdf:type owl:Class ;
+          rdfs:subClassOf :linear_function_structure .
 
 
 ###  http://www.toronto.ca/TWONTO#junction_structure_role
@@ -2382,6 +2445,13 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
            rdfs:subClassOf :personal_floatation_device .
 
 
+###  http://www.toronto.ca/TWONTO#lifting_device
+:lifting_device rdf:type owl:Class ;
+                rdfs:subClassOf :asset ;
+                :is_equivalent_to_Avantis_class "Lifting Device" ;
+                owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://www.toronto.ca/TWONTO#lifting_equipment_hoist
 :lifting_equipment_hoist rdf:type owl:Class ;
                          rdfs:subClassOf :discrete_asset ;
@@ -2394,10 +2464,10 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                rdfs:subClassOf :discrete_asset .
 
 
-###  http://www.toronto.ca/TWONTO#line_structure
-:line_structure rdf:type owl:Class ;
-                rdfs:subClassOf :linear_function_structure ;
-                rdfs:isDefinedBy "A asset that contains at least one piece of line segment asset carries a stream of material substance, energy, or information from one point to another." .
+###  http://www.toronto.ca/TWONTO#line
+:line rdf:type owl:Class ;
+      rdfs:subClassOf :linear_function_structure ;
+      rdfs:isDefinedBy "A asset that contains at least one piece of line segment asset carries a stream of material substance, energy, or information from one point to another." .
 
 
 ###  http://www.toronto.ca/TWONTO#line_structure_role
@@ -2434,7 +2504,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#load_break_disconnect_switch
 :load_break_disconnect_switch rdf:type owl:Class ;
-                              rdfs:subClassOf :disconnect_switch .
+                              rdfs:subClassOf :disconnect_switch ;
+                              <http://www.w3.org/2004/02/skos/core#altLabel> "LBS" .
 
 
 ###  http://www.toronto.ca/TWONTO#localized_function_system
@@ -2819,6 +2890,19 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                 rdfs:subClassOf :discrete_asset .
 
 
+###  http://www.toronto.ca/TWONTO#plumbing
+:plumbing rdf:type owl:Class ;
+          rdfs:subClassOf :asset ;
+          :is_equivalent_to_Avantis_class "Plumbing" ;
+          owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://www.toronto.ca/TWONTO#pneumatic_control_system
+:pneumatic_control_system rdf:type owl:Class ;
+                          rdfs:subClassOf :distributed_function_system ;
+                          :is_equivalent_to_Avantis_class "" .
+
+
 ###  http://www.toronto.ca/TWONTO#polymer_preparation_system
 :polymer_preparation_system rdf:type owl:Class ;
                             rdfs:subClassOf :localized_function_system .
@@ -2962,7 +3046,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#primary_path_line
 :primary_path_line rdf:type owl:Class ;
-                   rdfs:subClassOf :line_structure ;
+                   rdfs:subClassOf :line ;
                    rdfs:isDefinedBy "A line that has one or more junction along its length, linking it to minor branches, but only has one main path that carries a bulk flow from one point to another." .
 
 
@@ -3047,6 +3131,12 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 ###  http://www.toronto.ca/TWONTO#pump_set_-_with_drive
 :pump_set_-_with_drive rdf:type owl:Class ;
                        rdfs:subClassOf :discrete_asset .
+
+
+###  http://www.toronto.ca/TWONTO#pumping_station_assets
+:pumping_station_assets rdf:type owl:Class ;
+                        rdfs:subClassOf :facility_assets ;
+                        :is_equivalent_to_Avantis_class "Pump Station" .
 
 
 ###  http://www.toronto.ca/TWONTO#pumping_surge_suppression_tank
@@ -3185,6 +3275,13 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
               rdfs:subClassOf :pressure_relief_device .
 
 
+###  http://www.toronto.ca/TWONTO#safety_equipment
+:safety_equipment rdf:type owl:Class ;
+                  rdfs:subClassOf :asset ;
+                  :is_equivalent_to_Avantis_class "Safety Equipment" ;
+                  owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://www.toronto.ca/TWONTO#safety_relief_valve
 :safety_relief_valve rdf:type owl:Class ;
                      rdfs:subClassOf :pressure_relief_valve ;
@@ -3252,6 +3349,12 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
                         rdfs:subClassOf :discrete_asset .
 
 
+###  http://www.toronto.ca/TWONTO#security_system
+:security_system rdf:type owl:Class ;
+                 rdfs:subClassOf :distributed_function_system ;
+                 :is_equivalent_to_Avantis_class "Security System" .
+
+
 ###  http://www.toronto.ca/TWONTO#sedimentation_tank
 :sedimentation_tank rdf:type owl:Class ;
                     rdfs:subClassOf :discrete_asset .
@@ -3309,7 +3412,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 
 ###  http://www.toronto.ca/TWONTO#simple_line
 :simple_line rdf:type owl:Class ;
-             rdfs:subClassOf :line_structure ;
+             rdfs:subClassOf :line ;
              rdfs:isDefinedBy "An line that has no junction across its span." .
 
 
@@ -3413,12 +3516,18 @@ A 2-dimensional or a depthless 3-dimensional surface space that coincides with a
                  rdfs:subClassOf :structural_part .
 
 
+###  http://www.toronto.ca/TWONTO#substation
+:substation rdf:type owl:Class ;
+            rdfs:subClassOf :localized_function_system ;
+            :is_equivalent_to_Avantis_class "Substation" .
+
+
 ###  http://www.toronto.ca/TWONTO#subsystem_of_a_discrete_asset
 :subsystem_of_a_discrete_asset rdf:type owl:Class ;
                                rdfs:subClassOf :system ;
                                :exclude_from_asset_class_list "true"^^xsd:boolean ;
                                rdfs:comment "Example: the power train system or the exhaust system of a car" ;
-                               rdfs:isDefinedBy "A subsystem of a discrete asset, which may or may not be a discrete asset." .
+                               rdfs:isDefinedBy "A subsystem of a discrete asset, which may or may not be a discrete asset or a localized function system." .
 
 
 ###  http://www.toronto.ca/TWONTO#sulphonation_system
@@ -3455,7 +3564,8 @@ Examples of system include
 
 ###  http://www.toronto.ca/TWONTO#system_block
 :system_block rdf:type owl:Class ;
-              rdfs:subClassOf :system ;
+              rdfs:subClassOf :localized_function_system ,
+                              :system ;
               rdfs:isDefinedBy "A system part of a bigger localized function system that completely subsumes a certain function of the bigger system - i.e all assets playing the equivalent role are completely subsumed within a system block." .
 
 
@@ -3476,12 +3586,15 @@ Examples of system include
 
 ###  http://www.toronto.ca/TWONTO#system_on_a_skid
 :system_on_a_skid rdf:type owl:Class ;
-                  rdfs:subClassOf :discrete_asset ,
-                                  :system_of_integrated_discrete_assets ;
-                  rdfs:comment "Mar25,24: It is important to define the concept of a integrated standalone because they may extend across lines and trains and represent a special case in the asset hierarchy specification. Also, unlike other discrete assets, we need to fully catalog their parts, because they are easily replaceable. Finally, many common equipment, such as pump and motor sets, are IUSAs equipment." ,
-                               "equipment skid" ;
-                  rdfs:isDefinedBy "A system made up of discrete asset parts, assembled on a movable skid with sufficient structural integrity to qualify as a discrete asset." ;
-                  <http://www.w3.org/2004/02/skos/core#altLabel> "skid mounted system" .
+                  rdfs:comment "DEPRECATED Mar25,24: It is important to define the concept of a integrated standalone because they may extend across lines and trains and represent a special case in the asset hierarchy specification. Also, unlike other discrete assets, we need to fully catalog their parts, because they are easily replaceable. Finally, many common equipment, such as pump and motor sets, are IUSAs equipment." ,
+                               "DEPRECATED equipment skid" .
+
+
+###  http://www.toronto.ca/TWONTO#system_process_control
+:system_process_control rdf:type owl:Class ;
+                        rdfs:subClassOf :asset ;
+                        :is_equivalent_to_Avantis_class "System Process Control" ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#system_train
@@ -3537,6 +3650,13 @@ is capable of realizing a unit of the system primary functions.""" ;
                          rdfs:subClassOf :instrumentation .
 
 
+###  http://www.toronto.ca/TWONTO#test_equipment
+:test_equipment rdf:type owl:Class ;
+                rdfs:subClassOf :asset ;
+                :is_equivalent_to_Avantis_class "Test Equipment" ;
+                owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://www.toronto.ca/TWONTO#the_max_allowable_working_pressure
 :the_max_allowable_working_pressure rdf:type owl:Class ;
                                     rdfs:subClassOf :a_pressure_desc ;
@@ -3586,6 +3706,13 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#thermostat_or_zone_controller_unit
 :thermostat_or_zone_controller_unit rdf:type owl:Class ;
                                     rdfs:subClassOf :discrete_asset .
+
+
+###  http://www.toronto.ca/TWONTO#tool
+:tool rdf:type owl:Class ;
+      rdfs:subClassOf :asset ;
+      :is_equivalent_to_Avantis_class "Tool" ;
+      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#torque_wrench
@@ -4155,6 +4282,10 @@ The following are considered to be subclasses of valves
 
 
 :NEMA_HAZ rdfs:label "HAZ" .
+
+
+:grounds rdfs:label "grounds"@en ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
 :steam rdfs:label "steam" .
