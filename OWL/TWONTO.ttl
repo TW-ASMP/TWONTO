@@ -663,6 +663,14 @@ I created this property to point to a piece of text describing the intent of the
 #    Classes
 #################################################################
 
+###  http://www.toronto.ca/TWONTO#AC_condenser_unit
+:AC_condenser_unit rdf:type owl:Class ;
+                   rdfs:subClassOf :discrete_asset ;
+                   :is_equivalent_to_Avantis_class "Condensing Unit" ;
+                   :is_equivalent_to_tag_code "CU" ;
+                   <http://www.w3.org/2004/02/skos/core#altLabel> "AC outdoor unit" .
+
+
 ###  http://www.toronto.ca/TWONTO#AC_evaporator_unit
 :AC_evaporator_unit rdf:type owl:Class ;
                     rdfs:subClassOf :discrete_asset ;
@@ -685,6 +693,24 @@ I created this property to point to a piece of text describing the intent of the
                                :notion_mapping_id "c9c243803090466e87183f25bbcf7ff4" .
 
 
+###  http://www.toronto.ca/TWONTO#LV_electrical_panel
+:LV_electrical_panel rdf:type owl:Class ;
+                     rdfs:subClassOf :electrical_panel_or_cabinet ;
+                     :defined_class "true"^^xsd:boolean ;
+                     :is_equivalent_to_Avantis_category "Control Panel,Lighting" ;
+                     :is_equivalent_to_tag_code "LP" ;
+                     <http://www.w3.org/2004/02/skos/core#altLabel> "120/208V electrical panel" ,
+                                                                    "120V electrical panel" ,
+                                                                    "600V electrical panel" ,
+                                                                    "electrical panel" ,
+                                                                    "lighting panel" .
+
+
+###  http://www.toronto.ca/TWONTO#MV_electrical_cabinet
+:MV_electrical_cabinet rdf:type owl:Class ;
+                       rdfs:subClassOf :electrical_panel_or_cabinet .
+
+
 ###  http://www.toronto.ca/TWONTO#NEMA_EXPL
 :NEMA_EXPL rdf:type owl:Class ;
            rdfs:subClassOf :NEMA_enclosure_type .
@@ -698,6 +724,12 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#NEMA_enclosure_type
 :NEMA_enclosure_type rdf:type owl:Class ;
                      rdfs:subClassOf :quality .
+
+
+###  http://www.toronto.ca/TWONTO#ORP_analyzer
+:ORP_analyzer rdf:type owl:Class ;
+              rdfs:subClassOf :instrumentation ;
+              :is_equivalent_to_Avantis_category "Analyzer,ORP" .
 
 
 ###  http://www.toronto.ca/TWONTO#Ontario_regulation
@@ -739,24 +771,21 @@ Controller,VFD""" ;
      :is_superclass_of_Avantis_category "PPE" .
 
 
-###  http://www.toronto.ca/TWONTO#RTU
-:RTU rdf:type owl:Class ;
-     rdfs:subClassOf :controller ;
-     :is_equivalent_to_Avantis_category "RPU" ;
-     :is_equivalent_to_Avantis_class """Remote Transmission Unit
+###  http://www.toronto.ca/TWONTO#RPU_panel
+:RPU_panel rdf:type owl:Class ;
+           rdfs:subClassOf :discrete_asset .
+
+
+###  http://www.toronto.ca/TWONTO#RTU_panel
+:RTU_panel rdf:type owl:Class ;
+           rdfs:subClassOf :discrete_asset ;
+           :is_equivalent_to_Avantis_category "RPU" ;
+           :is_equivalent_to_Avantis_class """Remote Transmission Unit
 Remote Processor Unit""" ;
-     :is_equivalent_to_tag_code """RPU
+           :is_equivalent_to_tag_code """RPU
 RTU""" ;
-     rdfs:isDefinedBy "A device that collects data from sensors and equipment in remote locations and transmits it to a central control system, typically in industrial automation or SCADA applications. RTUs process local data and facilitate communication using various interfaces, enabling effective monitoring and control." ;
-     <http://www.w3.org/2004/02/skos/core#altLabel> "remote terminal unit" .
-
-
-###  http://www.toronto.ca/TWONTO#SCADA_computer_terminal
-:SCADA_computer_terminal rdf:type owl:Class ;
-                         rdfs:subClassOf :computer ;
-                         :is_equivalent_to_Avantis_category "SCADA" ;
-                         :is_equivalent_to_Avantis_class "Operator Interface Terminal" ;
-                         :is_equivalent_to_tag_code "OIT" .
+           rdfs:isDefinedBy "A device that collects data from sensors and equipment in remote locations and transmits it to a central control system, typically in industrial automation or SCADA applications. RTUs process local data and facilitate communication using various interfaces, enabling effective monitoring and control." ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "remote terminal unit" .
 
 
 ###  http://www.toronto.ca/TWONTO#UPS
@@ -837,11 +866,6 @@ Drive,Variable Speed Mechanical""" ;
                             rdfs:subClassOf :asset_description .
 
 
-###  http://www.toronto.ca/TWONTO#above_5kV_electrical_cabinet
-:above_5kV_electrical_cabinet rdf:type owl:Class ;
-                              rdfs:subClassOf :electrical_panel_or_cabinet .
-
-
 ###  http://www.toronto.ca/TWONTO#aboveground_fuel_oil_tank_temp
 :aboveground_fuel_oil_tank_temp rdf:type owl:Class ;
                                 owl:equivalentClass [ owl:intersectionOf ( :fuel_oil_tank
@@ -868,14 +892,6 @@ Drive,Variable Speed Mechanical""" ;
                                                 ] ;
                             :exclude_from_asset_class_list "true"^^xsd:boolean ;
                             :notion_mapping_id "f6a5a26efef34b9d967e390024b800c4" .
-
-
-###  http://www.toronto.ca/TWONTO#ac_condenser_unit
-:ac_condenser_unit rdf:type owl:Class ;
-                   rdfs:subClassOf :discrete_asset ;
-                   :is_equivalent_to_Avantis_class "Condensing Unit" ;
-                   :is_equivalent_to_tag_code "CU" ;
-                   <http://www.w3.org/2004/02/skos/core#altLabel> "AC outdoor unit" .
 
 
 ###  http://www.toronto.ca/TWONTO#actuator
@@ -956,6 +972,11 @@ Vent""" ;
                    :is_equivalent_to_Avantis_class "Air Exchanger Unit" ;
                    <http://www.w3.org/2004/02/skos/core#altLabel> "fresh air unit" ,
                                                                   "ventilator" .
+
+
+###  http://www.toronto.ca/TWONTO#air_filtration_unit
+:air_filtration_unit rdf:type owl:Class ;
+                     rdfs:subClassOf :discrete_asset .
 
 
 ###  http://www.toronto.ca/TWONTO#air_handler_unit
@@ -1365,7 +1386,7 @@ Valve,Sluice Gate,Act.""" ;
 
 ###  http://www.toronto.ca/TWONTO#chemical_or_concentration_sensor_element
 :chemical_or_concentration_sensor_element rdf:type owl:Class ;
-                                          rdfs:subClassOf :instrument_element ;
+                                          rdfs:subClassOf :instrument_sensor_element ;
                                           :is_superclass_of_Avantis_category "Sensor,Gas" .
 
 
@@ -1914,6 +1935,11 @@ The asset that consists of a television and its remote control is an example of 
                                   :piece_of_content .
 
 
+###  http://www.toronto.ca/TWONTO#door
+:door rdf:type owl:Class ;
+      rdfs:subClassOf :discrete_asset .
+
+
 ###  http://www.toronto.ca/TWONTO#dosing_pump
 :dosing_pump rdf:type owl:Class ;
              rdfs:subClassOf :pump_set_-_with_drive .
@@ -2235,7 +2261,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 
 ###  http://www.toronto.ca/TWONTO#fire_rated_door
 :fire_rated_door rdf:type owl:Class ;
-                 rdfs:subClassOf :discrete_asset ;
+                 rdfs:subClassOf :door ;
                  :is_equivalent_to_Avantis_category "Fire Prevention,Door" ;
                  :is_equivalent_to_tag_code "DR" .
 
@@ -2312,13 +2338,13 @@ Flocculator,Walking Beam""" .
 
 ###  http://www.toronto.ca/TWONTO#flow_element
 :flow_element rdf:type owl:Class ;
-              rdfs:subClassOf :instrument_element ;
+              rdfs:subClassOf :instrument_sensor_element ;
               :is_equivalent_to_tag_code "FE" .
 
 
 ###  http://www.toronto.ca/TWONTO#flow_sensor_element
 :flow_sensor_element rdf:type owl:Class ;
-                     rdfs:subClassOf :instrument_element ;
+                     rdfs:subClassOf :instrument_sensor_element ;
                      :is_equivalent_to_Avantis_category "Sensor,Flow" .
 
 
@@ -2518,7 +2544,7 @@ Generator,Electricity,Stationary""" ;
 
 ###  http://www.toronto.ca/TWONTO#golf_cart
 :golf_cart rdf:type owl:Class ;
-           rdfs:subClassOf :discrete_asset .
+           rdfs:subClassOf :vehicle .
 
 
 ###  http://www.toronto.ca/TWONTO#government_regulation
@@ -2560,6 +2586,11 @@ Grinder,Dual Shaft counterrotating""" .
 ###  http://www.toronto.ca/TWONTO#guideline
 :guideline rdf:type owl:Class ;
            rdfs:subClassOf :information_content_entity .
+
+
+###  http://www.toronto.ca/TWONTO#hand-held_gas_meter
+:hand-held_gas_meter rdf:type owl:Class ;
+                     rdfs:subClassOf :discrete_asset .
 
 
 ###  http://www.toronto.ca/TWONTO#having_a_part
@@ -2648,12 +2679,6 @@ Heater,Process""" .
                   rdfs:subClassOf :discrete_asset .
 
 
-###  http://www.toronto.ca/TWONTO#hot_water_tank
-:hot_water_tank rdf:type owl:Class ;
-                rdfs:subClassOf :hot_water_heater ;
-                :is_equivalent_to_Avantis_category "Domestic Hot Water" .
-
-
 ###  http://www.toronto.ca/TWONTO#hot_work_equipment
 :hot_work_equipment rdf:type owl:Class ;
                     rdfs:subClassOf :discrete_asset ;
@@ -2738,15 +2763,6 @@ Power Pack,Hydraulic""" ;
                                            :is_equivalent_to_Avantis_class "Air Instrument" .
 
 
-###  http://www.toronto.ca/TWONTO#instrument_element
-:instrument_element rdf:type owl:Class ;
-                    rdfs:subClassOf :instrumentation ;
-                    :is_equivalent_to_Avantis_category "Sensor" ;
-                    :is_equivalent_to_Avantis_class "Sensor" ;
-                    :is_equivalent_to_tag_code "AE" ,
-                                               "SEN" .
-
-
 ###  http://www.toronto.ca/TWONTO#instrument_gauge_or_display
 :instrument_gauge_or_display rdf:type owl:Class ;
                              rdfs:subClassOf :discrete_asset ;
@@ -2761,6 +2777,15 @@ LI
 PI
 SI
 TI""" .
+
+
+###  http://www.toronto.ca/TWONTO#instrument_sensor_element
+:instrument_sensor_element rdf:type owl:Class ;
+                           rdfs:subClassOf :instrumentation ;
+                           :is_equivalent_to_Avantis_category "Sensor" ;
+                           :is_equivalent_to_Avantis_class "Sensor" ;
+                           :is_equivalent_to_tag_code "AE" ,
+                                                      "SEN" .
 
 
 ###  http://www.toronto.ca/TWONTO#instrument_transmitter
@@ -2872,7 +2897,7 @@ SW""" .
 
 ###  http://www.toronto.ca/TWONTO#level_sensor_element
 :level_sensor_element rdf:type owl:Class ;
-                      rdfs:subClassOf :instrument_element ;
+                      rdfs:subClassOf :instrument_sensor_element ;
                       :is_equivalent_to_Avantis_category "Sensor,Level" ;
                       :is_equivalent_to_tag_code "LE" .
 
@@ -3212,7 +3237,7 @@ Mixer,Venturi""" .
 
 ###  http://www.toronto.ca/TWONTO#motion_sensor_element
 :motion_sensor_element rdf:type owl:Class ;
-                       rdfs:subClassOf :instrument_element ;
+                       rdfs:subClassOf :instrument_sensor_element ;
                        :is_equivalent_to_Avantis_category """Sensor,Motion
 Switch,Motion""" .
 
@@ -3307,14 +3332,16 @@ Starter""" ;
                        rdfs:isDefinedBy "The collection of all assets operated by a Toronto Water operation unit." .
 
 
+###  http://www.toronto.ca/TWONTO#operator_interface_terminal
+:operator_interface_terminal rdf:type owl:Class ;
+                             rdfs:subClassOf :computer ;
+                             :is_equivalent_to_Avantis_category "SCADA" ;
+                             :is_equivalent_to_Avantis_class "SCADA computer terminal" ;
+                             :is_equivalent_to_tag_code "OIT" .
+
+
 ###  http://www.toronto.ca/TWONTO#organization
 :organization rdf:type owl:Class .
-
-
-###  http://www.toronto.ca/TWONTO#orp_analyzer
-:orp_analyzer rdf:type owl:Class ;
-              rdfs:subClassOf :instrumentation ;
-              :is_equivalent_to_Avantis_category "Analyzer,ORP" .
 
 
 ###  http://www.toronto.ca/TWONTO#orthophosphate_analyzer
@@ -3361,12 +3388,12 @@ Starter""" ;
                    rdfs:label "paragraph content"@en .
 
 
-###  http://www.toronto.ca/TWONTO#passenger_vehicles
-:passenger_vehicles rdf:type owl:Class ;
-                    rdfs:subClassOf :discrete_asset ;
-                    :is_equivalent_to_Avantis_category "Vehicle" ;
-                    :is_equivalent_to_Avantis_class "Vehicle" ;
-                    :is_superclass_of_Avantis_category """Vehicle,Licensed
+###  http://www.toronto.ca/TWONTO#passenger_vehicle
+:passenger_vehicle rdf:type owl:Class ;
+                   rdfs:subClassOf :vehicle ;
+                   :is_equivalent_to_Avantis_category "Vehicle" ;
+                   :is_equivalent_to_Avantis_class "Vehicle" ;
+                   :is_superclass_of_Avantis_category """Vehicle,Licensed
 Vehicle,Unlicensed""" .
 
 
@@ -3390,7 +3417,7 @@ Vehicle,Unlicensed""" .
 
 ###  http://www.toronto.ca/TWONTO#pickup_truck
 :pickup_truck rdf:type owl:Class ;
-              rdfs:subClassOf :discrete_asset .
+              rdfs:subClassOf :vehicle .
 
 
 ###  http://www.toronto.ca/TWONTO#piece_of_air_filtration_equipment
@@ -3590,7 +3617,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#pressure_sensor_element
 :pressure_sensor_element rdf:type owl:Class ;
-                         rdfs:subClassOf :instrument_element ;
+                         rdfs:subClassOf :instrument_sensor_element ;
                          :is_equivalent_to_Avantis_category """Pressure Sensor
 Sensor,Pressure""" .
 
@@ -3882,7 +3909,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 
 ###  http://www.toronto.ca/TWONTO#roll_up_door
 :roll_up_door rdf:type owl:Class ;
-              rdfs:subClassOf :discrete_asset ;
+              rdfs:subClassOf :door ;
               :is_equivalent_to_Avantis_category "Door,Overhead" ;
               :is_equivalent_to_tag_code "DR" ;
               <http://www.w3.org/2004/02/skos/core#altLabel> "loading dock door" .
@@ -3953,12 +3980,18 @@ Valve,Safety,Act.""" ;
 
 ###  http://www.toronto.ca/TWONTO#sampling_point
 :sampling_point rdf:type owl:Class ;
-                rdfs:subClassOf :discrete_asset .
+                rdfs:subClassOf :localized_function_system ;
+                <http://www.w3.org/2004/02/skos/core#altLabel> "sampling sink" .
 
 
 ###  http://www.toronto.ca/TWONTO#sampling_pump
 :sampling_pump rdf:type owl:Class ;
                rdfs:subClassOf :pump_set_-_with_drive .
+
+
+###  http://www.toronto.ca/TWONTO#sampling_sink
+:sampling_sink rdf:type owl:Class ;
+               rdfs:subClassOf :sampling_point .
 
 
 ###  http://www.toronto.ca/TWONTO#scaffolding
@@ -4337,6 +4370,12 @@ is capable of realizing a unit of the system primary functions.""" ;
                               :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean .
 
 
+###  http://www.toronto.ca/TWONTO#tanked_hot_water_heater
+:tanked_hot_water_heater rdf:type owl:Class ;
+                         rdfs:subClassOf :hot_water_heater ;
+                         :is_equivalent_to_Avantis_category "Domestic Hot Water" .
+
+
 ###  http://www.toronto.ca/TWONTO#tankless_water_heater
 :tankless_water_heater rdf:type owl:Class ;
                        rdfs:subClassOf :hot_water_heater .
@@ -4350,7 +4389,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 
 ###  http://www.toronto.ca/TWONTO#temperature_sensor_element
 :temperature_sensor_element rdf:type owl:Class ;
-                            rdfs:subClassOf :instrument_element ;
+                            rdfs:subClassOf :instrument_sensor_element ;
                             :is_equivalent_to_Avantis_category "Sensor,Temperature" ;
                             :is_equivalent_to_tag_code "TE" .
 
@@ -4670,6 +4709,16 @@ The following are considered to be subclasses of valves
                           :is_equivalent_to_tag_code "VAV" .
 
 
+###  http://www.toronto.ca/TWONTO#vehicle
+:vehicle rdf:type owl:Class ;
+         rdfs:subClassOf :discrete_asset .
+
+
+###  http://www.toronto.ca/TWONTO#vent
+:vent rdf:type owl:Class ;
+      rdfs:subClassOf :discrete_asset .
+
+
 ###  http://www.toronto.ca/TWONTO#ventilation_system
 :ventilation_system rdf:type owl:Class ;
                     rdfs:subClassOf :localized_function_system ;
@@ -4706,7 +4755,7 @@ The following are considered to be subclasses of valves
 
 ###  http://www.toronto.ca/TWONTO#vibration_sensor_element
 :vibration_sensor_element rdf:type owl:Class ;
-                          rdfs:subClassOf :instrument_element ;
+                          rdfs:subClassOf :instrument_sensor_element ;
                           :is_superclass_of_Avantis_category """Switch,Vibration-High
 Switch,Vibration-Low""" ;
                           :is_superclass_of_tag_code """VSH
@@ -4840,55 +4889,6 @@ WSL""" .
 :wrench rdf:type owl:Class ;
         rdfs:subClassOf :discrete_asset ;
         :exclude_from_asset_class_list "true"^^xsd:boolean .
-
-
-###  http://www.toronto.ca/TWONTO#120V-208V_electrical_panel
-<http://www.toronto.ca/TWONTO#120V-208V_electrical_panel> rdf:type owl:Class ;
-                                                          rdfs:subClassOf :electrical_panel_or_cabinet ;
-                                                          :defined_class "true"^^xsd:boolean ;
-                                                          :is_equivalent_to_Avantis_category "Control Panel,Lighting" ;
-                                                          :is_equivalent_to_tag_code "LP" ;
-                                                          <http://www.w3.org/2004/02/skos/core#altLabel> "electrical panel" ,
-                                                                                                         "lighting panel" .
-
-
-###  http://www.toronto.ca/TWONTO#5kV_electrical_cabinet
-<http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> rdf:type owl:Class ;
-                                                      rdfs:subClassOf :electrical_panel_or_cabinet ;
-                                                      :TW_misnomer "switchgear" ;
-                                                      :defined_class "true"^^xsd:boolean ;
-                                                      :is_equivalent_to_Avantis_category "Switchgear" ;
-                                                      :is_equivalent_to_Avantis_class "Switchgear" ;
-                                                      :is_equivalent_to_tag_code """BUS
-SWG""" ;
-                                                      :is_superclass_of_Avantis_category """Switchgear,Indoor
-Switchgear,Outdoor""" ;
-                                                      <http://www.w3.org/2004/02/skos/core#altLabel> "medium voltage electrical panel" .
-
-
-###  http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet
-<http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet> rdf:type owl:Class ;
-                                                                      rdfs:subClassOf :electrical_panel_or_cabinet ;
-                                                                      :defined_class "true"^^xsd:boolean ;
-                                                                      :is_equivalent_to_Avantis_category "Control Panel,Power Distribution Panel" ;
-                                                                      :is_equivalent_to_Avantis_class """Motor Control Center
-Motor Control Centre
-Power Distribution Panel
-Control Panel,MCC""" ;
-                                                                      :is_equivalent_to_tag_code "PDP" ;
-                                                                      <http://www.w3.org/2004/02/skos/core#altLabel> "MCC" ,
-                                                                                                                     "PDP" ,
-                                                                                                                     """motor control centre
-motor control center""" .
-
-
-###  http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet
-<http://www.toronto.ca/TWONTO#600V_molded_case_electrical_cabinet> rdf:type owl:Class ;
-                                                                   rdfs:subClassOf :electrical_panel_or_cabinet ;
-                                                                   :TW_misnomer "bus bar" ;
-                                                                   :defined_class "true"^^xsd:boolean ;
-                                                                   <http://www.w3.org/2004/02/skos/core#altLabel> "MCC" ,
-                                                                                                                  "motor control centre" .
 
 
 ###  http://www.toronto.ca/TWONTO#term:_multi-parameter_sensing_instrument
