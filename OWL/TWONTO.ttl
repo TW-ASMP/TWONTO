@@ -4,7 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.toronto.ca/TWONTO> .
+@base <http://www.toronto.ca/TWONTO#> .
 
 <http://www.toronto.ca/TWONTO> rdf:type owl:Ontology ;
                                 owl:versionIRI <http://www.toronto.ca/TWONTO/0.1> ;
@@ -779,9 +779,9 @@ I created this property to point to a piece of text describing the intent of the
 :RTU_panel rdf:type owl:Class ;
            rdfs:subClassOf :discrete_asset ;
            :is_equivalent_to_Avantis_category "RPU" ;
-          :is_equivalent_to_Avantis_class "Remote Processor Unit" ,
-                                          "Remote Transmission Unit" ;
-          :is_equivalent_to_tag_code "RPU" ,
+           :is_equivalent_to_Avantis_class "Remote Processor Unit" ,
+                                           "Remote Transmission Unit" ;
+           :is_equivalent_to_tag_code "RPU" ,
                                       "RTU" ;
            rdfs:isDefinedBy "A device that collects data from sensors and equipment in remote locations and transmits it to a central control system, typically in industrial automation or SCADA applications. RTUs process local data and facilitate communication using various interfaces, enabling effective monitoring and control." ;
            <http://www.w3.org/2004/02/skos/core#altLabel> "remote terminal unit" .
@@ -1190,18 +1190,6 @@ An asset is not always associated with a market value – some assets’ market 
                                            "Fan,Centrifugal" ;
         <http://www.w3.org/2004/02/skos/core#altLabel> "AC outdoor unit" ,
                                                        "air condition condenser" .
-
-
-###  http://www.toronto.ca/TWONTO#blower_-_without_drive
-:blower_-_without_drive rdf:type owl:Class ;
-                        rdfs:subClassOf :blower ;
-                        :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean .
-
-
-###  http://www.toronto.ca/TWONTO#blower_or_fan_with_drive
-:blower_or_fan_with_drive rdf:type owl:Class ;
-                          rdfs:subClassOf :blower ;
-                          :dev-ontology_note "from P&ID symbol: axial, centrifugal" .
 
 
 ###  http://www.toronto.ca/TWONTO#boat
@@ -1966,7 +1954,7 @@ The asset that consists of a television and its remote control is an example of 
 
 ###  http://www.toronto.ca/TWONTO#dosing_pump
 :dosing_pump rdf:type owl:Class ;
-             rdfs:subClassOf :pump_set_-_with_drive .
+             rdfs:subClassOf :pump .
 
 
 ###  http://www.toronto.ca/TWONTO#drain
@@ -2577,12 +2565,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                <http://www.w3.org/2004/02/skos/core#altLabel> "genset" .
 
 
-###  http://www.toronto.ca/TWONTO#generator_-_without_drive
-:generator_-_without_drive rdf:type owl:Class ;
-                           rdfs:subClassOf :discrete_asset ;
-                           :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean .
-
-
 ###  http://www.toronto.ca/TWONTO#golf_cart
 :golf_cart rdf:type owl:Class ;
            rdfs:subClassOf :vehicle .
@@ -2806,6 +2788,10 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 :instrument_air_or_pneumatic_control_panel rdf:type owl:Class ;
                                            rdfs:subClassOf :process_control_panel ;
                                            :is_equivalent_to_Avantis_class "Air Instrument" .
+
+
+###  http://www.toronto.ca/TWONTO#instrument_element
+:instrument_element rdf:type owl:Class .
 
 
 ###  http://www.toronto.ca/TWONTO#instrument_gauge_or_display
@@ -3060,9 +3046,9 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#load_break_disconnect_switch
 :load_break_disconnect_switch rdf:type owl:Class ;
                               rdfs:subClassOf :disconnect_switch ;
-                              <http://www.w3.org/2004/02/skos/core#altLabel> "LBS" ;
                               :is_equivalent_to_Avantis_class "Load Break Switch" ;
-                              :is_superclass_of_Avantis_category "fvyuLoad Break Switch" .
+                              :is_superclass_of_Avantis_category "fvyuLoad Break Switch" ;
+                              <http://www.w3.org/2004/02/skos/core#altLabel> "LBS" .
 
 
 ###  http://www.toronto.ca/TWONTO#localized_function_system
@@ -3445,8 +3431,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                    rdfs:subClassOf :vehicle ;
                    :is_equivalent_to_Avantis_category "Vehicle" ;
                    :is_equivalent_to_Avantis_class "Vehicle" ;
-                    :is_superclass_of_Avantis_category "Vehicle,Licensed" ,
-                                                       "Vehicle,Unlicensed" .
+                   :is_superclass_of_Avantis_category "Vehicle,Licensed" ,
+                                                      "Vehicle,Unlicensed" .
 
 
 ###  http://www.toronto.ca/TWONTO#pelletizer
@@ -3834,29 +3820,9 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                     :is_equivalent_to_tag_code "PDM" .
 
 
-###  http://www.toronto.ca/TWONTO#pump_-_without_drive
-:pump_-_without_drive rdf:type owl:Class ;
-                      rdfs:subClassOf :discrete_asset ;
-                      :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
-                      :is_equivalent_to_Avantis_category "Pump" ;
-                      :is_equivalent_to_Avantis_class "Pump" ;
-                      :is_equivalent_to_tag_code "P" ;
-                      :is_superclass_of_Avantis_category "Pump,Centrifugal" ,
-                                                         "Pump,Centrifugal,Multi-Stage" ,
-                                                         "Pump,Centrifugal,Vacuum" ,
-                                                         "Pump,Centrifugal,single-Stage" ,
-                                                         "Pump,Disc Type" ,
-                                                         "Pump,Gear" ,
-                                                         "Pump,Lobe" ,
-                                                         "Pump,Piston" ,
-                                                         "Pump,Progressive Cavity" ,
-                                                         "Pump,Rotary Vane" ,
-                                                         "Pump,Screw" .
-
-
-###  http://www.toronto.ca/TWONTO#pump_set_-_with_drive
-:pump_set_-_with_drive rdf:type owl:Class ;
-                       rdfs:subClassOf :discrete_asset .
+###  http://www.toronto.ca/TWONTO#pump
+:pump rdf:type owl:Class ;
+      rdfs:subClassOf :discrete_asset .
 
 
 ###  http://www.toronto.ca/TWONTO#pumping_station_assets
@@ -4055,7 +4021,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 
 ###  http://www.toronto.ca/TWONTO#sampling_pump
 :sampling_pump rdf:type owl:Class ;
-               rdfs:subClassOf :pump_set_-_with_drive .
+               rdfs:subClassOf :pump .
 
 
 ###  http://www.toronto.ca/TWONTO#sampling_sink
@@ -4545,18 +4511,18 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     rdfs:subClassOf :discrete_asset .
 
 
-###  http://www.toronto.ca/TWONTO#torque_switch
-:torque_switch rdf:type owl:Class ;
-               rdfs:subClassOf :instrumentation ;
-               :is_equivalent_to_Avantis_category "Switch,Torque" ;
-               :is_equivalent_to_tag_code "XSH" .
-
-
 ###  http://www.toronto.ca/TWONTO#tool
 :tool rdf:type owl:Class ;
       rdfs:subClassOf :asset ;
       :is_equivalent_to_Avantis_class "Tool" ;
       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://www.toronto.ca/TWONTO#torque_switch
+:torque_switch rdf:type owl:Class ;
+               rdfs:subClassOf :instrumentation ;
+               :is_equivalent_to_Avantis_category "Switch,Torque" ;
+               :is_equivalent_to_tag_code "XSH" .
 
 
 ###  http://www.toronto.ca/TWONTO#torque_wrench
@@ -5252,4 +5218,4 @@ The following are considered to be subclasses of valves
 ] .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
