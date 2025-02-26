@@ -1885,7 +1885,8 @@ e) has a integral connecting means.""" .
 :fall_arrest_system rdf:type owl:Class ;
                     rdfs:subClassOf :localized_function_system ;
                     :notion_mapping_id "d419b16212f340e797aa00e8ae3d50c8" ;
-                    rdfs:isDefinedBy """O.Reg 213/91: an assembly of components joined together so that when the assembly is connected to a fixed support, it is capable of arresting a worker’s fall.
+                    rdfs:isDefinedBy """O.Reg 213/91: an assembly of components joined together so that when the assembly is connected to a fixed support, it is capable of arresting a worker’s fall
+.
 26.6 (1) modified: A fall arrest system shall consist of a full body harness with adequate attachment points and a lanyard equipped with a shock absorber or similar device, unless the shock absorber if wearing one could cause a worker to hit the ground or an object or level below the work""" .
 
 
@@ -2012,7 +2013,44 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 
 ###  http://www.toronto.ca/TWONTO#flocculation_tank
 :flocculation_tank rdf:type owl:Class ;
-                   rdfs:subClassOf :chemical_reactor .
+                   rdfs:subClassOf :chemical_reactor ;
+                   :is_equivalent_to_Avantis_category "Flocculator" ;
+                   :is_superclass_of_Avantis_category "Flocculator,Paddle Wheel" ,
+                                                      "Flocculator,Turbine" ,
+                                                      "Flocculator,Walking Beam" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_element
+:flow_element rdf:type owl:Class ;
+              rdfs:subClassOf :instrument_sensor_element ;
+              :is_equivalent_to_tag_code "FE" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_sensor_element
+:flow_sensor_element rdf:type owl:Class ;
+                     rdfs:subClassOf :instrument_sensor_element ;
+                     :is_equivalent_to_Avantis_category "Sensor,Flow" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_switch
+:flow_switch rdf:type owl:Class ;
+             rdfs:subClassOf :instrumentation ;
+             :is_equivalent_to_Avantis_category "Switch,Flow" ;
+             :is_equivalent_to_tag_code "FS" ;
+             :is_superclass_of_Avantis_category "Switch,Flow-High" ,
+                                                "Switch,Flow-Low" ;
+             :is_superclass_of_tag_code "FSH" ,
+                                        "FSL" .
+
+
+###  http://www.toronto.ca/TWONTO#flowmeter
+:flowmeter rdf:type owl:Class ;
+           rdfs:subClassOf :instrumentation ;
+           :is_equivalent_to_Avantis_category "Meter,Flow" ;
+           :is_equivalent_to_tag_code "FIT" ,
+                                      "FT" ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "Flow Meter" ,
+                                                          "flow transmitter" .
 
 
 ###  http://www.toronto.ca/TWONTO#fluidized_bed_incinerator
@@ -2288,6 +2326,14 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                     rdfs:isDefinedBy "Modified from the description of hot work in Ontario Fire Code O.Reg 213/07: equipment involved in work that uses open flames or produce heat or sparks, including cutting, welding, soldering, brazing, grinding, adhesive bonding, thermal spraying and thawing pipes." .
 
 
+###  http://www.toronto.ca/TWONTO#humidifier
+:humidifier rdf:type owl:Class ;
+            rdfs:subClassOf :discrete_asset ;
+            :is_equivalent_to_Avantis_category "H.V.A.C.,Humidifier" ;
+            :is_equivalent_to_Avantis_class "Humidifier" ;
+            :is_equivalent_to_tag_code "HU" .
+
+
 ###  http://www.toronto.ca/TWONTO#hydrant
 :hydrant rdf:type owl:Class ;
          rdfs:subClassOf :discrete_asset ;
@@ -2437,7 +2483,17 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#level_transmitter
 :level_transmitter rdf:type owl:Class ;
-                   rdfs:subClassOf :instrumentation .
+                   rdfs:subClassOf :instrumentation ;
+                   :is_equivalent_to_Avantis_category "Meter,Level" ,
+                                                      "Transmitter,Level" ;
+                   :is_equivalent_to_tag_code "LIT" ,
+                                              "LRT" ,
+                                              "LT" ;
+                   :is_superclass_of_Avantis_category "Meter,Level,Bubbler" ,
+                                                      "Meter,Level,Capacitance" ,
+                                                      "Meter,Level,Infrared" ,
+                                                      "Meter,Level,Ultrasonic" ;
+                   :is_superclass_of_tag_code "LDIT" .
 
 
 ###  http://www.toronto.ca/TWONTO#life_jacket
@@ -2556,6 +2612,12 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 :manufactured_treatment_filter_device rdf:type owl:Class ;
                                       rdfs:subClassOf :manufactured_treatment_device ;
                                       :exclude_from_asset_class_list "true"^^xsd:boolean .
+
+
+###  http://www.toronto.ca/TWONTO#mass_flow_meter
+:mass_flow_meter rdf:type owl:Class ;
+                 rdfs:subClassOf :flowmeter ;
+                 :is_equivalent_to_Avantis_category "Meter,Flow,Mass" .
 
 
 ###  http://www.toronto.ca/TWONTO#mass_spectrometer
@@ -2953,7 +3015,12 @@ wetPond?""" .
 
 ###  http://www.toronto.ca/TWONTO#position_sensing_instrument
 :position_sensing_instrument rdf:type owl:Class ;
-                             rdfs:subClassOf :instrumentation .
+                             rdfs:subClassOf :instrumentation ;
+                             :is_equivalent_to_Avantis_category "Sensor,Position" ;
+                             :is_equivalent_to_tag_code "ZIT" ,
+                                                        "ZRT" ,
+                                                        "ZT" ;
+                             <http://www.w3.org/2004/02/skos/core#altLabel> "Position Transmitter" .
 
 
 ###  http://www.toronto.ca/TWONTO#position_switch
@@ -2963,7 +3030,14 @@ wetPond?""" .
 
 ###  http://www.toronto.ca/TWONTO#position_transmitter
 :position_transmitter rdf:type owl:Class ;
-                      rdfs:subClassOf :instrumentation .
+                      rdfs:subClassOf :instrumentation ;
+                      :is_equivalent_to_Avantis_category "Transmitter,Position" .
+
+
+###  http://www.toronto.ca/TWONTO#positive_displacement_flow_elements
+:positive_displacement_flow_elements rdf:type owl:Class ;
+                                     rdfs:subClassOf :flow_element ;
+                                     :is_equivalent_to_Avantis_category "Meter,Flow,Displacement" .
 
 
 ###  http://www.toronto.ca/TWONTO#power_boiler
@@ -3029,7 +3103,22 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#pressure_transmitter
 :pressure_transmitter rdf:type owl:Class ;
-                      rdfs:subClassOf :instrumentation .
+                      rdfs:subClassOf :instrumentation ;
+                      :is_equivalent_to_Avantis_category "Transmitter,Pressure" ;
+                      :is_equivalent_to_tag_code "PIT" ,
+                                                 "PT" ;
+                      :is_superclass_of_Avantis_category "Transmitter,Pressure,Differential" ;
+                      :is_superclass_of_tag_code "PDIT" ,
+                                                 "PDT" .
+
+
+###  http://www.toronto.ca/TWONTO#pressure_vessel
+:pressure_vessel rdf:type owl:Class ;
+                 rdfs:subClassOf :discrete_asset ;
+                 :is_equivalent_to_Avantis_category "Vessel" ,
+                                                    "Vessel,Pressure" ;
+                 :is_superclass_of_Avantis_category "Vessel,Pressure,Surge" ;
+                 rdfs:isDefinedBy "O. Reg. 220/01: “pressure vessel” means any enclosed unfired vessel that contains gas, vapour or liquid under pressure;" .
 
 
 ###  http://www.toronto.ca/TWONTO#pressurized_piping_system
@@ -3772,7 +3861,22 @@ is capable of realizing a unit of the system primary functions.""" ;
 
 ###  http://www.toronto.ca/TWONTO#turbidity_analyzer
 :turbidity_analyzer rdf:type owl:Class ;
-                    rdfs:subClassOf :chemical_or_concentration_analyzer .
+                    rdfs:subClassOf :chemical_or_concentration_analyzer ;
+                    :is_equivalent_to_Avantis_category "Analyzer,Turbidity" .
+
+
+###  http://www.toronto.ca/TWONTO#ultrasonic_flow_meter
+:ultrasonic_flow_meter rdf:type owl:Class ;
+                       rdfs:subClassOf :flowmeter ;
+                       :is_equivalent_to_Avantis_category "Meter,Flow,Doppler" ,
+                                                          "Meter,Flow,Ultrasonic" ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Doppler Meter" .
+
+
+###  http://www.toronto.ca/TWONTO#ultraviolet_analyzer
+:ultraviolet_analyzer rdf:type owl:Class ;
+                      rdfs:subClassOf :instrumentation ;
+                      :is_equivalent_to_Avantis_category "Analyzer,UV" .
 
 
 ###  http://www.toronto.ca/TWONTO#underground_fuel_oil_tank_temp
@@ -3899,7 +4003,10 @@ The following are considered to be subclasses of valves
 
 ###  http://www.toronto.ca/TWONTO#vibration_analyzer
 :vibration_analyzer rdf:type owl:Class ;
-                    rdfs:subClassOf :instrumentation .
+                    rdfs:subClassOf :instrumentation ;
+                    :is_equivalent_to_Avantis_category "Transmitter,Vibration" ;
+                    :is_equivalent_to_tag_code "VIT" ;
+                    <http://www.w3.org/2004/02/skos/core#altLabel> "Vibration Transmitter" .
 
 
 ###  http://www.toronto.ca/TWONTO#vibration_sensor_element
