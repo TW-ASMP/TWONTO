@@ -2353,7 +2353,44 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 
 ###  http://www.toronto.ca/TWONTO#flocculation_tank
 :flocculation_tank rdf:type owl:Class ;
-                   rdfs:subClassOf :chemical_reactor .
+                   rdfs:subClassOf :chemical_reactor ;
+                   :is_equivalent_to_Avantis_category "Flocculator" ;
+                   :is_superclass_of_Avantis_category "Flocculator,Paddle Wheel" ,
+                                                      "Flocculator,Turbine" ,
+                                                      "Flocculator,Walking Beam" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_element
+:flow_element rdf:type owl:Class ;
+              rdfs:subClassOf :instrument_sensor_element ;
+              :is_equivalent_to_tag_code "FE" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_sensor_element
+:flow_sensor_element rdf:type owl:Class ;
+                     rdfs:subClassOf :instrument_sensor_element ;
+                     :is_equivalent_to_Avantis_category "Sensor,Flow" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_switch
+:flow_switch rdf:type owl:Class ;
+             rdfs:subClassOf :instrumentation ;
+             :is_equivalent_to_Avantis_category "Switch,Flow" ;
+             :is_equivalent_to_tag_code "FS" ;
+             :is_superclass_of_Avantis_category "Switch,Flow-High" ,
+                                                "Switch,Flow-Low" ;
+             :is_superclass_of_tag_code "FSH" ,
+                                        "FSL" .
+
+
+###  http://www.toronto.ca/TWONTO#flowmeter
+:flowmeter rdf:type owl:Class ;
+           rdfs:subClassOf :instrumentation ;
+           :is_equivalent_to_Avantis_category "Meter,Flow" ;
+           :is_equivalent_to_tag_code "FIT" ,
+                                      "FT" ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "Flow Meter" ,
+                                                          "flow transmitter" .
 
 
 ###  http://www.toronto.ca/TWONTO#flow_element
@@ -2719,12 +2756,12 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                     rdfs:isDefinedBy "Modified from the description of hot work in Ontario Fire Code O.Reg 213/07: equipment involved in work that uses open flames or produce heat or sparks, including cutting, welding, soldering, brazing, grinding, adhesive bonding, thermal spraying and thawing pipes." .
 
 
-###  http://www.toronto.ca/TWONTO#humidier
-:humidier rdf:type owl:Class ;
-          rdfs:subClassOf :discrete_asset ;
-          :is_equivalent_to_Avantis_category "H.V.A.C.,Humidifier" ;
-          :is_equivalent_to_Avantis_class "Humidifier" ;
-          :is_equivalent_to_tag_code "HU" .
+###  http://www.toronto.ca/TWONTO#humidifier
+:humidifier rdf:type owl:Class ;
+            rdfs:subClassOf :discrete_asset ;
+            :is_equivalent_to_Avantis_category "H.V.A.C.,Humidifier" ;
+            :is_equivalent_to_Avantis_class "Humidifier" ;
+            :is_equivalent_to_tag_code "HU" .
 
 
 ###  http://www.toronto.ca/TWONTO#hydrant
@@ -2949,7 +2986,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#level_transmitter
 :level_transmitter rdf:type owl:Class ;
-                   rdfs:subClassOf :instrument_transmitter ;
+                   rdfs:subClassOf :instrumentation ;
                    :is_equivalent_to_Avantis_category "Meter,Level" ,
                                                       "Transmitter,Level" ;
                    :is_equivalent_to_tag_code "LIT" ,
@@ -3110,7 +3147,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#mass_flow_meter
 :mass_flow_meter rdf:type owl:Class ;
-                 rdfs:subClassOf :flow_transmitter ;
+                 rdfs:subClassOf :flowmeter ;
                  :is_equivalent_to_Avantis_category "Meter,Flow,Mass" .
 
 
@@ -3587,7 +3624,7 @@ wetPond?""" ;
 
 ###  http://www.toronto.ca/TWONTO#position_sensing_instrument
 :position_sensing_instrument rdf:type owl:Class ;
-                             rdfs:subClassOf :instrument_transmitter ;
+                             rdfs:subClassOf :instrumentation ;
                              :is_equivalent_to_Avantis_category "Sensor,Position" ;
                              :is_equivalent_to_tag_code "ZIT" ,
                                                         "ZRT" ,
@@ -3609,7 +3646,7 @@ wetPond?""" ;
 
 ###  http://www.toronto.ca/TWONTO#position_transmitter
 :position_transmitter rdf:type owl:Class ;
-                      rdfs:subClassOf :instrument_transmitter ;
+                      rdfs:subClassOf :instrumentation ;
                       :is_equivalent_to_Avantis_category "Transmitter,Position" .
 
 
@@ -3696,7 +3733,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#pressure_transmitter
 :pressure_transmitter rdf:type owl:Class ;
-                      rdfs:subClassOf :instrument_transmitter ;
+                      rdfs:subClassOf :instrumentation ;
                       :is_equivalent_to_Avantis_category "Transmitter,Pressure" ;
                       :is_equivalent_to_tag_code "PIT" ,
                                                  "PT" ;
@@ -4606,7 +4643,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 
 ###  http://www.toronto.ca/TWONTO#ultrasonic_flow_meter
 :ultrasonic_flow_meter rdf:type owl:Class ;
-                       rdfs:subClassOf :flow_transmitter ;
+                       rdfs:subClassOf :flowmeter ;
                        :is_equivalent_to_Avantis_category "Meter,Flow,Doppler" ,
                                                           "Meter,Flow,Ultrasonic" ;
                        <http://www.w3.org/2004/02/skos/core#altLabel> "Doppler Meter" .
@@ -4808,7 +4845,7 @@ The following are considered to be subclasses of valves
 
 ###  http://www.toronto.ca/TWONTO#vibration_analyzer
 :vibration_analyzer rdf:type owl:Class ;
-                    rdfs:subClassOf :instrument_transmitter ;
+                    rdfs:subClassOf :instrumentation ;
                     :is_equivalent_to_Avantis_category "Transmitter,Vibration" ;
                     :is_equivalent_to_tag_code "VIT" ;
                     <http://www.w3.org/2004/02/skos/core#altLabel> "Vibration Transmitter" .
