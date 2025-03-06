@@ -667,6 +667,7 @@ I created this property to point to a piece of text describing the intent of the
                    rdfs:subClassOf :discrete_asset ;
                    :is_equivalent_to_Avantis_class "Condensing Unit" ;
                    :is_equivalent_to_tag_code "CU" ;
+                   rdfs:comment "Should this include condesor units for dehumidifiers? -ME" ;
                    <http://www.w3.org/2004/02/skos/core#altLabel> "AC outdoor unit" .
 
 
@@ -1439,7 +1440,8 @@ isThickeningCentrifuge""" ;
                     :dev-property_note "DiscreteModular? System?" ;
                     :is_equivalent_to_Avantis_category "Evaporator,Chlorine" ,
                                                        "Generator,Chlorine" ;
-                    :is_equivalent_to_tag_code "CHL" .
+                    :is_equivalent_to_tag_code "CHL" ;
+                    <http://www.w3.org/2004/02/skos/core#altLabel> "Chlorinator" .
 
 
 ###  http://www.toronto.ca/TWONTO#chlorine_analyzer
@@ -2351,11 +2353,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 
 ###  http://www.toronto.ca/TWONTO#flocculation_tank
 :flocculation_tank rdf:type owl:Class ;
-                   rdfs:subClassOf :chemical_reactor ;
-                   :is_equivalent_to_Avantis_category "Flocculator" ;
-                   :is_superclass_of_Avantis_category "Flocculator,Paddle Wheel" ,
-                                                      "Flocculator,Turbine" ,
-                                                      "Flocculator,Walking Beam" .
+                   rdfs:subClassOf :chemical_reactor .
 
 
 ###  http://www.toronto.ca/TWONTO#flow_element
@@ -2567,7 +2565,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#golf_cart
 :golf_cart rdf:type owl:Class ;
-           rdfs:subClassOf :vehicle .
+           rdfs:subClassOf :vehicle ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "utility_task_vehicle" .
 
 
 ###  http://www.toronto.ca/TWONTO#government_regulation
@@ -2987,7 +2986,10 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                          :is_superclass_of_Avantis_category "Lifting Device,Hoist,Electrical" ,
                                                             "Lifting Device,Hoist,Manual" ;
                          :notion_mapping_id "704b49f311e4431a8f4cf701e42fe024" ;
-                         rdfs:isDefinedBy "CSA B167-16(R2021): a machinery unit that is used for vertical lifting or lowering a freely suspended (unguided) load." .
+                         rdfs:isDefinedBy "CSA B167-16(R2021): a machinery unit that is used for vertical lifting or lowering a freely suspended (unguided) load." ;
+                         <http://www.w3.org/2004/02/skos/core#altLabel> "chain block" ,
+                                                                        "chain fall" ,
+                                                                        "chain hoist" .
 
 
 ###  http://www.toronto.ca/TWONTO#lighting_unit
@@ -3251,11 +3253,15 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 :mixer_or_agitator rdf:type owl:Class ;
                    rdfs:subClassOf :discrete_asset ;
                    :is_equivalent_to_Avantis_category "Agitator" ,
+                                                      "Flocculator" ,
                                                       "Mixer" ;
                    :is_equivalent_to_Avantis_class "Agitator" ,
                                                    "Mixer" ;
                    :is_equivalent_to_tag_code "MX" ;
                    :is_superclass_of_Avantis_category "Agitator,Air" ,
+                                                      "Flocculator,Paddle Wheel" ,
+                                                      "Flocculator,Turbine" ,
+                                                      "Flocculator,Walking Beam" ,
                                                       "Mixer,Propeller" ,
                                                       "Mixer,Submersible" ,
                                                       "Mixer,Venturi" .
@@ -3597,7 +3603,8 @@ wetPond?""" ;
                                                     "Switch,Position-Low" ;
                  :is_superclass_of_tag_code "ZSH" ,
                                             "ZSL" ,
-                                            "ZSLH" .
+                                            "ZSLH" ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "door contact" .
 
 
 ###  http://www.toronto.ca/TWONTO#position_transmitter

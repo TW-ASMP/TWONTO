@@ -1,1 +1,0 @@
-{"Collections":[{"sheetName":"Sheet1","startColumn":"B","endColumn":"C","startRow":"2","endRow":"+","comment":"","rule":"Class: @B*\nAnnotations: is_equivalent_to_Avantis_class @C*(xsd:string)","active":true}]}
