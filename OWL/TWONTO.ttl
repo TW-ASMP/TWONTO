@@ -3297,7 +3297,9 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 :motion_sensor_element rdf:type owl:Class ;
                        rdfs:subClassOf :instrument_element ;
                        :is_equivalent_to_Avantis_category "Sensor,Motion" ,
-                                                          "Switch,Motion" .
+                                                          "Switch,Motion" ;
+                       :is_equivalent_to_tag_code "MS" ;
+                       :is_superclass_of_tag_code "MSL" .
 
 
 ###  http://www.toronto.ca/TWONTO#motor
