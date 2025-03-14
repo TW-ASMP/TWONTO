@@ -2383,15 +2383,6 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
                                         "FSL" .
 
 
-###  http://www.toronto.ca/TWONTO#flow_transmitter
-:flow_transmitter rdf:type owl:Class ;
-                  rdfs:subClassOf :instrument_transmitter ;
-                  :is_equivalent_to_Avantis_category "Meter,Flow" ;
-                  :is_equivalent_to_tag_code "FIT" ,
-                                             "FT" ;
-                  <http://www.w3.org/2004/02/skos/core#altLabel> "Flow Meter" .
-
-
 ###  http://www.toronto.ca/TWONTO#flowmeter
 :flowmeter rdf:type owl:Class ;
            rdfs:subClassOf :instrumentation ;
@@ -2400,6 +2391,38 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
                                       "FT" ;
            <http://www.w3.org/2004/02/skos/core#altLabel> "Flow Meter" ,
                                                           "flow transmitter" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_element
+:flow_element rdf:type owl:Class ;
+              rdfs:subClassOf :instrument_sensor_element ;
+              :is_equivalent_to_tag_code "FE" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_sensor_element
+:flow_sensor_element rdf:type owl:Class ;
+                     rdfs:subClassOf :instrument_sensor_element ;
+                     :is_equivalent_to_Avantis_category "Sensor,Flow" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_switch
+:flow_switch rdf:type owl:Class ;
+             rdfs:subClassOf :instrumentation ;
+             :is_equivalent_to_Avantis_category "Switch,Flow" ;
+             :is_equivalent_to_tag_code "FS" ;
+             :is_superclass_of_Avantis_category "Switch,Flow-High" ,
+                                                "Switch,Flow-Low" ;
+             :is_superclass_of_tag_code "FSH" ,
+                                        "FSL" .
+
+
+###  http://www.toronto.ca/TWONTO#flow_transmitter
+:flow_transmitter rdf:type owl:Class ;
+                  rdfs:subClassOf :instrument_transmitter ;
+                  :is_equivalent_to_Avantis_category "Meter,Flow" ;
+                  :is_equivalent_to_tag_code "FIT" ,
+                                             "FT" ;
+                  <http://www.w3.org/2004/02/skos/core#altLabel> "Flow Meter" .
 
 
 ###  http://www.toronto.ca/TWONTO#fluidized_bed_incinerator
@@ -3297,9 +3320,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 :motion_sensor_element rdf:type owl:Class ;
                        rdfs:subClassOf :instrument_element ;
                        :is_equivalent_to_Avantis_category "Sensor,Motion" ,
-                                                          "Switch,Motion" ;
-                       :is_equivalent_to_tag_code "MS" ;
-                       :is_superclass_of_tag_code "MSL" .
+                                                          "Switch,Motion" .
 
 
 ###  http://www.toronto.ca/TWONTO#motor
