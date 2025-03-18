@@ -2049,11 +2049,6 @@ The asset that consists of a television and its remote control is an example of 
                                                                     "manual handling device" .
 
 
-###  http://www.toronto.ca/TWONTO#door
-:door rdf:type owl:Class ;
-      rdfs:subClassOf :discrete_asset .
-
-
 ###  http://www.toronto.ca/TWONTO#dosing_pump
 :dosing_pump rdf:type owl:Class ;
              rdfs:subClassOf :pump .
@@ -3102,8 +3097,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#instrument_sensor_element
 :instrument_sensor_element rdf:type owl:Class ;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                            rdfs:subClassOf :discrete_asset ;
                            :is_equivalent_to_Avantis_category "Sensor" ;
                            :is_equivalent_to_Avantis_class "Sensor" ;
@@ -3119,8 +3112,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#instrument_transmitter
 :instrument_transmitter rdf:type owl:Class ;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                         rdfs:subClassOf :process_instrumentation ;
                         :is_equivalent_to_Avantis_category "Transmitter" ;
                         :is_equivalent_to_Avantis_class "Transmitter" ;
@@ -3133,19 +3124,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                            "Transmitter,Weight Indicating" ;
                         :is_superclass_of_tag_code "SIT" .
 
-=======
-=======
->>>>>>> Stashed changes
-                        rdfs:subClassOf :instrumentation .
-
-
-###  http://www.toronto.ca/TWONTO#instrumentation
-:instrumentation rdf:type owl:Class ;
-                 rdfs:subClassOf :discrete_asset .
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 
 ###  http://www.toronto.ca/TWONTO#instrumentation_switch
@@ -3234,12 +3212,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 :lathe rdf:type owl:Class ;
        rdfs:subClassOf :large_stationary_tool ;
        :is_equivalent_to_Avantis_category "Machine Tool,Lathe" .
-=======
-                       rdfs:subClassOf :discrete_asset .
->>>>>>> Stashed changes
-=======
-                       rdfs:subClassOf :discrete_asset .
->>>>>>> Stashed changes
 
 
 ###  http://www.toronto.ca/TWONTO#lawn_mower
