@@ -3078,6 +3078,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 :instrument_gauge_or_display rdf:type owl:Class ;
                              rdfs:subClassOf :discrete_asset ;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                              :is_equivalent_to_Avantis_class "Indicator" ;
                              :is_equivalent_to_tag_code "GA" ;
                              :is_superclass_of_Avantis_category "Meter,Flow,Rotometer" ,
@@ -3092,11 +3093,16 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                              :is_equivalent_to_tag_code "LI" ,
                                                         "PI" ,
 >>>>>>> Stashed changes
+=======
+                             :is_equivalent_to_tag_code "LI" ,
+                                                        "PI" ,
+>>>>>>> Stashed changes
                                                         "TI" .
 
 
 ###  http://www.toronto.ca/TWONTO#instrument_sensor_element
 :instrument_sensor_element rdf:type owl:Class ;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                            rdfs:subClassOf :discrete_asset ;
                            :is_equivalent_to_Avantis_category "Sensor" ;
@@ -3106,10 +3112,14 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 =======
                            rdfs:subClassOf :instrumentation .
 >>>>>>> Stashed changes
+=======
+                           rdfs:subClassOf :instrumentation .
+>>>>>>> Stashed changes
 
 
 ###  http://www.toronto.ca/TWONTO#instrument_transmitter
 :instrument_transmitter rdf:type owl:Class ;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                         rdfs:subClassOf :process_instrumentation ;
                         :is_equivalent_to_Avantis_category "Transmitter" ;
@@ -3124,12 +3134,17 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                         :is_superclass_of_tag_code "SIT" .
 
 =======
+=======
+>>>>>>> Stashed changes
                         rdfs:subClassOf :instrumentation .
 
 
 ###  http://www.toronto.ca/TWONTO#instrumentation
 :instrumentation rdf:type owl:Class ;
                  rdfs:subClassOf :discrete_asset .
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
@@ -3205,6 +3220,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#large_stationary_tool
 :large_stationary_tool rdf:type owl:Class ;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                        rdfs:subClassOf :discrete_asset ;
                        :exclude_from_asset_class_list "true"^^xsd:boolean ;
                        :is_equivalent_to_Avantis_category "Machine Tool" ;
@@ -3218,6 +3234,9 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 :lathe rdf:type owl:Class ;
        rdfs:subClassOf :large_stationary_tool ;
        :is_equivalent_to_Avantis_category "Machine Tool,Lathe" .
+=======
+                       rdfs:subClassOf :discrete_asset .
+>>>>>>> Stashed changes
 =======
                        rdfs:subClassOf :discrete_asset .
 >>>>>>> Stashed changes
