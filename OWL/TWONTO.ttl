@@ -2973,6 +2973,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#instrument_gauge_or_display
 :instrument_gauge_or_display rdf:type owl:Class ;
 <<<<<<< HEAD
+<<<<<<< HEAD
                              rdfs:subClassOf :discrete_asset ;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -3026,6 +3027,13 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                            "Transmitter,Weight Indicating" ;
                         :is_superclass_of_tag_code "SIT" .
 
+=======
+                             rdfs:subClassOf :discrete_asset .
+
+
+###  http://www.toronto.ca/TWONTO#instrument_sensor_element
+:instrument_sensor_element rdf:type owl:Class .
+>>>>>>> parent of e649a37 (Updated to personal files)
 =======
                              rdfs:subClassOf :discrete_asset .
 
@@ -3099,6 +3107,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ###  http://www.toronto.ca/TWONTO#large_stationary_tool
 :large_stationary_tool rdf:type owl:Class ;
 <<<<<<< Updated upstream
@@ -3118,6 +3127,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
        :is_equivalent_to_Avantis_category "Machine Tool,Lathe" .
 
 
+=======
+>>>>>>> parent of e649a37 (Updated to personal files)
 =======
 >>>>>>> parent of e649a37 (Updated to personal files)
 ###  http://www.toronto.ca/TWONTO#lawn_mower
