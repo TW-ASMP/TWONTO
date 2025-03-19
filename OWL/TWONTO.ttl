@@ -54,6 +54,10 @@ For the reasons above, examples of things that should be represented by a text v
 :dev-property_note rdf:type owl:AnnotationProperty .
 
 
+###  http://www.toronto.ca/TWONTO#discrete_asset
+:discrete_asset rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.toronto.ca/TWONTO#exclude_from_asset_class_list
 :exclude_from_asset_class_list rdf:type owl:AnnotationProperty ;
                                rdfs:range xsd:boolean .
@@ -1239,7 +1243,8 @@ An asset is not always associated with a market value – some assets’ market 
 ###  http://www.toronto.ca/TWONTO#blower_or_fan_with_drive
 :blower_or_fan_with_drive rdf:type owl:Class ;
                           rdfs:subClassOf :discrete_asset ;
-                          :dev-ontology_note "from P&ID symbol: axial, centrifugal" .
+                          :dev-ontology_note "from P&ID symbol: axial, centrifugal" ;
+                          :is_equivalent_to_tag_code "FN" .
 
 
 ###  http://www.toronto.ca/TWONTO#blower_without_drive
@@ -1899,16 +1904,7 @@ DECISION:
 
 ###  http://www.toronto.ca/TWONTO#discrete_asset
 :discrete_asset rdf:type owl:Class ;
-                rdfs:subClassOf :asset ;
-                :dev-ontology_note """Old Definition:
-
-An asset whose parts are 
-* unified, through physical integration, into a single object, or
-* unified under their common membership in a collection of objects that constitutes a manufactured product""" ;
-                rdfs:comment """An asset may have smaller discrete assets in its set of parts.
-A manufactured asset product is a set of assets made under the same specification, which is usually related to a certain product-line identification (i.e. manufacturer, model, catalogue number, etc.)
-The asset that consists of a television and its remote control is an example of a discrete asset that is unified by a manufactured asset product, though it does not exist as a single physical unit.""" ;
-                rdfs:isDefinedBy "An asset whose parts are unified, through physical integration, into a single object." .
+                rdfs:subClassOf :asset .
 
 
 ###  http://www.toronto.ca/TWONTO#discrete_asset_role
@@ -1992,6 +1988,10 @@ The asset that consists of a television and its remote control is an example of 
                      rdfs:subClassOf :discrete_asset ;
                      <http://www.w3.org/2004/02/skos/core#altLabel> "dolly" ,
                                                                     "manual handling device" .
+
+
+###  http://www.toronto.ca/TWONTO#door
+:door rdf:type owl:Class .
 
 
 ###  http://www.toronto.ca/TWONTO#dosing_pump
@@ -2078,7 +2078,8 @@ The asset that consists of a television and its remote control is an example of 
 
 ###  http://www.toronto.ca/TWONTO#electrical_usage_meter
 :electrical_usage_meter rdf:type owl:Class ;
-                        rdfs:subClassOf :process_instrumentation .
+                        rdfs:subClassOf :process_instrumentation ;
+                        <http://www.w3.org/2004/02/skos/core#altLabel> "hydro meter" .
 
 
 ###  http://www.toronto.ca/TWONTO#electrostatic_percipitator
@@ -2501,6 +2502,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
            rdfs:subClassOf :process_instrumentation ;
            :is_equivalent_to_Avantis_category "Meter,Flow" ;
            :is_equivalent_to_tag_code "FIT" ,
+                                      "FQ" ,
                                       "FT" ;
            <http://www.w3.org/2004/02/skos/core#altLabel> "Flow Meter" ,
                                                           "flow transmitter" .
@@ -2972,13 +2974,12 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#instrument_gauge_or_display
 :instrument_gauge_or_display rdf:type owl:Class ;
-<<<<<<< HEAD
-<<<<<<< HEAD
                              rdfs:subClassOf :discrete_asset ;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                              :is_equivalent_to_Avantis_class "Indicator" ;
-                             :is_equivalent_to_tag_code "GA" ;
+                             :is_equivalent_to_tag_code "GA" ,
+                                                        "LI" ,
+                                                        "PI" ,
+                                                        "TI" ;
                              :is_superclass_of_Avantis_category "Meter,Flow,Rotometer" ,
                                                                 "Pressure Sensor,Gauge" ,
                                                                 "Pressure Sensor,Gauge,Pressure" ;
@@ -2986,16 +2987,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                              :is_superclass_of_tag_code "FI" ,
                                                         "LI" ,
                                                         "PI" ,
-                                                        "SI" ,
-=======
-                             :is_equivalent_to_tag_code "LI" ,
-                                                        "PI" ,
->>>>>>> Stashed changes
-=======
-                             :is_equivalent_to_tag_code "LI" ,
-                                                        "PI" ,
->>>>>>> Stashed changes
-                                                        "TI" .
+                                                        "SI" .
 
 
 ###  http://www.toronto.ca/TWONTO#instrument_sensor_element
@@ -3005,12 +2997,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                            :is_equivalent_to_Avantis_class "Sensor" ;
                            :is_equivalent_to_tag_code "AE" ,
                                                       "SEN" .
-=======
-                           rdfs:subClassOf :instrumentation .
->>>>>>> Stashed changes
-=======
-                           rdfs:subClassOf :instrumentation .
->>>>>>> Stashed changes
 
 
 ###  http://www.toronto.ca/TWONTO#instrument_transmitter
@@ -3027,20 +3013,9 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                            "Transmitter,Weight Indicating" ;
                         :is_superclass_of_tag_code "SIT" .
 
-=======
-                             rdfs:subClassOf :discrete_asset .
 
-
-###  http://www.toronto.ca/TWONTO#instrument_sensor_element
-:instrument_sensor_element rdf:type owl:Class .
->>>>>>> parent of e649a37 (Updated to personal files)
-=======
-                             rdfs:subClassOf :discrete_asset .
-
-
-###  http://www.toronto.ca/TWONTO#instrument_sensor_element
-:instrument_sensor_element rdf:type owl:Class .
->>>>>>> parent of e649a37 (Updated to personal files)
+###  http://www.toronto.ca/TWONTO#instrumentation
+:instrumentation rdf:type owl:Class .
 
 
 ###  http://www.toronto.ca/TWONTO#instrumentation_switch
@@ -3106,12 +3081,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
               rdfs:subClassOf :gaseous_material .
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ###  http://www.toronto.ca/TWONTO#large_stationary_tool
 :large_stationary_tool rdf:type owl:Class ;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                        rdfs:subClassOf :discrete_asset ;
                        :exclude_from_asset_class_list "true"^^xsd:boolean ;
                        :is_equivalent_to_Avantis_category "Machine Tool" ;
@@ -3127,10 +3098,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
        :is_equivalent_to_Avantis_category "Machine Tool,Lathe" .
 
 
-=======
->>>>>>> parent of e649a37 (Updated to personal files)
-=======
->>>>>>> parent of e649a37 (Updated to personal files)
 ###  http://www.toronto.ca/TWONTO#lawn_mower
 :lawn_mower rdf:type owl:Class ;
             rdfs:subClassOf :grounds_maintenance_equipment .
@@ -3154,7 +3121,12 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#level_switch
 :level_switch rdf:type owl:Class ;
-              rdfs:subClassOf :process_instrumentation .
+              rdfs:subClassOf :process_instrumentation ;
+              :is_equivalent_to_tag_code "LS" ,
+                                         "LSH" ,
+                                         "LSHH" ,
+                                         "LSL" ,
+                                         "LSLL" .
 
 
 ###  http://www.toronto.ca/TWONTO#level_transmitter
@@ -3965,7 +3937,11 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#pressure_switch
 :pressure_switch rdf:type owl:Class ;
-                 rdfs:subClassOf :process_instrumentation .
+                 rdfs:subClassOf :process_instrumentation ;
+                 :is_equivalent_to_tag_code "PSH" ,
+                                            "PSHH" ,
+                                            "PSL" ,
+                                            "PSLL" .
 
 
 ###  http://www.toronto.ca/TWONTO#pressure_transmitter
@@ -4115,7 +4091,8 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#pumping_wet_well
 :pumping_wet_well rdf:type owl:Class ;
-                  rdfs:subClassOf :discrete_asset .
+                  rdfs:subClassOf :discrete_asset ;
+                  <http://www.w3.org/2004/02/skos/core#altLabel> "wet well" .
 
 
 ###  http://www.toronto.ca/TWONTO#qualification
@@ -4767,12 +4744,16 @@ is capable of realizing a unit of the system primary functions.""" ;
 
 ###  http://www.toronto.ca/TWONTO#temperature_switch
 :temperature_switch rdf:type owl:Class ;
-                    rdfs:subClassOf :process_instrumentation .
+                    rdfs:subClassOf :process_instrumentation ;
+                    :is_equivalent_to_tag_code "TSH" ,
+                                               "TSL" .
 
 
 ###  http://www.toronto.ca/TWONTO#temperature_transmitter
 :temperature_transmitter rdf:type owl:Class ;
-                         rdfs:subClassOf :process_instrumentation .
+                         rdfs:subClassOf :process_instrumentation ;
+                         :is_equivalent_to_tag_code "TIT" ,
+                                                    "TT" .
 
 
 ###  http://www.toronto.ca/TWONTO#test_equipment
@@ -5256,7 +5237,8 @@ The following are considered to be subclasses of valves
 
 ###  http://www.toronto.ca/TWONTO#well
 :well rdf:type owl:Class ;
-      rdfs:subClassOf :discrete_asset .
+      rdfs:subClassOf :discrete_asset ;
+      <http://www.w3.org/2004/02/skos/core#altLabel> "dry well" .
 
 
 ###  http://www.toronto.ca/TWONTO#winch
@@ -5567,6 +5549,17 @@ The following are considered to be subclasses of valves
 :NEMA_HAZ rdfs:label "HAZ" .
 
 
+:discrete_asset :dev-ontology_note """Old Definition:
+
+An asset whose parts are 
+* unified, through physical integration, into a single object, or
+* unified under their common membership in a collection of objects that constitutes a manufactured product""" ;
+                rdfs:comment """An asset may have smaller discrete assets in its set of parts.
+A manufactured asset product is a set of assets made under the same specification, which is usually related to a certain product-line identification (i.e. manufacturer, model, catalogue number, etc.)
+The asset that consists of a television and its remote control is an example of a discrete asset that is unified by a manufactured asset product, though it does not exist as a single physical unit.""" ;
+                rdfs:isDefinedBy "An asset whose parts are unified, through physical integration, into a single object." .
+
+
 :grounds rdfs:label "grounds"@en ;
          owl:deprecated "true"^^xsd:boolean .
 
@@ -5581,6 +5574,9 @@ The following are considered to be subclasses of valves
 
 
 :water-glycol_mixture rdfs:label "water glycol mixture" .
+
+
+rdfs:subClassOf :discrete_asset  .
 
 
 #################################################################
