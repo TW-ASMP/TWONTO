@@ -754,6 +754,23 @@ I created this property to point to a piece of text describing the intent of the
                        :is_category_class "true"^^xsd:boolean .
 
 
+###  http://www.toronto.ca/TWONTO#LV_electrical_panel
+:LV_electrical_panel rdf:type owl:Class ;
+                     rdfs:subClassOf :electrical_panel_or_cabinet ;
+                     :is_defined_class "true"^^xsd:boolean ;
+                     <http://www.w3.org/2004/02/skos/core#altLabel> "electrical panel" ,
+                                                                    "lighting panel" .
+
+
+###  http://www.toronto.ca/TWONTO#MV_electrical_cabinet
+:MV_electrical_cabinet rdf:type owl:Class ;
+                       rdfs:subClassOf :electrical_panel_or_cabinet ;
+                       :TW_misnomer "switchgear" ;
+                       :is_defined_class "true"^^xsd:boolean ;
+                       :is_equivalent_to_tag_code "BUS" ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "medium voltage electrical panel" .
+
+
 ###  http://www.toronto.ca/TWONTO#NEMA_EXPL
 :NEMA_EXPL rdf:type owl:Class ;
            rdfs:subClassOf :NEMA_enclosure_type .
@@ -824,6 +841,9 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#RPU_panel
 :RPU_panel rdf:type owl:Class ;
            rdfs:subClassOf :discrete_asset ;
+           :is_equivalent_to_Avantis_category "RPU" ;
+           :is_equivalent_to_Avantis_class "Remote Processor Unit" ;
+           :is_equivalent_to_tag_code "RPU" ;
            rdfs:isDefinedBy "a process control panel that contains a PLC." ;
            <http://www.w3.org/2004/02/skos/core#altLabel> "remote processing unit panel" .
 
@@ -1244,6 +1264,8 @@ An asset is not always associated with a market value – some assets’ market 
 :blower_or_fan_with_drive rdf:type owl:Class ;
                           rdfs:subClassOf :discrete_asset ;
                           :dev-ontology_note "from P&ID symbol: axial, centrifugal" ;
+                          :is_equivalent_to_Avantis_class "Blower" ,
+                                                          "Fan" ;
                           :is_equivalent_to_tag_code "FN" .
 
 
@@ -1291,7 +1313,8 @@ An asset is not always associated with a market value – some assets’ market 
 :breaker rdf:type owl:Class ;
          rdfs:subClassOf :discrete_asset ;
          :is_equivalent_to_Avantis_category "Circuit Breaker" ;
-         :is_equivalent_to_Avantis_class "Circuit Breaker" ;
+         :is_equivalent_to_Avantis_class "Circuit Breaker" ,
+                                         "Switchgear" ;
          :is_superclass_of_tag_code "CB" ,
                                     "LB" ,
                                     "LVS" ,
@@ -1333,7 +1356,8 @@ An asset is not always associated with a market value – some assets’ market 
 
 ###  http://www.toronto.ca/TWONTO#cable_segment
 :cable_segment rdf:type owl:Class ;
-               rdfs:subClassOf :segment_of_linear_asset .
+               rdfs:subClassOf :segment_of_linear_asset ;
+               :is_equivalent_to_tag_code "CBL" .
 
 
 ###  http://www.toronto.ca/TWONTO#calibrator
@@ -1343,7 +1367,8 @@ An asset is not always associated with a market value – some assets’ market 
 
 ###  http://www.toronto.ca/TWONTO#capacitor
 :capacitor rdf:type owl:Class ;
-           rdfs:subClassOf :discrete_asset .
+           rdfs:subClassOf :discrete_asset ;
+           :is_equivalent_to_Avantis_class "Capacitor" .
 
 
 ###  http://www.toronto.ca/TWONTO#capital_project
@@ -1608,7 +1633,10 @@ isThickeningCentrifuge""" ;
 
 ###  http://www.toronto.ca/TWONTO#compactor
 :compactor rdf:type owl:Class ;
-           rdfs:subClassOf :discrete_asset .
+           rdfs:subClassOf :discrete_asset ;
+           :is_equivalent_to_Avantis_category "Compactor" ;
+           :is_equivalent_to_Avantis_class "Compactor" ;
+           :is_superclass_of_avantis_class "Transfer Compactor" .
 
 
 ###  http://www.toronto.ca/TWONTO#compressor
@@ -1746,6 +1774,7 @@ isThickeningCentrifuge""" ;
 :crane rdf:type owl:Class ;
        rdfs:subClassOf :discrete_asset ,
                        :lifting_equipment ;
+       :is_equivalent_to_Avantis_class "Crane" ;
        :notion_mapping_id "7215f0de0aaa42a7a9cb0d9b00e9a205" ;
        rdfs:isDefinedBy "CSA B167-16(R2021): a machine consisting of a brdge/girder, end trucks, and a hoisting mechanism for lifting a load vertically and moving it horizontally. where the hoisting mechanism is typically an integral part of the machine" .
 
@@ -2068,7 +2097,9 @@ DECISION:
 ###  http://www.toronto.ca/TWONTO#electrical_panel_or_cabinet
 :electrical_panel_or_cabinet rdf:type owl:Class ;
                              rdfs:subClassOf :discrete_asset ;
-                             :is_superclass_of_avantis_class "Power Distribution Panel" .
+                             :is_superclass_of_Avantis_category "Control Panel,MCC" ;
+                             :is_superclass_of_avantis_class "Motor Control Centre" ,
+                                                             "Power Distribution Panel" .
 
 
 ###  http://www.toronto.ca/TWONTO#electrical_power_sensing
@@ -2079,6 +2110,7 @@ DECISION:
 ###  http://www.toronto.ca/TWONTO#electrical_usage_meter
 :electrical_usage_meter rdf:type owl:Class ;
                         rdfs:subClassOf :process_instrumentation ;
+                        :is_equivalent_to_Avantis_category "Meter,Power Recording" ;
                         <http://www.w3.org/2004/02/skos/core#altLabel> "hydro meter" .
 
 
@@ -2260,7 +2292,8 @@ Note: An end truck is usually constructed as a frame that houses wheels, bearing
 
 ###  http://www.toronto.ca/TWONTO#fall_arrest_lanyard
 :fall_arrest_lanyard rdf:type owl:Class ;
-                     rdfs:subClassOf :fall_protection_equipment_accessory .
+                     rdfs:subClassOf :fall_protection_equipment_accessory ;
+                     :is_equivalent_to_Avantis_category "PPE,Lanyard" .
 
 
 ###  http://www.toronto.ca/TWONTO#fall_arrest_rope_grab
@@ -2678,6 +2711,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#generator
 :generator rdf:type owl:Class ;
            rdfs:subClassOf :discrete_asset ;
+           :is_equivalent_to_Avantis_class "Generator" ;
            <http://www.w3.org/2004/02/skos/core#altLabel> "genset" .
 
 
@@ -3116,12 +3150,14 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#level_sensor_element
 :level_sensor_element rdf:type owl:Class ;
-                      rdfs:subClassOf :process_instrumentation .
+                      rdfs:subClassOf :process_instrumentation ;
+                      :is_equivalent_to_Avantis_category "Sensor,Level" .
 
 
 ###  http://www.toronto.ca/TWONTO#level_switch
 :level_switch rdf:type owl:Class ;
               rdfs:subClassOf :process_instrumentation ;
+              :is_equivalent_to_Avantis_category "Switch,Level" ;
               :is_equivalent_to_tag_code "LS" ,
                                          "LSH" ,
                                          "LSHH" ,
@@ -3243,6 +3279,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#load_break_disconnect_switch
 :load_break_disconnect_switch rdf:type owl:Class ;
                               rdfs:subClassOf :power_disconnect_switch ;
+                              :is_equivalent_to_Avantis_class "Load Break Switch" ;
                               <http://www.w3.org/2004/02/skos/core#altLabel> "LBS" .
 
 
@@ -3270,12 +3307,16 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#man_lift
 :man_lift rdf:type owl:Class ;
-          rdfs:subClassOf :discrete_asset .
+          rdfs:subClassOf :discrete_asset ;
+          :is_equivalent_to_Avantis_class "Man Lift" ,
+                                          "Scissorlift" .
 
 
 ###  http://www.toronto.ca/TWONTO#manhole
 :manhole rdf:type owl:Class ;
-         rdfs:subClassOf :discrete_asset .
+         rdfs:subClassOf :discrete_asset ;
+         :is_equivalent_to_Avantis_category "Maintenance Hole" ;
+         :is_equivalent_to_Avantis_class "Maintenance Hole" .
 
 
 ###  http://www.toronto.ca/TWONTO#manual_lift
@@ -3488,7 +3529,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
        :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
        :is_equivalent_to_Avantis_category "Motor" ;
        :is_equivalent_to_Avantis_class "Motor" ;
-       :is_equivalent_to_tag_code "m" ;
+       :is_equivalent_to_tag_code "M" ,
+                                  "m" ;
        :is_superclass_of_Avantis_category "Motor,AC" ,
                                           "Motor,AC,Induction" ,
                                           "Motor,AC,Synchronous" ,
@@ -3501,7 +3543,9 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 
 ###  http://www.toronto.ca/TWONTO#motor_starter
 :motor_starter rdf:type owl:Class ;
-               rdfs:subClassOf :discrete_asset .
+               rdfs:subClassOf :discrete_asset ;
+               :is_equivalent_to_Avantis_category "Motor Starter" ;
+               :is_equivalent_to_Avantis_class "Starter" .
 
 
 ###  http://www.toronto.ca/TWONTO#multi-parameter_instrument
@@ -3550,7 +3594,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 
 ###  http://www.toronto.ca/TWONTO#network_switch
 :network_switch rdf:type owl:Class ;
-                rdfs:subClassOf :discrete_asset .
+                rdfs:subClassOf :discrete_asset ;
+                :is_equivalent_to_Avantis_category "Network,Switch" .
 
 
 ###  http://www.toronto.ca/TWONTO#network_termination_panel
@@ -3604,7 +3649,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 :operator_interface_terminal rdf:type owl:Class ;
                              rdfs:subClassOf :computer ;
                              :is_equivalent_to_Avantis_category "SCADA" ;
-                             :is_equivalent_to_Avantis_class "SCADA computer terminal" ;
+                             :is_equivalent_to_Avantis_class "Operator Interface Terminal" ,
+                                                             "SCADA computer terminal" ;
                              :is_equivalent_to_tag_code "OIT" .
 
 
@@ -3822,7 +3868,9 @@ wetPond?""" .
 
 ###  http://www.toronto.ca/TWONTO#position_switch
 :position_switch rdf:type owl:Class ;
-                 rdfs:subClassOf :process_instrumentation .
+                 rdfs:subClassOf :process_instrumentation ;
+                 :is_equivalent_to_tag_code "ZSH" ,
+                                            "ZSL" .
 
 
 ###  http://www.toronto.ca/TWONTO#position_transmitter
@@ -3863,6 +3911,7 @@ ii. hot water service operating pressure above 1100 kPa (160 psig) or above the 
                         rdfs:subClassOf :discrete_asset ;
                         :exclude_from_asset_class_list "true"^^xsd:boolean ;
                         :is_category_class "true"^^xsd:boolean ;
+                        :is_equivalent_to_Avantis_class "Earthmoving Equipment" ;
                         <http://www.w3.org/2004/02/skos/core#altLabel> "construction equipment" ,
                                                                        "heavy machinery" ,
                                                                        "skid steer" .
@@ -4000,7 +4049,9 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#process_control_panel
 :process_control_panel rdf:type owl:Class ;
-                       rdfs:subClassOf :discrete_asset .
+                       rdfs:subClassOf :discrete_asset ;
+                       :is_equivalent_to_Avantis_class "Control Panel" ;
+                       :is_equivalent_to_tag_code "CP" .
 
 
 ###  http://www.toronto.ca/TWONTO#process_heating_coil
@@ -4011,7 +4062,8 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#process_instrumentation
 :process_instrumentation rdf:type owl:Class ;
-                         rdfs:subClassOf :discrete_asset .
+                         rdfs:subClassOf :discrete_asset ;
+                         :is_superclass_of_avantis_class "Meter" .
 
 
 ###  http://www.toronto.ca/TWONTO#process_pipe_segment
@@ -4053,7 +4105,8 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#protection_relay
 :protection_relay rdf:type owl:Class ;
-                  rdfs:subClassOf :process_instrumentation .
+                  rdfs:subClassOf :process_instrumentation ;
+                  :is_equivalent_to_Avantis_class "Protective Relay" .
 
 
 ###  http://www.toronto.ca/TWONTO#publisher
@@ -4069,7 +4122,8 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#pump
 :pump rdf:type owl:Class ;
-      rdfs:subClassOf :discrete_asset .
+      rdfs:subClassOf :discrete_asset ;
+      :is_equivalent_to_Avantis_class "Pump" .
 
 
 ###  http://www.toronto.ca/TWONTO#pump_without_drive
@@ -4248,7 +4302,8 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 
 ###  http://www.toronto.ca/TWONTO#rupture_disc
 :rupture_disc rdf:type owl:Class ;
-              rdfs:subClassOf :pressure_relief_device .
+              rdfs:subClassOf :pressure_relief_device ;
+              :is_equivalent_to_Avantis_class "Rupture Disc" .
 
 
 ###  http://www.toronto.ca/TWONTO#safety_equipment
@@ -4745,6 +4800,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#temperature_switch
 :temperature_switch rdf:type owl:Class ;
                     rdfs:subClassOf :process_instrumentation ;
+                    :is_equivalent_to_Avantis_category "Switch,Temperature" ;
                     :is_equivalent_to_tag_code "TSH" ,
                                                "TSL" .
 
@@ -4826,7 +4882,8 @@ is capable of realizing a unit of the system primary functions.""" ;
 :tool rdf:type owl:Class ;
       rdfs:subClassOf :asset ;
       :is_category_class "true"^^xsd:boolean ;
-      :is_equivalent_to_Avantis_class "Tool" .
+      :is_equivalent_to_Avantis_class "Tool" ;
+      :is_superclass_of_Avantis_category "Machine Tool,Planer" .
 
 
 ###  http://www.toronto.ca/TWONTO#tool_kit
@@ -5194,7 +5251,8 @@ The following are considered to be subclasses of valves
 
 ###  http://www.toronto.ca/TWONTO#water_trailer
 :water_trailer rdf:type owl:Class ;
-               rdfs:subClassOf :trailer .
+               rdfs:subClassOf :trailer ;
+               :is_equivalent_to_Avantis_class "Water Trailer" .
 
 
 ###  http://www.toronto.ca/TWONTO#watermain
@@ -5209,7 +5267,9 @@ The following are considered to be subclasses of valves
 
 ###  http://www.toronto.ca/TWONTO#weight_scale
 :weight_scale rdf:type owl:Class ;
-              rdfs:subClassOf :process_instrumentation .
+              rdfs:subClassOf :process_instrumentation ;
+              :is_equivalent_to_tag_code "WIT" ,
+                                         "WSC" .
 
 
 ###  http://www.toronto.ca/TWONTO#weight_sensing
@@ -5238,6 +5298,7 @@ The following are considered to be subclasses of valves
 ###  http://www.toronto.ca/TWONTO#well
 :well rdf:type owl:Class ;
       rdfs:subClassOf :discrete_asset ;
+      :is_equivalent_to_Avantis_class "Well" ;
       <http://www.w3.org/2004/02/skos/core#altLabel> "dry well" .
 
 
@@ -5286,23 +5347,6 @@ The following are considered to be subclasses of valves
 :wrench rdf:type owl:Class ;
         rdfs:subClassOf :discrete_asset ;
         :exclude_from_asset_class_list "true"^^xsd:boolean .
-
-
-###  http://www.toronto.ca/TWONTO#120V-208V_electrical_panel
-<http://www.toronto.ca/TWONTO#120V-208V_electrical_panel> rdf:type owl:Class ;
-                                                          rdfs:subClassOf :electrical_panel_or_cabinet ;
-                                                          :is_defined_class "true"^^xsd:boolean ;
-                                                          <http://www.w3.org/2004/02/skos/core#altLabel> "electrical panel" ,
-                                                                                                         "lighting panel" .
-
-
-###  http://www.toronto.ca/TWONTO#5kV_electrical_cabinet
-<http://www.toronto.ca/TWONTO#5kV_electrical_cabinet> rdf:type owl:Class ;
-                                                      rdfs:subClassOf :electrical_panel_or_cabinet ;
-                                                      :TW_misnomer "switchgear" ;
-                                                      :is_defined_class "true"^^xsd:boolean ;
-                                                      :is_equivalent_to_tag_code "BUS" ;
-                                                      <http://www.w3.org/2004/02/skos/core#altLabel> "medium voltage electrical panel" .
 
 
 ###  http://www.toronto.ca/TWONTO#600V_insulated_case_electrical_cabinet
