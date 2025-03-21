@@ -28,6 +28,10 @@ For the reasons above, examples of things that should be represented by a text v
 #    Annotation properties
 #################################################################
 
+###  http://www.toronto.ca/TWONTO#DC_power_supply
+:DC_power_supply rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.toronto.ca/TWONTO#TW_PCS_code
 :TW_PCS_code rdf:type owl:AnnotationProperty .
 
@@ -44,6 +48,10 @@ For the reasons above, examples of things that should be represented by a text v
 :always_functions_as_part_of_discrete_asset rdf:type owl:AnnotationProperty ;
                                             rdfs:label "Always Functions as Part of a Discrete Asset" ;
                                             rdfs:range xsd:boolean .
+
+
+###  http://www.toronto.ca/TWONTO#defined_class
+:defined_class rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.toronto.ca/TWONTO#dev-ontology_note
@@ -733,6 +741,23 @@ I created this property to point to a piece of text describing the intent of the
                                :notion_mapping_id "c9c243803090466e87183f25bbcf7ff4" .
 
 
+###  http://www.toronto.ca/TWONTO#DC_power_supply
+:DC_power_supply rdf:type owl:Class ;
+                 rdfs:subClassOf :discrete_asset .
+
+
+###  http://www.toronto.ca/TWONTO#HVAC_heating_coil
+:HVAC_heating_coil rdf:type owl:Class ;
+                   rdfs:subClassOf :heating_coil ;
+                   :is_defined_class "true"^^xsd:boolean .
+
+
+###  http://www.toronto.ca/TWONTO#HVAC_system_component
+:HVAC_system_component rdf:type owl:Class ;
+                       rdfs:subClassOf :discrete_asset ;
+                       :is_category_class "true"^^xsd:boolean .
+
+
 ###  http://www.toronto.ca/TWONTO#LV_electrical_panel
 :LV_electrical_panel rdf:type owl:Class ;
                      rdfs:subClassOf :electrical_panel_or_cabinet ;
@@ -749,23 +774,6 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#MV_electrical_cabinet
 :MV_electrical_cabinet rdf:type owl:Class ;
                        rdfs:subClassOf :electrical_panel_or_cabinet .
-
-
-###  http://www.toronto.ca/TWONTO#DC_power_supply
-:DC_power_supply rdf:type owl:Class ;
-                 rdfs:subClassOf :discrete_asset .
-
-
-###  http://www.toronto.ca/TWONTO#HVAC_heating_coil
-:HVAC_heating_coil rdf:type owl:Class ;
-                   rdfs:subClassOf :heating_coil ;
-                   :is_defined_class "true"^^xsd:boolean .
-
-
-###  http://www.toronto.ca/TWONTO#HVAC_system_component
-:HVAC_system_component rdf:type owl:Class ;
-                       rdfs:subClassOf :discrete_asset ;
-                       :is_category_class "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#NEMA_EXPL
@@ -798,6 +806,10 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#PA_speaker
 :PA_speaker rdf:type owl:Class ;
             rdfs:subClassOf :discrete_asset ;
+            :is_equivalent_to_Avantis_category "Public Address System" ,
+                                               "public announcement speaker" ;
+            :is_equivalent_to_tag_code "AMP" ,
+                                       "PA" ;
             <http://www.w3.org/2004/02/skos/core#altLabel> "public announcement speaker" .
 
 
@@ -832,8 +844,8 @@ I created this property to point to a piece of text describing the intent of the
 :PPE rdf:type owl:Class ;
      rdfs:subClassOf :discrete_asset ;
      :exclude_from_asset_class_list "true"^^xsd:boolean ;
+     :is_category_class "true"^^xsd:boolean ;
      :is_superclass_of_Avantis_category "PPE" .
-     :is_category_class "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#RPU_panel
@@ -1210,9 +1222,9 @@ An asset is not always associated with a market value – some assets’ market 
 
 ###  http://www.toronto.ca/TWONTO#battery_charger
 :battery_charger rdf:type owl:Class ;
+                 rdfs:subClassOf :DC_power_supply ;
                  :is_equivalent_to_tag_code "BAT" ;
                  :is_superclass_of_Avantis_category "Charger,Battery" .
-                 rdfs:subClassOf :DC_power_supply .
 
 
 ###  http://www.toronto.ca/TWONTO#bearing
@@ -1282,7 +1294,6 @@ An asset is not always associated with a market value – some assets’ market 
                                            "Fan,Centrifugal" ;
         <http://www.w3.org/2004/02/skos/core#altLabel> "AC outdoor unit" ,
                                                        "air condition condenser" .
-
 
 
 ###  http://www.toronto.ca/TWONTO#blower_without_drive
@@ -2062,15 +2073,16 @@ The asset that consists of a television and its remote control is an example of 
                                   :piece_of_content .
 
 
-###  http://www.toronto.ca/TWONTO#door
-:door rdf:type owl:Class ;
-      rdfs:subClassOf :discrete_asset .
-
 ###  http://www.toronto.ca/TWONTO#dolly_or_hand_truck
 :dolly_or_hand_truck rdf:type owl:Class ;
                      rdfs:subClassOf :discrete_asset ;
                      <http://www.w3.org/2004/02/skos/core#altLabel> "dolly" ,
                                                                     "manual handling device" .
+
+
+###  http://www.toronto.ca/TWONTO#door
+:door rdf:type owl:Class ;
+      rdfs:subClassOf :discrete_asset .
 
 
 ###  http://www.toronto.ca/TWONTO#dosing_pump
@@ -2134,6 +2146,11 @@ The asset that consists of a television and its remote control is an example of 
                             rdfs:subClassOf :discrete_asset .
 
 
+###  http://www.toronto.ca/TWONTO#electrical_current_sensing
+:electrical_current_sensing rdf:type owl:Class ;
+                            rdfs:subClassOf :sensing .
+
+
 ###  http://www.toronto.ca/TWONTO#electrical_current_sensing_instrument
 :electrical_current_sensing_instrument rdf:type owl:Class ;
                                        rdfs:subClassOf :process_instrumentation ;
@@ -2144,9 +2161,6 @@ The asset that consists of a television and its remote control is an example of 
                                                                   "IRT" ,
                                                                   "JIT" ,
                                                                   "JRT" .
-###  http://www.toronto.ca/TWONTO#electrical_current_sensing
-:electrical_current_sensing rdf:type owl:Class ;
-                            rdfs:subClassOf :sensing .
 
 
 ###  http://www.toronto.ca/TWONTO#electrical_duct_bank_section
@@ -2353,7 +2367,7 @@ Note: An end truck is usually constructed as a frame that houses wheels, bearing
 
 ###  http://www.toronto.ca/TWONTO#fall_arrest_harness
 :fall_arrest_harness rdf:type owl:Class ;
-                     rdfs:subClassOf :PPE ;
+                     rdfs:subClassOf :PPE ,
                                      :fall_protection_equipment_accessory ;
                      :is_equivalent_to_Avantis_category "PPE,Harness" ;
                      :notion_mapping_id "e9ecea6e400843ba9e874bff9378b22f" .
@@ -2623,20 +2637,16 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
                    rdfs:subClassOf :chemical_or_concentration_analyzer ;
                    :is_equivalent_to_Avantis_category "Analyzer,Fluoride" .
 
-###  http://www.toronto.ca/TWONTO#forklift_or_lift_truck
-:forklift rdf:type owl:Class ;
-                        rdfs:subClassOf :lifting_equipment ;
-                        owl:disjointWith :manual_lift ;
-                        :is_equivalent_to_Avantis_category "Forklift" ;
-                        :is_superclass_of_Avantis_category "Forklift,Electric" ,
-                                                          "Forklift,Gas/Propane Dual Fuel" ,
-                                                          "Forklift,Propane" .
 
-###  http://www.toronto.ca/TWONTO#lift_truck_or_pallet_jack
-:lift_truck_or_pallet_jack rdf:type owl:Class 
-                            rdfs:subClassOf :lifting_equipment ;
-                            <http://www.w3.org/2004/02/skos/core#altLabel> "stacker",
-                                                                       "pallet jack" .
+###  http://www.toronto.ca/TWONTO#forklift
+:forklift rdf:type owl:Class ;
+          rdfs:subClassOf :lifting_equipment ;
+          owl:disjointWith :manual_lift ;
+          :is_equivalent_to_Avantis_category "Forklift" ;
+          :is_superclass_of_Avantis_category "Forklift,Electric" ,
+                                             "Forklift,Gas/Propane Dual Fuel" ,
+                                             "Forklift,Propane" .
+
 
 ###  http://www.toronto.ca/TWONTO#foundation_of_building_or_structure
 :foundation_of_building_or_structure rdf:type owl:Class ;
@@ -2788,12 +2798,12 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#generator
 :generator rdf:type owl:Class ;
            rdfs:subClassOf :discrete_asset ;
-          :is_equivalent_to_Avantis_category "Generator" ,
-                                            "Generator,Electricity" ;
-          :is_equivalent_to_Avantis_class "Generator" ;
-          :is_equivalent_to_tag_code "GEN" ;
-          :is_superclass_of_Avantis_category "Generator,Electricity,Portable" ,
-                                            "Generator,Electricity,Stationary" ;
+           :is_equivalent_to_Avantis_category "Generator" ,
+                                              "Generator,Electricity" ;
+           :is_equivalent_to_Avantis_class "Generator" ;
+           :is_equivalent_to_tag_code "GEN" ;
+           :is_superclass_of_Avantis_category "Generator,Electricity,Portable" ,
+                                              "Generator,Electricity,Stationary" ;
            <http://www.w3.org/2004/02/skos/core#altLabel> "genset" .
 
 
@@ -2964,6 +2974,19 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                       rdfs:subClassOf :chemical_or_concentration_analyzer .
 
 
+###  http://www.toronto.ca/TWONTO#hoist
+:hoist rdf:type owl:Class ;
+       rdfs:subClassOf :lifting_equipment_component ;
+       :is_equivalent_to_Avantis_category "Lifting Device,Hoist" ;
+       :is_superclass_of_Avantis_category "Lifting Device,Hoist,Electrical" ,
+                                          "Lifting Device,Hoist,Manual" ;
+       :notion_mapping_id "704b49f311e4431a8f4cf701e42fe024" ;
+       rdfs:isDefinedBy "CSA B167-16(R2021): a machinery unit that is used for vertical lifting or lowering a freely suspended (unguided) load." ;
+       <http://www.w3.org/2004/02/skos/core#altLabel> "chain block" ,
+                                                      "chain fall" ,
+                                                      "chain hoist" .
+
+
 ###  http://www.toronto.ca/TWONTO#hopper
 :hopper rdf:type owl:Class ;
         rdfs:subClassOf :discrete_asset ;
@@ -2997,12 +3020,12 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 :hot_work_equipment rdf:type owl:Class ;
                     rdfs:subClassOf :discrete_asset ;
                     :exclude_from_asset_class_list "true"^^xsd:boolean ;
+                    :is_defined_class "true"^^xsd:boolean ;
                     :is_superclass_of_Avantis_category "Welding Equipment" ,
                                                        "Welding Equipment,Oxy-Acetylene Cutting Apparatus" ,
                                                        "Welding Equipment,Plasma Cutting Machine" ,
                                                        "Welding Equipment,Welding Machine" ,
                                                        "Welding Equipment,Welding Tools" ;
-                    :is_defined_class "true"^^xsd:boolean ;
                     :notion_mapping_id "5f674b2aae0e4f43b19d6e669ce82610" ;
                     rdfs:isDefinedBy "Modified from the description of hot work in Ontario Fire Code O.Reg 213/07: equipment involved in work that uses open flames or produce heat or sparks, including cutting, welding, soldering, brazing, grinding, adhesive bonding, thermal spraying and thawing pipes." .
 
@@ -3129,7 +3152,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                            "Transmitter,Speed" ,
                                                            "Transmitter,Weight Indicating" ;
                         :is_superclass_of_tag_code "SIT" .
-
 
 
 ###  http://www.toronto.ca/TWONTO#instrumentation_switch
@@ -3297,17 +3319,12 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                                               "life-saving appliance" .
 
 
-###  http://www.toronto.ca/TWONTO#hoist
-hoist rdf:type owl:Class ;
-                         rdfs:subClassOf :lifting_equipment_component ;
-                         :is_equivalent_to_Avantis_category "Lifting Device,Hoist" ;
-                         :is_superclass_of_Avantis_category "Lifting Device,Hoist,Electrical" ,
-                                                            "Lifting Device,Hoist,Manual" ;
-                         :notion_mapping_id "704b49f311e4431a8f4cf701e42fe024" ;
-                         rdfs:isDefinedBy "CSA B167-16(R2021): a machinery unit that is used for vertical lifting or lowering a freely suspended (unguided) load." ;
-                         <http://www.w3.org/2004/02/skos/core#altLabel> "chain block" ,
-                                                                        "chain fall" ,
-                                                                        "chain hoist" .
+###  http://www.toronto.ca/TWONTO#lift_truck_or_pallet_jack
+:lift_truck_or_pallet_jack rdf:type owl:Class ;
+                           rdfs:subClassOf :lifting_equipment ;
+                           <http://www.w3.org/2004/02/skos/core#altLabel> "pallet jack" ,
+                                                                          "stacker" .
+
 
 ###  http://www.toronto.ca/TWONTO#lifting_equipment
 :lifting_equipment rdf:type owl:Class ;
@@ -3398,15 +3415,16 @@ hoist rdf:type owl:Class ;
                            <http://www.w3.org/2004/02/skos/core#altLabel> "hierarchal system" .
 
 
-###  http://www.toronto.ca/TWONTO#magmeter
-:magmeter rdf:type owl:Class ;
-          rdfs:subClassOf :flow_element ;
-          :is_equivalent_to_Avantis_category "Meter,Flow,Magmeter" .
-
 ###  http://www.toronto.ca/TWONTO#machine_component
 :machine_component rdf:type owl:Class ;
                    rdfs:subClassOf :asset ;
                    :is_category_class "true"^^xsd:boolean .
+
+
+###  http://www.toronto.ca/TWONTO#magmeter
+:magmeter rdf:type owl:Class ;
+          rdfs:subClassOf :flow_element ;
+          :is_equivalent_to_Avantis_category "Meter,Flow,Magmeter" .
 
 
 ###  http://www.toronto.ca/TWONTO#major_treatment_process_role
@@ -3633,6 +3651,12 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                            owl:deprecated "true"^^xsd:boolean .
 
 
+###  http://www.toronto.ca/TWONTO#modular_trailer_office
+:modular_trailer_office rdf:type owl:Class ;
+                        rdfs:subClassOf :trailer ;
+                        <http://www.w3.org/2004/02/skos/core#altLabel> "portable office" .
+
+
 ###  http://www.toronto.ca/TWONTO#motion_sensor_element
 :motion_sensor_element rdf:type owl:Class ;
                        rdfs:subClassOf :instrument_element ;
@@ -3640,11 +3664,6 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                                           "Switch,Motion" ;
                        :is_equivalent_to_tag_code "MS" ;
                        :is_superclass_of_tag_code "MSL" .
-
-###  http://www.toronto.ca/TWONTO#modular_trailer_office
-:modular_trailer_office rdf:type owl:Class ;
-                        rdfs:subClassOf :trailer ;
-                        <http://www.w3.org/2004/02/skos/core#altLabel> "portable office" .
 
 
 ###  http://www.toronto.ca/TWONTO#motor
@@ -3708,8 +3727,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 ###  http://www.toronto.ca/TWONTO#network_panel
 :network_panel rdf:type owl:Class ;
                rdfs:subClassOf :discrete_asset ;
+               :is_category_class "true"^^xsd:boolean ;
                :is_equivalent_to_Avantis_class "Network" .
-               :is_category_class "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#network_router
@@ -4270,14 +4289,6 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                   :is_equivalent_to_tag_code "AFR" .
 
 
-###  http://www.toronto.ca/TWONTO#PA_speaker
-:PA_speaker rdf:type owl:Class ;
-                            rdfs:subClassOf :discrete_asset ;
-                            :is_equivalent_to_Avantis_category "Public Address System" , "public announcement speaker" ;
-                            :is_equivalent_to_tag_code "AMP" ,
-                                                       "PA" .
-
-
 ###  http://www.toronto.ca/TWONTO#publisher
 :publisher rdf:type owl:Class ;
            rdfs:subClassOf :organization ;
@@ -4614,7 +4625,8 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 
 ###  http://www.toronto.ca/TWONTO#self-retracting_lifeline
 :self-retracting_lifeline rdf:type owl:Class ;
-                          rdfs:subClassOf :life_line, :PPE ;
+                          rdfs:subClassOf :PPE ,
+                                          :life_line ;
                           :notion_mapping_id "c319721ea78042788fb746723e66e038" ;
                           rdfs:isDefinedBy "CSA Z259.2.2-17: a component that automatically adjusts its length under light tension, and automatically applies to arrest force in the event of a fall." .
 
@@ -4685,14 +4697,6 @@ Many linear assets, such as cables, also provide containment, but this is not a 
                  rdfs:subClassOf :relational_state .
 
 
-###  http://www.toronto.ca/TWONTO#slude_density_meter
-:slude_density_meter rdf:type owl:Class ;
-                     rdfs:subClassOf :process_instrumentation ;
-                     :is_equivalent_to_Avantis_category "Analyzer,Density" ,
-                                                        "Meter,Density" ;
-                     :is_equivalent_to_tag_code "DIT" .
-
-
 ###  http://www.toronto.ca/TWONTO#skid_mounted_system
 :skid_mounted_system rdf:type owl:Class ;
                      rdfs:subClassOf :discrete_asset ,
@@ -4701,6 +4705,14 @@ Many linear assets, such as cables, also provide containment, but this is not a 
                                   "6/30/24: the reason to keep this class - this class - many of which are skids - is the only type of system that would be represented both as role as well as a physical asset." ;
                      rdfs:isDefinedBy "A discrete asset that consists a collection of discrete asset parts, many of them often appear in other contexts as stand-alone discrete assets (not part of another discrete asset).  The set of parts are physical integrated onto a structure skid, frame, panel, etc, such that the part can be moved as a unit." ;
                      <http://www.w3.org/2004/02/skos/core#altLabel> "system of integrated discrete assets" .
+
+
+###  http://www.toronto.ca/TWONTO#slude_density_meter
+:slude_density_meter rdf:type owl:Class ;
+                     rdfs:subClassOf :process_instrumentation ;
+                     :is_equivalent_to_Avantis_category "Analyzer,Density" ,
+                                                        "Meter,Density" ;
+                     :is_equivalent_to_tag_code "DIT" .
 
 
 ###  http://www.toronto.ca/TWONTO#sludge
@@ -4751,6 +4763,11 @@ A 2-dimensional or a depthless 3-dimensional surface space that coincides with a
                            rdfs:subClassOf :description .
 
 
+###  http://www.toronto.ca/TWONTO#speed_sensing
+:speed_sensing rdf:type owl:Class ;
+               rdfs:subClassOf :sensing .
+
+
 ###  http://www.toronto.ca/TWONTO#speed_switch
 :speed_switch rdf:type owl:Class ;
               rdfs:subClassOf :process_instrumentation ;
@@ -4758,10 +4775,6 @@ A 2-dimensional or a depthless 3-dimensional surface space that coincides with a
                                                  "Switch,Speed-Low" ;
               :is_superclass_of_tag_code "SSH" ,
                                          "SSL" .
-
-###  http://www.toronto.ca/TWONTO#speed_sensing
-:speed_sensing rdf:type owl:Class ;
-               rdfs:subClassOf :sensing .
 
 
 ###  http://www.toronto.ca/TWONTO#spill_kit
@@ -5499,15 +5512,16 @@ The following are considered to be subclasses of valves
                                                  "Weigh Scale,Strain Gauge" .
 
 
+###  http://www.toronto.ca/TWONTO#weight_sensing
+:weight_sensing rdf:type owl:Class ;
+                rdfs:subClassOf :sensing .
+
+
 ###  http://www.toronto.ca/TWONTO#weight_switch
 :weight_switch rdf:type owl:Class ;
                rdfs:subClassOf :process_instrumentation ;
                :is_superclass_of_tag_code "WSH" ,
                                           "WSL" .
-
-###  http://www.toronto.ca/TWONTO#weight_sensing
-:weight_sensing rdf:type owl:Class ;
-                rdfs:subClassOf :sensing .
 
 
 ###  http://www.toronto.ca/TWONTO#weir_structure
@@ -5585,11 +5599,6 @@ The following are considered to be subclasses of valves
         :exclude_from_asset_class_list "true"^^xsd:boolean .
 
 
-
-###  http://www.toronto.ca/TWONTO#term:_single-parameter_instrument
-:term:_single-parameter_instrument rdf:type owl:Class ;
-                                   rdfs:subClassOf :process_instrumentation .
-
 ###  http://www.toronto.ca/TWONTO#120V-208V_electrical_panel
 <http://www.toronto.ca/TWONTO#120V-208V_electrical_panel> rdf:type owl:Class ;
                                                           rdfs:subClassOf :electrical_panel_or_cabinet ;
@@ -5623,6 +5632,11 @@ The following are considered to be subclasses of valves
                                                                    :is_defined_class "true"^^xsd:boolean ;
                                                                    <http://www.w3.org/2004/02/skos/core#altLabel> "MCC" ,
                                                                                                                   "motor control centre" .
+
+
+###  http://www.toronto.ca/TWONTO#term:_single-parameter_instrument
+:term:_single-parameter_instrument rdf:type owl:Class ;
+                                   rdfs:subClassOf :process_instrumentation .
 
 
 #################################################################
@@ -5865,6 +5879,9 @@ The following are considered to be subclasses of valves
 
 
 :water-glycol_mixture rdfs:label "water glycol mixture" .
+
+
+rdfs:subClassOf :DC_power_supply  .
 
 
 #################################################################
