@@ -843,8 +843,8 @@ I created this property to point to a piece of text describing the intent of the
 :PPE rdf:type owl:Class ;
      rdfs:subClassOf :discrete_asset ;
      :exclude_from_asset_class_list "true"^^xsd:boolean ;
+     :is_category_class "true"^^xsd:boolean ;
      :is_superclass_of_Avantis_category "PPE" .
-     :is_category_class "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#RPU_panel
@@ -1043,10 +1043,7 @@ I created this property to point to a piece of text describing the intent of the
                   rdfs:subClassOf :segment_of_linear_asset ;
                   :is_equivalent_to_Avantis_class "Duct" ,
                                                   "Vent" ;
-                  :is_equivalent_to_tag_code "DU" ;
-                  :is_superclass_of_Avantis_category "Silencer" ;
-                  :is_superclass_of_avantis_class "Silencer" ;
-                  :is_superclass_of_tag_code "SL" .
+                  :is_equivalent_to_tag_code "DU" .
 
 
 ###  http://www.toronto.ca/TWONTO#air_exchange_unit
@@ -1090,7 +1087,10 @@ I created this property to point to a piece of text describing the intent of the
 
 ###  http://www.toronto.ca/TWONTO#air_silencer
 :air_silencer rdf:type owl:Class ;
-              rdfs:subClassOf :discrete_asset .
+              rdfs:subClassOf :discrete_asset ;
+              :is_equivalent_to_Avantis_category "Silencer" ;
+              :is_equivalent_to_Avantis_class "Silencer" ;
+              :is_equivalent_to_tag_code "SL" .
 
 
 ###  http://www.toronto.ca/TWONTO#alarm
@@ -1290,7 +1290,6 @@ An asset is not always associated with a market value – some assets’ market 
                                                        "air condition condenser" .
 
 
-
 ###  http://www.toronto.ca/TWONTO#blower_without_drive
 :blower_without_drive rdf:type owl:Class ;
                       rdfs:subClassOf :discrete_asset ;
@@ -1379,6 +1378,7 @@ An asset is not always associated with a market value – some assets’ market 
 ###  http://www.toronto.ca/TWONTO#cable_segment
 :cable_segment rdf:type owl:Class ;
                rdfs:subClassOf :segment_of_linear_asset ;
+               :is_equivalent_to_Avantis_class "Electrical Power Line" ;
                :is_equivalent_to_tag_code "CBL" .
 
 
@@ -2592,6 +2592,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 :flowmeter rdf:type owl:Class ;
            rdfs:subClassOf :process_instrumentation ;
            :is_equivalent_to_Avantis_category "Meter,Flow" ;
+           :is_equivalent_to_Avantis_class "Meter" ;
            :is_equivalent_to_tag_code "FIT" ,
                                       "FQ" ,
                                       "FT" ;
@@ -2834,7 +2835,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#grease_gun
 :grease_gun rdf:type owl:Class ;
-            rdfs:subClassOf :discrete_asset .
+            rdfs:subClassOf :discrete_asset ,
+                            :tool .
 
 
 ###  http://www.toronto.ca/TWONTO#grinder_or_comminutor
@@ -3131,6 +3133,10 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                            "Transmitter,Speed" ,
                                                            "Transmitter,Weight Indicating" ;
                         :is_superclass_of_tag_code "SIT" .
+
+
+###  http://www.toronto.ca/TWONTO#instrumentation
+:instrumentation rdf:type owl:Class .
 
 
 ###  http://www.toronto.ca/TWONTO#instrumentation_switch
@@ -3613,7 +3619,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 ###  http://www.toronto.ca/TWONTO#mobile_radio
 :mobile_radio rdf:type owl:Class ;
               rdfs:subClassOf :radio_tranceiver ;
-              <http://www.w3.org/2004/02/skos/core#altLabel> "wakie-talkie" .
+              <http://www.w3.org/2004/02/skos/core#altLabel> "wakie-talkie" ,
+                                                             "wi fi phone" .
 
 
 ###  http://www.toronto.ca/TWONTO#modular_discrete_assembly
@@ -3711,7 +3718,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 ###  http://www.toronto.ca/TWONTO#network_switch
 :network_switch rdf:type owl:Class ;
                 rdfs:subClassOf :discrete_asset ;
-                :is_equivalent_to_Avantis_category "Network,Switch" .
+                :is_equivalent_to_Avantis_category "Network,Switch" ;
+                :is_equivalent_to_Avantis_class "Network Switch" .
 
 
 ###  http://www.toronto.ca/TWONTO#network_termination_panel
@@ -4548,7 +4556,8 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 
 ###  http://www.toronto.ca/TWONTO#self-retracting_lifeline
 :self-retracting_lifeline rdf:type owl:Class ;
-                          rdfs:subClassOf :life_line, :PPE ;
+                          rdfs:subClassOf :PPE ,
+                                          :life_line ;
                           :notion_mapping_id "c319721ea78042788fb746723e66e038" ;
                           rdfs:isDefinedBy "CSA Z259.2.2-17: a component that automatically adjusts its length under light tension, and automatically applies to arrest force in the event of a fall." .
 
@@ -4696,10 +4705,6 @@ A 2-dimensional or a depthless 3-dimensional surface space that coincides with a
                                                  "Switch,Speed-Low" ;
               :is_superclass_of_tag_code "SSH" ,
                                          "SSL" .
-
-###  http://www.toronto.ca/TWONTO#speed_sensing
-:speed_sensing rdf:type owl:Class ;
-               rdfs:subClassOf :sensing .
 
 
 ###  http://www.toronto.ca/TWONTO#spill_kit
@@ -5411,6 +5416,7 @@ The following are considered to be subclasses of valves
 ###  http://www.toronto.ca/TWONTO#weight_scale
 :weight_scale rdf:type owl:Class ;
               rdfs:subClassOf :process_instrumentation ;
+              :is_equivalent_to_Avantis_class "Weigh Scale" ;
               :is_equivalent_to_tag_code "WIT" ,
                                          "WRT" ,
                                          "WSC" ;
@@ -5499,11 +5505,6 @@ The following are considered to be subclasses of valves
         :exclude_from_asset_class_list "true"^^xsd:boolean .
 
 
-
-###  http://www.toronto.ca/TWONTO#term:_single-parameter_instrument
-:term:_single-parameter_instrument rdf:type owl:Class ;
-                                   rdfs:subClassOf :process_instrumentation .
-
 ###  http://www.toronto.ca/TWONTO#120V-208V_electrical_panel
 <http://www.toronto.ca/TWONTO#120V-208V_electrical_panel> rdf:type owl:Class ;
                                                           rdfs:subClassOf :electrical_panel_or_cabinet ;
@@ -5537,6 +5538,11 @@ The following are considered to be subclasses of valves
                                                                    :is_defined_class "true"^^xsd:boolean ;
                                                                    <http://www.w3.org/2004/02/skos/core#altLabel> "MCC" ,
                                                                                                                   "motor control centre" .
+
+
+###  http://www.toronto.ca/TWONTO#term:_single-parameter_instrument
+:term:_single-parameter_instrument rdf:type owl:Class ;
+                                   rdfs:subClassOf :process_instrumentation .
 
 
 #################################################################
