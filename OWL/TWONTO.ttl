@@ -4776,14 +4776,6 @@ Many linear assets, such as cables, also provide containment, but this is not a 
                      <http://www.w3.org/2004/02/skos/core#altLabel> "system of integrated discrete assets" .
 
 
-###  http://www.toronto.ca/TWONTO#slude_density_meter
-:slude_density_meter rdf:type owl:Class ;
-                     rdfs:subClassOf :process_instrumentation ;
-                     :is_equivalent_to_Avantis_category "Analyzer,Density" ,
-                                                        "Meter,Density" ;
-                     :is_equivalent_to_tag_code "DIT" .
-
-
 ###  http://www.toronto.ca/TWONTO#sludge
 :sludge rdf:type owl:Class ;
         rdfs:subClassOf :material .
@@ -4793,6 +4785,14 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 :sludge_blanket_analyzer rdf:type owl:Class ;
                          rdfs:subClassOf :process_instrumentation ;
                          :is_equivalent_to_Avantis_category "Meter,Sludge Blanket" .
+
+
+###  http://www.toronto.ca/TWONTO#sludge_density_meter
+:sludge_density_meter rdf:type owl:Class ;
+                      rdfs:subClassOf :process_instrumentation ;
+                      :is_equivalent_to_Avantis_category "Analyzer,Density" ,
+                                                         "Meter,Density" ;
+                      :is_equivalent_to_tag_code "DIT" .
 
 
 ###  http://www.toronto.ca/TWONTO#sludge_thickener_unit
