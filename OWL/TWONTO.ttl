@@ -720,6 +720,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#BAS_controller
 :BAS_controller rdf:type owl:Class ;
                 rdfs:subClassOf :discrete_asset ;
+                :obscure_natural_class 4 ;
                 <http://www.w3.org/2004/02/skos/core#altLabel> "building automation system controller" .
 
 
@@ -1426,7 +1427,8 @@ An asset is not always associated with a market value – some assets’ market 
 
 ###  http://www.toronto.ca/TWONTO#capital_project
 :capital_project rdf:type owl:Class ;
-                 rdfs:subClassOf :project .
+                 rdfs:subClassOf :project ;
+                 :obscure_natural_class 4 .
 
 
 ###  http://www.toronto.ca/TWONTO#card_reader
@@ -2523,7 +2525,8 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 
 ###  http://www.toronto.ca/TWONTO#fire_protection_sprinkler
 :fire_protection_sprinkler rdf:type owl:Class ;
-                           rdfs:subClassOf :discrete_asset .
+                           rdfs:subClassOf :discrete_asset ;
+                           :obscure_natural_class 1 .
 
 
 ###  http://www.toronto.ca/TWONTO#fire_rated_door
@@ -2789,7 +2792,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#gas_detector_calibrator
 :gas_detector_calibrator rdf:type owl:Class ;
                          rdfs:subClassOf :calibration_tool ,
-                                         :discrete_asset .
+                                         :discrete_asset ;
+                         :obscure_natural_class 4 .
 
 
 ###  http://www.toronto.ca/TWONTO#gas_diffuser
@@ -2910,7 +2914,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#groundskeeping_equipment
 :groundskeeping_equipment rdf:type owl:Class ;
-                          rdfs:subClassOf :discrete_asset .
+                          rdfs:subClassOf :discrete_asset ;
+                          :is_category_class "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#guideline
@@ -3749,7 +3754,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 ###  http://www.toronto.ca/TWONTO#multimeter
 :multimeter rdf:type owl:Class ;
             rdfs:subClassOf :discrete_asset ,
-                            :testing_tool .
+                            :testing_tool ;
+            :obscure_natural_class 4 .
 
 
 ###  http://www.toronto.ca/TWONTO#natural_gas
@@ -5063,7 +5069,8 @@ is capable of realizing a unit of the system primary functions.""" ;
 
 ###  http://www.toronto.ca/TWONTO#tankless_water_heater
 :tankless_water_heater rdf:type owl:Class ;
-                       rdfs:subClassOf :hot_water_heater .
+                       rdfs:subClassOf :hot_water_heater ;
+                       :obscure_natural_class 1 .
 
 
 ###  http://www.toronto.ca/TWONTO#technical_standard
