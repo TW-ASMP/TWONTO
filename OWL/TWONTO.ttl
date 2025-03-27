@@ -810,6 +810,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#00102
 <http://www.toronto.ca/TWONTO#00102> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:comment "A Toronto Water specific term. What it denotes is equivalent to a RPU panel, but operating in the building automation and HVAC domain." ;
                                      rdfs:label "BAS panel" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "building automation system panel" .
@@ -1457,6 +1458,7 @@ An asset is not always associated with a market value – some assets’ market 
 ###  http://www.toronto.ca/TWONTO#00178
 <http://www.toronto.ca/TWONTO#00178> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:isDefinedBy "A bioswale is a vegetated drainage feature designed to manage and filter stormwater runoff, enhancing water infiltration and pollutant removal." ;
                                      rdfs:label "bioswale" .
 
@@ -1484,6 +1486,7 @@ An asset is not always associated with a market value – some assets’ market 
 <http://www.toronto.ca/TWONTO#00180> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
                                      :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:label "blower without drive" .
 
 
@@ -1544,6 +1547,7 @@ An asset is not always associated with a market value – some assets’ market 
 ###  http://www.toronto.ca/TWONTO#00187
 <http://www.toronto.ca/TWONTO#00187> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:label "bridge" .
 
 
@@ -1624,6 +1628,8 @@ An asset is not always associated with a market value – some assets’ market 
 ###  http://www.toronto.ca/TWONTO#00196
 <http://www.toronto.ca/TWONTO#00196> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class """0
+'controlled door access'""" ;
                                      rdfs:label "card reader" .
 
 
@@ -1976,7 +1982,6 @@ isThickeningCentrifuge""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
                                      :is_equivalent_to_Avantis_class "Condensing Unit" ;
                                      :is_equivalent_to_tag_code "CU" ;
-                                     rdfs:comment "Should this include condesor units for dehumidifiers? -ME" ;
                                      rdfs:label "condenser" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "AC condenser" ,
                                                                                     "AC outdoor unit" .
@@ -2073,12 +2078,15 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#00249
 <http://www.toronto.ca/TWONTO#00249> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:label "corrosion control unit" .
 
 
 ###  http://www.toronto.ca/TWONTO#00250
 <http://www.toronto.ca/TWONTO#00250> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class """0
+may need a definition""" ;
                                      rdfs:label "counter" .
 
 
@@ -2116,6 +2124,8 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#00254
 <http://www.toronto.ca/TWONTO#00254> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00138> ;
+                                     :obscure_natural_class """2
+actuator""" ;
                                      rdfs:label "damper actuator" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "louver actuator" .
 
@@ -2226,6 +2236,8 @@ DECISION:
 ###  http://www.toronto.ca/TWONTO#00267
 <http://www.toronto.ca/TWONTO#00267> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class """0
+all sub classes too""" ;
                                      rdfs:label "dewatering press" .
 
 
@@ -2299,6 +2311,7 @@ The asset that consists of a television and its remote control is an example of 
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
                                      :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
                                      :dev-ontology_note "isBiofilterToo?" ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:label "discrete unit of bioreactor medium" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "bioreactor cartridge" ,
                                                                                     "bioreactor cassette" ,
@@ -2337,7 +2350,8 @@ The asset that consists of a television and its remote control is an example of 
 <http://www.toronto.ca/TWONTO#00280> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00208> ;
                                      :is_equivalent_to_Avantis_category "Analyzer,Dissolved Oxygen (DO)" ;
-                                     rdfs:label "dissolved oxygen analyzer" .
+                                     rdfs:label "dissolved oxygen analyzer" ;
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "DO Analyzer" .
 
 
 ###  http://www.toronto.ca/TWONTO#00281
@@ -2432,6 +2446,7 @@ The asset that consists of a television and its remote control is an example of 
 ###  http://www.toronto.ca/TWONTO#00293
 <http://www.toronto.ca/TWONTO#00293> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:label "educator" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "ejector" ,
                                                                                     "injector" .
@@ -2506,6 +2521,7 @@ The asset that consists of a television and its remote control is an example of 
 ###  http://www.toronto.ca/TWONTO#00303
 <http://www.toronto.ca/TWONTO#00303> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:label "electrostatic percipitator" .
 
 
@@ -2609,6 +2625,7 @@ Note: An end truck is usually constructed as a frame that houses wheels, bearing
 <http://www.toronto.ca/TWONTO#00315> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
                                      :is_equivalent_to_Avantis_class "Energy Wheel" ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:label "energy recovery wheel" .
 
 
@@ -2640,6 +2657,8 @@ Note: An end truck is usually constructed as a frame that houses wheels, bearing
 ###  http://www.toronto.ca/TWONTO#00319
 <http://www.toronto.ca/TWONTO#00319> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     :obscure_natural_class """0
+process control panel""" ;
                                      rdfs:comment "May be redundent with process control panel -ME" ;
                                      rdfs:label "equipment local panel" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "equipment local controller" ,
@@ -3169,6 +3188,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#00385> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
                                      :is_equivalent_to_tag_code "FU" ;
+                                     :obscure_natural_class 0 ;
                                      rdfs:label "furnace" .
 
 
@@ -3213,6 +3233,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00391
 <http://www.toronto.ca/TWONTO#00391> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     rdfs:comment "don't know the application of a general case" ;
                                      rdfs:label "gas diffuser" .
 
 
@@ -3313,7 +3334,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#00404
 <http://www.toronto.ca/TWONTO#00404> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00273> ,
+                                                     <http://www.toronto.ca/TWONTO#00747> ;
                                      rdfs:label "grease gun" .
 
 
@@ -4317,8 +4339,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                                                         "Motor,DC" ,
                                                                         "Motor,Hydraulic" ,
                                                                         "Motor,Pneumatic" ;
-                                     rdfs:label "motor"@en ,
-                                                "motor" .
+                                     rdfs:label "motor" .
 
 
 ###  http://www.toronto.ca/TWONTO#00532
@@ -5295,6 +5316,8 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 ###  http://www.toronto.ca/TWONTO#00655
 <http://www.toronto.ca/TWONTO#00655> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00600> ;
+                                     :is_equivalent_to_Avantis_class "Rupture Disc" ;
+                                     :is_equivalent_to_tag_code "RD" ;
                                      rdfs:label "rupture disc" .
 
 
@@ -5802,8 +5825,7 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#00720
 <http://www.toronto.ca/TWONTO#00720> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00383> ;
-                                     rdfs:label "system" ,
-                                                "system block role" .
+                                     rdfs:label "system block role" .
 
 
 ###  http://www.toronto.ca/TWONTO#00721
@@ -6589,7 +6611,7 @@ The following are considered to be subclasses of valves
                                      :is_equivalent_to_Avantis_category "Electrical Power Line,Welding Receptable" ;
                                      :is_superclass_of_tag_code "PR" ,
                                                                 "WR" ;
-                                     rdfs:label "<http://www.toronto.ca/TWONTO#600V receptacle>" ;
+                                     rdfs:label "600V receptacle" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "wielding receptable" .
 
 
