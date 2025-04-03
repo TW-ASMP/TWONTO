@@ -799,11 +799,6 @@ I created this property to point to a piece of text describing the intent of the
 #################################################################
 #    Classes
 #################################################################
-<<<<<<< HEAD
-
-=======
-
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
 ###  http://www.toronto.ca/TWONTO#00001
 <http://www.toronto.ca/TWONTO#00001> rdf:type owl:Class ;
                                      rdfs:comment """The function of an asset is to be realized continuously or repeatedly, which differs from consumables materials. The function of consumable materials is realized only once.
@@ -1566,11 +1561,7 @@ isFireSystemAlarm?""" ;
 
 ###  http://www.toronto.ca/TWONTO#00175
 <http://www.toronto.ca/TWONTO#00175> rdf:type owl:Class ;
-<<<<<<< HEAD
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00495> ;
-=======
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00756> ;
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
                                      rdfs:label "bicycle" .
 
 
@@ -1869,12 +1860,8 @@ isThickeningCentrifuge""" ;
 <http://www.toronto.ca/TWONTO#00209> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00520> ;
                                      :is_superclass_of_Avantis_category "Sensor,Gas" ;
-<<<<<<< HEAD
-                                     rdfs:label "chemical or concentration sensor element" .
-=======
                                      rdfs:label "chemical or concentration sensor element (MBC)" ;
                                      owl:deprecated "true"^^xsd:boolean .
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
 
 
 ###  http://www.toronto.ca/TWONTO#00210
@@ -3093,12 +3080,8 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 ###  http://www.toronto.ca/TWONTO#00365
 <http://www.toronto.ca/TWONTO#00365> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
-<<<<<<< HEAD
-                                                     <http://www.toronto.ca/TWONTO#00193> ;
-=======
                                                      <http://www.toronto.ca/TWONTO#00737> ;
                                      :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
                                      rdfs:label "flow calibrator" .
 
 
@@ -3264,15 +3247,10 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#00386
 <http://www.toronto.ca/TWONTO#00386> rdf:type owl:Class ;
-<<<<<<< HEAD
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
-=======
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00298> ;
                                      :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
                                      :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
                                      rdfs:label "fuse" .
 
 
@@ -3303,11 +3281,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00390
 <http://www.toronto.ca/TWONTO#00390> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
-<<<<<<< HEAD
-                                                     <http://www.toronto.ca/TWONTO#00193> ;
-=======
                                                      <http://www.toronto.ca/TWONTO#00737> ;
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
                                      rdfs:label "gas detector calibrator" .
 
 
@@ -3747,12 +3721,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                      :is_equivalent_to_Avantis_class "Sensor" ;
                                      :is_equivalent_to_tag_code "AE" ,
                                                                 "SEN" ;
-<<<<<<< HEAD
-                                     rdfs:label "instrument sensor element" .
-=======
                                      rdfs:label "instrument sensor element (MBC)" ;
                                      owl:deprecated "true"^^xsd:boolean .
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
 
 
 ###  http://www.toronto.ca/TWONTO#00447
@@ -3760,24 +3730,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00520> ;
                                      :is_equivalent_to_Avantis_category "Transmitter" ;
                                      :is_equivalent_to_Avantis_class "Transmitter" ;
-<<<<<<< HEAD
-                                     :is_equivalent_to_tag_code "AIT" ;
-                                     :is_superclass_of_Avantis_category "Transmitter,Density" ,
-                                                                        "Transmitter,Flow" ,
-                                                                        "Transmitter,Humidity" ,
-                                                                        "Transmitter,Power Indicating" ,
-                                                                        "Transmitter,Speed" ,
-                                                                        "Transmitter,Weight Indicating" ;
-                                     :is_superclass_of_tag_code "SIT" ;
-                                     rdfs:label "instrument transmitter" .
-
-
-###  http://www.toronto.ca/TWONTO#00448
-<http://www.toronto.ca/TWONTO#00448> rdf:type owl:Class ;
-                                     rdfs:label "instrumentation switch" ;
-=======
                                      rdfs:label "sensing transmitter" ;
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
                                      owl:deprecated "true"^^xsd:boolean .
 
 
@@ -4010,25 +3963,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                                 "LPU" ;
                                      rdfs:label "lighting panel" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "120/208/240V eletrical panel" .
-<<<<<<< HEAD
-
-
-###  http://www.toronto.ca/TWONTO#00478
-<http://www.toronto.ca/TWONTO#00478> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     :is_equivalent_to_Avantis_category "Lighting" ;
-                                     :is_equivalent_to_Avantis_class "Lighting" ;
-                                     :is_superclass_of_Avantis_category "Lighting,Aviation" ,
-                                                                        "Lighting,Emergency" ,
-                                                                        "Lighting,Exit" ,
-                                                                        "Lighting,General" ,
-                                                                        "Lighting,Portable" ,
-                                                                        "Lighting,Portable,Trailer Mount" ,
-                                                                        "Lighting,Security" ;
-                                     :is_superclass_of_tag_code "LTX" ;
-                                     rdfs:label "lighting unit" .
-=======
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
 
 
 ###  http://www.toronto.ca/TWONTO#00479
@@ -4949,11 +4883,7 @@ ii. hot water service operating pressure above 1100 kPa (160 psig) or above the 
 ###  http://www.toronto.ca/TWONTO#00599
 <http://www.toronto.ca/TWONTO#00599> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
-<<<<<<< HEAD
-                                                     <http://www.toronto.ca/TWONTO#00193> ;
-=======
                                                      <http://www.toronto.ca/TWONTO#00737> ;
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
                                      rdfs:label "pressure calibrator" .
 
 
@@ -5987,11 +5917,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                      <http://www.toronto.ca/TWONTO#00747> ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_tool "true"^^xsd:boolean ;
-<<<<<<< HEAD
-                                     rdfs:label "testing tool" ;
-=======
                                      rdfs:label "testing or calibration tool (MBC)" ;
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "tester" .
 
 
@@ -6059,11 +5985,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_equivalent_to_Avantis_class "Tool" ;
-<<<<<<< HEAD
-                                     rdfs:label "tool" .
-=======
                                      rdfs:label "tool or vehicle (MBC)" .
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
 
 
 ###  http://www.toronto.ca/TWONTO#00748
@@ -6136,11 +6058,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00747> ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_superclass_of_tag_code "VEH" ;
-<<<<<<< HEAD
-                                     rdfs:label "transportation tool or vehicle" .
-=======
                                      rdfs:label "transportation tool or vehicle (MBC)" .
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
 
 
 ###  http://www.toronto.ca/TWONTO#00757
@@ -6165,11 +6083,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 
 ###  http://www.toronto.ca/TWONTO#00760
 <http://www.toronto.ca/TWONTO#00760> rdf:type owl:Class ;
-<<<<<<< HEAD
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00495> ;
-=======
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00756> ;
->>>>>>> parent of a1071de (access control entry point and subclasses changed)
                                      rdfs:label "tricycle" .
 
 
