@@ -1,0 +1,142 @@
+Class,Entity_number
+Actuator,16
+Agitator,8
+Air Exchanger Unit,54
+Air Handling Unit,312
+Air Instrument,5
+Alarm,558
+Analyzer,1845
+BUS bar greater than 750 volts,14
+Back Flow Preventer,236
+Battery,64
+Biofilter,8
+Blower,280
+Boat,1
+Boiler,76
+Building,508
+Burner,103
+Cable,43
+Camera,105
+Capacitor,108
+Centrifuge,60
+Chamber,4444
+Chemical Feeder,172
+Chiller,14
+Circuit Breaker,1414
+Clarifier,59
+Classifier,45
+Collector Mechanism,357
+Communications Equipment,313
+Compactor,36
+Compressor,273
+Computer Hardware,5216
+Condensing Unit,7
+Control Loop,49
+Control Panel,2089
+"Control Panel,MCC",41
+Controller,713
+Conveyor,264
+Crane,507
+Cyclone,33
+Damper/Louver,1732
+Dehumidifier,218
+Door,825
+Drain,57
+Drier,56
+Drive mechanism,18
+Duct,13
+Earthmoving Equipment,1
+Electrical Power Line,109
+Elevator,45
+Engine,6
+Evaporator,40
+Fan,2525
+Filter,725
+Fire Equipment,5266
+First Aid,41
+Flame Arrester,238
+Gas Collection,60
+Gas Monitoring,705
+Gate,204
+Gearbox,18
+Generator,220
+Grinder,59
+Grounds,111
+HVAC,3098
+Heat Exchanger,526
+Heater,3112
+Humidifier,7
+Hydraulic System,169
+Incinerator,13
+Indicator,190
+Injector,47
+Ladder,273
+Lifting Device,1471
+Lighting,4694
+Load Break Switch,220
+Maintenance Hole,5901
+Man Lift,17
+Meter,807
+Mixer,276
+Motor,922
+Motor Control Center,151
+Motor Control Centre,695
+Network,85
+Network Switch,1
+Office Equipment,11
+Operator Interface Terminal,71
+Outfall,65
+Peripheral,2
+Pipette,53
+Piping,516
+Plumbing,137
+Pneumatic System,13
+Power Distribution Panel,644
+Power Supply Unit,11
+Power Washer,11
+Pressure Indicator,347
+Programmable Logic Control,37
+Protective Relay,511
+Pump,4318
+Pump Station,345
+Quencher,3
+Recorder,79
+Remote Processor Unit,1100
+Remote Transmission Unit,48
+Rigging Equipment,34
+Rupture Disc,55
+Safety Equipment,4587
+Sampler,90
+Scissorlift,1
+Screen,156
+Scrubber,88
+Security System,326
+Sensor,2185
+Server,499
+Silencer,44
+Software,68
+Starter,116
+Storage,6
+Strainer,700
+Structure,37
+Substation,28
+Switch,6247
+Switchgear,1440
+System Process Control,71
+Tank,2215
+Test Equipment,65
+Tool,310
+Transfer Compactor,3
+Transformer,1100
+Transmitter,8733
+Ultraviolet Disinfection,2
+Uninterruptible Power Supply,1113
+Valve,44441
+Variable Frequency Drive,175
+Vehicle,517
+Vent,5
+Venturi,54
+Vortex,3
+Water Trailer,5
+Weigh Scale,71
+Well,98
