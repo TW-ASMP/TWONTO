@@ -811,7 +811,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#sufov-kojip-romig-faraz
 :sufov-kojip-romig-faraz rdf:type owl:Class ;
                          rdfs:subClassOf :mazos-pikaz-gapob-dipam ;
-                         rdfs:label "access controlled vehicle gate system"@en .
+                         rdfs:label "access controlled vehicle gate"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#zuvit-botof-lofip-natah
@@ -1187,9 +1187,9 @@ Examples of system include
 
 ###  http://www.toronto.ca/TWONTO#00127
 <http://www.toronto.ca/TWONTO#00127> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ;
                                      :is_equivalent_to_Avantis_category "Ultraviolet Disinfection,Bank" ;
-                                     rdfs:label "UV disinfection lamp unit" .
+                                     rdfs:label "UV disinfection bank" .
 
 
 ###  http://www.toronto.ca/TWONTO#00128
@@ -1292,7 +1292,8 @@ Examples of system include
                                                                         "Actuator,Manual,Lever" ,
                                                                         "Actuator,Pneumatic" ,
                                                                         "Actuator,Pneumatic,Cylinder" ,
-                                                                        "Actuator,Pneumatic,Vane Type" ;
+                                                                        "Actuator,Pneumatic,Vane Type" ,
+                                                                        "Valve,Solenoid,Act." ;
                                      rdfs:label "actuator" .
 
 
@@ -1349,9 +1350,6 @@ Examples of system include
                                      :is_equivalent_to_Avantis_class "Duct" ,
                                                                      "Vent" ;
                                      :is_equivalent_to_tag_code "DU" ;
-                                     :is_superclass_of_Avantis_category "Silencer" ;
-                                     :is_superclass_of_Avantis_class "Silencer" ;
-                                     :is_superclass_of_tag_code "SL" ;
                                      rdfs:label "air duct segment" .
 
 
@@ -1402,6 +1400,8 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#00150
 <http://www.toronto.ca/TWONTO#00150> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_equivalent_to_Avantis_class "Silencer" ;
+                                     :is_equivalent_to_tag_code "SL" ;
                                      rdfs:label "air silencer" .
 
 
@@ -1744,11 +1744,11 @@ isFireSystemAlarm?""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00676> ;
                                      :is_equivalent_to_Avantis_category "Electrical Power Line" ;
                                      :is_equivalent_to_Avantis_class "Cable" ;
-                                     :is_equivalent_to_tag_code "CBL" ;
                                      :is_superclass_of_Avantis_category "Cable,Busduct" ,
                                                                         "Cable,Teck" ;
                                      :is_superclass_of_Avantis_class "Electrical Power Line" ;
-                                     :is_superclass_of_tag_code "DC" ;
+                                     :is_superclass_of_tag_code "CBL" ,
+                                                                "DC" ;
                                      rdfs:label "cable segment" .
 
 
@@ -2170,7 +2170,7 @@ isThickeningCentrifuge""" ;
                                                                         "EntityCategory" ;
                                      :is_equivalent_to_Avantis_class "Door" ;
                                      :is_equivalent_to_tag_code "DR" ;
-                                     rdfs:label "access controlled door system" .
+                                     rdfs:label "access controlled door or turnstile system" .
 
 
 ###  http://www.toronto.ca/TWONTO#00245
@@ -2488,6 +2488,7 @@ DECISION:
 ###  http://www.toronto.ca/TWONTO#00286
 <http://www.toronto.ca/TWONTO#00286> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_equivalent_to_tag_code "DR" ;
                                      rdfs:label "door" .
 
 
@@ -2941,7 +2942,9 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 
 ###  http://www.toronto.ca/TWONTO#00350
 <http://www.toronto.ca/TWONTO#00350> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
+                                                     <http://www.toronto.ca/TWONTO#00915> ;
+                                     :is_equivalent_to_tag_code "FEQ" ;
                                      rdfs:label "fire extinguisher" .
 
 
@@ -2961,7 +2964,6 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 <http://www.toronto.ca/TWONTO#00353> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00286> ;
                                      :is_equivalent_to_Avantis_category "Fire Prevention,Door" ;
-                                     :is_equivalent_to_tag_code "DR" ;
                                      rdfs:label "fire rated door" .
 
 
@@ -4006,7 +4008,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#00487> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00594> ;
                                      :is_equivalent_to_Avantis_class "Load Break Switch" ;
-                                     :is_superclass_of_Avantis_category "fvyuLoad Break Switch" ;
+                                     :is_equivalent_to_tag_code "LB" ;
+                                     :is_superclass_of_Avantis_category "Load Break Switch" ;
                                      rdfs:label "load break disconnect switch" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "LBS" .
 
@@ -4762,9 +4765,6 @@ wetPond?""" ;
 <http://www.toronto.ca/TWONTO#00589> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00679> ;
                                      :is_equivalent_to_Avantis_category "Sensor,Position" ;
-                                     :is_equivalent_to_tag_code "ZIT" ,
-                                                                "ZRT" ,
-                                                                "ZT" ;
                                      rdfs:label "position sensing" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "Position Transmitter" .
 
@@ -4786,6 +4786,9 @@ wetPond?""" ;
 <http://www.toronto.ca/TWONTO#00591> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00520> ;
                                      :is_equivalent_to_Avantis_category "Transmitter,Position" ;
+                                     :is_superclass_of_tag_code "ZIT" ,
+                                                                "ZRT" ,
+                                                                "ZT" ;
                                      rdfs:label "position transmitter" .
 
 
@@ -5212,7 +5215,6 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 <http://www.toronto.ca/TWONTO#00649> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00286> ;
                                      :is_equivalent_to_Avantis_category "Door,Overhead" ;
-                                     :is_equivalent_to_tag_code "DR" ;
                                      rdfs:label "roll up door" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "loading dock door" .
 
@@ -5569,6 +5571,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 ###  http://www.toronto.ca/TWONTO#00694
 <http://www.toronto.ca/TWONTO#00694> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_equivalent_to_Avantis_category "Valve,Solenoid" ;
                                      rdfs:label "solenoid" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "valve" .
 
@@ -5615,6 +5618,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 ###  http://www.toronto.ca/TWONTO#00701
 <http://www.toronto.ca/TWONTO#00701> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "sprinkler" .
 
 
@@ -5945,6 +5949,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 <http://www.toronto.ca/TWONTO#00748> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00260> ;
+                                     :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "tool kit" .
 
 
@@ -6199,9 +6204,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_Avantis_category "Valve" ;
                                      :is_equivalent_to_Avantis_class "Valve" ;
-                                     :is_equivalent_to_tag_code "FCV" ,
-                                                                "PCV" ,
-                                                                "V" ;
+                                     :is_equivalent_to_tag_code "V" ;
                                      :is_superclass_of_Avantis_category "Regulator" ,
                                                                         "Regulator,Flow" ,
                                                                         "Regulator,Pressure" ,
@@ -6237,10 +6240,10 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                                         "Valve,Pressure Reducing" ,
                                                                         "Valve,Pressure Reducing,Act." ,
                                                                         "Valve,Rotary" ,
-                                                                        "Valve,Solenoid" ,
-                                                                        "Valve,Solenoid,Act." ,
                                                                         "Valve,Temperature Control" ,
                                                                         "Valve,Thermal" ;
+                                     :is_superclass_of_tag_code "FCV" ,
+                                                                "PCV" ;
                                      rdfs:isDefinedBy """A device for controlling the passage of fluid or air through a pipe.  The device is integrated into the pipe through a flanged, threaded, or wielded connection. 
 The following are considered to be subclasses of valves
 * solenoid, 
@@ -6464,6 +6467,7 @@ The following are considered to be subclasses of valves
 ###  http://www.toronto.ca/TWONTO#00813
 <http://www.toronto.ca/TWONTO#00813> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "windsock" .
 
 
@@ -6527,7 +6531,6 @@ The following are considered to be subclasses of valves
 ###  http://www.toronto.ca/TWONTO#00915
 <http://www.toronto.ca/TWONTO#00915> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00657> ;
-                                     :is_equivalent_to_tag_code "FEQ" ;
                                      :is_superclass_of_Avantis_class "Fire Equipment" ;
                                      rdfs:label "fire and life-safety system component (MBC)" .
 
