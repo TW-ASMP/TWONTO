@@ -1021,6 +1021,8 @@ Examples of system include
 <http://www.toronto.ca/TWONTO#00109> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00121> ;
+                                     :is_tool "true"^^xsd:boolean ;
+                                     :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "HV insulated blanket" .
 
 
@@ -1547,6 +1549,7 @@ isFireSystemAlarm?""" ;
 <http://www.toronto.ca/TWONTO#00169> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
+                                     :exclude_from_asset_class_list "true"^^xsd:boolean ;
                                      rdfs:label "bearing" .
 
 
@@ -1560,6 +1563,7 @@ isFireSystemAlarm?""" ;
 <http://www.toronto.ca/TWONTO#00171> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
+                                     :exclude_from_asset_class_list "true"^^xsd:boolean ;
                                      rdfs:label "belt" .
 
 
@@ -2110,7 +2114,6 @@ isThickeningCentrifuge""" ;
                                                      <http://www.toronto.ca/TWONTO#00108> ;
                                      :is_equivalent_to_Avantis_class "Condensing Unit" ;
                                      :is_equivalent_to_tag_code "CU" ;
-                                     rdfs:comment "Should this include condesor units for dehumidifiers? -ME" ;
                                      rdfs:label "condenser" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "AC condenser" ,
                                                                                     "AC outdoor unit" .
@@ -2214,6 +2217,8 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#00250
 <http://www.toronto.ca/TWONTO#00250> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :exclude_from_asset_class_list "true"^^xsd:boolean ;
+                                     :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "counter" .
 
 
@@ -2770,6 +2775,8 @@ Note: An end truck is usually constructed as a frame that houses wheels, bearing
 ###  http://www.toronto.ca/TWONTO#00324
 <http://www.toronto.ca/TWONTO#00324> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :exclude_from_asset_class_list "true"^^xsd:boolean ;
+                                     :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "expansion joint" .
 
 
@@ -3075,6 +3082,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 <http://www.toronto.ca/TWONTO#00365> rdf:type owl:Class ;
                                      rdfs:subClassOf :zuvit-botof-lofip-natah ,
                                                      <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_tool "true"^^xsd:boolean ;
                                      :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "flow calibrator" .
 
@@ -3240,6 +3248,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#00386> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00298> ;
+                                     :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
+                                     :exclude_from_asset_class_list "true"^^xsd:boolean ;
                                      :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "fuse" .
 
@@ -3272,6 +3282,9 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#00390> rdf:type owl:Class ;
                                      rdfs:subClassOf :zuvit-botof-lofip-natah ,
                                                      <http://www.toronto.ca/TWONTO#00011> ;
+                                     :exclude_from_asset_class_list "true"^^xsd:boolean ;
+                                     :is_tool "true"^^xsd:boolean ;
+                                     :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "gas detector calibrator" .
 
 
@@ -3381,6 +3394,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00404
 <http://www.toronto.ca/TWONTO#00404> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_tool "true"^^xsd:boolean ;
                                      rdfs:label "grease gun" .
 
 
@@ -3401,6 +3415,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00737> ;
                                      :is_equivalent_to_tag_code "GRF" ;
+                                     :is_tool "true"^^xsd:boolean ;
                                      rdfs:label "ground fault tester" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "swichgear grounding device" .
 
@@ -3430,6 +3445,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#00410> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00737> ;
+                                     :is_tool "true"^^xsd:boolean ;
                                      rdfs:label "hand-held gas meter" .
 
 
@@ -3566,7 +3582,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00108> ;
                                      :is_equivalent_to_Avantis_class "Domestic Hot Water" ;
-                                     :not_relevant_to_asset_or_maintenance_management "true"^^xsd:boolean ;
                                      rdfs:label "hot water heater" .
 
 
