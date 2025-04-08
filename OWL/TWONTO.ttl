@@ -3110,6 +3110,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
                                      :is_equivalent_to_tag_code "FIT" ,
                                                                 "FT" ;
                                      :is_superclass_of_Avantis_category "Transmitter,Flow" ;
+                                     :is_superclass_of_tag_code "FQ" ;
                                      rdfs:label "flowmeter" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "Flow Meter" ,
                                                                                     "flow transmitter" .
@@ -4991,8 +4992,9 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                      :is_equivalent_to_Avantis_category "Controller" ;
                                      :is_equivalent_to_Avantis_class "Controller" ;
                                      :is_equivalent_to_tag_code "CT" ;
-                                     :is_superclass_of_tag_code "Analysis Indicating Controller" ,
-                                                                "LIC" ;
+                                     :is_superclass_of_tag_code "AIC" ,
+                                                                "LIC" ,
+                                                                "PIC" ;
                                      rdfs:label "process controller" .
 
 
