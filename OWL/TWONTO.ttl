@@ -66,11 +66,6 @@ For the reasons above, examples of things that should be represented by a text v
 :exclude_parent_from_classification_tree rdf:type owl:AnnotationProperty .
 
 
-###  http://www.toronto.ca/TWONTO#gamur-bamod-vimoj-zajil
-:gamur-bamod-vimoj-zajil rdf:type owl:AnnotationProperty ;
-                         rdfs:label "new_tag_code"@en .
-
-
 ###  http://www.toronto.ca/TWONTO#is_category_class
 :is_category_class rdf:type owl:AnnotationProperty ;
                    rdfs:range xsd:boolean .
@@ -120,6 +115,11 @@ c) fire protection water supply pumps that depend on electrical power supplied t
 d) smoke control and smoke venting systems;
 e) emergency lighting; and
 f) exit signs that depend on electrical power supplied to the building.""" .
+
+
+###  http://www.toronto.ca/TWONTO#proposed_new_13040_code
+:proposed_new_13040_code rdf:type owl:AnnotationProperty ;
+                         rdfs:label "new_tag_code"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#will_be_a_defined_class
@@ -2453,14 +2453,6 @@ DECISION:
                                      rdfs:label "digester tank" .
 
 
-###  http://www.toronto.ca/TWONTO#00272
-<http://www.toronto.ca/TWONTO#00272> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
-                                                     <http://www.toronto.ca/TWONTO#00298> ;
-                                     :is_equivalent_to_tag_code "DS" ;
-                                     rdfs:label "disconnect switch" .
-
-
 ###  http://www.toronto.ca/TWONTO#00275
 <http://www.toronto.ca/TWONTO#00275> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00820> ;
@@ -3460,10 +3452,10 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00408
 <http://www.toronto.ca/TWONTO#00408> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
-                                     :gamur-bamod-vimoj-zajil "GNDS" ;
                                      :is_equivalent_to_Avantis_class "groundskeeping_equipment" ;
                                      :is_equivalent_to_tag_code "Grounds" ;
                                      :is_superclass_of_Avantis_class "IRG" ;
+                                     :proposed_new_13040_code "GNDS" ;
                                      rdfs:label "grounds or building service equipment (MBC)" .
 
 
@@ -4613,8 +4605,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ,
                                                      <http://www.toronto.ca/TWONTO#00800> ;
                                      :UNSPSC_code 41120000 ;
-                                     :gamur-bamod-vimoj-zajil "LAB" ;
                                      :is_category_class "true"^^xsd:boolean ;
+                                     :proposed_new_13040_code "LAB" ;
                                      rdfs:label "lab equipment (MBC)" .
 
 
@@ -4845,6 +4837,7 @@ ii. hot water service operating pressure above 1100 kPa (160 psig) or above the 
 ###  http://www.toronto.ca/TWONTO#00594
 <http://www.toronto.ca/TWONTO#00594> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_equivalent_to_tag_code "DS" ;
                                      rdfs:label "power disconnect switch" .
 
 
@@ -5956,9 +5949,9 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00747
 <http://www.toronto.ca/TWONTO#00747> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
-                                     :gamur-bamod-vimoj-zajil "TOOL" ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_equivalent_to_Avantis_class "Tool" ;
+                                     :proposed_new_13040_code "TOOL" ;
                                      rdfs:label "tool or accessory of tool (MBC)" .
 
 
@@ -6030,9 +6023,9 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00756
 <http://www.toronto.ca/TWONTO#00756> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
-                                     :gamur-bamod-vimoj-zajil "TRANS" ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_superclass_of_tag_code "VEH" ;
+                                     :proposed_new_13040_code "TRANS" ;
                                      rdfs:label "vehicle, transportation tool, or accessory (MBC)" .
 
 
@@ -6399,8 +6392,8 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00803
 <http://www.toronto.ca/TWONTO#00803> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
-                                     :gamur-bamod-vimoj-zajil "PROC" ;
                                      :is_category_class "true"^^xsd:boolean ;
+                                     :proposed_new_13040_code "PROC" ;
                                      rdfs:label "treatment process and support equipment (MBC)" .
 
 
@@ -6544,8 +6537,8 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00915
 <http://www.toronto.ca/TWONTO#00915> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00657> ;
-                                     :gamur-bamod-vimoj-zajil "FIRE" ;
                                      :is_superclass_of_Avantis_class "Fire Equipment" ;
+                                     :proposed_new_13040_code "FIRE" ;
                                      rdfs:label "fire and life-safety system component (MBC)" .
 
 
