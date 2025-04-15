@@ -1177,11 +1177,6 @@ Examples of system include
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00618> ;
                                      :is_equivalent_to_Avantis_category "Controller,PLC" ;
                                      :is_equivalent_to_Avantis_class "Programmable Logic Control" ;
-                                     :is_superclass_of_Avantis_category "Controller,Flow" ,
-                                                                        "Controller,Level" ,
-                                                                        "Controller,Pressure" ,
-                                                                        "Controller,Temperature" ,
-                                                                        "Controller,VFD" ;
                                      rdfs:label "PLC" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "An industrial computer designed for real-time control of machines and processes, and is highly programmable to suit a wide range of automation tasks. It monitors inputs from sensors and executes user-defined programs to control outputs like motors, actuators, and other devices." ,
                                                                                     "progammable logic controller" .
@@ -1199,7 +1194,7 @@ Examples of system include
 <http://www.toronto.ca/TWONTO#00121> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00657> ;
                                      :is_category_class "true"^^xsd:boolean ;
-                                     :is_superclass_of_Avantis_category "PPE" ;
+                                     :is_equivalent_to_Avantis_category "PPE" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
                                      rdfs:label "PPE (MBC)" .
 
@@ -1364,8 +1359,7 @@ Examples of system include
                                                                         "Actuator,Manual,Lever" ,
                                                                         "Actuator,Pneumatic" ,
                                                                         "Actuator,Pneumatic,Cylinder" ,
-                                                                        "Actuator,Pneumatic,Vane Type" ,
-                                                                        "Valve,Solenoid,Act." ;
+                                                                        "Actuator,Pneumatic,Vane Type" ;
                                      rdfs:label "actuator" .
 
 
@@ -1443,10 +1437,10 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#00147
 <http://www.toronto.ca/TWONTO#00147> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_equivalent_to_Avantis_category "Air Handling Unit" ;
                                      :is_equivalent_to_Avantis_class "Air Handling Unit" ;
                                      :is_equivalent_to_tag_code "AHU" ;
-                                     :is_superclass_of_Avantis_category "Air Handling Unit" ,
-                                                                        "Air Handling Unit,Blow Thru" ,
+                                     :is_superclass_of_Avantis_category "Air Handling Unit,Blow Thru" ,
                                                                         "Air Handling Unit,Draw Thru" ;
                                      rdfs:label "air handler unit" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "AHU" .
@@ -1507,6 +1501,7 @@ isFireSystemAlarm?""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_Avantis_category "Fire Prevention,Alarm" ;
                                      :is_equivalent_to_tag_code "FA" ;
+                                     :is_superclass_of_Avantis_category "Control Panel,Fire" ;
                                      rdfs:label "annunciator panel" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "fire panel" .
 
@@ -1599,9 +1594,11 @@ isFireSystemAlarm?""" ;
 
 ###  http://www.toronto.ca/TWONTO#00167
 <http://www.toronto.ca/TWONTO#00167> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00567> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :dev-property_note "battery bank? stationary/mobile?" ;
                                      :is_equivalent_to_Avantis_class "Battery" ;
+                                     :is_equivalent_to_Avantis_category "Battery" ;
+                                     :is_equivalent_to_tag_code "BAT" ;
                                      :is_superclass_of_Avantis_category "Battery" ,
                                                                         "Battery,Dry Cell" ,
                                                                         "Battery,Wet Cell" ;
@@ -2119,13 +2116,13 @@ isThickeningCentrifuge""" ;
 <http://www.toronto.ca/TWONTO#00232> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_Avantis_category "Compactor" ;
-                                     :is_equivalent_to_Avantis_class "Compactor" ,
-                                                                     "Transfer Compactor" ;
+                                     :is_equivalent_to_Avantis_class "Compactor" ;
                                      :is_equivalent_to_tag_code "CMP" ;
                                      :is_superclass_of_Avantis_category "Compactor,Mobile" ,
                                                                         "Compactor,Stationary" ,
                                                                         "Compactor,Stationary,Paper" ,
                                                                         "Transfer Compactor" ;
+                                     :is_superclass_of_Avantis_class "Transfer Compactor" ;
                                      rdfs:label "compactor" .
 
 
@@ -2137,7 +2134,6 @@ isThickeningCentrifuge""" ;
                                      :is_equivalent_to_tag_code "C" ;
                                      :is_superclass_of_Avantis_category "Compressor,Portable" ,
                                                                         "Compressor,Portable,Skid Mount" ,
-                                                                        "Compressor,Portable,Trailer Mount" ,
                                                                         "Compressor,Screw" ,
                                                                         "Compressor,Stationary" ,
                                                                         "Compressor,Stationary,Centrifugal" ,
@@ -2153,16 +2149,7 @@ isThickeningCentrifuge""" ;
                                      :is_equivalent_to_Avantis_category "Computer Equipment" ;
                                      :is_equivalent_to_Avantis_class "Computer Hardware" ;
                                      :is_equivalent_to_tag_code "CPU" ;
-                                     :is_superclass_of_Avantis_category "Computer Equipment,CD Rom" ,
-                                                                        "Computer Equipment,CPU" ,
-                                                                        "Computer Equipment,Hard Drive" ,
-                                                                        "Computer Equipment,Hub" ,
-                                                                        "Computer Equipment,Laptop Docking Station" ,
-                                                                        "Computer Equipment,Memory" ,
-                                                                        "Computer Equipment,Monitor" ,
-                                                                        "Computer Equipment,Printer" ,
-                                                                        "Computer Equipment,Scanner" ,
-                                                                        "Desktop" ,
+                                     :is_superclass_of_Avantis_category "Desktop" ,
                                                                         "Desktop,Laptop" ,
                                                                         "Desktop,Thin Client" ,
                                                                         "Desktop,Workstation" ;
@@ -2239,10 +2226,6 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#00244
 <http://www.toronto.ca/TWONTO#00244> rdf:type owl:Class ;
                                      rdfs:subClassOf :mazos-pikaz-gapob-dipam ;
-                                     :is_equivalent_to_Avantis_category "Door" ,
-                                                                        "EntityCategory" ;
-                                     :is_equivalent_to_Avantis_class "Door" ;
-                                     :is_equivalent_to_tag_code "DR" ;
                                      rdfs:label "access controlled door or turnstile system" .
 
 
@@ -2557,6 +2540,7 @@ DECISION:
 ###  http://www.toronto.ca/TWONTO#00286
 <http://www.toronto.ca/TWONTO#00286> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_equivalent_to_Avantis_class "Door" ;
                                      :is_equivalent_to_tag_code "DR" ;
                                      rdfs:label "door" .
 
@@ -2814,6 +2798,8 @@ Note: An end truck is usually constructed as a frame that houses wheels, bearing
 ###  http://www.toronto.ca/TWONTO#00320
 <http://www.toronto.ca/TWONTO#00320> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00753> ;
+                                     :is_superclass_of_Avantis_category "Compressor,Portable,Trailer Mount" ,
+                                                                        "Lighting,Portable,Trailer Mount" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
                                      rdfs:label "equipment trailer" .
 
@@ -3096,10 +3082,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
                                                                         "Analyzer,Sulphur Dioxide" ,
                                                                         "Analyzer,Total Hydrocarbon (THC)" ,
                                                                         "Atmosphere Monitoring Device,Stationary,H2S/CO/CL/Toxic/SO2/NH3" ,
-                                                                        "Atmosphere Monitoring Device,Stationary,Methane/LEL" ,
-                                                                        "Sensor,Gas,CL2" ,
-                                                                        "Sensor,Gas,NH3" ,
-                                                                        "Sensor,Gas,SO2" ;
+                                                                        "Atmosphere Monitoring Device,Stationary,Methane/LEL" ;
                                      rdfs:label "fixed gas detector" .
 
 
@@ -3138,10 +3121,6 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 ###  http://www.toronto.ca/TWONTO#00364
 <http://www.toronto.ca/TWONTO#00364> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00210> ;
-                                     :is_equivalent_to_Avantis_category "Flocculator" ;
-                                     :is_superclass_of_Avantis_category "Flocculator,Paddle Wheel" ,
-                                                                        "Flocculator,Turbine" ,
-                                                                        "Flocculator,Walking Beam" ;
                                      rdfs:label "flocculation tank" .
 
 
@@ -3438,7 +3417,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#00402> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00008> ;
                                      :is_equivalent_to_Avantis_category "Filter" ;
-                                     :is_equivalent_to_Avantis_class "Filter" ;
                                      rdfs:label "granular material" .
 
 
@@ -3774,7 +3752,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#00444> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00803> ;
                                      :is_category_class "true"^^xsd:boolean ;
-                                     :is_superclass_of_Avantis_class "Pneumatic System" ;
                                      rdfs:label "instrument air or pneumatic system component (MBC)" .
 
 
@@ -3803,6 +3780,9 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                      :is_equivalent_to_Avantis_class "Sensor" ;
                                      :is_equivalent_to_tag_code "AE" ,
                                                                 "SEN" ;
+                                     :is_superclass_of_Avantis_category "Sensor,Gas,CL2" ,
+                                                                        "Sensor,Gas,NH3" ,
+                                                                        "Sensor,Gas,SO2" ;
                                      rdfs:label "sensor element (MBC)" .
 
 
@@ -5062,11 +5042,9 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                      :is_equivalent_to_Avantis_category "Control Panel" ;
                                      :is_equivalent_to_Avantis_class "Control Panel" ;
                                      :is_equivalent_to_tag_code "CP" ;
-                                     :is_superclass_of_Avantis_category "Control Panel,Fire" ,
-                                                                        "Control Panel,HVAC" ,
+                                     :is_superclass_of_Avantis_category "Control Panel,HVAC" ,
                                                                         "Control Panel,Instrumentation" ,
-                                                                        "Control Panel,Operator" ,
-                                                                        "Control Panel,Security" ;
+                                                                        "Control Panel,Operator" ;
                                      rdfs:label "process control panel" .
 
 
@@ -5079,6 +5057,10 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                      :is_superclass_of_tag_code "AIC" ,
                                                                 "LIC" ,
                                                                 "PIC" ;
+                                     :is_superclass_of_Avantis_category "Controller,Flow" ,
+                                                                        "Controller,Level" ,
+                                                                        "Controller,Pressure" ,
+                                                                        "Controller,Temperature" ;
                                      rdfs:label "process controller" .
 
 
@@ -5158,7 +5140,6 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 ###  http://www.toronto.ca/TWONTO#00628
 <http://www.toronto.ca/TWONTO#00628> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00329> ;
-                                     :is_equivalent_to_Avantis_class "Pump Station" ;
                                      rdfs:label "pumping station assets" .
 
 
@@ -5672,6 +5653,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 <http://www.toronto.ca/TWONTO#00694> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_Avantis_category "Valve,Solenoid" ;
+                                     :is_superclass_of_Avantis_category "Valve,Solenoid,Act." ;
                                      rdfs:label "solenoid" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "valve" .
 
@@ -6326,7 +6308,6 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                                         "Valve,Ball,Act." ,
                                                                         "Valve,Butterfly" ,
                                                                         "Valve,Butterfly,Act." ,
-                                                                        "Valve,Check" ,
                                                                         "Valve,Cone" ,
                                                                         "Valve,Cone,Act." ,
                                                                         "Valve,Diaphragm" ,
@@ -6669,6 +6650,15 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_equivalent_to_Avantis_class "Office Equipment" ;
+                                     :is_superclass_of_Avantis_category "Computer Equipment,CD Rom" ,
+                                                                        "Computer Equipment,CPU" ,
+                                                                        "Computer Equipment,Hard Drive" ,
+                                                                        "Computer Equipment,Hub" ,
+                                                                        "Computer Equipment,Laptop Docking Station" ,
+                                                                        "Computer Equipment,Memory" ,
+                                                                        "Computer Equipment,Monitor" ,
+                                                                        "Computer Equipment,Printer" ,
+                                                                        "Computer Equipment,Scanner" ;
                                      :is_superclass_of_tag_code "PRNT" ,
                                                                 "SCAN" ;
                                      rdfs:label "business administration and office equipment (MBC)"@en .
