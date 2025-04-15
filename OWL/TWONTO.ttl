@@ -15,7 +15,7 @@ We use them when the information collected from a data system is not in the same
                                              """07/04/2024 - When do we reify a properties into a \"Property State\"? 
 The strongest reason is if we want to keep track of history of changes in the datahub. For this reason, the only properties that we would consider not reifying are permanence properties that we do not expect to change, such as the weight of a piece of equipment.  Another reason would be to record provenance information, such as who established the relation.  The last reason is to keep track of corrective changes, which could be made even on permanent property values (that are incorrect).
 With all of the above in mind, properties should be reified by default.
-The reified properties are associated with (continuent) entitiies through the generic prediates, including the following and their subclasses. 
+The reified properties are associated with (continuent) entities through the generic predicates, including the following and their subclasses. 
 - has_property
 - the_individual""" ,
                                              """07/04/2024 - When to Choose Literal Value to Represent a Entity?
@@ -64,11 +64,6 @@ For the reasons above, examples of things that should be represented by a text v
 
 ###  http://www.toronto.ca/TWONTO#exclude_parent_from_classification_tree
 :exclude_parent_from_classification_tree rdf:type owl:AnnotationProperty .
-
-
-###  http://www.toronto.ca/TWONTO#gamur-bamod-vimoj-zajil
-:gamur-bamod-vimoj-zajil rdf:type owl:AnnotationProperty ;
-                         rdfs:label "new_tag_code"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#is_category_class
@@ -120,6 +115,11 @@ c) fire protection water supply pumps that depend on electrical power supplied t
 d) smoke control and smoke venting systems;
 e) emergency lighting; and
 f) exit signs that depend on electrical power supplied to the building.""" .
+
+
+###  http://www.toronto.ca/TWONTO#proposed_new_13040_code
+:proposed_new_13040_code rdf:type owl:AnnotationProperty ;
+                         rdfs:label "new_tag_code"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#will_be_a_defined_class
@@ -1471,6 +1471,7 @@ producesAudibleAlarm?
 isFireSystemAlarm?""" ;
                                      :is_equivalent_to_Avantis_class "Alarm" ;
                                      :is_equivalent_to_tag_code "ALR" ;
+                                     :is_superclass_of_tag_code "YAN" ;
                                      rdfs:label "alarm device" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "alarm" .
 
@@ -2302,7 +2303,8 @@ isThickeningCentrifuge""" ;
                                                                         "Recorder,Paper" ,
                                                                         "Recorder,Paperless" ;
                                      :is_equivalent_to_Avantis_class "Recorder" ;
-                                     :is_equivalent_to_tag_code "RC" ;
+                                     :is_equivalent_to_tag_code "DL" ,
+                                                                "RC" ;
                                      rdfs:label "data logger" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "data logging instrumentation" ,
                                                                                     "recorder" .
@@ -2434,14 +2436,6 @@ DECISION:
                                                                 "SD" ;
                                      :notion_mapping_id "6b05951a956d4b0288df8f8b4211e78a" ;
                                      rdfs:label "digester tank" .
-
-
-###  http://www.toronto.ca/TWONTO#00272
-<http://www.toronto.ca/TWONTO#00272> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
-                                                     <http://www.toronto.ca/TWONTO#00298> ;
-                                     :is_equivalent_to_tag_code "DS" ;
-                                     rdfs:label "disconnect switch" .
 
 
 ###  http://www.toronto.ca/TWONTO#00275
@@ -3143,6 +3137,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
                                      :is_equivalent_to_tag_code "FIT" ,
                                                                 "FT" ;
                                      :is_superclass_of_Avantis_category "Transmitter,Flow" ;
+                                     :is_superclass_of_tag_code "FQ" ;
                                      rdfs:label "flowmeter" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "flow meter" ,
                                                                                     "flow transmitter" .
@@ -3438,10 +3433,15 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00408
 <http://www.toronto.ca/TWONTO#00408> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
+                                     :is_equivalent_to_Avantis_class "Grounds" ,
+                                                                     "groundskeeping_equipment" ;
                                      :gamur-bamod-vimoj-zajil "GNDS" ;
-                                     :is_equivalent_to_Avantis_class "groundskeeping_equipment" ;
                                      :is_equivalent_to_tag_code "Grounds" ;
                                      :is_superclass_of_Avantis_class "IRG" ;
+                                     :is_superclass_of_tag_code "FFIC" ,
+                                                                "FIC" ,
+                                                                "GQ" ;
+                                     :proposed_new_13040_code "GNDS" ;
                                      rdfs:label "grounds or building service equipment (MBC)" .
 
 
@@ -3461,6 +3461,10 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00411
 <http://www.toronto.ca/TWONTO#00411> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_equivalent_to_tag_code "HS" ;
+                                     :is_superclass_of_tag_code "HMS" ,
+                                                                "HMSB" ,
+                                                                "HMSH" ;
                                      rdfs:label "hand switch" .
 
 
@@ -4472,7 +4476,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 <http://www.toronto.ca/TWONTO#00548> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00234> ;
                                      :is_equivalent_to_Avantis_category "SCADA" ;
-                                     :is_equivalent_to_Avantis_class "SCADA computer terminal" ;
+                                     :is_equivalent_to_Avantis_class "Operator Interface Terminal" ,
+                                                                     "SCADA computer terminal" ;
                                      :is_equivalent_to_tag_code "OIT" ;
                                      rdfs:label "operator interface terminal" .
 
@@ -4593,8 +4598,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ,
                                                      <http://www.toronto.ca/TWONTO#00800> ;
                                      :UNSPSC_code 41120000 ;
-                                     :gamur-bamod-vimoj-zajil "LAB" ;
                                      :is_category_class "true"^^xsd:boolean ;
+                                     :proposed_new_13040_code "LAB" ;
                                      rdfs:label "lab equipment (MBC)" .
 
 
@@ -4629,6 +4634,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 <http://www.toronto.ca/TWONTO#00571> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00358> ;
+                                     :is_equivalent_to_tag_code "BH" ;
                                      :not_relevant_to_AM_or_PM "true"^^xsd:boolean ;
                                      rdfs:label "piping end cap" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "piping bulk-head" .
@@ -4825,6 +4831,7 @@ ii. hot water service operating pressure above 1100 kPa (160 psig) or above the 
 ###  http://www.toronto.ca/TWONTO#00594
 <http://www.toronto.ca/TWONTO#00594> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_equivalent_to_tag_code "DS" ;
                                      rdfs:label "power disconnect switch" .
 
 
@@ -4987,6 +4994,9 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                      :is_equivalent_to_Avantis_category "Controller" ;
                                      :is_equivalent_to_Avantis_class "Controller" ;
                                      :is_equivalent_to_tag_code "CT" ;
+                                     :is_superclass_of_tag_code "AIC" ,
+                                                                "LIC" ,
+                                                                "PIC" ;
                                      :is_superclass_of_Avantis_category "Controller,Flow" ,
                                                                         "Controller,Level" ,
                                                                         "Controller,Pressure" ,
@@ -5270,6 +5280,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 ###  http://www.toronto.ca/TWONTO#00655
 <http://www.toronto.ca/TWONTO#00655> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00600> ;
+                                     :is_equivalent_to_Avantis_class "Rupture Disc" ;
                                      :is_equivalent_to_tag_code "RD" ;
                                      rdfs:label "rupture disc" .
 
@@ -5863,6 +5874,8 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00735
 <http://www.toronto.ca/TWONTO#00735> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00520> ;
+                                     :is_equivalent_to_tag_code "TIT" ,
+                                                                "TT" ;
                                      rdfs:label "temperature transmitter" .
 
 
@@ -5932,15 +5945,16 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00746
 <http://www.toronto.ca/TWONTO#00746> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :is_equivalent_to_tag_code "TIC" ;
                                      rdfs:label "thermostat or zone controller unit" .
 
 
 ###  http://www.toronto.ca/TWONTO#00747
 <http://www.toronto.ca/TWONTO#00747> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
-                                     :gamur-bamod-vimoj-zajil "TOOL" ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_equivalent_to_Avantis_class "Tool" ;
+                                     :proposed_new_13040_code "TOOL" ;
                                      rdfs:label "tool or accessory of tool (MBC)" .
 
 
@@ -6012,9 +6026,9 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00756
 <http://www.toronto.ca/TWONTO#00756> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
-                                     :gamur-bamod-vimoj-zajil "TRANS" ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_superclass_of_tag_code "VEH" ;
+                                     :proposed_new_13040_code "TRANS" ;
                                      rdfs:label "vehicle, transportation tool, or accessory (MBC)" .
 
 
@@ -6311,6 +6325,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00792
 <http://www.toronto.ca/TWONTO#00792> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00446> ;
+                                     :is_equivalent_to_tag_code "VE" ;
                                      :is_superclass_of_Avantis_category "Switch,Vibration-High" ,
                                                                         "Switch,Vibration-Low" ;
                                      :is_superclass_of_tag_code "VSH" ,
@@ -6380,8 +6395,8 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00803
 <http://www.toronto.ca/TWONTO#00803> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
-                                     :gamur-bamod-vimoj-zajil "PROC" ;
                                      :is_category_class "true"^^xsd:boolean ;
+                                     :proposed_new_13040_code "PROC" ;
                                      rdfs:label "treatment process and support equipment (MBC)" .
 
 
@@ -6525,8 +6540,10 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00915
 <http://www.toronto.ca/TWONTO#00915> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00657> ;
+                                     :is_equivalent_to_tag_code "FSS" ;
                                      :gamur-bamod-vimoj-zajil "FIRE" ;
                                      :is_superclass_of_Avantis_class "Fire Equipment" ;
+                                     :proposed_new_13040_code "FIRE" ;
                                      rdfs:label "fire and life-safety system component (MBC)" .
 
 
