@@ -3457,6 +3457,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
                                      :is_equivalent_to_Avantis_class "Grounds" ,
                                                                      "groundskeeping_equipment" ;
+                                     :gamur-bamod-vimoj-zajil "GNDS" ;
                                      :is_equivalent_to_tag_code "Grounds" ;
                                      :is_superclass_of_Avantis_class "IRG" ;
                                      :is_superclass_of_tag_code "FFIC" ,
@@ -6559,6 +6560,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 <http://www.toronto.ca/TWONTO#00915> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00657> ;
                                      :is_equivalent_to_tag_code "FSS" ;
+                                     :gamur-bamod-vimoj-zajil "FIRE" ;
                                      :is_superclass_of_Avantis_class "Fire Equipment" ;
                                      :proposed_new_13040_code "FIRE" ;
                                      rdfs:label "fire and life-safety system component (MBC)" .
