@@ -28,6 +28,26 @@ For the reasons above, examples of things that should be represented by a text v
 #    Annotation properties
 #################################################################
 
+###  http://www.toronto.ca/TWONTO#OWLAnnotationProperty_bopaj-gusar-mifuz-jupav
+:OWLAnnotationProperty_bopaj-gusar-mifuz-jupav rdf:type owl:AnnotationProperty ;
+                                               rdfs:label "is_equivalent_to_Avantis_activity" ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:domain :OWLClass_lakub-lodok-lijug-buvov .
+
+
+###  http://www.toronto.ca/TWONTO#OWLAnnotationProperty_joris-zinuv-kuhis-juhuh
+:OWLAnnotationProperty_joris-zinuv-kuhis-juhuh rdf:type owl:AnnotationProperty ;
+                                               rdfs:label "is_superclass_to_Avantis_activity" ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:domain :OWLClass_lakub-lodok-lijug-buvov .
+
+
+###  http://www.toronto.ca/TWONTO#OWLAnnotationProperty_munuv-vuvoh-sibuk-mazuk
+:OWLAnnotationProperty_munuv-vuvoh-sibuk-mazuk rdf:type owl:AnnotationProperty ;
+                                               rdfs:label "can_be_applied_to_instances" ;
+                                               rdfs:range xsd:boolean .
+
+
 ###  http://www.toronto.ca/TWONTO#TW_PCS_code
 :TW_PCS_code rdf:type owl:AnnotationProperty .
 
@@ -805,6 +825,292 @@ I created this property to point to a piece of text describing the intent of the
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.toronto.ca/TWONTO#OWLClass_butaz-rilom-momog-vupot
+:OWLClass_butaz-rilom-momog-vupot rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  :OWLAnnotationProperty_munuv-vuvoh-sibuk-mazuk "false"^^xsd:boolean ;
+                                  rdfs:label "asset data" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_dabam-radih-timok-luziz
+:OWLClass_dabam-radih-timok-luziz rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_nufom-lujuh-mujaz-vagah ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Install" ,
+                                                                                 "Setup" ;
+                                  rdfs:label "asset commissioning" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_dituz-motim-pijad-vofaf
+:OWLClass_dituz-motim-pijad-vofaf rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_hokob-vokur-lohuj-nobuf ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Adjust" ;
+                                  rdfs:label "modify asset set-point" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_dujud-ravur-torat-noruz
+:OWLClass_dujud-ravur-torat-noruz rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  :OWLAnnotationProperty_munuv-vuvoh-sibuk-mazuk "false"^^xsd:boolean ;
+                                  rdfs:label "contributory work" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_dupih-vatiz-kijat-rosuv
+:OWLClass_dupih-vatiz-kijat-rosuv rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_sonil-zanok-mifot-majud ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Test" ;
+                                  rdfs:label "test and analysis" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_favuj-munav-nohod-bibum
+:OWLClass_favuj-munav-nohod-bibum rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_movom-darav-zumif-lihal ,
+                                                  :OWLClass_sapus-javoj-fituv-lavab ;
+                                  rdfs:label "asset part replacement" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_fijuk-sakaf-duvit-girug
+:OWLClass_fijuk-sakaf-duvit-girug rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_butaz-rilom-momog-vupot ;
+                                  rdfs:label "record retirement" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_fuvok-tohuj-livir-pohib
+:OWLClass_fuvok-tohuj-livir-pohib rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_dujud-ravur-torat-noruz ;
+                                  rdfs:label "travel" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_garij-hodur-tufin-hitip
+:OWLClass_garij-hodur-tufin-hitip rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_dujud-ravur-torat-noruz ;
+                                  rdfs:label "takedown of setup" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_gihak-dijih-hazuv-jibud
+:OWLClass_gihak-dijih-hazuv-jibud rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_movom-darav-zumif-lihal ;
+                                  :OWLAnnotationProperty_bopaj-gusar-mifuz-jupav "Position" ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Relocate" ;
+                                  rdfs:label "asset movement" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_hokob-vokur-lohuj-nobuf
+:OWLClass_hokob-vokur-lohuj-nobuf rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  :OWLAnnotationProperty_munuv-vuvoh-sibuk-mazuk "false"^^xsd:boolean ;
+                                  rdfs:label "asset modification" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_jaboj-vasah-zutaf-disat
+:OWLClass_jaboj-vasah-zutaf-disat rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Generate" ;
+                                  rdfs:label "cause investigation" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_kuguh-bifis-zigit-gofan
+:OWLClass_kuguh-bifis-zigit-gofan rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_dujud-ravur-torat-noruz ;
+                                  :OWLAnnotationProperty_bopaj-gusar-mifuz-jupav "Coordinate" ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Contact" ,
+                                                                                 "Inform" ,
+                                                                                 "Send" ;
+                                  rdfs:label "work coordination" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_kupun-hojiv-monok-hazaj
+:OWLClass_kupun-hojiv-monok-hazaj rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_movom-darav-zumif-lihal ;
+                                  rdfs:label "new asset installation" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_lakub-lodok-lijug-buvov
+:OWLClass_lakub-lodok-lijug-buvov rdf:type owl:Class ;
+                                  rdfs:label "activity" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_malom-mamuh-lakat-nupol
+:OWLClass_malom-mamuh-lakat-nupol rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_movom-darav-zumif-lihal ,
+                                                  :OWLClass_sapus-javoj-fituv-lavab ;
+                                  rdfs:label "asset part movement" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_mipol-dosiv-polav-jutor
+:OWLClass_mipol-dosiv-polav-jutor rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_sapus-javoj-fituv-lavab ;
+                                  :OWLAnnotationProperty_bopaj-gusar-mifuz-jupav "Calibrate" ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Regulatory-Calibrate" ;
+                                  rdfs:label "calibration" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_misob-sobor-nafip-hupif
+:OWLClass_misob-sobor-nafip-hupif rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_viguv-vuhor-muboj-jizod ;
+                                  rdfs:label "removal of existing functional-location" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_movom-darav-zumif-lihal
+:OWLClass_movom-darav-zumif-lihal rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  :OWLAnnotationProperty_munuv-vuvoh-sibuk-mazuk "false"^^xsd:boolean ;
+                                  rdfs:label "move or replace" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_napap-pigul-ribom-vaboz
+:OWLClass_napap-pigul-ribom-vaboz rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_sonil-zanok-mifot-majud ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Inspect" ,
+                                                                                 "Measure" ,
+                                                                                 "Record" ,
+                                                                                 "Review" ;
+                                  rdfs:label "inspection and evaluation" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_nufom-lujuh-mujaz-vagah
+:OWLClass_nufom-lujuh-mujaz-vagah rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  :OWLAnnotationProperty_munuv-vuvoh-sibuk-mazuk "false"^^xsd:boolean ;
+                                  rdfs:label "life cycle events" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_nuvat-hopij-ganir-ravit
+:OWLClass_nuvat-hopij-ganir-ravit rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_movom-darav-zumif-lihal ,
+                                                  :OWLClass_sapus-javoj-fituv-lavab ;
+                                  :OWLAnnotationProperty_bopaj-gusar-mifuz-jupav "Replace" ;
+                                  rdfs:label "asset replacement" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_palup-nadiv-dihib-napaf
+:OWLClass_palup-nadiv-dihib-napaf rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  :OWLAnnotationProperty_bopaj-gusar-mifuz-jupav "Sample" ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Download" ;
+                                  rdfs:label "sample collection" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_pifun-lanaz-bodut-zolak
+:OWLClass_pifun-lanaz-bodut-zolak rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_nufom-lujuh-mujaz-vagah ;
+                                  rdfs:label "final asset decommissioning" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_pukuf-mapas-tolak-nuzon
+:OWLClass_pukuf-mapas-tolak-nuzon rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_hokob-vokur-lohuj-nobuf ;
+                                  rdfs:label "physical modification to building or structure" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_rogut-lorag-zozuj-zuras
+:OWLClass_rogut-lorag-zozuj-zuras rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  rdfs:label "asset assignment" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_sapus-javoj-fituv-lavab
+:OWLClass_sapus-javoj-fituv-lavab rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Assemble" ,
+                                                                                 "Change" ,
+                                                                                 "Clean" ,
+                                                                                 "Drain" ,
+                                                                                 "Exercise" ,
+                                                                                 "Flush" ,
+                                                                                 "Lubricate" ,
+                                                                                 "Maintain" ,
+                                                                                 "Open" ,
+                                                                                 "Operate" ,
+                                                                                 "Overhaul" ,
+                                                                                 "Purge" ,
+                                                                                 "Re-tighten" ,
+                                                                                 "Refill" ,
+                                                                                 "Regulatory-Verify" ,
+                                                                                 "Remove" ,
+                                                                                 "Repair" ,
+                                                                                 "Service" ,
+                                                                                 "Switch off" ,
+                                                                                 "Switch on" ,
+                                                                                 "Tighten" ,
+                                                                                 "Tigthen" ,
+                                                                                 "Turn-Off" ,
+                                                                                 "Verification" ,
+                                                                                 "Verify" ;
+                                  rdfs:label "repair or service" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_sonil-zanok-mifot-majud
+:OWLClass_sonil-zanok-mifot-majud rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  :OWLAnnotationProperty_munuv-vuvoh-sibuk-mazuk "false"^^xsd:boolean ;
+                                  rdfs:label "condition evaluation" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_vakom-jozim-zomit-rojib
+:OWLClass_vakom-jozim-zomit-rojib rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_butaz-rilom-momog-vupot ;
+                                  rdfs:label "record information correction" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_viguv-vuhor-muboj-jizod
+:OWLClass_viguv-vuhor-muboj-jizod rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_lakub-lodok-lijug-buvov ;
+                                  rdfs:label "design and redesign" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_vikol-litaj-tumih-mozuk
+:OWLClass_vikol-litaj-tumih-mozuk rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_hokob-vokur-lohuj-nobuf ;
+                                  rdfs:label "physical modification to asset" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_vorut-zasoj-padid-hasiz
+:OWLClass_vorut-zasoj-padid-hasiz rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_sonil-zanok-mifot-majud ;
+                                  :OWLAnnotationProperty_bopaj-gusar-mifuz-jupav "Check" ;
+                                  rdfs:label "quick check" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_ziduv-gujam-gijob-roziv
+:OWLClass_ziduv-gujam-gijob-roziv rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_dujud-ravur-torat-noruz ;
+                                  rdfs:label "item procurement" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_zigig-nibib-zijud-bopas
+:OWLClass_zigig-nibib-zijud-bopas rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_dujud-ravur-torat-noruz ;
+                                  rdfs:label "setup" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_zigiv-josof-nuvin-kovup
+:OWLClass_zigiv-josof-nuvin-kovup rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_movom-darav-zumif-lihal ,
+                                                  :OWLClass_nufom-lujuh-mujaz-vagah ;
+                                  rdfs:label "asset hand-over" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_zobor-putuv-fokof-gahoz
+:OWLClass_zobor-putuv-fokof-gahoz rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_dujud-ravur-torat-noruz ;
+                                  :OWLAnnotationProperty_joris-zinuv-kuhis-juhuh "Complete" ,
+                                                                                 "Isolate" ;
+                                  rdfs:label "safety preparation" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_zubob-majaj-rural-rukos
+:OWLClass_zubob-majaj-rural-rukos rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_sonil-zanok-mifot-majud ;
+                                  :OWLAnnotationProperty_bopaj-gusar-mifuz-jupav "Analysis" ;
+                                  rdfs:label "condition analysis" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_zutis-difih-rogav-mokiv
+:OWLClass_zutis-difih-rogav-mokiv rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_viguv-vuhor-muboj-jizod ;
+                                  rdfs:label "creation of new functional-location" .
+
 
 ###  http://www.toronto.ca/TWONTO#famog-dusim-ludut-gasof
 :famog-dusim-ludut-gasof rdf:type owl:Class ;
@@ -6612,7 +6918,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 <http://www.toronto.ca/TWONTO#00918> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_tag_code "NGR" ;
-                                     rdfs:label "neutral grounding resistor"@en .
+                                     rdfs:label "neutral grounding resistor" .
 
 
 ###  http://www.toronto.ca/TWONTO#00919
@@ -6648,14 +6954,14 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00915> ;
                                      :is_equivalent_to_tag_code "FSP" ;
-                                     rdfs:label "fire standpipe"@en .
+                                     rdfs:label "fire standpipe" .
 
 
 ###  http://www.toronto.ca/TWONTO#00922
 <http://www.toronto.ca/TWONTO#00922> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_tag_code "IGN" ;
-                                     rdfs:label "ignitor"@en .
+                                     rdfs:label "ignitor" .
 
 
 ###  http://www.toronto.ca/TWONTO#00923
@@ -6678,7 +6984,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_tag_code "BN" ;
                                      :not_relevant_to_AM_or_PM "true"^^xsd:boolean ;
-                                     rdfs:label "solids disposal bin"@en .
+                                     rdfs:label "solids disposal bin" .
 
 
 ###  http://www.toronto.ca/TWONTO#00926
@@ -6686,7 +6992,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :dev-property_note "functional component material" ;
                                      :notion_mapping_id "602f9138b2d84c3b9d0054fb164fe852" ;
-                                     rdfs:label "lifting device sling"@en .
+                                     rdfs:label "lifting device sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00927
@@ -6694,7 +7000,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "77c5233ab77743378ce0b629bfb2ea27" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "wire-rope sling"@en .
+                                     rdfs:label "wire-rope sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00928
@@ -6702,7 +7008,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "f8ddec4643a9403f93c5209d6874a4ed" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "metal mesh sling"@en .
+                                     rdfs:label "metal mesh sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00929
@@ -6710,7 +7016,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "18eee6561af54394a626fe98b74b1d6e" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "synthetic web sling"@en .
+                                     rdfs:label "synthetic web sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00930
@@ -6718,7 +7024,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "955b89ab1b20474f97408041a9afa7f3" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "steel chain sling"@en .
+                                     rdfs:label "steel chain sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00931
@@ -6726,7 +7032,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "a3885868212a467f9dec692a325eee80" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "natural or synthetic fiber rope sling"@en .
+                                     rdfs:label "natural or synthetic fiber rope sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00932
@@ -6746,18 +7052,19 @@ is capable of realizing a unit of the system primary functions.""" ;
 
 ###  http://www.toronto.ca/TWONTO#00934
 <http://www.toronto.ca/TWONTO#00934> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_Avantis_category "Lighting,Emergency" ,
                                                                         "Lighting,Exit" ;
                                      :is_superclass_of_tag_code "LTG" ,
                                                                 "LTX" ;
-                                     rdfs:label "emergency light"@en .
+                                     rdfs:label "emergency light" .
 
 
 ###  http://www.toronto.ca/TWONTO#00935
 <http://www.toronto.ca/TWONTO#00935> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_tag_code "DRV" ;
-                                     rdfs:label "motor drive"@en .
+                                     rdfs:label "motor drive" .
 
 
 ###  http://www.toronto.ca/TWONTO#00936
@@ -6813,14 +7120,14 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00946
 <http://www.toronto.ca/TWONTO#00946> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     rdfs:label "vacuum pump"@en .
+                                     rdfs:label "vacuum pump" .
 
 
 ###  http://www.toronto.ca/TWONTO#01919
 <http://www.toronto.ca/TWONTO#01919> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00298> ;
-                                     rdfs:label "inverter"@en .
+                                     rdfs:label "inverter" .
 
 
 #################################################################
