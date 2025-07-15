@@ -911,7 +911,10 @@ I created this property to point to a piece of text describing the intent of the
                                                                            ) ;
                                                         rdf:type owl:Class
                                                       ] ;
-                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
+                                  rdfs:subClassOf :OWLClass_risig-vubog-jasav-dafud ,
+                                                  <http://www.toronto.ca/TWONTO#00307> ,
+                                                  <http://www.toronto.ca/TWONTO#00308> ,
+                                                  <http://www.toronto.ca/TWONTO#00311> ,
                                                   <http://www.toronto.ca/TWONTO#00354> ;
                                   :notion_mapping_id "cfe435427a4b464797d2b0567d6c0886" ;
                                   :will_be_a_defined_class "true"^^xsd:boolean ;
@@ -1010,7 +1013,10 @@ I created this property to point to a piece of text describing the intent of the
                                                                            ) ;
                                                         rdf:type owl:Class
                                                       ] ;
-                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
+                                  rdfs:subClassOf :OWLClass_risig-vubog-jasav-dafud ,
+                                                  <http://www.toronto.ca/TWONTO#00307> ,
+                                                  <http://www.toronto.ca/TWONTO#00308> ,
+                                                  <http://www.toronto.ca/TWONTO#00311> ,
                                                   <http://www.toronto.ca/TWONTO#00354> ;
                                   :notion_mapping_id "723948b08a1340bba89ae5bad289382c" ;
                                   :will_be_a_defined_class "true"^^xsd:boolean ;
