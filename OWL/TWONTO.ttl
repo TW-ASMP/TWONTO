@@ -98,7 +98,7 @@ For the reasons above, examples of things that should be represented by a text v
 
 ###  http://www.toronto.ca/TWONTO#new_13040_code_proposed
 :new_13040_code_proposed rdf:type owl:AnnotationProperty ;
-                         rdfs:label "new_13040_code_proposed"@en .
+                         rdfs:label "new_13040_code_proposed" .
 
 
 ###  http://www.toronto.ca/TWONTO#not_relevant_to_AM_or_PM
@@ -153,7 +153,7 @@ f) exit signs that depend on electrical power supplied to the building.""" .
 <http://www.toronto.ca/TWONTO#00868> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#00882> ;
                                      rdf:type owl:TransitiveProperty ;
-                                     rdfs:label "grounds"@en ,
+                                     rdfs:label "grounds" ,
                                                 "grounds" ;
                                      owl:deprecated "true"^^xsd:boolean .
 
@@ -206,7 +206,7 @@ f) exit signs that depend on electrical power supplied to the building.""" .
 ###  http://www.toronto.ca/TWONTO#00876
 <http://www.toronto.ca/TWONTO#00876> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#00872> ;
-                                     rdfs:label "has next version"@en ,
+                                     rdfs:label "has next version" ,
                                                 "has next version" .
 
 
@@ -256,7 +256,7 @@ The following properties are represented without reification.
 ###  http://www.toronto.ca/TWONTO#00883
 <http://www.toronto.ca/TWONTO#00883> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#00871> ;
-                                     rdfs:label "has previous version"@en ,
+                                     rdfs:label "has previous version" ,
                                                 "has previous version" .
 
 
@@ -341,7 +341,7 @@ Also see further comment under the tw:theMetaClass class.""" ;
 <http://www.toronto.ca/TWONTO#00894> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#00892> ;
                                      rdfs:range <http://www.toronto.ca/TWONTO#00565> ;
-                                     rdfs:label "includes work instruction content"@en ,
+                                     rdfs:label "includes work instruction content" ,
                                                 "includes work instruction content" .
 
 
@@ -349,7 +349,7 @@ Also see further comment under the tw:theMetaClass class.""" ;
 <http://www.toronto.ca/TWONTO#00895> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#00892> ;
                                      rdfs:range <http://www.toronto.ca/TWONTO#00565> ;
-                                     rdfs:label "includes worker qualification content"@en ,
+                                     rdfs:label "includes worker qualification content" ,
                                                 "includes worker qualification content" .
 
 
@@ -441,7 +441,7 @@ as a part of unary relation:
 ###  http://www.toronto.ca/TWONTO#00907
 <http://www.toronto.ca/TWONTO#00907> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#00868> ;
-                                     rdfs:label "partially grounds"@en ,
+                                     rdfs:label "partially grounds" ,
                                                 "partially grounds" .
 
 
@@ -461,7 +461,7 @@ as a part of unary relation:
 <http://www.toronto.ca/TWONTO#00910> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#00882> ;
                                      rdfs:comment "TH 12.5.2023: Create to indicate that one document makes an explicit reference of another body of content." ;
-                                     rdfs:label "references"@en ,
+                                     rdfs:label "references" ,
                                                 "references" .
 
 
@@ -469,7 +469,7 @@ as a part of unary relation:
 <http://www.toronto.ca/TWONTO#00911> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#00910> ;
                                      rdfs:comment "TH 12/5/2023: created to indicate that a body of content does not only contain a reference to another body of content, but also adopts the referred content to be enforceable, under the authority of an origanization such as the government legislature, or the employer." ;
-                                     rdfs:label "references for adoption"@en ,
+                                     rdfs:label "references for adoption" ,
                                                 "references for adoption" .
 
 
@@ -843,7 +843,7 @@ I created this property to point to a piece of text describing the intent of the
                                   rdfs:subClassOf :OWLClass_9c6da0bd_4a16_42f6_90f8_dfc8f20b23d3 ,
                                                   <http://www.toronto.ca/TWONTO#00756> ;
                                   rdfs:isDefinedBy "A vehicle powered by an engine or motor, such as a car, truck, or motorcycle, rather than by human effort" ;
-                                  rdfs:label "motorized vehicle"@en .
+                                  rdfs:label "motorized vehicle" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_donoj-pofaf-tuson-bilom
@@ -963,7 +963,7 @@ I created this property to point to a piece of text describing the intent of the
                                   :is_equivalent_to_Avantis_category "Control Panel,Fire" ,
                                                                      "Fire Prevention,Alarm" ;
                                   :is_equivalent_to_tag_code "FA" ;
-                                  rdfs:label "fire alarm panel"@en .
+                                  rdfs:label "fire alarm panel" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_vahaj-hatag-motud-pifin
@@ -983,26 +983,26 @@ I created this property to point to a piece of text describing the intent of the
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00665> ;
                          :will_be_a_defined_class "true"^^xsd:boolean ;
                          rdfs:comment "screening unit and is traveling screen is true" ;
-                         rdfs:label "traveling screen"@en .
+                         rdfs:label "traveling screen" .
 
 
 ###  http://www.toronto.ca/TWONTO#famog-dusim-ludut-gasof
 :famog-dusim-ludut-gasof rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00582> ;
-                         rdfs:label "SCBA cylinder"@en .
+                         rdfs:label "SCBA cylinder" .
 
 
 ###  http://www.toronto.ca/TWONTO#fohur-bugut-lijif-zazom
 :fohur-bugut-lijif-zazom rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00590> ;
-                         rdfs:label "limit switch"@en .
+                         rdfs:label "limit switch" .
 
 
 ###  http://www.toronto.ca/TWONTO#fufop-dabag-pazir-kital
 :fufop-dabag-pazir-kital rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00445> ;
-                         rdfs:label "level indicator"@en ;
+                         rdfs:label "level indicator" ;
                          <http://www.w3.org/2004/02/skos/core#altLabel> "level gauge" ,
                                                                         "level sight glass" .
 
@@ -1012,49 +1012,49 @@ I created this property to point to a piece of text describing the intent of the
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00939> ;
                          rdfs:isDefinedBy "A mechanical device installed at the inlet of a pump to condition the flow of liquid entering the pump." ;
-                         rdfs:label "pump diffuser"@en .
+                         rdfs:label "pump diffuser" .
 
 
 ###  http://www.toronto.ca/TWONTO#guzut-majad-vagos-jagok
 :guzut-majad-vagos-jagok rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00665> ;
                          :is_equivalent_to_Avantis_category "Screen,Trommel" ;
-                         rdfs:label "trommel screen"@en .
+                         rdfs:label "trommel screen" .
 
 
 ###  http://www.toronto.ca/TWONTO#hulol-galof-pivol-pojum
 :hulol-galof-pivol-pojum rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00339> ;
-                         rdfs:label "tie-off anchor"@en .
+                         rdfs:label "tie-off anchor" .
 
 
 ###  http://www.toronto.ca/TWONTO#kolis-tozuh-tudoz-vujuj
 :kolis-tozuh-tudoz-vujuj rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00657> ;
                          :is_category_class "true"^^xsd:boolean ;
-                         rdfs:label "SCBA system component (MBC)"@en .
+                         rdfs:label "SCBA system component (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#lisih-havul-pajis-pinit
 :lisih-havul-pajis-pinit rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
                          :is_category_class "true"^^xsd:boolean ;
-                         rdfs:label "controller or manual control equipment (MBC)"@en .
+                         rdfs:label "controller or manual control equipment (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#nigot-zosip-fonus-sudof
 :nigot-zosip-fonus-sudof rdf:type owl:Class ;
                          rdfs:subClassOf :kolis-tozuh-tudoz-vujuj ,
                                          <http://www.toronto.ca/TWONTO#00011> ;
-                         rdfs:label "SCBA mask"@en .
+                         rdfs:label "SCBA mask" .
 
 
 ###  http://www.toronto.ca/TWONTO#novid-vogiv-darod-munik
 :novid-vogiv-darod-munik rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00445> ;
-                         rdfs:label "speed indicator"@en ;
+                         rdfs:label "speed indicator" ;
                          <http://www.w3.org/2004/02/skos/core#altLabel> "speed gauge" .
 
 
@@ -1062,14 +1062,14 @@ I created this property to point to a piece of text describing the intent of the
 :paroz-karil-zuviv-zotol rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00708> ;
                          rdfs:isDefinedBy "A storage container designed to hold oils or liquids other than fuel oils, such as lubricating oils, hydraulic oils, or other industrial oils, used for machinery, equipment, or process applications." ;
-                         rdfs:label "non-fuel oil tank"@en .
+                         rdfs:label "non-fuel oil tank" .
 
 
 ###  http://www.toronto.ca/TWONTO#piguk-mumor-jugoj-sibif
 :piguk-mumor-jugoj-sibif rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00445> ;
-                         rdfs:label "flow indicator"@en ;
+                         rdfs:label "flow indicator" ;
                          <http://www.w3.org/2004/02/skos/core#altLabel> "flow gauge" .
 
 
@@ -1077,7 +1077,7 @@ I created this property to point to a piece of text describing the intent of the
 :punol-kujib-zolom-dolav rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00445> ;
-                         rdfs:label "pressure indicator"@en ;
+                         rdfs:label "pressure indicator" ;
                          <http://www.w3.org/2004/02/skos/core#altLabel> "pressure gauge" .
 
 
@@ -1085,20 +1085,20 @@ I created this property to point to a piece of text describing the intent of the
 :sufov-kojip-romig-faraz rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ,
                                          <http://www.toronto.ca/TWONTO#00563> ;
-                         rdfs:label "vehicle gate access control system"@en .
+                         rdfs:label "vehicle gate access control system" .
 
 
 ###  http://www.toronto.ca/TWONTO#tubom-vagid-foraf-falid
 :tubom-vagid-foraf-falid rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00231> ;
-                         rdfs:label "wireless communication device (MBC)"@en .
+                         rdfs:label "wireless communication device (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#tujad-guzov-jilok-tubav
 :tujad-guzov-jilok-tubav rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00445> ;
-                         rdfs:label "temperature indicator"@en ;
+                         rdfs:label "temperature indicator" ;
                          <http://www.w3.org/2004/02/skos/core#altLabel> "temperature gauge" .
 
 
@@ -1106,7 +1106,7 @@ I created this property to point to a piece of text describing the intent of the
 :zuvit-botof-lofip-natah rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00747> ;
                          :is_category_class "true"^^xsd:boolean ;
-                         rdfs:label "calibration tool or accessory (MBC)"@en .
+                         rdfs:label "calibration tool or accessory (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00001
@@ -1265,7 +1265,7 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#00103
 <http://www.toronto.ca/TWONTO#00103> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00240> ;
-                                     rdfs:label "compilation of content on activity specification"@en ,
+                                     rdfs:label "compilation of content on activity specification" ,
                                                 "COCOA" .
 
 
@@ -1366,7 +1366,7 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#00116
 <http://www.toronto.ca/TWONTO#00116> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00401> ;
-                                     rdfs:label "Ontario provincial regulation"@en ,
+                                     rdfs:label "Ontario provincial regulation" ,
                                                 "Ontario regulation" .
 
 
@@ -2482,7 +2482,7 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#00247
 <http://www.toronto.ca/TWONTO#00247> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00241> ;
-                                     rdfs:label "corporate policy"@en ,
+                                     rdfs:label "corporate policy" ,
                                                 "corporate policy" .
 
 
@@ -2658,7 +2658,7 @@ DECISION:
 <http://www.toronto.ca/TWONTO#00270> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00176> ;
                                      rdfs:comment "TH Dec/2023: intended to quantify instances of Functional Capability or Quality entity" ;
-                                     rdfs:label "digester gas"@en ,
+                                     rdfs:label "digester gas" ,
                                                 "digester gas" .
 
 
@@ -3164,7 +3164,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 ###  http://www.toronto.ca/TWONTO#00342
 <http://www.toronto.ca/TWONTO#00342> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00401> ;
-                                     rdfs:label "Canadian federal regulation"@en ,
+                                     rdfs:label "Canadian federal regulation" ,
                                                 "federal regulation" .
 
 
@@ -3177,7 +3177,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 ###  http://www.toronto.ca/TWONTO#00344
 <http://www.toronto.ca/TWONTO#00344> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00565> ;
-                                     rdfs:label "figure content"@en ,
+                                     rdfs:label "figure content" ,
                                                 "figure content" .
 
 
@@ -3658,7 +3658,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00401
 <http://www.toronto.ca/TWONTO#00401> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00241> ;
-                                     rdfs:label "government regulation"@en ,
+                                     rdfs:label "government regulation" ,
                                                 "government regulation" .
 
 
@@ -3919,7 +3919,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#00431> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_tag_code "HYD" ;
-                                     rdfs:label "hydrant"@en ,
+                                     rdfs:label "hydrant" ,
                                                 "hydrant" .
 
 
@@ -4142,7 +4142,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00463
 <http://www.toronto.ca/TWONTO#00463> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00241> ;
-                                     rdfs:label "legislation"@en ,
+                                     rdfs:label "legislation" ,
                                                 "legislation" .
 
 
@@ -4755,7 +4755,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 ###  http://www.toronto.ca/TWONTO#00557
 <http://www.toronto.ca/TWONTO#00557> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00565> ;
-                                     rdfs:label "paragraph content"@en ,
+                                     rdfs:label "paragraph content" ,
                                                 "paragraph content" .
 
 
@@ -4823,7 +4823,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 <http://www.toronto.ca/TWONTO#00565> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00004> ;
                                      rdfs:comment "TH 12/5/2023: created to represent a piece of content about some part of the world, as oppose to other pieces of content used to organize these pieces of content, such as a folder in a computer, a compilation, or section delimiter in a document." ;
-                                     rdfs:label "piece_of_content"@en ,
+                                     rdfs:label "piece_of_content" ,
                                                 "piece of content" .
 
 
@@ -5275,7 +5275,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 ###  http://www.toronto.ca/TWONTO#00623
 <http://www.toronto.ca/TWONTO#00623> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00006> ;
-                                     rdfs:label "publisher"@en ,
+                                     rdfs:label "publisher" ,
                                                 "publisher" .
 
 
@@ -5431,7 +5431,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 ###  http://www.toronto.ca/TWONTO#00646
 <http://www.toronto.ca/TWONTO#00646> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00004> ;
-                                     rdfs:label "revision"@en ,
+                                     rdfs:label "revision" ,
                                                 "revision" .
 
 
@@ -5615,7 +5615,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 ###  http://www.toronto.ca/TWONTO#00670
 <http://www.toronto.ca/TWONTO#00670> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00565> ;
-                                     rdfs:label "section content"@en ,
+                                     rdfs:label "section content" ,
                                                 "section content" .
 
 
@@ -5995,7 +5995,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00725
 <http://www.toronto.ca/TWONTO#00725> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00565> ;
-                                     rdfs:label "table content"@en ,
+                                     rdfs:label "table content" ,
                                                 "table content" .
 
 
@@ -6019,7 +6019,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00730
 <http://www.toronto.ca/TWONTO#00730> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00241> ;
-                                     rdfs:label "technical standard"@en ,
+                                     rdfs:label "technical standard" ,
                                                 "technical standard" .
 
 
@@ -6715,7 +6715,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_tag_code "NGR" ;
                                      rdfs:isDefinedBy "An electrical component used in power systems to limit fault current by grounding the neutral point of a transformer or generator through a resistor." ;
-                                     rdfs:label "neutral grounding resistor"@en .
+                                     rdfs:label "neutral grounding resistor" .
 
 
 ###  http://www.toronto.ca/TWONTO#00919
@@ -6724,7 +6724,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_superclass_to_tag_code "LTG" ,
                                                                 "PLQ" ;
-                                     rdfs:label "building service system component (MBC)"@en .
+                                     rdfs:label "building service system component (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00920
@@ -6743,7 +6743,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                                         "Computer Equipment,Scanner" ;
                                      :is_superclass_to_tag_code "PRNT" ,
                                                                 "SCAN" ;
-                                     rdfs:label "business administration and office equipment (MBC)"@en .
+                                     rdfs:label "business administration and office equipment (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00921
@@ -6751,7 +6751,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00915> ;
                                      :is_equivalent_to_tag_code "FSP" ;
-                                     rdfs:label "fire standpipe"@en .
+                                     rdfs:label "fire standpipe" .
 
 
 ###  http://www.toronto.ca/TWONTO#00922
@@ -6760,7 +6760,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                      <http://www.toronto.ca/TWONTO#00939> ;
                                      :is_equivalent_to_tag_code "IGN" ;
                                      rdfs:isDefinedBy "A device used to initiate the combustion process by producing a spark, flame, or heat source capable of igniting a fuel-air mixture." ;
-                                     rdfs:label "ignitor"@en ;
+                                     rdfs:label "ignitor" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "starter" .
 
 
@@ -6770,7 +6770,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                      <http://www.toronto.ca/TWONTO#00446> ,
                                                      <http://www.toronto.ca/TWONTO#00915> ;
                                      :is_equivalent_to_tag_code "LHD" ;
-                                     rdfs:label "linear heat detection element"@en .
+                                     rdfs:label "linear heat detection element" .
 
 
 ###  http://www.toronto.ca/TWONTO#00925
@@ -6778,7 +6778,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_tag_code "BN" ;
                                      :not_relevant_to_AM_or_PM "true"^^xsd:boolean ;
-                                     rdfs:label "solids disposal bin"@en .
+                                     rdfs:label "solids disposal bin" .
 
 
 ###  http://www.toronto.ca/TWONTO#00926
@@ -6789,7 +6789,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                         "functional component material" ;
                                      :notion_mapping_id "602f9138b2d84c3b9d0054fb164fe852" ;
                                      rdfs:isDefinedBy "A flexible lifting component used to attach a load to a lifting device, such as a crane or hoist, allowing for safe and controlled material handling." ;
-                                     rdfs:label "lifting device sling"@en .
+                                     rdfs:label "lifting device sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00927
@@ -6797,7 +6797,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "77c5233ab77743378ce0b629bfb2ea27" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "wire-rope sling"@en .
+                                     rdfs:label "wire-rope sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00928
@@ -6805,7 +6805,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "f8ddec4643a9403f93c5209d6874a4ed" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "metal mesh sling"@en .
+                                     rdfs:label "metal mesh sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00929
@@ -6813,7 +6813,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "18eee6561af54394a626fe98b74b1d6e" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "synthetic web sling"@en .
+                                     rdfs:label "synthetic web sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00930
@@ -6821,7 +6821,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "955b89ab1b20474f97408041a9afa7f3" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "steel chain sling"@en .
+                                     rdfs:label "steel chain sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00931
@@ -6829,14 +6829,14 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "a3885868212a467f9dec692a325eee80" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "natural or synthetic fiber rope sling"@en .
+                                     rdfs:label "natural or synthetic fiber rope sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00932
 <http://www.toronto.ca/TWONTO#00932> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ;
                                      :is_equivalent_to_tag_code "INT" ;
-                                     rdfs:label "water treatment facility intake structure"@en .
+                                     rdfs:label "water treatment facility intake structure" .
 
 
 ###  http://www.toronto.ca/TWONTO#00933
@@ -6844,7 +6844,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00803> ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_equivalent_to_tag_code "UV" ;
-                                     rdfs:label "specialized UV disinfection system component (MBC)"@en .
+                                     rdfs:label "specialized UV disinfection system component (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00934
@@ -6855,7 +6855,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                                         "Lighting,Exit" ;
                                      :is_superclass_to_tag_code "LTG" ,
                                                                 "LTX" ;
-                                     rdfs:label "emergency light"@en .
+                                     rdfs:label "emergency light" .
 
 
 ###  http://www.toronto.ca/TWONTO#00935
@@ -6863,7 +6863,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_tag_code "DRV" ;
                                      rdfs:isDefinedBy "A device or system that controls the operation of an electric motor by regulating the power supplied to it, typically to manage its speed, torque, and direction." ;
-                                     rdfs:label "motor drive"@en .
+                                     rdfs:label "motor drive" .
 
 
 ###  http://www.toronto.ca/TWONTO#00936
@@ -6871,14 +6871,14 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00803> ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :new_13040_code_proposed "OZC" ;
-                                     rdfs:label "specialized ozone system component (MBC)"@en .
+                                     rdfs:label "specialized ozone system component (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00939
 <http://www.toronto.ca/TWONTO#00939> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
                                      :is_category_class "true"^^xsd:boolean ;
-                                     rdfs:label "component of a discrete asset (MBC)"@en .
+                                     rdfs:label "component of a discrete asset (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00942
@@ -6886,13 +6886,13 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00520> ;
                                      :is_superclass_to_Avantis_category "Transmitter,Density" ;
-                                     rdfs:label "density meter"@en .
+                                     rdfs:label "density meter" .
 
 
 ###  http://www.toronto.ca/TWONTO#00943
 <http://www.toronto.ca/TWONTO#00943> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ;
-                                     rdfs:label "watercourse erosion structure"@en .
+                                     rdfs:label "watercourse erosion structure" .
 
 
 ###  http://www.toronto.ca/TWONTO#00944
@@ -6900,28 +6900,28 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00520> ;
                                      :is_superclass_to_tag_code "AIT" ;
-                                     rdfs:label "analyzer"@en ;
+                                     rdfs:label "analyzer" ;
                                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.toronto.ca/TWONTO#00946
 <http://www.toronto.ca/TWONTO#00946> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     rdfs:label "vacuum pump"@en .
+                                     rdfs:label "vacuum pump" .
 
 
 ###  http://www.toronto.ca/TWONTO#01919
 <http://www.toronto.ca/TWONTO#01919> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      rdfs:isDefinedBy "An electrical device that converts direct current (DC) into alternating current (AC)." ;
-                                     rdfs:label "inverter"@en .
+                                     rdfs:label "inverter" .
 
 
 ###  http://www.toronto.ca/TWONTO#02945
 <http://www.toronto.ca/TWONTO#02945> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ,
                                                      <http://www.toronto.ca/TWONTO#00915> ;
-                                     rdfs:label "fire department connection"@en ;
+                                     rdfs:label "fire department connection" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "fire connection" .
 
 
