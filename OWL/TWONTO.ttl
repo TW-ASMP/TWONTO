@@ -847,8 +847,7 @@ I created this property to point to a piece of text describing the intent of the
 
 ###  http://www.toronto.ca/TWONTO#guzut-majad-vagos-jagok
 :guzut-majad-vagos-jagok rdf:type owl:Class ;
-                         rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
-                                         <http://www.toronto.ca/TWONTO#00665> ;
+                         rdfs:subClassOf <http://www.toronto.ca/TWONTO#00665> ;
                          :is_equivalent_to_Avantis_category "Screen,Trommel" ;
                          rdfs:label "trommel screen"@en .
 
@@ -1188,8 +1187,7 @@ Examples of system include
 <http://www.toronto.ca/TWONTO#00111> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00300> ;
                                      :is_superclass_to_Avantis_category "Switchgear" ;
-                                     :is_superclass_to_Avantis_class "BUS bar greater than 750 volts" ,
-                                                                     "Switchgear" ;
+                                     :is_superclass_to_Avantis_class "Switchgear" ;
                                      :is_superclass_to_tag_code "BUS" ;
                                      rdfs:label "medium voltage electrical panel" .
 
@@ -1264,11 +1262,11 @@ Examples of system include
 
 ###  http://www.toronto.ca/TWONTO#00121
 <http://www.toronto.ca/TWONTO#00121> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00339> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00657> ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_equivalent_to_Avantis_category "PPE" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "PPE (MSC)" .
+                                     rdfs:label "PPE (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00122
@@ -1439,7 +1437,7 @@ Examples of system include
 <http://www.toronto.ca/TWONTO#00139> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00391> ;
                                      :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
-                                     rdfs:label "aeration gas diffuser" .
+                                     rdfs:label "aeration gas diffuser head" .
 
 
 ###  http://www.toronto.ca/TWONTO#00140
@@ -1868,7 +1866,7 @@ isFireSystemAlarm?""" ;
 <http://www.toronto.ca/TWONTO#00190> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
                                      :is_category_class "true"^^xsd:boolean ;
-                                     rdfs:label "buidling, structure, or structural component (MBC)" .
+                                     rdfs:label "buidling or structure(MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00191
@@ -2075,12 +2073,15 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#00215
 <http://www.toronto.ca/TWONTO#00215> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ;
-                                     :dev-property_note "DiscreteModular? System?" ;
+                                     :dev-property_note """DiscreteModular? 
+System?
+contains chlorine source?
+contains eductor?""" ;
                                      :is_equivalent_to_Avantis_category "Evaporator,Chlorine" ,
                                                                         "Generator,Chlorine" ;
                                      :is_equivalent_to_tag_code "CHL" ;
-                                     rdfs:label "chlorinator system" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "Chlorinator" .
+                                     rdfs:isDefinedBy "A device that feeds chlorine into water for disinfection. Key parts typically include a chlorine supply, pressure regulator, vacuum regulator, injector, feed rate control valve, and diffuser." ;
+                                     rdfs:label "chlorinator" .
 
 
 ###  http://www.toronto.ca/TWONTO#00216
@@ -2561,6 +2562,7 @@ DECISION:
 ###  http://www.toronto.ca/TWONTO#00277
 <http://www.toronto.ca/TWONTO#00277> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                     :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
                                      :dev-ontology_note "isBiofilter?" ;
                                      rdfs:label "discrete unit of treatment filter" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "treatment filter cartridge" ,
@@ -3422,7 +3424,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00391
 <http://www.toronto.ca/TWONTO#00391> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     rdfs:label "gas diffuser" .
+                                     :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
+                                     rdfs:label "gas diffuser head" .
 
 
 ###  http://www.toronto.ca/TWONTO#00392
@@ -4631,7 +4634,6 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 ###  http://www.toronto.ca/TWONTO#00551
 <http://www.toronto.ca/TWONTO#00551> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     :concrete_but_not_specific_enough_for_class_list "true"^^xsd:boolean ;
                                      :is_equivalent_to_Avantis_category "Outfall" ;
                                      :is_equivalent_to_Avantis_class "Outfall" ;
                                      :is_equivalent_to_tag_code "OTF" ;
@@ -4670,10 +4672,10 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 
 ###  http://www.toronto.ca/TWONTO#00558
 <http://www.toronto.ca/TWONTO#00558> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00190> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_equivalent_to_tag_code "STRC" ;
-                                     rdfs:label "building or structural component (MBC)" .
+                                     rdfs:label "building component or structural component (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00559
@@ -5887,7 +5889,6 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 ###  http://www.toronto.ca/TWONTO#00708
 <http://www.toronto.ca/TWONTO#00708> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     :concrete_but_not_specific_enough_for_class_list "true"^^xsd:boolean ;
                                      rdfs:label "storage tank" .
 
 

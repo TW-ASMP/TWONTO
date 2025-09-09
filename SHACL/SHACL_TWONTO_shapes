@@ -63,7 +63,7 @@ tw:Motor_defaultShape
 		sh:order 40 ;
 	] ;
 
-	sh:or ( #4Dev: using the material implication rule to express and if-then statement;
+	sh:or ( #using the material implication rule to express and if-then statement;
 			[
               sh:not [  #: this is the if block;
 				sh:path tw:hasSealedOrShieldedBearing ; 
