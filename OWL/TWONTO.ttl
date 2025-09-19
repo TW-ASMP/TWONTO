@@ -971,6 +971,13 @@ I created this property to point to a piece of text describing the intent of the
                                   rdfs:label "self-acting pressure control valve"@en .
 
 
+###  http://www.toronto.ca/TWONTO#OWLClass_kitok-pazin-musuh-jafih
+:OWLClass_kitok-pazin-musuh-jafih rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_hafup-kotik-pugap-bobut ;
+                                  :is_equivalent_to_tag_code "DVS" ;
+                                  rdfs:label "flow diversion structure"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#OWLClass_lagip-zabah-kafaj-gasol
 :OWLClass_lagip-zabah-kafaj-gasol rdf:type owl:Class ;
                                   rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
@@ -5434,6 +5441,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 ###  http://www.toronto.ca/TWONTO#00628
 <http://www.toronto.ca/TWONTO#00628> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00329> ;
+                                     :is_equivalent_to_Avantis_class "Pump Station" ;
                                      rdfs:label "pumping station assets" .
 
 
