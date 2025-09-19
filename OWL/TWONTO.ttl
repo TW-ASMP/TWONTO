@@ -808,7 +808,15 @@ I created this property to point to a piece of text describing the intent of the
 :OWLClass_9c6da0bd_4a16_42f6_90f8_dfc8f20b23d3 rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                                <http://www.toronto.ca/TWONTO#00756> ;
+                                               :is_equivalent_to_tag_code "VEH" ;
                                                rdfs:label "vehicle" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_banaz-gahiv-bilab-kozit
+:OWLClass_banaz-gahiv-bilab-kozit rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_jahim-nubib-bokif-hoviz ;
+                                  :is_equivalent_to_tag_code "FCV" ;
+                                  rdfs:label "self-actiing pressure control valve"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_binid-posum-pozar-motav
@@ -826,9 +834,16 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#OWLClass_bobag-juduf-gadav-rosoh
 :OWLClass_bobag-juduf-gadav-rosoh rdf:type owl:Class ;
                                   rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                  rdfs:isDefinedBy "A device that removes **liquid** water droplets, commonly from air compression or cooling process" ;
+                                  rdfs:isDefinedBy "A device that removes liquid water droplets, commonly from air compression or cooling process" ;
                                   rdfs:label "moisture separator" ;
                                   <http://www.w3.org/2004/02/skos/core#altLabel> "dryer" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_bojij-nuvup-tifas-rijur
+:OWLClass_bojij-nuvup-tifas-rijur rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00614> ;
+                                  :is_superclass_to_tag_code "PIC" ;
+                                  rdfs:label "pressure controller"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_datop-sarog-hakar-tugim
@@ -921,10 +936,24 @@ I created this property to point to a piece of text describing the intent of the
                                   rdfs:label "plumbed emergency eyewash or shower" .
 
 
+###  http://www.toronto.ca/TWONTO#OWLClass_hafup-kotik-pugap-bobut
+:OWLClass_hafup-kotik-pugap-bobut rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                  :is_equivalent_to_tag_code "STRC" ;
+                                  rdfs:isDefinedBy "A constructed asset with physical integrity, providing support or space for specific functions or activities." ;
+                                  rdfs:label "structure"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#OWLClass_halat-kuhol-fihub-tahiz
 :OWLClass_halat-kuhol-fihub-tahiz rdf:type owl:Class ;
                                   rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                   rdfs:label "cathodic protection anode" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_jahim-nubib-bokif-hoviz
+:OWLClass_jahim-nubib-bokif-hoviz rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00781> ;
+                                  rdfs:label "self-acting control valve"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_jodif-halan-jodiv-bunab
@@ -933,6 +962,13 @@ I created this property to point to a piece of text describing the intent of the
                                                   <http://www.toronto.ca/TWONTO#00737> ;
                                   rdfs:label "test instrument" ;
                                   <http://www.w3.org/2004/02/skos/core#altLabel> "tester" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_juvob-liduk-pagab-rofod
+:OWLClass_juvob-liduk-pagab-rofod rdf:type owl:Class ;
+                                  rdfs:subClassOf :OWLClass_jahim-nubib-bokif-hoviz ;
+                                  :is_equivalent_to_tag_code "PCV" ;
+                                  rdfs:label "self-acting pressure control valve"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_lagip-zabah-kafaj-gasol
@@ -982,10 +1018,25 @@ I created this property to point to a piece of text describing the intent of the
                                   rdfs:label "emergency eye/face wash" .
 
 
+###  http://www.toronto.ca/TWONTO#OWLClass_roban-fufig-vuvuf-kinor
+:OWLClass_roban-fufig-vuvuf-kinor rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00614> ;
+                                  :is_superclass_to_tag_code "FFIC" ,
+                                                             "FIC" ;
+                                  rdfs:label "flow controller"@en .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_sivab-vazid-tokar-zanuk
+:OWLClass_sivab-vazid-tokar-zanuk rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00614> ;
+                                  :is_superclass_to_tag_code "TIC" ;
+                                  rdfs:label "temperature controller"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#OWLClass_sobum-gizot-dozos-nafil
 :OWLClass_sobum-gizot-dozos-nafil rdf:type owl:Class ;
-                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00302> ;
-                                  rdfs:label "resistance tester" ;
+                                  rdfs:subClassOf :OWLClass_jodif-halan-jodiv-bunab ;
+                                  rdfs:label "resistance tester tool" ;
                                   <http://www.w3.org/2004/02/skos/core#altLabel> "DRLO" ,
                                                                                  "megger" .
 
@@ -1127,6 +1178,7 @@ I created this property to point to a piece of text describing the intent of the
 :nigot-zosip-fonus-sudof rdf:type owl:Class ;
                          rdfs:subClassOf :kolis-tozuh-tudoz-vujuj ,
                                          <http://www.toronto.ca/TWONTO#00011> ;
+                         rdfs:isDefinedBy "A protective facepiece designed for use with a self-contained breathing apparatus that provides clean, breathable air in hazardous environments." ;
                          rdfs:label "SCBA mask" .
 
 
@@ -1134,6 +1186,7 @@ I created this property to point to a piece of text describing the intent of the
 :novid-vogiv-darod-munik rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00445> ;
+                         :is_equivalent_to_tag_code "SI" ;
                          rdfs:label "speed indicator" ;
                          <http://www.w3.org/2004/02/skos/core#altLabel> "speed gauge" .
 
@@ -1557,7 +1610,7 @@ Examples of system include
 
 ###  http://www.toronto.ca/TWONTO#00128
 <http://www.toronto.ca/TWONTO#00128> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00935> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00785> ;
                                      :is_equivalent_to_Avantis_category "Variable Frequency Drive" ;
                                      :is_equivalent_to_Avantis_class "Variable Frequency Drive" ;
                                      rdfs:label "VFD" ;
@@ -2070,7 +2123,7 @@ isFireSystemAlarm?""" ;
 
 ###  http://www.toronto.ca/TWONTO#00189
 <http://www.toronto.ca/TWONTO#00189> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
+                                     rdfs:subClassOf :OWLClass_hafup-kotik-pugap-bobut ,
                                                      <http://www.toronto.ca/TWONTO#00190> ,
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty <http://www.toronto.ca/TWONTO#00879> ;
@@ -2756,7 +2809,8 @@ DECISION:
                                      rdfs:label "discrete piece of work specification" .
 
 
-###  <http://www.toronto.ca/TWONTO#00277> rdf:type owl:Class ;
+###  http://www.toronto.ca/TWONTO#00277
+<http://www.toronto.ca/TWONTO#00277> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00939> ;
                                      :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
@@ -2926,7 +2980,7 @@ DECISION:
 
 ###  http://www.toronto.ca/TWONTO#00302
 <http://www.toronto.ca/TWONTO#00302> rdf:type owl:Class ;
-                                     rdfs:subClassOf :OWLClass_jodif-halan-jodiv-bunab ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_superclass_to_Avantis_category "Meter,Power Recording" ,
                                                                         "Meter,current" ,
                                                                         "Transmitter,Power Indicating" ;
@@ -2934,7 +2988,8 @@ DECISION:
                                                                 "IIT" ,
                                                                 "IRT" ,
                                                                 "JIT" ;
-                                     rdfs:label "electrical meter" .
+                                     rdfs:comment "\"fixed\" is added to distinguish this class from multimeter." ;
+                                     rdfs:label "fixed electrical meter" .
 
 
 ###  http://www.toronto.ca/TWONTO#00303
@@ -3423,7 +3478,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
                                                                         "Atmosphere Monitoring Device,Stationary,H2S/CO/CL/Toxic/SO2/NH3" ,
                                                                         "Atmosphere Monitoring Device,Stationary,Methane/LEL" ;
                                      rdfs:isDefinedBy "A permanently installed device that continuously monitors the presence of specific gases and triggers alarms if concentrations exceed set limits." ;
-                                     rdfs:label "fixed gas detector or monitor" .
+                                     rdfs:label "fixed gas detector" .
 
 
 ###  http://www.toronto.ca/TWONTO#00360
@@ -3778,8 +3833,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#00406
 <http://www.toronto.ca/TWONTO#00406> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00302> ;
-                                     :is_equivalent_to_tag_code "GRF" ;
+                                     rdfs:subClassOf :OWLClass_jodif-halan-jodiv-bunab ;
                                      :is_tool "true"^^xsd:boolean ;
                                      rdfs:label "ground fault tester" .
 
@@ -4356,9 +4410,9 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#00485
 <http://www.toronto.ca/TWONTO#00485> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00302> ;
+                                     rdfs:subClassOf :OWLClass_jodif-halan-jodiv-bunab ;
                                      :is_tool "true"^^xsd:boolean ;
-                                     rdfs:label "live voltage tester" .
+                                     rdfs:label "live voltage tester tool" .
 
 
 ###  http://www.toronto.ca/TWONTO#00486
@@ -4841,7 +4895,6 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 <http://www.toronto.ca/TWONTO#00558> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00522> ;
                                      :is_category_class "true"^^xsd:boolean ;
-                                     :is_equivalent_to_tag_code "STRC" ;
                                      rdfs:label "building component or structural component (MBC)" .
 
 
@@ -5041,7 +5094,7 @@ wetPond?""" ;
                                                                         "Atmosphere Monitoring Device,Portable,Mercury" ,
                                                                         "Atmosphere Monitoring Device,Portable,Oxygen/Toxic/CH4/LEL/CL/SO2" ;
                                      :is_tool "true"^^xsd:boolean ;
-                                     rdfs:label "portable gas detector or monitor" ;
+                                     rdfs:label "portable gas detector" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "personal gas detector" ,
                                                                                     "personal gas meter" ,
                                                                                     "portable gas meter" .
@@ -5300,10 +5353,8 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                                                         "Controller,Pressure" ,
                                                                         "Controller,Temperature" ;
                                      :is_superclass_to_tag_code "AIC" ,
-                                                                "FFIC" ,
-                                                                "FIC" ,
                                                                 "LIC" ,
-                                                                "PIC" ;
+                                                                "ZIC" ;
                                      rdfs:label "process controller" .
 
 
@@ -5347,6 +5398,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                      :is_equivalent_to_Avantis_class "Protective Relay" ;
                                      :is_equivalent_to_tag_code "AFR" ,
                                                                 "JRT" ;
+                                     :is_superclass_to_tag_code "GRF" ;
                                      rdfs:label "protection relay" .
 
 
@@ -5652,6 +5704,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
                                      :is_equivalent_to_Avantis_class "Screen" ;
                                      :is_equivalent_to_tag_code "SC" ;
                                      :is_superclass_to_Avantis_category "Screen,Vibrating" ;
+                                     rdfs:isDefinedBy "Equipment used to remove large debris and solids from water or wastewater before further treatment or processing." ;
                                      rdfs:label "screening unit" .
 
 
@@ -6500,8 +6553,6 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                                         "Valve,Rotary" ,
                                                                         "Valve,Temperature Control" ,
                                                                         "Valve,Thermal" ;
-                                     :is_superclass_to_tag_code "FCV" ,
-                                                                "PCV" ;
                                      rdfs:isDefinedBy "A device for controlling the passage of fluid or air through a pipe." ;
                                      rdfs:label "valve" .
 
@@ -6857,7 +6908,8 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_tag_code "BN" ;
                                      :not_relevant_to_AM_or_PM "true"^^xsd:boolean ;
-                                     rdfs:label "solids disposal bin" .
+                                     rdfs:label "solids disposal bin" ;
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "dumpster" .
 
 
 ###  http://www.toronto.ca/TWONTO#00926
