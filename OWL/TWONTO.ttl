@@ -808,15 +808,9 @@ I created this property to point to a piece of text describing the intent of the
 :OWLClass_9c6da0bd_4a16_42f6_90f8_dfc8f20b23d3 rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                                <http://www.toronto.ca/TWONTO#00756> ;
+                                               :is_equivalent_to_Avantis_class "Vehicle" ;
                                                :is_equivalent_to_tag_code "VEH" ;
                                                rdfs:label "vehicle" .
-
-
-###  http://www.toronto.ca/TWONTO#OWLClass_banaz-gahiv-bilab-kozit
-:OWLClass_banaz-gahiv-bilab-kozit rdf:type owl:Class ;
-                                  rdfs:subClassOf :OWLClass_jahim-nubib-bokif-hoviz ;
-                                  :is_equivalent_to_tag_code "FCV" ;
-                                  rdfs:label "self-actiing pressure control valve"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_binid-posum-pozar-motav
@@ -861,6 +855,13 @@ I created this property to point to a piece of text describing the intent of the
                                                   <http://www.toronto.ca/TWONTO#00756> ;
                                   rdfs:isDefinedBy "A vehicle powered by an engine or motor, such as a car, truck, or motorcycle, rather than by human effort" ;
                                   rdfs:label "motorized vehicle" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_dofik-jobom-pifup-puhuh
+:OWLClass_dofik-jobom-pifup-puhuh rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                  :is_superclass_to_tag_code "ESP" ;
+                                  rdfs:label "eletrical junction box"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_donoj-pofaf-tuson-bilom
@@ -939,6 +940,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#OWLClass_hafup-kotik-pugap-bobut
 :OWLClass_hafup-kotik-pugap-bobut rdf:type owl:Class ;
                                   rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                  :is_equivalent_to_Avantis_class "Structure" ;
                                   :is_equivalent_to_tag_code "STRC" ;
                                   rdfs:isDefinedBy "A constructed asset with physical integrity, providing support or space for specific functions or activities." ;
                                   rdfs:label "structure"@en .
@@ -950,25 +952,12 @@ I created this property to point to a piece of text describing the intent of the
                                   rdfs:label "cathodic protection anode" .
 
 
-###  http://www.toronto.ca/TWONTO#OWLClass_jahim-nubib-bokif-hoviz
-:OWLClass_jahim-nubib-bokif-hoviz rdf:type owl:Class ;
-                                  rdfs:subClassOf <http://www.toronto.ca/TWONTO#00781> ;
-                                  rdfs:label "self-acting control valve"@en .
-
-
 ###  http://www.toronto.ca/TWONTO#OWLClass_jodif-halan-jodiv-bunab
 :OWLClass_jodif-halan-jodiv-bunab rdf:type owl:Class ;
                                   rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                   <http://www.toronto.ca/TWONTO#00737> ;
                                   rdfs:label "test instrument" ;
                                   <http://www.w3.org/2004/02/skos/core#altLabel> "tester" .
-
-
-###  http://www.toronto.ca/TWONTO#OWLClass_juvob-liduk-pagab-rofod
-:OWLClass_juvob-liduk-pagab-rofod rdf:type owl:Class ;
-                                  rdfs:subClassOf :OWLClass_jahim-nubib-bokif-hoviz ;
-                                  :is_equivalent_to_tag_code "PCV" ;
-                                  rdfs:label "self-acting pressure control valve"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_kitok-pazin-musuh-jafih
@@ -1209,6 +1198,7 @@ I created this property to point to a piece of text describing the intent of the
 :piguk-mumor-jugoj-sibif rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00445> ;
+                         :is_equivalent_to_tag_code "FI" ;
                          rdfs:label "flow indicator" ;
                          <http://www.w3.org/2004/02/skos/core#altLabel> "flow gauge" .
 
@@ -1238,6 +1228,7 @@ I created this property to point to a piece of text describing the intent of the
 :tujad-guzov-jilok-tubav rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                          <http://www.toronto.ca/TWONTO#00445> ;
+                         :is_equivalent_to_tag_code "TI" ;
                          rdfs:label "temperature indicator" ;
                          <http://www.w3.org/2004/02/skos/core#altLabel> "temperature gauge" .
 
@@ -2140,8 +2131,7 @@ isFireSystemAlarm?""" ;
                                                        owl:onProperty <http://www.toronto.ca/TWONTO#00879> ;
                                                        owl:someValuesFrom <http://www.toronto.ca/TWONTO#00650>
                                                      ] ;
-                                     :is_equivalent_to_Avantis_class "Building" ,
-                                                                     "Structure" ;
+                                     :is_equivalent_to_Avantis_class "Building" ;
                                      rdfs:comment "This definition allows for portable buildings to be classified as building" ;
                                      rdfs:isDefinedBy "A structure with a roof and some walls that partition its interior space from the outdoor space; it stands in one place when it is used; it is designed with the intention of human occupancy." ;
                                      rdfs:label "building" .
@@ -3185,7 +3175,7 @@ electrical power supplied to the building, and the building is within the scope 
 <http://www.toronto.ca/TWONTO#00329> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00260> ;
                                      rdfs:isDefinedBy "A collection of assets located within a facility." ;
-                                     rdfs:label "facility assets" .
+                                     rdfs:label "facility" .
 
 
 ###  http://www.toronto.ca/TWONTO#00330
@@ -5442,7 +5432,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 <http://www.toronto.ca/TWONTO#00628> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00329> ;
                                      :is_equivalent_to_Avantis_class "Pump Station" ;
-                                     rdfs:label "pumping station assets" .
+                                     rdfs:label "pumping station" .
 
 
 ###  http://www.toronto.ca/TWONTO#00629
@@ -6561,6 +6551,8 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                                         "Valve,Rotary" ,
                                                                         "Valve,Temperature Control" ,
                                                                         "Valve,Thermal" ;
+                                     :is_superclass_to_tag_code "FCV" ,
+                                                                "PCV" ;
                                      rdfs:isDefinedBy "A device for controlling the passage of fluid or air through a pipe." ;
                                      rdfs:label "valve" .
 
