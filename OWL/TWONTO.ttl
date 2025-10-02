@@ -102,7 +102,7 @@ For the reasons above, examples of things that should be represented by a text v
 
 ###  http://www.toronto.ca/TWONTO#new_13040_code_proposed
 :new_13040_code_proposed rdf:type owl:AnnotationProperty ;
-                         rdfs:label "new_13040_code_proposed"@en .
+                         rdfs:label "new_13040_code_proposed" .
 
 
 ###  http://www.toronto.ca/TWONTO#not_relevant_to_AM_or_PM
@@ -808,34 +808,34 @@ I created this property to point to a piece of text describing the intent of the
 :OWLClass_3ff3f355_a097_4e22_a789_b77f5047c458 rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ;
                                                rdfs:isDefinedBy "a process that converts nitrogen oxides (NOₓ) in exhaust gases into harmless nitrogen (N₂) and water (H₂O) by injecting a reductant—typically ammonia or urea—into the exhaust stream, which then reacts over a catalyst. The term \"selective\" refers to the system's ability to target NOₓ specifically without affecting other components of the exhaust gas." ;
-                                               rdfs:label "selective catalytic reduction system"@en .
+                                               rdfs:label "selective catalytic reduction system" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_49c4dc7d_0231_4e1e_bccb_05806f03a274
 :OWLClass_49c4dc7d_0231_4e1e_bccb_05806f03a274 rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                                <http://www.toronto.ca/TWONTO#00446> ;
-                                               rdfs:label "light sensor element"@en .
+                                               rdfs:label "light sensor element" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_576d9df1_5769_4397_9566_31bd0039a255
 :OWLClass_576d9df1_5769_4397_9566_31bd0039a255 rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00944> ;
-                                               rdfs:label "conductivity analyzer"@en .
+                                               rdfs:label "conductivity analyzer" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_60b5a74a_3d48_4466_94eb_e56d82e4430c
 :OWLClass_60b5a74a_3d48_4466_94eb_e56d82e4430c rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                                <http://www.toronto.ca/TWONTO#00446> ;
-                                               rdfs:label "ORP sensor element"@en .
+                                               rdfs:label "ORP sensor element" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_8cbd140c_9232_4d30_977e_0b22da393541
 :OWLClass_8cbd140c_9232_4d30_977e_0b22da393541 rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                                <http://www.toronto.ca/TWONTO#00446> ;
-                                               rdfs:label "pH sensor element"@en .
+                                               rdfs:label "pH sensor element" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_9c6da0bd_4a16_42f6_90f8_dfc8f20b23d3
@@ -851,19 +851,25 @@ I created this property to point to a piece of text describing the intent of the
 :OWLClass_a1c9ec00_40d1_4598_a219_34f401ca40b3 rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                                <http://www.toronto.ca/TWONTO#00446> ;
-                                               rdfs:label "conductivity sensor element"@en .
+                                               rdfs:label "conductivity sensor element" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_aaa0534b_8301_4f5e_86a4_f0d2cc6e91a2
+:OWLClass_aaa0534b_8301_4f5e_86a4_f0d2cc6e91a2 rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ;
+                                               rdfs:label "PA system"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_be9155b2_62e7_4de4_bd13_75303aeff62e
 :OWLClass_be9155b2_62e7_4de4_bd13_75303aeff62e rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                               rdfs:label "tipping bucket"@en .
+                                               rdfs:label "tipping bucket" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_bf4a19ed_88a8_4fe8_b294_bb31702c646f
 :OWLClass_bf4a19ed_88a8_4fe8_b294_bb31702c646f rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00016> ;
-                                               rdfs:label "lighting system"@en .
+                                               rdfs:label "lighting system" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_binid-posum-pozar-motav
@@ -890,7 +896,7 @@ I created this property to point to a piece of text describing the intent of the
 :OWLClass_bojij-nuvup-tifas-rijur rdf:type owl:Class ;
                                   rdfs:subClassOf <http://www.toronto.ca/TWONTO#00614> ;
                                   :is_superclass_to_tag_code "PIC" ;
-                                  rdfs:label "pressure controller"@en .
+                                  rdfs:label "pressure controller" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_datop-sarog-hakar-tugim
@@ -914,7 +920,7 @@ I created this property to point to a piece of text describing the intent of the
 :OWLClass_dofik-jobom-pifup-puhuh rdf:type owl:Class ;
                                   rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                   :is_superclass_to_tag_code "ESP" ;
-                                  rdfs:label "eletrical junction box"@en .
+                                  rdfs:label "eletrical junction box" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_donoj-pofaf-tuson-bilom
@@ -927,7 +933,7 @@ I created this property to point to a piece of text describing the intent of the
 :OWLClass_f6bbfc33_149c_45c5_8934_8b613ac8690e rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                                <http://www.toronto.ca/TWONTO#00446> ;
-                                               rdfs:label "turbidity sensor element"@en .
+                                               rdfs:label "turbidity sensor element" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_finap-fahok-nubom-fahov
@@ -1002,7 +1008,7 @@ I created this property to point to a piece of text describing the intent of the
                                   :is_equivalent_to_Avantis_class "Structure" ;
                                   :is_equivalent_to_tag_code "STRC" ;
                                   rdfs:isDefinedBy "A constructed asset with physical integrity, providing support or space for specific functions or activities." ;
-                                  rdfs:label "structure"@en .
+                                  rdfs:label "structure" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_halat-kuhol-fihub-tahiz
@@ -1023,7 +1029,7 @@ I created this property to point to a piece of text describing the intent of the
 :OWLClass_kitok-pazin-musuh-jafih rdf:type owl:Class ;
                                   rdfs:subClassOf :OWLClass_hafup-kotik-pugap-bobut ;
                                   :is_equivalent_to_tag_code "DVS" ;
-                                  rdfs:label "flow diversion structure"@en .
+                                  rdfs:label "flow diversion structure" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_lagip-zabah-kafaj-gasol
@@ -1078,14 +1084,14 @@ I created this property to point to a piece of text describing the intent of the
                                   rdfs:subClassOf <http://www.toronto.ca/TWONTO#00614> ;
                                   :is_superclass_to_tag_code "FFIC" ,
                                                              "FIC" ;
-                                  rdfs:label "flow controller"@en .
+                                  rdfs:label "flow controller" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_sivab-vazid-tokar-zanuk
 :OWLClass_sivab-vazid-tokar-zanuk rdf:type owl:Class ;
                                   rdfs:subClassOf <http://www.toronto.ca/TWONTO#00614> ;
                                   :is_superclass_to_tag_code "TIC" ;
-                                  rdfs:label "temperature controller"@en .
+                                  rdfs:label "temperature controller" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_sobum-gizot-dozos-nafil
@@ -1508,7 +1514,12 @@ Examples of system include
                                                                 "PDP" ;
                                      rdfs:label "600V electrical panel" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "600V electrical panel" ,
-                                                                                    "electrical panel" .
+                                                                                    "MCC" ,
+                                                                                    "PDP" ,
+                                                                                    "electrical panel" ,
+                                                                                    "motor control center" ,
+                                                                                    "motor control centre" ,
+                                                                                    "power distribution panel" .
 
 
 ###  http://www.toronto.ca/TWONTO#00111
@@ -2347,10 +2358,9 @@ isThickeningCentrifuge""" ;
 
 ###  http://www.toronto.ca/TWONTO#00209
 <http://www.toronto.ca/TWONTO#00209> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
-                                                     <http://www.toronto.ca/TWONTO#00446> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00446> ;
                                      :is_superclass_to_Avantis_category "Sensor,Gas" ;
-                                     rdfs:label "chemical or concentration sensor element" .
+                                     rdfs:label "chemical or concentration sensor element (MBC)" .
 
 
 ###  http://www.toronto.ca/TWONTO#00211
@@ -2898,7 +2908,9 @@ DECISION:
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00208> ;
                                      :is_equivalent_to_Avantis_category "Analyzer,Dissolved Oxygen (DO)" ;
-                                     rdfs:label "dissolved oxygen analyzer" .
+                                     rdfs:label "dissolved oxygen analyzer" ;
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "DO analyzer" ,
+                                                                                    "DO meter" .
 
 
 ###  http://www.toronto.ca/TWONTO#00282
@@ -3221,7 +3233,7 @@ electrical power supplied to the building, and the building is within the scope 
 ###  http://www.toronto.ca/TWONTO#00325
 <http://www.toronto.ca/TWONTO#00325> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     rdfs:label "expansion tank"@en .
+                                     rdfs:label "expansion tank" .
 
 
 ###  http://www.toronto.ca/TWONTO#00328
@@ -3312,17 +3324,6 @@ e) has a integral connecting means.""" ;
                                      :notion_mapping_id "c60fe085f5634da29f57fbb69741b4ef" ;
                                      rdfs:isDefinedBy "CSA Z259.2.3:16: automatic or manual operated device used in conjunction with an appropriate descent line, which allows the user, either individually or assisted by another person, to achieve a descent with controllable velocity." ;
                                      rdfs:label "fall protection descending device" .
-
-
-###  http://www.toronto.ca/TWONTO#00338
-<http://www.toronto.ca/TWONTO#00338> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
-                                                     <http://www.toronto.ca/TWONTO#00121> ,
-                                                     <http://www.toronto.ca/TWONTO#00339> ;
-                                     rdfs:isDefinedBy "OSHA 1910.184: an assembly which connects the load to the material handling equipment." ;
-                                     rdfs:label "fall protection sling" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "anchor sling" ,
-                                                                                    "fall protection ancor sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00339
@@ -4300,7 +4301,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#00457
 <http://www.toronto.ca/TWONTO#00457> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     rdfs:label "ladder"@en .
+                                     rdfs:label "ladder" .
 
 
 ###  http://www.toronto.ca/TWONTO#00458
@@ -4731,7 +4732,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                                                         "Mixer,Venturi" ;
                                      :is_superclass_to_tag_code "SLFR" ;
                                      rdfs:label "mixer" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "agitator" .
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "agitator" ,
+                                                                                    "flocculator" .
 
 
 ###  http://www.toronto.ca/TWONTO#00527
@@ -5650,7 +5652,8 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00286> ;
                                      :is_equivalent_to_Avantis_category "Door,Overhead" ;
                                      rdfs:label "roll up door" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "loading dock door" .
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "loading dock door" ,
+                                                                                    "overhead door" .
 
 
 ###  http://www.toronto.ca/TWONTO#00650
@@ -6225,7 +6228,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00731
 <http://www.toronto.ca/TWONTO#00731> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ;
-                                     rdfs:label "telephone system"@en .
+                                     rdfs:label "telephone system" .
 
 
 ###  http://www.toronto.ca/TWONTO#00732
@@ -7022,7 +7025,9 @@ is capable of realizing a unit of the system primary functions.""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00926> ;
                                      :notion_mapping_id "18eee6561af54394a626fe98b74b1d6e" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
-                                     rdfs:label "synthetic web sling" .
+                                     rdfs:label "synthetic web sling" ;
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "nylon sling" ,
+                                                                                    "polyester sling" .
 
 
 ###  http://www.toronto.ca/TWONTO#00930
