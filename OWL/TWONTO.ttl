@@ -857,7 +857,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#OWLClass_aaa0534b_8301_4f5e_86a4_f0d2cc6e91a2
 :OWLClass_aaa0534b_8301_4f5e_86a4_f0d2cc6e91a2 rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ;
-                                               rdfs:label "PA system"@en .
+                                               rdfs:label "PA system" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_be9155b2_62e7_4de4_bd13_75303aeff62e
