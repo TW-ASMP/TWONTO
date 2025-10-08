@@ -79,10 +79,6 @@ For the reasons above, examples of things that should be represented by a text v
 :is_equivalent_to_tag_code rdf:type owl:AnnotationProperty .
 
 
-###  http://www.toronto.ca/TWONTO#is_superclass_of_Avantis_category
-:is_superclass_of_Avantis_category rdf:type owl:AnnotationProperty .
-
-
 ###  http://www.toronto.ca/TWONTO#is_superclass_to_Avantis_category
 :is_superclass_to_Avantis_category rdf:type owl:AnnotationProperty .
 
@@ -5361,7 +5357,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :is_equivalent_to_Avantis_category "Vessel" ,
                                                                         "Vessel,Pressure" ;
-                                     :is_superclass_of_Avantis_category "Vessel,Pressure,Surge" ;
+                                     :is_superclass_to_Avantis_category "Vessel,Pressure,Surge" ;
                                      :notion_mapping_id "4b7cb9e58d89436c9bea55d7f978b997" ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
                                      rdfs:isDefinedBy "O. Reg. 220/01: “pressure vessel” means any enclosed unfired vessel that contains gas, vapour or liquid under pressure;" ;
