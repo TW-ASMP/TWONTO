@@ -2954,6 +2954,7 @@ DECISION:
 ###  http://www.toronto.ca/TWONTO#00287
 <http://www.toronto.ca/TWONTO#00287> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00626> ;
+                                     :will_be_a_defined_class "true"^^xsd:boolean ;
                                      rdfs:label "dosing pump" .
 
 
@@ -3667,6 +3668,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 ###  http://www.toronto.ca/TWONTO#00376
 <http://www.toronto.ca/TWONTO#00376> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00418> ;
+                                     :will_be_a_defined_class "true"^^xsd:boolean ;
                                      rdfs:label "fuel burning heater" .
 
 
@@ -5180,7 +5182,8 @@ wetPond?""" ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00457> ,
                                                      <http://www.toronto.ca/TWONTO#00747> ;
                                      :notion_mapping_id "79fddffa402d41d1aee6c4e68bce3341" ;
-                                     rdfs:label "portable ladder" .
+                                     rdfs:label "portable ladder" ;
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "step ladder" .
 
 
 ###  http://www.toronto.ca/TWONTO#00587
@@ -5498,7 +5501,8 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 ###  http://www.toronto.ca/TWONTO#00626
 <http://www.toronto.ca/TWONTO#00626> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     :dev-property_note "has_drive" ;
+                                     :dev-property_note "Pump types such as centrifugal would be an attribute" ,
+                                                        "has_drive" ;
                                      :is_equivalent_to_tag_code "P" ;
                                      rdfs:label "pump" .
 
@@ -5744,6 +5748,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 ###  http://www.toronto.ca/TWONTO#00661
 <http://www.toronto.ca/TWONTO#00661> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00626> ;
+                                     :will_be_a_defined_class "true"^^xsd:boolean ;
                                      rdfs:label "sampling pump" .
 
 
