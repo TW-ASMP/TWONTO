@@ -800,6 +800,14 @@ I created this property to point to a piece of text describing the intent of the
 #    Classes
 #################################################################
 
+###  http://www.toronto.ca/TWONTO#OWLClass_0e1cdf88_35b5_45ee_83f7_af02ffa97c89
+:OWLClass_0e1cdf88_35b5_45ee_83f7_af02ffa97c89 rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
+                                               rdfs:label "RPU" ;
+                                               <http://www.w3.org/2004/02/skos/core#altLabel> "remote processing unit" ,
+                                                                                              "remote transmition unit" .
+
+
 ###  http://www.toronto.ca/TWONTO#OWLClass_3ff3f355_a097_4e22_a789_b77f5047c458
 :OWLClass_3ff3f355_a097_4e22_a789_b77f5047c458 rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00017> ;
@@ -825,6 +833,21 @@ I created this property to point to a piece of text describing the intent of the
                                                rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                                <http://www.toronto.ca/TWONTO#00446> ;
                                                rdfs:label "ORP sensor element" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_6758ec86_fbc0_4509_8c6e_21bbbd47c7cf
+:OWLClass_6758ec86_fbc0_4509_8c6e_21bbbd47c7cf rdf:type owl:Class ;
+                                               rdfs:subClassOf :OWLClass_dijuh-gotud-puruj-fazab ;
+                                               :is_equivalent_to_Avantis_class "Earthmoving Equipment" ;
+                                               rdfs:label "motorized heavy equipment" .
+
+
+###  http://www.toronto.ca/TWONTO#OWLClass_7d498111_6247_479c_a410_2f89d78667df
+:OWLClass_7d498111_6247_479c_a410_2f89d78667df rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.toronto.ca/TWONTO#00626> ;
+                                               :will_be_a_defined_class "true"^^xsd:boolean ;
+                                               rdfs:isDefinedBy "A sump pump is a pump designed to remove water that collects in a sump basin—a pit or low area typically found in basements, crawlspaces, or other locations where water naturally accumulates." ;
+                                               rdfs:label "sump pump" .
 
 
 ###  http://www.toronto.ca/TWONTO#OWLClass_8cbd140c_9232_4d30_977e_0b22da393541
@@ -1141,12 +1164,6 @@ I created this property to point to a piece of text describing the intent of the
                                   rdfs:label "fire alarm panel" .
 
 
-###  http://www.toronto.ca/TWONTO#OWLClass_vahaj-hatag-motud-pifin
-:OWLClass_vahaj-hatag-motud-pifin rdf:type owl:Class ;
-                                  rdfs:subClassOf :OWLClass_dijuh-gotud-puruj-fazab ;
-                                  rdfs:label "generator trailer" .
-
-
 ###  http://www.toronto.ca/TWONTO#OWLClass_vopak-tasag-numoj-mipaj
 :OWLClass_vopak-tasag-numoj-mipaj rdf:type owl:Class ;
                                   rdfs:subClassOf :OWLClass_jodif-halan-jodiv-bunab ;
@@ -1441,6 +1458,7 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#00102
 <http://www.toronto.ca/TWONTO#00102> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00122> ;
+                                     :will_be_a_defined_class "true"^^xsd:boolean ;
                                      rdfs:comment "A Toronto Water specific term. What it denotes is equivalent to a RPU panel, but operating in the building automation and HVAC domain." ;
                                      rdfs:isDefinedBy "A centralized or distributed control panel that houses the controllers, wiring, and interfaces used to manage building systems through a Building Automation System (BAS)." ;
                                      rdfs:label "BAS panel" ;
@@ -1577,7 +1595,6 @@ Examples of system include
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00208> ;
                                      :is_equivalent_to_Avantis_category "Analyzer,PH" ;
-                                     :will_be_a_defined_class "true"^^xsd:boolean ;
                                      rdfs:label "PH analyzer" .
 
 
@@ -1747,7 +1764,7 @@ Examples of system include
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00563> ;
                                      :not_relevant_to_AM_or_PM "true"^^xsd:boolean ;
-                                     :will_be_a_defined_class "A physical security device used to regulate and restrict access to a controlled area." ;
+                                     rdfs:isDefinedBy "A physical security device used to regulate and restrict access to a controlled area." ;
                                      rdfs:label "access control barrier" .
 
 
@@ -2598,15 +2615,6 @@ isThickeningCentrifuge""" ;
                                      rdfs:label "conductivity sensing" .
 
 
-###  http://www.toronto.ca/TWONTO#00238
-<http://www.toronto.ca/TWONTO#00238> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00747> ;
-                                     :is_category_class "true"^^xsd:boolean ;
-                                     :is_equivalent_to_Avantis_class "Earthmoving Equipment" ;
-                                     rdfs:label "construction or earthmoving machine (MBC)" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "skid steer" .
-
-
 ###  http://www.toronto.ca/TWONTO#00239
 <http://www.toronto.ca/TWONTO#00239> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00639> ;
@@ -3262,6 +3270,8 @@ electrical power supplied to the building, and the building is within the scope 
                                      :dev-property_note "att: mobile" ;
                                      rdfs:label "fall protection system support struture" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "davit arm" ,
+                                                                                    "davit base" ,
+                                                                                    "davit mast" ,
                                                                                     "fall protection davit" ,
                                                                                     "fall protection jib" ,
                                                                                     "fall protection post" .
@@ -3281,6 +3291,7 @@ electrical power supplied to the building, and the building is within the scope 
 ###  http://www.toronto.ca/TWONTO#00333
 <http://www.toronto.ca/TWONTO#00333> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
+                                                     <http://www.toronto.ca/TWONTO#00121> ,
                                                      <http://www.toronto.ca/TWONTO#00339> ;
                                      :dev-property_note "att: energy absorber" ;
                                      :is_tool "true"^^xsd:boolean ;
@@ -3832,6 +3843,11 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#00398
 <http://www.toronto.ca/TWONTO#00398> rdf:type owl:Class ;
+                                     owl:equivalentClass [ owl:intersectionOf ( <http://www.toronto.ca/TWONTO#00320>
+                                                                                <http://www.toronto.ca/TWONTO#00397>
+                                                                              ) ;
+                                                           rdf:type owl:Class
+                                                         ] ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00320> ;
                                      :will_be_a_defined_class "true"^^xsd:boolean ;
                                      rdfs:label "generator trailer" .
@@ -3982,7 +3998,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                                         "H.V.A.C.,Heater,Duct" ,
                                                                         "H.V.A.C.,Heater,Unit" ,
                                                                         "Heater,Process" ;
-                                     rdfs:label "space heater" .
+                                     rdfs:label "space heater" ;
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "unit heater" .
 
 
 ###  http://www.toronto.ca/TWONTO#00419
@@ -4838,6 +4855,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                      rdfs:comment "A Ethernet network termination panel is a panel with approximately 4 to 8 female Ethernet ports allows the terminal device to connect to the a communication switch." ;
                                      rdfs:label "network termination panel" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "patch panel" ,
+                                                                                    "termination panel" ,
                                                                                     "work area outlet" .
 
 
@@ -4991,7 +5009,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                      rdfs:label "personal floatation device" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "PFD" ,
                                                                                     "life jacket" ,
-                                                                                    "life ring" .
+                                                                                    "life ring" ,
+                                                                                    "lifebuoy ring" .
 
 
 ###  http://www.toronto.ca/TWONTO#00562
@@ -5691,7 +5710,8 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
                                      :is_equivalent_to_Avantis_category "PPE,Insulated Glove" ;
                                      :is_tool "true"^^xsd:boolean ;
                                      rdfs:label "insulated glove" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "electrical gloves" .
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "electrical gloves" ,
+                                                                                    "electrical rubber gloves" .
 
 
 ###  http://www.toronto.ca/TWONTO#00654
@@ -6050,6 +6070,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
                                                                               ) ;
                                                            rdf:type owl:Class
                                                          ] ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00747> ;
                                      :is_category_class "true"^^xsd:boolean ;
                                      :is_equivalent_to_Avantis_category "Machine Tool" ;
                                      :is_equivalent_to_tag_code "MT" ,
