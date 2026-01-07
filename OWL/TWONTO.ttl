@@ -3184,8 +3184,7 @@ electrical power supplied to the building, and the building is within the scope 
                                      :is_equivalent_to_Avantis_category "Chamber" ;
                                      :is_equivalent_to_Avantis_class "Chamber" ;
                                      :is_equivalent_to_tag_code "CH" ;
-                                     rdfs:label "chamber" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "chamber" .
+                                     rdfs:label "chamber" .
 
 
 ###  http://www.toronto.ca/TWONTO#00319
