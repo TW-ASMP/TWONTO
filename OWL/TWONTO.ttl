@@ -1431,6 +1431,12 @@ Examples of system include
                                      rdfs:label "system functional block" .
 
 
+###  http://www.toronto.ca/TWONTO#00100
+<http://www.toronto.ca/TWONTO#00100> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00580> ;
+                                     rdfs:label "detection pond"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#00101
 <http://www.toronto.ca/TWONTO#00101> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00618> ;
@@ -1477,6 +1483,14 @@ Examples of system include
                                                      <http://www.toronto.ca/TWONTO#00298> ;
                                      :not_relevant_to_AM_or_PM "true"^^xsd:boolean ;
                                      rdfs:label "receptacle" .
+
+
+###  http://www.toronto.ca/TWONTO#00107
+<http://www.toronto.ca/TWONTO#00107> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00318> ;
+                                     :will_be_a_defined_class "true"^^xsd:boolean ;
+                                     rdfs:isDefinedBy "An enclosed structure that houses one or more valves, providing protected access for operation, inspection, and maintenance of the valves." ;
+                                     rdfs:label "valve chamber"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#00108
@@ -1589,6 +1603,13 @@ Examples of system include
                                      rdfs:isDefinedBy "An industrial computer designed for real-time control of machines and processes, and is highly programmable to suit a wide range of automation tasks. It monitors inputs from sensors and executes user-defined programs to control outputs like motors, actuators, and other devices." ;
                                      rdfs:label "PLC" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "progammable logic controller" .
+
+
+###  http://www.toronto.ca/TWONTO#00120
+<http://www.toronto.ca/TWONTO#00120> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
+                                                     <http://www.toronto.ca/TWONTO#00800> ;
+                                     rdfs:label "sewer inlet"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#00121
@@ -2005,8 +2026,9 @@ isFireSystemAlarm?""" ;
                                                      <http://www.toronto.ca/TWONTO#00354> ;
                                      :is_equivalent_to_Avantis_class "Safety,Defibrillator" ;
                                      :is_equivalent_to_tag_code "DEF" ;
-                                     rdfs:label "automatic external defibrillator" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "AED" .
+                                     rdfs:label "defibrillator" ;
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "AED" ,
+                                                                                    "automatic external defibrillator" .
 
 
 ###  http://www.toronto.ca/TWONTO#00165
@@ -2252,8 +2274,7 @@ isFireSystemAlarm?""" ;
 
 ###  http://www.toronto.ca/TWONTO#00198
 <http://www.toronto.ca/TWONTO#00198> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
-                                                     <http://www.toronto.ca/TWONTO#00800> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00120> ;
                                      rdfs:isDefinedBy "A stormwater management structure designed to collect surface runoff water and prevent debris and sediment from entering storm sewer systems" ;
                                      rdfs:label "catch basin" .
 
@@ -2468,7 +2489,8 @@ isThickeningCentrifuge""" ;
                                                                           ) ;
                                                        rdf:type owl:Class
                                                      ] ;
-                                     rdfs:label "coagulation and flocculation tank" ;
+                                     rdfs:isDefinedBy "a process tank that play both the role of coagulation and flocculation tank" ;
+                                     rdfs:label "coagulation-flocculation tank" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "coagulation tank" ,
                                                                                     "flocculation tank" .
 
@@ -4151,7 +4173,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#00436> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
                                                      <http://www.toronto.ca/TWONTO#00676> ;
-                                     rdfs:label "a segment of infiltration trench" .
+                                     rdfs:label "infiltration trench segment" .
 
 
 ###  http://www.toronto.ca/TWONTO#00438
@@ -4530,8 +4552,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                      :is_equivalent_to_Avantis_category "Maintenance Hole" ;
                                      :is_equivalent_to_Avantis_class "Maintenance Hole" ;
                                      :is_equivalent_to_tag_code "MH" ;
-                                     rdfs:label "maintenance hole" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "manhole" .
+                                     rdfs:label "manhole" ;
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "maintenance hole" .
 
 
 ###  http://www.toronto.ca/TWONTO#00500
@@ -6802,8 +6824,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#00809
 <http://www.toronto.ca/TWONTO#00809> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     rdfs:label "weir structure" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "fixed weir" .
+                                     rdfs:label "weir" .
 
 
 ###  http://www.toronto.ca/TWONTO#00810
