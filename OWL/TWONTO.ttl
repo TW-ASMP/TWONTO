@@ -4534,18 +4534,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "manhole" .
 
 
-###  http://www.toronto.ca/TWONTO#00497
-<http://www.toronto.ca/TWONTO#00497> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
-                                     :dev-property_note "is a filter device" ;
-                                     rdfs:comment "7/29/2024: only reason that this would be included in the classifiation is that it is in TWAG classfication" ;
-                                     rdfs:isDefinedBy "Engineered systems designed to treat stormwater runoff by removing pollutants before the water enters natural waterways or the municipal sewer system." ;
-                                     rdfs:label "manufactured treatment device" ;
-                                     <http://www.w3.org/2004/02/skos/core#altLabel> "MTD" ,
-                                                                                    "jellyfish" ,
-                                                                                    "oil grit seperator" .
-
-
 ###  http://www.toronto.ca/TWONTO#00500
 <http://www.toronto.ca/TWONTO#00500> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ,
@@ -4876,10 +4864,10 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 
 ###  http://www.toronto.ca/TWONTO#00546
 <http://www.toronto.ca/TWONTO#00546> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00497> ;
+                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#00011> ;
                                      :dev-property_note "manufactured?" ;
                                      rdfs:isDefinedBy "A specialized device used to remove oils, greases, and hydrocarbons from wastewater or stormwater before it enters the sewer system or environment" ;
-                                     rdfs:label "oil grease separator" ;
+                                     rdfs:label "oil grit separator" ;
                                      <http://www.w3.org/2004/02/skos/core#altLabel> "OGS" .
 
 
