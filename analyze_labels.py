@@ -172,10 +172,10 @@ def main():
     sorted_subjects = sorted(subject_changes.items(), key=lambda x: len(x[1]), reverse=True)
 
     print("=" * 80)
-    print("TOP 10 rdfs:label values that changed the most")
+    print("TOP 20 rdfs:label values that changed the most")
     print("=" * 80)
 
-    for rank, (subject, changes) in enumerate(sorted_subjects[:10], start=1):
+    for rank, (subject, changes) in enumerate(sorted_subjects[:20], start=1):
         print()
         print(f"Rank #{rank}: {subject}")
         print(f"  Total changes: {len(changes)}")
@@ -187,11 +187,11 @@ def main():
 
     print()
     print("=" * 80)
-    print("Summary table (top 10 subjects by number of label changes):")
+    print("Summary table (top 20 subjects by number of label changes):")
     print("=" * 80)
     print(f"{'Rank':<5} {'Changes':<8} {'Subject IRI'}")
     print("-" * 80)
-    for rank, (subject, changes) in enumerate(sorted_subjects[:10], start=1):
+    for rank, (subject, changes) in enumerate(sorted_subjects[:20], start=1):
         print(f"{rank:<5} {len(changes):<8} {subject}")
 
 
