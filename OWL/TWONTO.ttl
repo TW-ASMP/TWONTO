@@ -512,12 +512,6 @@ AssetX -tw:is_in_a_state_of-> SittingInside -tw:the_individual-> RoomY""" ;
 #    Data properties
 #################################################################
 
-###  http://www.toronto.ca/TWONTO#0824
-<http://www.toronto.ca/TWONTO#0824> rdf:type owl:DatatypeProperty ;
-                                    rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#0847> ;
-                                    rdfs:label "is plumbed" .
-
-
 ###  http://www.toronto.ca/TWONTO#0825
 <http://www.toronto.ca/TWONTO#0825> rdf:type owl:DatatypeProperty ;
                                     rdfs:subPropertyOf <http://www.toronto.ca/TWONTO#0849> ;
@@ -1005,20 +999,6 @@ I created this property to point to a piece of text describing the intent of the
 
 ###  http://www.toronto.ca/TWONTO#0127
 <http://www.toronto.ca/TWONTO#0127> rdf:type owl:Class ;
-                                    owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                                 owl:unionOf ( <http://www.toronto.ca/TWONTO#0136>
-                                                                                               <http://www.toronto.ca/TWONTO#0363>
-                                                                                               <http://www.toronto.ca/TWONTO#0364>
-                                                                                               <http://www.toronto.ca/TWONTO#0366>
-                                                                                             )
-                                                                               ]
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <http://www.toronto.ca/TWONTO#0824> ;
-                                                                                 owl:hasValue "true"^^xsd:boolean
-                                                                               ]
-                                                                             ) ;
-                                                          rdf:type owl:Class
-                                                        ] ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0136> ,
                                                     <http://www.toronto.ca/TWONTO#0363> ,
                                                     <http://www.toronto.ca/TWONTO#0364> ,
@@ -1133,20 +1113,6 @@ I created this property to point to a piece of text describing the intent of the
 
 ###  http://www.toronto.ca/TWONTO#0140
 <http://www.toronto.ca/TWONTO#0140> rdf:type owl:Class ;
-                                    owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                                 owl:unionOf ( <http://www.toronto.ca/TWONTO#0136>
-                                                                                               <http://www.toronto.ca/TWONTO#0363>
-                                                                                               <http://www.toronto.ca/TWONTO#0364>
-                                                                                               <http://www.toronto.ca/TWONTO#0366>
-                                                                                             )
-                                                                               ]
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <http://www.toronto.ca/TWONTO#0824> ;
-                                                                                 owl:hasValue "false"^^xsd:boolean
-                                                                               ]
-                                                                             ) ;
-                                                          rdf:type owl:Class
-                                                        ] ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0136> ,
                                                     <http://www.toronto.ca/TWONTO#0363> ,
                                                     <http://www.toronto.ca/TWONTO#0364> ,
@@ -7179,10 +7145,8 @@ is capable of realizing a unit of the system primary functions.""" ;
 
 ###  http://www.toronto.ca/TWONTO#0823
 <http://www.toronto.ca/TWONTO#0823> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0178> ,
-                                                    <http://www.toronto.ca/TWONTO#0796> ;
-                                    rdfs:label "fire department connection" ;
-                                    <http://www.w3.org/2004/02/skos/core#altLabel> "fire connection" .
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
+                                    rdfs:label "ground fault circuit interrupter" .
 
 
 #################################################################
