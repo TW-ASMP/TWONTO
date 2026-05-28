@@ -2224,7 +2224,7 @@ isFireSystemAlarm?""" ;
 <http://www.toronto.ca/TWONTO#0264> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "Buidling Or Structure" .
+                                    rdfs:label "Building Or Structure" .
 
 
 ###  http://www.toronto.ca/TWONTO#0265
@@ -2448,7 +2448,7 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#0289
 <http://www.toronto.ca/TWONTO#0289> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0343> ;
-                                    rdfs:label "city by law" .
+                                    rdfs:label "city by-law" .
 
 
 ###  http://www.toronto.ca/TWONTO#0290
@@ -3046,7 +3046,7 @@ DECISION:
 ###  http://www.toronto.ca/TWONTO#0360
 <http://www.toronto.ca/TWONTO#0360> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0674> ;
-                                    rdfs:label "eletrical resistance sensing" .
+                                    rdfs:label "electrical resistance sensing" .
 
 
 ###  http://www.toronto.ca/TWONTO#0361
@@ -3235,7 +3235,7 @@ electrical power supplied to the building, and the building is within the scope 
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
                                                     <http://www.toronto.ca/TWONTO#0387> ;
                                     :dev-property_note "att: mobile" ;
-                                    rdfs:label "fall protection system support struture" ;
+                                    rdfs:label "fall protection system support structure" ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "davit arm" ,
                                                                                    "davit base" ,
                                                                                    "davit mast" ,
@@ -4203,7 +4203,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                     <http://www.toronto.ca/TWONTO#0538> ;
                                     :is_equivalent_to_Avantis_category "Transmitter" ;
                                     :is_equivalent_to_Avantis_class "Transmitter" ;
-                                    rdfs:label "intrument with a transmitter" ;
+                                    rdfs:label "instrument with a transmitter" ;
                                     owl:deprecated "true"^^xsd:boolean .
 
 
@@ -6195,7 +6195,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#0722
 <http://www.toronto.ca/TWONTO#0722> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0212> ;
-                                    rdfs:label "Maxiumum Allowable Working Temperature" ,
+                                    rdfs:label "Maximum Allowable Working Temperature" ,
                                                "the max allowable working temp" .
 
 
@@ -6209,7 +6209,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#0724
 <http://www.toronto.ca/TWONTO#0724> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0213> ;
-                                    rdfs:label "Mininum Input Voltage" ,
+                                    rdfs:label "Minimum Input Voltage" ,
                                                "the min input voltage desc" .
 
 
@@ -6764,7 +6764,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                     <http://www.toronto.ca/TWONTO#0173> ;
                                     :is_tool "true"^^xsd:boolean ;
                                     rdfs:isDefinedBy "A communication device that both transmits and receives radio frequency (RF) signals wirelessly, enabling two-way communication between electronic systems or devices." ;
-                                    rdfs:label "wireless tranceiver" .
+                                    rdfs:label "wireless transceiver" .
 
 
 ###  http://www.toronto.ca/TWONTO#0791
@@ -6800,7 +6800,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     :is_equivalent_to_Avantis_category "Electrical Power Line,Welding Receptable" ;
                                     :is_superclass_to_tag_code "PR" ,
                                                                "WR" ;
-                                    rdfs:label "wielding receptacle" ;
+                                    rdfs:label "welding receptacle" ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "600V receptacle" .
 
 
