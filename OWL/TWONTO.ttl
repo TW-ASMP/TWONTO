@@ -41,9 +41,17 @@ For the reasons above, examples of things that should be represented by a text v
                                             rdfs:range xsd:boolean .
 
 
+###  http://www.toronto.ca/TWONTO#category_in_Avantis
+:category_in_Avantis rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.toronto.ca/TWONTO#concrete_but_not_specific_enough_for_class_list
 :concrete_but_not_specific_enough_for_class_list rdf:type owl:AnnotationProperty ;
                                                  rdfs:range xsd:boolean .
+
+
+###  http://www.toronto.ca/TWONTO#defined_class_category_in_Maximo
+:defined_class_category_in_Maximo rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.toronto.ca/TWONTO#dev-ontology_note
@@ -1363,6 +1371,15 @@ An asset is not always associated with a market value – some assets’ market 
 ###  http://www.toronto.ca/TWONTO#0170
 <http://www.toronto.ca/TWONTO#0170> rdf:type owl:Class ;
                                     rdfs:label "material" .
+
+
+###  http://www.toronto.ca/TWONTO#0171
+<http://www.toronto.ca/TWONTO#0171> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :category_in_Avantis "Building Code" ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "Asset Covered by Building Code"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#0172
