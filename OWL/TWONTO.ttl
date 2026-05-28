@@ -1227,14 +1227,14 @@ I created this property to point to a piece of text describing the intent of the
 <http://www.toronto.ca/TWONTO#0151> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "SCBA system component (MBC)" .
+                                    rdfs:label "SCBA System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0152
 <http://www.toronto.ca/TWONTO#0152> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "controller or manual control equipment (MBC)" .
+                                    rdfs:label "Controller Or Manual Control Equipment" .
 
 
 ###  http://www.toronto.ca/TWONTO#0153
@@ -1295,7 +1295,7 @@ I created this property to point to a piece of text describing the intent of the
 <http://www.toronto.ca/TWONTO#0160> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0299> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "wireless communication device (MBC)" .
+                                    rdfs:label "Wireless Communication Device" .
 
 
 ###  http://www.toronto.ca/TWONTO#0161
@@ -1311,7 +1311,7 @@ I created this property to point to a piece of text describing the intent of the
 <http://www.toronto.ca/TWONTO#0162> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0730> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "calibration tool or accessory (MBC)" .
+                                    rdfs:label "Calibration Tool Or Accessory" .
 
 
 ###  http://www.toronto.ca/TWONTO#0163
@@ -1502,7 +1502,7 @@ Examples of system include
 <http://www.toronto.ca/TWONTO#0188> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0447> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "HVAC system component (MBC)" .
+                                    rdfs:label "HVAC System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0189
@@ -1620,7 +1620,7 @@ Examples of system include
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
                                     :is_equivalent_to_Avantis_category "PPE" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "PPE (MBC)" .
+                                    rdfs:label "PPE" .
 
 
 ###  http://www.toronto.ca/TWONTO#0202
@@ -2174,7 +2174,7 @@ isFireSystemAlarm?""" ;
                                     :always_functions_as_part_of_discrete_asset "true"^^xsd:boolean ;
                                     :is_intensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:isDefinedBy "a valve, gauge, regulating or controlling device, flange, pipe fitting, nozzle, or thing that is attached to or forms part of a boiler, pressure vessel, or pressure piping system." ;
-                                    rdfs:label "boiler fitting (MBC)" .
+                                    rdfs:label "Boiler Fitting" .
 
 
 ###  http://www.toronto.ca/TWONTO#0260
@@ -2224,7 +2224,7 @@ isFireSystemAlarm?""" ;
 <http://www.toronto.ca/TWONTO#0264> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "buidling or structure (MBC)" .
+                                    rdfs:label "Buidling Or Structure" .
 
 
 ###  http://www.toronto.ca/TWONTO#0265
@@ -2372,7 +2372,7 @@ isThickeningCentrifuge""" ;
                                     :is_equivalent_to_Avantis_class "Analyzer" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_Avantis_category "Analyzer" ;
-                                    rdfs:label "chemical or concentration analyzer (MBC)" .
+                                    rdfs:label "Chemical Or Concentration Analyzer" .
 
 
 ###  http://www.toronto.ca/TWONTO#0281
@@ -2380,7 +2380,7 @@ isThickeningCentrifuge""" ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0483> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_Avantis_category "Sensor,Gas" ;
-                                    rdfs:label "chemical or concentration sensor element (MBC)" .
+                                    rdfs:label "Chemical Or Concentration Sensor Element" .
 
 
 ###  http://www.toronto.ca/TWONTO#0282
@@ -2546,7 +2546,7 @@ isThickeningCentrifuge""" ;
                                     :is_equivalent_to_Avantis_class "Communications Equipment" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_tag_code "COM" ;
-                                    rdfs:label "communication or networking equipment (MBC)" .
+                                    rdfs:label "Communication Or Networking Equipment" .
 
 
 ###  http://www.toronto.ca/TWONTO#0300
@@ -2999,7 +2999,7 @@ DECISION:
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0447> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_tag_code "ESP" ;
-                                    rdfs:label "electrical distribution system component (MBC)" .
+                                    rdfs:label "Electrical Distribution System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0355
@@ -3305,7 +3305,7 @@ e) has a integral connecting means.""" ;
 <http://www.toronto.ca/TWONTO#0387> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "fall protection system component (MBC)" .
+                                    rdfs:label "Fall Protection System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0388
@@ -3395,7 +3395,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 <http://www.toronto.ca/TWONTO#0399> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "first aid equipment or component (MBC)" .
+                                    rdfs:label "First Aid Equipment Or Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0400
@@ -3484,7 +3484,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 <http://www.toronto.ca/TWONTO#0403> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0584> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "pipe fitting (MBC)" .
+                                    rdfs:label "Pipe Fitting" .
 
 
 ###  http://www.toronto.ca/TWONTO#0404
@@ -3875,7 +3875,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     :is_superclass_to_tag_code "GQ" ,
                                                                "IRG" ;
                                     :new_13040_code_proposed "GNDS" ;
-                                    rdfs:label "grounds or building service equipment (MBC)" .
+                                    rdfs:label "Grounds Or Building Service Equipment" .
 
 
 ###  http://www.toronto.ca/TWONTO#0448
@@ -4162,7 +4162,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#0481> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0779> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "instrument air or pneumatic system component (MBC)" .
+                                    rdfs:label "Instrument Air Or Pneumatic System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0482
@@ -4180,7 +4180,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                                                "PI" ,
                                                                "SI" ,
                                                                "TI" ;
-                                    rdfs:label "instrument gauge or indicator (MBC)" .
+                                    rdfs:label "Instrument Gauge Or Indicator" .
 
 
 ###  http://www.toronto.ca/TWONTO#0483
@@ -4194,7 +4194,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     :is_superclass_to_Avantis_category "Sensor,Gas,CL2" ,
                                                                        "Sensor,Gas,NH3" ,
                                                                        "Sensor,Gas,SO2" ;
-                                    rdfs:label "sensor element (MBC)" .
+                                    rdfs:label "Sensor Element" .
 
 
 ###  http://www.toronto.ca/TWONTO#0484
@@ -4273,7 +4273,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#0495> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "landscape feature or green infrastructure (MBC)" .
+                                    rdfs:label "Landscape Feature Or Green Infrastructure" .
 
 
 ###  http://www.toronto.ca/TWONTO#0496
@@ -4379,7 +4379,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     :is_equivalent_to_Avantis_class "Lifting Device" ;
                                     :is_equivalent_to_tag_code "LD" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "lifting device or lifting device component (MBC)" .
+                                    rdfs:label "Lifting Device Or Lifting Device Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0506
@@ -4451,7 +4451,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_tag_code "LR" ;
                                     rdfs:isDefinedBy "A physical part or mechanical assembly within a machine that contributes to the transmission, modification, or control of motion or force. Examples include couplings, gearboxes, shafts, and bearings." ;
-                                    rdfs:label "machine component (MBC)" .
+                                    rdfs:label "Machine Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0518
@@ -4606,7 +4606,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                     :is_superclass_to_tag_code "ANL" ,
                                                                "METR" ,
                                                                "TPB" ;
-                                    rdfs:label "instrumentation (MBC)" ;
+                                    rdfs:label "Instrumentation" ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "measurement, test, and observational instrument" .
 
 
@@ -4614,7 +4614,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 <http://www.toronto.ca/TWONTO#0539> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "Member of TW Broader Asset Class Category (MBC)" .
+                                    rdfs:label "Member Of TW Broader Asset Class Category" .
 
 
 ###  http://www.toronto.ca/TWONTO#0540
@@ -4890,7 +4890,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 <http://www.toronto.ca/TWONTO#0569> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "building component or structural component (MBC)" .
+                                    rdfs:label "Building Component Or Structural Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0570
@@ -4936,7 +4936,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0447> ;
                                     :is_equivalent_to_tag_code "SS" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "physical security system component (MBC)" .
+                                    rdfs:label "Physical Security System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0575
@@ -4957,7 +4957,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 <http://www.toronto.ca/TWONTO#0577> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0799> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "piece of furniture (MBC)" .
+                                    rdfs:label "Piece Of Furniture" .
 
 
 ###  http://www.toronto.ca/TWONTO#0578
@@ -4966,7 +4966,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                     :UNSPSC_code 41120000 ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :new_13040_code_proposed "LAB" ;
-                                    rdfs:label "lab equipment (MBC)" .
+                                    rdfs:label "Lab Equipment" .
 
 
 ###  http://www.toronto.ca/TWONTO#0579
@@ -5017,7 +5017,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_tag_code "FP" ,
                                                                "GS" ;
-                                    rdfs:label "piping system component (MBC)" .
+                                    rdfs:label "Piping System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0585
@@ -5489,7 +5489,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_tag_code "SCR" ;
                                     rdfs:comment "March23'24: did not use \"tank\" in the naming because, there are reactors that do not take the form of a tank" ;
-                                    rdfs:label "treatment process reactor (MBC)" ;
+                                    rdfs:label "Treatment Process Reactor" ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "processing tank" .
 
 
@@ -5644,7 +5644,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
                                     :is_equivalent_to_tag_code "SQ" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:comment "include location for MSDS binders, lock-out and tag-out documentation, and where safety equipment like earplugs are dispensed." ;
-                                    rdfs:label "safety or hazard management equipment (MBC)" .
+                                    rdfs:label "Safety Or Hazard Management Equipment" .
 
 
 ###  http://www.toronto.ca/TWONTO#0653
@@ -5802,7 +5802,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
                                     rdfs:isDefinedBy """An elongated asset that 
 * is structurally continuous and 
 * provide a path of flow for a material substance, energy, or information from a point to another.""" ;
-                                    rdfs:label "segment of linear asset (MBC)" .
+                                    rdfs:label "Segment Of Linear Asset" .
 
 
 ###  http://www.toronto.ca/TWONTO#0672
@@ -5976,7 +5976,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_Avantis_category "Machine Tool,Saw" ;
                                     rdfs:comment "6/19: we are keeping this class on the classification tree to allow people to find the tools." ;
-                                    rdfs:label "machine tool (MBC)" ;
+                                    rdfs:label "Machine Tool" ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "machine shop tool" ,
                                                                                    "stationary tool" .
 
@@ -6181,7 +6181,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     :is_equivalent_to_Avantis_class "Test Equipment" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_tool "true"^^xsd:boolean ;
-                                    rdfs:label "testing tool (MBC)" ;
+                                    rdfs:label "Testing Tool" ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "tester" .
 
 
@@ -6252,7 +6252,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     :is_equivalent_to_Avantis_class "Tool" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :new_13040_code_proposed "TOOL" ;
-                                    rdfs:label "tool (MBC)" .
+                                    rdfs:label "Tool" .
 
 
 ###  http://www.toronto.ca/TWONTO#0731
@@ -6334,7 +6334,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     :is_superclass_to_tag_code "VEH" ;
                                     :is_tool "true"^^xsd:boolean ;
                                     :new_13040_code_proposed "TRANS" ;
-                                    rdfs:label "vehicle, transportation tool, or accessory (MBC)" .
+                                    rdfs:label "Vehicle, Transportation Tool, Or Accessory" .
 
 
 ###  http://www.toronto.ca/TWONTO#0740
@@ -6651,7 +6651,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_tag_code "DVS" ;
-                                    rdfs:label "water transmission, distribution, and collection system asset (MBC)" .
+                                    rdfs:label "Water Transmission, Distribution, And Collection System Asset" .
 
 
 ###  http://www.toronto.ca/TWONTO#0777
@@ -6672,7 +6672,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :new_13040_code_proposed "PROC" ;
-                                    rdfs:label "treatment process and support equipment (MBC)" .
+                                    rdfs:label "Treatment Process And Support Equipment" .
 
 
 ###  http://www.toronto.ca/TWONTO#0780
@@ -6811,7 +6811,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_Avantis_class "Fire Equipment" ;
                                     :new_13040_code_proposed "FIRE" ;
-                                    rdfs:label "fire and life-safety system component (MBC)" .
+                                    rdfs:label "Fire And Life-Safety System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0797
@@ -6828,7 +6828,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_tag_code "LTG" ,
                                                                "PLQ" ;
-                                    rdfs:label "building service system component (MBC)" .
+                                    rdfs:label "Building Service System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0799
@@ -6847,7 +6847,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                                                        "Computer Equipment,Scanner" ;
                                     :is_superclass_to_tag_code "PRNT" ,
                                                                "SCAN" ;
-                                    rdfs:label "business administration and office equipment (MBC)" .
+                                    rdfs:label "Business Administration And Office Equipment" .
 
 
 ###  http://www.toronto.ca/TWONTO#0800
@@ -6881,7 +6881,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 <http://www.toronto.ca/TWONTO#0803> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0188> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "ventilation system component (MBC)" .
+                                    rdfs:label "Ventilation System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0804
@@ -6958,7 +6958,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0779> ;
                                     :is_equivalent_to_tag_code "UV" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "specialized UV disinfection system component (MBC)" .
+                                    rdfs:label "Specialized UV Disinfection System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0813
@@ -6985,14 +6985,14 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0779> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :new_13040_code_proposed "OZC" ;
-                                    rdfs:label "specialized ozone system component (MBC)" .
+                                    rdfs:label "Specialized Ozone System Component" .
 
 
 ###  http://www.toronto.ca/TWONTO#0816
 <http://www.toronto.ca/TWONTO#0816> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "component of a discrete asset (MBC)" .
+                                    rdfs:label "Component Of A Discrete Asset" .
 
 
 ###  http://www.toronto.ca/TWONTO#0817
@@ -7014,7 +7014,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0538> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_tag_code "AIT" ;
-                                    rdfs:label "analyzer (MBC)" .
+                                    rdfs:label "Analyzer" .
 
 
 ###  http://www.toronto.ca/TWONTO#0821
