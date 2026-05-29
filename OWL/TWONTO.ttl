@@ -1378,7 +1378,7 @@ A 2-dimensional or a depthless 3-dimensional surface space that coincides with a
 An asset whose parts are 
 * unified, through physical integration, into a single object, or
 * unified under their common membership in a collection of objects that constitutes a manufactured product""" ;
-                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    :is_intensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:comment """An asset may have smaller discrete assets in its set of parts.
 A manufactured asset product is a set of assets made under the same specification, which is usually related to a certain product-line identification (i.e. manufacturer, model, catalogue number, etc.)
 The asset that consists of a television and its remote control is an example of a discrete asset that is unified by a manufactured asset product, though it does not exist as a single physical unit.""" ;
@@ -1388,9 +1388,8 @@ The asset that consists of a television and its remote control is an example of 
 
 ###  http://www.toronto.ca/TWONTO#0174
 <http://www.toronto.ca/TWONTO#0174> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ,
-                                                    <http://www.toronto.ca/TWONTO#0294> ;
-                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0294> ;
+                                    :is_intensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:comment """Further Clarifications:
 The asset parts of a system can be interrelated by physical connections, controlled material flows, information flow, or energy transmission between the parts.
 Each part of the system should be involved in a higher-order function of the system. While some parts are directly involved in realizing the function others are involved by supporting the regulation, reliability, maintainability, and other implicit goals of the system.
@@ -1425,9 +1424,10 @@ Examples of system include
                                     :is_intensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:comment "6/19/24 TH: changed back from \"hierarchal system\" to \"localized function system\", as the term hierarchal system is not intuitive for something like a hydrant system." ,
                                                  "6/26/24: nearly all conceivable discrete assets are also localized function assets.  I did not subsume discrete asset under localized functional asset to hold out the possibility that there may be a distributed discrete asset system." ;
-                                    rdfs:isDefinedBy "a system in which the assets playing the same role are situated in the same region of the system topology." ;
-                                    rdfs:label "Localized Function System" ;
-                                    <http://www.w3.org/2004/02/skos/core#altLabel> "hierarchal system" .
+                                    rdfs:isDefinedBy "a system in which the assets playing the same role are situated in the same region of the system layout/topology." ;
+                                    rdfs:label "Hierarchal Function System" ;
+                                    <http://www.w3.org/2004/02/skos/core#altLabel> "Functionally Segregated System" ,
+                                                                                   "Localized Function System" .
 
 
 ###  http://www.toronto.ca/TWONTO#0179
@@ -3271,7 +3271,8 @@ electrical power supplied to the building, and the building is within the scope 
 
 ###  http://www.toronto.ca/TWONTO#0379
 <http://www.toronto.ca/TWONTO#0379> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0294> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ,
+                                                    <http://www.toronto.ca/TWONTO#0294> ;
                                     rdfs:isDefinedBy "A collection of assets located within a facility." ;
                                     rdfs:label "assets of a facility" .
 
@@ -3527,7 +3528,8 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 
 ###  http://www.toronto.ca/TWONTO#0401
 <http://www.toronto.ca/TWONTO#0401> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0294> ,
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ,
+                                                    <http://www.toronto.ca/TWONTO#0294> ,
                                                     <http://www.toronto.ca/TWONTO#0399> ;
                                     rdfs:isDefinedBy "A collection of all assets, deem necessary by local regulation, to be present in a first aid room." ;
                                     rdfs:label "first-aid room equipment" .
@@ -3755,6 +3757,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0425
 <http://www.toronto.ca/TWONTO#0425> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
+                                    :is_intensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Distributed Function System"@en .
 
 
@@ -4217,7 +4220,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#0479
 <http://www.toronto.ca/TWONTO#0479> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0294> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ,
+                                                    <http://www.toronto.ca/TWONTO#0294> ;
                                     rdfs:label "assets of an inspection route" .
 
 
@@ -4317,7 +4321,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0490
 <http://www.toronto.ca/TWONTO#0490> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0510> ;
-                                    rdfs:label "flow junction" .
+                                    rdfs:label "Flow Junction" .
 
 
 ###  http://www.toronto.ca/TWONTO#0491
@@ -4500,7 +4504,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0510
 <http://www.toronto.ca/TWONTO#0510> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
-                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    :is_intensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Linear Function Structure" .
 
 
@@ -4719,8 +4723,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 ###  http://www.toronto.ca/TWONTO#0539
 <http://www.toronto.ca/TWONTO#0539> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ;
-                                    :is_extensional_defined_class "true"^^xsd:boolean ;
-                                    rdfs:label "Member of Defined Class of Interest" .
+                                    :is_intensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "Member of Category of Interest" .
 
 
 ###  http://www.toronto.ca/TWONTO#0540
@@ -4921,7 +4925,8 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 
 ###  http://www.toronto.ca/TWONTO#0561
 <http://www.toronto.ca/TWONTO#0561> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0294> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ,
+                                                    <http://www.toronto.ca/TWONTO#0294> ;
                                     rdfs:isDefinedBy "The collection of all assets operated by a Toronto Water operation unit." ;
                                     rdfs:label "assets of an operations unit" .
 
@@ -6147,7 +6152,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 ###  http://www.toronto.ca/TWONTO#0700
 <http://www.toronto.ca/TWONTO#0700> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ;
-                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    :is_intensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Structural Part" .
 
 
