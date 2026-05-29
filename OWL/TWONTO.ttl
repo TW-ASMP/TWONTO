@@ -2213,6 +2213,13 @@ isFireSystemAlarm?""" ;
                                     rdfs:label "building" .
 
 
+###  http://www.toronto.ca/TWONTO#0264
+<http://www.toronto.ca/TWONTO#0264> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "Industrial Hygiene Asset"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#0265
 <http://www.toronto.ca/TWONTO#0265> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
@@ -4292,6 +4299,13 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     rdfs:label "flow junction" .
 
 
+###  http://www.toronto.ca/TWONTO#0491
+<http://www.toronto.ca/TWONTO#0491> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "Material Handling Asset"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#0492
 <http://www.toronto.ca/TWONTO#0492> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0419> ,
@@ -4452,11 +4466,25 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     rdfs:label "Line" .
 
 
+###  http://www.toronto.ca/TWONTO#0509
+<http://www.toronto.ca/TWONTO#0509> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "OHSA Regulated Asset"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#0510
 <http://www.toronto.ca/TWONTO#0510> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Linear Function Structure" .
+
+
+###  http://www.toronto.ca/TWONTO#0511
+<http://www.toronto.ca/TWONTO#0511> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "TSSA Regulated Asset"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#0512
@@ -4497,6 +4525,13 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     :is_superclass_to_tag_code "LR" ;
                                     rdfs:isDefinedBy "A physical part or mechanical assembly within a machine that contributes to the transmission, modification, or control of motion or force. Examples include couplings, gearboxes, shafts, and bearings." ;
                                     rdfs:label "Machine Component" .
+
+
+###  http://www.toronto.ca/TWONTO#0517
+<http://www.toronto.ca/TWONTO#0517> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "Emergency Power Management Asset"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#0518
@@ -5365,6 +5400,13 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                     rdfs:label "Primary Path Line" .
 
 
+###  http://www.toronto.ca/TWONTO#0615
+<http://www.toronto.ca/TWONTO#0615> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "ECA - Air Regulated Asset"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#0616
 <http://www.toronto.ca/TWONTO#0616> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
@@ -5899,6 +5941,13 @@ Many linear assets, such as cables, also provide containment, but this is not a 
                                     rdfs:label "Simple Line" .
 
 
+###  http://www.toronto.ca/TWONTO#0679
+<http://www.toronto.ca/TWONTO#0679> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "ECA - Sewage Regulated Asset"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#0680
 <http://www.toronto.ca/TWONTO#0680> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0638> ;
@@ -6118,6 +6167,13 @@ Many linear assets, such as cables, also provide containment, but this is not a 
                                     rdfs:label "voltage surge suppressor" .
 
 
+###  http://www.toronto.ca/TWONTO#0707
+<http://www.toronto.ca/TWONTO#0707> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "ECA - WSER Regulated Asset"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#0708
 <http://www.toronto.ca/TWONTO#0708> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ;
@@ -6137,6 +6193,13 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     rdfs:label "system train" .
 
 
+###  http://www.toronto.ca/TWONTO#0710
+<http://www.toronto.ca/TWONTO#0710> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "DWQMS CEL Asset"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#0711
 <http://www.toronto.ca/TWONTO#0711> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0576> ;
@@ -6151,6 +6214,13 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     :is_tool "true"^^xsd:boolean ;
                                     :not_relevant_to_AM_or_PM "true"^^xsd:boolean ;
                                     rdfs:label "table saw" .
+
+
+###  http://www.toronto.ca/TWONTO#0713
+<http://www.toronto.ca/TWONTO#0713> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "Component of Interlock System"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#0714
@@ -6838,7 +6908,7 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_Avantis_class "Fire Equipment" ;
                                     :new_13040_code_proposed "FIRE" ;
-                                    rdfs:label "Fire And Life-Safety System Component" .
+                                    rdfs:label "First Aid Equipment" .
 
 
 ###  http://www.toronto.ca/TWONTO#0797
