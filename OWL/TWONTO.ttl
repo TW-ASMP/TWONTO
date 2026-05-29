@@ -41,8 +41,8 @@ For the reasons above, examples of things that should be represented by a text v
                                             rdfs:range xsd:boolean .
 
 
-###  http://www.toronto.ca/TWONTO#category_in_Avantis
-:category_in_Avantis rdf:type owl:AnnotationProperty .
+###  http://www.toronto.ca/TWONTO#category_value_on_Avantis_entity
+:category_value_on_Avantis_entity rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.toronto.ca/TWONTO#concrete_but_not_specific_enough_for_class_list
@@ -1051,7 +1051,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#0132
 <http://www.toronto.ca/TWONTO#0132> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
-                                    :category_in_Avantis "chlorine evaporators" ;
+                                    :category_value_on_Avantis_entity "chlorine evaporators" ;
                                     :defined_class_category_in_Maximo "Process Critical Equipment" ,
                                                                       "chlorine evaporators" ;
                                     rdfs:isDefinedBy "A device that converts liquid chlorine into chlorine gas for use in disinfection or treatment processes" ;
@@ -1353,7 +1353,7 @@ An asset is not always associated with a market value – some assets’ market 
 ###  http://www.toronto.ca/TWONTO#0171
 <http://www.toronto.ca/TWONTO#0171> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
-                                    :category_in_Avantis "Health & Safety,Building Code" ;
+                                    :category_value_on_Avantis_entity "Health & Safety,Building Code" ;
                                     :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Asset Covered by Building Code"@en .
@@ -1622,6 +1622,7 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#0201
 <http://www.toronto.ca/TWONTO#0201> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :category_value_on_Avantis_entity "PPE" ;
                                     :defined_class_category_in_Maximo "Regulation" ;
                                     :is_equivalent_to_Avantis_category "PPE" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
