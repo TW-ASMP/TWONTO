@@ -1051,6 +1051,9 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#0132
 <http://www.toronto.ca/TWONTO#0132> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
+                                    :category_in_Avantis "chlorine evaporators" ;
+                                    :defined_class_category_in_Maximo "Process Critical Equipment" ,
+                                                                      "chlorine evaporators" ;
                                     rdfs:isDefinedBy "A device that converts liquid chlorine into chlorine gas for use in disinfection or treatment processes" ;
                                     rdfs:label "chlorine evaporator" .
 
@@ -1086,6 +1089,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#0136
 <http://www.toronto.ca/TWONTO#0136> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0274> ;
+                                    :defined_class_category_in_Maximo "Process Critical Equipment" ;
                                     :is_intensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "inlet gate"@en .
 
@@ -1152,6 +1156,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#0144
 <http://www.toronto.ca/TWONTO#0144> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0660> ;
+                                    :defined_class_category_in_Maximo "Process Critical Equipment" ;
                                     rdfs:comment "screening unit and is traveling screen is true" ;
                                     rdfs:label "traveling screen" .
 
@@ -1197,12 +1202,15 @@ I created this property to point to a piece of text describing the intent of the
 <http://www.toronto.ca/TWONTO#0150> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
                                                     <http://www.toronto.ca/TWONTO#0387> ;
+                                    :defined_class_category_in_Maximo "Legislative Certification Requirement" ,
+                                                                      "Safety Critical Equipment" ;
                                     rdfs:label "tie-off anchor" .
 
 
 ###  http://www.toronto.ca/TWONTO#0151
 <http://www.toronto.ca/TWONTO#0151> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :defined_class_category_in_Maximo "Emergency Planning and Response" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "SCBA System Component" .
 
@@ -1398,6 +1406,7 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#0175
 <http://www.toronto.ca/TWONTO#0175> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0413> ;
+                                    :defined_class_category_in_Maximo "Process Critical Equipment" ;
                                     :is_intensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "primary flowmeter"@en .
 
@@ -1405,6 +1414,7 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#0176
 <http://www.toronto.ca/TWONTO#0176> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0538> ;
+                                    :defined_class_category_in_Maximo "Process Critical Equipment" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Primary Instrumentation"@en .
 
@@ -1612,6 +1622,7 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#0201
 <http://www.toronto.ca/TWONTO#0201> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_equivalent_to_Avantis_category "PPE" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "PPE" .
@@ -2125,6 +2136,7 @@ isFireSystemAlarm?""" ;
 ###  http://www.toronto.ca/TWONTO#0255
 <http://www.toronto.ca/TWONTO#0255> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
+                                    :defined_class_category_in_Maximo "Process Critical Equipment" ;
                                     :dev-ontology_note "from P&ID symbol: axial, centrifugal" ;
                                     :dev-property_note "has_drive" ;
                                     :is_equivalent_to_Avantis_category "Blower" ;
@@ -2216,6 +2228,7 @@ isFireSystemAlarm?""" ;
 ###  http://www.toronto.ca/TWONTO#0264
 <http://www.toronto.ca/TWONTO#0264> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Industrial Hygiene Asset"@en .
 
@@ -2700,6 +2713,7 @@ isThickeningCentrifuge""" ;
 <http://www.toronto.ca/TWONTO#0317> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
                                                     <http://www.toronto.ca/TWONTO#0505> ;
+                                    :defined_class_category_in_Maximo "Legislative Certification Requirement" ;
                                     :is_equivalent_to_Avantis_category "Crane" ;
                                     :is_equivalent_to_Avantis_class "Crane" ;
                                     :is_equivalent_to_tag_code "CRN" ;
@@ -2765,18 +2779,21 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#0324
 <http://www.toronto.ca/TWONTO#0324> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0399> ;
+                                    :defined_class_category_in_Maximo "Emergency Planning and Response" ;
                                     rdfs:label "Emergency Eyewash or Shower"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#0325
 <http://www.toronto.ca/TWONTO#0325> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0627> ;
+                                    :defined_class_category_in_Maximo "Process Critical Equipment" ;
                                     rdfs:label "RW and TRW pump"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#0326
 <http://www.toronto.ca/TWONTO#0326> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
+                                    :defined_class_category_in_Maximo "Safety Critical Equipment" ;
                                     rdfs:label "E-stop"@en ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "emergency stop button" .
 
@@ -2784,6 +2801,7 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#0327
 <http://www.toronto.ca/TWONTO#0327> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :defined_class_category_in_Maximo "Legislative Certification Requirement" ;
                                     rdfs:label "TSSA Boiler"@en .
 
 
@@ -3407,6 +3425,7 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
 <http://www.toronto.ca/TWONTO#0395> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
                                                     <http://www.toronto.ca/TWONTO#0796> ;
+                                    :defined_class_category_in_Maximo "Legislative Certification Requirement" ;
                                     :is_equivalent_to_tag_code "FEQ" ;
                                     rdfs:label "pressurized piping system" .
 
@@ -3832,6 +3851,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0437
 <http://www.toronto.ca/TWONTO#0437> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
+                                    :defined_class_category_in_Maximo "Emergency Planning and Response" ;
                                     :dev-property_note "has_drive" ;
                                     :is_equivalent_to_Avantis_category "Generator" ,
                                                                        "Generator,Electricity" ;
@@ -4302,6 +4322,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0491
 <http://www.toronto.ca/TWONTO#0491> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Material Handling Asset"@en .
 
@@ -4316,6 +4337,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0493
 <http://www.toronto.ca/TWONTO#0493> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     rdfs:label "ladder" .
 
 
@@ -4469,6 +4491,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0509
 <http://www.toronto.ca/TWONTO#0509> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "OHSA Regulated Asset"@en .
 
@@ -4483,6 +4506,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0511
 <http://www.toronto.ca/TWONTO#0511> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "TSSA Regulated Asset"@en .
 
@@ -4530,6 +4554,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0517
 <http://www.toronto.ca/TWONTO#0517> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Emergency Power Management Asset"@en .
 
@@ -5160,6 +5185,7 @@ wetPond?""" ;
 <http://www.toronto.ca/TWONTO#0592> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0130> ,
                                                     <http://www.toronto.ca/TWONTO#0173> ;
+                                    :defined_class_category_in_Maximo "Safety Critical Equipment" ;
                                     :is_superclass_to_Avantis_category "Atmosphere Monitoring Device,Portable" ,
                                                                        "Atmosphere Monitoring Device,Portable,Mercury" ,
                                                                        "Atmosphere Monitoring Device,Portable,Oxygen/Toxic/CH4/LEL/CL/SO2" ;
@@ -5299,6 +5325,7 @@ ii. hot water service operating pressure above 1100 kPa (160 psig) or above the 
 ###  http://www.toronto.ca/TWONTO#0605
 <http://www.toronto.ca/TWONTO#0605> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0604> ;
+                                    :defined_class_category_in_Maximo "Safety Critical Equipment" ;
                                     :dev-property_note """A pressure relief device designed to actuate on inlet static pressure and to reclose after normal conditions have been restored. It may be one of the following types and have one or more of the following design features.
 A. Restricted lift PRV: a pressure relief valve in which the actual discharge area is determined by the position of the disc.
 B. Full lift PRV: a pressure relief valve in which the actual discharge area is not determined by the position of the disc.
@@ -5403,6 +5430,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 ###  http://www.toronto.ca/TWONTO#0615
 <http://www.toronto.ca/TWONTO#0615> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "ECA - Air Regulated Asset"@en .
 
@@ -5694,6 +5722,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 <http://www.toronto.ca/TWONTO#0649> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
                                                     <http://www.toronto.ca/TWONTO#0201> ;
+                                    :defined_class_category_in_Maximo "Safety Critical Equipment" ;
                                     :is_equivalent_to_Avantis_category "PPE,Insulated Glove" ;
                                     :is_tool "true"^^xsd:boolean ;
                                     rdfs:label "electrical gloves" ;
@@ -5944,6 +5973,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 ###  http://www.toronto.ca/TWONTO#0679
 <http://www.toronto.ca/TWONTO#0679> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "ECA - Sewage Regulated Asset"@en .
 
@@ -6027,6 +6057,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 <http://www.toronto.ca/TWONTO#0690> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
                                                     <http://www.toronto.ca/TWONTO#0652> ;
+                                    :defined_class_category_in_Maximo "Emergency Planning and Response" ;
                                     :is_equivalent_to_Avantis_category "Safety,Emergency Kit" ,
                                                                        "Spill Kit" ;
                                     :is_equivalent_to_tag_code "SPL" ;
@@ -6170,6 +6201,7 @@ Many linear assets, such as cables, also provide containment, but this is not a 
 ###  http://www.toronto.ca/TWONTO#0707
 <http://www.toronto.ca/TWONTO#0707> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "ECA - WSER Regulated Asset"@en .
 
@@ -6196,6 +6228,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#0710
 <http://www.toronto.ca/TWONTO#0710> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "DWQMS CEL Asset"@en .
 
@@ -6219,6 +6252,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#0713
 <http://www.toronto.ca/TWONTO#0713> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :defined_class_category_in_Maximo "Safety Critical Equipment" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Component of Interlock System"@en .
 
@@ -6652,6 +6686,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#0763
 <http://www.toronto.ca/TWONTO#0763> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
+                                    :defined_class_category_in_Maximo "Legislative Certification Requirement" ;
                                     rdfs:label "fire extinguisher"@en .
 
 
@@ -6910,6 +6945,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#0796
 <http://www.toronto.ca/TWONTO#0796> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0652> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_equivalent_to_tag_code "FSS" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_Avantis_class "Fire Equipment" ;
@@ -7123,6 +7159,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#0820
 <http://www.toronto.ca/TWONTO#0820> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :defined_class_category_in_Maximo "Regulation" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     rdfs:label "Fire And Life-Safety System Component"@en .
 
