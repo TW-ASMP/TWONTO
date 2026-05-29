@@ -6649,6 +6649,12 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     rdfs:label "valve actuator" .
 
 
+###  http://www.toronto.ca/TWONTO#0763
+<http://www.toronto.ca/TWONTO#0763> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ;
+                                    rdfs:label "fire extinguisher"@en .
+
+
 ###  http://www.toronto.ca/TWONTO#0764
 <http://www.toronto.ca/TWONTO#0764> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
@@ -7112,6 +7118,13 @@ is capable of realizing a unit of the system primary functions.""" ;
                                     :is_extensional_defined_class "true"^^xsd:boolean ;
                                     :is_superclass_to_tag_code "AIT" ;
                                     rdfs:label "Analyzer" .
+
+
+###  http://www.toronto.ca/TWONTO#0820
+<http://www.toronto.ca/TWONTO#0820> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0539> ;
+                                    :is_extensional_defined_class "true"^^xsd:boolean ;
+                                    rdfs:label "Fire And Life-Safety System Component"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#0821
