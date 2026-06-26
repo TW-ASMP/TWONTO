@@ -1,0 +1,9 @@
+# ignores all jupyter check points in any subdir
+__pycache__/
+.ipynb_checkpoints/
+.virtual_documents/
+profile_default/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
