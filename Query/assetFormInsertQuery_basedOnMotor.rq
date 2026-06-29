@@ -1,0 +1,30 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX tw: <http://www.toronto.ca/TWONTO#>
+
+INSERT DATA {
+    tw:anonAsset rdf:type tw:motor .  # determined by SHACL
+    
+    # === Data for a measurement properties ===
+    tw:anonAsset tw:hasProperty _:b1 . # _:b1 is a blank node. i.e., it has not IRI and cannot be queried directly.  I chose to use blank nodes instead of 
+    _:b1 rdf:type tw:ratedPowerOutput . # determined by SHACL
+    _:b1 tw:isQuantifiedBy _:b2 . # determined by SHACL
+    _:b2 rdf:type tw:measureOfPowerLevel . # determined by SHACL
+    _:b2 tw:hasNumericValue "100.0"^^xsd:float . # enter by user
+    _:b2 tw:hasUnitOfMeasure tw:megavolt-ampere . # enter by user
+    # ---
+    tw:anonAsset tw:hasProperty _:b3 .
+    _:b3 rdf:type tw:nominalInputVoltage . 
+    _:b3 tw:isQuantifiedBy _:b4 .
+    _:b4 rdf:type tw:measureOfVoltage .
+    _:b4 tw:hasNumericValue "600.0"^^xsd:float . 
+    _:b4 tw:hasUnitOfMeasure tw:volt . 
+    
+    # === Data for a non-measurement properties === # determined by SHACL
+    
+    tw:anonAsset tw:hasSealedOrShieldedBearing "false"^^xsd:boolean .
+    tw:anonAsset tw:usesBearingLubricantType "true"^^xsd:boolean . 
+    tw:anonAsset tw:has_NEMA_enclosureType "ODP"^^xsd:string . 
+    tw:anonAsset tw:has_NEMA_frameType "143T"^^xsd:string . 
+}
