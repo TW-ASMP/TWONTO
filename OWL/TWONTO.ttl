@@ -38,6 +38,10 @@ They are either a a TWONTO core class, or a defined class specific to Toronto Wa
 :category_in_Maximo rdf:type owl:AnnotationProperty .
 
 
+###  http://www.toronto.ca/TWONTO#is_TWONTO_core
+:is_TWONTO_core rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.toronto.ca/TWONTO#is_a_CAT_in_Maximo
 :is_a_CAT_in_Maximo rdf:type owl:AnnotationProperty ;
                     rdfs:range xsd:boolean .
@@ -111,11 +115,6 @@ f) exit signs that depend on electrical power supplied to the building.""" .
 :part_of_discrete_asset rdf:type owl:AnnotationProperty ;
                         rdfs:isDefinedBy "This property indicates that the asset is never a stand-alone discrete asset and always a part of another larger discrete asset." ;
                         rdfs:range xsd:boolean .
-
-
-###  http://www.toronto.ca/TWONTO#0925
-<http://www.toronto.ca/TWONTO#0925> rdf:type owl:AnnotationProperty ;
-                                    rdfs:label "is_TWONTO_core"@en .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
@@ -1277,7 +1276,7 @@ I created this property to point to a piece of text describing the intent of the
 
 ###  http://www.toronto.ca/TWONTO#0163
 <http://www.toronto.ca/TWONTO#0163> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment """The function of an asset is to be realized continuously or repeatedly, which differs from consumables materials. The function of consumable materials is realized only once.
 An asset is not always associated with a market value – some assets’ market value may have depreciated to nothing.  However, the assets may continue to provide capabilities useful to Toronto Water. The capability, if lost, is associated with a cost to replace.""" ;
                                     rdfs:isDefinedBy """a material entity owned by a person or organization that possesses
@@ -1288,38 +1287,38 @@ An asset is not always associated with a market value – some assets’ market 
 
 ###  http://www.toronto.ca/TWONTO#0164
 <http://www.toronto.ca/TWONTO#0164> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Collection of Things" .
 
 
 ###  http://www.toronto.ca/TWONTO#0165
 <http://www.toronto.ca/TWONTO#0165> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Event" .
 
 
 ###  http://www.toronto.ca/TWONTO#0166
 <http://www.toronto.ca/TWONTO#0166> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:isDefinedBy "an non-phyislcal entity that is about something" ;
                                     rdfs:label "Information Content Entity" .
 
 
 ###  http://www.toronto.ca/TWONTO#0167
 <http://www.toronto.ca/TWONTO#0167> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Process" .
 
 
 ###  http://www.toronto.ca/TWONTO#0168
 <http://www.toronto.ca/TWONTO#0168> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Organization" .
 
 
 ###  http://www.toronto.ca/TWONTO#0169
 <http://www.toronto.ca/TWONTO#0169> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment """07/02/2024: 
 - IRI changed from propertyState
 - \"property\" is a very general notion that covers quality, function, measure of function, relation, and complex higher-level qualities.""" ,
@@ -1330,7 +1329,7 @@ An asset is not always associated with a market value – some assets’ market 
 
 ###  http://www.toronto.ca/TWONTO#0170
 <http://www.toronto.ca/TWONTO#0170> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Material" .
 
 
@@ -1346,7 +1345,7 @@ An asset is not always associated with a market value – some assets’ market 
 ###  http://www.toronto.ca/TWONTO#0172
 <http://www.toronto.ca/TWONTO#0172> rdf:type owl:Class ;
                                     rdfs:subClassOf owl:Thing ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment """The subtypes of concern include 
 3-dimensional space that is fully or partially enclosed by the surfaces of a set of architectural parts, structural parts, or a parcel of land. 
 A 2-dimensional or a depthless 3-dimensional surface space that coincides with a surface formed by a set of architectural parts, structural parts, or a parcel of land.""" ;
@@ -1374,8 +1373,7 @@ The asset that consists of a television and its remote control is an example of 
 ###  http://www.toronto.ca/TWONTO#0174
 <http://www.toronto.ca/TWONTO#0174> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0294> ;
-                                    :is_defined_subclass "true"^^xsd:boolean ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment """Further Clarifications:
 The asset parts of a system can be interrelated by physical connections, controlled material flows, information flow, or energy transmission between the parts.
 Each part of the system should be involved in a higher-order function of the system. While some parts are directly involved in realizing the function others are involved by supporting the regulation, reliability, maintainability, and other implicit goals of the system.
@@ -1417,8 +1415,8 @@ Examples of system include
 ###  http://www.toronto.ca/TWONTO#0178
 <http://www.toronto.ca/TWONTO#0178> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
                                     rdfs:comment "6/19/24 TH: changed back from \"hierarchal system\" to \"localized function system\", as the term hierarchal system is not intuitive for something like a hydrant system." ,
                                                  "6/26/24: nearly all conceivable discrete assets are also localized function assets.  I did not subsume discrete asset under localized functional asset to hold out the possibility that there may be a distributed discrete asset system." ;
                                     rdfs:isDefinedBy "a system in which the assets playing the same role are situated in the same region of the system layout/topology." ;
@@ -2495,8 +2493,8 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#0294
 <http://www.toronto.ca/TWONTO#0294> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0164> ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_superclass_to_Avantis_class "Pump Station" ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
                                     rdfs:label "Collection of Assets" .
 
 
@@ -2798,7 +2796,7 @@ isThickeningCentrifuge""" ;
 ###  http://www.toronto.ca/TWONTO#0328
 <http://www.toronto.ca/TWONTO#0328> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0169> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment "Jan'24 TH: This class is create because we considered the status of a particular asset to be an instance of this class" ,
                                                  "TH Dec/2023: a property that denote a composite of values in multiple qualities, functional capabiliy, and other possible property that inhere in the asset itself (not listed in this ontology)." ;
                                     rdfs:label "Defined State" .
@@ -2926,8 +2924,8 @@ DECISION:
 ###  http://www.toronto.ca/TWONTO#0342
 <http://www.toronto.ca/TWONTO#0342> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0425> ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_category "true"^^xsd:boolean ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
                                     rdfs:comment "a distribution system would be mainly comprised of linear elements, which carries the resource over a distance, and conveyance assets, such as pumps, blowers, or conveyors." ;
                                     rdfs:isDefinedBy "DRAFT: a system whose function is to distribute a resource from one or more sources to sites where they are needed." ;
                                     rdfs:label "Distribution System" .
@@ -3173,7 +3171,7 @@ electrical power supplied to the building, and the building is within the scope 
 ###  http://www.toronto.ca/TWONTO#0370
 <http://www.toronto.ca/TWONTO#0370> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0452> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Environmental Hazard" .
 
 
@@ -3720,7 +3718,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0424
 <http://www.toronto.ca/TWONTO#0424> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0169> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment "07/05/2024 - function is a subset of capability" ;
                                     rdfs:label "Function" .
 
@@ -3728,8 +3726,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0425
 <http://www.toronto.ca/TWONTO#0425> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0265> ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
                                     rdfs:label "Distributed Function System"@en .
 
 
@@ -3947,14 +3945,14 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#0452
 <http://www.toronto.ca/TWONTO#0452> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Hazard" .
 
 
 ###  http://www.toronto.ca/TWONTO#0453
 <http://www.toronto.ca/TWONTO#0453> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0452> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Health and Safety Hazard" .
 
 
@@ -4268,7 +4266,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0490
 <http://www.toronto.ca/TWONTO#0490> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0510> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Junction" .
 
 
@@ -4429,7 +4427,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0508
 <http://www.toronto.ca/TWONTO#0508> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0510> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:isDefinedBy "A asset that contains at least one piece of line segment asset carries a stream of material substance, energy, or information from one point to another." ;
                                     rdfs:label "Line" .
 
@@ -4447,8 +4445,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 ###  http://www.toronto.ca/TWONTO#0510
 <http://www.toronto.ca/TWONTO#0510> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
                                     rdfs:label "Linear Function Structure" .
 
 
@@ -4602,8 +4600,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 <http://www.toronto.ca/TWONTO#0531> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0166> ,
                                                     <http://www.toronto.ca/TWONTO#0169> ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     :ontology_dev_note "07/24/2024: each on is necessarily observed or specified by someone." ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
                                     rdfs:comment "07/05/2024: name changed from capabilty and established another category call function_and_capability, to capabilityOrQualityMeasure, then to measure_of_property" ,
                                                  "07/05/2024: technically, this is a property (or from another point of ivew, a description ) of a capability and function, quality, or relation, but it can also be expressed as a property of the physical entity bearing that capability, function, ... ." ,
                                                  """7/05/2024: Example of usage
@@ -5348,7 +5346,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 ###  http://www.toronto.ca/TWONTO#0614
 <http://www.toronto.ca/TWONTO#0614> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0508> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:isDefinedBy "A line that has one or more junction along its length, linking it to minor branches, but only has one main path that carries a bulk flow from one point to another." ;
                                     rdfs:label "Primary Path Line" .
 
@@ -5477,14 +5475,14 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 
 ###  http://www.toronto.ca/TWONTO#0630
 <http://www.toronto.ca/TWONTO#0630> rdf:type owl:Class ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Qualification" .
 
 
 ###  http://www.toronto.ca/TWONTO#0631
 <http://www.toronto.ca/TWONTO#0631> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0169> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment "TH Mar 24: property that is not related to what the asset can do. For example, its colour.  07/02/2024: The quality is modeled as an entity (instead of a literal) so we can keep track of change." ;
                                     rdfs:label "Quality" .
 
@@ -5541,7 +5539,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 ###  http://www.toronto.ca/TWONTO#0638
 <http://www.toronto.ca/TWONTO#0638> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0169> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Relational State" .
 
 
@@ -5864,7 +5862,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 ###  http://www.toronto.ca/TWONTO#0678
 <http://www.toronto.ca/TWONTO#0678> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0508> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:isDefinedBy "An line that has no junction across its span." ;
                                     rdfs:label "Simple Line" .
 
@@ -6063,8 +6061,8 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 ###  http://www.toronto.ca/TWONTO#0704
 <http://www.toronto.ca/TWONTO#0704> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0566> ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
                                     rdfs:comment "Example: the power train system or the exhaust system of a car" ;
                                     rdfs:isDefinedBy "A subsystem of a discrete asset, which may or may not be a discrete asset or a localized function system." ;
                                     rdfs:label "Subsystem of a Discrete Asset" .
@@ -6107,7 +6105,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 ###  http://www.toronto.ca/TWONTO#0709
 <http://www.toronto.ca/TWONTO#0709> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0510> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment """A system train has the characteristic of being set of connected assets that 
 * is a part of a system
 * exists among multiple similar sets of connected assets, functionally equivalent to itself, in the same system
@@ -7037,7 +7035,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 ###  http://www.toronto.ca/TWONTO#0922
 <http://www.toronto.ca/TWONTO#0922> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0164> ;
-                                    <http://www.toronto.ca/TWONTO#0925> "true"^^xsd:boolean ;
+                                    :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:label "Collection of Phyiscal Locations"@en .
 
 
