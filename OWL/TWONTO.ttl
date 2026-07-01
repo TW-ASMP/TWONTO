@@ -4445,7 +4445,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#0510
 <http://www.toronto.ca/TWONTO#0510> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0294> ;
                                     :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
                                     rdfs:label "Linear Function Structure" .
