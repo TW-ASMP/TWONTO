@@ -5349,7 +5349,8 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0508> ;
                                     :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:isDefinedBy "A line that has one or more junction along its length, linking it to minor branches, but only has one main path that carries a bulk flow from one point to another." ;
-                                    rdfs:label "Primary Path Line" .
+                                    rdfs:label "Line with Branches" ;
+                                    <http://www.w3.org/2004/02/skos/core#altLabel> "Primary Path Line" .
 
 
 ###  http://www.toronto.ca/TWONTO#0615
