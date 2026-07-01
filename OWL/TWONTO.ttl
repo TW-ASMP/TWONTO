@@ -1420,8 +1420,9 @@ Examples of system include
                                     rdfs:comment "6/19/24 TH: changed back from \"hierarchal system\" to \"localized function system\", as the term hierarchal system is not intuitive for something like a hydrant system." ,
                                                  "6/26/24: nearly all conceivable discrete assets are also localized function assets.  I did not subsume discrete asset under localized functional asset to hold out the possibility that there may be a distributed discrete asset system." ;
                                     rdfs:isDefinedBy "a system in which the assets playing the same role are situated in the same region of the system layout/topology." ;
-                                    rdfs:label "Hierarchal Function System" ;
+                                    rdfs:label "System Functional Block" ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "Functionally Segregated System" ,
+                                                                                   "Hierarchal Function System" ,
                                                                                    "Localized Function System" .
 
 
@@ -3725,7 +3726,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#0425
 <http://www.toronto.ca/TWONTO#0425> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0265> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
                                     :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
                                     rdfs:label "Distributed Function System"@en .
