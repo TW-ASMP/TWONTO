@@ -1023,7 +1023,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#0130
 <http://www.toronto.ca/TWONTO#0130> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0720> ;
-                                    :is_defined_category "" ;
+                                    :is_defined_category "true"^^xsd:boolean ;
                                     rdfs:label "Test Instrument" ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "tester" .
 
