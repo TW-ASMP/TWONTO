@@ -1023,6 +1023,7 @@ I created this property to point to a piece of text describing the intent of the
 ###  http://www.toronto.ca/TWONTO#0130
 <http://www.toronto.ca/TWONTO#0130> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0720> ;
+                                    :is_defined_category "" ;
                                     rdfs:label "Test Instrument" ;
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "tester" .
 
@@ -3729,7 +3730,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
                                     :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
-                                    rdfs:label "Distributed Function System"@en .
+                                    rdfs:label "Physical Distributed System"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#0426
@@ -6157,7 +6158,7 @@ is capable of realizing a unit of the system primary functions.""" ;
 
 ###  http://www.toronto.ca/TWONTO#0715
 <http://www.toronto.ca/TWONTO#0715> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0425> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
                                     rdfs:label "telephone system" .
 
 
