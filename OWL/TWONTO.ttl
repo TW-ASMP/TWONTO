@@ -2916,7 +2916,6 @@ DECISION:
 <http://www.toronto.ca/TWONTO#0342> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0425> ;
                                     :is_TWONTO_core "true"^^xsd:boolean ;
-                                    :is_defined_category "true"^^xsd:boolean ;
                                     rdfs:comment "a distribution system would be mainly comprised of linear elements, which carries the resource over a distance, and conveyance assets, such as pumps, blowers, or conveyors." ;
                                     rdfs:isDefinedBy "DRAFT: a system whose function is to distribute a resource from one or more sources to sites where they are needed." ;
                                     rdfs:label "Distribution System" .
