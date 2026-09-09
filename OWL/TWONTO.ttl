@@ -2777,7 +2777,8 @@ isThickeningCentrifuge""" ;
 
 ###  http://www.toronto.ca/TWONTO#0327
 <http://www.toronto.ca/TWONTO#0327> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0258> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ,
+                                                    <http://www.toronto.ca/TWONTO#0258> ;
                                     :category_in_Avantis "TSSA boilers" ;
                                     :category_in_Maximo "Legislative Certification Requirement" ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
@@ -2955,8 +2956,7 @@ DECISION:
 
 ###  http://www.toronto.ca/TWONTO#0347
 <http://www.toronto.ca/TWONTO#0347> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ,
-                                                    <http://www.toronto.ca/TWONTO#0798> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0798> ;
                                     :is_equivalent_to_Avantis_class "Drain" ;
                                     :is_equivalent_to_tag_code "DRN" ;
                                     rdfs:label "drain" .
@@ -4508,8 +4508,8 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     :is_equivalent_to_Avantis_category "Maintenance Hole" ;
                                     :is_equivalent_to_Avantis_class "Maintenance Hole" ;
                                     :is_equivalent_to_tag_code "MH" ;
-                                    rdfs:label "maintenance hole" ;
-                                    <http://www.w3.org/2004/02/skos/core#altLabel> "manhole" .
+                                    rdfs:label "manhole" ;
+                                    <http://www.w3.org/2004/02/skos/core#altLabel> "maintenance hole" .
 
 
 ###  http://www.toronto.ca/TWONTO#0520
