@@ -2777,8 +2777,7 @@ isThickeningCentrifuge""" ;
 
 ###  http://www.toronto.ca/TWONTO#0327
 <http://www.toronto.ca/TWONTO#0327> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ,
-                                                    <http://www.toronto.ca/TWONTO#0258> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0258> ;
                                     :category_in_Avantis "TSSA boilers" ;
                                     :category_in_Maximo "Legislative Certification Requirement" ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
