@@ -2914,7 +2914,7 @@ DECISION:
 
 ###  http://www.toronto.ca/TWONTO#0342
 <http://www.toronto.ca/TWONTO#0342> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0425> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
                                     :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment "a distribution system would be mainly comprised of linear elements, which carries the resource over a distance, and conveyance assets, such as pumps, blowers, or conveyors." ;
                                     rdfs:isDefinedBy "DRAFT: a system whose function is to distribute a resource from one or more sources to sites where they are needed." ;
@@ -3377,15 +3377,6 @@ CSA Z259.1-05: an assembly of components that, when property assembled and used 
                                     <http://www.w3.org/2004/02/skos/core#altLabel> "filter tank" .
 
 
-###  http://www.toronto.ca/TWONTO#0395
-<http://www.toronto.ca/TWONTO#0395> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
-                                                    <http://www.toronto.ca/TWONTO#0796> ;
-                                    :category_in_Maximo "Legislative Certification Requirement" ;
-                                    :is_equivalent_to_tag_code "FEQ" ;
-                                    rdfs:label "pressurized piping system" .
-
-
 ###  http://www.toronto.ca/TWONTO#0396
 <http://www.toronto.ca/TWONTO#0396> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0173> ,
@@ -3706,14 +3697,6 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
                                     :is_TWONTO_core "true"^^xsd:boolean ;
                                     rdfs:comment "07/05/2024 - function is a subset of capability" ;
                                     rdfs:label "Function" .
-
-
-###  http://www.toronto.ca/TWONTO#0425
-<http://www.toronto.ca/TWONTO#0425> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
-                                    :is_TWONTO_core "true"^^xsd:boolean ;
-                                    :is_defined_subclass "true"^^xsd:boolean ;
-                                    rdfs:label "Physical Distributed System"@en .
 
 
 ###  http://www.toronto.ca/TWONTO#0426
@@ -4426,7 +4409,7 @@ CSA 149.2: a device to convert gas into energy or compress gas for the purpose o
 
 ###  http://www.toronto.ca/TWONTO#0510
 <http://www.toronto.ca/TWONTO#0510> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0294> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0163> ;
                                     :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
                                     rdfs:label "Linear Function Structure" .
@@ -4984,7 +4967,7 @@ Some of these figures are, like \"maxVoltageWithstand\", would likely have come 
 
 ###  http://www.toronto.ca/TWONTO#0579
 <http://www.toronto.ca/TWONTO#0579> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0342> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0490> ;
                                     :is_equivalent_to_tag_code "MAN" ;
                                     rdfs:label "pipe manifold" .
 
@@ -5303,6 +5286,7 @@ K. Power actuated PRV: a pressure relief valve actuated by an externally powered
 <http://www.toronto.ca/TWONTO#0611> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://www.toronto.ca/TWONTO#0583> ;
                                     :category_in_Avantis "pressurized piping" ;
+                                    :category_in_Maximo "Legislative Certification Requirement" ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
                                     :notion_mapping_id "315f3959781f42bd81154d50fa751f1b" ;
                                     rdfs:label "pressurized piping system" .
@@ -6040,7 +6024,7 @@ Jan'24 TH: this term is to be develope further, likely as a defined term.""" ;
 
 ###  http://www.toronto.ca/TWONTO#0704
 <http://www.toronto.ca/TWONTO#0704> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0566> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ;
                                     :is_TWONTO_core "true"^^xsd:boolean ;
                                     :is_defined_subclass "true"^^xsd:boolean ;
                                     rdfs:comment "Example: the power train system or the exhaust system of a car" ;
