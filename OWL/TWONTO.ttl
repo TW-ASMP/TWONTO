@@ -2955,7 +2955,8 @@ DECISION:
 
 ###  http://www.toronto.ca/TWONTO#0347
 <http://www.toronto.ca/TWONTO#0347> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0798> ;
+                                    rdfs:subClassOf <http://www.toronto.ca/TWONTO#0174> ,
+                                                    <http://www.toronto.ca/TWONTO#0798> ;
                                     :is_equivalent_to_Avantis_class "Drain" ;
                                     :is_equivalent_to_tag_code "DRN" ;
                                     rdfs:label "drain" .
